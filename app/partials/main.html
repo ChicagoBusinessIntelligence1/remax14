@@ -1,0 +1,26 @@
+<nav class="top-bar row">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Gulp & Angularfire</a></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="active"><a ng-href="#">Home</a></li>
+      <li><a ng-href="#">About</a></li>
+      <li><a ng-href="#">Contact</a></li>
+    </ul>
+  </section>
+</nav>
+
+<div class="row">
+  <div class="large-12 large-text-left columns">
+    <div class="panel">
+	    <ul class="no-bullet full">
+		    <li ng-repeat="c in colors">{{c.$value}}</li>
+	    </ul>
+    </div>
+  </div>
+</div>
+

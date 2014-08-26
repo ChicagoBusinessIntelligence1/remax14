@@ -1,23 +1,20 @@
-//@import '../bower_components/foundation/scss/foundation';
-
 .browsehappy {
   margin: 0.2em 0;
   background: red;
   color: #f57a6b;
 }
 
-
 .panel {
   margin-top: 50px;
   background-color: #ffff00;
 }
 
-
 .th {
   width: 100%;
   height: 200px;
-
-  img.right {
-    width: 50px;
-  }
 }
+.th img.right {
+  width: 50px;
+}
+
+/*# sourceMappingURL=main.css.map */

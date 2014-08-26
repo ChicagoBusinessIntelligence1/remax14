@@ -1,20 +1,8 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: red;
-  color: #f57a6b;
-}
+.browsehappy { margin: 0.2em 0; background: red; color: #f57a6b; }
 
-.panel {
-  margin-top: 50px;
-  background-color: #ffff00;
-}
+.panel { margin-top: 50px; background-color: #f53431; }
 
-.th {
-  width: 100%;
-  height: 200px;
-}
-.th img.right {
-  width: 50px;
-}
+.th { width: 100%; height: 200px; }
+.th img.right { width: 50px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -35,13 +35,13 @@ function browserSyncInit(baseDir, files, browser) {
 
 }
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['watch','styles'], function () {
   browserSyncInit([
     'app',
     '.tmp'
   ], [
     'app/*.html',
-    '.tmp/styles/**/*.css',
+    'app/styles/**/*.css',
     'app/scripts/**/*.js',
     'app/partials/**/*.html',
     'app/images/**/*'

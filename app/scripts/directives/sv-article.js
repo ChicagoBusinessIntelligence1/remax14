@@ -1,18 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name fengshuiApp.directive:svArticle
- * @description
- * # svArticle
- */
-angular.module('fengshuiApp')
+angular.module('fengshui')
   .directive('svArticle', function () {
     return {
-      template: '<div>Test</div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        //element.text('this is the svArticle directive');
-      }
+      templateUrl: '../views/directives/sv-article.html',
+      restrict: 'E'
+
     };
   });

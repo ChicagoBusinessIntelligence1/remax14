@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name fengshui.controller:AdminCtrl
+ * @name fengshui.controller:IndexCtrl
  * @description
- * # AdminCtrl
+ * # IndexCtrl
  * Controller of the fengshui
  */
 angular.module('fengshui')
-  .controller('AdminCtrl', function ($scope) {
+  .controller('IndexCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -19,9 +19,15 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 	your browser</a> to improve your experience.</p>
 <![endif]-->
+<sv-top-nav></sv-top-nav>
+<div class="row">
 
-               <div ui-view></div>
-       <div></div>
+	<div class="large-12 columns">
+		<div ui-view></div>
+	</div>
+
+
+</div>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
 	(function (b, o, i, l, e, r) {
@@ -51,15 +57,21 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
 <script src="scripts/fengshui.js"></script>
 <script src="scripts/main/main-ctrl.js"></script>
 <!-- inject:partials -->
 <!-- endinject -->
 <script src="scripts/controllers/admin.js"></script>
 <script src="scripts/directives/sv-article.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/directives/sv-top-nav.js"></script>
+<script src="scripts/controllers/index.js"></script>
+<script src="scripts/controllers/login.js"></script>
 <!-- endbuild -->
 </body>
 </html>

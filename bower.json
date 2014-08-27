@@ -9,8 +9,9 @@
     "angular": "1.3.0-build.3106+sha.2e3a7fd",
     "angular-animate": "1.3.0-build.3106+sha.2e3a7fd",
     "angular-ui-router": "0.2.10",
-    "angular-foundation": "0.3.1",
-    "angularfire": "~0.8.0"
+    "angularfire": "~0.8.0",
+    "angular-foundation": "~0.3.1",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {}
 }

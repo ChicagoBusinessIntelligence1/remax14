@@ -1,0 +1,29 @@
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="small-6 small-offset-3">
+				<form ng-submit="fenLogin(email.data,pass.data);" id="login" name="login" novalidate>
+					<div data-alert class="alert-box warning round" ng-show="loginError">
+						Incorrect login or password
+						<a href="#" class="close">&times;</a>
+					</div>
+
+					<fieldset>
+						<legend>Login</legend>
+						<label ng-class="{'error':login.email.$invalid && login.$dirty}">Email:
+							<input type="email" name="email" id="email" placeholder="email" ng-model="email.data"
+							       required/>
+						</label>
+						<label ng-class="{'error':login.password.$invalid && login.$dirty}">Password:
+							<input type="password" name="password" id="password" placeholder="password"
+							       ng-model="pass.data" required/>
+						</label>
+						<input type="submit" value="Submit" class="button small info radius" ng-disabled="login.$invalid"
+						       />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

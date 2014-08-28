@@ -2,15 +2,15 @@
 	<div class="large-12 columns">
 		<div class="nav-bar right">
 			<ul class="button-group">
-				<li><a href="#" class="button">Home</a></li>
+				<li><a ui-sref="home" class="button">Home</a></li>
 				<li><a ui-sref="about" class="button">About</a></li>
-				<li><a href="#" class="button">Link 3</a></li>
+				<li><a ui-sref="contact-us" class="button">Contact Us</a></li>
 				<li ng-show="!auth.user"><a class="button success" ui-sref="login">Login</a></li>
 				<li ng-show="auth.user"><a class="button alert" ng-click="fenLogout()">Log Out</a></li>
 			</ul>
 		</div>
-		<h1>Blog
-			<small>This is my blog. It's awesome.</small>
+		<h1>
+			Feng Shui Blog
 		</h1>
 		<hr/>
 	</div>

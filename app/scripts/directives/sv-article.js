@@ -6,5 +6,6 @@ angular.module('fengshui')
       templateUrl: '../views/directives/sv-article.html',
       restrict: 'E'
 
+
     };
   });

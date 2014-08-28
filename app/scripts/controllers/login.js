@@ -1,30 +1,36 @@
 'use strict';
 
 angular.module('fengshui')
-    .controller('LoginCtrl', function ($scope, url, $firebaseSimpleLogin, $state, $rootScope) {
+    .controller('LoginCtrl', function ($scope, url, $firebaseSimpleLogin, $state, authService) {
         $scope.loginError = false;
-
+        $scope.email = {data: 'admin@gmail.com'};
+        $scope.pass = {data: '123456'};
         $scope.fenLogin = function (email, pass) {
             if (_.isEmpty(email) || _.isEmpty(pass)) {
                 $scope.loginError = true;
                 return;
             }
-            var mainRef = new Firebase(url);
-            var auth = $firebaseSimpleLogin(mainRef);
 
-            auth.$login('password', {
+            $scope.auth.$login('password', {
                 email: email,
                 password: pass
             }).then(function (user) {
+                console.log('Current user is: ' + user.email);
+
                 // Sucess
-                $state.go('admin');
+                authService.setUser(user);
+
                 $scope.loginError = false;
 
             }, function () {
+                //Error
                 $scope.loginError = true;
 
             });
-
-
         };
+
+        $scope.fenLogout = function () {
+            $scope.auth.$logout();
+                console.log('No current user');
+        }
     });

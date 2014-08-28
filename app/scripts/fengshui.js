@@ -5,17 +5,12 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router', 'mm.foundati
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'partials/main.html',
-                controller: 'MainCtrl'
+                templateUrl: 'partials/main.html'
             }).
             state('about', {
                 url: '/about',
                 controller: 'AboutCtrl',
                 templateUrl: '../views/about.html'
-            }).
-            state('admin', {
-                url: '/admin',
-                templateUrl: '../views/admin.html'
             }).
             state('login', {
                 url: '/login',
@@ -25,6 +20,7 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router', 'mm.foundati
 
         $urlRouterProvider.otherwise('/');
     });
+
 
 fengshui.value('url', 'https://fengshui2.firebaseio.com/');
 

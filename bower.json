@@ -1,6 +1,7 @@
 {
   "name": "fengshui",
   "version": "0.0.0",
+  "apppath": "fengshui",
   "dependencies": {
     "modernizr": "2.8.x",
     "jquery": "2.x.x",

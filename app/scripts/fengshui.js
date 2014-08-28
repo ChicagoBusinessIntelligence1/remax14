@@ -1,6 +1,6 @@
 'use strict';
 
-var fengshui = angular.module('fengshui', ['firebase', 'ui.router','mm.foundation'])
+var fengshui = angular.module('fengshui', ['firebase', 'ui.router', 'mm.foundation'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
@@ -13,6 +13,10 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router','mm.foundatio
                 controller: 'AboutCtrl',
                 templateUrl: '../views/about.html'
             }).
+            state('admin', {
+                url: '/admin',
+                templateUrl: '../views/admin.html'
+            }).
             state('login', {
                 url: '/login',
                 controller: 'LoginCtrl',
@@ -22,5 +26,5 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router','mm.foundatio
         $urlRouterProvider.otherwise('/');
     });
 
-fengshui.value();
+fengshui.value('url', 'https://fengshui2.firebaseio.com/');
 

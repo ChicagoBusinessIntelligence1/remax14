@@ -9,6 +9,13 @@ angular.module('fengshui')
         $scope.auth = $firebaseSimpleLogin(mainRef);
 
         $scope.auth.$getCurrentUser().then(function (user) {
+            if (!_.isNull(user)) {
             $scope.email = user.email;
+            }
         })
+
+        $scope.fenLogout = function () {
+            $scope.auth.$logout();
+            console.log('No current user');
+        }
     });

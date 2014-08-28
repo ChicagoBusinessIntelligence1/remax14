@@ -5,10 +5,13 @@
 				<li><a href="#" class="button">Home</a></li>
 				<li><a ui-sref="about" class="button">About</a></li>
 				<li><a href="#" class="button">Link 3</a></li>
-				<li><a ui-sref="login" >Login</a></li>
+				<li ng-show="!auth.user"><a class="button success" ui-sref="login">Login</a></li>
+				<li ng-show="auth.user"><a class="button alert" ng-click="fenLogout()">Log Out</a></li>
 			</ul>
 		</div>
-		<h1>Blog <small>This is my blog. It's awesome.</small></h1>
+		<h1>Blog
+			<small>This is my blog. It's awesome.</small>
+		</h1>
 		<hr/>
 	</div>
 </div>

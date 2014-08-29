@@ -12,6 +12,11 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router', 'mm.foundati
                 controller: 'AboutCtrl',
                 templateUrl: '../views/about.html'
             }).
+            state('contact', {
+                url: '/contact',
+                controller: 'ContactusCtrl',
+                templateUrl: '../views/contactus.html'
+            }).
             state('login', {
                 url: '/login',
                 controller: 'LoginCtrl',

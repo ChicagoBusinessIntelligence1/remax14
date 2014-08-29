@@ -6,6 +6,20 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license']
 });
 
+
+var jade = require('gulp-jade');
+
+gulp.task('templates', function() {
+    var YOUR_LOCALS = {};
+
+    gulp.src('app/**/*.jade')
+        .pipe(jade({
+            locals: YOUR_LOCALS
+        }))
+        .pipe(gulp.dest('app/'));
+});
+
+
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
     .pipe($.plumber())

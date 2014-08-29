@@ -1,0 +1,23 @@
+html {
+  -webkit-font-smoothing: antialized;
+}
+body {
+  font: 12px Helvetica, Arial, sans-serif;
+}
+a.button {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;
+  -webkit-box-shadow: #123456 0 0 10px;
+  box-shadow: #123456 0 0 10px;
+}
+button {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}

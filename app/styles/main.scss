@@ -8,7 +8,8 @@
 
 .panel {
   margin-top: 50px;
-  background-color: #f53431;
+  background-color: rgba(0, 195, 255, 0.09);
+  border-color: rgba(0, 151, 197, 0.09);
 }
 
 .th {
@@ -21,4 +22,10 @@
 }
 .error input, .error textarea, .error select{
   margin-bottom: 16px;
+}
+.btn-wrapper{
+  margin-bottom: 25px;
+}
+.pull-right{
+  text-align: right;
 }

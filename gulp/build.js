@@ -8,8 +8,17 @@ var $ = require('gulp-load-plugins')({
 
 
 var jade = require('gulp-jade');
+var stylus = require('gulp-stylus');
+var nib = require('nib');
 
-gulp.task('templates', function() {
+gulp.task('nib', function () {
+    gulp.src('app/styles/nib.styl')
+        .pipe(stylus({use: [nib()]}))
+        .pipe(gulp.dest('app/styles/nib'));
+});
+
+
+gulp.task('jade', function() {
     var YOUR_LOCALS = {};
 
     gulp.src('app/**/*.jade')
@@ -17,6 +26,13 @@ gulp.task('templates', function() {
             locals: YOUR_LOCALS
         }))
         .pipe(gulp.dest('app/'));
+});
+
+
+gulp.task('stylus', function () {
+    gulp.src('app/styles/**/*.styl')
+        .pipe(stylus({use:[nib()]}))
+        .pipe(gulp.dest('app/styles/'));
 });
 
 
@@ -102,4 +118,4 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.rimraf());
 });
 
-gulp.task('build', ['html', 'partials', 'images', 'fonts']);
+gulp.task('build', ['jade', 'html', 'partials', 'images', 'fonts']);

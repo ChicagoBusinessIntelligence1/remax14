@@ -1,6 +1,6 @@
 'use strict';
 
-var fengshui = angular.module('fengshui', ['firebase', 'ui.router', 'mm.foundation'])
+var fengshui = angular.module('fengshui', ['firebase', 'ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {

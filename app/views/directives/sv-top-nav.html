@@ -1,18 +1,15 @@
-<div class="row">
-	<div class="large-12 columns">
-		<div class="nav-bar right">
-			<ul class="button-group">
-				<li><a ui-sref="home" class="button">Home</a></li>
-				<li><a ui-sref="about" class="button">About</a></li>
-				<li><a ui-sref="contact" class="button">Contact Us</a></li>
-				<li ng-show="!auth.user"><a class="button success" ui-sref="login">Login</a></li>
-				<li ng-show="auth.user"><a class="button alert" ng-click="fenLogout()">Log Out</a></li>
-			</ul>
+<div class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<h1 class="logo-text">
+				Feng Shui Blog </h1>
 		</div>
-		<h1>
-			Feng Shui Blog
-		</h1>
-		<hr/>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a ui-sref="home" class="btn btn-link">Home</a></li>
+			<li><a ui-sref="about" class="btn btn-link">About</a></li>
+			<li><a ui-sref="contact" class="btn btn-link">Contact Us</a></li>
+			<li ng-show="!auth.user"><a class="btn btn-link" ui-sref="login">Login</a></li>
+			<li ng-show="auth.user"><a class="btn btn-link" ng-click="fenLogout()">Log Out</a></li>
+		</ul>
 	</div>
 </div>
-

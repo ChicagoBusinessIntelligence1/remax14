@@ -3,7 +3,7 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{fengshui node_modules}" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" libraries="{angularfire-DefinitelyTyped, underscore-DefinitelyTyped}" />
-    <file url="PROJECT" libraries="{angularfire-DefinitelyTyped, angularjs-DefinitelyTyped, underscore-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{angular-ui-bootstrap-DefinitelyTyped, angularfire-DefinitelyTyped, angularjs-DefinitelyTyped, underscore-DefinitelyTyped}" />
   </component>
 </project>
 

@@ -3,21 +3,26 @@
 var fengshui = angular.module('fengshui', ['firebase', 'ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('home', {
-                url: '/',
-                templateUrl: 'partials/main.html'
+            .state('app', {
+                abstract: true,
+                templateUrl: '../partials/main.html'
             }).
-            state('about', {
+            state('app.home', {
+                url: '/home',
+                controller: 'HomeCtrl',
+                templateUrl: '../partials/home.html'
+            }).
+            state('app.about', {
                 url: '/about',
                 controller: 'AboutCtrl',
                 templateUrl: '../views/about.html'
             }).
-            state('contact', {
+            state('app.contact', {
                 url: '/contact',
                 controller: 'ContactusCtrl',
                 templateUrl: '../views/contactus.html'
             }).
-            state('login', {
+            state('app.login', {
                 url: '/login',
                 controller: 'LoginCtrl',
                 templateUrl: '../views/login.html'

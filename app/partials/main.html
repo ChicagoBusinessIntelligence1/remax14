@@ -1,13 +1,6 @@
 <div class="row">
 	<div class="col-lg-9">
-		<div class="pull-right btn-wrapper">
-			<a class="btn-add-article" href=""><i class="fa fa-pencil"></i> Add New Post</a>
-		</div>
-		<h4 ng-show="auth.user">Hello {{email}}</h4>
-		<sv-add-article></sv-add-article>
-		<sv-article></sv-article>
-		<hr/>
-		<sv-article></sv-article>
+		<div class="content-wrapper" ui-view></div>
 	</div>
 	<aside class="col-lg-3">
 		<sv-aside-nav></sv-aside-nav>

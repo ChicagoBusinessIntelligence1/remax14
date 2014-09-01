@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .factory('authService', function () {
         var loggedUser;
         return {

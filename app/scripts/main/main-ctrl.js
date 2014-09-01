@@ -1,8 +1,6 @@
-/* global Firebase */
-
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin) {
         // now we can use $firebase to synchronize data between clients and the server!
         var mainRef = new Firebase(url);
@@ -10,7 +8,7 @@ angular.module('fengshui')
 
         $scope.auth.$getCurrentUser().then(function (user) {
             if (!_.isNull(user)) {
-            $scope.email = user.email;
+                $scope.email = user.email;
             }
         })
 

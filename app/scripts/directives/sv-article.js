@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .directive('svArticle', function () {
         return {
             templateUrl: '../views/directives/sv-article.html',

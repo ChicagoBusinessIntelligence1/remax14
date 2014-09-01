@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .directive('svAsideNav', function () {
         return {
             templateUrl: '../views/directives/sv-aside-nav.html',

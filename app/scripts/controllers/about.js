@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
   .controller('AboutCtrl', function ($scope) {
   });

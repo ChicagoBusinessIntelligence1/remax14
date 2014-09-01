@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="fengshui">
+<html class="no-js" ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<title>fengshui</title>
@@ -9,19 +9,18 @@
 	<!-- build:css({.tmp,app}) styles/main.css -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/bootstrap-additions.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
 	<!-- build:js scripts/modernizr.js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
 </head>
-
 <body ng-controller="MainCtrl">
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 	your browser</a> to improve your experience.</p>
 <![endif]-->
-
 <sv-top-nav></sv-top-nav>
 <div class="container">
 	<div class="row">
@@ -31,15 +30,14 @@
 	</div>
 </div>
 <sv-footer-nav></sv-footer-nav>
-
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
 	(function (b, o, i, l, e, r) {
 		b.GoogleAnalyticsObject = l;
 		b[l] || (b[l] =
-				function () {
-					(b[l].q = b[l].q || []).push(arguments)
-				});
+			function () {
+				(b[l].q = b[l].q || []).push(arguments)
+			});
 		b[l].l = +new Date;
 		e = o.createElement(i);
 		r = o.getElementsByTagName(i)[0];
@@ -60,14 +58,17 @@
 <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
-<script src="scripts/fengshui.js"></script>
+<script src="scripts/app.js"></script>
 <script src="scripts/main/main-ctrl.js"></script>
 <!-- inject:partials -->
 <!-- endinject -->
 <script src="scripts/directives/sv-top-nav.js"></script>
+<script src="scripts/directives/sv-login-popover.js"></script>
 <script src="scripts/directives/sv-login.js"></script>
 <script src="scripts/directives/sv-article.js"></script>
 <script src="scripts/directives/sv-add-article.js"></script>

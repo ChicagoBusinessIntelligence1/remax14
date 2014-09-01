@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .directive('svTopNav', function () {
         return {
             templateUrl: '../views/directives/sv-top-nav.html',

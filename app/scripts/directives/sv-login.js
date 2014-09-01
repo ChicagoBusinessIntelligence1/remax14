@@ -23,8 +23,7 @@ angular.module('fengshui')
                         // Sucess
                         authService.setUser(user);
 
-
-                        $state.go('home');
+                        $state.go('app.home');
                         $scope.loginError = false;
 
                     }, function () {

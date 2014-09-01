@@ -17,13 +17,12 @@ gulp.task('nib', function () {
         .pipe(gulp.dest('app/styles/nib'));
 });
 
-
+//register task jade
 gulp.task('jade', function() {
-    var YOUR_LOCALS = {};
 
     gulp.src('app/**/*.jade')
         .pipe(jade({
-            locals: YOUR_LOCALS
+            pretty: true
         }))
         .pipe(gulp.dest('app/'));
 });

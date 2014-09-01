@@ -1,15 +1,22 @@
 .navbar.navbar-default
-    .container.navbar-custom
-        .navbar-header
-            h1.logo-text Feng Shui Blog
-        ul.nav.navbar-nav.navbar-right
-            li
-                a.btn.btn-link(ui-sref='app.home') Home
-            li
-                a.btn.btn-link(ui-sref='app.about') About
-            li
-                a.btn.btn-link(ui-sref='app.contact') Contact Us
-            li(ng-show='!auth.user')
-							a.btn.btn-link(data-sv-login-popover='') Login
-            li(ng-show='auth.user')
-                a.btn.btn-link(ng-click='fenLogout()') Log Out
+	.container.navbar-custom
+		.navbar-header
+			h1.logo-text Feng Shui Blog
+		ul.nav.navbar-nav.navbar-left.pull-left
+			li
+				a.btn.btn-link(ui-sref='app.home') Home
+			li
+				a.btn.btn-link(ui-sref='app.about') About
+			li
+				a.btn.btn-link(ui-sref='app.contact') Contact Us
+
+		ul.nav.navbar-nav.nav-bar-right.pull-right
+			li(ng-show='!auth.user')
+				a.btn.btn-link(data-sv-login-popover='') Login
+			li(ng-show='auth.user')
+				a(href='{{userLink}}')
+					span {{userName}}
+					div.img-fb
+						img.img-fb(ng-src="{{userPic}}")
+			li(ng-show='auth.user')
+				a.btn.btn-link(ng-click='fenLogout()') Log Out

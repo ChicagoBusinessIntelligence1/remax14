@@ -34,6 +34,10 @@ body {
   margin-top: 10px;
   margin-bottom: 15px;
 }
+.img-fb {
+  width: 25px;
+  height: 25px;
+}
 a.btn {
   -webkit-border-radius: 15px;
   border-radius: 15px;

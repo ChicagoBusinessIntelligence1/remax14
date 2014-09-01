@@ -8,6 +8,18 @@
 .navbar-custom ul li a {
   font-size: 18px;
 }
+.img-fb {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.fb-name {
+  display: inline-block;
+  padding-top: 5px;
+}
 .logo-text {
   margin-top: 10px;
   margin-bottom: 15px;
@@ -17,6 +29,18 @@
 }
 .navbar-custom ul li a {
   font-size: 18px;
+}
+.img-fb {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.fb-name {
+  display: inline-block;
+  padding-top: 5px;
 }
 .footer {
   background-color: #f5f5f5;
@@ -47,6 +71,18 @@
 .navbar-custom ul li a {
   font-size: 18px;
 }
+.img-fb {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.fb-name {
+  display: inline-block;
+  padding-top: 5px;
+}
 .logo-text {
   margin-top: 10px;
   margin-bottom: 15px;
@@ -56,6 +92,18 @@
 }
 .navbar-custom ul li a {
   font-size: 18px;
+}
+.img-fb {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.fb-name {
+  display: inline-block;
+  padding-top: 5px;
 }
 .footer {
   background-color: #f5f5f5;

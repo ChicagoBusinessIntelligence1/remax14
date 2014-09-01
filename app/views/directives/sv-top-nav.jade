@@ -15,8 +15,7 @@
 				a.btn.btn-link(data-sv-login-popover='') Login
 			li(ng-show='auth.user')
 				a(href='{{userLink}}')
-					span {{userName}}
-					div.img-fb
-						img.img-fb(ng-src="{{userPic}}")
+					img.img-fb(ng-src="{{userPic}}")
+						span.fb-name {{userName}}
 			li(ng-show='auth.user')
 				a.btn.btn-link(ng-click='fenLogout()') Log Out

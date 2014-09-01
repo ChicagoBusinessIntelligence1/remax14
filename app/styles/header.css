@@ -11,3 +11,15 @@
 .navbar-custom ul li a {
   font-size: 18px;
 }
+.img-fb {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.fb-name {
+  display: inline-block;
+  padding-top: 5px;
+}

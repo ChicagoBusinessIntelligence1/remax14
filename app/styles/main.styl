@@ -1,5 +1,25 @@
 @import 'nib'
 
+/**********************
+    Using Stylus Examples
+***********************/
+
+/*Mixins*/
+any-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+
+.custom-object
+  border-radius 100px 30px / 50px 10px
+  background-color #245269
+  width 300px
+  height 300px
+  border red
+  &:hover
+    opacity 0.5
+
 html
   -webkit-font-smoothing antialized
 
@@ -18,6 +38,10 @@ body
 .logo-text
   margin-top 10px
   margin-bottom 15px
+
+a.btn
+  border-radius 15px
+  background: linear-gradient(top, #eee, 90% white, 10% black);
 
 .navbar-custom
   ul

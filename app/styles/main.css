@@ -1,3 +1,20 @@
+/**********************
+    Using Stylus Examples
+***********************/
+/*Mixins*/
+.custom-object {
+  -webkit-border-radius: 100px 30px/50px 10px;
+  border-radius: 100px 30px/50px 10px;
+  background-color: #245269;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f00;
+}
+.custom-object:hover {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
 html {
   -webkit-font-smoothing: antialized;
 }
@@ -16,6 +33,15 @@ body {
 .logo-text {
   margin-top: 10px;
   margin-bottom: 15px;
+}
+a.btn {
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(top, #eee, #fff 90%, #000 10%);
+  background: -moz-linear-gradient(top, #eee, #fff 90%, #000 10%);
+  background: -o-linear-gradient(top, #eee, #fff 90%, #000 10%);
+  background: -ms-linear-gradient(top, #eee, #fff 90%, #000 10%);
+  background: linear-gradient(to bottom, #eee, #fff 90%, #000 10%);
 }
 .navbar-custom ul {
   margin-top: 5px;

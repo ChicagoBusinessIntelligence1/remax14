@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="jade" pattern="!file[fengshui]:*/*.html&amp;&amp;!file[fengshui]:*/*.css" />
+</component>

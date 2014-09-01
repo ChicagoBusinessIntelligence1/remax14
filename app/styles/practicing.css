@@ -1,0 +1,54 @@
+/**********************
+    Using Stylus Examples
+***********************/
+/*Mixins*/
+/*border-radius*/
+.btn {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.custom-object {
+  -webkit-border-radius: 100px 30px/50px 10px;
+  -moz-border-radius: 100px 30px/50px 10px;
+  border-radius: 100px 30px/50px 10px;
+  background-color: #c6eeff;
+  width: 300px;
+  height: 300px;
+  border: #56c7ff;
+}
+.custom-object:hover {
+  opacity: 0.5;
+}
+/*striped table*/
+table tr {
+  background-color: #eee;
+}
+table tr.even,
+table tr:nth-child(even) {
+  background-color: #fff;
+}
+table td {
+  padding: 4px 10px;
+}
+table#users tr {
+  background-color: #494848;
+}
+table#users tr.even,
+table#users tr:nth-child(even) {
+  background-color: #303030;
+}
+table#users td,
+table#users th {
+  color: #fff;
+}
+/*comma-list*/
+.custom-list li {
+  display: inline;
+}
+.custom-list li:after {
+  content: ', ';
+}
+.custom-list li:last-child:after {
+  content: '';
+}

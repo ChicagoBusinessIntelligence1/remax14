@@ -1,0 +1,13 @@
+/**********************
+     =top-navbar
+***********************/
+.logo-text {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.navbar-custom ul {
+  margin-top: 5px;
+}
+.navbar-custom ul li a {
+  font-size: 18px;
+}

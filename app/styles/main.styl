@@ -1,76 +1,21 @@
 @import 'nib'
-
-/**********************
-    Using Stylus Examples
-***********************/
-
-/*Mixins*/
-any-radius()
-  -webkit-border-radius arguments
-  -moz-border-radius arguments
-  border-radius arguments
-
-
-.custom-object
-  border-radius 100px 30px / 50px 10px
-  background-color #245269
-  width 300px
-  height 300px
-  border red
-  &:hover
-    opacity 0.5
+@import 'header'
+@import 'footer'
+@import 'aside'
+@import 'functions'
+@import 'practicing'
 
 html
   -webkit-font-smoothing antialized
 
 body
-  background-color: rgb(255, 255, 255);
-  color: rgb(51, 51, 51);
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  background-color rgb(255, 255, 255)
+  color rgb(51, 51, 51)
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size 14px
   position relative
   line-height 30px
   font-size 17px
-
-/**********************
-     =top-navbar
-***********************/
-.logo-text
-  margin-top 10px
-  margin-bottom 15px
-
-
-.img-fb
-  width 25px;
-  height 25px;
-
-a.btn
-  border-radius 15px
-  background: linear-gradient(top, #eee, 90% white, 10% black);
-
-.navbar-custom
-  ul
-    margin-top 5px
-    li
-      a
-        font-size 18px
-
-/**********************
-     =sv-aside-nav
-**********************/
-.list-aside-nav
-  line-height 46px
-  margin-bottom 25px
-
-/**********************
-     =sv-aside-panel
-**********************/
-.panel-info
-  background-color rgba(0, 195, 255, 0.09)
-  border-color rgba(0, 151, 197, 0.09)
-  padding 15px
-  font-size 14px
-  line-height 26px
 
 /**********************
      =main content
@@ -103,23 +48,3 @@ a.btn
   margin-bottom 5px !important
   display inline-block
 
-/**********************
-    =footer
-***********************/
-
-.footer
-  background-color rgb(245, 245, 245)
-  bottom 0px
-  box-sizing border-box
-  color rgb(51, 51, 51)
-  display block
-  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
-  font-size 14px
-  height 60px
-  line-height 20px
-  position relative
-  width 100%
-
-.copyright
-  display inline-block
-  margin-top 10px

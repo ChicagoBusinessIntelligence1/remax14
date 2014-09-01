@@ -1,0 +1,32 @@
+.logo-text {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.navbar-custom ul {
+  margin-top: 5px;
+}
+.navbar-custom ul li a {
+  font-size: 18px;
+}
+/**********************
+    =footer
+***********************/
+.footer {
+  background-color: #f5f5f5;
+  bottom: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #333;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 60px;
+  line-height: 20px;
+  position: relative;
+  width: 100%;
+}
+.copyright {
+  display: inline-block;
+  margin-top: 10px;
+}

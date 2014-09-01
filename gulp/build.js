@@ -17,7 +17,7 @@ gulp.task('nib', function () {
         .pipe(gulp.dest('app/styles/nib'));
 });
 
-
+//register task jade
 gulp.task('jade', function() {
     var YOUR_LOCALS = {};
 

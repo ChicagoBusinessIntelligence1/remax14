@@ -9,11 +9,27 @@ angular.module('app')
         $scope.auth.$getCurrentUser().then(function (user) {
             if (!_.isNull(user)) {
                 $scope.email = user.email;
+                $scope.userLink = user.thirdPartyUserData.link;
+                $scope.userName = user.thirdPartyUserData.first_name;
+                $scope.userPic = user.thirdPartyUserData.picture.data.url;
             }
         })
 
         $scope.fenLogout = function () {
             $scope.auth.$logout();
             console.log('No current user');
+        }
+
+        $scope.loginFb = function () {
+            $scope.auth.$login('facebook',
+                {
+                    rememberMe: true,
+                    scope: 'email,user_likes'
+                }
+            ).then(function (user) {
+                    $scope.userLink = user.thirdPartyUserData.link;
+                    $scope.userName = user.thirdPartyUserData.first_name;
+                    $scope.userPic = user.thirdPartyUserData.picture.data.url;
+                });
         }
     });

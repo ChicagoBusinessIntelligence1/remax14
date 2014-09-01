@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .controller('LoginCtrl', function ($scope, url, $firebaseSimpleLogin, $state, authService) {
         $scope.loginError = false;
         $scope.email = {data: 'admin@gmail.com'};
@@ -9,5 +9,5 @@ angular.module('fengshui')
         $scope.fenLogout = function () {
             $scope.auth.$logout();
                 console.log('No current user');
-        }
+        };
     });

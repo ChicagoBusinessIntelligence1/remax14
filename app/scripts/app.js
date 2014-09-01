@@ -1,6 +1,6 @@
 'use strict';
 
-var fengshui = angular.module('fengshui', ['firebase', 'ui.router'])
+var app = angular.module('app', ['firebase', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('app', {
@@ -28,9 +28,9 @@ var fengshui = angular.module('fengshui', ['firebase', 'ui.router'])
                 templateUrl: '../views/login.html'
             });
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
     });
 
 
-fengshui.value('url', 'https://fengshui2.firebaseio.com/');
+app.value('url', 'https://fengshui2.firebaseio.com/');
 

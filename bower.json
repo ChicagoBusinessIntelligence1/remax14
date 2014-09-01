@@ -1,7 +1,7 @@
 {
-  "name": "fengshui",
+    "name": "app",
   "version": "0.0.0",
-  "apppath": "fengshui",
+    "apppath": "app",
   "dependencies": {
     "modernizr": "2.8.x",
     "jquery": "2.x.x",
@@ -11,7 +11,8 @@
     "angular-ui-router": "0.2.10",
     "angularfire": "~0.8.0",
     "underscore": "~1.7.0",
-    "bootstrap": "~3.2.0"
+      "bootstrap": "~3.2.0",
+      "angular-strap": "~2.0.0"
   },
   "devDependencies": {}
 }

@@ -1,16 +1,19 @@
 
 <form id="login" name="login" ng-submit="fenLogin(email.data,pass.data)" novalidate="novalidate">
   <div data-alert="data-alert" ng-show="loginError" class="alert-box warning round">
-    <Incorrect>login or password</Incorrect><a href="#" class="close">&times;</a>
+    Incorrect login or password
+    a.close(href="#") &times;
   </div>
-  <legend>Login</legend>
-  <div class="form-group">
-    <label ng-class="{'error':login.email.$invalid &amp;&amp; login.$dirty}">Email:</label>
-    <input type="email" name="email" id="email" placeholder="email" ng-model="email.data" required="required" class="form-control"/>
-  </div>
-  <div class="form-group">
-    <label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Password:</label>
-    <input type="password" name="password" id="password" placeholder="password" ng-model="pass.data" required="required" class="form-control"/>
-  </div>
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-group">
+      <label ng-class="{'error':login.email.$invalid &amp;&amp; login.$dirty}">Email:</label>
+      <input type="email" name="email" id="email" placeholder="email" ng-model="email.data" required="required" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Password:</label>
+      <input type="password" name="password" id="password" placeholder="password" ng-model="pass.data" required="required" class="form-control"/>
+    </div>
+  </fieldset>
   <input type="submit" value="Submit" ng-disabled="login.$invalid" class="btn btn-sm btn-default"/>
 </form>

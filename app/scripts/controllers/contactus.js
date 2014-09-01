@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
   .controller('ContactusCtrl', function ($scope) {
 
   });

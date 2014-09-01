@@ -1,13 +1,11 @@
 'use strict';
 
-
-angular.module('fengshui')
+angular.module('app')
     .directive('svLogin', function () {
         return {
             templateUrl: '../views/directives/sv-login.html',
             restrict: 'E',
             controller: function ($scope, url, $firebaseSimpleLogin, $state, authService) {
-                console.log("test");
                 $scope.fenLogin = function (email, pass) {
                     if (_.isEmpty(email) || _.isEmpty(pass)) {
                         $scope.loginError = true;

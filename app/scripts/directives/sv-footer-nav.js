@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('fengshui')
+angular.module('app')
     .directive('svFooterNav', function () {
         return {
             templateUrl: '../views/directives/sv-footer-nav.html',

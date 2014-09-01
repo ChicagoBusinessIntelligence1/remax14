@@ -1,9 +1,7 @@
-form (role="form" #add-article-form name="add-article-form)
-	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Blog Post Title"/>
-	</div>
-	<div class="form-group">
-		<textarea class="add-article form-control" rows="10" placeholder="Add your article..."></textarea>
-	</div>
-	<button class="btn btn-default pull-right" href="">Post</button>
+form(method='post', name='form-add-article', id='form-add-article')
+    .form-group
+        input.form-control(type='text' placeholder='Blog Post Title')
+    .form-group
+        textarea.add-article.form-control(class='add-article form-control' rows='10' placeholder='Add your article...')
+    button.btn.btn-default.pull-right Post
 

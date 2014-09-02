@@ -1,50 +1,75 @@
 @import 'nib'
+
 @import 'header'
 @import 'footer'
 @import 'aside'
 @import 'functions'
-@import 'practicing'
 
-html
-  -webkit-font-smoothing antialized
+/**********************
+     Variables
+***********************/
 
 body
-  background-color rgb(255, 255, 255)
-  color rgb(51, 51, 51)
-  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
-  font-size 14px
-  position relative
-  line-height 30px
-  font-size 17px
+	color rgb(51, 51, 51)
+	font font-custom
+	position relative
+	line-height 30px
+
+html
+	-webkit-font-smoothing antialized
 
 /**********************
      =main content
 **********************/
 .error input, .error textarea, .error select
-  margin-bottom 16px
+	margin-bottom 16px
 
 .btn-wrapper
-  margin-bottom 25px
+	margin-bottom 25px
 
 .content-wrapper
-  height 100%
-  min-height 1000px
+	height 100%
+	min-height 1000px
 
 .article-img
-  float right
+	float right
+
+/**********************
+      =About
+***********************/
+.custom-list
+	comma-list()
+
+table
+	stripe()
+	td
+		padding 4px 10px
+
+table#users
+	stripe #303030 #494848
+	td, th
+		color white
 
 /**********************
     =contact us
 ***********************/
 
 .contact-address
-  font-size 18px
-  width 300px
-  padding 15px
+	custom-radius 15px
+	border 1px lightgray solid
+	font-size 18px
+	width 300px
+	padding 15px
 
 .business-name
-  font-size 18px
-  font-weight 700
-  margin-bottom 5px !important
-  display inline-block
+	font-size 18px
+	font-weight 700
+	margin-bottom 5px !important
+	display inline-block
+
+/**********************
+    =form
+***********************/
+textarea, input
+	border 1px solid red
 

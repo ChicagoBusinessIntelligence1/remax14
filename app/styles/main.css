@@ -14,7 +14,7 @@
   display: inline-block;
   float: left;
   margin-right: 5px;
-  margin-top: -3px;
+  margin-top: -3.125px;
 }
 .fb-name {
   display: inline-block;
@@ -36,70 +36,7 @@
   display: inline-block;
   float: left;
   margin-right: 5px;
-  margin-top: -3px;
-}
-.fb-name {
-  display: inline-block;
-  padding-top: 5px;
-}
-.footer {
-  background-color: #f5f5f5;
-  bottom: 0px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #333;
-  display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  height: 60px;
-  line-height: 20px;
-  position: relative;
-  width: 100%;
-}
-.copyright {
-  display: inline-block;
-  margin-top: 10px;
-}
-.logo-text {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-.navbar-custom ul {
-  margin-top: 5px;
-}
-.navbar-custom ul li a {
-  font-size: 18px;
-}
-.img-fb {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  float: left;
-  margin-right: 5px;
-  margin-top: -3px;
-}
-.fb-name {
-  display: inline-block;
-  padding-top: 5px;
-}
-.logo-text {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-.navbar-custom ul {
-  margin-top: 5px;
-}
-.navbar-custom ul li a {
-  font-size: 18px;
-}
-.img-fb {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  float: left;
-  margin-right: 5px;
-  margin-top: -3px;
+  margin-top: -3.125px;
 }
 .fb-name {
   display: inline-block;
@@ -135,26 +72,52 @@
   font-size: 14px;
   line-height: 26px;
 }
-.btn {
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
+.custom-panel:hover {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
-.custom-object {
-  -webkit-border-radius: 100px 30px/50px 10px;
-  -moz-border-radius: 100px 30px/50px 10px;
-  -webkit-border-radius: 100px 30px/50px 10px;
-  border-radius: 100px 30px/50px 10px;
-  background-color: #c6eeff;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #56c7ff;
+/**********************
+     Variables
+***********************/
+body {
+  color: #333;
+  font: 17px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  line-height: 30px;
 }
-.custom-object:hover {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+html {
+  -webkit-font-smoothing: antialized;
+}
+/**********************
+     =main content
+**********************/
+.error input,
+.error textarea,
+.error select {
+  margin-bottom: 16px;
+}
+.btn-wrapper {
+  margin-bottom: 25px;
+}
+.content-wrapper {
+  height: 100%;
+  min-height: 1000px;
+}
+.article-img {
+  float: right;
+}
+/**********************
+      =About
+***********************/
+.custom-list li {
+  display: inline;
+}
+.custom-list li:after {
+  content: ',';
+}
+.custom-list li:last-child:after {
+  content: '';
 }
 table tr {
   background-color: #eee;
@@ -177,49 +140,13 @@ table#users td,
 table#users th {
   color: #fff;
 }
-.custom-list li {
-  display: inline;
-}
-.custom-list li:after {
-  content: ', ';
-}
-.custom-list li:last-child:after {
-  content: '';
-}
-html {
-  -webkit-font-smoothing: antialized;
-}
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  position: relative;
-  line-height: 30px;
-  font-size: 17px;
-}
-/**********************
-     =main content
-**********************/
-.error input,
-.error textarea,
-.error select {
-  margin-bottom: 16px;
-}
-.btn-wrapper {
-  margin-bottom: 25px;
-}
-.content-wrapper {
-  height: 100%;
-  min-height: 1000px;
-}
-.article-img {
-  float: right;
-}
 /**********************
     =contact us
 ***********************/
 .contact-address {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: argument;
+  border: 1px #d3d3d3 solid;
   font-size: 18px;
   width: 300px;
   padding: 15px;
@@ -229,4 +156,11 @@ body {
   font-weight: 700;
   margin-bottom: 5px !important;
   display: inline-block;
+}
+/**********************
+    =form
+***********************/
+textarea,
+input {
+  border: 1px solid #f00;
 }

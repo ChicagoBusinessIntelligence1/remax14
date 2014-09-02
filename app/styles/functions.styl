@@ -1,0 +1,42 @@
+/**********************
+      =Variables
+***********************/
+border-default = #8D8D8D
+font-size = 17px
+font-custom = font-size "Helvetica Neue", Helvetica, Arial, sans-serif
+/**********************
+      =Mixins
+***********************/
+custom-radius()
+	-webkit-border-radius arguments
+	-moz-border-radius argument
+	border-radius argument
+	border 2px border-default solid unless @border
+
+simple-radius(n)
+	-webkit-border-radius n
+	-moz-border-radius n
+	border-radius n
+
+/*striped table*/
+stripe(even = #fff, odd = #eee)
+	tr
+		background-color odd
+		&.even
+		&:nth-child(even)
+			background-color even
+
+/*comma-list*/
+inline-list()
+	li
+		display inline
+
+comma-list()
+	inline-list()
+	li
+		&:after
+			content ','
+		&:last-child:after
+			content ''
+
+

@@ -22,8 +22,8 @@ var app = angular.module('app', ['firebase', 'ui.router', 'mgcrea.ngStrap.toolti
                 controller: 'ContactusCtrl',
                 templateUrl: '../views/contactus.html'
             }).
-            state('app.login', {
-                url: '/login',
+            state('app.admin', {
+                url: '/admin',
                 controller: 'LoginCtrl',
                 templateUrl: '../views/login.html'
             });

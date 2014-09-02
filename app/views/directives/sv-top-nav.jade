@@ -1,22 +1,22 @@
 .header-wrapper
 	.top-menu
 		.container
-			ul.list-inline.pull-right
+			ul.list-inline.pull-right.ul-top-menu
 				li(ng-show='!auth.user')
-					a(data-sv-login-popover='') Login
+					a(data-sv-login-popover='')
+						<i class="fa fa-sign-in fa-lg"></i> Sign In
 				li(ng-show='auth.user')
 					a(href='{{userLink}}')
 						img.img-fb(ng-src="{{userPic}}")
 						span.fb-name {{userName}}
 				li(ng-show='auth.user')
 					a(ng-click='fenLogout()')
-						<i class="fa fa-sign-out"></i>
-
+						<i class="fa fa-sign-out fa-lg"></i> Sign Out
 	.navbar.navbar-default
 		.container.navbar-custom
 			.navbar-header
 				h1.logo-text Feng Shui Blog
-			ul.nav.navbar-nav.navbar-rigth.pull-rigth
+			ul.nav.navbar-nav.pull-right
 				li
 					a.btn.btn-link(ui-sref='app.home') Home
 				li

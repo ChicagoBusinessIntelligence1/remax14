@@ -77,17 +77,20 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: alpha(opacity=70);
 }
+.test {
+  background-color: #00b3ee;
+}
 /**********************
      Variables
 ***********************/
+html {
+  -webkit-font-smoothing: antialized;
+}
 body {
   color: #333;
   font: 17px "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   line-height: 30px;
-}
-html {
-  -webkit-font-smoothing: antialized;
 }
 /**********************
      =main content

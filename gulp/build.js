@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var plumber = require('gulp-plumber');
 
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license']
@@ -22,11 +23,9 @@ gulp.task('jade', function () {
 
     gulp.src('app/**/*.jade')
         //compiler does not stop on error
-        .pipe($.plumber())
+        .pipe(plumber())
         .pipe(jade({
-            pretty: true,
-            compileDebug: true,
-            debug: true
+            compileDebug: true
         }))
         .pipe(gulp.dest('app/'));
 });
@@ -35,7 +34,6 @@ gulp.task('jade', function () {
 gulp.task('stylus', function () {
     gulp.src('app/styles/**/*.styl')
         //compiler does not stop on error
-        .pipe($.plumber())
         .pipe(stylus({use: [nib()]}))
         .pipe(gulp.dest('app/styles/'));
 });

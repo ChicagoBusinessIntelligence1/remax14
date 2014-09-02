@@ -1,27 +1,32 @@
 @import 'nib'
 
+@import 'functions'
+
+
 /**********************
      =top-navbar
 ***********************/
 .logo-text
-  margin-top 10px
-  margin-bottom 15px
+	margin-top 10px
+	margin-bottom 15px
 
 .navbar-custom
-  ul
-    margin-top 5px
-    li
-      a
-        font-size 18px
+	ul
+		margin-top 5px
+		li
+			a
+				font-size 18px
 
 .img-fb
-  width w = 25px
-  height 25px
-  display inline-block
-  float left
-  margin-right (w / 5)
-  margin-top (@height / 2)
+	width w = 25px
+	height 25px
+	float left
+	margin-right (w / 3)
+	margin-top (@height / 2)
 
 .fb-name
-  display inline-block
-  padding-top 5px
+	link-custom()
+	font-size 16px
+	display inline-block
+	padding-top 10px
+

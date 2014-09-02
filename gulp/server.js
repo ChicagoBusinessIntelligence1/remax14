@@ -33,13 +33,15 @@ function browserSyncInit(baseDir, files, browser) {
             middleware: proxyMiddleware
         },
         browser: browser,
+        //remove popover from browser on  start
         notify: false,
-        logLevel: "silent"
+        //
+        logLevel: "info"
     });
 
 }
 
-gulp.task('serve', ['watch', 'styles'], function () {
+gulp.task('serve', ['watch', 'stylus'], function () {
     browserSyncInit([
         'app',
         '.tmp'

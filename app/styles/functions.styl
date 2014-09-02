@@ -2,8 +2,8 @@
       =Variables
 ***********************/
 border-default = #8D8D8D
-font-size = 17px
-font-custom = font-size "Helvetica Neue", Helvetica, Arial, sans-serif
+font-size-custom = 14px
+font-custom = font-size-custom "Helvetica Neue", Helvetica, Arial, sans-serif
 /**********************
       =Mixins
 ***********************/
@@ -39,3 +39,10 @@ comma-list()
 		&:last-child:after
 			content ''
 
+link-custom()
+	color #494949 !important
+	font-size 12px unless @font-size
+	&:hover
+	&:active
+	&:focus
+		color #a7a7a7

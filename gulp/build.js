@@ -69,7 +69,7 @@ gulp.task('partials', function () {
         .pipe(gulp.dest('.tmp/partials'))
 });
 
-gulp.task('html', ['styles', 'scripts', 'partials'], function () {
+gulp.task('html', ['stylus', 'scripts', 'partials'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 

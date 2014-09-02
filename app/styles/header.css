@@ -14,12 +14,18 @@
 .img-fb {
   width: 25px;
   height: 25px;
-  display: inline-block;
   float: left;
-  margin-right: 5px;
+  margin-right: 8.333333333333334px;
   margin-top: 12.5px;
 }
 .fb-name {
+  color: #494949 !important;
+  font-size: 16px;
   display: inline-block;
-  padding-top: 5px;
+  padding-top: 10px;
+}
+.fb-name:hover,
+.fb-name:active,
+.fb-name:focus {
+  color: #a7a7a7;
 }

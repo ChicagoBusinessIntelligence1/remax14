@@ -11,14 +11,20 @@
 .img-fb {
   width: 25px;
   height: 25px;
-  display: inline-block;
   float: left;
-  margin-right: 5px;
+  margin-right: 8.333333333333334px;
   margin-top: 12.5px;
 }
 .fb-name {
+  color: #494949 !important;
+  font-size: 16px;
   display: inline-block;
-  padding-top: 5px;
+  padding-top: 10px;
+}
+.fb-name:hover,
+.fb-name:active,
+.fb-name:focus {
+  color: #a7a7a7;
 }
 .logo-text {
   margin-top: 10px;
@@ -33,14 +39,20 @@
 .img-fb {
   width: 25px;
   height: 25px;
-  display: inline-block;
   float: left;
-  margin-right: 5px;
+  margin-right: 8.333333333333334px;
   margin-top: 12.5px;
 }
 .fb-name {
+  color: #494949 !important;
+  font-size: 16px;
   display: inline-block;
-  padding-top: 5px;
+  padding-top: 10px;
+}
+.fb-name:hover,
+.fb-name:active,
+.fb-name:focus {
+  color: #a7a7a7;
 }
 .footer {
   background-color: #f5f5f5;
@@ -72,6 +84,11 @@
   font-size: 14px;
   line-height: 26px;
 }
+.custom-panel {
+  -webkit-border-radius: ;
+  -moz-border-radius: argument;
+  border: 2px #8d8d8d solid;
+}
 .custom-panel:hover {
   opacity: 0.7;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
@@ -85,7 +102,7 @@ html {
 }
 body {
   color: #333;
-  font: 17px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   line-height: 30px;
 }

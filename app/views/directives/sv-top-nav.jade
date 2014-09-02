@@ -3,13 +3,14 @@
 		.container
 			ul.list-inline.pull-right
 				li(ng-show='!auth.user')
-					a.btn.btn-link(data-sv-login-popover='') Login
+					a(data-sv-login-popover='') Login
 				li(ng-show='auth.user')
-					a.btn.btn-link(href='{{userLink}}')
+					a(href='{{userLink}}')
 						img.img-fb(ng-src="{{userPic}}")
 						span.fb-name {{userName}}
 				li(ng-show='auth.user')
-					a.btn.btn-link(ng-click='fenLogout()') Log Out
+					a(ng-click='fenLogout()')
+						<i class="fa fa-sign-out"></i>
 
 	.navbar.navbar-default
 		.container.navbar-custom

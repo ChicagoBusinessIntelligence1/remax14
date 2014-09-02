@@ -9,18 +9,16 @@ nav.navbar.navbar-default(role="navigation")
 			span.icon-bar
 		a.navbar-brand(href="#")
 			i.fa.fa-university
-			| Brand
+			| Your Brand
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
 		ul.nav.navbar-nav
+			li.active
+				a(href="#") Link
 			li
-				a.btn.btn-link(ui-sref='app.home') Home
-			li
-				a.btn.btn-link(ui-sref='app.about') About
-			li
-				a.btn.btn-link(ui-sref='app.contact') Contact Us
+				a(href="#") Link
 			li.dropdown
-				a.dropdown-toggle(href="#" data-toggle="dropdown") Our Services
+				a.dropdown-toggle(href="#" data-toggle="dropdown") Dropdown
 					span.caret
 				ul.dropdown-menu(role="menu")
 					li
@@ -39,15 +37,21 @@ nav.navbar.navbar-default(role="navigation")
 		form.navbar-form.navbar-left(role="search")
 			.form-group
 				input.form-control(type="text" placeholder="Search")
-			button.btn.btn-default.btn-search(type="submit") Submit
-		ul.nav.navbar-nav.pull-right
-			li(ng-show='!auth.user')
-				a(data-sv-login-popover='')
-					<i class="fa fa-sign-in fa-lg"></i> Sign In
-			li(ng-show='auth.user')
-				a(href='{{userLink}}')
-					img.img-fb(ng-src="{{userPic}}")
-					span.fb-name {{userName}}
-			li(ng-show='auth.user')
-				a(ng-click='fenLogout()')
-					<i class="fa fa-sign-out fa-lg"></i> Sign Out
+				button.btn.btn-default(type="submit") Submit
+
+		ul.nav.navbar-nav.navbar-right
+			li
+				a(href="#") Link
+			li.dropdown
+				a.dropdown-toggle(href="#" data-toggle="dropdown") Dropdown
+					span.caret
+				ul.dropdown-menu(role="menu")
+					li
+						a(href="#") Action
+					li
+						a(href="#") Another action
+					li
+						a(href="#") Something else here
+					li.divider
+						li
+							a(href="#") Separated link

@@ -45,14 +45,11 @@ gulp.task('styles', function () {
         .pipe($.rubySass({style: 'compact'}))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('app/styles'))
-        .pipe($.size());
 });
 
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
         .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish'))
-        .pipe($.size());
 });
 
 gulp.task('partials', function () {
@@ -63,11 +60,10 @@ gulp.task('partials', function () {
             quotes: true
         }))
         .pipe($.ngHtml2js({
-            moduleName: 'fengshui',
+            moduleName: 'app',
             prefix: 'partials/'
         }))
         .pipe(gulp.dest('.tmp/partials'))
-        .pipe($.size());
 });
 
 gulp.task('html', ['styles', 'scripts', 'partials'], function () {
@@ -95,7 +91,6 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
         .pipe($.useref())
         .pipe($.revReplace())
         .pipe(gulp.dest('dist'))
-        .pipe($.size());
 });
 
 gulp.task('images', function () {
@@ -106,7 +101,6 @@ gulp.task('images', function () {
             interlaced: true
         })))
         .pipe(gulp.dest('dist/images'))
-        .pipe($.size());
 });
 
 gulp.task('fonts', function () {
@@ -114,7 +108,6 @@ gulp.task('fonts', function () {
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
         .pipe($.flatten())
         .pipe(gulp.dest('dist/fonts'))
-        .pipe($.size());
 });
 
 gulp.task('clean', function () {

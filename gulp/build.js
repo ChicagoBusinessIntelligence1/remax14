@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var plumber = require('gulp-plumber');
 
 var $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license']
@@ -22,7 +23,7 @@ gulp.task('jade', function () {
 
     gulp.src('app/**/*.jade')
         //compiler does not stop on error
-        .pipe($.plumber())
+        .pipe(plumber())
         .pipe(jade({
             compileDebug: true
         }))

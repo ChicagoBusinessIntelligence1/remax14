@@ -24,9 +24,7 @@ gulp.task('jade', function () {
         //compiler does not stop on error
         .pipe($.plumber())
         .pipe(jade({
-            pretty: true,
-            compileDebug: true,
-            debug: true
+            compileDebug: true
         }))
         .pipe(gulp.dest('app/'));
 });
@@ -35,7 +33,6 @@ gulp.task('jade', function () {
 gulp.task('stylus', function () {
     gulp.src('app/styles/**/*.styl')
         //compiler does not stop on error
-        .pipe($.plumber())
         .pipe(stylus({use: [nib()]}))
         .pipe(gulp.dest('app/styles/'));
 });

@@ -1,21 +1,25 @@
-.navbar.navbar-default
-	.container.navbar-custom
-		.navbar-header
-			h1.logo-text Feng Shui Blog
-		ul.nav.navbar-nav.navbar-left.pull-left
-			li
-				a.btn.btn-link(ui-sref='app.home') Home
-			li
-				a.btn.btn-link(ui-sref='app.about') About
-			li
-				a.btn.btn-link(ui-sref='app.contact') Contact Us
-
-		ul.nav.navbar-nav.nav-bar-right.pull-right
-			li(ng-show='!auth.user')
-				a.btn.btn-link(data-sv-login-popover='') Login
-			li(ng-show='auth.user')
-				a(href='{{userLink}}')
-					img.img-fb(ng-src="{{userPic}}")
+.header-wrapper
+	.top-menu
+		.container
+			ul.list-inline.pull-right
+				li(ng-show='!auth.user')
+					a.btn.btn-link(data-sv-login-popover='') Login
+				li(ng-show='auth.user')
+					a.btn.btn-link(href='{{userLink}}')
+						img.img-fb(ng-src="{{userPic}}")
 						span.fb-name {{userName}}
-			li(ng-show='auth.user')
-				a.btn.btn-link(ng-click='fenLogout()') Log Out
+				li(ng-show='auth.user')
+					a.btn.btn-link(ng-click='fenLogout()') Log Out
+
+	.navbar.navbar-default
+		.container.navbar-custom
+			.navbar-header
+				h1.logo-text Feng Shui Blog
+			ul.nav.navbar-nav.navbar-rigth.pull-rigth
+				li
+					a.btn.btn-link(ui-sref='app.home') Home
+				li
+					a.btn.btn-link(ui-sref='app.about') About
+				li
+					a.btn.btn-link(ui-sref='app.contact') Contact Us
+

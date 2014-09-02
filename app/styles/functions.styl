@@ -7,16 +7,16 @@ font-custom = font-size "Helvetica Neue", Helvetica, Arial, sans-serif
 /**********************
       =Mixins
 ***********************/
+simple-radius(n)
+	-webkit-border-radius n
+	-moz-border-radius n
+	border-radius n
+
 custom-radius()
 	-webkit-border-radius arguments
 	-moz-border-radius argument
 	border-radius argument
 	border 2px border-default solid unless @border
-
-simple-radius(n)
-	-webkit-border-radius n
-	-moz-border-radius n
-	border-radius n
 
 /*striped table*/
 stripe(even = #fff, odd = #eee)
@@ -39,6 +39,3 @@ comma-list()
 		&:last-child:after
 			content ''
 
-
-.test
-	background-color #00b3ee

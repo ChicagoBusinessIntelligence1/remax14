@@ -36,7 +36,7 @@ function browserSyncInit(baseDir, files, browser) {
         //remove popover from browser on  start
         notify: false,
         //
-        logLevel: "info"
+        logLevel: "silent"
     });
 
 }

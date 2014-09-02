@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 
 var $ = require('gulp-load-plugins')({
@@ -33,7 +34,9 @@ gulp.task('jade', function () {
 
 gulp.task('stylus', function () {
     gulp.src('app/styles/**/*.styl')
-        //compiler does not stop on error
+        .on('error', gutil.log)
+        .on('error', gutil.beep)
+        .pipe(plumber())
         .pipe(stylus({use: [nib()]}))
         .pipe(gulp.dest('app/styles/'));
 });

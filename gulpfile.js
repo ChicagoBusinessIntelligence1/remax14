@@ -8,9 +8,8 @@ gulp.task('default', ['clean'], function () {
 });
 
 //---------------------------------------------------------
-var htmlmin = require('gulp-minifier');
 
-gulp.task('htmlmin', function () {
+gulp.task('test', function () {
     gulp.src('app/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('app/2'))

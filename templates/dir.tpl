@@ -1,25 +1,12 @@
-/// <reference path="../../bower_components/DefinitelyTyped/angularjs/angular.d.ts" />
+'use strict';
 
+angular.module('app')
+  .directive('#jname#', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'views/directives/#dname#.html',
+      link: function postLink(scope, element, attrs) {
 
-var #jname# = () => {
-
-    return{
-        restrict: 'E',
-        templateUrl: 'views/directives/#dname#.html',
-        replace: true,
-        scope: {
-            ctrl: '=',
-
-            text: '@',
-            func: '&'
-        },
-        controller($scope){
-
-        },
-        link: (scope, element, attrs) => {
-
-
-
-        }
-    }
-}
+      }
+    };
+  });

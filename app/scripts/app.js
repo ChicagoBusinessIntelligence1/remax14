@@ -29,8 +29,7 @@ var app = angular.module('app', ['firebase', 'ui.router', 'mgcrea.ngStrap.toolti
         controller: 'LoginCtrl',
         templateUrl: '../views/login.html'
       })
-
-//#state
+    //#state
   });
 
 

@@ -1,10 +1,16 @@
-/// <reference path="../../bower_components/DefinitelyTyped/angularjs/angular.d.ts" />
+'use strict';
 
-class #name#Service {
-    constructor(public $http:ng.IHttpService, public $q:ng.IQService) {
-    }
+angular.module('app')
+  .factory('#name#', function () {
+    // Service logic
+    // ...
 
-    Method() {
-        return 1;
-    }
-}
+    var meaningOfLife = 42;
+
+    // Public API here
+    return {
+      someMethod: function () {
+        return meaningOfLife;
+      }
+    };
+  });

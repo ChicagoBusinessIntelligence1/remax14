@@ -1,5 +1,8 @@
-class #name# {
-    static filter(value:boolean):string {
-        return value === true ? "Yes" : "No";
-    }
-}
+'use strict';
+
+angular.module('app')
+  .filter('#name#', function () {
+    return function (input) {
+      return 'test filter: ' + input;
+    };
+  });

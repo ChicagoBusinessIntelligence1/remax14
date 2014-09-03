@@ -20,7 +20,7 @@ nav.navbar.navbar-default(role="navigation")
 			li
 				a.btn.btn-link(ui-sref='app.contact') Contact Us
 			li.dropdown
-				a.dropdown-toggle(href="#" data-toggle="dropdown") Our Services
+				a.dropdown-toggle(href="#" data-toggle="dropdown") Our <i class="fa fa-sign-in fa-lg"></i> Services
 					span.caret
 				ul.dropdown-menu(role="menu")
 					li
@@ -43,15 +43,18 @@ nav.navbar.navbar-default(role="navigation")
 		ul.nav.navbar-nav.pull-right
 			li(ng-show='!auth.user')
 				a(data-sv-login-popover='')
-					<i class="fa fa-sign-in fa-lg"></i> Sign In
+					i.fa.fa-sign-out.fa-lg
+					|Sign In
 			li(ng-show='auth.user.provider==\'facebook\'')
 				a(href='{{userLink}}')
 					img.img-fb(ng-src="{{userPic}}")
 					span.fb-name {{userName}}
 			li(ng-show='auth.user.provider==\'password\'')
-				img.img-fb(src="../../images/admin.png")
-				span.fb-name Admin
+				a(href='')
+					img.img-admin(src="../../images/admin.png")
+					span.fb-name Admin
 			li(ng-show='auth.user')
 				a(ng-click='fenLogout()')
-					<i class="fa fa-sign-out fa-lg"></i> Sign Out
+					i.fa.fa-sign-out.fa-lg
+					|Sign Out
 

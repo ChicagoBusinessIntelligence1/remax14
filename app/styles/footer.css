@@ -4,6 +4,9 @@
 .top-menu .container ul li a {
   cursor: pointer;
 }
+.btn-search {
+  margin-left: 5px;
+}
 .ul-top-menu {
   margin-bottom: 0px !important;
 }
@@ -11,8 +14,8 @@
   margin-top: 10px;
   margin-bottom: 15px;
 }
-.navbar-custom ul {
-  margin-top: 5px;
+.navbar-custom {
+  padding: 10px;
 }
 .navbar-custom ul li a {
   font-size: 18px;
@@ -31,6 +34,17 @@
 .fb-name:active,
 .fb-name:focus {
   color: #a7a7a7;
+}
+.form-header {
+  width: 280px;
+  display: inline-block;
+  margin-left: 15px;
+}
+.avatar {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  left: -5px;
 }
 /**********************
     =footer

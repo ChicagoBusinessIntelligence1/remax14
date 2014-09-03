@@ -18,10 +18,6 @@
 	font-size 14px
 	line-height 26px
 
-.custom-panel
-	custom-radius()
-	&:hover
-		opacity 0.7
 /*------------------------------------------------*/
 /*	Main Navigation
 /*------------------------------------------------*/
@@ -154,15 +150,72 @@ ul.main-menu .sub-menu.open
 	padding-left: 10px;
 }
 
-@media screen and (max-width: 992px) {
-	.left-sidebar {
-		display: none;
+
+
+/* sidebar content */
+
+.sidebar-content .panel-heading h5 {
+	margin: 0;
+}
+.sidebar-content p {
+	font-size: 0.85em;
+}
+.sidebar-content > h5 {
+	display: block;
+	font-size: 0.9em;
+	text-align: left;
+	margin-bottom: 0;
+}
+.sidebar-content .list-info-sidebar {
+	border: 1px solid #ccc;
+}
+.sidebar-content .list-info-sidebar li {
+	font-size: 12px;
+}
+.sidebar-content .list-info-sidebar .data-name {
+	width: 100%;
+	background-color: transparent;
+}
+@media screen and (min-width: 1366px) {
+	.sidebar-content .list-info-sidebar .data-name {
+		width: 10em;
 	}
+}
+@media screen and (min-width: 1850px) {
+	.sidebar-content .list-info-sidebar .data-name {
+		width: 15em;
+	}
+}
+.sidebar-content .list-info-sidebar .progress {
+	margin-bottom: 0;
 }
 
-@media screen and (min-width: 992px) {
-	.left-sidebar {
-		display: block !important;
-		overflow: visible !important;
-	}
+.left-sidebar.minified .sidebar-content {
+	display: none;
 }
+
+/* 2 column data presentation */
+.data-row {
+	margin-bottom: 0;
+}
+.data-row .data-name,
+.data-row .data-value {
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	vertical-align: auto;
+	zoom: 1;
+	display: inline;
+	padding: 5px;
+}
+.data-row .data-name {
+	width: 12em;
+	background-color: #ececec;
+	color: #b9b9b9;
+	font-size: 0.9em;
+	vertical-align: top;
+}
+.data-row .data-value {
+	padding-left: 10px;
+}
+

@@ -1,18 +1,23 @@
 'use strict';
+/**********************
+ Requires
+ ***********************/
 
 var gulp = require('gulp');
+var args = require('yargs').argv;
+var gulpif = require('gulp-if');
 
-require('require-dir')('./gulp');
-gulp.task('default', ['clean'], function () {
-    gulp.start('build');
+
+gulp.task('sv', function () {
+  var test = args.type;
+  console.log(test);
 });
+
 
 //---------------------------------------------------------
 
-gulp.task('test', function () {
-    gulp.src('app/*.html')
-        .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('app/2'))
+require('require-dir')('./gulp');
+gulp.task('default', ['clean'], function () {
+  gulp.start('build');
 });
-
 

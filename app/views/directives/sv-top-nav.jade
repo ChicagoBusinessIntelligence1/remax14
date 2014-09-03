@@ -44,10 +44,14 @@ nav.navbar.navbar-default(role="navigation")
 			li(ng-show='!auth.user')
 				a(data-sv-login-popover='')
 					<i class="fa fa-sign-in fa-lg"></i> Sign In
-			li(ng-show='auth.user')
+			li(ng-show='auth.user.provider==\'facebook\'')
 				a(href='{{userLink}}')
 					img.img-fb(ng-src="{{userPic}}")
 					span.fb-name {{userName}}
+			li(ng-show='auth.user.provider==\'password\'')
+				img.img-fb(src="../../images/admin.png")
+				span.fb-name Admin
 			li(ng-show='auth.user')
 				a(ng-click='fenLogout()')
 					<i class="fa fa-sign-out fa-lg"></i> Sign Out
+

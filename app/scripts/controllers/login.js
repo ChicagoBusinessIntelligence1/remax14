@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-    .controller('LoginCtrl', function ($scope, url, $firebaseSimpleLogin, $state, authService) {
+  .controller('LoginCtrl', function ($scope, url, $firebaseSimpleLogin, $state) {
         $scope.loginError = false;
         $scope.email = {data: 'admin@gmail.com'};
         $scope.pass = {data: '123456'};

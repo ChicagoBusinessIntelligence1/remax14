@@ -5,7 +5,7 @@ angular.module('app')
         return {
             templateUrl: '../views/directives/sv-login.html',
             restrict: 'E',
-            controller: function ($scope, url, $firebaseSimpleLogin, $state, authService) {
+          controller: function ($scope, url, $firebaseSimpleLogin, $state) {
                 $scope.fenLogin = function (email, pass) {
                     if (_.isEmpty(email) || _.isEmpty(pass)) {
                         $scope.loginError = true;
@@ -19,7 +19,6 @@ angular.module('app')
                         console.log('Current user is: ' + user.email);
 
                         // Sucess
-                        authService.setUser(user);
 
                         $state.go('app.home');
                         $scope.loginError = false;

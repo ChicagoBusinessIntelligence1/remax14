@@ -391,13 +391,14 @@ module.exports = function (grunt) {
 
     });
 
-    jname = _.str.dasherize(jname);
+      jnameDashed = _.str.dasherize(jname);
+
 
     var oname = dname;
     var directivef = directive.replace(/#uname#/g, uname).replace(/#lname#/g, lname)
       .replace(/#jname#/g, jname).replace(/#dname#/g, dname);
 
-    var dirFileName = d + jname + '.js', directivef;
+      var dirFileName = d + jnameDashed + '.js', directivef;
     if (!rm)
       grunt.file.write(dirFileName, directivef);
     else {
@@ -432,7 +433,7 @@ module.exports = function (grunt) {
 
     /////////////////// index/
     var ipath = 'app/index.html';
-    var src = '<script src="scripts/directives/' + jname + '.js"></script>\r\n';
+      var src = '<script src="scripts/directives/' + jnameDashed + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
     //////////////////
     var directiveTemplate = '.well ' + oname + ' Template';

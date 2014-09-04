@@ -16,7 +16,6 @@ angular.module('app')
                         email: email,
                         password: pass
                     }).then(function (user) {
-                        console.log('Current user is: ' + user.email);
 
                         // Sucess
 

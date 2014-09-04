@@ -123,7 +123,7 @@
 }
 .label-default-custom {
   padding: 10px;
-  background-color: #999;
+  background-color: #848484;
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
@@ -205,6 +205,10 @@ ul.main-menu .sub-menu li.active a {
 ul.main-menu .sub-menu.open {
   overflow: hidden;
   display: block;
+}
+.left-sidebar {
+  padding-right: 0;
+  padding-left: 0;
 }
 .left-sidebar.minified {
   width: 40px;
@@ -370,13 +374,22 @@ h6 {
   margin-bottom: 5px !important;
   margin-top: 5px;
 }
+.btn-link-dark {
+  color: #3c3c3c !important;
+  font-size: 12px;
+}
+.btn-link-dark:hover,
+.btn-link-dark:active,
+.btn-link-dark:focus {
+  color: #cecece;
+}
 /**********************
 
      =main content
 **********************/
 .main-content {
-  border-left: 1px #e4e4e4 solid;
-  border-right: 1px #e4e4e4 solid;
+  border-left: #dedede 1px solid;
+  border-right: #dedede 1px solid;
 }
 .error input,
 .error textarea,

@@ -21,7 +21,7 @@
 }
 .label-default-custom {
   padding: 10px;
-  background-color: #999;
+  background-color: #848484;
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
@@ -30,7 +30,7 @@
 }
 /*------------------------------------------------*/
 /*	Main Navigation
-/*------------------------------------------------*/
+st<double> /*------------------------------------------------*/
 .main-nav-toggle {
   float: left;
   color: #fff;
@@ -108,6 +108,10 @@ ul.main-menu .sub-menu li.active a {
 ul.main-menu .sub-menu.open {
   overflow: hidden;
   display: block;
+}
+.left-sidebar {
+  padding-right: 0;
+  padding-left: 0;
 }
 .left-sidebar.minified {
   width: 40px;

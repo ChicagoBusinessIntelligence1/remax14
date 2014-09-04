@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       scope: {},
-      template: '<button ng-click="showModal()" class="btn btn-link"><i class="fa fa-pencil"></i> Add New Post</button>',
+      template: '<button ng-click="showModal()" class="btn btn-link btn-link-dark"><i class="fa fa-pencil"></i> Add New Post</button>',
       controller: function ($scope) {
 
       },

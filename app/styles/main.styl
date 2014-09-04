@@ -21,7 +21,13 @@ body
 	background-color lighten(color-app, 90%)
 
 hr
-	border-color color-border-app
+	border-color color-border-dark
+
+h6
+	font-size 18px
+	font-weight 700
+	margin-bottom 5px !important
+	margin-top 5px
 
 /**********************
 
@@ -55,9 +61,9 @@ table
 		padding 4px 10px
 
 table#users
-	stripe #303030 #494848
+	stripe lighten(color-app, 25%) lighten(color-app, 10%)
 	td, th
-		color white
+		color color-lighten
 
 /**********************
     =contact us
@@ -65,16 +71,10 @@ table#users
 
 .contact-address
 	custom-radius 15px
-	border 1px lightgray solid
-	font-size 18px
+	border border-app-light
 	width 300px
 	padding 15px
 
-.business-name
-	font-size 18px
-	font-weight 700
-	margin-bottom 5px !important
-	display inline-block
 
 /**********************
     =form

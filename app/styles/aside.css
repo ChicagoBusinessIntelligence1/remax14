@@ -27,35 +27,13 @@
 /*------------------------------------------------*/
 /*	Main Navigation
 /*------------------------------------------------*/
-.main-nav-toggle {
-  float: left;
-  color: #fff;
-}
-.main-nav-toggle .fa {
-  font-size: 28px;
-}
-.main-nav-toggle:hover,
-.main-nav-toggle:focus {
-  color: #ddd;
-}
-/* breadcrumb */
-.breadcrumb li + li:before {
-  font-family: FontAwesome;
-  font-size: 14px;
-  content: "\f105";
-  color: #b2b6bf;
-  margin-right: 2px;
-  padding: 0 5px 0 2px;
-  position: relative;
-  top: 1px;
-}
 /* main menu */
-ul.main-menu {
+.aside-nav ul {
   padding-left: 0;
   border-bottom: 1px #dfdfdf solid;
   list-style-type: none;
 }
-ul.main-menu > li a {
+.aside-nav ul li a {
   display: block;
   position: relative;
   padding: 10px 0 10px 15px;
@@ -63,15 +41,28 @@ ul.main-menu > li a {
   background-color: #ececec;
   border-top: 1px solid #dfdfdf;
 }
-ul.main-menu > li a:hover {
+/*.aside-menu
+	padding-left: 0;
+	border-bottom 1px #dfdfdf solid
+	list-style-type: none;*/
+/*
+ul.main-menu > li a
+	display: block;
+	position: relative;
+	padding: 10px 0 10px 15px;
+	color: #555555;
+	background-color: #ececec;
+	border-top: 1px solid #dfdfdf;
+*/
+.aside-menu > li a:hover {
   text-decoration: none;
   background-color: #f1f1f1;
 }
-ul.main-menu > li.active > a {
+.aside-menu > li.active > a {
   font-weight: 700;
   background-color: #dfdfdf;
 }
-ul.main-menu > li:first-child > a {
+.aside-menu > li:first-child > a {
   border-top: none;
 }
 ul.main-menu > li .fa {

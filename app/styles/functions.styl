@@ -1,12 +1,20 @@
 /**********************
       =Variables
 ***********************/
-border-default = #8D8D8D
+/*colors*/
+color-app = #555555
+color-border-light = lighten(color-app, 83%)
+color-border-dark = lighten(color-app, 73%)
+
+border-app-light = color-border-light 1px solid
+border-app-dark = color-border-dark 1px solid
 font-size-custom = 14px
-font-custom = font-size-custom "Helvetica Neue", Helvetica, Arial, sans-serif
+font-app = font-size-custom "Helvetica Neue", Helvetica, Arial, sans-serif
+
 /**********************
       =Mixins
 ***********************/
+
 simple-radius(n)
 	-webkit-border-radius n
 	-moz-border-radius n

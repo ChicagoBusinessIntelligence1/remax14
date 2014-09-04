@@ -106,8 +106,8 @@ ul.main-menu .sub-menu.open {
   display: block;
 }
 .left-sidebar {
-  padding-right: 0;
-  padding-left: 0;
+  padding-right: 0px;
+  padding-left: 0px;
 }
 .main-content {
   border-left: 1px #e4e4e4 solid;

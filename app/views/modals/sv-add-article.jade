@@ -1,0 +1,20 @@
+.modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(ng-click='$hide()') &times
+        h4.modal-title(ng-bind='title')
+      .modal-body
+        form(method='post', name='form-add-article', id='form-add-article')
+          .form-group
+            input.form-control(type='text' placeholder='Blog Post Title')
+          .form-group
+            input.form-control(type='text' placeholder='Written By')
+          .form-group
+            textarea.add-article.form-control(class='add-article form-control' rows='10' placeholder='Add your article...')
+          div
+            button.btn.btn-primary.btn-lg.pull-right Post
+            br
+            br
+      .modal-footer
+        button.btn.btn-default(ng-click='$hide()') Close

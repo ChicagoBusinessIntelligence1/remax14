@@ -34,8 +34,6 @@ gulp.task('jade', function () {
 
 gulp.task('stylus', function () {
     gulp.src('app/styles/**/*.styl')
-        .on('error', gutil.log)
-        .on('error', gutil.beep)
         .pipe(plumber())
         .pipe(stylus({use: [nib()]}))
         .pipe(gulp.dest('app/styles/'));

@@ -10,8 +10,8 @@ angular.module('app')
                 var postModal = $modal(
                     {
                         title: 'Add new Post',
+                        animation: 'am-fade-and-slide-top',
                         template: '../../views/modals/sv-add-article.html',
-                        content: 'Test',
                         show: false
                     });
                 $scope.showModal = function () {

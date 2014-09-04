@@ -5,25 +5,31 @@
 @import 'aside'
 @import 'functions'
 
-
 /**********************
      Variables
 ***********************/
+* {
+	margin: 0;
+}
+
 html
 	-webkit-font-smoothing antialized
 
 body
 	color #555
 	font font-custom
-	position relative
 	line-height 30px
-	background-color 	#ECECEC;
+	background-color #ECECEC
+	position relative
+
 hr
 	border-color #DFDFDF
+
 /**********************
 
      =main content
 **********************/
+
 .error input, .error textarea, .error select
 	margin-bottom 16px
 
@@ -31,11 +37,13 @@ hr
 	margin-bottom 25px
 
 .content-wrapper
-	height 100%
-	min-height 1000px
-	background-color 	#F1F1F1
+	background-color #F1F1F1
 	border-left 1px #E4E4E4 solid
 	padding-left 30px
+	min-height 1200px
+
+.push
+	background-color #F1F1F1
 
 .article-img
 	float right

@@ -3,6 +3,8 @@
 ***********************/
 /*colors*/
 color-app = #555555
+color-lighten = lighten(color-app, 98%)
+color-darken = lighten(color-app, 90%)
 color-border-light = lighten(color-app, 83%)
 color-border-dark = lighten(color-app, 73%)
 
@@ -27,7 +29,7 @@ custom-radius()
 	border 2px border-default solid unless @border
 
 /*striped table*/
-stripe(even = #fff, odd = #eee)
+stripe(even = color-lighten, odd = color-darken)
 	tr
 		background-color odd
 		&.even

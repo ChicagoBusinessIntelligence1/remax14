@@ -335,7 +335,13 @@ body {
   background-color: #eee;
 }
 hr {
-  border-color: color-border-app;
+  border-color: #d1d1d1;
+}
+h6 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px !important;
+  margin-top: 5px;
 }
 /**********************
 
@@ -375,21 +381,21 @@ table tr {
 }
 table tr.even,
 table tr:nth-child(even) {
-  background-color: #fff;
+  background-color: #fcfcfc;
 }
 table td {
   padding: 4px 10px;
 }
 table#users tr {
-  background-color: #494848;
+  background-color: #666;
 }
 table#users tr.even,
 table#users tr:nth-child(even) {
-  background-color: #303030;
+  background-color: #808080;
 }
 table#users td,
 table#users th {
-  color: #fff;
+  color: #fcfcfc;
 }
 /**********************
     =contact us
@@ -397,16 +403,9 @@ table#users th {
 .contact-address {
   -webkit-border-radius: 15px;
   -moz-border-radius: argument;
-  border: 1px #d3d3d3 solid;
-  font-size: 18px;
+  border: 1px solid #e2e2e2 1px solid;
   width: 300px;
   padding: 15px;
-}
-.business-name {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px !important;
-  display: inline-block;
 }
 /**********************
     =form

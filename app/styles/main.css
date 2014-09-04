@@ -333,7 +333,6 @@ body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 30px;
   background-color: #eee;
-  position: relative;
 }
 hr {
   border-color: color-border-app;
@@ -355,9 +354,6 @@ hr {
   border-left: #e2e2e2 1px solid;
   padding-left: 30px;
   min-height: 1200px;
-}
-.push {
-  background-color: #f1f1f1;
 }
 .article-img {
   float: right;
@@ -415,3 +411,17 @@ table#users th {
 /**********************
     =form
 ***********************/
+textarea,
+input {
+  background-color: #f7f7f7 !important;
+  color: #838383 !important;
+}
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus {
+  background-color: #fcfcfc !important;
+  color: #555 !important;
+}

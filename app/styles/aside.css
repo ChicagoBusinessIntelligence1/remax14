@@ -1,6 +1,10 @@
 /**********************
      =sv-aside-nav
 **********************/
+.left-sidebar {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 .aside-nav,
 .list-aside-nav {
   margin-bottom: 10px;
@@ -104,14 +108,6 @@ ul.main-menu .sub-menu li.active a {
 ul.main-menu .sub-menu.open {
   overflow: hidden;
   display: block;
-}
-.left-sidebar {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.main-content {
-  border-left: 1px #e4e4e4 solid;
-  border-right: 1px #e4e4e4 solid;
 }
 .left-sidebar.minified {
   width: 40px;

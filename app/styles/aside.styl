@@ -29,27 +29,33 @@
 /*------------------------------------------------*/
 /*	Main Navigation
 /*------------------------------------------------*/
-/* main menu */
-.aside-nav
-	ul
-		padding-left: 0;
-		border-bottom 1px #dfdfdf solid
-		list-style-type: none;
-			li
-				a
-					display: block;
-					position: relative;
-					padding: 10px 0 10px 15px;
-					color: #555555;
-					background-color: #ececec;
-					border-top: 1px solid #dfdfdf;
+.main-nav-toggle
+	float: left;
+	color: #fff;
 
-/*.aside-menu
+.main-nav-toggle .fa
+	font-size: 28px;
+
+.main-nav-toggle:hover, .main-nav-toggle:focus
+	color: #ddd;
+
+/* breadcrumb */
+.breadcrumb li + li:before
+	font-family: FontAwesome;
+	font-size: 14px;
+	content: "\f105";
+	color: #b2b6bf;
+	margin-right: 2px;
+	padding: 0 5px 0 2px;
+	position: relative;
+	top: 1px;
+
+/* main menu */
+ul.main-menu
 	padding-left: 0;
 	border-bottom 1px #dfdfdf solid
-	list-style-type: none;*/
+	list-style-type: none;
 
-/*
 ul.main-menu > li a
 	display: block;
 	position: relative;
@@ -57,17 +63,16 @@ ul.main-menu > li a
 	color: #555555;
 	background-color: #ececec;
 	border-top: 1px solid #dfdfdf;
-*/
 
-.aside-menu > li a:hover
+ul.main-menu > li a:hover
 	text-decoration: none;
 	background-color: #f1f1f1;
 
-.aside-menu > li.active > a
+ul.main-menu > li.active > a
 	font-weight: 700;
 	background-color: #dfdfdf;
 
-.aside-menu > li:first-child > a
+ul.main-menu > li:first-child > a
 	border-top: none;
 
 ul.main-menu > li .fa

@@ -51,10 +51,12 @@
 						span.span-top-nav {{userName}}
 				li(ng-show='auth.user.provider==\'password\'')
 					a.nav-text(href='')
-						img.img-admin(src="../../images/admin.png")
+						i.fa.fa-user.fa-lg
+						//img.img-admin(src="../../images/admin.png")
 						span.fb-name Admin
 				li(ng-show='auth.user')
 					a.nav-text(ng-click='fenLogout()')
 						i.fa.fa-sign-out.fa-lg
 						span.span-top-nav Sign Out
+
 

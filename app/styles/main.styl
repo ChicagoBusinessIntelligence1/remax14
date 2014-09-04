@@ -16,14 +16,14 @@ html
 	-webkit-font-smoothing antialized
 
 body
-	color #555
-	font font-custom
+	color color-app
+	font font-app
 	line-height 30px
-	background-color #ECECEC
+	background-color lighten(color-app, 90%)
 	position relative
 
 hr
-	border-color #DFDFDF
+	border-color color-border-app
 
 /**********************
 
@@ -37,8 +37,8 @@ hr
 	margin-bottom 25px
 
 .content-wrapper
-	background-color #F1F1F1
-	border-left 1px #E4E4E4 solid
+	background-color lighten(color-app, 94%)
+	border-left border-app-light
 	padding-left 30px
 	min-height 1200px
 
@@ -86,10 +86,5 @@ table#users
 ***********************/
 textarea
 input
-	color #a7a7a7 !important
-	&:hover
-	&:active
-	&:focus
-		color #000 !important
-
+	inp-app()
 

@@ -19,25 +19,21 @@
   border-bottom border-app-light
   list-style-type none
 
-.aside-menu > li
-  a
-    display block
-    position relative
-    padding 10px 0 10px 15px
-    color color-app
-    background-color #ececec
-    border-top border-app-light
-    &:hover
-    &:active
-    &:focus
-      border-top border-app-light
-      text-decoration none
-      background-color #f1f1f1
-
 .aside-menu
-  li.active > a
-    font-weight 700
-    background-color #dfdfdf
+  li
+    a
+      display block
+      position relative
+      padding 10px 0 10px 15px
+      color color-app
+      background-color color-darken
+      border-top border-app-light
+      &:hover
+      &:active
+      &:focus
+        border-top border-app-light
+        background-color color-content
+        text-decoration none
 
 .aside-menu > li:first-child > a
   border-top none
@@ -61,9 +57,12 @@
      =sv-aside-panel
 **********************/
 
+.app-info
+  background-color lighten(color-skin, 95%) !important
+
 h5.label-default-custom
   padding 10px
-  background-color lighten(color-app, 37%)
+  background-color lighten(color-skin, 37%)
   border-radius 0px
 
 /* info panel */

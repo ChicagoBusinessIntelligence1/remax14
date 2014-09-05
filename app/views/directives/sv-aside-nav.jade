@@ -1,26 +1,60 @@
 nav.aside-nav
-	ul.aside-menu
-		li
-			a(ui-sref='app.admin')
-				i.fa.fa-gears.fa-fw
-				span.text Admin
-		li
-			a.btn.btn-link(ng-click='showSub1()')
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 1
-				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu.list-unstyled.slide-down(ng-show='sub1Shown')
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-		li
-			a.js-sub-menu-toggle(href="#")
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 6
+  ul.aside-menu
+    li
+      a(ui-sref='app.admin')
+        i.fa.fa-gears.fa-fw
+        span.text Admin
+    li
+      a(ng-click='showSub1()')
+        i.fa.fa-clipboard.fa-fw
+        span.text Link 1
+        i.toggle-icon.fa.fa-angle-left
+      ul.sub-menu.list-unstyled.slide-down(ng-show='sub1Shown')
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
+    li
+      a(ui-sref='app.admin')
+        i.fa.fa-clipboard.fa-fw
+        span.text Link 2
+    li
+      a(ng-click='showSub2()')
+        i.fa.fa-clipboard.fa-fw
+        span.text Link 3
+        i.toggle-icon.fa.fa-angle-left
+      ul.sub-menu.list-unstyled.slide-down(ng-show='sub2Shown')
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
+    li
+      a(ui-sref='app.admin')
+        i.fa.fa-clipboard.fa-fw
+        span.text Link 4
+    li
+      a(ng-click='showSub3()')
+        i.fa.fa-clipboard.fa-fw
+        span.text Link 5
+        i.toggle-icon.fa.fa-angle-left
+      ul.sub-menu.list-unstyled.slide-down(ng-show='sub3Shown')
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
+        li
+          a(href="")
+            span.text Text
 

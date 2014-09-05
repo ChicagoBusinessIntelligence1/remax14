@@ -3,7 +3,13 @@
 angular.module('app')
     .directive('svArticle', function () {
         return {
+            restrict: 'E',
             templateUrl: '../views/directives/sv-article.html',
-            restrict: 'E'
+            scope: {
+                post: '='
+            },
+            controller: function ($scope) {
+
+            }
         };
     });

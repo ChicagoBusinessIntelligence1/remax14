@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/bower_components/angular-sanitize/.bower.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/bower_components/toastr/toastr.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/partials/home.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
@@ -11,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/mainCtrl.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-add-post-modal.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-article.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-aside-nav.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/animation/ng-animation.styl" charset="UTF-8" />
@@ -20,6 +22,8 @@
     <file url="file://$PROJECT_DIR$/app/styles/header.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/header.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/main.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/modal.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-panel.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/login.jade" charset="UTF-8" />

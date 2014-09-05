@@ -1,1 +1,30 @@
-<div class="article-wrapper"><div class="row"><div class="col-lg-12"><article><h3><a href="#">{{post.title}}</a></h3><h6>Written By<a href="#">on {{post.time | date:'short'}}</a></h6><div class="row"><div class="col-lg-12"><img src="http://placehold.it/400x240&amp;text=[img]" class="article-img"/><p>{{post.body}}</p></div></div></article></div></div><form role="form"><div class="row"><div class="col-sm-12 form-group"><textarea placeholder="Write a comment" class="form-control"></textarea></div></div></form></div>
+<div class="article-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <article><h3><a href="#">{{post.title}}</a></h3><h6>Written By<a href="#">on {{post.time |
+                date:'short'}}</a></h6>
+
+                <div class="row">
+                    <div class="col-lg-12"><p>{{post.body}}</p>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="c in post.comments">
+                                <div>{{c.user}}</div>
+                                <div>{{c.time| date:'short'}}</div>
+                                <div>{{c.comment}}</div>
+                                <hr/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <form role="form" ng-show="auth.user">
+        <div class="row">
+            <div class="col-sm-12 form-group"><textarea placeholder="Write a comment" ng-model="comment.val"
+                                                        class="form-control textarea"></textarea><br/>
+                <button ng-click="addComment(post.$id, comment.val, userName)" class="btn btn-info">Post</button>
+            </div>
+        </div>
+    </form>
+</div>

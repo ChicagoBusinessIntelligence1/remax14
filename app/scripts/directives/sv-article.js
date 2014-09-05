@@ -5,9 +5,7 @@ angular.module('app')
         return {
             restrict: 'E',
             templateUrl: '../views/directives/sv-article.html',
-            scope: {
-                post: '='
-            },
+
             controller: function ($scope) {
 
             }

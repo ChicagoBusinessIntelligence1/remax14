@@ -103,69 +103,60 @@
 .sub-menu li a .text {
   padding-left: 20px !important;
 }
-.app-info {
-  background-color: #f5f6f6 !important;
+.sidebar-content {
+  padding: 0 10px;
 }
-h5.label-default-custom {
-  padding: 10px;
-  background-color: #848994;
+.sidebar-content .text-panel {
+  padding-left: 5px;
+}
+.app-tips {
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
-.text-panel {
-  padding-left: 5px;
+.app-tips .panel-heading {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  background-color: #f5f6f6 !important;
 }
-.sidebar-content {
-  padding: 0 10px;
-  margin-top: 30px;
+.app-tips .panel-body p {
+  font-size: 12px;
 }
-.sidebar-content .panel-heading h5 {
+.app-tips .panel-heading h5 {
   margin: 0;
 }
-.sidebar-content p {
-  font-size: 0.85em;
-}
-.sidebar-content > h5 {
+h5.label-default-custom {
+  padding: 10px 15px;
+  background-color: #848994;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
   display: block;
   font-size: 0.9em;
   text-align: left;
   margin-bottom: 0;
 }
-.sidebar-content .list-info-sidebar {
-  border: 1px solid #ccc;
+.list-info-sidebar {
+  padding: 5px 10px;
+  border: 1px solid #ced0d4;
 }
-.sidebar-content .list-info-sidebar li {
-  font-size: 12px;
-}
-.sidebar-content .list-info-sidebar .data-name {
-  width: 100%;
-  background-color: transparent;
-}
-.sidebar-content .list-info-sidebar .progress {
+.list-info-sidebar li {
+  font-size: 10px;
   margin-bottom: 0;
 }
-.left-sidebar.minified .sidebar-content {
-  display: none;
-}
-.data-row {
-  margin-bottom: 0;
-}
-.data-row .data-name,
-.data-row .data-value {
+.list-info-sidebar span {
   display: block;
   vertical-align: middle;
   vertical-align: auto;
   padding: 5px;
-}
-.data-row .data-name {
-  width: 12em;
   line-height: 15px;
-  background-color: #ececec;
-  color: #b9b9b9;
-  font-size: 0.9em;
+}
+.list-info-sidebar .info-name {
+  width: 100%;
+  background-color: transparent;
+  color: #ababab !important;
+  font-size: 11px;
   vertical-align: top;
 }
-.data-row .data-value {
+.list-info-sidebar .info-value {
   padding-left: 10px;
 }
 .modal-backdrop.am-fade {

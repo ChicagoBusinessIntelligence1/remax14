@@ -64,83 +64,54 @@
      =sv-aside-panel
 **********************/
 
-.app-info
-  background-color lighten(color-skin, 95%) !important
+.sidebar-content
+  padding 0 10px
+  .text-panel
+    padding-left 5px
 
-h5.label-default-custom
-  padding 10px
-  background-color lighten(color-skin, 37%)
+/* tips panel */
+
+.app-tips
   border-radius 0px
+  .panel-heading
+    border-radius 0px
+    background-color lighten(color-skin, 95%) !important
+  .panel-body
+    p
+      font-size 12px
+  .panel-heading
+    h5
+      margin 0
 
 /* info panel */
 
-.text-panel
-  padding-left 5px
+h5.label-default-custom
+  padding 10px 15px
+  background-color lighten(color-skin, 37%)
+  border-radius 0px
+  display block
+  font-size 0.9em
+  text-align left
+  margin-bottom 0
 
-.sidebar-content {
-  padding: 0 10px;
-  margin-top: 30px;
-}
-
-.sidebar-content .panel-heading h5 {
-  margin: 0;
-}
-
-.sidebar-content p {
-  font-size: 0.85em;
-}
-
-.sidebar-content > h5 {
-  display: block;
-  font-size: 0.9em;
-  text-align: left;
-  margin-bottom: 0;
-}
-
-.sidebar-content .list-info-sidebar {
-  border: 1px solid #ccc;
-}
-
-.sidebar-content .list-info-sidebar li {
-  font-size: 12px;
-}
-
-.sidebar-content .list-info-sidebar .data-name {
-  width: 100%;
-  background-color: transparent;
-}
-
-.sidebar-content .list-info-sidebar .progress {
-  margin-bottom: 0;
-}
-
-.left-sidebar.minified .sidebar-content {
-  display: none;
-}
-
-/* 2 column data presentation */
-.data-row {
-  margin-bottom: 0;
-}
-
-.data-row .data-name
-.data-row .data-value {
-  display: block;
-  vertical-align: middle;
-  vertical-align: auto;
-  padding: 5px;
-}
-
-.data-row .data-name {
-  width: 12em;
-  line-height 15px
-  background-color: #ececec;
-  color: #b9b9b9;
-  font-size: 0.9em;
-  vertical-align: top;
-}
-
-.data-row .data-value {
-  padding-left: 10px;
-}
+.list-info-sidebar
+  padding 5px 10px
+  border lighten(color-skin, 75%)
+  li
+    font-size 10px
+    margin-bottom 0
+  span
+    display block
+    vertical-align middle
+    vertical-align auto
+    padding 5px
+    line-height 15px
+  .info-name
+    width 100%
+    background-color transparent
+    color lighten(color-app, 57%) !important
+    font-size 11px
+    vertical-align top
+  .info-value
+    padding-left 10px
 

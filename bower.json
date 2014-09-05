@@ -1,7 +1,7 @@
 {
-    "name": "app",
+	"name": "app",
   "version": "0.0.0",
-    "apppath": "app",
+	"apppath": "app",
   "dependencies": {
     "modernizr": "2.8.x",
     "jquery": "2.x.x",
@@ -11,9 +11,10 @@
     "angular-ui-router": "0.2.10",
     "angularfire": "~0.8.0",
     "underscore": "~1.7.0",
-      "bootstrap": "~3.2.0",
-      "angular-strap": "~2.0.0",
-      "angular-sanitize": "~1.2.23"
+	  "bootstrap": "~3.2.0",
+	  "angular-strap": "~2.0.0",
+	  "angular-sanitize": "~1.2.23",
+	  "toastr": "~2.0.3"
   },
   "devDependencies": {}
 }

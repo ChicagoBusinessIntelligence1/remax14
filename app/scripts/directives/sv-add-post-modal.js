@@ -4,7 +4,9 @@ angular.module('app')
   .directive('svAddPostModal', function ($modal, $firebase, url) {
     return {
       restrict: 'E',
-      scope: {},
+	    scope: {
+		    posts: '='
+	    },
 	    template: '<button ng-click="showModal()" class="btn btn-link"><i class="fa fa-pencil"></i> Add New Post</button>',
       controller: function ($scope) {
 
@@ -12,9 +14,6 @@ angular.module('app')
       link: function postLink($scope, element, attrs) {
 
 	      $scope.post = {};
-	      var repo = url + 'posts';
-	      $scope.posts = $firebase(new Firebase(repo)).$asArray();
-
 
         var postModal = $modal(
           {
@@ -29,15 +28,17 @@ angular.module('app')
           postModal.show();
         };
 
-	      $scope.addPost = function (title, author, post) {
+	      $scope.addPost = function (title, author, body) {
 		      $scope.posts.$add(
 			      {
 				      title: title,
 				      author: author,
-				      post: post
+				      body: body,
+				      time: Date()
 			      }).then(function () {
 				      $scope.post = {};
 				      postModal.hide();
+				      toastr.info('The post has been submitted');
 
 			      });
 	      };

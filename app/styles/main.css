@@ -2313,19 +2313,36 @@ body {
 hr {
   border-color: #cacaca;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+  color: #3c3c3c;
+}
 h6 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 5px !important;
   margin-top: 5px;
 }
-.btn-link-dark {
+.btn-link-dark,
+btn-link,
+ul > li:a {
   font-size: 14px;
   color: #3c3c3c;
 }
 .btn-link-dark:hover,
+btn-link:hover,
+ul > li:a:hover,
 .btn-link-dark:active,
-.btn-link-dark:focus {
+btn-link:active,
+ul > li:a:active,
+.btn-link-dark:focus,
+btn-link:focus,
+ul > li:a:focus {
   color: #cecece;
 }
 /**********************

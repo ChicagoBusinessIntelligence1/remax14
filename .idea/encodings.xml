@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/app/partials/home.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/about.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/controllers/home.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/mainCtrl.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-add-post-modal.js" charset="UTF-8" />

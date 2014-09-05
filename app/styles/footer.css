@@ -2,13 +2,13 @@
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #3c3c3c;
+    background-color: #555;
 }
 .nav-text,
 .brand-name,
 .navbar-brand {
   cursor: pointer;
-  color: #f9f9f9 !important;
+    color: #fafafa !important;
 }
 .nav-text:hover,
 .brand-name:hover,
@@ -19,7 +19,7 @@
 .nav-text:focus,
 .brand-name:focus,
 .navbar-brand:focus {
-  color: #ababab !important;
+    color: #b6b6b6 !important;
 }
 .span-top-nav {
   display: inline-block;
@@ -29,7 +29,7 @@
 .span-top-nav:hover,
 .span-top-nav:active,
 .span-top-nav:focus {
-  color: #ababab !important;
+    color: #b6b6b6 !important;
 }
 .brand-name,
 .btn-search,

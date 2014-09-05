@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.0.0",
   "dependencies": {
+	  "toastr": "^2.0.4",
     "underscore": "^1.7.0"
   },
   "devDependencies": {

@@ -1,10 +1,6 @@
 /**********************
      =sv-aside-nav
 **********************/
-.left-sidebar {
-  padding-right: 0px;
-  padding-left: 0px;
-}
 .aside-nav,
 .list-aside-nav {
   margin-bottom: 10px;
@@ -21,7 +17,7 @@
 }
 .label-default-custom {
   padding: 10px;
-  background-color: #848484;
+    background-color: #999;
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
@@ -30,7 +26,7 @@
 }
 /*------------------------------------------------*/
 /*	Main Navigation
-st<double> /*------------------------------------------------*/
+/*------------------------------------------------*/
 .main-nav-toggle {
   float: left;
   color: #fff;
@@ -110,8 +106,13 @@ ul.main-menu .sub-menu.open {
   display: block;
 }
 .left-sidebar {
-  padding-right: 0;
-  padding-left: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.main-content {
+    border-left: 1px #e4e4e4 solid;
+    border-right: 1px #e4e4e4 solid;
 }
 .left-sidebar.minified {
   width: 40px;

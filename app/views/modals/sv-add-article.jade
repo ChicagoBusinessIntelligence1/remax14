@@ -5,16 +5,14 @@
         button.close(ng-click='$hide()') &times
         h4.modal-title(ng-bind='title')
       .modal-body
-        form(method='post', name='form-add-article', id='form-add-article')
+        form(name='formPost', id='formPost', novalidate)
           .form-group
-            input.form-control(type='text' placeholder='Blog Post Title')
+            input.form-control(ng-model='post.title', required, name='title', type='text' placeholder='Blog Post Title')
           .form-group
-            input.form-control(type='text' placeholder='Written By')
+            input.form-control(ng-model='post.author',required, name='author',type='text' placeholder='Written By')
           .form-group
-            textarea.add-article.form-control(class='add-article form-control' rows='10' placeholder='Add your article...')
+            textarea.add-article.form-control(ng-model='post.body',required, name='body',class='add-article form-control' rows='10' placeholder='Add your article...')
           div
-            button.btn.btn-primary.btn-lg.pull-right Post
+            button(ng-disabled="formPost.$dirty && formPost.$invalid", ng-click='addPost(post.title,post.author,post.body)').btn.btn-info.btn-lg.pull-right Post
             br
             br
-      .modal-footer
-        button.btn.btn-default(ng-click='$hide()') Close

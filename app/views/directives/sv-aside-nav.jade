@@ -1,150 +1,15 @@
-nav.main-nav
-	ul.main-menu
+nav.aside-nav
+	ul.aside-menu
 		li
 			a(ui-sref='app.admin')
 				i.fa.fa-gears.fa-fw
 				span.text Admin
 		li
-			a.js-sub-menu-toggle(href="#")
+			a.btn.btn-link(ng-click='showSub1()')
 				i.fa.fa-clipboard.fa-fw
 				span.text Link 1
 				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu
-				li
-					a(href="")
-						span.text Profile
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-		li
-			a.js-sub-menu-toggle(href="#")
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 2
-				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu
-				li
-					a(href="")
-						span.text Profile
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-		li
-			a.js-sub-menu-toggle(href="#")
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 3
-				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu
-				li
-					a(href="")
-						span.text Profile
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-		li
-			a.js-sub-menu-toggle(href="#")
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 4
-				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu
-				li
-					a(href="")
-						span.text Profile
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-		li
-			a.js-sub-menu-toggle(href="#")
-				i.fa.fa-clipboard.fa-fw
-				span.text Link 5
-				i.toggle-icon.fa.fa-angle-left
-			ul.sub-menu
-				li
-					a(href="")
-						span.text Profile
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
-				li
-					a(href="")
-						span.text Text
+			ul.sub-menu.list-unstyled.slide-down(ng-show='sub1Shown')
 				li
 					a(href="")
 						span.text Text

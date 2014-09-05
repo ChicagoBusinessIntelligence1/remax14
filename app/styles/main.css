@@ -85,9 +85,8 @@
 .aside-menu > li:first-child > a {
   border-top: none;
 }
-.aside-menu .text {
-  padding-left: 8px;
-  font-size: 0.9em;
+.aside-menu li a .text {
+  padding-left: 8px !important;
 }
 .aside-menu .fa {
   width: 14px;
@@ -100,6 +99,9 @@
   right: 10px;
   top: 13px;
   text-shadow: none;
+}
+.sub-menu li a .text {
+  padding-left: 20px !important;
 }
 .app-info {
   background-color: #f5f6f6 !important;

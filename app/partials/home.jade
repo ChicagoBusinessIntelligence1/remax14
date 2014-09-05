@@ -1,8 +1,13 @@
 h1  Timeline
 hr
 div
-	.pull-right.btn-wrapper
-		sv-add-post-modal(ng-show='isAdmin')
-sv-article
-hr
-sv-article
+  .pull-right.btn-wrapper
+    sv-add-post-modal(ng-show='isAdmin', posts="posts")
+div
+  ul.list-unstyled
+    li(ng-repeat="p in posts")
+      div Title: {{p.title}}
+      div Time: {{p.time}}
+      div Written by {{p.author}}
+      div  Body:{{p.body}}
+      hr

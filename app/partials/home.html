@@ -1,1 +1,1 @@
-<h1> Timeline</h1><hr/><div><div class="pull-right btn-wrapper"><sv-add-post-modal ng-show="isAdmin"></sv-add-post-modal></div></div><sv-article></sv-article><hr/><sv-article></sv-article>
+<h1> Timeline</h1><hr/><div><div class="pull-right btn-wrapper"><sv-add-post-modal ng-show="isAdmin" posts="posts"></sv-add-post-modal></div></div><div><ul class="list-unstyled"><li ng-repeat="p in posts"><div>Title: {{p.title}}</div><div>Time: {{p.time}}</div><div>Written by {{p.author}}</div><div> Body:{{p.body}}</div><hr/></li></ul></div>

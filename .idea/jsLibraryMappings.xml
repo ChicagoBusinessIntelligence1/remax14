@@ -4,8 +4,11 @@
     <file url="file://$PROJECT_DIR$" libraries="{fengshui node_modules}" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" libraries="{angularfire-DefinitelyTyped, underscore-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/mainCtrl.js" libraries="{underscore-DefinitelyTyped}" />
+    <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-add-post-modal.js" libraries="{HTML5 / EcmaScript 5, angularfire-DefinitelyTyped, jQuery-2.0.0}" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-login.js" libraries="{underscore-DefinitelyTyped}" />
     <file url="PROJECT" libraries="{angularfire-DefinitelyTyped, angularjs-DefinitelyTyped, underscore-DefinitelyTyped}" />
+    <excludedPredefinedLibrary name="HTML" />
+    <excludedPredefinedLibrary name="HTML5 / EcmaScript 5" />
   </component>
 </project>
 

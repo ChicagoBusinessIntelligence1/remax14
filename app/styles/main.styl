@@ -3,88 +3,96 @@
 @import 'aside'
 @import 'functions'
 @import 'modal'
+@import 'animation/ng-animation'
 /**********************
 
      Variables
 ***********************/
+
 * {
-	margin: 0;
+  margin: 0;
 }
 
 html
-	-webkit-font-smoothing antialized
+  -webkit-font-smoothing antialized
 
 body
-	color color-app
-	font font-app
-	line-height 30px
-	background-color lighten(color-app, 90%)
+  color color-app
+  font font-app
+  line-height 30px
+  background-color color-darken
 
 hr
-	border-color color-border-dark
+  border-color color-border-dark
 
 h6
-	font-size 18px
-	font-weight 700
-	margin-bottom 5px !important
-	margin-top 5px
+  font-size 18px
+  font-weight 700
+  margin-bottom 5px !important
+  margin-top 5px
+
+.btn-link-dark
+  link-custom()
 
 /**********************
 
      =main content
 **********************/
+.main-content
+  border-left border-app-light
+  border-right border-app-light
 
 .error input, .error textarea, .error select
-	margin-bottom 16px
+  margin-bottom 16px
 
 .btn-wrapper
-	margin-bottom 25px
+  margin-bottom 25px
 
 .content-wrapper
-	background-color lighten(color-app, 94%)
-	border-left border-app-light
-	padding-left 30px
-	min-height 1200px
+  background-color color-content
+  border-left border-app-light
+  padding-left 30px
+  min-height 1200px
 
 .article-img
-	float right
+  float right
 
 /**********************
       =About
 ***********************/
 .custom-list
-	comma-list()
+  comma-list()
 
 table
-	stripe()
-	td
-		padding 4px 10px
+  stripe()
+  td
+    padding 4px 10px
 
 table#users
-	stripe lighten(color-app, 25%) lighten(color-app, 10%)
-	td, th
-		color color-lighten
+  stripe lighten(color-app, 25%) lighten(color-app, 10%)
+  td, th
+    color color-lighten
 
 /**********************
     =contact us
 ***********************/
 
 .contact-address
-	custom-radius 15px
-	border border-app-light
-	width 300px
-	padding 15px
+  custom-radius 15px
+  border border-app-light
+  width 300px
+  padding 15px
 
 /**********************
     =form
 ***********************/
 textarea
 input
-	background-color lighten(color-app, 95%) !important
-	color lighten(color-app, 27%) !important
-	&:hover
-	&:active
-	&:focus
-		background-color lighten(color-app, 98%) !important
-		color color-app !important
+  background-color lighten(color-app, 95%) !important
+  color lighten(color-app, 27%) !important
+  &:hover
+  &:active
+  &:focus
+    background-color lighten(color-app, 98%) !important
+    color color-app !important
 

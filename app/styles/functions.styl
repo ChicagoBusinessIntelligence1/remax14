@@ -1,8 +1,10 @@
 /**********************
       =Variables
 ***********************/
-/*colors*/
-color-app = #555555
+
+color-skin = #43464D
+color-app = #3C3C3C
+color-content = lighten(color-app, 94%)
 color-lighten = lighten(color-app, 98%)
 color-darken = lighten(color-app, 90%)
 color-border-light = lighten(color-app, 83%)
@@ -50,9 +52,9 @@ comma-list()
 			content ''
 
 link-custom()
-	color #494949 !important
+	color color-app !important
 	font-size 12px unless @font-size
 	&:hover
 	&:active
 	&:focus
-		color #a7a7a7
+		color lighten(color-app, 75%)

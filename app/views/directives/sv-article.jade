@@ -9,11 +9,18 @@
             | on {{post.time | date:'short'}}
         .row
           .col-lg-12
-            img.article-img(src="http://placehold.it/400x240&text=[img]")
             p {{post.body}}
+            ul.list-unstyled
+              li(ng-repeat='c in post.comments')
+                div {{c.user}}
+                div {{c.time| date:'short'}}
+                div {{c.comment}}
+                hr
 
-  form(role='form')
+  form(role='form', ng-show='auth.user')
     .row
       .col-sm-12.form-group
-        textarea.form-control(placeholder='Write a comment')
+        textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
+        br
+        button.btn.btn-info(ng-click='addComment(post.$id, comment.val, userName)') Post
 

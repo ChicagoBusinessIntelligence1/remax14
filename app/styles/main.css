@@ -2320,8 +2320,8 @@ h6 {
   margin-top: 5px;
 }
 .btn-link-dark {
-  color: #3c3c3c !important;
-  font-size: 12px;
+  font-size: 14px;
+  color: #3c3c3c;
 }
 .btn-link-dark:hover,
 .btn-link-dark:active,
@@ -2350,6 +2350,9 @@ h6 {
   padding-left: 30px;
   min-height: 1200px;
 }
+/**********************
+      =Post
+***********************/
 .article-img {
   float: right;
 }

@@ -1,3 +1,12 @@
+.post-title {
+  font-size: 14px;
+  color: #3c3c3c;
+}
+.post-title:hover,
+.post-title:active,
+.post-title:focus {
+  color: #8a8a8a;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
@@ -2310,7 +2319,7 @@ h6 {
   margin-top: 5px;
 }
 .btn-link-dark {
-  font-size: 12px;
+  font-size: 14px;
   color: #3c3c3c;
 }
 .btn-link-dark:hover,
@@ -2319,6 +2328,7 @@ h6 {
   color: #8a8a8a;
 }
 .btn-link-light {
+  font-size: 14px;
   cursor: pointer;
   color: #f9f9f9 !important;
 }

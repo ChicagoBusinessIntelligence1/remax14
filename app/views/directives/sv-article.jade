@@ -2,11 +2,8 @@
   .row
     .col-lg-12
       article
-        h3
-          a(href='#') {{post.title}}
-        h6 Written By
-          a(href='#')
-            | on {{post.time | date:'short'}}
+        h3 {{post.title}}
+          h5  {{post.time | date:'short'}}
         .row
           .col-lg-12
             p {{post.body}}

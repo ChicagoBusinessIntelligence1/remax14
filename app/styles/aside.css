@@ -67,7 +67,10 @@
 .app-tips .panel-heading {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #f5f6f6 !important;
+  background-color: #f3f4f5 !important;
+}
+.app-tips .panel-body {
+  background-color: #fbfbfb !important;
 }
 .app-tips .panel-body p {
   font-size: 12px;

@@ -12,7 +12,8 @@
                 img.img-fb(ng-src="{{c.userPic}}")
                 span.user-name-comment {{c.userName}}
                 p.p-post-time {{c.time| date:'short'}}
-                p.p-comment {{c.comment}}
+                p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
+                p.p-comment(ng-show='isAdmin || userName==c.userName') {{c.comment}}
                 hr
 
   form(role='form', ng-show='auth.user')

@@ -9,6 +9,7 @@ color-lighten = lighten(color-app, 98%)
 color-darken = lighten(color-app, 90%)
 color-border-light = lighten(color-app, 83%)
 color-border-dark = lighten(color-app, 73%)
+label-default-background = lighten(color-skin, 37%)
 
 border-app-light = color-border-light 1px solid
 border-app-dark = color-border-dark 1px solid
@@ -20,41 +21,58 @@ font-app = font-size-custom "Helvetica Neue", Helvetica, Arial, sans-serif
 ***********************/
 
 simple-radius(n)
-	-webkit-border-radius n
-	-moz-border-radius n
-	border-radius n
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
 
 custom-radius()
-	-webkit-border-radius arguments
-	-moz-border-radius argument
-	border-radius argument
-	border 2px border-default solid unless @border
+  -webkit-border-radius arguments
+  -moz-border-radius argument
+  border-radius argument
+  border 2px border-default solid unless @border
 
 /*striped table*/
 stripe(even = color-lighten, odd = color-darken)
-	tr
-		background-color odd
-		&.even
-		&:nth-child(even)
-			background-color even
+  tr
+    background-color odd
+    &.even
+    &:nth-child(even)
+      background-color even
 
 /*comma-list*/
 inline-list()
-	li
-		display inline
+  li
+    display inline
 
 comma-list()
-	inline-list()
-	li
-		&:after
-			content ','
-		&:last-child:after
-			content ''
+  inline-list()
+  li
+    &:after
+      content ','
+    &:last-child:after
+      content ''
 
 link-custom()
-	color color-app
-	font-size 12px unless @font-size
-	&:hover
-	&:active
-	&:focus
-		color lighten(color-app, 75%)
+  font-size 12px unless @font-size
+  color color-app unless @color
+  &:hover
+  &:active
+  &:focus
+    color lighten(color-app, 40%)
+
+link-light()
+  cursor pointer
+  color lighten(color-app, 97%) !important
+  &:hover
+  &:active
+  &:focus
+    color lighten(color-app, 57%) !important
+
+label-default-head()
+  padding 10px 15px
+  background-color label-default-background
+  border-radius 0px
+  display block
+  font-size 0.9em unless @font-size
+  text-align left
+  margin-bottom 0

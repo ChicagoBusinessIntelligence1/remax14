@@ -1,7 +1,7 @@
+@import 'functions'
 @import 'header'
 @import 'footer'
 @import 'aside'
-@import 'functions'
 @import 'modal'
 @import 'animation/ng-animation'
 /**********************
@@ -25,6 +25,9 @@ body
 hr
   border-color color-border-dark
 
+h1, h2, h3, h4, h5, h6, legend
+  color color-app
+
 h6
   font-size 18px
   font-weight 700
@@ -32,8 +35,10 @@ h6
   margin-top 5px
 
 .btn-link-dark
-  font-size 14px
   link-custom()
+
+.btn-link-light
+  link-light()
 
 /**********************
 
@@ -55,7 +60,6 @@ h6
   padding-left 30px
   min-height 1200px
 
-
 /**********************
       =Post
 ***********************/
@@ -64,7 +68,7 @@ h6
   float right
 
 /**********************
-      =About
+      =about
 ***********************/
 .custom-list
   comma-list()
@@ -101,4 +105,5 @@ input
   &:focus
     background-color lighten(color-app, 98%) !important
     color color-app !important
+
 

@@ -9,9 +9,10 @@
             p {{post.body}}
             ul.list-unstyled
               li(ng-repeat='c in post.comments')
-                div {{c.user}}
+                img.img-fb(ng-src="{{c.userPic}}")
+                span {{c.userName}}
                 div {{c.time| date:'short'}}
-                div {{c.comment}}
+                p.p-comment {{c.comment}}
                 hr
 
   form(role='form', ng-show='auth.user')

@@ -51,18 +51,26 @@
 }
 .editable {
   text-decoration: none;
-    cursor: pointer;
+  cursor: pointer;
   display: inline-block;
   padding: 0px;
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
 }
-
-.color-danger {
-    color: #db7156;
-    cursor: pointer;
+.edit-comment-container {
+  display: block;
 }
-
-.color-danger:hover {
-    color: #b44326;
+.editableform-loading {
+  display: none;
+}
+.editable-input {
+  position: relative;
+}
+.editableform textarea {
+  padding-right: 24px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.editable-submit {
+  margin-right: 10px;
 }

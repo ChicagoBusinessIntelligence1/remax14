@@ -1,6 +1,21 @@
 /**********************
      =sv-article
 ***********************/
+.post-content {
+  border-bottom: 0px;
+}
+.post-content,
+.post-comment {
+  margin-bottom: 0px;
+  line-height: 24px;
+  padding: 10px 15px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.comment-input textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .ul-comment {
   font-size: 12px;
 }
@@ -20,10 +35,14 @@
   font-size: 12px;
   font-weight: bold !important;
 }
+.panel-comment {
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
 .editable {
-    text-decoration: none;
-    display: inline-block;
-    padding: 0px;
-    line-height: 1.2em;
-    border-bottom: dashed 1px #08c !important;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px;
+  line-height: 1.2em;
+  border-bottom: dashed 1px #08c !important;
 }

@@ -1,26 +1,26 @@
 .article-wrapper
-  .row
-    .col-lg-12
-      article
-        h3 {{post.title}}
+  article
+    .row
+      .col-lg-12
+        .post-content.well
+          h3 {{post.title}}
           h5  {{post.time | date:'short'}}
-        .row
-          .col-lg-12
-            p {{post.body}}
-            ul.list-unstyled
-              li(ng-repeat='c in post.comments')
-                img.img-fb(ng-src="{{c.userPic}}")
-                span.user-name-comment {{c.userName}}
-                p.p-post-time {{c.time| date:'short'}}
-                p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
-                p.p-comment.editable(ng-show='isAdmin || userName==c.userName') {{c.comment}}
-                hr
+          p {{post.body}}
+    .row
+      .col-lg-12
+        .post-comment.panel.panel-default
+          ul.list-unstyled.ul-comment
+            li(ng-repeat='c in post.comments')
+              img.img-fb(ng-src="{{c.userPic}}")
+              span.user-name-comment {{c.userName}}
+              p.p-post-time {{c.time| date:'short'}}
+              p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
+              p.p-comment.editable(ng-show='isAdmin || userName==c.userName') {{c.comment}}
+              hr
 
 
   form(role='form', ng-show='auth.user')
-    .row
-      .col-sm-12.form-group
+      .form-group.comment-input
         textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
-        br
-        button.btn.btn-info(ng-click='addComment(post.$id, comment.val, userName, userPic)') Post
+        button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic)') Post
 

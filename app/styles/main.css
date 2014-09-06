@@ -17,8 +17,11 @@ span.user-name-comment {
   font-weight: bold !important;
 }
 .editable {
-  dashed: 1px #08c;
-  text-display: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px;
+    line-height: 1.2em;
+    border-bottom: dashed 1px #08c !important;
 }
 .navbar-app {
   margin-bottom: 0px;

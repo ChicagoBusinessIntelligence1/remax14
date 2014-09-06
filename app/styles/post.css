@@ -18,3 +18,7 @@ span.user-name-comment {
   font-weight: 12px;
   font-weight: bold !important;
 }
+.editable {
+  dashed: 1px #08c;
+  text-display: none;
+}

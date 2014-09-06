@@ -7,20 +7,20 @@
 				span.icon-bar
 				span.icon-bar
 				span.icon-bar
-			a.navbar-brand(href="#")
+			a.navbar-brand.btn-link-light(href="#")
 				i.fa.fa-university
 				span.brand-name Brand
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
 			ul.nav.navbar-nav.top-nav-menu
 				li
-					a.btn.btn-link.nav-text(ui-sref='app.home') Home
+					a.btn.btn-link.btn-link-light(ui-sref='app.home') Home
 				li
-					a.btn.btn-link.nav-text(ui-sref='app.about') About
+					a.btn.btn-link.btn-link-light(ui-sref='app.about') About
 				li
-					a.btn.btn-link.nav-text(ui-sref='app.contact') Contact Us
+					a.btn.btn-link.btn-link-light(ui-sref='app.contact') Contact Us
 				li.dropdown
-					a.dropdown-toggle.nav-text(href="#" data-toggle="dropdown") Our Services
+					a.dropdown-toggle.btn-link-light(href="#" data-toggle="dropdown") Our Services
 						i.fa.fa-angle-down
 					ul.dropdown-menu(role="menu")
 						li
@@ -42,20 +42,20 @@
 				button.btn.btn-default.btn-search(type="submit") Submit
 			ul.nav.navbar-nav.pull-right.nav-auth
 				li(ng-show='!auth.user')
-					a.nav-text(data-sv-login-popover='')
+					a.btn-link-light(data-sv-login-popover='')
 						i.fa.fa-sign-out.fa-lg
 						span.span-top-nav Sign In
 				li(ng-show='auth.user.provider==\'facebook\'')
-					a.nav-text(href='{{userLink}}')
+					a.btn-link-light(href='{{userLink}}')
 						img.img-fb(ng-src="{{userPic}}")
 						span.span-top-nav {{userName}}
 				li(ng-show='auth.user.provider==\'password\'')
-					a.nav-text(href='')
+					a.btn-link-light(href='')
 						i.fa.fa-user.fa-lg
 						//img.img-admin(src="../../images/admin.png")
 						span.fb-name Admin
 				li(ng-show='auth.user')
-					a.nav-text(ng-click='fenLogout()')
+					a.btn-link-light(ng-click='fenLogout()')
 						i.fa.fa-sign-out.fa-lg
 						span.span-top-nav Sign Out
 

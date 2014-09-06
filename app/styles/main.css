@@ -4,32 +4,10 @@
   border-radius: 0px;
   background-color: #43464d !important;
 }
-.nav-text,
-.brand-name,
-.navbar-brand {
-  cursor: pointer;
-  color: #f9f9f9 !important;
-}
-.nav-text:hover,
-.brand-name:hover,
-.navbar-brand:hover,
-.nav-text:active,
-.brand-name:active,
-.navbar-brand:active,
-.nav-text:focus,
-.brand-name:focus,
-.navbar-brand:focus {
-  color: #ababab !important;
-}
 .span-top-nav {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
-}
-.span-top-nav:hover,
-.span-top-nav:active,
-.span-top-nav:focus {
-  color: #ababab !important;
 }
 .brand-name,
 .btn-search,
@@ -51,16 +29,7 @@
   height: 60px;
 }
 .footer span {
-  color: #f9f9f9 !important;
-}
-.footer a {
-  cursor: pointer;
-  color: #f9f9f9 !important;
-}
-.footer a:hover,
-.footer a:active,
-.footer a:focus {
-  color: #ababab !important;
+  color: #fbfbfb;
 }
 .footer-content {
   padding-top: 15px;
@@ -2340,22 +2309,23 @@ h6 {
   margin-bottom: 5px !important;
   margin-top: 5px;
 }
-.btn-link-dark,
-btn-link,
-ul > li:a {
-  font-size: 14px;
+.btn-link-dark {
+  font-size: 14px !important;
   color: #3c3c3c;
 }
 .btn-link-dark:hover,
-btn-link:hover,
-ul > li:a:hover,
 .btn-link-dark:active,
-btn-link:active,
-ul > li:a:active,
-.btn-link-dark:focus,
-btn-link:focus,
-ul > li:a:focus {
+.btn-link-dark:focus {
   color: #cecece;
+}
+.btn-link-light {
+  cursor: pointer;
+  color: #f9f9f9 !important;
+}
+.btn-link-light:hover,
+.btn-link-light:active,
+.btn-link-light:focus {
+  color: #ababab !important;
 }
 /**********************
 
@@ -2386,7 +2356,7 @@ ul > li:a:focus {
   float: right;
 }
 /**********************
-      =About
+      =about
 ***********************/
 .custom-list li {
   display: inline;

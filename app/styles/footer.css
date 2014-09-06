@@ -6,16 +6,7 @@
   height: 60px;
 }
 .footer span {
-  color: #f9f9f9 !important;
-}
-.footer a {
-  cursor: pointer;
-  color: #f9f9f9 !important;
-}
-.footer a:hover,
-.footer a:active,
-.footer a:focus {
-  color: #ababab !important;
+  color: #fbfbfb;
 }
 .footer-content {
   padding-top: 15px;

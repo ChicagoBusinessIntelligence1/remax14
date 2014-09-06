@@ -1,7 +1,7 @@
+@import 'functions'
 @import 'header'
 @import 'footer'
 @import 'aside'
-@import 'functions'
 @import 'modal'
 @import 'animation/ng-animation'
 /**********************
@@ -34,9 +34,12 @@ h6
   margin-bottom 5px !important
   margin-top 5px
 
-.btn-link-dark, btn-link, ul > li:a
-  font-size 14px
+.btn-link-dark
+  font-size 14px !important
   link-custom()
+
+.btn-link-light
+  link-light()
 
 /**********************
 
@@ -103,4 +106,5 @@ input
   &:focus
     background-color lighten(color-app, 98%) !important
     color color-app !important
+
 

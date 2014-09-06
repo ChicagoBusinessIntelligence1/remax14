@@ -10,6 +10,7 @@ angular.module('app')
             template: '<p class="comment editable"> {{comment}}</p>',
             link: function postLink($scope, element, attrs) {
                 var myPopover = $popover(element, {
+                    scope:$scope,
                     title: 'My Title',
                     content: 'My Content',
                     template: '../../views/directives/sv-comment-popover.html'

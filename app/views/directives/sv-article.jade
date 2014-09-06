@@ -10,12 +10,12 @@
       .col-lg-12
         .post-comment.panel.panel-default
           ul.list-unstyled.ul-comment
-            li(ng-repeat='c in post.comments')
+            li(ng-repeat="c in post.comments")
               img.img-fb(ng-src="{{c.userPic}}")
               span.user-name-comment {{c.userName}}
               p.p-comment-time {{c.time| date:'short'}}
               p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
-                sv-comment-popover(ng-show='isAdmin || userName==c.userName', comment='c.comment')
+              sv-comment-popover(ng-show='isAdmin || userName==c.userName', comment='c.comment')
               hr
 
 

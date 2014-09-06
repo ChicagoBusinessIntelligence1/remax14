@@ -1,15 +1,16 @@
-.popover.editable-container.editable-popup.fade.right.in.edit-comment-container
+.popover.editable-container.editable-popup.fade.rigth.in.edit-comment-container
   .arrow
-  h3.popover-title Enter your last name
+  h3.popover-title Edit your comment
   .popover-content
-    .editableform-loading
-    form.form-inline.editableform
-      .control-group.form-group
-        div
-          .editable-input
-            input.form-control.inpuh-sm(type="text" placeholder="Required" style="padding-right: 24px;")
-            span(class = "editable-clear-x") {{comment}}
-          .editable-buttons
-            button.btn.btn-primary.btn-sm.editable-submit(type="submit")
-            button.btn.btn-defaul.btn-sm.editable-cancel(type="submit")
-        .editable-error-block.help-block(style="display: none;")
+    div
+      .editableform-loading
+      form.form-inline.editableform
+        .control-group.form-group
+          div
+            .editable-input
+              textarea.form-control.textarea-edit-post(ng-model='comment' placeholder="Required" rows=10 cols=35)
+              span(class = "editable-clear-x")
+            .editable-buttons
+              button.btn.btn-primary.btn-sm.editable-submit(type="submit") Save
+              button.btn.btn-defaul.btn-sm.editable-cancel(type="submit") Cancel
+          .editable-error-block.help-block(style="display: none;")

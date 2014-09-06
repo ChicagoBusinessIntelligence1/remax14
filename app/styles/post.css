@@ -59,8 +59,6 @@
 }
 .edit-comment-container {
   display: block;
-  top: 272px;
-  left: 506px;
 }
 .editableform-loading {
   display: none;
@@ -68,6 +66,11 @@
 .editable-input {
   position: relative;
 }
-.editable-input .input {
+.editableform textarea {
   padding-right: 24px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.editable-submit {
+  margin-right: 10px;
 }

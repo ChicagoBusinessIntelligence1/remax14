@@ -51,9 +51,23 @@
 }
 .editable {
   text-decoration: none;
-    cursor: pointer;
+  cursor: pointer;
   display: inline-block;
   padding: 0px;
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
+}
+.edit-comment-container {
+  display: block;
+  top: 272px;
+  left: 506px;
+}
+.editableform-loading {
+  display: none;
+}
+.editable-input {
+  position: relative;
+}
+.editable-input .input {
+  padding-right: 24px;
 }

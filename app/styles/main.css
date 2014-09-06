@@ -105,7 +105,7 @@
 .app-tips .panel-heading h5 {
   margin: 0;
 }
-h5.label-default-custom {
+h5.label-default-head {
   padding: 10px 15px;
   background-color: #848994;
   -webkit-border-radius: 0px;
@@ -2310,13 +2310,13 @@ h6 {
   margin-top: 5px;
 }
 .btn-link-dark {
-  font-size: 14px !important;
+  font-size: 12px;
   color: #3c3c3c;
 }
 .btn-link-dark:hover,
 .btn-link-dark:active,
 .btn-link-dark:focus {
-  color: #cecece;
+  color: #8a8a8a;
 }
 .btn-link-light {
   cursor: pointer;

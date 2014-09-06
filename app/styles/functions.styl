@@ -9,6 +9,7 @@ color-lighten = lighten(color-app, 98%)
 color-darken = lighten(color-app, 90%)
 color-border-light = lighten(color-app, 83%)
 color-border-dark = lighten(color-app, 73%)
+label-default-background = lighten(color-skin, 37%)
 
 border-app-light = color-border-light 1px solid
 border-app-dark = color-border-dark 1px solid
@@ -52,12 +53,12 @@ comma-list()
       content ''
 
 link-custom()
-  color color-app unless @color
   font-size 12px unless @font-size
+  color color-app unless @color
   &:hover
   &:active
   &:focus
-    color lighten(color-app, 75%)
+    color lighten(color-app, 40%)
 
 link-light()
   cursor pointer
@@ -66,3 +67,12 @@ link-light()
   &:active
   &:focus
     color lighten(color-app, 57%) !important
+
+label-default-head()
+  padding 10px 15px
+  background-color label-default-background
+  border-radius 0px
+  display block
+  font-size 0.9em unless @font-size
+  text-align left
+  margin-bottom 0

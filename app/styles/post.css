@@ -60,6 +60,13 @@
 .popover-title {
   color: #505050 !important;
 }
+.color-danger {
+  color: #db7156;
+  cursor: pointer;
+}
+.color-danger:hover {
+  color: #b44326;
+}
 .editable-form textarea {
   position: relative;
   font-size: 12px;

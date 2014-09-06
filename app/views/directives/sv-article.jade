@@ -7,12 +7,12 @@
         .row
           .col-lg-12
             p {{post.body}}
-            ul.list-unstyled
+            ul.list-unstyled.ul-comment
               li(ng-repeat='c in post.comments')
                 img.img-fb(ng-src="{{c.userPic}}")
                 span.user-name-comment {{c.userName}}
-                p.p-post-time {{c.time| date:'short'}}
                 p.p-comment {{c.comment}}
+                p.p-post-time {{c.time| date:'short'}}
                 hr
 
   form(role='form', ng-show='auth.user')

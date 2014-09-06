@@ -22,9 +22,15 @@
   font-size: 12px;
 }
 .p-post-time {
+  font-size: 12px;
+  color: #808080;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+.p-comment-time {
   font-size: 11px;
   color: #808080;
-  line-height: 20px;
+  line-height: 24px;
   margin-bottom: 0px;
 }
 .user-name-comment {

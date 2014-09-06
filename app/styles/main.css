@@ -15,6 +15,10 @@ span.user-name-comment {
   font-weight: 12px;
   font-weight: bold !important;
 }
+.editable {
+  dashed: 1px #08c;
+  text-display: none;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;

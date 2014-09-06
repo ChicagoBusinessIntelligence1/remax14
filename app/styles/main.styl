@@ -41,8 +41,29 @@ h6
 .btn-link-light
   link-light()
 
-/**********************
+.btn-primary
+  background-color label-default-background
+  border-color lighten(label-default-background, 5%)
+  &:hover
+  &:focus
+  &:active
+    background-color lighten(label-default-background, 15%)
+    border-color lighten(label-default-background, 10%)
 
+/**********************
+    =form
+***********************/
+textarea
+input
+  background-color lighten(color-app, 97%) !important
+  color lighten(color-app, 27%) !important
+  &:hover
+  &:active
+  &:focus
+    background-color lighten(color-app, 98%) !important
+    color color-app !important
+
+/**********************
      =main content
 **********************/
 .main-content
@@ -94,17 +115,5 @@ table#users
   width 300px
   padding 15px
 
-/**********************
-    =form
-***********************/
-textarea
-input
-  background-color lighten(color-app, 95%) !important
-  color lighten(color-app, 27%) !important
-  &:hover
-  &:active
-  &:focus
-    background-color lighten(color-app, 98%) !important
-    color color-app !important
 
 

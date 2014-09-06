@@ -57,20 +57,22 @@
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
 }
-.edit-comment-container {
-  display: block;
+.popover-title {
+  color: #505050 !important;
 }
-.editableform-loading {
-  display: none;
-}
-.editable-input {
+.editable-form textarea {
   position: relative;
-}
-.editableform textarea {
-  padding-right: 24px;
   font-size: 12px;
   margin-bottom: 10px;
 }
-.editable-submit {
+.btn-save {
   margin-right: 10px;
+}
+.btn-cancel {
+  color: #8a8a8a;
+}
+.btn-cancel:hover,
+.btn-cancel:active,
+.btn-cancel:focus {
+  color: #636363;
 }

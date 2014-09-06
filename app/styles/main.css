@@ -54,22 +54,24 @@
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
 }
-.edit-comment-container {
-  display: block;
+.popover-title {
+  color: #505050 !important;
 }
-.editableform-loading {
-  display: none;
-}
-.editable-input {
+.editable-form textarea {
   position: relative;
-}
-.editableform textarea {
-  padding-right: 24px;
   font-size: 12px;
   margin-bottom: 10px;
 }
-.editable-submit {
+.btn-save {
   margin-right: 10px;
+}
+.btn-cancel {
+  color: #8a8a8a;
+}
+.btn-cancel:hover,
+.btn-cancel:active,
+.btn-cancel:focus {
+  color: #636363;
 }
 .navbar-app {
   margin-bottom: 0px;
@@ -2404,8 +2406,34 @@ h6 {
 .btn-link-light:focus {
   color: #ababab !important;
 }
+.btn-primary {
+  background-color: #848994;
+  border-color: #8a8f99;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #969ba4;
+  border-color: #90959f;
+}
 /**********************
-
+    =form
+***********************/
+textarea,
+input {
+  background-color: #f9f9f9 !important;
+  color: #717171 !important;
+}
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus {
+  background-color: #fbfbfb !important;
+  color: #3c3c3c !important;
+}
+/**********************
      =main content
 **********************/
 .main-content {
@@ -2474,21 +2502,4 @@ table#users th {
   border: 1px solid #dedede 1px solid;
   width: 300px;
   padding: 15px;
-}
-/**********************
-    =form
-***********************/
-textarea,
-input {
-  background-color: #f5f5f5 !important;
-  color: #717171 !important;
-}
-textarea:hover,
-input:hover,
-textarea:active,
-input:active,
-textarea:focus,
-input:focus {
-  background-color: #fbfbfb !important;
-  color: #3c3c3c !important;
 }

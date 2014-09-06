@@ -1,16 +1,12 @@
-.popover.editable-container.editable-popup.fade.rigth.in.edit-comment-container
+.popover.edit-comment-container(data-placement="top")
   .arrow
   h3.popover-title Edit your comment
   .popover-content
-    div
-      .editableform-loading
-      form.form-inline.editableform
-        .control-group.form-group
-          div
-            .editable-input
-              textarea.form-control.textarea-edit-post(ng-model='comment' placeholder="Required" rows=10 cols=35)
-              span(class = "editable-clear-x")
-            .editable-buttons
-              button.btn.btn-primary.btn-sm.editable-submit(type="submit") Save
-              button.btn.btn-defaul.btn-sm.editable-cancel(type="submit") Cancel
-          .editable-error-block.help-block(style="display: none;")
+    form.form-inline.editable-form
+      .form-group
+        textarea.form-control.textarea-edit-post(ng-model='comment' rows=10 cols=35)
+      .form-group
+        button.btn.btn-primary.btn-sm.btn-save(type="submit")
+          i.fa.fa-check
+        button.btn.btn-default.btn-sm.btn-cancel(type="submit")
+          i.fa.fa-times

@@ -53,7 +53,7 @@ comma-list()
       content ''
 
 link-custom()
-  font-size 12px unless @font-size
+  font-size 14px unless @font-size
   color color-app unless @color
   &:hover
   &:active
@@ -61,6 +61,7 @@ link-custom()
     color lighten(color-app, 40%)
 
 link-light()
+  font-size 14px unless @font-size
   cursor pointer
   color lighten(color-app, 97%) !important
   &:hover

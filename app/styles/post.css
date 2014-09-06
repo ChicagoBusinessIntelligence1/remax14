@@ -1,0 +1,12 @@
+/**********************
+     =sv-article
+***********************/
+.post-title {
+  font-size: 14px;
+  color: #3c3c3c;
+}
+.post-title:hover,
+.post-title:active,
+.post-title:focus {
+  color: #8a8a8a;
+}

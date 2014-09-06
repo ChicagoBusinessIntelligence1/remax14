@@ -10,8 +10,8 @@
             ul.list-unstyled
               li(ng-repeat='c in post.comments')
                 img.img-fb(ng-src="{{c.userPic}}")
-                span {{c.userName}}
-                div {{c.time| date:'short'}}
+                span.user-name-comment {{c.userName}}
+                p.p-post-time {{c.time| date:'short'}}
                 p.p-comment {{c.comment}}
                 hr
 

@@ -1,12 +1,13 @@
 /**********************
      =sv-article
 ***********************/
-.post-title {
-  font-size: 14px;
-  color: #3c3c3c;
+.p-comment {
+  font-size: 12px;
 }
-.post-title:hover,
-.post-title:active,
-.post-title:focus {
-  color: #8a8a8a;
+.p-post-time {
+  font-size: 11px;
+  margin-bottom: 0px;
+}
+span.user-name-comment {
+  font-weight: bold !important;
 }

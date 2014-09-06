@@ -20,41 +20,49 @@ font-app = font-size-custom "Helvetica Neue", Helvetica, Arial, sans-serif
 ***********************/
 
 simple-radius(n)
-	-webkit-border-radius n
-	-moz-border-radius n
-	border-radius n
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
 
 custom-radius()
-	-webkit-border-radius arguments
-	-moz-border-radius argument
-	border-radius argument
-	border 2px border-default solid unless @border
+  -webkit-border-radius arguments
+  -moz-border-radius argument
+  border-radius argument
+  border 2px border-default solid unless @border
 
 /*striped table*/
 stripe(even = color-lighten, odd = color-darken)
-	tr
-		background-color odd
-		&.even
-		&:nth-child(even)
-			background-color even
+  tr
+    background-color odd
+    &.even
+    &:nth-child(even)
+      background-color even
 
 /*comma-list*/
 inline-list()
-	li
-		display inline
+  li
+    display inline
 
 comma-list()
-	inline-list()
-	li
-		&:after
-			content ','
-		&:last-child:after
-			content ''
+  inline-list()
+  li
+    &:after
+      content ','
+    &:last-child:after
+      content ''
 
 link-custom()
-	color color-app unless @color
-	font-size 12px unless @font-size
-	&:hover
-	&:active
-	&:focus
-		color lighten(color-app, 75%)
+  color color-app unless @color
+  font-size 12px unless @font-size
+  &:hover
+  &:active
+  &:focus
+    color lighten(color-app, 75%)
+
+link-light()
+  cursor pointer
+  color lighten(color-app, 97%) !important
+  &:hover
+  &:active
+  &:focus
+    color lighten(color-app, 57%) !important

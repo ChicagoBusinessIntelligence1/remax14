@@ -6,15 +6,24 @@
 ***********************/
 
 .footer
-	background-color rgb(245, 245, 245)
-	height 60px
+  background-color lighten(color-skin, 25%)
+  height 60px
+  span
+    color lighten(color-app, 97%) !important
+  a
+    cursor pointer
+    color lighten(color-app, 97%) !important
+    &:hover
+    &:active
+    &:focus
+      color lighten(color-app, 57%) !important
 
 .footer-content
-	padding-top 15px
-	padding-bottom 15px
+  padding-top 15px
+  padding-bottom 15px
 
 .copyright
-	display inline-block
-	margin-top 10px
+  display inline-block
+  margin-top 10px
 
 

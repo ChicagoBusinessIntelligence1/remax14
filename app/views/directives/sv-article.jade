@@ -10,7 +10,8 @@
       .col-lg-12
         .post-comment.panel.panel-default
           ul.list-unstyled.ul-comment
-            li(ng-repeat="c in post.comments")
+            li(ng-repeat='(commentKey,c) in post.comments')
+              sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')
               img.img-fb(ng-src="{{c.userPic}}")
               span.user-name-comment {{c.userName}}
               p.p-comment-time {{c.time| date:'short'}}
@@ -20,7 +21,7 @@
 
 
   form(role='form', ng-show='auth.user')
-      .form-group.comment-input
-        textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
-        button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic)') Post
+    .form-group.comment-input
+      textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
+      button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic)') Post
 

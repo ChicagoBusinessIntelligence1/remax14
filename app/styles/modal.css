@@ -1,66 +1,50 @@
 .modal-backdrop.am-fade {
   opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-    filter: alpha(opacity=);
-
-.modal-backdrop.am-fade table {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
+  filter: alpha(opacity=);
+  .modal-backdrop.am-fade table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
--webkit-transition:
-
-;
-.modal-backdrop.am-fade table {
+  }
+  -webkit-transition: ;
+  .modal-backdrop.am-fade table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
--moz-transition:
-
-;
-.modal-backdrop.am-fade table {
+  }
+  -moz-transition: ;
+  .modal-backdrop.am-fade table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
--o-transition:
-
-;
-.modal-backdrop.am-fade table {
+  }
+  -o-transition: ;
+  .modal-backdrop.am-fade table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
--ms-transition:
-
-;
-.modal-backdrop.am-fade table {
+  }
+  -ms-transition: ;
+  .modal-backdrop.am-fade table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-transition:
-
-;
+  }
+  transition: ;
 }
 .modal-backdrop.am-fade.ng-enter {
   opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-    filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
+  filter: alpha(opacity=);
 }
 .modal-backdrop.am-fade.ng-enter.ng-enter-active {
   opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-    filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
+  filter: alpha(opacity=);
 }
 .modal-backdrop.am-fade.ng-leave {
   opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-    filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
+  filter: alpha(opacity=);
 }
 .modal-backdrop.am-fade.ng-leave.ng-leave-active {
   opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-    filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
+  filter: alpha(opacity=);
 }

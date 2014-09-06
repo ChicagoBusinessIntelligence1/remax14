@@ -57,20 +57,10 @@
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
 }
-.edit-comment-container {
-  display: block;
+.color-danger {
+  color: #db7156;
+  cursor: pointer;
 }
-.editableform-loading {
-  display: none;
-}
-.editable-input {
-  position: relative;
-}
-.editableform textarea {
-  padding-right: 24px;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-.editable-submit {
-  margin-right: 10px;
+.color-danger:hover {
+  color: #b44326;
 }

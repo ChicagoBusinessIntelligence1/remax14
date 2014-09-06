@@ -5,5 +5,5 @@ div
     sv-add-post-modal(ng-show='isAdmin', posts="posts")
 div
   ul.list-unstyled
-    li(ng-repeat="post in posts | orderBy:'time':true")
+    li(ng-repeat="(key,post) in posts | orderBy:'time':true")
       sv-article

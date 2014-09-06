@@ -6,10 +6,6 @@ angular.module('app')
             restrict: 'E',
             templateUrl: '../views/directives/sv-article.html',
             controller: function ($scope) {
-                $scope.delPopover = {
-                    'scope': '$scope',
-                    'placement': 'top'
-        };
             }
         };
     });

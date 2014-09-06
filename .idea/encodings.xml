@@ -23,6 +23,7 @@
     <file url="file://$PROJECT_DIR$/app/styles/header.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/main.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/modal.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-panel.jade" charset="UTF-8" />

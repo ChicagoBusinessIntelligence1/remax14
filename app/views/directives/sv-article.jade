@@ -15,7 +15,7 @@
               span.user-name-comment {{c.userName}}
               p.p-comment-time {{c.time| date:'short'}}
               p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
-              p.p-comment.editable(ng-show='isAdmin || userName==c.userName') {{c.comment}}
+                sv-comment-popover(ng-show='isAdmin || userName==c.userName', comment='c.comment')
               hr
 
 

@@ -2,7 +2,9 @@
   "name": "app",
   "version": "0.0.0",
   "dependencies": {
-	  "toastr": "^2.0.4",
+      "axis-css": "^0.1.8",
+      "roots-css": "^0.1.13",
+      "toastr": "^2.0.4",
     "underscore": "^1.7.0"
   },
   "devDependencies": {

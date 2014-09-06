@@ -12,10 +12,11 @@ var $ = require('gulp-load-plugins')({
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
+var axis = require('axis-css');
 
 gulp.task('nib', function () {
     gulp.src('app/styles/nib.styl')
-        .pipe(stylus({use: [nib()]}))
+        .pipe(stylus({use: [nib(), axis()]}))
         .pipe(gulp.dest('app/styles/nib'));
 });
 
@@ -35,7 +36,7 @@ gulp.task('jade', function () {
 gulp.task('stylus', function () {
     gulp.src('app/styles/**/*.styl')
         .pipe(plumber())
-        .pipe(stylus({use: [nib()]}))
+        .pipe(stylus({use: [nib(), axis()]}))
         .pipe(gulp.dest('app/styles/'));
 });
 

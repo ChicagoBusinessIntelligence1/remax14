@@ -57,3 +57,12 @@
   line-height: 1.2em;
   border-bottom: dashed 1px #08c !important;
 }
+
+.color-danger {
+    color: #db7156;
+    cursor: pointer;
+}
+
+.color-danger:hover {
+    color: #b44326;
+}

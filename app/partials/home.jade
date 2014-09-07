@@ -6,6 +6,7 @@ hr
       sv-add-post-modal(ng-show='isAdmin', posts="posts")
 .row
   .col-lg-12
-    ul.list-unstyled
+    ul.slide-view.list-unstyled
       li(ng-repeat="(key,post) in posts | orderBy:'time':true")
         sv-article.pull-left
+

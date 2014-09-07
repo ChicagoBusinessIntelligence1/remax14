@@ -14,7 +14,7 @@ angular.module('app')
 
                 var deletePopover = $popover(element, {
                     scope: $scope,
-                    title: 'Remove Comment?',
+                    title: 'Remove?',
                     placement: 'left',
                     template: '../../views/popover/popover-delete.html'
                 });

@@ -3,6 +3,7 @@
     .row
       .col-lg-12
         .post-content.well
+          sv-del-conform(ng-show='isAdmin' post-key='post.$id' ).pull-right
           h3 {{post.title}}
           p.p-post-time  {{post.time | date:'short'}}
           p {{post.body}}

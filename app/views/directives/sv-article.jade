@@ -8,9 +8,9 @@
           h3 {{post.title}}
           p.p-post-time  {{post.time | date:'short'}}
           p {{post.body}}
-    .row
+    .row(ng-show='post.comments')
       .col-lg-12
-          .panel.panel-default(ng-class="{'post-comment': post.comments.length>0}")
+        .panel.panel-default.post-comment
           ul.list-unstyled.ul-comment
             li(ng-repeat='(commentKey,c) in post.comments')
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')

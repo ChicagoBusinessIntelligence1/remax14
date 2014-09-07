@@ -13,6 +13,6 @@
           .form-group
             textarea.add-article.form-control(ng-model='post.body',required, name='body',class='add-article form-control' rows='10' placeholder='Add your article...')
           div
-            button(ng-disabled="formPost.$dirty && formPost.$invalid", ng-click='addPost(post.title,post.author,post.body)').btn.btn-info.btn-lg.pull-right Post
+            button.btn.btn-primary.btn-lg.pull-right(ng-disabled="formPost.$dirty && formPost.$invalid", ng-click='addPost(post.title,post.author,post.body)') Post
             br
             br

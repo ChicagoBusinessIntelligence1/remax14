@@ -10,7 +10,7 @@
           p {{post.body}}
     .row
       .col-lg-12
-        .post-comment.panel.panel-default
+          .panel.panel-default(ng-class="{'post-comment': post.comments.length>0}")
           ul.list-unstyled.ul-comment
             li(ng-repeat='(commentKey,c) in post.comments')
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')

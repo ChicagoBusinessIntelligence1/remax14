@@ -64,6 +64,13 @@
 .color-danger:hover {
   color: #b44326;
 }
+.color-edit {
+  color: #62b1ff;
+  cursor: pointer;
+}
+.color-edit:hover {
+  color: #007cf7;
+}
 .editable-form textarea {
   position: relative;
   font-size: 12px;
@@ -85,6 +92,9 @@
 }
 .btn-remove:hover {
   background-color: #b44326;
+}
+.popover-wide {
+  max-width: 300px !important;
 }
 .navbar-app {
   margin-bottom: 0px;

@@ -6,7 +6,9 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: 'views/directives/#dname#.html',
-      scope:{},
+      scope:{
+
+      },
       link: function postLink($scope, element, attrs) {
 
       }

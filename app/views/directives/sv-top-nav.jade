@@ -45,14 +45,13 @@
 					a.btn-link-light(data-sv-login-popover='')
 						i.fa.fa-sign-out.fa-lg
 						span.span-top-nav Sign In
-				li(ng-show='auth.user.provider==\'facebook\'')
+                li(ng-if='auth.user.provider==\'facebook\'')
 					a.btn-link-light(href='{{userLink}}')
 						img.img-fb(ng-src="{{userPic}}")
 						span.span-top-nav {{userName}}
-				li(ng-show='auth.user.provider==\'password\'')
+                li(ng-if='auth.user.provider==\'password\'')
 					a.btn-link-light(href='')
 						i.fa.fa-user.fa-lg
-						//img.img-admin(src="../../images/admin.png")
 						span.fb-name Admin
 				li(ng-show='auth.user')
 					a.btn-link-light(ng-click='fenLogout()')

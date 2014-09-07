@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" libraries="{angularfire-DefinitelyTyped, underscore-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/mainCtrl.js" libraries="{underscore-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-add-post-modal.js" libraries="{HTML5 / EcmaScript 5, angularfire-DefinitelyTyped, jQuery-2.0.0}" />
+    <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-del-conform.js" libraries="{underscore-DefinitelyTyped}" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-login.js" libraries="{underscore-DefinitelyTyped}" />
     <file url="PROJECT" libraries="{angularfire-DefinitelyTyped, angularjs-DefinitelyTyped, underscore-DefinitelyTyped}" />
     <excludedPredefinedLibrary name="HTML" />

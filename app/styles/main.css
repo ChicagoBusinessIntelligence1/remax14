@@ -307,6 +307,49 @@ h5.label-default-head {
 .cursor-p {
   cursor: pointer;
 }
+.full-height {
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  margin: 5px;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+ul.fen-elements {
+  margin: 0 auto;
+  margin: 5px 15px;
+  margin: 0.32rem 0.94rem;
+  padding-left: 1rem;
+}
+ul.fen-elements li {
+  list-style-type: disc;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
+ul.fen-elements li {
+  position: relative;
+  display: inline-block !important;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px !important;
+  height: 150px !important;
+}
+.v-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.element-info {
+  visibility: hidden;
+  background-color: #8fbc8f;
+}
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);

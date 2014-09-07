@@ -12,7 +12,8 @@ angular.module('app')
       },
       link: function postLink($scope, element, attrs) {
         var scaleTo = 1.1;
-
+        var info = element.find('div.info');
+        console.log(info);
         element.on('mouseover', function (e) {
           TweenMax.fromTo(element, 1, {scale: 1}, {scale: scaleTo, ease: Back.easeOut});
         })

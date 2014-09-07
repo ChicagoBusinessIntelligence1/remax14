@@ -1,20 +1,20 @@
 {
-	"name": "app",
+  "name": "app",
   "version": "0.0.0",
-	"apppath": "app",
+  "apppath": "app",
   "dependencies": {
     "modernizr": "2.8.x",
-    "jquery": "2.x.x",
+    "jquery": "~2.1.1",
     "firebase": "1.0.x",
     "angular": "1.3.0-build.3106+sha.2e3a7fd",
     "angular-animate": "1.3.0-build.3106+sha.2e3a7fd",
     "angular-ui-router": "0.2.10",
-    "angularfire": "~0.8.0",
+    "angularfire": "~0.8.2",
     "underscore": "~1.7.0",
-	  "bootstrap": "~3.2.0",
-	  "angular-strap": "~2.0.0",
-	  "angular-sanitize": "~1.2.23",
-	  "toastr": "~2.0.3"
+    "bootstrap": "~3.2.0",
+    "angular-strap": "~2.0.0",
+    "angular-sanitize": "~1.2.23",
+    "toastr": "~2.0.3"
   },
   "devDependencies": {}
 }

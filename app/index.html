@@ -12,12 +12,15 @@
   <link rel="stylesheet" href="styles/bootstrap-additions.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Crafty+Girls' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <!--<link rel="stylesheet" href="styles/kingmain.css">-->
 
   <!-- endbuild -->
   <!-- build:js scripts/modernizr.js -->
   <script src="bower_components/modernizr/modernizr.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+
   <!-- endbuild -->
 </head>
 <body ng-controller="MainCtrl">
@@ -27,12 +30,12 @@
 <![endif]-->
 
 <sv-top-nav></sv-top-nav>
-<ul class="list-inline" id="demo">
+<!--<ul class="list-inline" id="demo">
   <li id="bar"></li>
   <li class="" id="logo">
     <img src="images/angular.png">
   </li>
-</ul>
+</ul>-->
 <div class="main-wrapper">
   <div class="container">
     <div class="row">
@@ -62,14 +65,14 @@
   ga('create', 'UA-XXXXX-X');
   ga('send', 'pageview');
 
-    window.onload = function() {
+/*    window.onload = function() {
       var logo = document.getElementById("logo"),
         bar = document.getElementById("bar");
 
       TweenLite.to(bar, 1.5, {width:"20px"});
       TweenLite.to(logo, 1.5, {left:"0px", delay:0.3});
 
-    }
+    }*/
 </script>
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->

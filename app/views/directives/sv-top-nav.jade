@@ -8,38 +8,32 @@
         span.icon-bar
         span.icon-bar
       a.navbar-brand.btn-link-light(href="#")
-        i.fa.fa-university
-        span.brand-name Brand
+        img.img-f(ng-src="../images/feng-shui-logo-name.png")
     <!-- Collect the nav links, forms, and other content for toggling -->
     .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
       ul.nav.navbar-nav.top-nav-menu
         li
-          a.btn.btn-link.btn-link-light(ui-sref='app.home') Home
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.about') About
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.contact') Contact Us
-        li.dropdown
-          a.dropdown-toggle.btn-link-light(href="#" data-toggle="dropdown") Our Services
+          a.btn.btn-link.btn-link-light(ui-sref='app.home')
+           span Главная
+        li.dropdown.drop-app
+          a.dropdown-toggle.btn-link-light(href="#" data-toggle="dropdown") Наши услуги
             i.fa.fa-angle-down
           ul.dropdown-menu(role="menu")
             li
-              a(href="#") Action
-            li
-              a(href="#") Another action
-            li
-              a(href="#") Something else here
+              a(href="#") Бизнес ФенШуй
             li.divider
             li
-              a(href="#") Separated link
+              a(href="#")  Персональные концультации
             li.divider
             li
-              a(href="#") One more separated link
+              a(href="#") Запланировать концультацию
+        li
+          a.btn.btn-link.btn-link-light(ui-sref='app.contact') Обратная связь
 
-      form.navbar-form.navbar-left(role="search")
-        .form-group
-          input.form-control(type="text" placeholder="Search")
-        button.btn.btn-default.btn-search(type="submit") Submit
+      //form.navbar-form.navbar-left(role="search")
+      //  .form-group
+      //    input.form-control(type="text" placeholder="Search")
+      //  button.btn.btn-default.btn-search(type="submit") Submit
       ul.nav.navbar-nav.pull-right.nav-auth
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')

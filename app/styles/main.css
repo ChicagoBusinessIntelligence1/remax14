@@ -80,6 +80,12 @@
 .btn-cancel:focus {
   color: #636363;
 }
+.btn-remove {
+  background-color: #f2a34f;
+}
+.btn-remove:hover {
+  background-color: #b44326;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;

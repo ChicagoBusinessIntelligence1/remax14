@@ -325,6 +325,7 @@ h5.label-default-head {
   box-shadow: 10px 10px 5px #888;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  overflow: hidden;
 }
 ul.fen-elements {
   margin: 0 auto;
@@ -356,8 +357,10 @@ ul.fen-elements li {
   transform: translateY(-50%);
 }
 .element-info {
-  visibility: hidden;
+  position: relative;
+  bottom: -100%;
   background-color: #8fbc8f;
+  height: 100%;
 }
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);

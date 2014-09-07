@@ -21,6 +21,7 @@
   margin: 5px;
   box-shadow: 10px 10px 5px #888;
   border-radius: 15px;
+  overflow: hidden;
 }
 ul.fen-elements {
   margin: 0 auto;
@@ -48,6 +49,8 @@ ul.fen-elements li {
   transform: translateY(-50%);
 }
 .element-info {
-  visibility: hidden;
+  position: relative;
+  bottom: -100%;
   background-color: #8fbc8f;
+  height: 100%;
 }

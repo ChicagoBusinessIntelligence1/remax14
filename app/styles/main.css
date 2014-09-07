@@ -291,6 +291,22 @@ h5.label-default-head {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
 }
+.red {
+  background-color: #b44326;
+}
+.green {
+  background-color: #7fc028;
+}
+.blue {
+  background-color: #00a6fc;
+}
+.black {
+  background-color: #272727;
+  color: #fff;
+}
+.cursor-p {
+  cursor: pointer;
+}
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);

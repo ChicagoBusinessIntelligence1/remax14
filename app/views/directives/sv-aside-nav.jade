@@ -3,7 +3,7 @@ nav.aside-nav
     li
       a(ui-sref='app.admin')
         i.fa.fa-gears.fa-fw
-        span.text Admin
+        span.text Админ
     li
       a(ng-click='showSub1()')
         i.fa.fa-arrows.fa-fw
@@ -12,13 +12,16 @@ nav.aside-nav
       ul.sub-menu.list-unstyled.toggle(ng-show='sub1Shown')
         li
           a(href="")
-            span.text Энергия Ци
-        li
-          a(href="")
             span.text Инь и Янь
         li
           a(href="")
             span.text Пять стихий. Теория У-син.
+        li
+          a(href="")
+            span.text Энергия Ци
+        li
+          a(href="")
+            span.text Ло-шу
     li
       a(ui-sref='app.admin')
         i.fa.fa-eye.fa-fw
@@ -53,25 +56,25 @@ nav.aside-nav
         li
           a(href="")
             span.text Мать Земля
-    li
-      a(ui-sref='app.admin')
-        i.fa.fa-clipboard.fa-fw
-        span.text Link 4
-    li
-      a(ng-click='showSub3()')
-        i.fa.fa-clipboard.fa-fw
-        span.text Link 5
-        i.toggle-icon.fa.fa-angle-left
-      ul.sub-menu.list-unstyled.toggle(ng-show='sub3Shown')
-        li
-          a(href="")
-            span.text Text
-        li
-          a(href="")
-            span.text Text
-        li
-          a(href="")
-            span.text Text
+    //li
+    //  a(ui-sref='app.admin')
+    //    i.fa.fa-clipboard.fa-fw
+    //    span.text Link 4
+    //li
+    //  a(ng-click='showSub3()')
+    //    i.fa.fa-clipboard.fa-fw
+    //    span.text Link 5
+    //    i.toggle-icon.fa.fa-angle-left
+    //  ul.sub-menu.list-unstyled.toggle(ng-show='sub3Shown')
+    //    li
+    //      a(href="")
+    //        span.text Text
+    //    li
+    //      a(href="")
+    //        span.text Text
+    //    li
+    //      a(href="")
+    //        span.text Text
 
 //nav.aside-nav
 //	ul.list-unstyled.list-aside-nav

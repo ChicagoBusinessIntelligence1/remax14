@@ -1,0 +1,16 @@
+.red {
+  background-color: #b44326;
+}
+.green {
+  background-color: #7fc028;
+}
+.blue {
+  background-color: #00a6fc;
+}
+.black {
+  background-color: #272727;
+  color: #fff;
+}
+.cursor-p {
+  cursor: pointer;
+}

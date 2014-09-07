@@ -1,10 +1,12 @@
 h1  Timeline
 hr
-div
-  .pull-right.btn-wrapper
-    sv-add-post-modal(ng-show='isAdmin', posts="posts")
-div
-  ul.list-unstyled
-    li(ng-repeat="(key,post) in posts | orderBy:'time':true")
-      sv-article.pull-left
+.row
+  .col-lg-12
+    .pull-right.btn-wrapper
+      sv-add-post-modal(ng-show='isAdmin', posts="posts")
+.row
+  .col-lg-12
+    ul.list-unstyled(sv-slder h='1000')
+      li(ng-repeat="(key,post) in posts | orderBy:'time':true")
+        sv-article.pull-left
 

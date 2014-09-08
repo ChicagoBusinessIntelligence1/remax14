@@ -303,9 +303,18 @@ h5.label-default-head {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
 }
+.r {
+  margin: 5px;
+}
 .el1,
 .el1-more,
-.el2-more {
+.el2-more,
+.el3-more,
+.el4-more,
+.el5-more,
+.el6-more,
+.el7-more,
+.el8-more {
   background-color: #b44326;
   width: 150px;
   height: 150px;
@@ -337,12 +346,107 @@ h5.label-default-head {
   position: relative;
   top: 150px;
 }
+.el3 {
+  background-color: #7fc028;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el3-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el4 {
+  background-color: #f2a34f;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el4-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el5 {
+  background-color: #b0c4de;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el5-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el6 {
+  background-color: #cd5c5c;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el6-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el7 {
+  background-color: #2f4f4f;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el7-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el8 {
+  background-color: #d3d3d3;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el8-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
 .va {
   top: 50%;
   position: absolute;
   width: 100%;
   text-align: center;
-/*z-index -99*/
 }
 .green {
   background-color: #7fc028;
@@ -367,7 +471,6 @@ h5.label-default-head {
   -webkit-border-radius: 15px;
   border-radius: 15px;
   position: relative;
-/*overflow hidden*/
 }
 ul.fen-elements {
   margin: 0 auto;

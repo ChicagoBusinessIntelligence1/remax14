@@ -10,19 +10,17 @@ angular.module('app')
         color: '@',
         n: '@'
       },
-      link: function postLink($scope, element, attrs) {
-        var scaleTo = 1.1;
-        var info = element.children('.element-info')[0];
-        console.log(info);
-        TweenMax.defaultOverwrite = "auto";
-        element.
-          bind('mouseover', function (e) {
-          //TweenMax.fromTo(element, 1, {scale: 1}, {scale: scaleTo, ease: Back.easeOut});
-          TweenMax.fromTo(info, 1, {css:{bottom: '-100%'}}, {css:{bottom: '0%'}, overwrite:'auto', ease: Back.easeOut});
+      link: function ($scope, element, attrs) {
+        var isInfoShown = false;
+        var el = $(element.children()[0]);
+        console.log(el);
+        el.bind('mouseover', function (e) {
+          isInfoShown = true;
+          console.log(isInfoShown);
         })
-        element.bind('mouseout', function (e) {
-          //TweenMax.fromTo(element, 1, {scale: scaleTo}, {scale: 1, ease: Back.easeOut});
-          TweenMax.fromTo(info, 1, {css:{bottom: '0%'}}, {css:{bottom: '-100%'},  overwrite:'auto',ease: Back.easeOut});
+
+        el.bind('mouseout', function (e) {
+          isInfoShown = false;
         })
       }
     };

@@ -14,11 +14,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'HomeCtrl',
         templateUrl: '../partials/home.html'
       })
-      .state('app.fire-personality', {
-        url: '/fire-personality',
-        controller: 'FirePersonality',
-        templateUrl: '../views/fire-personality.html'
-      })
       .state('app.contact', {
         url: '/contact',
         controller: 'ContactusCtrl',
@@ -28,6 +23,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         url: '/admin',
         controller: 'LoginCtrl',
         templateUrl: '../views/login.html'
+      })
+      .state('app.fire-personality', {
+        url: '/fire-personality',
+        controller: 'FirePersonality',
+        templateUrl: '../views/fire-personality.html'
       })
     //#state
   });

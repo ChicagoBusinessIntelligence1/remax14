@@ -1,3 +1,6 @@
+.r
+  margin 5px
+
 .el1
   background-color red
   size(150px)
@@ -6,7 +9,6 @@
   border-radius 15px
   position relative
   overflow hidden
-
 
 .el1-more
   @extend .el1
@@ -23,8 +25,97 @@
   position relative
   overflow hidden
 
-
 .el2-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el3
+  background-color green
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el3-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el4
+  background-color orange
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el4-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el5
+  background-color lightsteelblue
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el5-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el6
+  background-color indianred
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el6-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el7
+  background-color darkslategrey
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el7-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el8
+  background-color lightgrey
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+.el8-more
   @extend .el1
   background-color #808080
   position: relative
@@ -35,7 +126,8 @@
   position absolute
   width 100%
   text-align center
-  /*z-index -99*/
+
+/*z-index -99*/
 
 .green
   background-color green
@@ -46,6 +138,7 @@
 .black
   background-color black
   color white
+
 .cursor-p
   cursor pointer
 
@@ -57,7 +150,8 @@
   box-shadow 10px 10px 5px #888888
   border-radius 15px
   position: relative
-  /*overflow hidden*/
+
+/*overflow hidden*/
 
 ul.fen-elements
   margin 0 auto

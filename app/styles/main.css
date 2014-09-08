@@ -1,3 +1,9 @@
+.table-elements {
+  margin: 0 auto;
+}
+.table-elements {
+  margin: 0 auto;
+}
 .post-content {
   border-bottom: 0px;
   background-color: inherit !important;
@@ -96,6 +102,9 @@
 .popover-wide {
   max-width: 300px !important;
 }
+.table-elements {
+  margin: 0 auto;
+}
 .navbar-app {
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
@@ -126,6 +135,9 @@
   height: 20px;
   margin-right: 5px !important;
 }
+.table-elements {
+  margin: 0 auto;
+}
 .footer {
   background-color: #6e727e;
   height: 60px;
@@ -140,6 +152,9 @@
 .copyright {
   display: inline-block;
   margin-top: 10px;
+}
+.table-elements {
+  margin: 0 auto;
 }
 .left-sidebar {
   padding-right: 0px;
@@ -253,6 +268,9 @@ h5.label-default-head {
   padding-left: 5px;
   display: inline-block;
 }
+.table-elements {
+  margin: 0 auto;
+}
 .modal-backdrop.am-fade {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
@@ -321,131 +339,115 @@ h5.label-default-head {
 .el7-more,
 .el8-more {
   background-color: #b44326;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el1-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el2 {
   background-color: #00a6fc;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el2-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el3 {
   background-color: #7fc028;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el3-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el4 {
   background-color: #f2a34f;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el4-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el5 {
   background-color: #b0c4de;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el5-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el6 {
   background-color: #cd5c5c;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el6-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el7 {
   background-color: #2f4f4f;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el7-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el8 {
   background-color: #d3d3d3;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el8-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .va {
   top: 50%;
@@ -471,8 +473,8 @@ h5.label-default-head {
   color: #fff;
   text-align: center;
   margin: 5px;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888 Update-Database -Force;
+  box-shadow: 10px 10px 5px #888 Update-Database -Force;
   -webkit-border-radius: 15px;
   border-radius: 15px;
   position: relative;

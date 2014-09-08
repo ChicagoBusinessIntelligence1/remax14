@@ -4,5 +4,7 @@
 /**********************
       =Mixins
 ***********************/
-/*striped table*/
 /*comma-list*/
+.table-elements {
+  margin: 0 auto;
+}

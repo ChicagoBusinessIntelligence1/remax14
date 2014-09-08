@@ -1,5 +1,26 @@
 div
-  sv-elements
+  ul.fen-elements
+    li
+      .red.full-height: .v-align Fire
+      .more.red.full-height: .v-align Fire Info
+    li: .blue.full-height: .v-align Water
+    li: .green.full-height: .v-align Earth
+
+  script.
+    var my = $(".more");// uses autoAlpha instead of opacity
+    $(".more").css("autoAlpha", 0);
+    $(".more").css("height", 0);
+
+    var tl = new TimelineLite();
+
+    $(document).on("mouseover", ".red", function(evt){
+    // uses autoAlpha instead of alpha
+    tl.to($(".more"), 0.5, {height:"200px", autoAlpha:1});
+    }).on("mouseout", ".red", function(evt){
+    // uses autoAlpha instead of alpha
+    tl.to($(".more"), 0.5, {height:0, autoAlpha:0});
+    });
+
 
 h1  Timeline
 hr

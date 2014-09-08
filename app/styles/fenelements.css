@@ -16,6 +16,7 @@
 .el7-more,
 .el8-more {
   background-color: #b44326;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -29,7 +30,8 @@
   top: 180px;
 }
 .el2 {
-  background-color: #00a6fc;
+  background-color: #f2a34f;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -44,6 +46,7 @@
 }
 .el3 {
   background-color: #7fc028;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -57,7 +60,8 @@
   top: 180px;
 }
 .el4 {
-  background-color: #f2a34f;
+  background-color: #6495ed;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -74,6 +78,7 @@
   background-color: #b0c4de;
   width: 180px;
   height: 180px;
+  border-radius: 5px;
   color: #fff;
   text-align: center;
   position: relative;
@@ -86,6 +91,7 @@
 }
 .el6 {
   background-color: #cd5c5c;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -100,6 +106,7 @@
 }
 .el7 {
   background-color: #2f4f4f;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -114,6 +121,7 @@
 }
 .el8 {
   background-color: #d3d3d3;
+  border-radius: 5px;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -127,7 +135,8 @@
   top: 180px;
 }
 .va {
-  top: 50%;
+  font-family: font-family 'Karma', serif !important;
+  top: 40%;
   position: absolute;
   width: 100%;
   text-align: center;

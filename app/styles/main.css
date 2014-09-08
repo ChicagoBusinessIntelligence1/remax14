@@ -320,8 +320,6 @@ h5.label-default-head {
   height: 150px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
@@ -336,8 +334,6 @@ h5.label-default-head {
   height: 150px;
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }

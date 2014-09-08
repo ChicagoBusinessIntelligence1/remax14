@@ -12,15 +12,16 @@ angular.module('app')
       },
       link: function ($scope, element, attrs) {
         $scope.isInfoShown = false;
-        var el = $(element.children()[0]);
+        var el = (element.children());
+        console.log(el);
         el.on('mouseover', function (e) {
-          isInfoShown = true;
-          console.log(isInfoShown);
+        $scope.isInfoShown = true;
+          console.log($scope.isInfoShown);
         })
 
         el.on('mouseout', function (e) {
-          isInfoShown = false;
-          console.log(isInfoShown);
+        $scope.isInfoShown = false;
+          console.log($scope.isInfoShown);
         })
       }
     };

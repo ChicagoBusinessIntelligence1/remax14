@@ -1,5 +1,4 @@
 div
-  .cursor-p.full-height(ng-class='color' ng-hide='isInfoShown')
-    .v-align {{n}}
-  .element-info(ng-show='isInfoShown') Information About Element
+  div.well.cursor-p(ng-if='!isInfoShown') Test
+  div(ng-if='isInfoShown') Information
 

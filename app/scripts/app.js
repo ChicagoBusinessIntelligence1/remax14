@@ -29,6 +29,12 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'FirePersonality',
         templateUrl: '../views/fire-personality.html'
       })
+      .state('app.hardwood-personality', {
+        url: '/hardwood-personality',
+        controller: 'HardwoodPersonality',
+        templateUrl: '../views/hardwood-personality.html'
+      })
+
     //#state
   });
 

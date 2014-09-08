@@ -99,6 +99,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'BusinessConsultations',
         templateUrl: '../views/business-consultations.html'
       })
+      .state('app.personal-consultations', {
+        url: '/personal-consultations',
+        controller: 'PersonalConsultations',
+        templateUrl: '../views/personal-consultations.html'
+      })
+      .state('app.schedule-consultations', {
+        url: '/schedule-consultations',
+        controller: 'ScheduleConsultations',
+        templateUrl: '../views/schedule-consultations.html'
+      })
     //#state
   });
 

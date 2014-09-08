@@ -303,6 +303,11 @@ h5.label-default-head {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
 }
+.center-auto {
+  margin: 0 auto !important;
+  display: inline-block !important;
+  background-color: #7fc028;
+}
 .r {
   margin: 3px;
 }
@@ -3025,22 +3030,11 @@ input:focus {
 .custom-list li:last-child:after {
   content: '';
 }
-table tr {
-  background-color: #ebebeb;
-}
-table tr.even,
-table tr:nth-child(even) {
-  background-color: #fbfbfb;
-}
 table td {
   padding: 4px 10px;
 }
-table#users tr {
-  background-color: #505050;
-}
-table#users tr.even,
-table#users tr:nth-child(even) {
-  background-color: #6d6d6d;
+table#users {
+  stripe: #6d6d6d #505050;
 }
 table#users td,
 table#users th {
@@ -3079,4 +3073,23 @@ table#users th {
   left: -10px;
   width: 60px !important;
   height: 60px !important;
+}
+.datepicker.dropdown-menu {
+  width: 250px;
+  height: 270px;
+}
+.datepicker.dropdown-menu button {
+  outline: none;
+  border: 0px;
+}
+.datepicker.dropdown-menu tbody {
+  height: 180px;
+}
+.datepicker.dropdown-menu tbody button {
+  padding: 0px;
+  width: 20px;
+}
+.datepicker.dropdown-menu.datepicker-mode-1 tbody button,
+.datepicker.dropdown-menu.datepicker-mode-2 tbody button {
+  height: 65px;
 }

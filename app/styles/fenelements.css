@@ -5,29 +5,11 @@
 }
 .r {
   margin: 3px;
-}
-.el1,
-.el1-more,
-.el2-more,
-.el3-more,
-.el4-more,
-.el5-more,
-.el6-more,
-.el7-more,
-.el8-more {
-  background-color: #cd5c5c;
-  border-radius: 5px;
-  width: 180px;
-  height: 180px;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  cursor: pointer;
 }
 .el1-more {
-  background-color: #d57474 !important;
-  color: color-content !important;
-  position: relative;
+#df9595
+  color: color-app !important;
   top: 180px;
 }
 .el2 {

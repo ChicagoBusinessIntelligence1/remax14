@@ -5,21 +5,14 @@
 
 .r
   margin 3px
+  cursor pointer
 
 .el1
-  background-color indianred
-  border-radius 5px
-  size(180px)
-  color white
-  text-align center
-  position relative
-  overflow hidden
+  square-custom(indianred)
 
 .el1-more
-  @extend .el1
-  background-color lighten(#CD5C5C, 15%) !important
-  color color-content !important
-  position: relative
+  square-custom(lighten(#CD5C5C, 35%))
+  color color-app !important
   top 180px
 
 .el2

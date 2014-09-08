@@ -1,0 +1,21 @@
+div
+  h5.label.label-default-head
+    i.fa.fa-info-circle
+    span.text-panel Ваш Фэншуй Элемент
+  .your-element-form-wrapper.panel.panel-default
+    form
+      .form-group
+        label.control-label
+          span Пол:&nbsp
+        br
+        button.btn.btn-default(type="button"  placeholder='Gender' ng-model="selectedIcon" data-html="1" ng-options="icon.value as icon.label for icon in icons" bs-select)
+          |Action
+          span.caret
+      .form-group(ng-class="{'has-error': datepickerForm.date.$invalid}")
+        label.control-label
+          i.fa.fa-calendar
+          span.label-text Дата Рождения:&nbsp
+        input.form-control(ng-model="selectedDate" name="date" placeholder='Date of Birth' bs-datepicker type="text")
+      button.btn.btn-default
+        i.fa.fa-search
+        span.label-text Find my element now

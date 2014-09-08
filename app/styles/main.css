@@ -321,9 +321,6 @@ h5.label-default-head {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
 }
-.r {
-  margin: 3px;
-}
 .el1,
 .el1-more,
 .el2-more,

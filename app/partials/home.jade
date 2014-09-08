@@ -1,57 +1,55 @@
-.row
-  .col-md-3
-    .r:.el1
-      .va Fire
-      .more.el1-more
-        .va Info
-  .col-md-3
-    .r:.el2
-      .va Water
-      .more.el2-more
-        .va Info
-  .col-md-3
-    .r:.el3
-      .va Fire
-      .more.el3-more
-        .va Info
-  .col-md-3
-    .r:.el4
-      .va Fire
-      .more.el4-more
-        .va Info
+table
+  tr
+    td
+      .r:.el1
+        .va Water
+        .more.el1-more
+          .va Info
+    td
+      .r:.el2
+        .va Water
+        .more.el2-more
+          .va Info
+    td
+      .r:.el3
+        .va Fire
+        .more.el3-more
+          .va Info
+    td
+      .r:.el4
+        .va Fire
+        .more.el4-more
+          .va Info
 
-.row
-  .col-md-3
-    .r:.el5
-      .va Fire
-      .more.el5-more
-        .va Info
-  .col-md-3
-    .r:.el6
-      .va Fire
-      .more.el6-more
-        .va Info
-  .col-md-3
-    .r:.el7
-      .va Fire
-      .more.el7-more
-        .va Info
-  .col-md-3
-    .r:.el8
-      .va Fire
-      .more.el8-more
-        .va Info
-
-
-
+  tr
+    td
+      .r:.el5
+        .va Fire
+        .more.el5-more
+          .va Info
+    td
+      .r:.el6
+        .va Fire
+        .more.el6-more
+          .va Info
+    td
+      .r:.el7
+        .va Fire
+        .more.el7-more
+          .va Info
+    td
+      .r:.el8
+        .va Fire
+        .more.el8-more
+          .va Info
 
 h1  Timeline
 hr
-.row
+.tr
   .col-lg-12
     .pull-right.btn-wrapper
       sv-add-post-modal(ng-show='isAdmin', posts="posts")
-.row
+.tr
   .col-lg-12
     ul.slide-view.list-unstyled
       li(ng-repeat="(key,post) in posts | orderBy:'time':true")

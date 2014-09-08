@@ -45,7 +45,7 @@
             img.img-fb(ng-src="{{userPic}}")
             span.span-top-nav {{userName}}
         li(ng-if='auth.user.provider==\'password\'')
-          a.btn-link-light(ui-sref='')
+          a.btn-link-light
             i.fa.fa-user.fa-lg
             span.fb-name Админ
         li(ng-show='auth.user')

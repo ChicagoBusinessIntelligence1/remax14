@@ -18,7 +18,7 @@
               i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
               span.user-name-comment {{c.userName}}
               p.p-comment-time {{c.time| date:'short'}}
-              p.p-comment  {{c.comment}}
+              p.p-comment(ng-show='!auth.user || userName!=c.userName')  {{c.comment}}
               sv-comment-popover(ng-show='isAdmin || userName==c.userName', comment='c.comment' comment-key='commentKey' post-key='post.$id')
               hr
 

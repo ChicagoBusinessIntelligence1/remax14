@@ -341,6 +341,10 @@ h5.label-default-head {
   overflow: hidden;
   color: #f5f5f5;
 }
+.el1 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
+}
 .el2 {
   background-color: #d8be86;
   -webkit-border-radius: 5px;
@@ -351,6 +355,10 @@ h5.label-default-head {
   position: relative;
   overflow: hidden;
   color: #f5f5f5;
+}
+.el2 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
 }
 .el3 {
   background-color: #74a377;
@@ -363,6 +371,10 @@ h5.label-default-head {
   overflow: hidden;
   color: #f5f5f5;
 }
+.el3 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
+}
 .el4 {
   background-color: #6495ed;
   -webkit-border-radius: 5px;
@@ -373,6 +385,10 @@ h5.label-default-head {
   position: relative;
   overflow: hidden;
   color: #f5f5f5;
+}
+.el4 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
 }
 .el5 {
   background-color: #88a6bb;
@@ -385,6 +401,10 @@ h5.label-default-head {
   overflow: hidden;
   color: #f5f5f5;
 }
+.el5 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
+}
 .el6 {
   background-color: #f4bf7f;
   -webkit-border-radius: 5px;
@@ -395,6 +415,10 @@ h5.label-default-head {
   position: relative;
   overflow: hidden;
   color: #f5f5f5;
+}
+.el6 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
 }
 .el7 {
   background-color: #447373;
@@ -407,6 +431,10 @@ h5.label-default-head {
   overflow: hidden;
   color: #f5f5f5;
 }
+.el7 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
+}
 .el8 {
   background-color: #8f6d60;
   -webkit-border-radius: 5px;
@@ -417,6 +445,10 @@ h5.label-default-head {
   position: relative;
   overflow: hidden;
   color: #f5f5f5;
+}
+.el8 span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
 }
 .el1-more,
 .el2-more,
@@ -437,6 +469,17 @@ h5.label-default-head {
   color: #f5f5f5;
   color: #3c3c3c !important;
   top: 180px;
+}
+.el1-more span,
+.el2-more span,
+.el3-more span,
+.el4-more span,
+.el5-more span,
+.el6-more span,
+.el7-more span,
+.el8-more span {
+  text-shadow: 1px 1px #666;
+  font-size: 17px;
 }
 .va {
   font-family: font-family 'Karma', serif !important;

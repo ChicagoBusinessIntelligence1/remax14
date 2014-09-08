@@ -11,8 +11,8 @@
 .el7-more,
 .el8-more {
   background-color: #b44326;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
   position: relative;
@@ -21,12 +21,12 @@
 .el1-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el2 {
   background-color: #00a6fc;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
   position: relative;
@@ -35,97 +35,91 @@
 .el2-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el3 {
   background-color: #7fc028;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el3-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el4 {
   background-color: #f2a34f;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el4-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el5 {
   background-color: #b0c4de;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el5-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el6 {
   background-color: #cd5c5c;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el6-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el7 {
   background-color: #2f4f4f;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el7-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .el8 {
   background-color: #d3d3d3;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   color: #fff;
   text-align: center;
-  border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 .el8-more {
   background-color: #808080;
   position: relative;
-  top: 150px;
+  top: 180px;
 }
 .va {
   top: 50%;
@@ -152,7 +146,7 @@
   color: #fff;
   text-align: center;
   margin: 5px;
-  box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888 Update-Database -Force;
   border-radius: 15px;
   position: relative;
 }

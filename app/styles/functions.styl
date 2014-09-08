@@ -33,14 +33,6 @@ custom-radius()
   border-radius argument
   border 2px border-default solid unless @border
 
-/*striped table*/
-stripe(even = color-lighten, odd = color-darken)
-  tr
-    background-color odd
-    &.even
-    &:nth-child(even)
-      background-color even
-
 /*comma-list*/
 inline-list()
   li
@@ -85,3 +77,6 @@ post-time(n)
   color lighten(color-app, 35%)
   line-height 24px
   margin-bottom 0px
+
+.table-elements
+  margin 0 auto

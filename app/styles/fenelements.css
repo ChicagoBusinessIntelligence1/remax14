@@ -1,3 +1,11 @@
+.center-auto {
+  margin: 0 auto !important;
+  display: inline-block !important;
+  background-color: #7fc028;
+}
+.r {
+  margin: 3px;
+}
 .el1,
 .el1-more,
 .el2-more,
@@ -21,7 +29,7 @@
   top: 180px;
 }
 .el2 {
-  background-color: #f2a34f;
+  background-color: #00a6fc;
   width: 180px;
   height: 180px;
   color: #fff;
@@ -44,12 +52,12 @@
   overflow: hidden;
 }
 .el3-more {
-  background-color: #89ffa3;
+  background-color: #808080;
   position: relative;
   top: 180px;
 }
 .el4 {
-  background-color: #6495ed;
+  background-color: #f2a34f;
   width: 180px;
   height: 180px;
   color: #fff;

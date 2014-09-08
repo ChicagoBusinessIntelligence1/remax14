@@ -245,6 +245,14 @@ h5.label-default-head {
 .list-info-sidebar .info-value {
   padding-left: 10px;
 }
+.your-element-form-wrapper {
+  padding: 10px;
+  display: block;
+}
+.label-text {
+  padding-left: 5px;
+  display: inline-block;
+}
 .modal-backdrop.am-fade {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";

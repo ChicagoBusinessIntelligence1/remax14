@@ -1,7 +1,10 @@
 .row
-	aside.col-lg-3.left-sidebar
-			sv-aside-nav
-			sv-aside-panel
-	.col-lg-9.content-wrapper(ui-view='')
+  aside.col-lg-3.left-sidebar
+    sv-aside-nav
+    .sidebar-content
+      sv-aside-panel
+      sv-your-element
+  .col-lg-9.content-wrapper
+    div(ui-view='')
 
 

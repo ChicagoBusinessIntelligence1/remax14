@@ -338,7 +338,7 @@ h5.label-default-head {
 .el6-more,
 .el7-more,
 .el8-more {
-  background-color: #b44326;
+  background-color: #cd5c5c;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 180px;
@@ -349,12 +349,13 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el1-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
+  color: #f3f3f3 !important;
   position: relative;
   top: 180px;
 }
 .el2 {
-  background-color: #f2a34f;
+  background-color: #d8be86 !important;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 180px;
@@ -365,12 +366,12 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el2-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
 .el3 {
-  background-color: #7fc028;
+  background-color: #6d9e70;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 180px;
@@ -381,7 +382,7 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el3-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
@@ -397,7 +398,7 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el4-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
@@ -413,12 +414,12 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el5-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
 .el6 {
-  background-color: #cd5c5c;
+  background-color: #f4bf7f;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 180px;
@@ -429,7 +430,7 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el6-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
@@ -445,7 +446,7 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el7-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }
@@ -461,7 +462,7 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el8-more {
-  background-color: #808080;
+  background-color: #d57474 !important;
   position: relative;
   top: 180px;
 }

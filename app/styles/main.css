@@ -402,7 +402,7 @@ h5.label-default-head {
   top: 180px;
 }
 .el5 {
-  background-color: #b0c4de;
+  background-color: #88a6bb !important;
   width: 180px;
   height: 180px;
   -webkit-border-radius: 5px;
@@ -450,7 +450,7 @@ h5.label-default-head {
   top: 180px;
 }
 .el8 {
-  background-color: #d3d3d3;
+  background-color: #86665a !important;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 180px;
@@ -3111,4 +3111,8 @@ table#users th {
 .datepicker.dropdown-menu.datepicker-mode-1 tbody button,
 .datepicker.dropdown-menu.datepicker-mode-2 tbody button {
   height: 65px;
+}
+.img-bagua {
+  display: block;
+  margin: 0 auto !important;
 }

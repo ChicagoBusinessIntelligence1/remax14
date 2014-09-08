@@ -42,8 +42,8 @@
             span.span-top-nav Войти
         li(ng-if='auth.user.provider==\'facebook\'')
           a.btn-link-light(ui-sref='{{userLink}}')
-            img.img-fb(ng-src="{{userPic}}")
             span.span-top-nav {{userName}}
+            img.img-fb(ng-src="{{userPic}}")
         li(ng-if='auth.user.provider==\'password\'')
           a.btn-link-light
             i.fa.fa-user.fa-lg

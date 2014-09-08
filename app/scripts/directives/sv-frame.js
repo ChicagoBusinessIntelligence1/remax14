@@ -11,16 +11,16 @@ angular.module('app')
         n: '@'
       },
       link: function ($scope, element, attrs) {
-        var isInfoShown = false;
+        $scope.isInfoShown = false;
         var el = $(element.children()[0]);
-        console.log(el);
-        el.bind('mouseover', function (e) {
+        el.on('mouseover', function (e) {
           isInfoShown = true;
           console.log(isInfoShown);
         })
 
-        el.bind('mouseout', function (e) {
+        el.on('mouseout', function (e) {
           isInfoShown = false;
+          console.log(isInfoShown);
         })
       }
     };

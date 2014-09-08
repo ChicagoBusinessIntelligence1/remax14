@@ -12,8 +12,8 @@ angular.module('app')
       },
       link: function ($scope, element, attrs) {
         $scope.isInfoShown = false;
-        var el = (element.children());
-        console.log(el);
+        var el = (element.find('div'));
+        console.log(el.length);
         el.on('mouseover', function (e) {
         $scope.isInfoShown = true;
           console.log($scope.isInfoShown);

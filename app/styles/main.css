@@ -303,8 +303,46 @@ h5.label-default-head {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
 }
-.red {
+.el1,
+.el1-more,
+.el2-more {
   background-color: #b44326;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el1-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.el2 {
+  background-color: #00a6fc;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.el2-more {
+  background-color: #808080;
+  position: relative;
+  top: 150px;
+}
+.va {
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+/*z-index -99*/
 }
 .green {
   background-color: #7fc028;
@@ -328,6 +366,7 @@ h5.label-default-head {
   box-shadow: 10px 10px 5px #888;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  position: relative;
 /*overflow hidden*/
 }
 ul.fen-elements {
@@ -349,15 +388,6 @@ ul.fen-elements li {
   margin-right: auto;
   width: 150px !important;
   height: 150px !important;
-}
-.v-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 .element-info {
   position: relative;

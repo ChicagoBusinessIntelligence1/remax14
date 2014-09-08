@@ -35,10 +35,14 @@
     <file url="file://$PROJECT_DIR$/app/styles/modal.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/bagua.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/business-consultations.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-panel.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/directives/sv-book-fire.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/directives/sv-book-hard-wood.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-comment-popover.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-comment-popover.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-elements.jade" charset="UTF-8" />
@@ -46,12 +50,27 @@
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-frame.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-top-nav.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-top-nav.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/education.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/fire-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/hardmetal-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/hardwood-personality.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/login.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/modals/sv-add-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/modals/sv-add-article.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/motherearth-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/mountainearth-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/personal-consultations.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/popover/popover-delete.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/popover/popover-delete.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/popover/sv-post-popover.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/qi-energy.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/schedule-consultations.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/secrets-fengshui.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/softmetal-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/softwood-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/water-personality.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/wu-xing-elements.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/yin-yang.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gulp/build.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/templates/dir.tpl" charset="UTF-8" />

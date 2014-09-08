@@ -1,15 +1,1 @@
-<div><ul class="fen-elements"><li><div class="red full-height"><div class="v-align">Fire</div></div><div class="more red full-height"><div class="v-align">Fire Info</div></div></li><li><div class="blue full-height"><div class="v-align">Water</div></div></li><li><div class="green full-height"><div class="v-align">Earth</div></div></li></ul><script>var my = $(".more");// uses autoAlpha instead of opacity
-$(".more").css("autoAlpha", 0);
-$(".more").css("height", 0);
-
-var tl = new TimelineLite();
-
-$(document).on("mouseover", ".red", function(evt){
-// uses autoAlpha instead of alpha
-tl.to($(".more"), 0.5, {height:"200px", autoAlpha:1});
-}).on("mouseout", ".red", function(evt){
-// uses autoAlpha instead of alpha
-tl.to($(".more"), 0.5, {height:0, autoAlpha:0});
-});
-
-</script></div><h1> Timeline</h1><hr/><div class="row"><div class="col-lg-12"><div class="pull-right btn-wrapper"><sv-add-post-modal ng-show="isAdmin" posts="posts"></sv-add-post-modal></div></div></div><div class="row"><div class="col-lg-12"><ul class="slide-view list-unstyled"><li ng-repeat="(key,post) in posts | orderBy:'time':true"><sv-article class="pull-left"></sv-article></li></ul></div></div>
+<div class="row"><div class="col-md-3"><div class="r"><div class="el1"><div class="va">Fire</div><div class="more el1-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el2"><div class="va">Water</div><div class="more el2-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div></div><div class="row"><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div><div class="col-md-3"><div class="r"><div class="el"><div class="va">Fire</div><div class="more el-more"><div class="va">Info</div></div></div></div></div></div><h1> Timeline</h1><hr/><div class="row"><div class="col-lg-12"><div class="pull-right btn-wrapper"><sv-add-post-modal ng-show="isAdmin" posts="posts"></sv-add-post-modal></div></div></div><div class="row"><div class="col-lg-12"><ul class="slide-view list-unstyled"><li ng-repeat="(key,post) in posts | orderBy:'time':true"><sv-article class="pull-left"></sv-article></li></ul></div></div>

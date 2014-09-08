@@ -21,6 +21,7 @@
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-post-edit.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/directives/sv-slider.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/scripts/tween.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/animation/ng-animation.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/animation/ng-animation.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/aside.styl" charset="UTF-8" />
@@ -35,7 +36,6 @@
     <file url="file://$PROJECT_DIR$/app/styles/modal.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.styl" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/tween.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-nav.jade" charset="UTF-8" />

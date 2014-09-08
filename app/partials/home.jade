@@ -1,25 +1,48 @@
-div
-  ul.fen-elements
-    li
-      .red.full-height: .v-align Fire
-      .more.red.full-height: .v-align Fire Info
-    li: .blue.full-height: .v-align Water
-    li: .green.full-height: .v-align Earth
+.row
+  .col-md-3
+    .r:.el1
+      .va Fire
+      .more.el1-more
+        .va Info
+  .col-md-3
+    .r:.el2
+      .va Water
+      .more.el2-more
+        .va Info
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
 
-  script.
-    var my = $(".more");// uses autoAlpha instead of opacity
-    $(".more").css("autoAlpha", 0);
-    $(".more").css("height", 0);
+.row
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
+  .col-md-3
+    .r:.el
+      .va Fire
+      .more.el-more
+        .va Info
 
-    var tl = new TimelineLite();
 
-    $(document).on("mouseover", ".red", function(evt){
-    // uses autoAlpha instead of alpha
-    tl.to($(".more"), 0.5, {height:"200px", autoAlpha:1});
-    }).on("mouseout", ".red", function(evt){
-    // uses autoAlpha instead of alpha
-    tl.to($(".more"), 0.5, {height:0, autoAlpha:0});
-    });
 
 
 h1  Timeline

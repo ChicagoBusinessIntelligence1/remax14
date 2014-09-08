@@ -1,5 +1,41 @@
-.red
+.el1
   background-color red
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+
+.el1-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.el2
+  background-color blue
+  size(150px)
+  color white
+  text-align center
+  border-radius 15px
+  position relative
+  overflow hidden
+
+
+.el2-more
+  @extend .el1
+  background-color #808080
+  position: relative
+  top 150px
+
+.va
+  top 50%
+  position absolute
+  width 100%
+  text-align center
+  /*z-index -99*/
 
 .green
   background-color green
@@ -34,10 +70,6 @@ ul.fen-elements
     margin-right: auto;
     width 150px !important
     height 150px !important
-.v-align
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%)
 
 .element-info
   position relative
@@ -45,5 +77,4 @@ ul.fen-elements
   background-color darkseagreen
   height 100%
 
-.more
-  position: relative
+

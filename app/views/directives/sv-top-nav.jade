@@ -15,7 +15,7 @@
         li
           a.btn.btn-link.btn-link-light(ui-sref='app.home')
            span Главная
-        li.dropdown.drop-app
+        li.dropdown.drop-app.menu-link
           a.dropdown-toggle.btn-link-light(href="#" data-toggle="dropdown") Наши услуги
             i.fa.fa-angle-down
           ul.dropdown-menu(role="menu")
@@ -38,7 +38,7 @@
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Sign In
+            span.span-top-nav Войти
         li(ng-if='auth.user.provider==\'facebook\'')
           a.btn-link-light(href='{{userLink}}')
             img.img-fb(ng-src="{{userPic}}")
@@ -46,10 +46,10 @@
         li(ng-if='auth.user.provider==\'password\'')
           a.btn-link-light(href='')
             i.fa.fa-user.fa-lg
-            span.fb-name Admin
+            span.fb-name Админ
         li(ng-show='auth.user')
           a.btn-link-light(ng-click='fenLogout()')
             i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Sign Out
+            span.span-top-nav Выйти
 
 

@@ -21,7 +21,7 @@
   margin: 5px;
   box-shadow: 10px 10px 5px #888;
   border-radius: 15px;
-  overflow: hidden;
+/*overflow hidden*/
 }
 ul.fen-elements {
   margin: 0 auto;

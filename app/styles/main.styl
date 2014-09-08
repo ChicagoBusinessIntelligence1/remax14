@@ -15,13 +15,12 @@
   margin: 0;
 }
 
-
 html
   -webkit-font-smoothing antialized
 
 body
   color color-app
-  font font-app !important
+  font font-custom !important
   line-height 30px
   background-color color-darken
 
@@ -36,6 +35,11 @@ h6
   font-weight 700
   margin-bottom 5px !important
   margin-top 5px
+
+
+.menu-link
+  a
+    font-family 'Hind', sans-serif
 
 .btn-link-dark
   link-custom()
@@ -97,6 +101,7 @@ input
 .custom-list
   comma-list()
 
+
 table
   stripe()
   td
@@ -119,6 +124,7 @@ table#users
 
 .slide-view
   z-index 999
+
 /*GreenSock practicing*/
 #demo {
   width: 792px;
@@ -127,10 +133,10 @@ table#users
   padding: 8px;
 }
 
-#bar{
-  background-color:#91e500;
-  color:black;
-  position:relative;
+#bar {
+  background-color: #91e500;
+  color: black;
+  position: relative;
   width: 5px;
   height: 90px;
 }

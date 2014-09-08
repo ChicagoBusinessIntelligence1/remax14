@@ -101,16 +101,12 @@
   -webkit-border-radius: 0px;
   border-radius: 0px;
   background-color: #43464d !important;
-  font: 14px "Raleway", sans-serif, "Helvetica Neue", Helvetica, Arial !important;
-}
-.navbar-app ul li a {
-  font-family: "Raleway", sans-serif, "Helvetica Neue", Helvetica, Arial;
 }
 .span-top-nav {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
-  font: 14px "Raleway", sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font-family: 'Raleway', sans-serif;
 }
 .brand-name {
   font-size: 20px;
@@ -124,7 +120,6 @@
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: inherit;
-  font: 14px "Raleway", sans-serif, "Helvetica Neue", Helvetica, Arial !important;
 }
 .img-fb {
   width: 20px;
@@ -325,7 +320,7 @@ h5.label-default-head {
   box-shadow: 10px 10px 5px #888;
   -webkit-border-radius: 15px;
   border-radius: 15px;
-  overflow: hidden;
+/*overflow hidden*/
 }
 ul.fen-elements {
   margin: 0 auto;
@@ -2779,7 +2774,7 @@ html {
 }
 body {
   color: #3c3c3c;
-  font: 14px "Raleway", sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font: font-custom !important;
   line-height: 30px;
   background-color: #ebebeb;
 }
@@ -2800,6 +2795,9 @@ h6 {
   font-weight: 700;
   margin-bottom: 5px !important;
   margin-top: 5px;
+}
+.menu-link a {
+  font-family: 'Hind', sans-serif;
 }
 .btn-link-dark {
   font-size: 14px;

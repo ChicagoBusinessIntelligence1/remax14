@@ -330,14 +330,7 @@ h5.label-default-head {
   margin: 3px;
   cursor: pointer;
 }
-.el1,
-.el2-more,
-.el3-more,
-.el4-more,
-.el5-more,
-.el6-more,
-.el7-more,
-.el8-more {
+.el1 {
   background-color: #cd5c5c;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -373,8 +366,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el2-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el3 {
@@ -389,8 +390,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el3-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el4 {
@@ -405,8 +414,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el4-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el5 {
@@ -421,8 +438,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el5-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el6 {
@@ -437,8 +462,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el6-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el7 {
@@ -453,8 +486,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el7-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .el8 {
@@ -469,8 +510,16 @@ h5.label-default-head {
   overflow: hidden;
 }
 .el8-more {
-  background-color: #d57474 !important;
+  background-color: #df9595;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
   position: relative;
+  overflow: hidden;
+  color: #f5f5f5;
+  color: #3c3c3c !important;
   top: 180px;
 }
 .va {

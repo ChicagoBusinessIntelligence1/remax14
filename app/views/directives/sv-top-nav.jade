@@ -14,10 +14,12 @@
       ul.nav.navbar-nav.top-nav-menu
         li
           a.btn.btn-link.btn-link-light(ui-sref='app.home')
-            .i.fa.fa-home.fa-lg
+            .i.fa.fa-home
             span.text Главная
         li.dropdown.drop-app.menu-link
-          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown") Наши услуги
+          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+            .i.fa.fa-leaf
+            span.text Наши услуги
             i.fa.fa-angle-down
           ul.dropdown-menu(role="menu")
             li
@@ -33,7 +35,9 @@
             li
               a(ui-sref="app.schedule-consultations") Запланировать концультацию
         li
-          a.btn.btn-link.btn-link-light(ui-sref='app.contact') Обратная связь
+          a.btn.btn-link.btn-link-light(ui-sref='app.contact')
+            i.fa.fa-phone
+            span.text Обратная связь
 
       //form.navbar-form.navbar-left(role="search")
       //  .form-group

@@ -113,6 +113,10 @@
 }
 .navbar-app li a .text {
   padding-left: 5px;
+  display: inline-block;
+}
+.navbar-app li a .fa-angle-down {
+  margin-left: 5px !important;
 }
 .span-top-nav {
   display: inline-block;

@@ -11,6 +11,10 @@ nav.aside-nav
         i.toggle-icon.fa.fa-angle-left
       ul.sub-menu.list-unstyled.toggle(ng-show='sub1Shown')
         li
+          a(ui-sref='app.about-fengshui')
+            span.text Что такое Феншуй?
+        li
+        li
           a(ui-sref='app.yin-yang')
             span.text Инь и Янь
         li
@@ -24,7 +28,7 @@ nav.aside-nav
             span.text Багуа
     li
       a(ui-sref='app.secrets-fengshui')
-        i.fa.fa-bookmark.fa-fw
+        i.fa.fa-bookmark-o.fa-fw
         span.text Секреты Фэншуй
     li
     li

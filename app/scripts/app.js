@@ -79,6 +79,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'Education',
         templateUrl: '../views/education.html'
       })
+      .state('app.about-fengshui', {
+        url: '/about-fengshui',
+        controller: 'AboutFengshui',
+        templateUrl: '../views/about-fengshui.html'
+      })
       .state('app.yin-yang', {
         url: '/yin-yang-fengshui',
         controller: 'YinYang',

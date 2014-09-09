@@ -27,9 +27,14 @@ nav.aside-nav
         i.fa.fa-bookmark.fa-fw
         span.text Секреты Фэншуй
     li
+    li
+      a(ui-sref='app.fengshui-articles')
+        i.fa.fa-newspaper-o.fa-fw
+        span.text Статьи
+    li
       a(ng-click='showSub2()' ui-sref='app.fire-personality')
-        i.fa.fa-book.fa-fw
-        span.text Приобрести литературу
+        i.fa.fa-headphones.fa-fw
+        span.text Приобрести аудиокниги
         i.toggle-icon.fa.fa-angle-left
       ul.sub-menu.list-unstyled.toggle(ng-show='sub2Shown')
         li

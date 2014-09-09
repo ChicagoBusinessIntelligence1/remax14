@@ -37,6 +37,7 @@
     <file url="file://$PROJECT_DIR$/app/styles/post.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/bagua.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/business-consultations.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/business-consultations.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
@@ -53,6 +54,7 @@
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-top-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-your-element.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/education.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/fengshui-articles.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/fire-personality.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/hardmetal-personality.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/hardwood-personality.jade" charset="UTF-8" />
@@ -66,6 +68,7 @@
     <file url="file://$PROJECT_DIR$/app/views/popover/popover-delete.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/popover/sv-post-popover.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/qi-energy.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/residential-consultations.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/schedule-consultations.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/secrets-fengshui.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/softmetal-personality.jade" charset="UTF-8" />

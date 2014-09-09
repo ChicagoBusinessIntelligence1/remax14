@@ -14,13 +14,17 @@
       ul.nav.navbar-nav.top-nav-menu
         li
           a.btn.btn-link.btn-link-light(ui-sref='app.home')
-           span Главная
+            .i.fa.fa-home.fa-lg
+            span.text Главная
         li.dropdown.drop-app.menu-link
           a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown") Наши услуги
             i.fa.fa-angle-down
           ul.dropdown-menu(role="menu")
             li
-              a(ui-sref='app.business-consultations') Бизнес ФенШуй
+              a(ui-sref='app.residential-consultations') Феншуй для Вашего Дома
+            li.divider
+            li
+              a(ui-sref='app.business-consultations') Феншуй для Вашего Бизнеca
             li.divider
             li
               a(ui-sref='app.personal-consultations') Персональные концультации

@@ -64,15 +64,20 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'MotherearthPersonality',
         templateUrl: '../views/motherearth-personality.html'
       })
-      .state('app.education', {
-        url: '/education-fengshui',
-        controller: 'Education',
-        templateUrl: '../views/education.html'
-      })
       .state('app.secrets-fengshui', {
         url: '/secrets-fengshui',
         controller: 'SecretsFengshui',
         templateUrl: '../views/secrets-fengshui.html'
+      })
+      .state('app.fengshui-articles', {
+        url: '/fengshui-articles',
+        controller: 'FengshuiArticles',
+        templateUrl: '../views/fengshui-articles.html'
+      })
+      .state('app.education', {
+        url: '/education-fengshui',
+        controller: 'Education',
+        templateUrl: '../views/education.html'
       })
       .state('app.yin-yang', {
         url: '/yin-yang-fengshui',
@@ -93,6 +98,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         url: '/bagua-eight-trigrams',
         controller: 'Bagua',
         templateUrl: '../views/bagua.html'
+      })
+      .state('app.residential-consultations', {
+        url: '/residential-consultations',
+        controller: 'ResidentialConsultations',
+        templateUrl: '../views/residential-consultations.html'
       })
       .state('app.business-consultations', {
         url: '/business-consultations',

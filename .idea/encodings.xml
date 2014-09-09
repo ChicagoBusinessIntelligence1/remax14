@@ -36,6 +36,7 @@
     <file url="file://$PROJECT_DIR$/app/styles/modal.styl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/styles/post.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/about-fengshui.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/bagua.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/business-consultations.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/business-consultations.jade" charset="UTF-8" />

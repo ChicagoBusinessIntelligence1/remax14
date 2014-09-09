@@ -22,7 +22,6 @@
               sv-comment-popover(ng-show='isAdmin || userName==c.userName', comment='c.comment' comment-key='commentKey' post-key='post.$id')
               hr
 
-
   form(role='form', ng-show='auth.user')
     .form-group.comment-input
       textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')

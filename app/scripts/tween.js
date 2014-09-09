@@ -6,7 +6,7 @@ $(document).on("mouseover", ".el1", function(evt){
   tl.to($(".el1-more"), 0.5, {top:"0px", overwrite:1, ease:"Back.easeOut"});
 }).on("mouseout", ".el1", function(evt){
   // uses autoAlpha instead of alpha
-  tl.to($(".el1-more"), 0.5, {top:'180px', overwrite:1});
+  tl.to($(".el1-more"), 0.5, {top:'150px', overwrite:1});
 });
 
 $(document).on("mouseover", ".el2", function(evt){

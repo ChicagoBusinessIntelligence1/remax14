@@ -12,7 +12,7 @@
 .fen-element-wrapper {
   width: 128px;
   height: 80px;
-  border-radius: 7px;
+  border-radius: 3px;
   cursor: pointer;
   overflow: hidden;
 }
@@ -28,10 +28,10 @@
 }
 .fen-element-cover {
   height: 30px !important;
-  border-radius: 7px;
+  border-radius: 3px;
   width: 128px;
   position: relative;
-  background-color: #b2b2b2;
+  background-color: #fbfbfb;
   color: #00008b;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
@@ -80,57 +80,57 @@ ul.fen-elements li {
 }
 .fire {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .fire:hover {
-  background-color: #00a6fc;
+  background-color: #d26c6c;
 }
 .soft-wood {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .soft-wood:hover {
-  background-color: #7fc028;
+  background-color: #74a377;
 }
 .hard-wood {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .hard-wood:hover {
-  background-color: #7fc028;
+  background-color: #447373;
 }
 .water {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .water:hover {
-  background-color: #7fc028;
+  background-color: #6495ed;
 }
 .soft-metal {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .soft-metal:hover {
-  background-color: #00a6fc;
+  background-color: #f4bf7f;
 }
 .hard-metal {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .hard-metal:hover {
-  background-color: #7fc028;
+  background-color: #88a6bb;
 }
 .mountain-earth {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .mountain-earth:hover {
-  background-color: #7fc028;
+  background-color: #d8be86;
 }
 .mother-earth {
   -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
+  background-color: #848994;
 }
 .mother-earth:hover {
-  background-color: #7fc028;
+  background-color: #8f6d60;
 }

@@ -21,10 +21,11 @@
   height: 80px;
   text-align: center;
   position: relative;
-  color: #f5f5f5;
 }
 .fen-element span {
-  font-size: 17px;
+  color: #f5f5f5;
+  text-shadow: 1px 0px #505050;
+  font-size: 12px;
 }
 .fen-element-cover {
   height: 30px !important;

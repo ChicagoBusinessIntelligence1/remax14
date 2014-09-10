@@ -278,59 +278,6 @@ h5.label-default-head {
 .table-elements {
   margin: 0 auto;
 }
-.modal-backdrop.am-fade {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -webkit-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -moz-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -o-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -ms-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  transition: ;
-}
-.modal-backdrop.am-fade.ng-enter {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-enter.ng-enter-active {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-leave {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-leave.ng-leave-active {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.table-elements {
-  margin: 0 auto;
-}
 .fen-element-wrapper {
   width: 180px;
   height: 180px;
@@ -392,31 +339,6 @@ ul.fen-elements li {
 .slide-up {
   position: relative;
   -webkit-transition: all linear 0.5s;
-  .slide-up table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -webkit-transition: ;
-  .slide-up table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -moz-transition: ;
-  .slide-up table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -o-transition: ;
-  .slide-up table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -ms-transition: ;
-  .slide-up table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  transition: ;
 }
 .slide-up {
   top: -60px;
@@ -425,17 +347,38 @@ ul.fen-elements li {
   top: 0px;
 }
 .hard-wood {
-  -webkit-transition: background-color 1s ease;
+  .hard-wood table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  -webkit-transition: ;
+  .hard-wood table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  -moz-transition: ;
+  .hard-wood table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  -o-transition: ;
+  .hard-wood table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  -ms-transition: ;
+  .hard-wood table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  transition: ;
+  background-color: #43464d;
   background-color: #43464d;
 }
 .hard-wood:hover {
   background-color: #00a6fc;
 }
-.soft-wood {
-  -webkit-transition: background-color 1s ease;
-  background-color: #43464d;
-}
-.soft-wood:hover {
+.hard-wood:hover {
   background-color: #7fc028;
 }
 /**********************

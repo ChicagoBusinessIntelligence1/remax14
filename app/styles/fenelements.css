@@ -3,9 +3,9 @@
   display: inline-block !important;
   background-color: #7fc028;
 }
-.r {
-  margin: 3px;
-  cursor: pointer;
+.element-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .va {
   font-family: font-family 'Karma', serif !important;

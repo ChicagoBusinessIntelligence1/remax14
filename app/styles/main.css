@@ -326,6 +326,9 @@ h5.label-default-head {
   width: 100%;
   text-align: center;
 }
+.vertical-alignment span {
+  color: #fff !important;
+}
 ul.fen-elements {
   margin: 0 auto;
   margin: 5px 15px;

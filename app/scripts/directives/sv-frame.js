@@ -7,7 +7,8 @@ angular.module('app')
       replace: true,
       templateUrl: 'views/directives/sv-frame.html',
       scope: {
-        elementClass: '@'
+        elementClass: '@',
+        title: '@'
       },
       link: function ($scope, element, attrs) {
         $scope.isInfoShown = false;

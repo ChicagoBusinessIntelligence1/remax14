@@ -1,56 +1,9 @@
-.row
-  .col-sm-3.col-xs-6.element-container
-    .el1
-      .va
-        span ОГОНЬ
-      .more.el1-more
-        .va
-          ul.list-unstyled.panel.panel-default
-            li Fire personality
-            li Purchase a Book
-  .col-sm-3.col-xs-6.element-container
-    .el2
-      .va
-        span ТВЕРДОЕ ДЕРЕВО
-      .more.el2-more
-        .va Info
-  .col-sm-3.col-xs-6.element-container
-    .el3
-      .va
-        span МЯГКОЕ ДЕРЕВО
-      .more.el3-more
-        .va Info
-  .col-sm-3.col-xs-6.element-container
-    .el4
-      .va
-        span ВОДА
-      .more.el4-more
-        .va Info
-.row
-  .col-sm-3.col-xs-6.element-container
-    .el5
-      .va
-        span ТВЕРДЫЙ МЕТАЛЛ
-      .more.el5-more
-        .va Info
-  .col-sm-3.col-xs-6.element-container
-    .el6
-      .va
-        span МЯГКИЙ МЕТАЛЛ
-      .more.el6-more
-        .va Info
-  .col-sm-3.col-xs-6.element-container
-    .el7
-      .va
-        span ГОРНАЯ ЗЕМЛЯ
-      .more.el7-more
-        .va Info
-  .col-sm-3.col-xs-6.element-container
-    .el8
-      .va
-        span МАТЬ ЗЕМЛЯ
-      .more.el8-more
-        .va Info
+p
+  br
+  sv-frame(title='ТВЕРДОЕ ДЕРЕВО', element-class='hard-wood')
+  br
+  sv-frame(title='Soft ДЕРЕВО', element-class='soft-wood')
+
 
 h1  Timeline
 hr
@@ -63,4 +16,3 @@ hr
     ul.slide-view.list-unstyled
       li(ng-repeat="(key,post) in posts | orderBy:'time':true")
         sv-article.pull-left
-

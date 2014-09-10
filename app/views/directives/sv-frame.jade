@@ -1,4 +1,7 @@
-div
-  div.well.cursor-p(ng-if='!isInfoShown') Test
-  div(ng-if='isInfoShown') Information
-
+.fen-element-wrapper(class='{{elementClass}}')
+  .fen-element
+    .vertical-alignment
+      span {{title}}
+  .fen-element-cover(ng-show='isInfoShown').slide-up.ng-hide
+    .vertical-alignment
+      span Info

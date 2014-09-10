@@ -1,79 +1,40 @@
-.center-auto
-  margin 0 auto !important
-  display inline-block !important
-  background-color green
+@import 'functions'
 
-.element-container
-  margin-top 10px
-  margin-bottom 10px
+height=180px
+width=60px
 
-.el1
-  square-custom(lighten(#CD5C5C, 10%))
+.fen-element-wrapper
+  size(height) !important
+  cursor pointer
+  border-radius 10px
+  overflow hidden
 
-.el2
-  square-custom(lighten(darkslategrey, 15%))
+.fen-element
+  size(height)
+  text-align center
+  position relative
+  color #f5f5f5
+  span
+    font-size 17px
 
-.el3
-  square-custom(lighten(#6D9E70, 5%))
+.fen-element-cover
+  size(height, width)
+  relative 0px
+  background-color lighten(#a9a9a9, 10%)
+  color darkblue
+  border-radius 5px
+  opacity .6
 
-.el4
-  square-custom(cornflowerblue)
 
-.el5
-  square-custom(#88A6BB)
-
-.el6
-  square-custom(#F4BF7F)
-
-.el7
-  square-custom(#D8BE86)
-
-.el8
-  square-custom(lighten(#86665A, 5%))
-
-.el1-more
-.el2-more
-.el3-more
-.el4-more
-.el5-more
-.el6-more
-.el7-more
-.el8-more
-  square-hover()
-
-.va
+.vertical-alignment
   font-family font-family 'Karma', serif !important
   top 40%
   position absolute
   width 100%
   text-align center
 
-/*z-index -99*/
 
-.green
-  background-color green
 
-.blue
-  background-color blue
-
-.black
-  background-color black
-  color white
-
-.cursor-p
-  cursor pointer
-
-.full-height
-  height 100%
-  color #ffffff
-  text-align center
-  margin 5px
-  box-shadow 10px 10px 5px #88 Update-Database -Force
-  8888
-  border-radius 15px
-  position: relative
-
-/*overflow hidden*/
 
 ul.fen-elements
   margin 0 auto
@@ -87,10 +48,27 @@ ul.fen-elements
     width 150px !important
     height 150px !important
 
-.element-info
-  position relative
-  bottom -100%
-  background-color darkseagreen
-  height 100%
 
+
+.slide-up
+  position: relative
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+
+.slide-up
+  top - width
+
+
+.slide-up.ng-hide
+  top 0px;
+
+.hard-wood
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(blue) !important
+
+.soft-wood
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green) !important
 

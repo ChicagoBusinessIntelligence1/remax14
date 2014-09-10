@@ -7,22 +7,24 @@ angular.module('app')
       replace: true,
       templateUrl: 'views/directives/sv-frame.html',
       scope: {
-        color: '@',
-        n: '@'
+        elementClass: '@',
+        title: '@'
       },
       link: function ($scope, element, attrs) {
         $scope.isInfoShown = false;
-        var el = (element.find('div'));
-        console.log(el.length);
-        el.on('mouseover', function (e) {
-        $scope.isInfoShown = true;
-          console.log($scope.isInfoShown);
-        })
+        var el = angular.element(_.first((element.find('div'))));
+        //console.log(el.html());
+        element.hover(function () {
+          $scope.$apply(function () {
+            $scope.isInfoShown = true;
+          });
+        }, function () {
 
-        el.on('mouseout', function (e) {
-        $scope.isInfoShown = false;
-          console.log($scope.isInfoShown);
+          $scope.$apply(function () {
+            $scope.isInfoShown = false;
+          });
         })
+        //
       }
     };
   });

@@ -1,16 +1,25 @@
 @import 'functions'
 
-height=180px
-width=60px
+width = 128px
+height = 80px
+
+.elements-nav-wrapper
+  padding-right 10px
+  padding-left 10px
+  margin-left 15px
+
+.elements-nav
+  padding 5px 0px
+
 
 .fen-element-wrapper
-  size(height) !important
+  size(width, height) !important
+  border-radius 7px
   cursor pointer
-  border-radius 10px
   overflow hidden
 
 .fen-element
-  size(height)
+  size(width, height)
   text-align center
   position relative
   color #f5f5f5
@@ -18,13 +27,14 @@ width=60px
     font-size 17px
 
 .fen-element-cover
-  size(height, width)
+  height 30px !important
+  border-radius 7px
+  width width
   relative 0px
   background-color lighten(#a9a9a9, 10%)
   color darkblue
-  border-radius 5px
   opacity .6
-
+  font-size 1em !important
 
 .vertical-alignment
   font-family font-family 'Karma', serif !important
@@ -32,9 +42,6 @@ width=60px
   position absolute
   width 100%
   text-align center
-
-
-
 
 ul.fen-elements
   margin 0 auto
@@ -48,27 +55,53 @@ ul.fen-elements
     width 150px !important
     height 150px !important
 
-
-
 .slide-up
   position: relative
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+  transition(1s)
 
 .slide-up
-  top - width
-
+  top -30px
 
 .slide-up.ng-hide
   top 0px;
 
-.hard-wood
+.fire
   -webkit-transition: background-color 1s ease;
   background-color #43464D
-  hover-color(blue) !important
+  hover-color(blue)!important
 
 .soft-wood
   -webkit-transition: background-color 1s ease;
   background-color #43464D
-  hover-color(green) !important
+  hover-color(green)!important
+
+.hard-wood
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green)!important
+
+.water
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green)!important
+
+.soft-metal
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(blue)!important
+
+.hard-metal
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green)!important
+
+.mountain-earth
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green)!important
+
+.mother-earth
+  -webkit-transition: background-color 1s ease;
+  background-color #43464D
+  hover-color(green)!important
 

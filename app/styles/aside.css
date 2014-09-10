@@ -16,6 +16,7 @@
   padding-left: 0;
   border-bottom: #dedede 1px solid;
   list-style-type: none;
+  line-height: 30px;
 }
 .aside-menu li a {
   display: block;

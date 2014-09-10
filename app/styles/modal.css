@@ -5,31 +5,11 @@
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -webkit-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -moz-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -o-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  -ms-transition: ;
-  .modal-backdrop.am-fade table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  transition: ;
+  -webkit-transition: all opacity ease;
+  -moz-transition: all opacity ease;
+  -ms-transition: all opacity ease;
+  -o-transition: all opacity ease;
+  transition: all opacity ease;
 }
 .modal-backdrop.am-fade.ng-enter {
   opacity: 0;

@@ -7,8 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: 'views/directives/sv-frame.html',
       scope: {
-        elementClass: '@',
-        title: '@'
+        elementClass: '@'
       },
       link: function ($scope, element, attrs) {
         $scope.isInfoShown = false;
@@ -24,7 +23,6 @@ angular.module('app')
             $scope.isInfoShown = false;
           });
         })
-        //
       }
     };
   });

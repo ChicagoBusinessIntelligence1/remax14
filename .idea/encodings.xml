@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/app/index.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/partials/home.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/partials/home.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/partials/main.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/home.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" charset="UTF-8" />
@@ -49,6 +50,7 @@
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-book-hard-wood.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-comment-popover.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-comment-popover.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/views/directives/sv-elements-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-elements.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-footer-nav.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-frame.jade" charset="UTF-8" />

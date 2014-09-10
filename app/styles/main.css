@@ -279,39 +279,6 @@ h5.label-default-head {
 .table-elements {
   margin: 0 auto;
 }
-.modal-backdrop.am-fade {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  -webkit-transition: all opacity ease;
-  -moz-transition: all opacity ease;
-  -ms-transition: all opacity ease;
-  -o-transition: all opacity ease;
-  transition: all opacity ease;
-}
-.modal-backdrop.am-fade.ng-enter {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-enter.ng-enter-active {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-leave {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.modal-backdrop.am-fade.ng-leave.ng-leave-active {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-}
-.table-elements {
-  margin: 0 auto;
-}
 .elements-nav-wrapper {
   padding-right: 10px;
   padding-left: 10px;

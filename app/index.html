@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>fengshui</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrap-additions.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>
+  <!--<link rel="stylesheet" href="styles/kingmain.css">-->
+
+  <!-- endbuild -->
+  <!-- build:js scripts/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+
+  <!-- endbuild -->
+</head>
+<body ng-controller="MainCtrl" class="{{fenElementActive.val}}-bg" >
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<sv-top-nav></sv-top-nav>
+<div class="main-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 main-content">
+        <div class="center" ui-view></div>
+      </div>
+    </div>
+  </div>
+  <sv-footer-nav></sv-footer-nav>
+</div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+
+<script>
+  (function (b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function () {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+
+</script>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/mainCtrl.js"></script>
+<!-- inject:partials -->
+<!-- endinject -->
+<script src="scripts/directives/sv-nav-toggle.js"></script>
+<script src="scripts/directives/sv-nav-classic.js"></script>
+<script src="scripts/directives/sv-top-nav.js"></script>
+<script src="scripts/directives/sv-login-popover.js"></script>
+<script src="scripts/directives/sv-login.js"></script>
+<script src="scripts/directives/sv-article.js"></script>
+<script src="scripts/directives/sv-add-article.js"></script>
+<script src="scripts/controllers/fire-personality.js"></script>
+<script src="scripts/directives/sv-aside-nav.js"></script>
+<script src="scripts/directives/sv-aside-panel.js"></script>
+<script src="scripts/directives/sv-footer-nav.js"></script>
+<script src="scripts/controllers/index.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/contactus.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/directives/sv-add-post-modal.js"></script>
+<script src="scripts/directives/sv-comment-popover.js"></script>
+<script src="scripts/directives/sv-del-conform.js"></script>
+<script src="scripts/directives/sv-post-edit.js"></script>
+<script src="scripts/directives/sv-slider.js"></script>
+<script src="scripts/directives/sv-frame.js"></script>
+<script src="scripts/directives/sv-your-element.js"></script>
+<script src="scripts/directives/sv-book-fire.js"></script>
+<script src="scripts/directives/sv-book-hard-wood.js"></script>
+<script src="scripts/tween.js"></script>
+<script src="scripts/directives/sv-elements-nav.js"></script>
+<!-- links -->
+<script src="scripts/controllers/hardwood-personality.js"></script>
+<script src="scripts/controllers/softwood-personality.js"></script>
+<script src="scripts/controllers/water-personality.js"></script>
+<script src="scripts/controllers/softmetal-personality.js"></script>
+<script src="scripts/controllers/hardmetal-personality.js"></script>
+<script src="scripts/controllers/mountainearth-personality.js"></script>
+<script src="scripts/controllers/motherearth-personality.js"></script>
+<script src="scripts/controllers/education.js"></script>
+<script src="scripts/controllers/secrets-fengshui.js"></script>
+<script src="scripts/controllers/yin-yang.js"></script>
+<script src="scripts/controllers/wu-xing-elements.js"></script>
+<script src="scripts/controllers/qi-energy.js"></script>
+<script src="scripts/controllers/bagua.js"></script>
+<script src="scripts/controllers/business-consultations.js"></script>
+<script src="scripts/controllers/personal-consultations.js"></script>
+<script src="scripts/controllers/schedule-consultations.js"></script>
+<script src="scripts/controllers/residential-consultations.js"></script>
+<script src="scripts/controllers/fengshui-articles.js"></script>
+<script src="scripts/controllers/about-fengshui.js"></script>
+<!-- endbuild -->
+</body>
+</html>
+

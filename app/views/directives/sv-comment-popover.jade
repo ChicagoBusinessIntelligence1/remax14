@@ -4,9 +4,9 @@
   .popover-content
     form.form-inline.editable-form
       .form-group
-        textarea.form-control.textarea-edit-post(ng-model='comment' rows=10 cols=35)
+        textarea.form-control.textarea-edit-post(ng-model='commentnew.val' rows=10 cols=35)
       .form-group
-          button.btn.btn-primary.btn-sm.btn-save(ng-click='saveComment(comment)')
+          button.btn.btn-primary.btn-sm.btn-save(ng-click='saveComment()')
               i.fa.fa-check
           button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
               i.fa.fa-times

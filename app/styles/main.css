@@ -280,7 +280,7 @@ h5.label-default-head {
   margin: 0 auto;
 }
 .info {
-  color: #039 !important;
+  color: #6495ed !important;
 }
 .elements-nav-wrapper {
   padding-right: 10px;
@@ -305,7 +305,7 @@ h5.label-default-head {
   position: relative;
 }
 .fen-element span {
-  color: #f5f5f5;
+  color: false;
   text-shadow: 1px 0px #505050;
   font-size: 12px;
 }
@@ -376,7 +376,7 @@ ul.fen-elements li {
   background-color: #848994;
 }
 .fire:hover {
-  background-color: #d26c6c;
+  background-color: #bd2f03;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -462,7 +462,7 @@ ul.fen-elements li {
   margin: 0 auto;
 }
 .info {
-  color: #039 !important;
+  color: #6495ed !important;
 }
 .elements-nav-wrapper {
   padding-right: 10px;
@@ -487,7 +487,7 @@ ul.fen-elements li {
   position: relative;
 }
 .fen-element span {
-  color: #f5f5f5;
+  color: false;
   text-shadow: 1px 0px #505050;
   font-size: 12px;
 }
@@ -558,7 +558,7 @@ ul.fen-elements li {
   background-color: #848994;
 }
 .fire:hover {
-  background-color: #d26c6c;
+  background-color: #bd2f03;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -638,36 +638,92 @@ ul.fen-elements li {
   background-color: #8f6d60;
 }
 .fire-bg {
-  -webkit-transition: all 4s ease;
-  -moz-transition: all 4s ease;
-  -ms-transition: all 4s ease;
-  -o-transition: all 4s ease;
-  transition: all 4s ease;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
   background-color: #ebebeb;
 }
 .fire-bg:hover {
-  background-color: #d26c6c;
+  background-color: #fecaba;
 }
 .hard-wood-bg {
-  background-color: #bc8f8f;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.hard-wood-bg:hover {
+  background-color: #a3c8c8;
 }
 .soft-wood-bg {
-  background-color: #deb887;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.soft-wood-bg:hover {
+  background-color: #c0d6c2;
 }
 .water-bg {
-  background-color: #b0c4de;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.water-bg:hover {
+  background-color: #b9cff7;
 }
 .soft-metal-bg {
-  background-color: #d3d3d3;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.soft-metal-bg:hover {
+  background-color: #fcefdf;
 }
 .hard-metal-bg {
-  background-color: #a9a9a9;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.hard-metal-bg:hover {
+  background-color: #c9d7e0;
 }
 .mountain-earch-bg {
-  background-color: #90ee90;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.mountain-earch-bg:hover {
+  background-color: #ede2c9;
 }
 .mother-earth-bg {
-  background-color: #98fb98;
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #ebebeb;
+}
+.mother-earth-bg:hover {
+  background-color: #cebdb6;
 }
 /**********************
 

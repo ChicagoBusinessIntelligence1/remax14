@@ -2,12 +2,18 @@
 
 angular.module('app')
   .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state) {
+
+    $scope.fenElementActive = {val:'null'};
+
     $scope.$watch('auth.user.provider', function (newVal) {
+
       if (newVal === 'password') {
         $scope.isAdmin = true;
       }
     })
-    // now we can use $firebase to synchronize data between clients and the server!
+
+
+
     var mainRef = new Firebase(url);
     $scope.auth = $firebaseSimpleLogin(mainRef);
 

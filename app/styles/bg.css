@@ -1,5 +1,191 @@
+.table-elements {
+  margin: 0 auto;
+}
+.table-elements {
+  margin: 0 auto;
+}
+.info {
+  color: #039 !important;
+}
+.elements-nav-wrapper {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 15px;
+}
+.elements-nav {
+  padding: 5px 0px;
+}
+.fen-element-wrapper {
+  width: 128px;
+  height: 80px;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.fen-element {
+  width: 128px;
+  height: 80px;
+  text-align: center;
+  position: relative;
+}
+.fen-element span {
+  color: #f5f5f5;
+  text-shadow: 1px 0px #505050;
+  font-size: 12px;
+}
+.fen-element-cover {
+  height: 30px !important;
+  border-radius: 3px;
+  width: 128px;
+  position: relative;
+  background-color: #fbfbfb;
+  color: #00008b;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  font-size: 1em !important;
+}
+.vertical-alignment {
+  font-family: font-family 'Karma', serif !important;
+  top: 40%;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+.vertical-alignment span {
+  color: #fff;
+}
+ul.fen-elements {
+  margin: 0 auto;
+  margin: 5px 15px;
+  margin: 0.32rem 0.94rem;
+  padding-left: 1rem;
+}
+ul.fen-elements li {
+  list-style-type: disc;
+  padding: 2px 0;
+  padding: 0.125rem;
+}
+ul.fen-elements li {
+  position: relative;
+  display: inline-block !important;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px !important;
+  height: 150px !important;
+}
+.slide-up {
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.slide-up {
+  top: -27.586206896551726px;
+}
+.slide-up.ng-hide {
+  top: 0px;
+}
+.fire {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.fire:hover {
+  background-color: #d26c6c;
+}
+.soft-wood {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.soft-wood:hover {
+  background-color: #74a377;
+}
+.hard-wood {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.hard-wood:hover {
+  background-color: #447373;
+}
+.water {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.water:hover {
+  background-color: #6495ed;
+}
+.soft-metal {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.soft-metal:hover {
+  background-color: #f4bf7f;
+}
+.hard-metal {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.hard-metal:hover {
+  background-color: #88a6bb;
+}
+.mountain-earth {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.mountain-earth:hover {
+  background-color: #d8be86;
+}
+.mother-earth {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+}
+.mother-earth:hover {
+  background-color: #8f6d60;
+}
 .fire-bg {
-  background-color: #f8a1a0;
+  -webkit-transition: all 4s ease;
+  -moz-transition: all 4s ease;
+  -ms-transition: all 4s ease;
+  -o-transition: all 4s ease;
+  transition: all 4s ease;
+  background-color: #ebebeb;
+}
+.fire-bg:hover {
+  background-color: #d26c6c;
 }
 .hard-wood-bg {
   background-color: #bc8f8f;

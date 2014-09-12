@@ -282,7 +282,11 @@ h5.label-default-head {
   margin: 0 auto;
 }
 .info {
-  color: #6495ed !important;
+  color: #3c3c3c !important;
+  font-size: 11px;
+  line-height: 15px;
+  position: relative;
+  top: -7px;
 }
 .elements-nav-wrapper {
   padding-right: 10px;
@@ -312,18 +316,17 @@ h5.label-default-head {
   font-size: 12px;
 }
 .fen-element-cover {
-  height: 30px !important;
+  padding-top: 0px;
+  height: 32px !important;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   width: 128px;
   position: relative;
   0: 0;
   background-color: #fbfbfb;
-  color: #00008b;
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
   filter: alpha(opacity=);
-  font-size: 1em !important;
 }
 .vertical-alignment {
   font-family: font-family 'Karma', serif !important;

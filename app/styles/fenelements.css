@@ -2,7 +2,11 @@
   margin: 0 auto;
 }
 .info {
-  color: #6495ed !important;
+  color: #3c3c3c !important;
+  font-size: 11px;
+  line-height: 15px;
+  position: relative;
+  top: -7px;
 }
 .elements-nav-wrapper {
   padding-right: 10px;
@@ -31,15 +35,14 @@
   font-size: 12px;
 }
 .fen-element-cover {
-  height: 30px !important;
+  padding-top: 0px;
+  height: 32px !important;
   border-radius: 3px;
   width: 128px;
   position: relative;
   background-color: #fbfbfb;
-  color: #00008b;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.6;
-  font-size: 1em !important;
 }
 .vertical-alignment {
   font-family: font-family 'Karma', serif !important;

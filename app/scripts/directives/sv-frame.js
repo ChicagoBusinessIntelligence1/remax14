@@ -8,7 +8,7 @@ angular.module('app')
       templateUrl: 'views/directives/sv-frame.html',
       scope: {
         elementClass: '@',
-        title: '@',
+        name: '@',
         fenElementActive: '='
       },
       link: function ($scope, element, attrs) {

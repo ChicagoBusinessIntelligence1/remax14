@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="sv-project" pattern="!file[fengshui]:.sass-cache/*&amp;&amp;!file[fengshui]:.sass-cache//*&amp;&amp;!file[fengshui]:.idea//*&amp;&amp;!file[fengshui]:node_modules//*" />
-</component>

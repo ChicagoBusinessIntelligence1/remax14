@@ -5,27 +5,27 @@ angular.module('app')
     return {
       restrict: 'E',
       scope: {
-        comment: '=',
+        c: '=',
         postKey: '=',
         commentKey: '='
       },
-      template: '<p class="comment editable"> {{comment}}</p>',
+      template: '<p class="comment editable"> {{c.comment}}</p>',
       link: function postLink($scope, element, attrs) {
-
+        $scope.commentnew= {val:$scope.c.comment};
         $scope.popoverEdit = $popover(element, {
           scope: $scope,
           placement: 'top',
           template: '../../views/directives/sv-comment-popover.html'
         });
 
-        $scope.saveComment = function (comment) {
+        $scope.saveComment = function () {
           var repo = url + 'posts';
           var commentsUrl = repo + '/' + $scope.postKey + '/comments/' + $scope.commentKey;
-          $scope.comments = $firebase(new Firebase(commentsUrl));
-          $scope.comments.$update({comment: comment}).then(function () {
-            $scope.popoverEdit.hide();
-            toastr.info('post has been updated');
-          })
+          $firebase(new Firebase(commentsUrl)).$update({comment: $scope.commentnew.val})
+            .then(function () {
+              $scope.popoverEdit.hide();
+              toastr.info('post has been updated');
+            })
         };
       }
     };

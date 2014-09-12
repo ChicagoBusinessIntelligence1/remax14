@@ -42,18 +42,24 @@
   width: 128px;
   position: relative;
   background-color: #fbfbfb;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-  opacity: 0.6;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
 }
-.vertical-alignment {
+.vertical-alignment,
+.vertical-alignment-cover {
   font-family: font-family 'Karma', serif !important;
-  top: 40%;
+  top: 10%;
   position: absolute;
   width: 100%;
   text-align: center;
 }
-.vertical-alignment span {
+.vertical-alignment span,
+.vertical-alignment-cover span {
+  text-transform: uppercase;
   color: #fff;
+}
+.vertical-alignment-cover {
+  top: 40%;
 }
 ul.fen-elements {
   margin: 0 auto;

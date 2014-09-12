@@ -16,6 +16,7 @@ angular.module('app')
         $scope.isInfoShown = false;
         element.hover(function () {
           $scope.$apply(function () {
+
             $scope.isInfoShown = true;
             $scope.fenElementActive.val = $scope.elementClass;
           });

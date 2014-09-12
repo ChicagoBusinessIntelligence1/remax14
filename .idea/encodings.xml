@@ -8,12 +8,9 @@
     <file url="file://$PROJECT_DIR$/app/partials/home.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/partials/home.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/partials/main.jade" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/scripts/animations.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/about-fengshui.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/contactus.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/scripts/controllers/fire-personality.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/home.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/scripts/controllers/mainCtrl.js" charset="UTF-8" />
@@ -48,8 +45,6 @@
     <file url="file://$PROJECT_DIR$/app/views/bagua.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/business-consultations.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/business-consultations.jade" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/views/contactus.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/views/contactus.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-article.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/views/directives/sv-aside-nav.jade" charset="UTF-8" />

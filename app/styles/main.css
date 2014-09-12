@@ -378,6 +378,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+  background-color: #848994;
   background-image: url("../images/elements/fire-bw.png");
 }
 .fire-hover {
@@ -394,10 +395,15 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-image: url("../images/elements/soft-wood-bw.png");
 }
-.soft-wood:hover {
-  background-color: #74a377;
+.soft-wood-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-image: url("../images/elements/soft-wood.png") !important;
 }
 .hard-wood {
   -webkit-transition: all 1s ease;

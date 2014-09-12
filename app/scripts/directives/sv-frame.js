@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         elementClass: '@',
         title: '@',
-        fenElementActive:'='
+        fenElementActive: '='
       },
       link: function ($scope, element, attrs) {
 

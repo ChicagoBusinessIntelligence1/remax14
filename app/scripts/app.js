@@ -26,102 +26,102 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
       })
       .state('app.fire-personality', {
         url: '/fire-personality',
-        controller: 'FirePersonality',
+        controller: 'FirePersonalityCtrl',
         templateUrl: '../views/fire-personality.html'
       })
-      .state('app.hardwood-personality', {
-        url: '/hardwood-personality',
-        controller: 'HardwoodPersonality',
+      .state('app.hard-wood-personality', {
+        url: '/hard-wood-personality',
+        controller: 'HardwoodPersonalityCtrl',
         templateUrl: '../views/hardwood-personality.html'
       })
-      .state('app.softwood-personality', {
-        url: '/softwood-personality',
-        controller: 'SoftwoodPersonality',
+      .state('app.soft-wood-personality', {
+        url: '/soft-wood-personality',
+        controller: 'SoftwoodPersonalityCtrl',
         templateUrl: '../views/softwood-personality.html'
       })
       .state('app.water-personality', {
         url: '/water-personality',
-        controller: 'WaterPersonality',
+        controller: 'WaterPersonalityCtrl',
         templateUrl: '../views/water-personality.html'
       })
-      .state('app.hardmetal-personality', {
-        url: '/hardmetal-personality',
-        controller: 'HardmetalPersonality',
+      .state('app.hard-metal-personality', {
+        url: '/hard-metal-personality',
+        controller: 'HardmetalPersonalityCtrl',
         templateUrl: '../views/hardmetal-personality.html'
       })
-      .state('app.softmetal-personality', {
-        url: '/softmetal-personality',
-        controller: 'SoftmetalPersonality',
+      .state('app.soft-metal-personality', {
+        url: '/soft-metal-personality',
+        controller: 'SoftmetalPersonalityCtrl',
         templateUrl: '../views/softmetal-personality.html'
       })
-      .state('app.mountainearth-personality', {
-        url: '/mountainearth-personality',
-        controller: 'MountainearthPersonality',
+      .state('app.mountain-earth-personality', {
+        url: '/mountain-earth-personality',
+        controller: 'MountainearthPersonalityCtrl',
         templateUrl: '../views/mountainearth-personality.html'
       })
-      .state('app.motherearth-personality', {
-        url: '/motherearth-personality',
-        controller: 'MotherearthPersonality',
+      .state('app.mother-earth-personality', {
+        url: '/mother-earth-personality',
+        controller: 'MotherearthPersonalityCtrl',
         templateUrl: '../views/motherearth-personality.html'
       })
       .state('app.secrets-fengshui', {
         url: '/secrets-fengshui',
-        controller: 'SecretsFengshui',
+        controller: 'SecretsFengshuiCtrl',
         templateUrl: '../views/secrets-fengshui.html'
       })
       .state('app.fengshui-articles', {
         url: '/fengshui-articles',
-        controller: 'FengshuiArticles',
+        controller: 'FengshuiArticlesCtrl',
         templateUrl: '../views/fengshui-articles.html'
       })
       .state('app.education', {
         url: '/education-fengshui',
-        controller: 'Education',
+        controller: 'EducationCtrl',
         templateUrl: '../views/education.html'
       })
       .state('app.about-fengshui', {
         url: '/about-fengshui',
-        controller: 'AboutFengshui',
+        controller: 'AboutFengshuiCtrl',
         templateUrl: '../views/about-fengshui.html'
       })
       .state('app.yin-yang', {
         url: '/yin-yang-fengshui',
-        controller: 'YinYang',
+        controller: 'YinYangCtrl',
         templateUrl: '../views/yin-yang.html'
       })
       .state('app.wu-xing-elements', {
         url: '/wu-xing-elements',
-        controller: 'WuXingElements',
+        controller: 'WuXingElementsCtrl',
         templateUrl: '../views/wu-xing-elements.html'
       })
       .state('app.qi-energy', {
         url: '/qi-energy',
-        controller: 'QiEnergy',
+        controller: 'QiEnergyCtrl',
         templateUrl: '../views/qi-energy.html'
       })
       .state('app.bagua', {
         url: '/bagua-eight-trigrams',
-        controller: 'Bagua',
+        controller: 'BaguaCtrl',
         templateUrl: '../views/bagua.html'
       })
       .state('app.residential-consultations', {
         url: '/residential-consultations',
-        controller: 'ResidentialConsultations',
+        controller: 'ResidentialConsultationsCtrl',
         templateUrl: '../views/residential-consultations.html'
       })
       .state('app.business-consultations', {
         url: '/business-consultations',
-        controller: 'BusinessConsultations',
+        controller: 'BusinessConsultationsCtrl',
         templateUrl: '../views/business-consultations.html'
       })
       .state('app.personal-consultations', {
         url: '/personal-consultations',
-        controller: 'PersonalConsultations',
+        controller: 'PersonalConsultationsCtrl',
         templateUrl: '../views/personal-consultations.html'
       })
       .state('app.schedule-consultations', {
         url: '/schedule-consultations',
-        controller: 'ScheduleConsultations',
+        controller: 'ScheduleConsultationsCtrl',
         templateUrl: '../views/schedule-consultations.html'
       })
     //#state

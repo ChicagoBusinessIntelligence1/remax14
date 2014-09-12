@@ -2,5 +2,5 @@
 
 angular.module('app')
   .controller('ContactusCtrl', function ($scope) {
-
+    $scope.isDivShown = false;
   });

@@ -2,12 +2,7 @@
   margin: 0 auto;
 }
 .info {
-  color: #43464d !important;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  position: relative;
-  top: -7px;
+  color: #6495ed !important;
 }
 .elements-nav-wrapper {
   padding-right: 10px;
@@ -36,30 +31,25 @@
   font-size: 12px;
 }
 .fen-element-cover {
-  padding-top: 0px;
-  height: 32px !important;
+  height: 30px !important;
   border-radius: 3px;
   width: 128px;
   position: relative;
   background-color: #fbfbfb;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+  color: #00008b;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  font-size: 1em !important;
 }
-.vertical-alignment,
-.vertical-alignment-cover {
+.vertical-alignment {
   font-family: font-family 'Karma', serif !important;
-  top: 10%;
+  top: 40%;
   position: absolute;
   width: 100%;
   text-align: center;
 }
-.vertical-alignment span,
-.vertical-alignment-cover span {
-  text-transform: uppercase;
+.vertical-alignment span {
   color: #fff;
-}
-.vertical-alignment-cover {
-  top: 40%;
 }
 ul.fen-elements {
   margin: 0 auto;
@@ -87,7 +77,7 @@ ul.fen-elements li {
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  ofransition: all 1s ease;
 }
 .slide-up {
   top: -27.586206896551726px;
@@ -100,134 +90,86 @@ ul.fen-elements li {
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/fire-bw.png");
+  ofransition: all 1s ease;
+  background-color: #848994;
 }
-.fire-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/fire.png") !important;
-}
-.water {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/water-bw.png") !important;
-}
-.water-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/water.png") !important;
+.fire:hover {
+  background-color: #ae4022;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/soft-wood-bw.png");
+  ofransition: all 1s ease;
+  background-color: #848994;
 }
-.soft-wood-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/soft-wood.png") !important;
+.soft-wood:hover {
+  background-color: #74a377;
 }
 .hard-wood {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/hard-wood-bw.png") !important;
+  ofransition: all 1s ease;
+  background-color: #848994;
 }
-.hard-wood-hover {
+.hard-wood:hover {
+  background-color: #447373;
+}
+.water {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-image: url("../images/elements/hard-wood.png") !important;
+  ofransition: all 1s ease;
+  background-color: #848994;
+}
+.water:hover {
+  background-color: #6495ed;
 }
 .soft-metal {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  ofransition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
-.soft-metal-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-color: #848994;
-  background-image: url("../images/elements/soft-metal.png") !important;
+.soft-metal:hover {
+  background-color: #f4bf7f;
 }
 .hard-metal {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  ofransition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
-.hard-metal-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-color: #848994;
-  background-image: url("../images/elements/hard-metal.png") !important;
+.hard-metal:hover {
+  background-color: #88a6bb;
 }
 .mountain-earth {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  ofransition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
-.mountain-earth-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-color: #848994;
-  background-image: url("../images/elements/mountain-earth.png") !important;
+.mountain-earth:hover {
+  background-color: #d8be86;
 }
 .mother-earth {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
-  transition: all 1s ease;
+  ofransition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
-.mother-earth-hover {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-  background-color: #848994;
-  background-image: url("../images/elements/mother-earth.png") !important;
+.mother-earth:hover {
+  background-color: #8f6d60;
 }

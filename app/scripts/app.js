@@ -26,7 +26,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
       })
       .state('app.fire-personality', {
         url: '/fire-personality',
-        controller: 'FirePersonality',
+        controller: 'FirePersonalityCtrl',
         templateUrl: '../views/fire-personality.html'
       })
       .state('app.hardwood-personality', {

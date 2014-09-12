@@ -149,7 +149,8 @@
   background-color: #6e727e;
   height: 60px;
 }
-.footer span {
+.footer span,
+.footer a {
   color: #fbfbfb;
 }
 .footer-content {

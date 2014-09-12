@@ -378,7 +378,6 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
   background-image: url("../images/elements/fire-bw.png");
 }
 .fire-hover {
@@ -388,6 +387,22 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-image: url("../images/elements/fire.png") !important;
+}
+.water {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-image: url("../images/elements/water-bw.png") !important;
+}
+.water-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-image: url("../images/elements/water.png") !important;
 }
 .soft-wood {
   -webkit-transition: all 1s ease;
@@ -411,21 +426,15 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-image: url("../images/elements/hard-wood-bw.png") !important;
 }
-.hard-wood:hover {
-  background-color: #447373;
-}
-.water {
+.hard-wood-hover {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
-}
-.water:hover {
-  background-color: #6495ed;
+  background-image: url("../images/elements/hard-wood.png") !important;
 }
 .soft-metal {
   -webkit-transition: all 1s ease;
@@ -434,9 +443,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-}
-.soft-metal:hover {
-  background-color: #f4bf7f;
+  background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
   -webkit-transition: all 1s ease;
@@ -445,9 +452,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-}
-.hard-metal:hover {
-  background-color: #88a6bb;
+  background-image: url("../images/elements/hard-wood.png") !important;
 }
 .mountain-earth {
   -webkit-transition: all 1s ease;
@@ -456,9 +461,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-}
-.mountain-earth:hover {
-  background-color: #d8be86;
+  background-image: url("../images/elements/hard-wood.png") !important;
 }
 .mother-earth {
   -webkit-transition: all 1s ease;
@@ -467,9 +470,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-}
-.mother-earth:hover {
-  background-color: #8f6d60;
+  background-image: url("../images/elements/hard-wood.png") !important;
 }
 .table-elements {
   margin: 0 auto;

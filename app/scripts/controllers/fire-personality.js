@@ -1,5 +1,5 @@
 'use strict';
 
 angular.module('app')
-  .controller('FirePersonality', function ($scope) {
+  .controller('FirePersonalityCtrl', function ($scope) {
   });

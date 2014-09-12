@@ -2,8 +2,9 @@
   margin: 0 auto;
 }
 .info {
-  color: #3c3c3c !important;
-  font-size: 11px;
+  color: #43464d !important;
+  font-weight: 700;
+  font-size: 12px;
   line-height: 15px;
   position: relative;
   top: -7px;
@@ -159,6 +160,15 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
+  background-image: url("../images/elements/soft-metal-bw.png") !important;
+}
+.soft-metal-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
@@ -168,7 +178,16 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/hard-wood.png") !important;
+  background-image: url("../images/elements/hard-metal-bw.png") !important;
+}
+.hard-metal-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+  background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
   -webkit-transition: all 1s ease;
@@ -177,7 +196,16 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/hard-wood.png") !important;
+  background-image: url("../images/elements/mountain-earth-bw.png") !important;
+}
+.mountain-earth-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+  background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
   -webkit-transition: all 1s ease;
@@ -186,5 +214,14 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-  background-image: url("../images/elements/hard-wood.png") !important;
+  background-image: url("../images/elements/mother-earth-bw.png") !important;
+}
+.mother-earth-hover {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #848994;
+  background-image: url("../images/elements/mother-earth.png") !important;
 }

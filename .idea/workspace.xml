@@ -7,15 +7,12 @@
     <list id="d82d42d9-cffe-4a86-b8f8-f3365b0bc395" name="fensite-5 Find your element table" comment="editing template for creating a directive with grantjs" />
     <list id="56cc908d-323f-4c26-86d7-39346f9f8fb4" name="fensite-9 Additional Views for navigation menu" comment="Live templates" />
     <list default="true" id="3910f58e-3c77-4e0e-b97b-28515bbf7f6c" name="fensite-12 background animation with Tweenmax" comment="styl files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/styles/aside-navigation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/styles/modal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/styles/modal.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/fenelements.css" afterPath="$PROJECT_DIR$/app/styles/fenelements.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/fenelements.styl" afterPath="$PROJECT_DIR$/app/styles/fenelements.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/header.styl" afterPath="$PROJECT_DIR$/app/styles/header.styl" />
+      <change type="DELETED" beforePath="C:\App\fensite\app\styles\modal.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\App\fensite\app\styles\modal.styl" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/aside.css" afterPath="$PROJECT_DIR$/app/styles/aside.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/aside.styl" afterPath="$PROJECT_DIR$/app/styles/aside.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.styl" afterPath="$PROJECT_DIR$/app/styles/main.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/post.styl" afterPath="$PROJECT_DIR$/app/styles/post.styl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -43,8 +40,8 @@
       <file leaf-file-name="main.styl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77022654" vertical-offset="2074" max-vertical-offset="3094">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42934197" vertical-offset="894" max-vertical-offset="2975">
+              <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -53,8 +50,18 @@
       <file leaf-file-name="aside.styl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/aside.styl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2159">
-              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/partials/main.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -113,7 +120,6 @@
         <option value="$PROJECT_DIR$/app/views/directives/sv-top-nav.jade" />
         <option value="$PROJECT_DIR$/app/views/directives/sv-login.jade" />
         <option value="$PROJECT_DIR$/app/styles/fenelements.css" />
-        <option value="$PROJECT_DIR$/app/styles/aside.styl" />
         <option value="$PROJECT_DIR$/app/views/directives/sv-frame.jade" />
         <option value="$PROJECT_DIR$/app/partials/home.jade" />
         <option value="$PROJECT_DIR$/app/views/directives/sv-elements-nav.html" />
@@ -134,6 +140,7 @@
         <option value="$PROJECT_DIR$/app/styles/fenelements.styl" />
         <option value="$PROJECT_DIR$/app/styles/post.styl" />
         <option value="$PROJECT_DIR$/app/styles/header.styl" />
+        <option value="$PROJECT_DIR$/app/styles/aside.styl" />
         <option value="$PROJECT_DIR$/app/styles/main.styl" />
       </list>
     </option>
@@ -767,7 +774,13 @@
       <option name="project" value="LOCAL" />
       <updated>1410534416688</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="styl files">
+      <created>1410535400672</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1410535400672</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <option name="createBranch" value="false" />
     <option name="closeIssue" value="false" />
     <servers>
@@ -1087,13 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/partials/main.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15077606" vertical-offset="0" max-vertical-offset="323">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/about-fengshui.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09883721" vertical-offset="0" max-vertical-offset="688">
@@ -1227,18 +1233,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/partials/main.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/aside.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2159">
-          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77022654" vertical-offset="2074" max-vertical-offset="3094">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.42934197" vertical-offset="894" max-vertical-offset="2975">
+          <caret line="76" column="2" selection-start-line="76" selection-start-column="2" selection-end-line="76" selection-end-column="2" />
           <folding />
         </state>
       </provider>

@@ -3,7 +3,6 @@
 @import 'header'
 @import 'footer'
 @import 'aside'
-@import 'modal'
 @import 'fenelements'
 @import 'bg'
 /**********************
@@ -28,7 +27,6 @@ body
 
 hr
   border-color color-border-dark
-
 
 h1, h2, h3, h4, h5, h6, legend
   color color-app
@@ -76,6 +74,7 @@ input
 **********************/
 .main-content
   border-left border-app-light
+  background-color color-content
   border-right border-app-light
 
 .error input, .error textarea, .error select
@@ -148,28 +147,22 @@ table#users
   width 60px !important
   height 60px !important
 
-.datepicker.dropdown-menu {
-
-  width: 250px
-  height: 290px
-  button {
-    outline: none
-    border: 0px
-  }
-  tbody {
-    height: 180px
-  }
-  tbody button {
-    padding: 0px
-    width 20px
-
-  }
-  &.datepicker-mode-1, &.datepicker-mode-2 {
-    tbody button {
-      height: 65px
-    }
-  }
-}
+.datepicker.dropdown-menu
+  width 250px
+  height 290px
+  button
+    outline none
+    border 0px
+  tbody
+    height 180px
+  tbody
+    button
+      padding 0px
+      width 20px
+  &.datepicker-mode-1, &.datepicker-mode-2
+    tbody
+      button
+        height 65px
 
 .img-bagua
   display block

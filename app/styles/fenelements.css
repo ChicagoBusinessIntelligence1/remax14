@@ -15,12 +15,10 @@
 .fen-element-wrapper {
   width: 128px;
   height: 80px;
-!important
   border-radius: 3px;
   cursor: pointer;
   overflow: hidden;
 }
-!important
 .fen-element {
   width: 128px;
   height: 80px;
@@ -94,12 +92,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .fire:hover {
   background-color: #ae4022;
 }
-!important
 .soft-wood {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -107,12 +103,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .soft-wood:hover {
   background-color: #74a377;
 }
-!important
 .hard-wood {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -120,12 +114,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .hard-wood:hover {
   background-color: #447373;
 }
-!important
 .water {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -133,12 +125,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .water:hover {
   background-color: #6495ed;
 }
-!important
 .soft-metal {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -146,12 +136,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .soft-metal:hover {
   background-color: #f4bf7f;
 }
-!important
 .hard-metal {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -159,12 +147,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .hard-metal:hover {
   background-color: #88a6bb;
 }
-!important
 .mountain-earth {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -172,12 +158,10 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .mountain-earth:hover {
   background-color: #d8be86;
 }
-!important
 .mother-earth {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -185,9 +169,7 @@ ul.fen-elements li {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   background-color: #848994;
-!important
 }
 .mother-earth:hover {
   background-color: #8f6d60;
 }
-!important

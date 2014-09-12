@@ -7,25 +7,7 @@
     <list id="d82d42d9-cffe-4a86-b8f8-f3365b0bc395" name="fensite-5 Find your element table" comment="editing template for creating a directive with grantjs" />
     <list id="56cc908d-323f-4c26-86d7-39346f9f8fb4" name="fensite-9 Additional Views for navigation menu" comment="Live templates" />
     <list default="true" id="3910f58e-3c77-4e0e-b97b-28515bbf7f6c" name="fensite-12 background animation with Tweenmax" comment="fensite-12 background animation with Tweenmax">
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\app.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\codeStyleSettings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\deployment.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\dictionaries\Andriy.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\dictionaries\chica_000.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\eslintPlugin.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\jsLibraryMappings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\libraries\fengshui_node_modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\scopes\jade.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\scopes\sv_project.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\watcherTasks.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\webResources.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\App\fensite\.idea\workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -815,7 +797,13 @@
       <option name="project" value="LOCAL" />
       <updated>1410471749008</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fensite-12 background animation with Tweenmax">
+      <created>1410472634130</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1410472634130</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <option name="createBranch" value="false" />
     <option name="closeIssue" value="false" />
     <servers>
@@ -851,7 +839,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25160876" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25160876" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

@@ -1,6 +1,33 @@
 .table-elements {
   margin: 0 auto;
 }
+.article-wrapper {
+  border-radius: 10px;
+}
+.element-1 {
+  background-color: #ae4022;
+}
+.element-2 {
+  background-color: #6495ed;
+}
+.element-3 {
+  background-color: #74a377;
+}
+.element-4 {
+  background-color: #447373;
+}
+.element-5 {
+  background-color: #f4bf7f;
+}
+.element-6 {
+  background-color: #88a6bb;
+}
+.element-7 {
+  background-color: #d8be86;
+}
+.element-8 {
+  background-color: #8f6d60;
+}
 .info {
   color: #43464d !important;
   font-weight: 700;
@@ -20,7 +47,7 @@
 .fen-element-wrapper {
   width: 128px;
   height: 80px;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
 }

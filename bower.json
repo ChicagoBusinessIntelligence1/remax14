@@ -16,7 +16,8 @@
     "angular-ui-router": "0.2.11",
     "angular-motion": "~0.3.3",
     "angular-strap": "~2.1.0",
-    "angularfire": "~0.8.2"
+    "angularfire": "~0.8.2",
+    "bootstrap-select": "~1.6.2"
   },
   "devDependencies": {}
 }

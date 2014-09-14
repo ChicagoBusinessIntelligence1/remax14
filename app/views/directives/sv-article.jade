@@ -1,4 +1,4 @@
-.article-wrapper
+.article-wrapper(class='element-{{post.fenelement}}')
   article
     .row
       .col-lg-12
@@ -25,5 +25,5 @@
   form(role='form', ng-show='auth.user')
     .form-group.comment-input
       textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
-      button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Post
+      button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
 

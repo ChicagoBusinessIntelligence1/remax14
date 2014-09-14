@@ -12,11 +12,14 @@ angular.module('app')
 
       },
       link: function postLink($scope, element, attrs) {
+        $scope.post = {};
 
         var repo = url + 'elements';
         $scope.elements = $firebase(new Firebase(repo)).$asArray();
+        $scope.elements.$loaded(function () {
+        $scope.post.fenElementSelected = $scope.elements[0];
+        })
 
-        $scope.post = {};
 
         var postModal = $modal(
           {
@@ -29,13 +32,14 @@ angular.module('app')
 
         $scope.showModal = function () {
           postModal.show();
+
         };
 
-        $scope.addPost = function (title, author, body) {
+        $scope.addPost = function (title, author, body, postElementSelected) {
           $scope.posts.$add(
             {
               title: title,
-              author: author,
+              fenelement:postElementSelected.$id,
               body: body,
               time: (new Date()).getTime()
             }).then(function () {

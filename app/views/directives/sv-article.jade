@@ -1,5 +1,5 @@
 .article-wrapper
-  article
+  article.post-article
     .row
       .col-lg-12
         .post-content.well(class='element-{{post.fenelement}}')
@@ -8,8 +8,8 @@
           h3 {{post.title}}
           p.p-post-time  {{post.time | date:'short'}}
           p {{post.body}}
-        .panel.panel-default.post-comment(class='element-post-{{post.fenelement}}' ng-show='post.comments')
-          ul.list-unstyled.ul-comment
+        .well.post-comment(class='element-post-{{post.fenelement}}')
+          ul.list-unstyled.ul-comment(ng-show='post.comments')
             li(ng-repeat='(commentKey,c) in post.comments')
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')
               div(ng-if='c.userPic!="Admin"'): img.img-fb(ng-src="{{c.userPic}}" )
@@ -19,10 +19,10 @@
               p.p-comment(ng-hide='isAdmin || userName==c.userName')  {{c.comment}}
               sv-comment-popover(ng-show='isAdmin || userName==c.userName', c='c' comment-key='commentKey' post-key='post.$id')
               hr
-        form(role='form', ng-show='auth.user')
-          .form-group.comment-input
-            textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
-          .form-group.text-right
-            button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
+          form(role='form', ng-show='auth.user')
+            .form-group.comment-input
+              textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
+            .form-group.text-right
+              button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
 
 

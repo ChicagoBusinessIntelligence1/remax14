@@ -7,17 +7,20 @@
 ***********************/
 
 .post-content
-  border-bottom 0px
+  border-bottom 0px !important
+  border-top-left-radius 0px !important
+  border-top-right-radius 0px !important
+  margin-bottom 0px
 
 .post-comment
-  background-color color-lighten
+  border-top-left-radius 0px !important
+  border-top-right-radius 0px !important
 
 .post-content
 .post-comment
-  margin-bottom 0px
   line-height 24px
   padding 10px 15px
-  border-radius 0px
+
 
 .comment-input
   textarea
@@ -62,7 +65,6 @@
   hover-color(red)
   cursor pointer
 
-
 .color-edit
   color lighten(dodgerblue, 30%)
   cursor pointer
@@ -83,7 +85,6 @@
   &:active
   &:focus
     color lighten(color-app, 20%)
-
 
 .btn-remove
   background-color orange

@@ -2,31 +2,86 @@
   margin: 0 auto;
 }
 .article-wrapper {
-  margin-bottom: 10px !important;
+  border-radius: 10px;
 }
 .element-1 {
-  background-color: #f5d5cc;
+  background-color: #f8e0d9 !important;
+  border: 1px #f0c0b3 solid;
+  border-radius: 5px;
 }
 .element-2 {
-  background-color: #e0eafb;
+  background-color: #e8effc !important;
+  border: 1px #d1dffa solid;
+  border-radius: 5px;
 }
 .element-3 {
-  background-color: #e3ede4;
+  background-color: #eaf1eb !important;
+  border: 1px #d5e3d6 solid;
+  border-radius: 5px;
 }
 .element-4 {
-  background-color: #d6e7e7;
+  background-color: #e0eded !important;
+  border: 1px #c1dbdb solid;
+  border-radius: 5px;
 }
 .element-5 {
-  background-color: #fdf2e5;
+  background-color: #fdf5ec !important;
+  border: 1px #fcecd9 solid;
+  border-radius: 5px;
 }
 .element-6 {
-  background-color: #e7edf1;
+  background-color: #edf2f5 !important;
+  border: 1px #dbe4eb solid;
+  border-radius: 5px;
 }
 .element-7 {
-  background-color: #f7f2e7;
+  background-color: #f9f5ed !important;
+  border: 1px #f3ecdb solid;
+  border-radius: 5px;
 }
 .element-8 {
-  background-color: #e9e2df;
+  background-color: #efe9e7 !important;
+  border: 1px #ded3ce solid;
+  border-radius: 5px;
+}
+.element-post-1 {
+  background-color: #faeae6 !important;
+  border: 1px #f5d5cc solid;
+}
+.element-post-2 {
+  background-color: #e8effc !important;
+  border: 1px #d1dffa solid;
+  border-radius: 5px;
+}
+.element-post-3 {
+  background-color: #eaf1eb !important;
+  border: 1px #d5e3d6 solid;
+  border-radius: 5px;
+}
+.element-post-4 {
+  background-color: #e0eded !important;
+  border: 1px #c1dbdb solid;
+  border-radius: 5px;
+}
+.element-post-5 {
+  background-color: #fdf5ec !important;
+  border: 1px #fcecd9 solid;
+  border-radius: 5px;
+}
+.element-post-6 {
+  background-color: #edf2f5 !important;
+  border: 1px #dbe4eb solid;
+  border-radius: 5px;
+}
+.element-post-7 {
+  background-color: #f9f5ed !important;
+  border: 1px #f3ecdb solid;
+  border-radius: 5px;
+}
+.element-post-8 {
+  background-color: #efe9e7 !important;
+  border: 1px #ded3ce solid;
+  border-radius: 5px;
 }
 .info {
   color: #43464d !important;

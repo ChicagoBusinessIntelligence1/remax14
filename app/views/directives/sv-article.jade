@@ -8,9 +8,7 @@
           h3 {{post.title}}
           p.p-post-time  {{post.time | date:'short'}}
           p {{post.body}}
-    .row(ng-show='post.comments')
-      .col-lg-12
-        .panel.panel-default.post-comment
+        .panel.panel-default.post-comment(class='element-post-{{post.fenelement}}' ng-show='post.comments')
           ul.list-unstyled.ul-comment
             li(ng-repeat='(commentKey,c) in post.comments')
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')
@@ -21,9 +19,10 @@
               p.p-comment(ng-hide='isAdmin || userName==c.userName')  {{c.comment}}
               sv-comment-popover(ng-show='isAdmin || userName==c.userName', c='c' comment-key='commentKey' post-key='post.$id')
               hr
+        form(role='form', ng-show='auth.user')
+          .form-group.comment-input
+            textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
+          .form-group.text-right
+            button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
 
-  form(role='form', ng-show='auth.user')
-    .form-group.comment-input
-      textarea.form-control.textarea(placeholder='Write a comment', ng-model='comment.val')
-      button.btn.btn-default(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
 

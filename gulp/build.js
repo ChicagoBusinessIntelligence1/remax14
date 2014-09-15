@@ -43,16 +43,16 @@ gulp.task('jade', function () {
 });
 
 
-
-
-
-gulp.task('styles', function () {
-  return gulp.src('app/styles/main.scss')
-    .pipe($.plumber())
-    .pipe($.rubySass({style: 'compact'}))
-    .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('app/styles'))
-});
+//
+//
+//
+//gulp.task('styles', function () {
+//  return gulp.src('app/styles/main.scss')
+//    .pipe($.plumber())
+//    .pipe($.rubySass({style: 'compact'}))
+//    .pipe($.autoprefixer('last 1 version'))
+//    .pipe(gulp.dest('app/styles'))
+//})
 
 gulp.task('scripts', function () {
   return gulp.src('app/scripts/**/*.js')
@@ -91,10 +91,7 @@ gulp.task('html', ['stylus', 'scripts', 'partials'], function () {
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe($.replace('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap', 'fonts'))
-    .pipe($.csso())
     .pipe(cssFilter.restore())
-    .pipe($.useref.restore())
     .pipe($.useref())
     .pipe($.revReplace())
     .pipe(gulp.dest('dist'))

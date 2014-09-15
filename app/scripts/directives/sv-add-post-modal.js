@@ -12,13 +12,11 @@ angular.module('app')
       },
       link: function postLink($scope, element, attrs) {
         $scope.post = {};
-
         var repo = url + 'elements';
         $scope.elements = $firebase(new Firebase(repo)).$asArray();
         $scope.elements.$loaded(function () {
           $scope.post.fenElementSelected = $scope.elements[0];
         })
-
 
         var postModal = $modal(
           {
@@ -45,7 +43,6 @@ angular.module('app')
               $scope.post.fenElementSelected = $scope.elements[0];
               postModal.hide();
               toastr.info('The post has been submitted');
-
             });
         };
       }

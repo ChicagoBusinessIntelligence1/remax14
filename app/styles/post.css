@@ -5,18 +5,19 @@
      =sv-article
 ***********************/
 .post-content {
-  border-bottom: 0px;
+  border-bottom: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  margin-bottom: 0px;
 }
 .post-comment {
-  background-color: #fbfbfb;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
 .post-content,
 .post-comment {
-  margin-bottom: 0px;
   line-height: 24px;
   padding: 10px 15px;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
 }
 .comment-input textarea {
   margin-top: 10px;

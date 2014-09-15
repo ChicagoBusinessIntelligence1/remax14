@@ -833,6 +833,7 @@ h6 {
   font-family: 'Hind', sans-serif;
 }
 .btn-link-dark {
+  cursor: pointer;
   font-size: 14px;
   color: #3c3c3c;
 }

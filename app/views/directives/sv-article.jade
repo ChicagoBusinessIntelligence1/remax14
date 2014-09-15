@@ -25,7 +25,7 @@
               hr
           form.row(role='form', ng-show='auth.user')
             .col-xs-1
-              .img-thumb-container(ng-show='userName==c.userName')
+              .img-thumb-container(ng-hide='isAdmin')
                 img.img-fb-comment(ng-src="{{userPic}}")
               i.fa.fa-user.fa-3x(ng-show='isAdmin') &nbsp;
             .form-group.comment-input.col-xs-11

@@ -4,34 +4,31 @@ width = 128px
 height = 80px
 
 .article-wrapper
-  border-radius(10px)
-
+  margin-bottom 10px !important
 
 .element-1
-  background-color fire
+  background-color lighten(fire, 80%)
 
 .element-2
-  background-color water
+  background-color lighten(water, 80%)
 
 .element-3
-  background-color soft-wood
+  background-color lighten(soft-wood, 80%)
 
 .element-4
-  background-color hard-wood
+  background-color lighten(hard-wood, 80%)
 
 .element-5
-  background-color soft-metal
+  background-color lighten(soft-metal, 80%)
 
 .element-6
-  background-color hard-metal
+  background-color lighten(hard-metal, 80%)
 
 .element-7
-  background-color mountain-earth
+  background-color lighten(mountain-earth, 80%)
 
 .element-8
-  background-color mother-earth
-
-
+  background-color lighten(mother-earth, 80%)
 
 .info
   color color-skin !important
@@ -50,7 +47,8 @@ height = 80px
   padding 5px 0px
 
 .fen-element-wrapper
-  size(width, height) !important
+  size(width, height)
+  !important
   border-radius 10px
   cursor pointer
   overflow hidden
@@ -83,7 +81,6 @@ height = 80px
     text-transform uppercase
     color #ffffff
 
-
 .vertical-alignment-cover
   @extend .vertical-alignment
   top 40%
@@ -105,7 +102,7 @@ ul.fen-elements
   transition(1s)
 
 .slide-up
-  top - (height/2.9)
+  top - (height/ 2.9)
 
 .slide-up.ng-hide
   top 0px;

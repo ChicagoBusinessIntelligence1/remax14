@@ -44,6 +44,7 @@ angular.module('app')
               time: (new Date()).getTime()
             }).then(function () {
               $scope.post = {};
+              $scope.post.fenElementSelected = $scope.elements[0];
               postModal.hide();
               toastr.info('The post has been submitted');
 

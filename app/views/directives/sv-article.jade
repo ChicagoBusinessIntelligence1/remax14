@@ -1,8 +1,8 @@
-.article-wrapper(class='element-{{post.fenelement}}')
+.article-wrapper
   article
     .row
       .col-lg-12
-        .post-content.well
+        .post-content.well(class='element-{{post.fenelement}}')
           sv-del-conform(ng-show='isAdmin' post-key='post.$id' remove-post='remove' ).pull-right
           sv-post-edit(ng-show='isAdmin' post-key='post.$id' post='post.body')
           h3 {{post.title}}

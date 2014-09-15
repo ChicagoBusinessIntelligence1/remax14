@@ -6,32 +6,45 @@ height = 80px
 .article-wrapper
   border-radius(10px)
 
-
 .element-1
-  background-color fire
+  background-color lighten(fire, 85%) !important
+  border 1px lighten(fire, 75%) solid
+  border-radius 5px
 
 .element-2
-  background-color water
+  background-color lighten(water, 85%) !important
+  border 1px lighten(water, 75%) solid
+  border-radius 5px
 
 .element-3
-  background-color soft-wood
+  background-color lighten(soft-wood, 85%) !important
+  border 1px lighten(soft-wood, 75%) solid
+  border-radius 5px
 
 .element-4
-  background-color hard-wood
+  background-color lighten(hard-wood, 85%) !important
+  border 1px lighten(hard-wood, 75%) solid
+  border-radius 5px
 
 .element-5
-  background-color soft-metal
+  background-color lighten(soft-metal, 85%) !important
+  border 1px lighten(soft-metal, 75%) solid
+  border-radius 5px
 
 .element-6
-  background-color hard-metal
+  background-color lighten(hard-metal, 85%) !important
+  border 1px lighten(hard-metal, 75%) solid
+  border-radius 5px
 
 .element-7
-  background-color mountain-earth
+  background-color lighten(mountain-earth, 85%) !important
+  border 1px lighten(mountain-earth, 75%) solid
+  border-radius 5px
 
 .element-8
-  background-color mother-earth
-
-
+  background-color lighten(mother-earth, 85%) !important
+  border 1px lighten(mother-earth, 75%) solid
+  border-radius 5px
 
 .info
   color color-skin !important
@@ -50,7 +63,8 @@ height = 80px
   padding 5px 0px
 
 .fen-element-wrapper
-  size(width, height) !important
+  size(width, height)
+  !important
   border-radius 10px
   cursor pointer
   overflow hidden
@@ -83,7 +97,6 @@ height = 80px
     text-transform uppercase
     color #ffffff
 
-
 .vertical-alignment-cover
   @extend .vertical-alignment
   top 40%
@@ -105,7 +118,7 @@ ul.fen-elements
   transition(1s)
 
 .slide-up
-  top - (height/2.9)
+  top - (height/ 2.9)
 
 .slide-up.ng-hide
   top 0px;

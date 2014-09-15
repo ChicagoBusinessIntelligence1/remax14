@@ -6,7 +6,6 @@
 }
 .post-content {
   border-bottom: 0px;
-  background-color: inherit !important;
 }
 .post-comment {
   background-color: #fbfbfb;
@@ -286,28 +285,52 @@ h5.label-default-head {
   border-radius: 10px;
 }
 .element-1 {
-  background-color: #ae4022;
+  background-color: #f8e0d9 !important;
+  border: 1px #f3cbc0 solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-2 {
-  background-color: #6495ed;
+  background-color: #e8effc !important;
+  border: 1px #d8e4fb solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-3 {
-  background-color: #74a377;
+  background-color: #eaf1eb !important;
+  border: 1px #dce8dd solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-4 {
-  background-color: #447373;
+  background-color: #e0eded !important;
+  border: 1px #cce1e1 solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-5 {
-  background-color: #f4bf7f;
+  background-color: #fdf5ec !important;
+  border: 1px #fcefdf solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-6 {
-  background-color: #88a6bb;
+  background-color: #edf2f5 !important;
+  border: 1px #e1e9ee solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-7 {
-  background-color: #d8be86;
+  background-color: #f9f5ed !important;
+  border: 1px #f5efe1 solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .element-8 {
-  background-color: #8f6d60;
+  background-color: #efe9e7 !important;
+  border: 1px #e4dad6 solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 .info {
   color: #43464d !important;
@@ -328,11 +351,13 @@ h5.label-default-head {
 .fen-element-wrapper {
   width: 128px;
   height: 80px;
+!important
   -webkit-border-radius: 10px;
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
 }
+!important
 .fen-element {
   width: 128px;
   height: 80px;

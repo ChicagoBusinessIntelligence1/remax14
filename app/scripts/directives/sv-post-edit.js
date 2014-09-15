@@ -11,7 +11,6 @@ angular.module('app')
         postKey: '='
       },
       link: function postLink($scope, element, attrs) {
-
         $scope.postEditPopover = $popover(element, {
           scope: $scope,
           placement: 'left',

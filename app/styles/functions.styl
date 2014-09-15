@@ -31,6 +31,7 @@ font-app = font-size-custom "Helvetica Neue", Helvetica, Arial
       =Mixins
 ***********************/
 
+
 hover-element(color, amount)
   hover-color(lighten(color, amount))
   transition(5s)
@@ -64,6 +65,7 @@ comma-list()
       content ''
 
 link-custom()
+  cursor pointer
   font-size 14px unless @font-size
   color color-app unless @color
   &:hover
@@ -98,22 +100,22 @@ post-time(n)
 .table-elements
   margin 0 auto
 
-square-custom()
-  background-color arguments
-  border-radius 5px
-  size(180px)
-  text-align center
-  position relative
-  overflow hidden
-  color color-lighten
-  cursor pointer
-  span
-    text-shadow 1px 1px lighten(color-app, 20%)
-    font-size 17px
+post-style(n)
+  background-color lighten(n, 90%)
+  border-top 1px lighten(n, 80%) solid
+  border-right 1px lighten(n, 80%) solid
+  border-left 1px lighten(n, 80%) solid
+  border-bottom 1px lighten(n, 80%) solid
+  border-radius 0px
 
-square-hover()
-  square-custom(lighten(color-skin, 85%))
-  color color-app !important
+post-comment-style(n)
+  background-color lighten(n, 94%)
+  border-right 1px lighten(n, 80%) solid
+  border-left 1px lighten(n, 80%) solid
+  border-bottom 1px lighten(n, 80%) solid
+  border-top 0px
+  border-radius 0px
+
 
 transition(n)
   -webkit-transition all n ease

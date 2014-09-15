@@ -25,21 +25,32 @@
   line-height 24px
   padding 10px 15px
 
-.img-thumb-container {
+.img-thumb-container
   position relative
   width 54px
   height 54px
   overflow hidden
-}
+
+.comment-user-pic
+  float left
 
 .img-fb-comment
-  position: relative;
+  position relative
   top -40%
   height 90px
-  display: block;
+  display block
+
+.img-fb-comment-sm
+  width 42px
+  height 42px
+  margin-right (@width / 4) !important
+  display block
+  float left
+
 
 .comment-input
   textarea
+    background-color transparent !important
     margin-top 0px
     margin-bottom 10px
     border-radius 0px
@@ -50,7 +61,7 @@
 .p-comment
   margin-bottom 0px
   line-height 20px
-  font-size 12px
+  font-size 11px
 
 .p-post-time
   post-time(12px)
@@ -59,7 +70,6 @@
   post-time(11px)
 
 .user-name-comment
-  font-weight 700
   font-size 12px
   font-weight bold !important
 
@@ -71,7 +81,6 @@
   cursor pointer
   display inline-block
   padding 0px
-  line-height 1.5em !important
   border-bottom dashed 1px #0088cc !important;
 
 .popover-title

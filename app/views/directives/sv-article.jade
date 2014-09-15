@@ -14,7 +14,7 @@
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')
               ul.list-unstyled
                 li
-                  a.btn-link-dark(ui-sref='')
+                  a.btn-link-dark(href='{{c.userLink || "#"}}')
                     img.img-fb(ng-src="{{c.userPic}}" ng-if='c.userPic!="Admin"')
                     i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
                     span.user-name-comment {{c.userName}}
@@ -31,6 +31,6 @@
             .form-group.comment-input.col-xs-11
               textarea.form-control(placeholder='Kомментарий...', ng-model='comment.val')
               .text-right
-                button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
+                button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic, userLink);comment.val=""') Добавить комментарий
 
 

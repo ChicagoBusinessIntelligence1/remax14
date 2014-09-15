@@ -6,7 +6,7 @@ angular.module('app')
     var repo = url + 'posts';
     $scope.posts = $firebase(new Firebase(repo)).$asArray();
 
-    $scope.addComment = function (postId, comment, userName, userPic) {
+    $scope.addComment = function (postId, comment, userName, userPic,userLink) {
       var commentsUrl = repo + '/' + postId + '/comments';
       $scope.comments = $firebase(new Firebase(commentsUrl)).$asArray();
 
@@ -14,6 +14,7 @@ angular.module('app')
         comment: comment,
         userName: userName,
         userPic: userPic,
+        userLink: userLink,
         time: (new Date).getTime()
       })
     };

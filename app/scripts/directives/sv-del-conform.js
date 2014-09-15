@@ -14,7 +14,7 @@ angular.module('app')
 
         var deletePopover = $popover(element, {
           scope: $scope,
-          title: 'Remove?',
+          title: 'Удалить?',
           placement: 'left',
           template: '../../views/popover/popover-delete.html'
         });

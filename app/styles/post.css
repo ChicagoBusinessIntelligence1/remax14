@@ -4,11 +4,13 @@
 /**********************
      =sv-article
 ***********************/
+.post-article {
+  margin-bottom: 15px !important;
+}
 .post-content {
   border-bottom: 0px !important;
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
-  margin-bottom: 0px;
 }
 .post-comment {
   margin-bottom: 0px !important;
@@ -17,12 +19,27 @@
 }
 .post-content,
 .post-comment {
+  margin-bottom: 0px !important;
   line-height: 24px;
   padding: 10px 15px;
 }
+.img-thumb-container {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  overflow: hidden;
+}
+.img-fb-comment {
+  position: relative;
+  top: -40%;
+  height: 90px;
+  display: block;
+}
 .comment-input textarea {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 10px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
 }
 .ul-comment {
   font-size: 12px;
@@ -58,7 +75,7 @@
   cursor: pointer;
   display: inline-block;
   padding: 0px;
-  line-height: 1.2em;
+  line-height: 1.5em !important;
   border-bottom: dashed 1px #08c !important;
 }
 .popover-title {

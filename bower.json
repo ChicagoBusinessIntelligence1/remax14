@@ -5,19 +5,19 @@
   "dependencies": {
     "modernizr": "2.8.x",
     "jquery": "~2.1.1",
-    "firebase": "1.0.x",
+    "firebase": "~1.0.21",
     "underscore": "~1.7.0",
     "bootstrap": "~3.2.0",
     "toastr": "~2.0.3",
     "angular": "1.3.0-rc.1",
-    "ui-router": "0.2.11",
     "angular-animate": "1.3.0-rc.1",
     "angular-sanitize": "1.3.0-rc.1",
     "angular-ui-router": "0.2.11",
-    "angular-motion": "~0.3.3",
-    "angular-strap": "~2.1.0",
     "angularfire": "~0.8.2",
-    "bootstrap-select": "~1.6.2"
+    "angular-strap": "~2.1.0",
+    "angular-motion": "~0.3.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "mockfirebase": "~0.3.0"
+  }
 }

@@ -5,83 +5,28 @@
   border-radius: 10px;
 }
 .element-1 {
-  background-color: #f8e0d9 !important;
-  border: 1px #f0c0b3 solid;
-  border-radius: 5px;
+  background-color: #ae4022;
 }
 .element-2 {
-  background-color: #e8effc !important;
-  border: 1px #d1dffa solid;
-  border-radius: 5px;
+  background-color: #6495ed;
 }
 .element-3 {
-  background-color: #eaf1eb !important;
-  border: 1px #d5e3d6 solid;
-  border-radius: 5px;
+  background-color: #74a377;
 }
 .element-4 {
-  background-color: #e0eded !important;
-  border: 1px #c1dbdb solid;
-  border-radius: 5px;
+  background-color: #447373;
 }
 .element-5 {
-  background-color: #fdf5ec !important;
-  border: 1px #fcecd9 solid;
-  border-radius: 5px;
+  background-color: #f4bf7f;
 }
 .element-6 {
-  background-color: #edf2f5 !important;
-  border: 1px #dbe4eb solid;
-  border-radius: 5px;
+  background-color: #88a6bb;
 }
-.element-7 {
-  background-color: #f9f5ed !important;
-  border: 1px #f3ecdb solid;
-  border-radius: 5px;
+.element-1 {
+  background-color: #ae4022;
 }
-.element-8 {
-  background-color: #efe9e7 !important;
-  border: 1px #ded3ce solid;
-  border-radius: 5px;
-}
-.element-post-1 {
-  background-color: #faeae6 !important;
-  border: 1px #f5d5cc solid;
-}
-.element-post-2 {
-  background-color: #e8effc !important;
-  border: 1px #d1dffa solid;
-  border-radius: 5px;
-}
-.element-post-3 {
-  background-color: #eaf1eb !important;
-  border: 1px #d5e3d6 solid;
-  border-radius: 5px;
-}
-.element-post-4 {
-  background-color: #e0eded !important;
-  border: 1px #c1dbdb solid;
-  border-radius: 5px;
-}
-.element-post-5 {
-  background-color: #fdf5ec !important;
-  border: 1px #fcecd9 solid;
-  border-radius: 5px;
-}
-.element-post-6 {
-  background-color: #edf2f5 !important;
-  border: 1px #dbe4eb solid;
-  border-radius: 5px;
-}
-.element-post-7 {
-  background-color: #f9f5ed !important;
-  border: 1px #f3ecdb solid;
-  border-radius: 5px;
-}
-.element-post-8 {
-  background-color: #efe9e7 !important;
-  border: 1px #ded3ce solid;
-  border-radius: 5px;
+.element-1 {
+  background-color: #ae4022;
 }
 .info {
   color: #43464d !important;
@@ -102,12 +47,10 @@
 .fen-element-wrapper {
   width: 128px;
   height: 80px;
-!important
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
 }
-!important
 .fen-element {
   width: 128px;
   height: 80px;

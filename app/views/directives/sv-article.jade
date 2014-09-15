@@ -12,20 +12,24 @@
           ul.list-unstyled.ul-comment(ng-show='post.comments')
             li(ng-repeat='(commentKey,c) in post.comments')
               sv-del-conform(ng-show='isAdmin || userName==c.userName' comment-key='commentKey' post-key='post.$id')
-              div(ng-if='c.userPic!="Admin"'): img.img-fb(ng-src="{{c.userPic}}" )
-              i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
-              span.user-name-comment {{c.userName}}
-              p.p-comment-time {{c.time| date:'short'}}
-              p.p-comment(ng-hide='isAdmin || userName==c.userName')  {{c.comment}}
-              sv-comment-popover(ng-show='isAdmin || userName==c.userName', c='c' comment-key='commentKey' post-key='post.$id')
+              ul.list-unstyled
+                li
+                  a.btn-link-dark(ui-sref='')
+                    img.img-fb(ng-src="{{c.userPic}}" ng-if='c.userPic!="Admin"')
+                    i.fa.fa-user.fa-lg(ng-if='c.userPic=="Admin"') &nbsp;
+                    span.user-name-comment {{c.userName}}
+                li
+                  p.p-comment(ng-hide='isAdmin || userName==c.userName') {{c.comment}}
+                  sv-comment-popover(ng-show='isAdmin || userName==c.userName', c='c' comment-key='commentKey' post-key='post.$id')
+                  p.p-comment-time {{c.time| date:'short'}}
               hr
           form.row(role='form', ng-show='auth.user')
             .col-xs-1
               .img-thumb-container
                 img.img-fb-comment(ng-src="{{userPic}}")
             .form-group.comment-input.col-xs-11
-              textarea.form-control.textarea(placeholder='Kомментарий...', ng-model='comment.val')
-            .form-group.text-right
-              button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
+              textarea.form-control(placeholder='Kомментарий...', ng-model='comment.val')
+              .text-right
+                button.btn.btn-primary(ng-click='addComment(post.$id, comment.val, userName, userPic);comment.val=""') Добавить комментарий
 
 

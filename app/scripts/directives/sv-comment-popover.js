@@ -9,7 +9,7 @@ angular.module('app')
         postKey: '=',
         commentKey: '='
       },
-      template: '<p class="comment editable"> {{c.comment}}</p>',
+      template: '<p class="comment editable p-comment"> {{c.comment}}</p>',
       link: function postLink($scope, element, attrs) {
         $scope.commentnew= {val:$scope.c.comment};
         $scope.popoverEdit = $popover(element, {

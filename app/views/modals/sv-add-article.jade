@@ -7,12 +7,12 @@
       .modal-body
         form(name='formPost', id='formPost', novalidate)
           .form-group
-            select(ng-options="e.$value for e in elements" ng-model='post.fenElementSelected').bootstrap-select.form-control
+            select(ng-options="e.$value for e in elements" ng-model='post.fenElementSelected' required).bootstrap-select.form-control
           .form-group
             input.form-control(ng-model='post.title', required, name='title', type='text' placeholder='Заголовок')
           .form-group
             textarea.add-article.form-control(ng-model='post.body',required, name='body',class='add-article form-control' rows='10'
-            placeholder='Текст Поста')
-          div
-            button.btn.btn-info.pull-right(ng-disabled="formPost.$dirty && formPost.$invalid", ng-click='addPost(post.title,post.author,post.body,post.fenElementSelected)') Добавить
+            placeholder='Текст...')
+          .text-right
+            button.btn.btn-info(ng-disabled="formPost.$dirty && formPost.$invalid || formPost.$pristine", ng-click='addPost(post.title,post.author,post.body,post.fenElementSelected)') Добавить
             br

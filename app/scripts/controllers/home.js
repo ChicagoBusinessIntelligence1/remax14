@@ -9,7 +9,9 @@ angular.module('app')
     $scope.addComment = function (postId, comment, userName, userPic,userLink) {
       var commentsUrl = repo + '/' + postId + '/comments';
       $scope.comments = $firebase(new Firebase(commentsUrl)).$asArray();
-
+      if (_.isUndefined(userLink)) {
+       userLink='#' ;
+      }
       $scope.comments.$add({
         comment: comment,
         userName: userName,

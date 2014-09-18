@@ -1,0 +1,30 @@
+.table-elements {
+  margin: 0 auto;
+}
+.tog.ng-enter,
+.tog.ng-hide-add,
+.tog.ng-hide-remove,
+.tog.ng-leave {
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.tog.ng-enter,
+.tog.ng-hide-remove,
+.tog.ng-hide-add.ng-hide-add-active,
+.tog.ng-leave.ng-leave-active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  left: 200px;
+}
+.tog.ng-enter.ng-enter-active,
+.tog.ng-hide-add,
+.tog.ng-hide-remove.ng-hide-remove-active,
+.tog.ng-leave {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  left: 0px;
+}

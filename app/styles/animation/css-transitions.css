@@ -28,6 +28,9 @@
   opacity: 1;
   left: 0px;
 }
+/*******************************
+     slider animation
+********************************/
 .slider.ng-enter,
 .slider.ng-hide-add,
 .slider.ng-hide-remove,

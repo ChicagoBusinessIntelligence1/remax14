@@ -1,0 +1,24 @@
+@import 'functions'
+
+.tog.ng-enter,
+.tog.ng-hide-add,
+.tog.ng-hide-remove,
+.tog.ng-leave
+  position relative
+  transition(1s)
+
+
+.tog.ng-enter,
+.tog.ng-hide-remove,
+.tog.ng-hide-add.ng-hide-add-active,
+.tog.ng-leave.ng-leave-active
+  opacity 0
+  left 200px
+
+
+.tog.ng-enter.ng-enter-active,
+.tog.ng-hide-add,
+.tog.ng-hide-remove.ng-hide-remove-active,
+.tog.ng-leave
+  opacity 1
+  left 0px

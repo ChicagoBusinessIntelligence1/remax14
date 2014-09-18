@@ -1,0 +1,13 @@
+.animation-test {
+  width: 200px !important;
+  height: 200px !important;
+  position: relative;
+  background: -webkit-gradient(radial, center center 0px, center center 100%, color-stop(0.1, #272727), color-stop(0.9, #fff), );
+  background: -moz-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
+  background: -webkit-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
+  background: -o-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
+  background: -ms-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
+  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
+  border-radius: 20px;
+  margin: 20px;
+}

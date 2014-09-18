@@ -11,3 +11,4 @@ gulp.task('default', ['clean'], function () {
  ANGULAR
  ***********************/
 require('./gulp/ng/value.js');
+require('./gulp/ng/css-transitions.js');

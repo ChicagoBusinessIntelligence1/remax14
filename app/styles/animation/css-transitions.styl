@@ -50,3 +50,31 @@
   left 0px
 
 //********************************
+
+/*******************************
+     new-animation animation
+********************************/
+
+.new-animation.ng-enter,
+.new-animation.ng-hide-add,
+.new-animation.ng-hide-remove,
+.new-animation.ng-leave
+  position relative
+  transition(1s)
+
+.new-animation.ng-enter,
+.new-animation.ng-hide-remove,
+.new-animation.ng-hide-add.ng-hide-add-active,
+.new-animation.ng-leave.ng-leave-active
+  opacity 0
+  top 200px
+
+.new-animation.ng-enter.ng-enter-active,
+.new-animation.ng-hide-add,
+.new-animation.ng-hide-remove.ng-hide-remove-active,
+.new-animation.ng-leave
+  opacity 1
+  top 0px
+
+//********************************
+

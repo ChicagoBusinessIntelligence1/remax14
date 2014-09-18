@@ -33,6 +33,8 @@ var argv = require('yargs')
   .argv;
 
 
+var rm = argv.rm;
+
 gulp.task('cta', function () {
 
   var initialFile = 'css-transitions.styl';
@@ -42,6 +44,6 @@ gulp.task('cta', function () {
 
   gulp.src([file,injection])
     .pipe(replace('#class-name#', argv.cname))
-    .pipe(concat(initialFile))
+    .pipe(gulpif(rm != true,concat(initialFile)), replace(initialFile, ''))
     .pipe(gulp.dest(animation))
 });

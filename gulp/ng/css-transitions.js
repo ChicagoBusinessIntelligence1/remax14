@@ -40,10 +40,14 @@ gulp.task('cta', function () {
   var initialFile = 'css-transitions.styl';
   var file = animation + initialFile;
 
-  var injection = templates + 'css-transitions.tpl';
+  var initialInjection = 'css-transitions.tpl';
+  var injection = templates + initialInjection;
 
-  gulp.src([file,injection])
-    .pipe(replace('#class-name#', argv.cname))
-    .pipe(gulpif(rm != true,concat(initialFile)), replace(initialFile, ''))
+  var fileStream = gulp.src(file);
+  var injectionStream = gulp.src(injection)
+    .pipe(replace('#cname#', argv.cname));
+
+  es.merge(fileStream,injectionStream)
+    .pipe(concat(initialFile))
     .pipe(gulp.dest(animation))
 });

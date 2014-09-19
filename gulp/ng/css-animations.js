@@ -36,12 +36,12 @@ var argv = require('yargs')
 var rm = argv.rm;
 var cname = argv.cname;
 
-gulp.task('cta', function () {
+gulp.task('caa', function () {
 
-  var initialFile = 'css-transitions.styl';
+  var initialFile = 'css-animations.styl';
   var file = animation + initialFile;
 
-  var initialInjection = 'css-transitions.tpl';
+  var initialInjection = 'css-animations.tpl';
   var injection = templates + initialInjection;
 
   var fileStream = gulp.src(file);

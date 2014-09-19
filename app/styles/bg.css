@@ -5,90 +5,74 @@
   background-color: #090;
 }
 .fire-bg {
+#f0c0b3
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.fire-bg:hover {
-  background-color: #f0c0b3;
 }
 .water-bg {
+#b9cff7
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.water-bg:hover {
-  background-color: #b9cff7;
 }
 .hard-wood-bg {
+#a3c8c8
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.hard-wood-bg:hover {
-  background-color: #a3c8c8;
 }
 .soft-wood-bg {
+#c0d6c2
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.soft-wood-bg:hover {
-  background-color: #c0d6c2;
 }
 .soft-metal-bg {
+#fcefdf
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.soft-metal-bg:hover {
-  background-color: #fcefdf;
 }
 .hard-metal-bg {
+#c9d7e0
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.hard-metal-bg:hover {
-  background-color: #c9d7e0;
 }
 .mountain-earth-bg {
+#ede2c9
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.mountain-earth-bg:hover {
-  background-color: #ede2c9;
 }
 .mother-earth-bg {
+#cebdb6
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.mother-earth-bg:hover {
-  background-color: #cebdb6;
 }

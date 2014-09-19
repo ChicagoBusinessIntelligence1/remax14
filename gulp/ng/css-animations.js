@@ -36,7 +36,7 @@ var argv = require('yargs')
 var rm = argv.rm;
 var cname = argv.cname;
 
-gulp.task('caa', function () {
+gulp.task('csa', function () {
 
   var initialFile = 'css-animations.styl';
   var file = animation + initialFile;

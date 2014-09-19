@@ -2,7 +2,6 @@
 
 angular.module('app')
   .controller('HomeCtrl', function ($scope, url, $firebase) {
-
     var repo = url + 'post';
     $scope.posts = $firebase(new Firebase(repo)).$asArray();
 

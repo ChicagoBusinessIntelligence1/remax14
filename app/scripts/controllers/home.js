@@ -3,7 +3,7 @@
 angular.module('app')
   .controller('HomeCtrl', function ($scope, url, $firebase) {
 
-    var repo = url + 'posts';
+    var repo = url + 'post';
     $scope.posts = $firebase(new Firebase(repo)).$asArray();
 
     $scope.addComment = function (postId, comment, userName, userPic,userLink) {
@@ -11,7 +11,7 @@ angular.module('app')
       $scope.comments = $firebase(new Firebase(commentsUrl)).$asArray();
       if (_.isUndefined(userLink)) {
        userLink='#' ;
-      }
+        }
       $scope.comments.$add({
         comment: comment,
         userName: userName,

@@ -11,15 +11,20 @@ angular.module('app')
         $scope.isAdmin = true;
       }
     })
-
-
+    /*
+     Todo: Keymapping
+     @author - Svitlana
+     @date - 9/19/2014
+     @time - 3:49 PM
+     */
 
     var mainRef = new Firebase(url);
     $scope.auth = $firebaseSimpleLogin(mainRef);
 
 
     $scope.auth.$getCurrentUser().then(function (user) {
-      if (user === null) {
+
+      if ((user === null)) {
         return;
       }
       if (user.provider === 'facebook') {

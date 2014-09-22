@@ -3,7 +3,7 @@
 angular.module('app')
   .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state) {
 
-    $scope.fenElementActive = {val: 'null'};
+    $scope.fenElementActive = {val:'null'};
 
     $scope.$watch('auth.user.provider', function (newVal) {
 
@@ -14,6 +14,7 @@ angular.module('app')
 
     var mainRef = new Firebase(url);
     $scope.auth = $firebaseSimpleLogin(mainRef);
+
 
     $scope.auth.$getCurrentUser().then(function (user) {
 
@@ -51,7 +52,7 @@ angular.module('app')
       ).then(function (user) {
           $scope.userLink = user.thirdPartyUserData.link;
           $scope.userName = user.thirdPartyUserData.first_name;
-          $scope.userPic = user.thirdPartyUserData.picture.data.url;
+          $scope.userPic = user.thirdPartyUserData.picture.data.url;;
         });
     }
   });

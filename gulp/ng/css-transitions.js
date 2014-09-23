@@ -35,7 +35,7 @@ var argv = require('yargs')
 var rm = argv.rm;
 var cname = argv.cname;
 
-gulp.task('cta', function () {
+gulp.task('gta', function () {
 
   var initialFile = 'css-transitions.styl';
   var file = animation + initialFile;

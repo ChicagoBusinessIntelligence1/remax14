@@ -1,28 +1,27 @@
+
 /*******************************
-     #class-name# animation
+     svv animation
 ********************************/
 
-.#class-name#.ng-enter,
-.#class-name#.ng-hide-add,
-.#class-name#.ng-hide-remove,
-.#class-name#.ng-leave
+.svv.ng-enter,
+.svv.ng-hide-add,
+.svv.ng-hide-remove,
+.svv.ng-leave
   position relative
   transition(1s)
 
-.#class-name#.ng-enter,
-.#class-name#.ng-hide-remove,
-.#class-name#.ng-hide-add.ng-hide-add-active,
-.#class-name#.ng-leave.ng-leave-active
+.svv.ng-enter,
+.svv.ng-hide-remove,
+.svv.ng-hide-add.ng-hide-add-active,
+.svv.ng-leave.ng-leave-active
   opacity 0
   left 200px
 
-.#class-name#.ng-enter.ng-enter-active,
-.#class-name#.ng-hide-add,
-.#class-name#.ng-hide-remove.ng-hide-remove-active,
-.#class-name#.ng-leave
+.svv.ng-enter.ng-enter-active,
+.svv.ng-hide-add,
+.svv.ng-hide-remove.ng-hide-remove-active,
+.svv.ng-leave
   opacity 1
   left 0px
 
-//********************************
-
-
+//*******************************

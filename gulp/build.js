@@ -26,7 +26,7 @@ gulp.task('nib', function () {
 gulp.task('stylus', function () {
   gulp.src('app/styles/**/*.styl')
     .pipe(plumber())
-    .pipe(stylus({use: [nib(), axis()]}))
+    .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'));
 });
 

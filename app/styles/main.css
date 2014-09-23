@@ -91,18 +91,12 @@
   color: #505050 !important;
 }
 .color-danger {
-  color: #db7156;
+  color: #ff4d4d;
   cursor: pointer;
-}
-.color-danger:hover {
-  color: #b44326;
 }
 .color-edit {
   color: #62b1ff;
   cursor: pointer;
-}
-.color-edit:hover {
-  color: #007cf7;
 }
 .editable-form textarea {
   position: relative;
@@ -121,10 +115,7 @@
   color: #636363;
 }
 .btn-remove {
-  background-color: #f2a34f;
-}
-.btn-remove:hover {
-  background-color: #b44326;
+  background-color: #ffa500;
 }
 .popover-wide {
   max-width: 300px !important;
@@ -170,108 +161,17 @@
   margin-right: 5px !important;
 }
 .animation-test {
-  width: 200px !important;
-  height: 200px !important;
-  position: relative;
-  background: -webkit-gradient(radial, center center 0px, center center 100%, color-stop(0.1, #272727), color-stop(0.9, #fff), );
-  background: -moz-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
-  background: -webkit-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
-  background: -o-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
-  background: -ms-radial-gradient(center, ellipse cover, #272727 10%, #fff 90%);
-  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
-  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
-  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
-  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
-  background: radial-gradient(ellipse at center, #272727 10%, #fff 90%);
-  .animation-test table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  background: ;
-  .animation-test table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  background: ;
-  .animation-test table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  background: ;
-  .animation-test table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  background: ;
-  .animation-test table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  background: ;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
+  width: 200px;
+  height: 200px;
   margin: 20px;
-}
-.table-elements {
-  margin: 0 auto;
-}
-.tog.ng-enter,
-.tog.ng-hide-add,
-.tog.ng-hide-remove,
-.tog.ng-leave {
   position: relative;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.tog.ng-enter,
-.tog.ng-hide-remove,
-.tog.ng-hide-add.ng-hide-add-active,
-.tog.ng-leave.ng-leave-active {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  left: 200px;
-}
-.tog.ng-enter.ng-enter-active,
-.tog.ng-hide-add,
-.tog.ng-hide-remove.ng-hide-remove-active,
-.tog.ng-leave {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  left: 0px;
-}
-.slider.ng-enter,
-.slider.ng-hide-add,
-.slider.ng-hide-remove,
-.slider.ng-leave {
-  position: relative;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.slider.ng-enter,
-.slider.ng-hide-remove,
-.slider.ng-hide-add.ng-hide-add-active,
-.slider.ng-leave.ng-leave-active {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  left: 200px;
-}
-.slider.ng-enter.ng-enter-active,
-.slider.ng-hide-add,
-.slider.ng-hide-remove.ng-hide-remove-active,
-.slider.ng-leave {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
-  left: 0px;
+  background: -webkit-linear-gradient(top, #8fbc8f 90%, #000 10%);
+  background: -moz-linear-gradient(top, #8fbc8f 90%, #000 10%);
+  background: -o-linear-gradient(top, #8fbc8f 90%, #000 10%);
+  background: -ms-linear-gradient(top, #8fbc8f 90%, #000 10%);
+  background: linear-gradient(to bottom, #8fbc8f 90%, #000 10%);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -297,8 +197,8 @@
 }
 .toggle.ng-enter {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
   -webkit-transition-duration: 250ms;
   -moz-transition-duration: 250ms;
   -o-transition-duration: 250ms;
@@ -308,13 +208,13 @@
 }
 .toggle.ng-enter-active {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .toggle.ng-leave {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
   -webkit-transition-duration: 250ms;
   -moz-transition-duration: 250ms;
   -o-transition-duration: 250ms;
@@ -324,8 +224,8 @@
 }
 .toggle.ng-leave-active {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .toggle.ng-hide-add {
   -webkit-transition-duration: 250ms;
@@ -335,13 +235,13 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .toggle.ng-hide-add.ng-hide-add-active {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .toggle.ng-hide-remove {
   -webkit-transition-duration: 250ms;
@@ -352,13 +252,13 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .toggle.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-top {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -397,8 +297,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-top.ng-enter-active {
   -webkit-transform: translateY(0);
@@ -409,8 +309,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-top.ng-leave {
   -webkit-transform: translateY(0);
@@ -427,8 +327,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-top.ng-leave-active {
   -webkit-transform: translateY(60px);
@@ -439,8 +339,8 @@
   -ms-transform: translateY(60px);
   -webkit-transform: translateY(60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-top.ng-hide-add {
   -webkit-transform: translateY(0);
@@ -457,8 +357,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-top.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(60px);
@@ -469,8 +369,8 @@
   -ms-transform: translateY(60px);
   -webkit-transform: translateY(60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-top.ng-hide-remove {
   -webkit-transform: translateY(60px);
@@ -488,8 +388,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-top.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateY(0);
@@ -500,8 +400,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-right {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -540,8 +440,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-right.ng-enter-active {
   -webkit-transform: translateX(0);
@@ -552,8 +452,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-right.ng-leave {
   -webkit-transform: translateX(0);
@@ -570,8 +470,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-right.ng-leave-active {
   -webkit-transform: translateX(60px);
@@ -582,8 +482,8 @@
   -ms-transform: translateX(60px);
   -webkit-transform: translateX(60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-right.ng-hide-add {
   -webkit-transform: translateX(0);
@@ -600,8 +500,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-right.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(60px);
@@ -612,8 +512,8 @@
   -ms-transform: translateX(60px);
   -webkit-transform: translateX(60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-right.ng-hide-remove {
   -webkit-transform: translateX(60px);
@@ -631,8 +531,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-right.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0);
@@ -643,8 +543,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-left {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -683,8 +583,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-left.ng-enter-active {
   -webkit-transform: translateX(0);
@@ -695,8 +595,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-left.ng-leave {
   -webkit-transform: translateX(0);
@@ -713,8 +613,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-left.ng-leave-active {
   -webkit-transform: translateX(-60px);
@@ -725,8 +625,8 @@
   -ms-transform: translateX(-60px);
   -webkit-transform: translateX(-60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-left.ng-hide-add {
   -webkit-transform: translateX(0);
@@ -743,8 +643,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-left.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(-60px);
@@ -755,8 +655,8 @@
   -ms-transform: translateX(-60px);
   -webkit-transform: translateX(-60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-left.ng-hide-remove {
   -webkit-transform: translateX(-60px);
@@ -774,8 +674,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-left.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0);
@@ -786,8 +686,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-down {
   -webkit-transition: all all ease;
@@ -818,8 +718,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-down.ng-enter-active {
   -webkit-transform: translateY(0);
@@ -830,8 +730,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-down.ng-leave {
   -webkit-transform: translateY(0);
@@ -848,8 +748,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-down.ng-leave-active {
   -webkit-transform: translateY(-60px);
@@ -860,8 +760,8 @@
   -ms-transform: translateY(-60px);
   -webkit-transform: translateY(-60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-down.ng-hide-add {
   -webkit-transform: translateY(0);
@@ -878,8 +778,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .slide-down.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(-60px);
@@ -890,8 +790,8 @@
   -ms-transform: translateY(-60px);
   -webkit-transform: translateY(-60px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-down.ng-hide-remove {
   -webkit-transform: translateY(-60px);
@@ -909,8 +809,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .slide-down.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateY(0);
@@ -921,8 +821,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-top {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -965,8 +865,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-top.ng-enter-active {
   -webkit-transform: translateY(0);
@@ -977,8 +877,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-top.ng-leave {
   -webkit-transform: translateY(0);
@@ -995,8 +895,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-top.ng-leave-active {
   -webkit-transform: translateY(240px);
@@ -1007,8 +907,8 @@
   -ms-transform: translateY(240px);
   -webkit-transform: translateY(240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-top.ng-hide-add {
   -webkit-transform: translateY(0);
@@ -1025,8 +925,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-top.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(240px);
@@ -1037,8 +937,8 @@
   -ms-transform: translateY(240px);
   -webkit-transform: translateY(240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-top.ng-hide-remove {
   -webkit-transform: translateY(240px);
@@ -1056,8 +956,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-top.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateY(0);
@@ -1068,8 +968,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-right {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1112,8 +1012,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-right.ng-enter-active {
   -webkit-transform: translateX(0);
@@ -1124,8 +1024,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-right.ng-leave {
   -webkit-transform: translateX(0);
@@ -1142,8 +1042,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-right.ng-leave-active {
   -webkit-transform: translateX(240px);
@@ -1154,8 +1054,8 @@
   -ms-transform: translateX(240px);
   -webkit-transform: translateX(240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-right.ng-hide-add {
   -webkit-transform: translateX(0);
@@ -1172,8 +1072,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-right.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(240px);
@@ -1184,8 +1084,8 @@
   -ms-transform: translateX(240px);
   -webkit-transform: translateX(240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-right.ng-hide-remove {
   -webkit-transform: translateX(240px);
@@ -1203,8 +1103,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-right.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0);
@@ -1215,8 +1115,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-left {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1259,8 +1159,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-left.ng-enter-active {
   -webkit-transform: translateX(0);
@@ -1271,8 +1171,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-left.ng-leave {
   -webkit-transform: translateX(0);
@@ -1289,8 +1189,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-left.ng-leave-active {
   -webkit-transform: translateX(-240px);
@@ -1301,8 +1201,8 @@
   -ms-transform: translateX(-240px);
   -webkit-transform: translateX(-240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-left.ng-hide-add {
   -webkit-transform: translateX(0);
@@ -1319,8 +1219,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-left.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateX(-240px);
@@ -1331,8 +1231,8 @@
   -ms-transform: translateX(-240px);
   -webkit-transform: translateX(-240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-left.ng-hide-remove {
   -webkit-transform: translateX(-240px);
@@ -1350,8 +1250,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-left.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateX(0);
@@ -1362,8 +1262,8 @@
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-down {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1406,8 +1306,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-down.ng-enter-active {
   -webkit-transform: translateY(0);
@@ -1418,8 +1318,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-down.ng-leave {
   -webkit-transform: translateY(0);
@@ -1436,8 +1336,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-down.ng-leave-active {
   -webkit-transform: translateY(-240px);
@@ -1448,8 +1348,8 @@
   -ms-transform: translateY(-240px);
   -webkit-transform: translateY(-240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-down.ng-hide-add {
   -webkit-transform: translateY(0);
@@ -1466,8 +1366,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-slide-down.ng-hide-add.ng-hide-add-active {
   -webkit-transform: translateY(-240px);
@@ -1478,8 +1378,8 @@
   -ms-transform: translateY(-240px);
   -webkit-transform: translateY(-240px);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-down.ng-hide-remove {
   -webkit-transform: translateY(-240px);
@@ -1497,8 +1397,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-slide-down.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: translateY(0);
@@ -1509,8 +1409,8 @@
   -ms-transform: translateY(0);
   -webkit-transform: translateY(0);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1549,8 +1449,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade.ng-enter-active {
   -webkit-transform: scale(1);
@@ -1561,8 +1461,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade.ng-leave {
   -webkit-transform: scale(1);
@@ -1579,8 +1479,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade.ng-leave-active {
   -webkit-transform: scale(0.7);
@@ -1591,8 +1491,8 @@
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade.ng-hide-add {
   -webkit-transform: scale(1);
@@ -1609,8 +1509,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade.ng-hide-add.ng-hide-add-active {
   -webkit-transform: scale(0.7);
@@ -1621,8 +1521,8 @@
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade.ng-hide-remove {
   -webkit-transform: scale(0.7);
@@ -1640,8 +1540,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: scale(1);
@@ -1652,8 +1552,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .spin-toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1692,8 +1592,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .spin-toggle.ng-enter-active {
   -webkit-transform: rotate(0deg);
@@ -1704,8 +1604,8 @@
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .spin-toggle.ng-leave {
   -webkit-transform: rotate(0deg);
@@ -1722,8 +1622,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .spin-toggle.ng-leave-active {
   -webkit-transform: rotate(90deg);
@@ -1734,8 +1634,8 @@
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .spin-toggle.ng-hide-add {
   -webkit-transform: rotate(0deg);
@@ -1752,8 +1652,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .spin-toggle.ng-hide-add.ng-hide-add-active {
   -webkit-transform: rotate(90deg);
@@ -1764,8 +1664,8 @@
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .spin-toggle.ng-hide-remove {
   -webkit-transform: rotate(225deg);
@@ -1783,8 +1683,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .spin-toggle.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: rotate(0deg);
@@ -1795,8 +1695,8 @@
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade-in {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1835,8 +1735,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade-in.ng-enter-active {
   -webkit-transform: scale(1);
@@ -1847,8 +1747,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade-in.ng-leave {
   -webkit-transform: scale(1);
@@ -1865,8 +1765,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade-in.ng-leave-active {
   -webkit-transform: scale(3);
@@ -1877,8 +1777,8 @@
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade-in.ng-hide-add {
   -webkit-transform: scale(1);
@@ -1895,8 +1795,8 @@
   transition-duration: 250ms;
   -webkit-transition-duration: 250ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .scale-fade-in.ng-hide-add.ng-hide-add-active {
   -webkit-transform: scale(3);
@@ -1907,8 +1807,8 @@
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade-in.ng-hide-remove {
   -webkit-transform: scale(3);
@@ -1926,8 +1826,8 @@
   -webkit-transition-duration: 250ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .scale-fade-in.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: scale(1);
@@ -1938,8 +1838,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-scale-in {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -1982,8 +1882,8 @@
   transition-duration: 450ms;
   -webkit-transition-duration: 450ms;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-scale-in.ng-enter-active {
   -webkit-transform: scale(1);
@@ -1994,8 +1894,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-scale-in.ng-leave {
   -webkit-transform: scale(1);
@@ -2012,8 +1912,8 @@
   transition-duration: 450ms;
   -webkit-transition-duration: 450ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-scale-in.ng-leave-active {
   -webkit-transform: scale(3);
@@ -2024,8 +1924,8 @@
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-scale-in.ng-hide-add {
   -webkit-transform: scale(1);
@@ -2042,8 +1942,8 @@
   transition-duration: 450ms;
   -webkit-transition-duration: 450ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .bouncy-scale-in.ng-hide-add.ng-hide-add-active {
   -webkit-transform: scale(3);
@@ -2054,8 +1954,8 @@
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-scale-in.ng-hide-remove {
   -webkit-transform: scale(3);
@@ -2073,8 +1973,8 @@
   -webkit-transition-duration: 450ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .bouncy-scale-in.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: scale(1);
@@ -2085,8 +1985,8 @@
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .flip-in {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2125,8 +2025,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
 .flip-in.ng-enter-active {
   -webkit-transform: perspective(300px) rotateX(0deg);
@@ -2137,8 +2037,8 @@
   -ms-transform: perspective(300px) rotateX(0deg);
   -webkit-transform: perspective(300px) rotateX(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .flip-in.ng-leave {
   -webkit-transform: perspective(300px) rotateX(0deg);
@@ -2155,8 +2055,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .flip-in.ng-leave-active {
   -webkit-transform: perspective(300px) rotateX(135deg);
@@ -2167,8 +2067,8 @@
   -ms-transform: perspective(300px) rotateX(135deg);
   -webkit-transform: perspective(300px) rotateX(135deg);
   opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
 .flip-in.ng-hide-add {
   -webkit-transform: perspective(300px) rotateX(0deg);
@@ -2185,8 +2085,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .flip-in.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(300px) rotateX(135deg);
@@ -2197,8 +2097,8 @@
   -ms-transform: perspective(300px) rotateX(135deg);
   -webkit-transform: perspective(300px) rotateX(135deg);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .flip-in.ng-hide-remove {
   -webkit-transform: perspective(300px) rotateX(90deg);
@@ -2216,8 +2116,8 @@
   -webkit-transition-duration: 550ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .flip-in.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: perspective(300px) rotateX(0deg);
@@ -2228,8 +2128,8 @@
   -ms-transform: perspective(300px) rotateX(0deg);
   -webkit-transform: perspective(300px) rotateX(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .rotate-in {
   -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -2272,8 +2172,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
 .rotate-in.ng-enter-active {
   -webkit-transform: perspective(300px) rotateY(0deg);
@@ -2284,8 +2184,8 @@
   -ms-transform: perspective(300px) rotateY(0deg);
   -webkit-transform: perspective(300px) rotateY(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .rotate-in.ng-leave {
   -webkit-transform: perspective(300px) rotateY(0deg);
@@ -2302,8 +2202,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .rotate-in.ng-leave-active {
   -webkit-transform: perspective(300px) rotateY(-40deg);
@@ -2314,8 +2214,8 @@
   -ms-transform: perspective(300px) rotateY(-40deg);
   -webkit-transform: perspective(300px) rotateY(-40deg);
   opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
 }
 .rotate-in.ng-hide-add {
   -webkit-transform: perspective(300px) rotateY(0deg);
@@ -2332,8 +2232,8 @@
   transition-duration: 550ms;
   -webkit-transition-duration: 550ms;
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .rotate-in.ng-hide-add.ng-hide-add-active {
   -webkit-transform: perspective(300px) rotateY(-40deg);
@@ -2344,8 +2244,8 @@
   -ms-transform: perspective(300px) rotateY(-40deg);
   -webkit-transform: perspective(300px) rotateY(-40deg);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .rotate-in.ng-hide-remove {
   -webkit-transform: perspective(300px) rotateY(40deg);
@@ -2363,8 +2263,8 @@
   -webkit-transition-duration: 550ms;
   display: block !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
 }
 .rotate-in.ng-hide-remove.ng-hide-remove-active {
   -webkit-transform: perspective(300px) rotateY(0deg);
@@ -2375,8 +2275,8 @@
   -ms-transform: perspective(300px) rotateY(0deg);
   -webkit-transform: perspective(300px) rotateY(0deg);
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: none;
+  filter: none;
 }
 .table-elements {
   margin: 0 auto;
@@ -2710,8 +2610,8 @@ h5.label-default-head {
   0: 0;
   background-color: #fbfbfb;
   opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=)";
-  filter: alpha(opacity=);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
 }
 .vertical-alignment,
 .vertical-alignment-cover {
@@ -2731,14 +2631,6 @@ h5.label-default-head {
 }
 ul.fen-elements {
   margin: 0 auto;
-  margin: 5px 15px;
-  margin: 0.32rem 0.94rem;
-  padding-left: 1rem;
-}
-ul.fen-elements li {
-  list-style-type: disc;
-  padding: 2px 0;
-  padding: 0.125rem;
 }
 ul.fen-elements li {
   position: relative;
@@ -2906,107 +2798,81 @@ ul.fen-elements li {
   background-color: #090;
 }
 .fire-bg {
+#f0c0b3
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.fire-bg:hover {
-  background-color: #f0c0b3;
 }
 .water-bg {
+#b9cff7
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.water-bg:hover {
-  background-color: #b9cff7;
 }
 .hard-wood-bg {
+#a3c8c8
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.hard-wood-bg:hover {
-  background-color: #a3c8c8;
 }
 .soft-wood-bg {
+#c0d6c2
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.soft-wood-bg:hover {
-  background-color: #c0d6c2;
 }
 .soft-metal-bg {
+#fcefdf
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.soft-metal-bg:hover {
-  background-color: #fcefdf;
 }
 .hard-metal-bg {
+#c9d7e0
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.hard-metal-bg:hover {
-  background-color: #c9d7e0;
 }
 .mountain-earth-bg {
+#ede2c9
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.mountain-earth-bg:hover {
-  background-color: #ede2c9;
 }
 .mother-earth-bg {
+#cebdb6
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
   background-color: #ebebeb;
-}
-.mother-earth-bg:hover {
-  background-color: #cebdb6;
 }
 /**********************
 
      Variables
 ***********************/
-body {
-  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-size: 103.36%;
-  color: #555;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  font-size-adjust: auto;
-}
 * {
   margin: 0;
 }
@@ -3128,9 +2994,6 @@ input:focus {
 .custom-list li:last-child:after {
   content: '';
 }
-table td {
-  padding: 4px 10px;
-}
 table#users {
   stripe: #6d6d6d #505050;
 }
@@ -3160,7 +3023,7 @@ table#users th {
 }
 #bar {
   background-color: #91e500;
-  color: #272727;
+  color: #000;
   position: relative;
   width: 5px;
   height: 90px;

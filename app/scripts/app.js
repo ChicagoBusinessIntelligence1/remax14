@@ -133,7 +133,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 //#state
   });
 
-
 app.value('url', 'https://fengshui2.firebaseio.com/');
 
 

@@ -91,12 +91,18 @@
   color: #505050 !important;
 }
 .color-danger {
-  color: #ff4d4d;
+  color: #db7156;
   cursor: pointer;
+}
+.color-danger:hover {
+  color: #b44326;
 }
 .color-edit {
   color: #62b1ff;
   cursor: pointer;
+}
+.color-edit:hover {
+  color: #007cf7;
 }
 .editable-form textarea {
   position: relative;
@@ -115,7 +121,10 @@
   color: #636363;
 }
 .btn-remove {
-  background-color: #ffa500;
+  background-color: #f2a34f;
+}
+.btn-remove:hover {
+  background-color: #b44326;
 }
 .popover-wide {
   max-width: 300px !important;

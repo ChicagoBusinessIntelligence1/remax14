@@ -12,14 +12,13 @@ angular.module('app')
       }
     })
 
-
-
     var mainRef = new Firebase(url);
     $scope.auth = $firebaseSimpleLogin(mainRef);
 
 
     $scope.auth.$getCurrentUser().then(function (user) {
-      if (user === null) {
+
+      if ((user === null)) {
         return;
       }
       if (user.provider === 'facebook') {
@@ -53,7 +52,7 @@ angular.module('app')
       ).then(function (user) {
           $scope.userLink = user.thirdPartyUserData.link;
           $scope.userName = user.thirdPartyUserData.first_name;
-          $scope.userPic = user.thirdPartyUserData.picture.data.url;
+          $scope.userPic = user.thirdPartyUserData.picture.data.url;;
         });
     }
   });

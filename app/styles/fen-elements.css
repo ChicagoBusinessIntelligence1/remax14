@@ -1,6 +1,9 @@
 .table-elements {
   margin: 0 auto;
 }
+.article-wrapper {
+  border-radius: 10px;
+}
 .element-1 {
   background-color: #faeae6;
   border-top: 1px #f5d5cc solid;
@@ -146,11 +149,15 @@
   padding: 5px 0px;
 }
 .fen-element-wrapper {
+  width: 128px;
+  height: 80px;
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
 }
 .fen-element {
+  width: 128px;
+  height: 80px;
   text-align: center;
   position: relative;
 }
@@ -164,8 +171,9 @@
   height: 32px !important;
   border-radius: 3px;
   width: 128px;
-  relative: 0px;
+  position: relative;
   background-color: #fbfbfb;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
 .vertical-alignment,
@@ -186,6 +194,14 @@
 }
 ul.fen-elements {
   margin: 0 auto;
+  margin: 5px 15px;
+  margin: 0.32rem 0.94rem;
+  padding-left: 1rem;
+}
+ul.fen-elements li {
+  list-style-type: disc;
+  padding: 2px 0;
+  padding: 0.125rem;
 }
 ul.fen-elements li {
   position: relative;

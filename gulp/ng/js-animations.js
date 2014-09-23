@@ -33,7 +33,7 @@ var injection = templates + initialInjection;
 var injectLine;
 var fs = require('fs')
 
-  gulp.task('jsa', function () {
+  gulp.task('gja', function () {
     fs.readFile(injection, 'utf8', function (err, injStr) {
       injectLine = injStr.replace(/svv/g, cname);
     return gulp.src(scripts + 'app.js')

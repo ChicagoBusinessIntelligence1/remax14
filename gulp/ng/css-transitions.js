@@ -18,7 +18,6 @@ var streamify = require('gulp-streamify')
 var concat = require("gulp-concat");
 var order = require("gulp-order");
 var merge = require('merge-stream');
-var msmerge = require('multistream-merge');
 var es = require('event-stream');
 //</editor-fold>
 

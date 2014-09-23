@@ -1,10 +1,10 @@
 h1  Новости Фэн-шуй
 hr
 .tr
-  .col-xs-12
-    .pull-right.btn-wrapper
-      sv-add-post-modal(ng-show='isAdmin', posts="posts")
+  .pull-right.btn-wrapper
+    sv-add-post-modal(ng-show='isAdmin', posts="posts")
 .tr
-  .col-sx-12
-    ul.slide-view.list-unstyled li(ng-repeat="(key,post) in posts | orderBy:'time':true") sv-article.pull-left
+  ul.slide-view.list-unstyled
+    li(ng-repeat="(key,post) in posts | orderBy:'time':true")
+      sv-article.pull-left
 

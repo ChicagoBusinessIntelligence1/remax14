@@ -1,9 +1,18 @@
 /**********************
       =Variables
 ***********************/
+/*Bootstrap classes*/
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 /**********************
       =Mixins
 ***********************/
+/*Remax*/
+/*Template*/
 /*comma-list*/
 .table-elements {
   margin: 0 auto;

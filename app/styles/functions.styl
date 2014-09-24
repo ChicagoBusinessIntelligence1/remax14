@@ -43,14 +43,36 @@ border-app-dark = color-border-dark 1px solid
 font-size-custom = 14px
 font-app = font-size-custom "Helvetica Neue", Helvetica, Arial
 
+/*Bootstrap classes*/
+.form-group
+  margin-bottom 10px
+
+label
+  margin-bottom 0px
+
 /**********************
       =Mixins
 ***********************/
+/*Remax*/
 font-main()
   font-family Helvetica Neue, Helvetica, Arial
   font-size 1em !important
   line-height 2em !important
 
+btn-primary()
+  color color-off-white !important
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  background-color: lighten(color-blue, 15%) !important;
+  border-color: lighten(color-blue, 15%) !important;
+  margin-top: 10px !important;
+  &:hover
+  &:focus
+  &:active
+    background-color: lighten(color-blue, 5%) !important;
+    color color-off-white !important
+
+/*Template*/
 hover-element(color, amount)
   hover-color(lighten(color, amount))
   transition(5s)

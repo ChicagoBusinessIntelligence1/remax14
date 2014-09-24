@@ -1,3 +1,9 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 .table-elements {
   margin: 0 auto;
 }
@@ -5,19 +11,39 @@
      =sv-aside-nav
 **********************/
 /*Remax*/
+.search-tabs-wrapper {
+  font-size: 0.9em;
+}
+.search-tabs-wrapper input {
+  font-size: inherit;
+}
 .search-tabs-wrapper li a {
-  font-size: 0.9em !important;
+  font-size: inherit !important;
 }
 .search-tabs-content {
   padding-top: 5px;
   padding-left: 15px;
-/*Template*/
 }
+/*Template*/
 .left-sidebar {
   background-color: #f3f3f3;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
+}
+.submit-search {
+  color: #f7f7f4 !important;
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  background-color: #4684b6 !important;
+  border-color: #4684b6 !important;
+  margin-top: 10px !important;
+}
+.submit-search:hover,
+.submit-search:focus,
+.submit-search:active {
+  background-color: #3d74a0 !important;
+  color: #f7f7f4 !important;
 }
 /*------------------------------------------------*/
 /*	Aside Navigation

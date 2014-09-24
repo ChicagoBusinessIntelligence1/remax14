@@ -25,9 +25,9 @@ html
 
 body
   color color-app
-  font font-custom !important
-  font-size .9em
+  font-size 1.1em
   background-color color-darken
+  font-family Helvetica Neue, Helvetica, Arial
 
 hr
   border-color color-border-dark
@@ -90,8 +90,29 @@ input
 .content-wrapper
   background-color color-content
   border-left border-app-light
-  padding-left 30px
   min-height 1200px
+  padding: 15px 30px;
+
+/**********************
+    Home Page
+***********************/
+
+.ul-first-line
+  font-size 16px
+  li
+    a
+      color lighten(color-skin, 40%)
+      line-height 32px
+      &:hover
+      &:active
+      &:focus
+        text-decoration none
+
+.bg-custom
+  padding 10px
+.li-first-line
+  display: inline-block !important;
+  width: 170px !important;
 
 /**********************
       =Post

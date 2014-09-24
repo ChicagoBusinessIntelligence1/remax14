@@ -72,7 +72,7 @@
 .app-tips .panel-heading {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #f3f4f5 !important;
+  background-color: #f2f2f2 !important;
 }
 .app-tips .panel-body {
   background-color: #fbfbfb !important;
@@ -86,7 +86,7 @@
 /* info panel */
 h5.label-default-head {
   padding: 10px 15px;
-  background-color: #848994;
+  background-color: #777;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   display: block;
@@ -96,7 +96,7 @@ h5.label-default-head {
 }
 .list-info-sidebar {
   padding: 5px 10px;
-  border: 1px solid #ced0d4;
+  border: 1px solid #c9c9c9;
 }
 .list-info-sidebar li {
   font-size: 10px;

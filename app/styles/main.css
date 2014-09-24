@@ -127,7 +127,7 @@
   margin-bottom: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #43464d !important;
+  background-color: #272727 !important;
 }
 .navbar-app li a .text {
   padding-left: 5px;
@@ -159,6 +159,15 @@
   width: 20px;
   height: 20px;
   margin-right: 5px !important;
+}
+.table-elements {
+  margin: 0 auto;
+}
+.h-logo {
+  font-size: 17px !important;
+  font-weight: 700;
+  color: #fbfbfb !important;
+  margin: 0px !important;
 }
 .animation-test {
   width: 200px;
@@ -2282,7 +2291,7 @@
   margin: 0 auto;
 }
 .footer {
-  background-color: #6e727e;
+  background-color: #5d5d5d;
   height: 60px;
 }
 .footer span,
@@ -2360,7 +2369,7 @@
 .app-tips .panel-heading {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #f3f4f5 !important;
+  background-color: #f2f2f2 !important;
 }
 .app-tips .panel-body {
   background-color: #fbfbfb !important;
@@ -2373,7 +2382,7 @@
 }
 h5.label-default-head {
   padding: 10px 15px;
-  background-color: #848994;
+  background-color: #777;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   display: block;
@@ -2383,7 +2392,7 @@ h5.label-default-head {
 }
 .list-info-sidebar {
   padding: 5px 10px;
-  border: 1px solid #ced0d4;
+  border: 1px solid #c9c9c9;
 }
 .list-info-sidebar li {
   font-size: 10px;
@@ -2566,7 +2575,7 @@ h5.label-default-head {
   border-radius: 0px;
 }
 .info {
-  color: #43464d !important;
+  color: #272727 !important;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -2725,7 +2734,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
@@ -2734,7 +2743,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
@@ -2743,7 +2752,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
@@ -2752,7 +2761,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
@@ -2761,7 +2770,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
@@ -2770,7 +2779,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
@@ -2779,7 +2788,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
@@ -2788,7 +2797,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mother-earth.png") !important;
 }
 .table-elements {
@@ -2928,14 +2937,14 @@ h6 {
   color: #ababab !important;
 }
 .btn-primary {
-  background-color: #848994;
-  border-color: #8a8f99;
+  background-color: #777;
+  border-color: #7e7e7e;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #969ba4;
-  border-color: #90959f;
+  background-color: #8b8b8b;
+  border-color: #858585;
 }
 /**********************
     =form

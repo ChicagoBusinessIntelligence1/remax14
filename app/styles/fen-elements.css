@@ -130,7 +130,7 @@
   border-radius: 0px;
 }
 .info {
-  color: #43464d !important;
+  color: #272727 !important;
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -280,7 +280,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
@@ -289,7 +289,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
@@ -298,7 +298,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
@@ -307,7 +307,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
@@ -316,7 +316,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
@@ -325,7 +325,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
@@ -334,7 +334,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
@@ -343,6 +343,6 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #848994;
+  background-color: #777;
   background-image: url("../images/elements/mother-earth.png") !important;
 }

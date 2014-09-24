@@ -2,6 +2,10 @@
       =Variables
 ***********************/
 
+color-skin = #272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98%)
+
 water = #6495ED
 fire = lighten(#A13B1F, 5%)
 soft-wood = #74A377
@@ -11,8 +15,7 @@ hard-metal = #88A6BB
 mountain-earth = #d8be86
 mother-earth = #8F6D60
 
-color-skin = #43464D
-color-app = #3C3C3C
+color-skin = #272727
 color-danger = lighten(red, 30%)
 color-content = lighten(color-app, 94%)
 color-lighten = lighten(color-app, 98%)
@@ -30,7 +33,6 @@ font-app = font-size-custom "Helvetica Neue", Helvetica, Arial
 /**********************
       =Mixins
 ***********************/
-
 
 hover-element(color, amount)
   hover-color(lighten(color, amount))
@@ -115,7 +117,6 @@ post-comment-style(n)
   border-bottom 1px lighten(n, 80%) solid
   border-top 0px
   border-radius 0px
-
 
 transition(n)
   -webkit-transition all n ease

@@ -2344,6 +2344,16 @@
 .table-elements {
   margin: 0 auto;
 }
+.elements-nav-wrapper {
+  padding-left: 10px;
+  margin-left: 15px;
+}
+.search-tabs-wrapper {
+  padding-right: 10px;
+}
+.search-tabs-wrapper li a {
+  font-size: 1em;
+}
 .left-sidebar {
   background-color: #f3f3f3;
   padding-right: 0px;

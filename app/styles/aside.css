@@ -4,6 +4,18 @@
 /**********************
      =sv-aside-nav
 **********************/
+/*Remax*/
+.elements-nav-wrapper {
+  padding-left: 10px;
+  margin-left: 15px;
+}
+.search-tabs-wrapper {
+  padding-right: 10px;
+}
+.search-tabs-wrapper li a {
+  font-size: 1em;
+}
+/*Template*/
 .left-sidebar {
   background-color: #f3f3f3;
   padding-right: 0px;

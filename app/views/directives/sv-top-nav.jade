@@ -1,62 +1,187 @@
-.navbar.navbar-default.navbar-app(role="navigation")
-  .container
-    <!-- Brand and toggle get grouped for better mobile display -->
-    .navbar-header
-      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand.btn-link-light(ui-sref='app.home')
-        h1.h-logo REMAX FIRST CLASS
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
-      ul.nav.navbar-nav.top-nav-menu
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.home')
-            .i.fa.fa-home
-            span.text Главная
-        li.dropdown.drop-app.menu-link
-          a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
-            .i.fa.fa-leaf
-            span.text Наши услуги
-            i.fa.fa-angle-down
-          ul.dropdown-menu(role="menu")
-            li
-              a(ui-sref='app.residential-consultations') Фэн-шуй для Вашего Дома
-            li.divider
-            li
-              a(ui-sref='app.business-consultations') Фэн-шуй для Вашего Бизнеca
-            li.divider
-            li
-              a(ui-sref='app.personal-consultations') Персональные концультации
-            li.divider
-
-            li
-              a(ui-sref="app.schedule-consultations") Запланировать концультацию
-        li
-          a.btn.btn-link.btn-link-light(ui-sref='app.contact')
-            i.fa.fa-envelope
-            span.text Обратная связь
-
-      //form.navbar-form.navbar-left(role="search")
-      //  .form-group
-      //    input.form-control(type="text" placeholder="Search")
-      //  button.btn.btn-default.btn-search(type="submit") Submit
-      ul.nav.navbar-nav.pull-right.nav-auth
+.nav-container
+  .navbar-auth(role="navigation")
+    .container
+      span.real-estate-rc RESIDENTIAL, COMMERCIAL & INVESTMENT REAL ESTATE
+      ul.list-inline.pull-right.nav-auth
+        li.li-create-account
+          a(href="#")
+            em Create Your Free Account
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Войти
+            span.auth-text Sign In
         li(ng-if='auth.user.provider==\'facebook\'')
           a.btn-link-light(ui-sref='{{userLink}}')
-            span.span-top-nav {{userName}}
+            span.fb-name {{userName}}
             img.img-fb(ng-src="{{userPic}}")
         li(ng-if='auth.user.provider==\'password\'')
           a.btn-link-light
             i.fa.fa-user.fa-lg
-            span.fb-name Админ
+            span.fb-name Admin
         li(ng-show='auth.user')
           a.btn-link-light(ng-click='fenLogout()')
             i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Выйти
+            span.span-top-nav Sign Out
+  .navbar.navbar-default.navbar-app(role="navigation")
+    .container
+      <!-- Brand and toggle get grouped for better mobile display -->
+      .navbar-header
+        button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand.btn-link-light(ui-sref='app.home')
+          h1.h-logo REMAX FIRST CLASS
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      .collapse.navbar-collapse.pull-right(id="bs-example-navbar-collapse-1")
+        ul.nav.navbar-nav.top-nav-menu
+          li
+            a.btn.btn-link.btn-link-light(ui-sref='app.home')
+              .i.fa.fa-home
+              span.text Home
+          li.dropdown.drop-app.menu-link
+            a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+              span.text Listings
+              i.fa.fa-angle-down
+            ul.dropdown-menu(role="menu")
+              li
+                a(ui-sref='app.residential-consultations') Bensenville
+              li.divider
+              li
+                a(ui-sref='app.business-consultations') Des Plaines
+              li.divider
+              li
+                a(ui-sref='app.personal-consultations') Evanston
+              li.divider
+              li
+                a(ui-sref="app.schedule-consultations") Glenview
+              li.divider
+              li
+                a Highland Park
+              li.divider
+              li
+                a Lake Forest
+              li.divider
+              li
+                a Lincolnwood
+              li.divider
+              li
+                a Morton Grove
+              li.divider
+              li
+                a Niles
+              li.divider
+              li
+                a North Chicago
+              li.divider
+              li
+                a Northbrook
+              li.divider
+              li
+                a Northfield
+              li.divider
+              li
+                a Park Ridge
+              li.divider
+              li
+                a Riverwoods
+              li.divider
+              li
+                a Rosemont
+              li.divider
+              li
+                a Skokie
+              li.divider
+              li
+                a Wilmette
+              li.divider
+              li
+                a Winnetka
+          li.dropdown.drop-app.menu-link
+            a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+              span.text Buying Home
+              i.fa.fa-angle-down
+            ul.dropdown-menu(role="menu")
+              li
+                a(ui-sref='app.residential-consultations') The Benefits of Home Ownership
+              li.divider
+              li
+                a(ui-sref='app.business-consultations') The Importance of a Buyer's Agent
+              li.divider
+              li
+                a(ui-sref='app.personal-consultations') Deciding Where to Live
+              li.divider
+              li
+                a(ui-sref="app.schedule-consultations") Anatomy of a Home Purchase
+              li.divider
+              li
+                a 5 Tips to Narrow Your Online Home Search
+          li.dropdown.drop-app.menu-link
+            a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+              span.text Selling Home
+              i.fa.fa-angle-down
+            ul.dropdown-menu(role="menu")
+              li
+                a(ui-sref='app.residential-consultations') The Right Listing Agent
+              li.divider
+              li
+                a(ui-sref='app.business-consultations') How an Agent Markets Your Home
+              li.divider
+              li
+                a(ui-sref='app.personal-consultations') Pricing Your Home to Sell
+              li.divider
+              li
+                a(ui-sref="app.schedule-consultations") Preparing Your House for Sale
+              li.divider
+              li
+                a Consider a Home Inspection When Selling
+          li.dropdown.drop-app.menu-link
+            a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+              span.text Mortgage
+              i.fa.fa-angle-down
+            ul.dropdown-menu(role="menu")
+              li
+                a(ui-sref='app.residential-consultations') Finding the Right Mortgage Professional
+              li.divider
+              li
+                a(ui-sref='app.business-consultations') Getting Preapproved
+              li.divider
+              li
+                a(ui-sref='app.personal-consultations') How Much Can you afford?
+              li.divider
+              li
+                a(ui-sref="app.schedule-consultations") Down Payments: How Much Do You Need?
+              li.divider
+              li
+                a Mortgages 101: Basic Loan Types
+              li
+                a Renovating a Home? Consider a 203(k) Loan
+          li.dropdown.drop-app.menu-link
+            a.dropdown-toggle.btn-link-light(ui-sref="#" data-toggle="dropdown")
+              span.text About
+              i.fa.fa-angle-down
+            ul.dropdown-menu(role="menu")
+              li
+                a(ui-sref='app.residential-consultations') Why Remax 1st Class?
+              li.divider
+              li
+                a(ui-sref='app.business-consultations') Our Agents
+              li.divider
+              li
+                a(ui-sref='app.personal-consultations') Become a Remax 1st Class Agent
+              li.divider
+              li
+                a(ui-sref="app.schedule-consultations") Preparing Your House for Sale
+              li.divider
+              li
+                a Consider a Home Inspection When Selling
+          li
+            a.btn.btn-link.btn-link-light(ui-sref='app.contact')
+              i.fa.fa-envelope
+              span.text Contact
+
+        //form.navbar-form.navbar-left(role="search")
+        //  .form-group
+        //    input.form-control(type="text" placeholder="Search")
+        //  button.btn.btn-default.btn-search(type="submit") Submit

@@ -7,6 +7,86 @@
 .h-logo {
   font-size: 17px !important;
   font-weight: 700;
-  color: #fbfbfb !important;
+  font-size: 17px !important;
+  color: #f7f7f4 !important;
   margin: 0px !important;
+}
+.navbar-auth {
+  background-color: #272727;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.auth-text {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+.nav-auth {
+  margin-bottom: 0px !important;
+}
+.nav-auth li a {
+  font-size: 1em;
+}
+.nav-auth li a:hover,
+.nav-auth li a:focus,
+.nav-auth li a:active {
+  text-decoration: none;
+}
+.real-estate-rc {
+  display: inline-block;
+  font-family: 'Roboto Slab', serif !important;
+  color: #7d7d7d !important;
+  font-size: 0.9em !important;
+  letter-spacing: 1px !important;
+}
+.fb-name {
+  display: inline-block;
+  margin-left: 5px !important;
+  display: inline-block;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: inherit;
+}
+.img-fb {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px !important;
+}
+.divider {
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+.navbar-app {
+  margin-bottom: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: 0px;
+  background-color: #3d3d3d !important;
+}
+.navbar-app li a {
+  font-size: 13px !important;
+}
+.navbar-app li a .text {
+  padding-left: 5px;
+  display: inline-block;
+}
+.navbar-app li a .fa-angle-down {
+  margin-left: 5px !important;
+}
+.li-create-account a {
+  font-size: 12px;
+  color: #f7f7f4 !important;
+  cursor: pointer;
+}
+.li-create-account a:hover {
+  color: #659ac4 !important;
+}
+.li-create-account em {
+  color: #f7f7f4 !important;
+}
+.li-create-account em:hover {
+  color: #659ac4;
 }

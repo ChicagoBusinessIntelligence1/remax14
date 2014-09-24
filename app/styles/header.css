@@ -4,43 +4,6 @@
 /**********************
      =top-navbar
 ***********************/
-.navbar-app {
-  margin-bottom: 0px;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  background-color: #272727 !important;
-}
-.navbar-app li a .text {
-  padding-left: 5px;
-  display: inline-block;
-}
-.navbar-app li a .fa-angle-down {
-  margin-left: 5px !important;
-}
-.span-top-nav {
-  display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-family: 'Raleway', sans-serif;
-}
-.brand-name {
-  font-size: 20px;
-}
-.brand-name,
-.btn-search,
-.fb-name {
-  margin-left: 5px;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  background-color: inherit;
-}
-.img-fb {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px !important;
-}
 /**********************
 			=Search
 ***********************/

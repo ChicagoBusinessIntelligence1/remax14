@@ -2461,6 +2461,9 @@ h5.label-default-head {
 .table-elements {
   margin: 0 auto;
 }
+.elements-wrapper {
+  padding: 15px;
+}
 .article-wrapper {
   -webkit-border-radius: 10px;
   border-radius: 10px;

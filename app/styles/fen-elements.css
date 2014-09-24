@@ -1,6 +1,11 @@
 .table-elements {
   margin: 0 auto;
 }
+/*Remax*/
+.elements-wrapper {
+  padding: 15px;
+}
+/*Template Styles*/
 .element-1 {
   background-color: #faeae6;
   border-top: 1px #f5d5cc solid;

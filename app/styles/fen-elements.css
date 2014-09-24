@@ -142,11 +142,10 @@
   position: relative;
   top: -7px;
 }
-.elements-nav-wrapper {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-left: 15px;
-}
+/*.elements-nav-wrapper*/
+/*padding-right 10px*/
+/*padding-left 10px*/
+/*margin-left 15px*/
 .elements-nav {
   padding: 5px 0px;
 }

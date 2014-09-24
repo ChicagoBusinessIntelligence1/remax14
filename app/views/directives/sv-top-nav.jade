@@ -11,8 +11,8 @@
             span.auth-text Sign In
         li(ng-if='auth.user.provider==\'facebook\'')
           a.btn-link-light(ui-sref='{{userLink}}')
-            span.fb-name {{userName}}
             img.img-fb(ng-src="{{userPic}}")
+            span.fb-name {{userName}}
         li(ng-if='auth.user.provider==\'password\'')
           a.btn-link-light
             i.fa.fa-user.fa-lg

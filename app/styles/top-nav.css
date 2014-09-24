@@ -34,7 +34,6 @@
 .nav-auth li a:focus,
 .nav-auth li a:active {
   text-decoration: none;
-  color: #91b7d5 !important;
 }
 .li-create-account a {
   font-style: italic;
@@ -50,6 +49,13 @@
   display: inline-block;
   margin-left: 5px !important;
   display: inline-block;
+  text-transform: uppercase;
+  color: #bdd4e6 !important;
+}
+.fb-name:hover,
+.fb-name:focus,
+.fb-name:active {
+  color: #91b7d5 !important;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,

@@ -156,7 +156,6 @@
 .nav-auth li a:focus,
 .nav-auth li a:active {
   text-decoration: none;
-  color: #91b7d5 !important;
 }
 .li-create-account a {
   font-style: italic;
@@ -172,6 +171,13 @@
   display: inline-block;
   margin-left: 5px !important;
   display: inline-block;
+  text-transform: uppercase;
+  color: #bdd4e6 !important;
+}
+.fb-name:hover,
+.fb-name:focus,
+.fb-name:active {
+  color: #91b7d5 !important;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -2344,20 +2350,19 @@
 .table-elements {
   margin: 0 auto;
 }
-.elements-nav-wrapper {
-  padding-left: 10px;
-  margin-left: 15px;
-}
-.search-tabs-wrapper {
-  padding-right: 10px;
-}
 .search-tabs-wrapper li a {
-  font-size: 1em;
+  font-size: 0.9em !important;
+}
+.search-tabs-content {
+  padding-top: 5px;
+  padding-left: 15px;
+/*Template*/
 }
 .left-sidebar {
   background-color: #f3f3f3;
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
 }
 .aside-menu {
   padding-left: 0;
@@ -2400,9 +2405,6 @@
 }
 .sub-menu li a .text {
   padding-left: 20px !important;
-}
-.sidebar-content {
-  padding: 0 10px;
 }
 .sidebar-content .text-panel {
   padding-left: 5px;
@@ -2629,11 +2631,6 @@ h5.label-default-head {
   line-height: 15px;
   position: relative;
   top: -7px;
-}
-.elements-nav-wrapper {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-left: 15px;
 }
 .elements-nav {
   padding: 5px 0px;

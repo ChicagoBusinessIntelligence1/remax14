@@ -145,6 +145,7 @@ label {
   text-align: center;
 }
 .header-container {
+  background-color: #d3d3d3;
   padding-top: 10px;
   padding-bottom: 10px;
 }

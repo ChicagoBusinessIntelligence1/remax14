@@ -16,6 +16,7 @@ mountain-earth = #d8be86
 mother-earth = #8F6D60
 color-off-white = #F7F7F4;
 color-blue = #396C95
+color-red = lighten(#B92025, 10%)
 
 colorNavPanel = #393939
 colorButtonBackground = #428CB9
@@ -24,8 +25,7 @@ colorFontGray = #525252
 colorGray = #4B4F54
 colorSlash = #AAAAAA
 copyrightBackgroundColor = #3F3F3F
-colorRed = lighten(#B92025, 10%)
-myTextShadow = #FFFFFF 1px 1px 0px
+my-text-shadow = #FFFFFF 1px 1px 0px
 myTextShadow2 = #FFFFFF 2px 2px 0px
 myBorderGray = 1px solid darken(#F2F2F2, 5%) !important
 
@@ -71,6 +71,12 @@ btn-primary()
   &:active
     background-color: lighten(color-blue, 5%) !important;
     color color-off-white !important
+
+/*align to center img etc.*/
+center-it(n)
+  display block !important
+  width n
+  margin 0 auto
 
 /*Template*/
 hover-element(color, amount)

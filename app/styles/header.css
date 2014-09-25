@@ -8,8 +8,92 @@ label {
   margin: 0 auto;
 }
 /**********************
-     =top-navbar
+     =header
 ***********************/
-/**********************
-			=Search
-***********************/
+.text-center {
+  text-align: center;
+}
+.header-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.logo-content {
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .logo-content img {
+    display: block !important;
+    width: 120px;
+    margin: 0 auto;
+  }
+}
+.slogan-text {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.slogan-text p {
+  color: #396c95;
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-shadow: #fff 1px 1px 0px;
+}
+.ul-call-us {
+  margin: 20px 0px 10px 0px;
+}
+.callUsContent {
+  padding-top: 10px !important;
+  width: 28px;
+}
+.call-us {
+  color: #d2242a;
+  text-shadow: #f7f7f4 1px 1px 0px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 5px !important;
+}
+.one-stop-service {
+  position: relative;
+}
+.one-stop-service img {
+  display: block !important;
+  width: 340px;
+  margin: 0 auto;
+}
+/*Social Media*/
+.social-media {
+  position: relative;
+  display: block !important;
+  width: 170px;
+  margin: 0 auto;
+}
+.social-img {
+  display: inline-block;
+  margin-right: 4px;
+}
+.header-icons {
+  position: relative;
+}
+.custom-aligns {
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .custom-aligns {
+    text-align: right !important;
+  }
+}
+.ul-icons {
+  display: inline-block;
+  width: 74px;
+  position: relative;
+  right: 0px;
+}
+@media screen and (min-width: 992px) {
+  .ul-icons {
+    bottom: -60px;
+  }
+}

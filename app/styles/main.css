@@ -195,11 +195,11 @@ label {
   width: 340px;
   margin: 0 auto;
 }
+.social-div {
+  padding: 0px;
+}
 .social-media {
   position: relative;
-  display: block !important;
-  width: 170px;
-  margin: 0 auto;
 }
 .social-img {
   display: inline-block;

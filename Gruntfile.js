@@ -169,7 +169,7 @@ module.exports = function (grunt) {
 
 //     C        //
     var d = 'app/scripts/controllers/';
-    var t = 'Ctrl' + '.js';
+    var t = '.js';
     var ctrl = grunt.file.read('templates/ctrl.tpl');
 
     var lname = cname;
@@ -184,7 +184,7 @@ module.exports = function (grunt) {
 ////////////////
 
     // register
-    var ref = '/// <reference path="controllers/' + name + 'Ctrl.js" />\r\n';
+    var ref = '/// <reference path="controllers/' + name + '.js" />\r\n';
     var reg = 'profile.controller("' + name + 'Ctrl", ' + name + 'Ctrl);\r\n';
     var state = '\t\t\t.state("' + _.str.dasherize(lname) + '", {\r\n' +
       '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
@@ -193,7 +193,7 @@ module.exports = function (grunt) {
       '\t\t\t})\r\n';
 
     var apath = 'app/scripts/app.js';
-    var tpath = 'app/views/' + _.str.dasherize(lname) + '.jade';
+    var tpath = 'app/views/' + lname + '.jade';
     var app = grunt.file.read(apath);
     if (rm) {
       //app = removeFromInside(app, ref);
@@ -210,7 +210,7 @@ module.exports = function (grunt) {
 
     /////////////////// index
     var ipath = 'app/index.html';
-    var src = '<script src="scripts/controllers/' + name + 'Ctrl.js"></script>\r\n';
+    var src = '<script src="scripts/controllers/' + name + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
     //////////////////
     if (rm) {

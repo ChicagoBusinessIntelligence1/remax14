@@ -1,10 +1,72 @@
 .search-tabs-wrapper
   ul.nav.nav-tabs(role="tablist")
     li.active
-      a(href="#home" role="tab" data-toggle="tab") PROPERTY FOR SALE
+      a(href="#for-sale" role="tab" data-toggle="tab") PROPERTY FOR SALE
     li
-      a(href="#profile" role="tab" data-toggle="tab") PROPERTY FOR RENT
+      a(href="#for-rent" role="tab" data-toggle="tab") PROPERTY FOR RENT
   .tab-content.search-tabs-content
-    .tab-pane.active(id="home") At vero eos et accusamus et iusto odio dignissimos ducimus
-    .tab-pane(id="profile") accusamus et iusto odio dignissimos ducimus
+    .tab-pane.active(id="for-sale")
+      form(id="form-search-sale", name="form-search-sale", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+        //.alert-box.warning.round(data-alert, ng-show="loginError")
+        //  | Incorrect login or password
+        //  | a.close(href="#") &times;
+        .form-group
+          label(ng-class="{'error':login.email.$invalid && login.$dirty}") Location:
+          input.form-control(type="email", name="email" id="email", placeholder="City and State, or Zip Code", ng-model="email.data",  required)
+        .form-group
+          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
+          .row
+            .col-md-6
+              input.form-control(name="from" id="from", placeholder="$ From",  required)
+            .col-md-6
+              input.form-control(name="to" id="to", placeholder="$ To",  required)
+        .form-group
+          .row
+            .col-md-6
+              label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
+              input.form-control(name="bedrooms" id="bedrooms", placeholder="#", ng-model="",  required)
+            .col-md-6
+              label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
+              input.form-control(name="bathrooms" id="bathrooms", placeholder="#", ng-model="",  required)
+        input.btn.bnt-radius.submit-search(type="submit" value="Search" ng-disabled="login.$invalid")
+        hr
+        .form-group.text-center
+          button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR SALE
+        .form-group.text-center
+          button.btn.btn-default.bnt-lg.btn-block(type="button") SINGLE FAMILY HOMES FOR SALE
+        .form-group.text-center
+          button.btn.btn-default.bnt-lg.btn-block(type="button") CONDOS FOR SALE
+
+    .tab-pane(id="for-rent")
+      .tab-pane.active(id="for-sale")
+        form(id="form-search-sale", name="form-search-sale", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+          //.alert-box.warning.round(data-alert, ng-show="loginError")
+          //  | Incorrect login or password
+          //  | a.close(href="#") &times;
+          .form-group
+            label(ng-class="{'error':login.email.$invalid && login.$dirty}") Location:
+            input.form-control(type="email", name="email" id="email", placeholder="City and State, or Zip Code", ng-model="email.data",  required)
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
+            .row
+              .col-md-6
+                input.form-control(name="from" id="from", placeholder="$ From",  required)
+              .col-md-6
+                input.form-control(name="to" id="to", placeholder="$ To",  required)
+          .form-group
+            .row
+              .col-md-6
+                label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
+                input.form-control(name="bedrooms" id="bedrooms", placeholder="#", ng-model="",  required)
+              .col-md-6
+                label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
+                input.form-control(name="bathrooms" id="bathrooms", placeholder="#", ng-model="",  required)
+          input.btn.bnt-radius.submit-search(type="submit" value="Search" ng-disabled="login.$invalid")
+          hr
+          .form-group.text-center
+            button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR RENT
+          .form-group.text-center
+            button.btn.btn-default.bnt-lg.btn-block(type="button") APARTMENTS
+          .form-group.text-center
+            button.btn.btn-default.bnt-lg.btn-block(type="button") HOUSES
 

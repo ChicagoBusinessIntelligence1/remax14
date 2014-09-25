@@ -1,5 +1,17 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 .table-elements {
   margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
 }
 .table-elements {
   margin: 0 auto;
@@ -120,8 +132,20 @@
 .popover-wide {
   max-width: 300px !important;
 }
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 .table-elements {
   margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
 }
 .table-elements {
   margin: 0 auto;
@@ -2328,6 +2352,12 @@
   -ms-filter: none;
   filter: none;
 }
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 .table-elements {
   margin: 0 auto;
 }
@@ -2347,22 +2377,47 @@
   display: inline-block;
   margin-top: 10px;
 }
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
 .table-elements {
   margin: 0 auto;
 }
+.search-tabs-wrapper {
+  font-size: 0.9em;
+}
+.search-tabs-wrapper input {
+  font-size: inherit;
+}
 .search-tabs-wrapper li a {
-  font-size: 0.9em !important;
+  font-size: inherit !important;
 }
 .search-tabs-content {
   padding-top: 5px;
   padding-left: 15px;
-/*Template*/
 }
 .left-sidebar {
   background-color: #f3f3f3;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
+}
+.submit-search {
+  color: #f7f7f4 !important;
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  background-color: #4684b6 !important;
+  border-color: #4684b6 !important;
+  margin-top: 10px !important;
+}
+.submit-search:hover,
+.submit-search:focus,
+.submit-search:active {
+  background-color: #3d74a0 !important;
+  color: #f7f7f4 !important;
 }
 .aside-menu {
   padding-left: 0;
@@ -2469,6 +2524,12 @@ h5.label-default-head {
 .label-text {
   padding-left: 5px;
   display: inline-block;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
 }
 .table-elements {
   margin: 0 auto;
@@ -2844,6 +2905,12 @@ ul.fen-elements li {
   transition: all 1s ease;
   background-color: #777;
   background-image: url("../images/elements/mother-earth.png") !important;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
 }
 .table-elements {
   margin: 0 auto;

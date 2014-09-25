@@ -3179,6 +3179,9 @@ input:focus {
 /**********************
      =main content
 **********************/
+.main-wrapper {
+  background-color: #dcdcdc;
+}
 .main-content {
   border-left: #dedede 1px solid;
   background-color: #f3f3f3;

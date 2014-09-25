@@ -30,14 +30,16 @@
     letter-spacing 1px
     line-height 30px
     margin-bottom 0px
-    text-align center
     text-shadow my-text-shadow
 
 .ul-call-us
-  margin 20px 0px 10px 0px
+  margin 0px 0px 10px 0px
+
+  @media screen and (min-width: 992px)
+    margin-top 0px
+    padding-top 10px !important
 
 .callUsContent
-  padding-top 10px !important
   width 28px
 
 .call-us
@@ -48,31 +50,33 @@
   margin-left 5px !important
 
 .one-stop-service
-  position relative
+  margin-bottom 10px
   img
     center-it(340px)
 
 /*Social Media*/
 
 .social-div
- padding 0px
+  ul
+    display block
+    li
+      padding 3px
+      display inline-block
 
+    @media screen and (min-width: 992px)
+      text-align rigth
 
 .social-media
   position relative
+  height auto
+  padding 0px
 
 .social-img
   display inline-block
-  margin-right 4px
-
-.header-icons
-  position relative
 
 .custom-aligns
   position relative
-
-  @media screen and (min-width: 992px)
-    text-align right !important
+  text-align right !important
 
 .ul-icons
   display inline-block

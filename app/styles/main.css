@@ -154,9 +154,16 @@ label {
 }
 .logo-content {
   position: relative;
+  padding: 0px;
+}
+.logo-content img {
+  display: inline-block;
+  position: relative;
+  left: -10px;
 }
 @media screen and (max-width: 992px) {
   .logo-content img {
+    position: relative;
     display: block !important;
     width: 120px;
     margin: 0 auto;
@@ -169,7 +176,7 @@ label {
 .slogan-text p {
   color: #396c95;
   font-family: 'Noto Serif', serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 30px;
@@ -239,6 +246,9 @@ label {
 .ul-icons {
   position: relative;
   margin-bottom: 0px;
+}
+.ul-icons li {
+  padding-right: 0px;
 }
 @media screen and (min-width: 992px) {
   .ul-icons {

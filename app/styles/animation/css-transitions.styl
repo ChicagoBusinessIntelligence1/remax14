@@ -1,0 +1,28 @@
+
+/*******************************
+     prop-info animation
+********************************/
+
+.prop-info.ng-enter,
+.prop-info.ng-hide-add,
+.prop-info.ng-hide-remove,
+.prop-info.ng-leave
+  position relative
+  transition(1s)
+
+.prop-info.ng-enter,
+.prop-info.ng-hide-remove,
+.prop-info.ng-hide-add.ng-hide-add-active,
+.prop-info.ng-leave.ng-leave-active
+  opacity 0
+  top -200px
+
+.prop-info.ng-enter.ng-enter-active,
+.prop-info.ng-hide-add,
+.prop-info.ng-hide-remove.ng-hide-remove-active,
+.prop-info.ng-leave
+  opacity 1
+  top 0px
+
+
+//*******************************

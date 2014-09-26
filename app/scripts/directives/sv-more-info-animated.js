@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .directive('#jname#', function () {
+  .directive('svMoreInfoAnimated', function () {
     return {
       restrict: 'E',
-      templateUrl: '../views/directives/#dname#.html',
+      templateUrl: '../views/directives/sv-more-info-animated.html',
       scope: {
 
       },

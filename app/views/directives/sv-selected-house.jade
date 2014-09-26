@@ -1,3 +1,7 @@
-div
+.selected-house-wrapper
   img(ng-src="{{houses[id].$value}}").selected-house.thumbnail
+  .info-wrapper(ng-show='isInfoVisible').prop-info
+    .selected-house-info-bg
+    .selected-house-info.text-center
+      sv-more-info-animated
 

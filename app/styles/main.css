@@ -3405,7 +3405,6 @@ Selected House
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  width: 200px;
   z-index: 99;
 }
 .selected-house-info-bg {
@@ -3415,7 +3414,6 @@ Selected House
   filter: alpha(opacity=75);
 }
 .selected-house {
-  width: 200px;
   cursor: pointer !important;
 }
 .white {

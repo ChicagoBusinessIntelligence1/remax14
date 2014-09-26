@@ -1,7 +1,9 @@
-.selected-house-wrapper
-  img(ng-src="{{houses[id].$value}}").selected-house.thumbnail
-  .info-wrapper(ng-show='isInfoVisible').prop-info.ng-hide
-    .selected-house-info-bg
-    .selected-house-info.text-center
-      sv-more-info-animated
+.selected-house-wrapper.text-center
+  img.img-responsive(ng-src="{{houses[id].$value}}").selected-house.thumbnail
+  .info-wrapper(ng-show='isInfoVisible').prop-info.ng-hide.text-center
+    .row
+      .col-xs-12
+        .selected-house-info-bg
+        .selected-house-info.text-center
+          sv-more-info-animated
 

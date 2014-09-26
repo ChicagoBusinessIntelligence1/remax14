@@ -2553,24 +2553,31 @@ label {
 .table-elements {
   margin: 0 auto;
 }
-.search-tabs-wrapper {
-  font-size: 0.9em;
-}
 .search-tabs-wrapper input {
-  font-size: inherit;
+  font-size: 1em;
 }
 .search-tabs-wrapper li a {
-  font-size: inherit !important;
+  font-size: 1em !important;
+  padding: 10px;
+}
+@media screen and (max-width: 992px) {
+  .search-tabs-wrapper {
+    font-size: 0.8em;
+  }
+  .search-tabs-wrapper input {
+    font-size: 1em !important;
+  }
 }
 .search-tabs-content {
   padding-top: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .left-sidebar {
   background-color: #f3f3f3;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 .submit-search {
   color: #f7f7f4 !important;
@@ -3398,7 +3405,6 @@ Selected House
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  width: 200px;
   z-index: 99;
 }
 .selected-house-info-bg {
@@ -3408,7 +3414,6 @@ Selected House
   filter: alpha(opacity=75);
 }
 .selected-house {
-  width: 200px;
   cursor: pointer !important;
 }
 .white {

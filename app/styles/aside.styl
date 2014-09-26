@@ -6,33 +6,40 @@
      =sv-aside-nav
 **********************/
 
-/*Remax*/
+/*remax*/
 
 .search-tabs-wrapper
-  font-size .9em
   input
-    font-size inherit
+    font-size 1em
   li
     a
-      font-size inherit !important
+      font-size 1em !important
+      padding 10px
+
+  @media screen and (max-width: 992px)
+    font-size .8em
+    input
+      font-size 1em !important
+
 
 .search-tabs-content
   padding-top 5px
-  padding-left 15px
+  padding-left 10px
+  padding-right 10px
 
-/*Template*/
+/*template*/
 .left-sidebar {
   background-color color-content
-  padding-right 15px
-  padding-left 15px
-  padding-top 15px
+  padding-right 10px
+  padding-left 10px
+  padding-top 10px
 }
 
 .submit-search
   btn-primary()
 
 /*------------------------------------------------*/
-/*	Aside Navigation
+/*	aside navigation
 /*------------------------------------------------*/
 
 /* aside menu */

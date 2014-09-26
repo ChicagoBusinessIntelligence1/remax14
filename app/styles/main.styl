@@ -23,17 +23,14 @@ html
   -webkit-font-smoothing antialized
   font-size 0.8em
 
-@media (max-width: 767px) {
-  body {
-    padding-right: -40px;
-    padding-left: -20px;
-  }
-}
-
 body
   color color-app
   font-size 1.1em
   background-color color-darken
+
+html, body {
+  overflow-x: hidden !important;
+}
 
 hr
   border-color color-border-dark
@@ -84,6 +81,7 @@ input
 **********************/
 .main-wrapper
   background-color #dcdcdc
+
 .main-content
   border-left border-app-light
   background-color color-content

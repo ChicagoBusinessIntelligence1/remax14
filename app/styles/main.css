@@ -401,7 +401,7 @@ label {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  top: -200px;
+  top: -344px;
   z-index: 99;
 }
 .prop-info.ng-enter.ng-enter-active,
@@ -411,7 +411,7 @@ label {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: 0px;
+  top: -172px;
   z-index: 99;
 }
 .toggle {
@@ -3392,8 +3392,8 @@ Selected House
   cursor: pointer;
 }
 .info-wrapper {
-  position: absolute;
-  left: 0;
+  position: relative;
+  top: -172px;
 }
 .selected-house-info,
 .selected-house-info-bg {
@@ -3410,9 +3410,9 @@ Selected House
 }
 .selected-house-info-bg {
   background-color: #808080;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
 }
 .selected-house {
   width: 200px;

@@ -35,6 +35,8 @@
       &:focus
       &:active
         text-decoration none
+  @media screen and (max-width: 992px)
+    text-align center
 
 .li-create-account
   a
@@ -47,6 +49,9 @@
   font-size .9em !important
   letter-spacing 1px !important
 
+  @media screen and (max-width: 992px)
+        text-align center
+
 .fb-name
   display inline-block
   margin-left 5px !important
@@ -58,14 +63,24 @@
   &:active
     color lighten(color-blue, 50%) !important
 
-
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus
   background-color inherit
+
+.navbar-remax
+  position relative
+
+  @media screen and (min-width: 992px)
+    float right !important
+
 
 .img-fb
   width 20px
   height 20px
   margin-left (@width / 4) !important
+
+.top-nav-menu
+  .btn
+    text-align left !important
 
 .divider
   margin-top 3px !important

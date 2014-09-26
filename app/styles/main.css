@@ -176,7 +176,7 @@ label {
 .slogan-text p {
   color: #396c95;
   font-family: 'Noto Serif', serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 30px;
@@ -296,6 +296,11 @@ label {
 .nav-auth li a:active {
   text-decoration: none;
 }
+@media screen and (max-width: 992px) {
+  .nav-auth {
+    text-align: center;
+  }
+}
 .li-create-account a {
   font-style: italic;
 }
@@ -305,6 +310,11 @@ label {
   color: #7d7d7d !important;
   font-size: 0.9em !important;
   letter-spacing: 1px !important;
+}
+@media screen and (max-width: 992px) {
+  .real-estate-rc {
+    text-align: center;
+  }
 }
 .fb-name {
   display: inline-block;
@@ -323,10 +333,21 @@ label {
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: inherit;
 }
+.navbar-remax {
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .navbar-remax {
+    float: right !important;
+  }
+}
 .img-fb {
   width: 20px;
   height: 20px;
   margin-left: 5px !important;
+}
+.top-nav-menu .btn {
+  text-align: left !important;
 }
 .divider {
   margin-top: 3px !important;

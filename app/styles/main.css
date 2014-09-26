@@ -209,7 +209,7 @@ label {
   position: relative;
 }
 .social-div ul li {
-  padding: 3px;
+  padding: 2px;
   display: inline-block;
 }
 @media screen and (min-width: 992px) {

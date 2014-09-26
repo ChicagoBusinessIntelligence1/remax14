@@ -7,8 +7,8 @@ angular.module('app')
       restrict: 'E',
 
       link: function ($scope, element, attrs) {
-        var repoHouses = url + 'houses';
-        $scope.houses = $firebase(new Firebase(repoHouses)).$asArray();
+        //var repoHouses = url + 'houses';
+        //$scope.houses = $firebase(new Firebase(repoHouses)).$asArray();
       }
     };
   });

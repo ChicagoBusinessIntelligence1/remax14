@@ -198,7 +198,6 @@ table#users
   display block
   margin 0 auto !important
 
-
 /**********************
 Selected House
  ***********************/
@@ -211,16 +210,12 @@ Selected House
   top -172px
 
 .selected-house-info
-  position absolute
+  position relative
   border-radius 5px
   height 180px
   color #190a09
   opacity 1
   z-index 99
-
-
-.selected-house-info-bg
-  @extend .selected-house-info
   background-color #808080
   opacity .75
 
@@ -229,3 +224,9 @@ Selected House
 
 .white
   color white
+
+.selected-property-info-container
+  .table
+    tr
+      td
+        font-size 10px !important

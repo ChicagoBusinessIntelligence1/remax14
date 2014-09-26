@@ -3261,8 +3261,8 @@ input:focus {
 .main-content {
   background-color: #f3f3f3;
   font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em !important;
-  line-height: 2em !important;
+  font-size: 1em;
+  line-height: 2em;
 }
 .error input,
 .error textarea,
@@ -3274,8 +3274,8 @@ input:focus {
 }
 .content-wrapper {
   font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em !important;
-  line-height: 2em !important;
+  font-size: 1em;
+  line-height: 2em;
   background-color: #f3f3f3;
   min-height: 1200px;
   padding: 15px 30px;
@@ -3395,9 +3395,8 @@ Selected House
   position: relative;
   top: -172px;
 }
-.selected-house-info,
-.selected-house-info-bg {
-  position: absolute;
+.selected-house-info {
+  position: relative;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   height: 180px;
@@ -3406,8 +3405,6 @@ Selected House
   -ms-filter: none;
   filter: none;
   z-index: 99;
-}
-.selected-house-info-bg {
   background-color: #808080;
   opacity: 0.75;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
@@ -3418,4 +3415,7 @@ Selected House
 }
 .white {
   color: #fff;
+}
+.selected-property-info-container .table tr td {
+  font-size: 10px !important;
 }

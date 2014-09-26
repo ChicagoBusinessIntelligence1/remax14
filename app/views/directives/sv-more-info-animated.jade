@@ -1,17 +1,20 @@
 .selecerd-prop-info-container
-  h5.white More Information
-  ul.list-inline
-    li Feature
-    li Value
-  ul.list-inline
-    li Sqaure
-    li 145 feets
-  ul.list-inline
-    li Bedrooms
-    li 6
-  ul.list-inline.success
-    li Price
-    li {{144.000 | currency}}
+  h5 More Information
+  table.table.table-condensed.table-bordered.table-responsive
+    thead
+      tr
+        th Feature
+        th Value
+    tbody.text-left
+      tr
+        td Sqaure
+        td 145 feets
+      tr
+        td Bedrooms
+        td 6
+      tr.success
+        td Price
+        td {{144.000 | currency}}
 
 
 

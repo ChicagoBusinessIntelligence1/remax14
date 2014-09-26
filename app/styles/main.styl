@@ -84,7 +84,6 @@ input
 
 .main-content
   background-color color-content
-  font-main()
 
 .error input, .error textarea, .error select
   margin-bottom 16px
@@ -93,7 +92,6 @@ input
   margin-bottom 25px
 
 .content-wrapper
-  font-main()
   background-color color-content
   min-height 1200px
   padding: 15px 30px;
@@ -213,7 +211,7 @@ Selected House
   position relative
   border-radius 5px
   height 180px
-  color #190a09
+  color color-white
   opacity 1
   z-index 99
   background-color #808080
@@ -222,11 +220,9 @@ Selected House
 .selected-house
   cursor pointer !important
 
-.white
-  color white
-
 .selected-property-info-container
-  .table
-    tr
-      td
-        font-size 10px !important
+  tbody
+    color color-white !important
+    font-size 10px !important
+ h5
+   color color-white !important

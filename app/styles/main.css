@@ -3260,9 +3260,6 @@ input:focus {
 }
 .main-content {
   background-color: #f3f3f3;
-  font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em;
-  line-height: 2em;
 }
 .error input,
 .error textarea,
@@ -3273,9 +3270,6 @@ input:focus {
   margin-bottom: 25px;
 }
 .content-wrapper {
-  font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em;
-  line-height: 2em;
   background-color: #f3f3f3;
   min-height: 1200px;
   padding: 15px 30px;
@@ -3400,7 +3394,7 @@ Selected House
   -webkit-border-radius: 5px;
   border-radius: 5px;
   height: 180px;
-  color: #190a09;
+  color: #fbfbfb;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -3413,9 +3407,10 @@ Selected House
 .selected-house {
   cursor: pointer !important;
 }
-.white {
-  color: #fff;
-}
-.selected-property-info-container .table tr td {
+.selected-property-info-container tbody {
+  color: #fbfbfb !important;
   font-size: 10px !important;
+}
+h5 {
+  color: #fbfbfb !important;
 }

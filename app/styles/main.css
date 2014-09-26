@@ -3349,6 +3349,7 @@ Selected House
  ***********************/
 .selected-house-wrapper {
   position: relative;
+  cursor: pointer;
 }
 .info-wrapper {
   position: absolute;
@@ -3357,14 +3358,14 @@ Selected House
 .selected-house-info,
 .selected-house-info-bg {
   position: absolute;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  height: 283px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  height: 180px;
   color: #190a09;
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  width: 400px;
+  width: 200px;
 }
 .selected-house-info-bg {
   background-color: #808080;

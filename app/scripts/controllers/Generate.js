@@ -9,7 +9,7 @@ angular.module('app')
 
     var imagesDir = '../../images/houses/';
     var files = [];
-    for (var i = 1; i <= 5; i++) {
+    for (var i = 1; i <= 3; i++) {
       var s = imagesDir + i + '.jpg';
       files.push(s);
     }

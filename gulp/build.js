@@ -5,6 +5,13 @@ var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 var stylus = require('stylus');
 
+var Notification = require('node-notifier');
+
+
+
+
+var notify = require("gulp-notify");
+
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license']
@@ -16,6 +23,8 @@ var stylus = require('gulp-stylus');
 var nib = require('nib');
 var axis = require('axis-css');
 
+
+
 gulp.task('nib', function () {
   gulp.src('app/styles/nib.styl')
     .pipe(stylus({use: [nib(), axis()]}))
@@ -25,7 +34,7 @@ gulp.task('nib', function () {
 
 gulp.task('stylus', function () {
   gulp.src('app/styles/**/*.styl')
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: notify.onError("Che za na... Stylus?!")}))
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'));
 });
@@ -35,7 +44,7 @@ gulp.task('jade', function () {
 
   gulp.src('app/**/*.jade')
     //compiler does not stop on error
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: notify.onError("Che za na... Jade?!")}))
     .pipe(jade({
       compileDebug: true
     }))

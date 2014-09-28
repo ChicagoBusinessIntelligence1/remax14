@@ -401,7 +401,7 @@ label {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  top: -344px;
+  top: -280px;
   z-index: 99;
 }
 .prop-info.ng-enter.ng-enter-active,
@@ -411,7 +411,7 @@ label {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: -172px;
+  top: -120px;
   z-index: 99;
 }
 .toggle {
@@ -3390,16 +3390,17 @@ Selected House
   top: -172px;
 }
 .selected-house-info {
+  padding-left: 0px;
+  padding-right: 0px;
   position: relative;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  height: 180px;
-  color: #fbfbfb;
+  color: #272727;
   opacity: 1;
   -ms-filter: none;
   filter: none;
   z-index: 99;
-  background-color: #808080;
+  background-color: #f7f7f4;
   opacity: 0.75;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
   filter: alpha(opacity=75);
@@ -3407,10 +3408,33 @@ Selected House
 .selected-house {
   cursor: pointer !important;
 }
-.selected-property-info-container tbody {
-  color: #fbfbfb !important;
+.selecerd-prop-info-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.selecerd-prop-info-container table {
+  margin-bottom: 0px;
+}
+.selecerd-prop-info-container tbody tr th {
+  color: #272727;
   font-size: 10px !important;
 }
-h5 {
-  color: #fbfbfb !important;
+.selecerd-prop-info-container tbody tr td {
+  font-size: 10px !important;
+}
+.selecerd-prop-info-container h5 {
+  color: #272727;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 11px !important;
+  font-weight: 700;
+}
+.selecerd-prop-info-container a {
+  font-size: 11px;
+  color: #272727;
+}
+.selecerd-prop-info-container a:hover,
+.selecerd-prop-info-container a:active,
+.selecerd-prop-info-container a:focus {
+  text-decoration: none;
 }

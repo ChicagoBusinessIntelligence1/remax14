@@ -208,21 +208,41 @@ Selected House
   top -172px
 
 .selected-house-info
+  padding-left 0px
+  padding-right 0px
   position relative
   border-radius 5px
-  height 180px
-  color color-white
+  color color-skin
   opacity 1
   z-index 99
-  background-color #808080
+  background-color color-off-white
   opacity .75
 
 .selected-house
   cursor pointer !important
 
-.selected-property-info-container
+.selecerd-prop-info-container
+  padding-top 5px
+  padding-bottom 5px
+  table
+    margin-bottom 0px
   tbody
-    color color-white !important
-    font-size 10px !important
- h5
-   color color-white !important
+    tr
+      th
+        color color-skin
+        font-size 10px !important
+      td
+        font-size 10px !important
+  h5
+    color color-skin
+    margin-top 5px
+    margin-bottom 5px
+    font-size 11px !important
+    font-weight 700
+  a
+    font-size 11px
+    color color-skin
+    &:hover
+    &:active
+    &:focus
+      text-decoration none

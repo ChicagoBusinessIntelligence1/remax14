@@ -30,13 +30,13 @@ Selected House
   position: relative;
   cursor: pointer;
 }
+.selected-house-wrapper .thumbnail {
+  height: 100% !important;
+}
 .info-wrapper {
   top: 0px;
   position: absolute;
   height: 132px;
-}
-.info-wrapper .thumbnail {
-  width: 150px !important;
 }
 .selected-house-info {
   background-color: color-off-white;

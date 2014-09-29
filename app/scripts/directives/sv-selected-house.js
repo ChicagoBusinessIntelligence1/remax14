@@ -10,6 +10,11 @@ angular.module('app')
         houses: '='
       },
       link: function ($scope, element, attr) {
+        $scope.imgWidth = angular.element(element.find('img').parent()).width()+10;
+        $scope.imgHeight = $(element.find('img').parent()).height();
+        $scope.imgHeight2 = angular.element(element.find('img')).outerHeight();
+        $scope.imgHeight3 = angular.element(element.find('img')).height();
+
         $scope.isInfoVisible = false;
 
         element.hover(function () {

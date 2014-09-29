@@ -415,6 +415,7 @@ label {
   z-index: 99;
 }
 .selected-house-wrapper {
+  height: auto !important;
   position: relative;
   cursor: pointer;
 }
@@ -431,14 +432,10 @@ label {
   filter: alpha(opacity=80);
 }
 .selected-house-info {
-  background-color: #f7f7f4;
   border: 1px #dedede solid;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   color: #272727;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
   padding-left: 0px;
   padding-right: 0px;
   position: relative;

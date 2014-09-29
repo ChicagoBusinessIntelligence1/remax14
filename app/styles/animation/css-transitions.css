@@ -30,20 +30,22 @@ Selected House
   position: relative;
   cursor: pointer;
 }
-.selected-house-wrapper .thumbnail {
-  height: 100% !important;
-}
 .info-wrapper {
   top: 0px;
   position: absolute;
   height: 132px;
+}
+.info-wrapper .thumbnail {
+  height: auto !important;
+  background-color: color-off-white;
+  opacity: 0.8;
 }
 .selected-house-info {
   background-color: color-off-white;
   border: 1px color-border-light solid;
   border-radius: 5px;
   color: color-skin;
-  opacity: 0.9;
+  opacity: 0.8;
   padding-left: 0px;
   padding-right: 0px;
   position: relative;

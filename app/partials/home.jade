@@ -11,8 +11,8 @@ p Remax 1st Class Realty is a &nbsp;
   | Our main price range is from 35k till 500k,
   | though we also have experience and listings in luxury market.
 h3.bg-info.bg-custom Our first line districts are:
-ul.list-unstyled.list-inline
-  li.li-first-line
+.row
+  .col-md-3.col-xs-6
     ul.list-unstyled.ul-first-line
       li
         a(ui-sref='app.residential-consultations') Bensenville
@@ -22,16 +22,18 @@ ul.list-unstyled.list-inline
         a(ui-sref='app.personal-consultations') Evanston
       li
         a(ui-sref="app.schedule-consultations") Glenview
+  .col-md-3.col-xs-6
+    ul.list-unstyled.ul-first-line
       li
         a Highland Park
       li
         a Lake Forest
-  li.li-first-line
-    ul.list-unstyled.ul-first-line
       li
         a Lincolnwood
       li
         a Morton Grove
+  .col-md-3.col-xs-6
+    ul.list-unstyled.ul-first-line
       li
         a Niles
       li
@@ -40,18 +42,14 @@ ul.list-unstyled.list-inline
         a Northbrook
       li
         a Northfield
-  li.li-first-line
+  .col-md-3.col-xs-6
     ul.list-unstyled.ul-first-line
       li
         a Park Ridge
       li
         a Riverwoods
       li
-        a Rosemont
-      li
         a Skokie
-      li
-        a Wilmette
       li
         a Winnetka
 

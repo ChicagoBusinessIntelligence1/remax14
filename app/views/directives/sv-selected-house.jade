@@ -1,7 +1,12 @@
 .selected-house-wrapper.text-center
-  img.img-responsive(ng-src="../images/houses/{{id}}.jpg").selected-house.thumbnail
-  .info-wrapper(ng-show='isInfoVisible').prop-info.ng-hide
-    .row
-      .col-xs-12.selected-house-info.text-center
-        sv-more-info-animated
+  a(href='#').thumbnail
+    img.img-responsive(ng-src="../images/houses/{{id}}.jpg").selected-house
+  .row
+    .col-xs-12.info-wrapper(ng-if='isInfoVisible').prop-info
+      .thumbnail(ng-style="{width:'{{imgWidth}}'}")
+        .selected-house-info.text-center
+          sv-more-info-animated
 
+  h3 {{imgHeight}}
+  h3 {{imgHeight2}}
+  h3 {{imgHeight3}}

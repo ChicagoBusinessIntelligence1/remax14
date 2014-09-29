@@ -387,7 +387,7 @@ label {
 .prop-info.ng-hide-add,
 .prop-info.ng-hide-remove,
 .prop-info.ng-leave {
-  position: relative;
+  position: absolute;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -401,7 +401,7 @@ label {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  top: -344px;
+  top: -132px;
   z-index: 99;
 }
 .prop-info.ng-enter.ng-enter-active,
@@ -411,8 +411,68 @@ label {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: -172px;
+  top: 0px;
   z-index: 99;
+}
+.selected-house-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.selected-house-wrapper .thumbnail {
+  height: 100% !important;
+}
+.info-wrapper {
+  top: 0px;
+  position: absolute;
+  height: 132px;
+}
+.selected-house-info {
+  background-color: #f7f7f4;
+  border: 1px #dedede solid;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #272727;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+  z-index: 99;
+}
+.selected-house {
+  cursor: pointer !important;
+}
+.selecerd-prop-info-container {
+  padding: 5px;
+}
+.selecerd-prop-info-container table {
+  margin-bottom: 0px;
+}
+.selecerd-prop-info-container tbody tr th {
+  color: #272727;
+  font-size: 9px !important;
+}
+.selecerd-prop-info-container tbody tr td {
+  font-size: 9px !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.selecerd-prop-info-container h5 {
+  color: #272727;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-size: 10px !important;
+  font-weight: 700;
+}
+.selecerd-prop-info-container a {
+  font-size: 10px;
+  color: #272727;
+}
+.selecerd-prop-info-container a:hover,
+.selecerd-prop-info-container a:active,
+.selecerd-prop-info-container a:focus {
+  text-decoration: none;
 }
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -3260,9 +3320,6 @@ input:focus {
 }
 .main-content {
   background-color: #f3f3f3;
-  font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em;
-  line-height: 2em;
 }
 .error input,
 .error textarea,
@@ -3273,9 +3330,6 @@ input:focus {
   margin-bottom: 25px;
 }
 .content-wrapper {
-  font-family: Helvetica Neue, Helvetica, Arial;
-  font-size: 1em;
-  line-height: 2em;
   background-color: #f3f3f3;
   min-height: 1200px;
   padding: 15px 30px;
@@ -3383,39 +3437,4 @@ table#users th {
 .img-bagua {
   display: block;
   margin: 0 auto !important;
-}
-/**********************
-Selected House
- ***********************/
-.selected-house-wrapper {
-  position: relative;
-  cursor: pointer;
-}
-.info-wrapper {
-  position: relative;
-  top: -172px;
-}
-.selected-house-info {
-  position: relative;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  height: 180px;
-  color: #190a09;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  z-index: 99;
-  background-color: #808080;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
-}
-.selected-house {
-  cursor: pointer !important;
-}
-.white {
-  color: #fff;
-}
-.selected-property-info-container .table tr td {
-  font-size: 10px !important;
 }

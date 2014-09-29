@@ -1,13 +1,14 @@
-
 /*******************************
      prop-info animation
 ********************************/
+
+fen-element-height = 132px
 
 .prop-info.ng-enter,
 .prop-info.ng-hide-add,
 .prop-info.ng-hide-remove,
 .prop-info.ng-leave
-  position relative
+  position absolute
   transition(1s)
 
 .prop-info.ng-enter,
@@ -15,7 +16,7 @@
 .prop-info.ng-hide-add.ng-hide-add-active,
 .prop-info.ng-leave.ng-leave-active
   opacity 0
-  top -280px
+  top -(fen-element-height)
   z-index 99
 
 .prop-info.ng-enter.ng-enter-active,
@@ -23,8 +24,62 @@
 .prop-info.ng-hide-remove.ng-hide-remove-active,
 .prop-info.ng-leave
   opacity 1
-  top -142px
+  top 0px
   z-index 99
 
+/**********************
+Selected House
+ ***********************/
 
-//*******************************
+.selected-house-wrapper
+  position relative
+  cursor pointer
+
+.info-wrapper
+  top 0px
+  position absolute
+  height fen-element-height
+  .thumbnail
+    width 150px !important
+
+.selected-house-info
+  background-color color-off-white
+  border 1px color-border-light solid
+  border-radius 5px
+  color color-skin
+  opacity .90
+  padding-left 0px
+  padding-right 0px
+  position relative
+  z-index 99
+
+.selected-house
+  cursor pointer !important
+
+.selecerd-prop-info-container
+  padding 5px
+  table
+    margin-bottom 0px
+  tbody
+    tr
+      th
+        color color-skin
+        font-size 9px !important
+      td
+        font-size 9px !important
+        padding-top 3px
+        padding-bottom 3px
+  h5
+    color color-skin
+    margin-top 3px
+    margin-bottom 3px
+    font-size 10px !important
+    font-weight 700
+  a
+
+    font-size 10px
+    color color-skin
+    &:hover
+    &:active
+    &:focus
+      text-decoration none

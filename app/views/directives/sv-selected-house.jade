@@ -2,7 +2,8 @@
   a(href='#').thumbnail
     img.img-responsive(ng-src="../images/houses/{{id}}.jpg").selected-house
   .row
-    .col-xs-12.info-wrapper(ng-show='isInfoVisible').prop-info.ng-hide
-      .selected-house-info.text-center
-        sv-more-info-animated
+    .col-xs-12.info-wrapper(ng-if='isInfoVisible').prop-info
+      .thumbnail
+        .selected-house-info.text-center
+          sv-more-info-animated
 

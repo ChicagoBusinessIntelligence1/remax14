@@ -5,14 +5,14 @@
 .prop-info.ng-hide-add,
 .prop-info.ng-hide-remove,
 .prop-info.ng-leave {
-  position: relative;
+  position: absolute;
 }
 .prop-info.ng-enter,
 .prop-info.ng-hide-remove,
 .prop-info.ng-hide-add.ng-hide-add-active,
 .prop-info.ng-leave.ng-leave-active {
   opacity: 0;
-  top: -280px;
+  top: -132px;
   z-index: 99;
 }
 .prop-info.ng-enter.ng-enter-active,
@@ -20,6 +20,66 @@
 .prop-info.ng-hide-remove.ng-hide-remove-active,
 .prop-info.ng-leave {
   opacity: 1;
-  top: -142px;
+  top: 0px;
   z-index: 99;
+}
+/**********************
+Selected House
+ ***********************/
+.selected-house-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.info-wrapper {
+  top: 0px;
+  position: absolute;
+  height: 132px;
+}
+.info-wrapper .thumbnail {
+  width: 150px !important;
+}
+.selected-house-info {
+  background-color: color-off-white;
+  border: 1px color-border-light solid;
+  border-radius: 5px;
+  color: color-skin;
+  opacity: 0.9;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+  z-index: 99;
+}
+.selected-house {
+  cursor: pointer !important;
+}
+.selecerd-prop-info-container {
+  padding: 5px;
+}
+.selecerd-prop-info-container table {
+  margin-bottom: 0px;
+}
+.selecerd-prop-info-container tbody tr th {
+  color: color-skin;
+  font-size: 9px !important;
+}
+.selecerd-prop-info-container tbody tr td {
+  font-size: 9px !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.selecerd-prop-info-container h5 {
+  color: color-skin;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-size: 10px !important;
+  font-weight: 700;
+}
+.selecerd-prop-info-container a {
+  font-size: 10px;
+  color: color-skin;
+}
+.selecerd-prop-info-container a:hover,
+.selecerd-prop-info-container a:active,
+.selecerd-prop-info-container a:focus {
+  text-decoration: none;
 }

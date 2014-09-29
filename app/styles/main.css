@@ -411,7 +411,7 @@ label {
   opacity: 1;
   -ms-filter: none;
   filter: none;
-  top: -120px;
+  top: -142px;
   z-index: 99;
 }
 .toggle {
@@ -3387,30 +3387,26 @@ Selected House
 }
 .info-wrapper {
   position: relative;
-  top: -172px;
+  top: -142px;
 }
 .selected-house-info {
+  background-color: #f7f7f4;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
   padding-left: 0px;
   padding-right: 0px;
   position: relative;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   color: #272727;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
   z-index: 99;
-  background-color: #f7f7f4;
-  opacity: 0.75;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-  filter: alpha(opacity=75);
 }
 .selected-house {
   cursor: pointer !important;
 }
 .selecerd-prop-info-container {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 .selecerd-prop-info-container table {
   margin-bottom: 0px;
@@ -3421,11 +3417,13 @@ Selected House
 }
 .selecerd-prop-info-container tbody tr td {
   font-size: 10px !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .selecerd-prop-info-container h5 {
   color: #272727;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 7px;
+  margin-bottom: 3px;
   font-size: 11px !important;
   font-weight: 700;
 }

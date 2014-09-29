@@ -20,6 +20,6 @@
 .prop-info.ng-hide-remove.ng-hide-remove-active,
 .prop-info.ng-leave {
   opacity: 1;
-  top: -120px;
+  top: -142px;
   z-index: 99;
 }

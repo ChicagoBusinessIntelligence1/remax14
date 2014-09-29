@@ -10,12 +10,32 @@ label {
 /**********************
     =footer
 ***********************/
+.footer-container {
+  background-color: #c9c9c9;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.footer-container hr {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.footer-container ul li {
+  font-size: 11px;
+}
+.footer-container h5 {
+  font-size: 11px;
+}
+.footer-container p {
+  font-size: 11px;
+}
+.footer-wrapper {
+  padding: 10px;
+}
 .footer {
   background-color: #5d5d5d;
   height: 60px;
 }
-.footer span,
-.footer a {
+.footer p {
   color: #fbfbfb;
 }
 .footer-content {

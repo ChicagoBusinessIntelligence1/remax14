@@ -10,6 +10,7 @@ angular.module('app')
         houses: '='
       },
       link: function ($scope, element, attr) {
+        var img = (element.find('img').parent().parent()[0]).getBoundingClientRect();
         $scope.imgWidth = angular.element(element.find('img').parent()).width()+10;
         $scope.imgHeight = $(element.find('img').parent()).height();
         $scope.imgHeight2 = angular.element(element.find('img')).outerHeight();

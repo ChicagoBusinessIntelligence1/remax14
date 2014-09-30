@@ -27,7 +27,6 @@ angular.module('app')
               $scope.isInfoVisible = false;
             });
           })
-
       }
     };
   });

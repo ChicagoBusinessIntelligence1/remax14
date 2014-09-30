@@ -211,6 +211,17 @@ label {
   width: 399px;
   margin: 0 auto;
 }
+@media screen and (max-width: 992px) {
+  .media-wrap-a {
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .media-wrap-b {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
 .social-div {
   position: relative;
   padding-left: 5px;
@@ -252,7 +263,7 @@ label {
 }
 @media screen and (min-width: 992px) {
   .ul-icons {
-    bottom: -60px;
+    bottom: -35px;
     padding-right: 15px;
   }
 }

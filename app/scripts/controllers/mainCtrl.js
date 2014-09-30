@@ -3,8 +3,8 @@
 angular.module('app')
   .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state, $window) {
 
-    $(window).resize(function(){
-      $scope.$apply(function(){
+    $(window).resize(function () {
+      $scope.$apply(function () {
 
       });
     });
@@ -36,7 +36,6 @@ angular.module('app')
         $scope.userName = 'Admin';
         $scope.userPic = 'Admin';
       }
-
     })
 
     $scope.fenLogout = function () {

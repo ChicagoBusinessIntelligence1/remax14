@@ -109,20 +109,20 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'BaguaCtrl',
         templateUrl: '../views/bagua.html'
       })
-      .state('app.residential-consultations', {
-        url: '/residential-consultations',
-        controller: 'ResidentialConsultationsCtrl',
-        templateUrl: '../views/residential-consultations.html'
+      .state('app.why-remax', {
+        url: '/why-remax-1st-class',
+        controller: 'WhyRemaxCtrl',
+        templateUrl: '../views/why-remax.html'
       })
-      .state('app.business-consultations', {
-        url: '/business-consultations',
-        controller: 'BusinessConsultationsCtrl',
-        templateUrl: '../views/business-consultations.html'
+      .state('app.agents', {
+        url: '/remax-1st-class-agents',
+        controller: 'AgentsCtrl',
+        templateUrl: '../views/agents.html'
       })
       .state('app.personal-consultations', {
-        url: '/personal-consultations',
-        controller: 'PersonalConsultationsCtrl',
-        templateUrl: '../views/personal-consultations.html'
+        url: '/become-remax-1st-class-agent',
+        controller: 'BecomeRemaxAgentCtrl',
+        templateUrl: '../views/become-remax-agent.html'
       })
       .state('app.schedule-consultations', {
         url: '/schedule-consultations',
@@ -130,16 +130,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         templateUrl: '../views/schedule-consultations.html'
 
       })
-			.state("generate", {
-				url: "/generate",
-				controller:"GenerateCtrl",
-				templateUrl: "../views/generate.html"
-			})
-			.state("test", {
-				url: "/test",
-				controller:"TestCtrl",
-				templateUrl: "../views/test.html"
-			})
+      .state("generate", {
+        url: "/generate",
+        controller: "GenerateCtrl",
+        templateUrl: "../views/generate.html"
+      })
+      .state("test", {
+        url: "/test",
+        controller: "TestCtrl",
+        templateUrl: "../views/test.html"
+      })
 //#state
   });
 
@@ -147,18 +147,17 @@ app.value('url', 'https://remax14.firebaseio.com/');
 
 app.animation('.prop-info', function () {
   var height,
-      width;
+    width;
   return {
     enter: function (element, done) {
       height = element.height();
-      element.css('top',-height);
-      element.css('opacity',0);
+      element.css('top', -height);
+      element.css('opacity', 0);
 
-      TweenMax.to(element, 1, {opacity: 1, top:0, onComplete: done });
+      TweenMax.to(element, 1, {opacity: 1, top: 0, onComplete: done});
     },
     leave: function (element, done) {
-      TweenMax.to(element, 1, {delay:0.4, opacity: 0, top:-height, onComplete: done });
-
-    },
+      TweenMax.to(element, 1, {delay: 0.4, opacity: 0, top: -height, onComplete: done});
+    }
   }
 });

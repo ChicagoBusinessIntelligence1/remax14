@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('app')
-  .controller('FengshuiArticlesCtrl', function ($scope) {
+  .controller('RemaxArticlesCtrl', function ($scope) {
 
   });

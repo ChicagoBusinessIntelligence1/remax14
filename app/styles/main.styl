@@ -6,7 +6,6 @@
 @import 'animation/css-animations'
 @import 'animation/css-transitions'
 @import 'animation/ng-animation'
-@import 'contactus'
 @import 'footer'
 @import 'aside'
 @import 'fen-elements'
@@ -64,18 +63,17 @@ h6
     background-color lighten(label-default-background, 15%)
     border-color lighten(label-default-background, 10%)
 
+
 /**********************
-    =form
+      =buttons
 ***********************/
-textarea
-input
-  background-color lighten(color-app, 97%) !important
-  color lighten(color-app, 27%) !important
-  &:hover
-  &:active
-  &:focus
-    background-color lighten(color-app, 98%) !important
-    color color-app !important
+
+.btn-mob-dev
+  vertical-align center
+
+  @media screen and (max-width: 992px)
+    width 100%
+
 
 /**********************
      =main content

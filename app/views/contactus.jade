@@ -1,3 +1,39 @@
 h1 Contact Us
 hr
+form(id="form-search-sale", name="form-search-sale", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+  .row
+    .col-md-6.col-sm-6.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") First Name:
+        input.form-control(name="bedrooms" id="bedrooms", placeholder="Your name",  required)
+    .col-md-6.col-sm-6.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") Last Name:
+        input.form-control(name="bathrooms" id="bathrooms", placeholder="Your last name",  required)
+  .row
+    .col-md-4.col-sm-4.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") Home Phone:
+        input.form-control(name="bedrooms" id="bedrooms", placeholder="(***)***-****",  required)
+    .col-md-4.col-sm-4.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") Mobile Phone:
+        input.form-control(name="bathrooms" id="bathrooms", placeholder="(***)***-****",  required)
+    .col-md-4.col-sm-4.col-xs-12
+      label(ng-class="{'error':login.password.$invalid && login.$dirty}") Email:
+      .form-group
+        .input-group
+          .input-group-addon @
+          input.form-control(name="bathrooms" id="bathrooms", placeholder="Your email",  required)
+  .row
+    .col-md-8.col-sm-8.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") Subject:
+        input.form-control(name="bedrooms" id="bedrooms", placeholder="Your subject",  required)
+  .row
+    .col-md-8.col-sm-8.col-xs-12
+      .form-group
+        label(ng-class="{'error':login.password.$invalid && login.$dirty}") Subject:
+        textarea.form-control(name="bedrooms" id="bedrooms", rows='20' placeholder="Your message",  required)
+  input.btn.bnt-radius.submit-search.btn-mob-dev(type="submit" value="Send" ng-disabled="login.$invalid")
 

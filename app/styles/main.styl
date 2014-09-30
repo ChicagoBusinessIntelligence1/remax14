@@ -6,6 +6,7 @@
 @import 'animation/css-animations'
 @import 'animation/css-transitions'
 @import 'animation/ng-animation'
+@import 'contactus'
 @import 'footer'
 @import 'aside'
 @import 'fen-elements'
@@ -93,8 +94,10 @@ input
 
 .content-wrapper
   background-color color-content
-  min-height 1200px
   padding: 15px 30px;
+
+  @media screen and (min-width: 992px)
+    min-height 1200px
 
 /**********************
     Home Page

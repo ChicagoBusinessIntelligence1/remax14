@@ -2566,6 +2566,23 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.btn-mob-dev {
+  vertical-align: center;
+}
+@media screen and (max-width: 992px) {
+  .btn-mob-dev {
+    width: 100%;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
 .footer-container {
   background-color: #c9c9c9;
   padding-left: 10px;
@@ -3329,8 +3346,12 @@ input:focus {
 }
 .content-wrapper {
   background-color: #f3f3f3;
-  min-height: 1200px;
   padding: 15px 30px;
+}
+@media screen and (min-width: 992px) {
+  .content-wrapper {
+    min-height: 1200px;
+  }
 }
 /**********************
     Home Page

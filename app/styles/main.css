@@ -383,53 +383,19 @@ label {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
-.prop-info.ng-enter,
-.prop-info.ng-hide-add,
-.prop-info.ng-hide-remove,
-.prop-info.ng-leave {
-  position: absolute;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
-}
-.prop-info.ng-enter,
-.prop-info.ng-hide-remove,
-.prop-info.ng-hide-add.ng-hide-add-active,
-.prop-info.ng-leave.ng-leave-active {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  top: -132px;
-  z-index: 99;
-}
-.prop-info.ng-enter.ng-enter-active,
-.prop-info.ng-hide-add,
-.prop-info.ng-hide-remove.ng-hide-remove-active,
-.prop-info.ng-leave {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  top: 0px;
-  z-index: 99;
-}
 .selected-house-wrapper {
-  height: auto !important;
   position: relative;
   cursor: pointer;
 }
 .info-wrapper {
   top: 0px;
   position: absolute;
-  height: 132px;
 }
 .info-wrapper .thumbnail {
-  height: auto !important;
   background-color: #f7f7f4;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+  filter: alpha(opacity=85);
 }
 .selected-house-info {
   border: 1px #dedede solid;
@@ -444,35 +410,35 @@ label {
 .selected-house {
   cursor: pointer !important;
 }
-.selecerd-prop-info-container {
+.selected-prop-info-container {
   padding: 5px;
 }
-.selecerd-prop-info-container table {
+.selected-prop-info-container table {
   margin-bottom: 0px;
 }
-.selecerd-prop-info-container tbody tr th {
+.selected-prop-info-container tbody tr th {
   color: #272727;
   font-size: 9px !important;
 }
-.selecerd-prop-info-container tbody tr td {
+.selected-prop-info-container tbody tr td {
   font-size: 9px !important;
   padding-top: 3px;
   padding-bottom: 3px;
 }
-.selecerd-prop-info-container h5 {
+.selected-prop-info-container h5 {
   color: #272727;
-  margin-top: 3px;
+  margin-top: 0px;
   margin-bottom: 3px;
   font-size: 10px !important;
   font-weight: 700;
 }
-.selecerd-prop-info-container a {
+.selected-prop-info-container a {
   font-size: 10px;
   color: #272727;
 }
-.selecerd-prop-info-container a:hover,
-.selecerd-prop-info-container a:active,
-.selecerd-prop-info-container a:focus {
+.selected-prop-info-container a:hover,
+.selected-prop-info-container a:active,
+.selected-prop-info-container a:focus {
   text-decoration: none;
 }
 .toggle {
@@ -2589,12 +2555,32 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.footer-container {
+  background-color: #c9c9c9;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.footer-container hr {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.footer-container ul li {
+  font-size: 11px;
+}
+.footer-container h5 {
+  font-size: 11px;
+}
+.footer-container p {
+  font-size: 11px;
+}
+.footer-wrapper {
+  padding: 10px;
+}
 .footer {
   background-color: #5d5d5d;
   height: 60px;
 }
-.footer span,
-.footer a {
+.footer p {
   color: #fbfbfb;
 }
 .footer-content {
@@ -3438,4 +3424,58 @@ table#users th {
 .img-bagua {
   display: block;
   margin: 0 auto !important;
+}
+/**********************
+Selected House
+ ***********************/
+.selected-house-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+.selected-house-info {
+  background-color: #f7f7f4;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #272727;
+  z-index: 99;
+}
+.selected-house {
+  cursor: pointer !important;
+}
+.selecerd-prop-info-container {
+  padding: 5px;
+}
+.selecerd-prop-info-container table {
+  margin-bottom: 0px;
+}
+.selecerd-prop-info-container tbody tr th {
+  color: #272727;
+  font-size: 10px !important;
+}
+.selecerd-prop-info-container tbody tr td {
+  font-size: 10px !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.selecerd-prop-info-container h5 {
+  color: #272727;
+  margin-top: 7px;
+  margin-bottom: 3px;
+  font-size: 11px !important;
+  font-weight: 700;
+}
+.selecerd-prop-info-container a {
+  font-size: 11px;
+  color: #272727;
+}
+.selecerd-prop-info-container a:hover,
+.selecerd-prop-info-container a:active,
+.selecerd-prop-info-container a:focus {
+  text-decoration: none;
 }

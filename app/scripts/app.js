@@ -136,7 +136,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				templateUrl: "../views/generate.html"
 			})
 			.state("test", {
-				url: "/test", 
+				url: "/test",
 				controller:"TestCtrl",
 				templateUrl: "../views/test.html"
 			})
@@ -145,3 +145,20 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 
 app.value('url', 'https://remax14.firebaseio.com/');
 
+app.animation('.prop-info', function () {
+  var height,
+      width;
+  return {
+    enter: function (element, done) {
+      height = element.height();
+      element.css('top',-height);
+      element.css('opacity',0);
+
+      TweenMax.to(element, 1, {opacity: 1, top:0, onComplete: done });
+    },
+    leave: function (element, done) {
+      TweenMax.to(element, 1, {delay:0.4, opacity: 0, top:-height, onComplete: done });
+
+    },
+  }
+});

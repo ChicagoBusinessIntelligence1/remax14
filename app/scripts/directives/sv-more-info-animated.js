@@ -4,12 +4,10 @@ angular.module('app')
   .directive('svMoreInfoAnimated', function () {
     return {
       restrict: 'E',
+      replace:true,
       templateUrl: '../views/directives/sv-more-info-animated.html',
-      scope: {
 
-      },
       link: function ($scope, element, attr) {
-
       }
     };
   });

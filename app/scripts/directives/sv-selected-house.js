@@ -10,8 +10,6 @@ angular.module('app')
         houses: '='
       },
       link: function ($scope, element, attr) {
-        var img =
-        $scope.imgWidth = angular.element(element.find('img').parent()).width()+10;
 
         $scope.isInfoVisible = false;
 

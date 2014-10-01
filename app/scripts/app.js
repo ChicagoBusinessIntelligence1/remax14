@@ -75,3 +75,28 @@ app.animation('.prop-info', function () {
     }
   }
 });
+app.animation('.accord-house', function () {
+  var height,
+      duration=0.5;
+  return {
+
+    addClass: function (element, className, done) {
+      height = element.height();
+
+      if (className == 'ng-hide') {
+        TweenMax.to(element, duration, {
+          top:-height,
+          onComplete: done });
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.to(element, duration, {
+          top:0,
+          onComplete: done });
+      }
+
+
+    }
+  }
+});

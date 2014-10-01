@@ -452,6 +452,35 @@ label {
 .selected-prop-info-container a:focus {
   text-decoration: none;
 }
+.svv.ng-enter,
+.svv.ng-hide-add,
+.svv.ng-hide-remove,
+.svv.ng-leave {
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.svv.ng-enter,
+.svv.ng-hide-remove,
+.svv.ng-hide-add.ng-hide-add-active,
+.svv.ng-leave.ng-leave-active {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  top: -200px;
+}
+.svv.ng-enter.ng-enter-active,
+.svv.ng-hide-add,
+.svv.ng-hide-remove.ng-hide-remove-active,
+.svv.ng-leave {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  top: 0px;
+}
 .toggle {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -3487,4 +3516,23 @@ Selected House
 .selecerd-prop-info-container a:active,
 .selecerd-prop-info-container a:focus {
   text-decoration: none;
+}
+/**********************
+ Accordian Styles
+***********************/
+.acc-wrapper {
+  width: 200px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+}
+.acc-title {
+  text-align: center;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+}
+.acc-add-info {
+  position: relative;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
 }

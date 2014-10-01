@@ -4,7 +4,7 @@ angular.module('app')
   .directive('#jname#', function () {
     return {
       restrict: 'E',
-      templateUrl: '../views/directives/#dname#.html',
+      templateUrl: '../../views/directives/#dname#.html',
       scope: {
 
       },

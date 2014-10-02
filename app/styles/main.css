@@ -2595,8 +2595,43 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.head-panel {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px #ddd solid;
+}
+.head-panel ul {
+  margin-bottom: 0px;
+}
 .panel-listing {
   padding: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px !important;
+}
+k h5,
+.new-listing-form h5 {
+  font-size: 13px;
+  font-weight: 700;
+}
+k h4,
+.new-listing-form h4 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0px;
+}
+k .form-group label,
+.new-listing-form .form-group label {
+  color: ligh;
+  font-size: 12px;
+}
+k .form-group input,
+.new-listing-form .form-group input {
+  height: 25px;
+  padding: 5px;
+  font-size: 12px;
 }
 .form-group {
   margin-bottom: 10px;
@@ -3334,6 +3369,7 @@ h6 {
   background-color: #8b8b8b;
   border-color: #858585;
 }
+/*Bootstrap custom styles*/
 /**********************
       =buttons
 ***********************/
@@ -3344,6 +3380,12 @@ h6 {
   .btn-mob-dev {
     width: 100%;
   }
+}
+/**********************
+      =Typography
+  ***********************/
+.text-info {
+  color: #4684b6;
 }
 /**********************
      =main content
@@ -3363,7 +3405,7 @@ h6 {
   margin-bottom: 25px;
 }
 .content-wrapper {
-  background-color: #f3f3f3;
+  background-color: #fff;
   padding: 15px 30px;
 }
 @media screen and (min-width: 992px) {

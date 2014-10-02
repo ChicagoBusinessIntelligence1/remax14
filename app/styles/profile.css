@@ -1,0 +1,30 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+/**********************
+     =profile
+***********************/
+.nav-profile-container {
+  padding: 10px;
+}
+.nav-profile {
+  margin-bottom: 10px;
+}
+.nav-profile li a {
+  color: #636363;
+  font-weight: 700;
+}
+.nav-profile li a:hover,
+.nav-profile li a:active,
+.nav-profile li a:focus {
+  color: #505050;
+}
+.add-new-listing {
+  color: #4f8bbc !important;
+}

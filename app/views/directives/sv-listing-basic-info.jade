@@ -1,19 +1,32 @@
 .well
-  .row
-    .col-md-10
-      h4.alert.alert-address  5506 Lincoln Ave Unit 512 Morton Grove IL 60053
-    .col-md-2
-      h4.price-style.text-info
-        | $100,000
+  .alert.alert-address
+    .row
+      .col-md-10
+        h4  5506 Lincoln Ave Unit 512 Morton Grove IL 60053
+      .col-md-2
+        h4.price-style.text-info
+          | $100,000
   .row
     .col-sm-12
       h5
         em
-          | Property Type: Condo
+          | Property Type: Family Home
   .row
     .col-sm-7
       a.thumbnail(href='#')
         img.img-responsive(ng-src="../images/houses/1.jpg")
+      ul.list-inline.text-right
+        li
+          a(href='#')
+            i.fa.fa-plus.fa-fw
+            | Add to watch list
+        li
+          a(href='#')
+            i.fa.fa-share-alt.fa-fw
+            | Share
+      p.alert.alert-info
+        i.fa.fa-sign-in.fa-fw
+        | Please Sign-in to Receive Alerts for this Property
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information
@@ -27,4 +40,8 @@
             em
               a(href='#').read-more
                 | Read more...
+      .call-remax-sm CALL US FOR A FREE CONSULTATION
+      .remax-phone-sm.text-center
+        i.fa.fa-mobile.fa-fw
+        | (847) 674-9797
 

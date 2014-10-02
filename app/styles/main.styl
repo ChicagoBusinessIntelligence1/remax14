@@ -7,9 +7,10 @@
 @import 'animation/css-transitions'
 @import 'animation/ng-animation'
 @import 'manage-listing'
-@import 'footer'
 @import 'aside'
-@import 'fen-elements'
+@import 'profile'
+@import 'footer'
+@import 'remax-elements'
 @import 'bg'
 /**********************
 
@@ -81,14 +82,18 @@ h6
   padding 7px
   font-size 14px
   font-weight 700
+  background-color lighten(color-blue, 90%)
 
 .alert-address
   background-color lighten(color-skin, 98%)
   border border-boot
   margin-top 0px
+  margin-bottom 10px
   padding 7px
   font-size 14px
   font-weight 700
+  h4
+    margin-bottom 0px
 
 /**********************
       =Typography
@@ -97,13 +102,31 @@ h6
 .text-info
   color lighten(color-blue, 15%)
 
+.text-warning
+  color color-red
+
 .read-more
   font-size 11px
+
+.thumbnail
+  margin-bottom 5px
+
 /**********************
      =main content
 **********************/
+.remax-phone-sm
+  font-size 18px
+  font-weight 700
+  color color-red
+
+.call-remax-sm
+  font-size 14px
+  font-weight 700
+  color lighten(color-blue, 15%)
+  margin-bottom 5px
+
 .main-wrapper
-  background-color lighten(color-skin, 96%)
+  background-color lighten(color-skin, 98%)
 
 .main-content
   background-color color-content
@@ -115,7 +138,7 @@ h6
   margin-bottom 25px
 
 .content-wrapper
-  background-color white
+  background-color lighten(color-skin, 98%)
   padding: 15px 30px;
 
   @media screen and (min-width: 992px)

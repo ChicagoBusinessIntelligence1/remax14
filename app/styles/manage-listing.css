@@ -1,0 +1,50 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+/**********************
+    =manage-listing
+***********************/
+.head-panel {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px #ddd solid;
+}
+.head-panel ul {
+  margin-bottom: 0px;
+}
+.panel-listing {
+  padding: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px !important;
+}
+k h5,
+.new-listing-form h5 {
+  font-size: 13px;
+  font-weight: 700;
+}
+k h4,
+.new-listing-form h4 {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0px;
+}
+k .form-group label,
+.new-listing-form .form-group label {
+  color: ligh;
+  font-size: 12px;
+}
+k .form-group input,
+.new-listing-form .form-group input {
+  height: 25px;
+  padding: 5px;
+  font-size: 12px;
+}

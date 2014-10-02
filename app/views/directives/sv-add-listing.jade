@@ -1,0 +1,114 @@
+h3 New Listing
+hr
+.panel.panel-default.panel-listing
+  form(name="add-listing-form" id="add-listing-form")
+    .form-group
+      h4.text-info Property Description
+    .row
+      .col-md-4
+        .form-group
+          label Street:
+          input.form-control(name='street' id='street' required)
+      .col-md-4
+        .form-group
+          label City
+          input.form-control(type='text' name='city' id='city' required)
+      .col-md-4
+        .form-group
+          label State
+          input.form-control(type='text' name='state' id='state' required)
+    .row
+      .col-md-4
+        .form-group
+          label Zip
+          input.form-control(type='text' name='zip' id='zip' required)
+    .row
+      .col-md-12
+        .form-group
+          label Property Details
+          textarea.form-control(type='text' name='property-details' id='property-details' rows='10' required)
+    .row
+      .col-md-12
+        h4.text-info Bedrooms
+    .row
+      .col-md-3
+        .form-group
+          label Bedrooms #
+          input.form-control(type='text' name='bedrooms-number' id='bedrooms-number' required)
+        .form-group
+          button.btn.btn-primary
+            i.fa.fa-plus.fa-fw
+            | Add Bedroom
+
+    .row
+      .col-md-12
+        h4.text-info.text-info Bathrooms
+    .row
+      .col-md-3
+        .form-group
+          label Full Bathrooms #
+          input.form-control(type='text' name='bathrooms-number' id='bathrooms-number' required)
+      .col-md-3
+        .form-group
+          label Half Bathrooms #
+          input.form-control(type='text' name='bathrooms-number' id='bathrooms-number' required)
+    .row
+      .col-md-3
+        .form-group
+          button.btn.btn-primary
+            i.fa.fa-plus.fa-fw
+            | Add Bathroom
+      .col-md-3
+        .form-group
+          button.btn.btn-primary
+            i.fa.fa-plus.fa-fw
+            | Add Half Bathroom
+    .row
+      .col-md-12
+        ul.list-inline
+          li
+            h4.text-info Dining Room
+          li
+            input(type='checkbox' name='dining' id='dining' required)
+    .row
+      .col-md-3
+        .form-group
+          label Type:
+          input.form-control(type='text' name='dining-type' id='dining-type' required)
+      .col-md-3
+        .form-group
+          label Size:
+          input.form-control(type='text' name='dining-size' id='dining-size' required)
+      .col-md-3
+        .form-group
+          label Flooring:
+          input.form-control(type='text' name='dining-flooring' id='dining-flooring' required)
+    .row
+      .col-md-12
+        .form-group
+          label Dining Room Description
+          textarea.form-control(type='text' name='dining-size' rows='5' id='dining-size' required)
+    .row
+      .col-md-12
+        h4.text-info Kitchen
+    .row
+      .col-md-3
+        .form-group
+          label Type:
+          input.form-control(type='text' name='dining-type' id='dining-type' required)
+      .col-md-3
+        .form-group
+          label Size:
+          input.form-control(type='text' name='dining-size' id='dining-size' required)
+      .col-md-3
+        .form-group
+          label Flooring:
+          input.form-control(type='text' name='dining-flooring' id='dining-flooring' required)
+    .row
+      .col-md-12
+        .form-group
+          label Dining Room Description
+          textarea.form-control(type='text' name='dining-size' rows='5' id='dining-size' required)
+
+
+

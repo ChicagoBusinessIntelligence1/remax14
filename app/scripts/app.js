@@ -54,6 +54,20 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				controller:"ListingsCtrl",
 				templateUrl: "../views/listings.html"
 			})
+			.state("app.profile", {
+        abstract: true,
+				templateUrl: "../views/profile.html"
+			})
+			.state("app.profile.manage-listings", {
+				url: "/manage-listings",
+				controller:"Manage-listingsCtrl",
+				templateUrl: "../views/manage-listings.html"
+			})
+			.state("app.profile.broker-profile", {
+				url: "/broker-profile",
+				controller:"Broker-profileCtrl",
+				templateUrl: "../views/broker-profile.html"
+			})
 //#state
   });
 

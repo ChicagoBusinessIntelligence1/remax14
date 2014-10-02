@@ -36,6 +36,38 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
         .form-group
           label Property Details
           textarea.form-control(type='text' name='property-details' id='property-details' rows='10' )
+    .row
+      .col-sm-4
+        .form-group
+          label Property Type:
+          input.form-control(type='text' name='property-type' id='property-type' required)
+      .col-sm-4
+        .form-group
+          label Year of Build
+          input.form-control(type='text' name='property-type' id='property-type' required)
+      .col-sm-4
+        .form-group
+          label MLS #
+          input.form-control(type='text' name='property-type' id='property-type' required)
+    .row
+      .col-sm-3
+        ul.list-unstyled
+          li
+            h5.text-danger Short Sale
+          li
+            input(type='checkbox' name='short-sale' id='short-sale' )
+      .col-sm-3
+        ul.list-unstyled
+          li
+            h5.text-danger Foreclosure
+          li
+            input(type='checkbox' name='short-sale' id='short-sale' )
+      .col-sm-3
+        ul.list-unstyled
+          li
+            h5.text-danger Bank Owned
+          li
+            input(type='checkbox' name='bank-owned' id='bank-owned' )
   .head-panel
     .row
       .col-xs-11

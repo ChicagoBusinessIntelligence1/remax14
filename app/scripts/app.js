@@ -49,14 +49,14 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "GenerateCtrl",
         templateUrl: "../views/generate.html"
       })
-			.state("app.listings", {
-				url: "/listings",
-				controller:"ListingsCtrl",
-				templateUrl: "../views/listings.html"
-			})
 			.state("app.profile", {
         abstract: true,
 				templateUrl: "../views/profile.html"
+			})
+			.state("app.profile.listings", {
+				url: "/listings",
+				controller:"ListingsCtrl",
+				templateUrl: "../views/listings.html"
 			})
 			.state("app.profile.manage-listings", {
 				url: "/manage-listings",

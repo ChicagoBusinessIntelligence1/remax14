@@ -2678,12 +2678,28 @@ label {
     text-align: center;
   }
 }
+.sale-type {
+  margin-bottom: 15px;
+  text-align: right;
+}
+.sale-type h5 {
+  font-size: 14px;
+}
+@media screen and (max-width: 992px) {
+  .sale-type {
+    text-align: center;
+  }
+}
 .head-panel {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 10px;
   background-color: #f4f4f4;
   border: 1px #ddd solid;
+}
+.head-panel h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .head-panel ul {
   margin-bottom: 0px;
@@ -2693,6 +2709,7 @@ label {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-top: 0px !important;
+  margin-bottom: 10px;
 }
 .panel-basic-info {
   padding: 10px;
@@ -2721,6 +2738,36 @@ label {
 }
 .basic-info-short {
   font-size: 12px;
+}
+.inline-info-style {
+  font-size: 14px;
+}
+@media screen and (max-width: 992px) {
+  .inline-info-style {
+    font-size: 12px;
+  }
+}
+.ul-data-just li {
+  background-color: #f2f2f2;
+}
+.ul-data-just li.even,
+.ul-data-just li:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.ul-data-just li span {
+  font-size: 13px;
+  display: inline-block;
+}
+.ul-data-just li span:first-child {
+  width: 145px;
+}
+@media screen and (max-width: 992px) {
+  .ul-data-just li span {
+    font-size: 12px;
+  }
+}
+.gallery-wrapper {
+  margin-bottom: 10px;
 }
 .form-group {
   margin-bottom: 10px;
@@ -3520,6 +3567,10 @@ h6 {
 /**********************
       =Typography
   ***********************/
+h5 {
+  font-size: 14;
+  font-weight: 700;
+}
 .text-info {
   color: #4684b6;
 }
@@ -3565,11 +3616,12 @@ h6 {
 }
 .content-wrapper {
   background-color: #fbfbfb;
-  padding: 15px 30px;
+  padding: 10px;
 }
 @media screen and (min-width: 992px) {
   .content-wrapper {
     min-height: 1200px;
+    padding: 15px 30px;
   }
 }
 /**********************
@@ -3612,8 +3664,19 @@ h6 {
 .custom-list li:last-child:after {
   content: '';
 }
-table#users {
-  stripe: #6d6d6d #505050;
+table li {
+  background-color: #eee;
+}
+table li.even,
+table li:nth-child(even) {
+  background-color: #fff;
+}
+table#users li {
+  background-color: #505050;
+}
+table#users li.even,
+table#users li:nth-child(even) {
+  background-color: #6d6d6d;
 }
 table#users td,
 table#users th {

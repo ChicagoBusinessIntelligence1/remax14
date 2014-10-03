@@ -64,6 +64,13 @@ font-main()
   font-size 1em
   line-height 2em
 
+stripe(even = #fff, odd = #eee)
+  li
+    background-color odd
+    &.even
+    &:nth-child(even)
+      background-color even
+
 app-link()
   color color-app
   &:hover

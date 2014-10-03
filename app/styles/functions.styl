@@ -9,6 +9,7 @@ color-lighten = lighten(color-app, 98%)
 color-light = light(color-app, 70%)
 color-link = lighten(color-app, 30%)
 color-link-hover = lighten(color-app, 10%)
+color-nav = lighten(color-app, 20%)
 
 
 water = #6495ED
@@ -62,6 +63,23 @@ font-main()
   font-family Helvetica Neue, Helvetica, Arial
   font-size 1em
   line-height 2em
+
+app-link()
+  color color-app
+  &:hover
+  &:active
+  &:focus
+    color color-link-hover
+    text-decoration none
+
+app-link-info()
+  color lighten(color-blue, 10%)
+  &:hover
+  &:active
+  &:focus
+    color color-blue
+    text-decoration none
+
 
 btn-primary()
   color color-off-white !important

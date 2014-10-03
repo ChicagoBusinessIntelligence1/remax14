@@ -22,6 +22,48 @@ label {
   font-size: 12px;
   font-style: italic;
 }
+@media screen and (max-width: 992px) {
+  .ul-basic-info {
+    text-align: center;
+  }
+}
+.price-style {
+  color: #417cab;
+  font-weight: 700;
+  display: block;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: right;
+}
+.price-style:hover,
+.price-style:active,
+.price-style:focus {
+  color: #396c95;
+  text-decoration: none;
+}
+@media screen and (max-width: 992px) {
+  .price-style {
+    text-align: center;
+  }
+}
+.address-basic {
+  color: #3c3c3c;
+  display: block;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 0px false;
+}
+.address-basic:hover,
+.address-basic:active,
+.address-basic:focus {
+  color: #505050;
+  text-decoration: none;
+}
+@media screen and (max-width: 992px) {
+  .address-basic {
+    text-align: center;
+  }
+}
 .ul-basic-social {
   margin-bottom: 0px;
   margin-top: 5px;
@@ -36,10 +78,20 @@ label {
   color: #505050;
   text-decoration: none;
 }
+@media screen and (max-width: 992px) {
+  .ul-basic-social {
+    text-align: center;
+  }
+}
 .prop-type {
   font-size: 14px;
   font-style: italic;
   margin-bottom: 15px;
+}
+@media screen and (max-width: 992px) {
+  .prop-type {
+    text-align: center;
+  }
 }
 .head-panel {
   border-top-left-radius: 5px;

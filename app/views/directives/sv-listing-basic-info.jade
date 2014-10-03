@@ -3,26 +3,24 @@
     | Single Family Home
   .alert.alert-address
     .row
-      .col-md-10
-        h4  Morton Grove IL 60053
-      .col-md-2
-        h4.price-style.text-info
+      .col-md-9.col-xs-12
+        a.text-app.address-basic(ui-sref='app.profile.one-listing')
+          | Morton Grove IL 60053
+      .col-md-3.col-xs-12
+        a.price-style(ui-sref='app.profile.one-listing')
           | $100,000
   .app-content-five
     .row
       .col-sm-7
         ul.list-inline.ul-basic-info
           li
-            | MLS#: 123456
-          li |
+            | MLS#: 123456 &nbsp |
           li
-            | Year: 1980
-          li |
+            | Year: 1980 &nbsp |
           li
-            | Bedrooms: 1
-          li |
+            | Bedrooms: 1 &nbsp |
           li
-            | Bathrooms: 1
+            | Bathrooms: 1 &nbsp |
       .col-sm-5
         ul.list-inline.text-right.ul-basic-social
           li
@@ -36,7 +34,7 @@
 
   .row
     .col-sm-7
-      a.thumbnail(href='#')
+      a.thumbnail(ui-sref='app.profile.one-listing')
         img.img-responsive(ng-src="../images/houses/1.jpg")
     .col-sm-5
       .panel.panel-default.panel-basic-info
@@ -46,11 +44,10 @@
           | quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
           | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
           | Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-          | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+          | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. &nbsp
           span
             em
-              a(href='#').read-more
-                | Read more...
+              a(ui-sref='app.profile.one-listing').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

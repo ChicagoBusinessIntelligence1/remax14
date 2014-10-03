@@ -1,1 +1,500 @@
-.well sv-listing-sale Template
+h5.prop-type.text-info
+  | Single Family Home
+.alert.alert-address
+  .row
+    .col-md-10
+      h4 Morton Grove IL 60053
+    .col-md-2
+      h4.price-style.text-info
+        | $100,000
+
+.row
+  .col-sm-4
+    a.thumbnail(ui-sref='app.profile.one-listing')
+      img.img-responsive(ng-src="../images/houses/1.jpg")
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Property Description
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-4
+      .form-group
+        label Street:
+        input.form-control(type='text' name='street' id='street' )
+    .col-md-4
+      .form-group
+        label City
+        input.form-control(type='text' name='city' id='city' )
+    .col-md-2
+      .form-group
+        label State
+        input.form-control(type='text' name='state' id='state' )
+    .col-md-2
+      .form-group
+        label Zip
+        input.form-control(type='text' name='zip' id='zip' )
+  .row
+    .col-md-12
+      .form-group
+        label Property Details
+        textarea.form-control(type='text' name='property-details' id='property-details' rows='10' )
+  .row
+    .col-sm-4
+      .form-group
+        label Property Type:
+        input.form-control(type='text' name='property-type' id='property-type' required)
+    .col-sm-4
+      .form-group
+        label Year of Build
+        input.form-control(type='text' name='property-type' id='property-type' required)
+    .col-sm-4
+      .form-group
+        label MLS #
+        input.form-control(type='text' name='property-type' id='property-type' required)
+  .row
+    .col-sm-3
+      ul.list-unstyled
+        li
+          h5.text-danger Short Sale
+        li
+          input(type='checkbox' name='short-sale' id='short-sale' )
+    .col-sm-3
+      ul.list-unstyled
+        li
+          h5.text-danger Foreclosure
+        li
+          input(type='checkbox' name='short-sale' id='short-sale' )
+    .col-sm-3
+      ul.list-unstyled
+        li
+          h5.text-danger Bank Owned
+        li
+          input(type='checkbox' name='bank-owned' id='bank-owned' )
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Bedrooms
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Bedrooms #
+        input.form-control(type='text' name='bedrooms-number' id='bedrooms-number' )
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Bedroom
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info.text-info Bathrooms
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Full Bathrooms #
+        input.form-control(type='text' name='bath-number' id='bath-number' )
+    .col-md-3
+      .form-group
+        label Half Bathrooms #
+        input.form-control(type='text' name='half-bath-number' id='half-bath-number' )
+  .row
+    .col-md-3
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Bathroom
+    .col-md-3
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Half Bathroom
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Dining Room
+        li
+          input(type='checkbox' name='dining' id='dining' )
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Type:
+        input.form-control(type='text' name='dining-type' id='dining-type' )
+    .col-md-3
+      .form-group
+        label Size:
+        input.form-control(type='text' name='dining-size' id='dining-size' )
+    .col-md-3
+      .form-group
+        label Flooring:
+        input.form-control(type='text' name='dining-flooring' id='dining-flooring' )
+  .row
+    .col-md-12
+      .form-group
+        label Dining Room Description
+        textarea.form-control(type='text' name='dining-size' rows='5' id='dining-size' )
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Kitchen
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+  .panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Type:
+        input.form-control(type='text' name='kitchen-type' id='kitchen-type' )
+    .col-md-3
+      .form-group
+        label Size:
+        input.form-control(type='text' name='kitchen-size' id='kitchen-size' )
+    .col-md-3
+      .form-group
+        label Flooring:
+        input.form-control(type='text' name='kitchen-flooring' id='kitchen-flooring' )
+  .row
+    .col-md-12
+      .form-group
+        label Kitchen Description
+        textarea.form-control(type='text' name='kitchen-size' rows='5' id='kitchen-size' )
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Living Room
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Type:
+        input.form-control(type='text' name='living-type' id='living-type')
+    .col-md-3
+      .form-group
+        label Size:
+        input.form-control(type='text' name='living-size' id='living-size')
+    .col-md-3
+      .form-group
+        label Level:
+        input.form-control(type='text' name='living-level' id='living-level')
+    .col-md-3
+      .form-group
+        label Flooring:
+        input.form-control(type='text' name='living-flooring' id='living-flooring')
+  .row
+    .col-md-12
+      .form-group
+        label Living Room Description
+        textarea.form-control(type='text' name='living-size' rows='5' id='living-size')
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Basement
+        li
+          input(type='checkbox' name='basement' id='basement' )
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label Type:
+        input.form-control(type='text' name='basement-type' id='basement-type')
+    .col-md-3
+      .form-group
+        label Size:
+        input.form-control(type='text' name='basement-size' id='basement-size')
+    .col-md-3
+      .form-group
+        label Flooring:
+        input.form-control(type='text' name='basement-flooring' id='basement-flooring')
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Other Rooms
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Other Room
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Other Rooms
+        li
+          input(type='checkbox' name='other-rooms' id='other-rooms')
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-xs-3
+      .form-group
+        label Parking #
+        input.form-control(type='text' name='parking-number' id='parking-number')
+  .row
+    .col-xs-3
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Parking
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Property Features
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-sm-3
+      .form-group
+        label Heating Type
+        input.form-control(type='text' name='heating' id='heating')
+    .col-sm-3
+      .form-group
+        label Cooling Type
+        input.form-control(type='text' name='cooling' id='cooling' placeholder='none...')
+  .row
+    .col-md-12
+      .form-group
+        label Home Features
+        textarea.form-control(type='text' placeholder='Tv-cable, fire-sprinklers etc' name='home-features' rows='5' id='home-features')
+      .form-group
+        label Exterior and Lot Features
+        textarea.form-control(type='text' placeholder='Lot dimensions, driveway etc' name='home-features' rows='5' id='home-features')
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Bulding and Construction
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      .form-group
+        label House Style:
+        input.form-control(type='text' name='house-style' id='house-style')
+    .col-md-3
+      .form-group
+        label Levels or Stories:
+        input.form-control(type='text' name='levels-stories' id='levels-stories')
+    .col-md-3
+      .form-group
+        label Roof Type:
+        input.form-control(type='text' name='roof-type' id='roof-type')
+    .col-md-3
+      .form-group
+        label Foundation:
+        input.form-control(type='text' name='foundation' id='foundation')
+  .row
+    .col-md-5
+      .form-group
+        label Exterior Building Type:
+        input.form-control(type='text' name='exterior-building-type' id='exterior-building-type')
+  .row
+    .col-md-12
+      .form-group
+        label Building and Construction Description
+        textarea.form-control(type='text' name='building-construction-description' rows='5' id='building-construction-description')
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Utilities
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-sm-3
+      .form-group
+        label Water
+        input.form-control(type='text' name='water' id='water')
+    .col-sm-3
+      .form-group
+        label Sewer
+        input.form-control(type='text' name='sewer' id='sewer' placeholder='none...')
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Amenities and Communities Features
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-3
+      ul.list-inline
+        li
+          h5 Elevator
+        li
+          input(type='checkbox' name='elevator' id='elevator' )
+    .col-md-3
+      ul.list-inline
+        li
+          h5 Storage
+        li
+          input(type='checkbox' name='storage' id='storage' )
+    .col-md-3
+      ul.list-inline
+        li
+          h5 Sundeck
+        li
+          input(type='checkbox' name='sundeck' id='sundeck' )
+    .col-md-3
+      ul.list-inline
+        li
+          h5 Bike Room
+        li
+          input(type='checkbox' name='bike-room' id='bike-room' )
+  .row
+    .col-sm-12
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Feature
+.head-panel
+  .row
+    .col-xs-11
+      ul.list-inline
+        li
+          h4.text-info Appliances
+        li
+          a(href="")
+            i.fa.fa-save.fa-fw
+    .col-xs-1.text-right
+      a(href="")
+        i.fa.fa-angle-double-down.fa-fw
+.panel.panel-default.panel-listing
+  .row
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Oven/Range
+        li
+          input(type='checkbox' name='oven-range' id='oven-range' )
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Dishwasher
+        li
+          input(type='checkbox' name='dishwasher' id='dishwasher' )
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Washer
+        li
+          input(type='checkbox' name='washer' id='washer' )
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Dryer
+        li
+          input(type='checkbox' name='dryer' id='dryer' )
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Microwave
+        li
+          input(type='checkbox' name='microwave' id='microwave' )
+    .col-md-2
+      ul.list-unstyled
+        li
+          h5 Refrigerator
+        li
+          input(type='checkbox' name='refrigerator' id='refrigerator' )
+  .row
+    .col-sm-12
+      .form-group
+        button.btn.btn-primary.btn-sm
+          i.fa.fa-plus.fa-fw
+          | Add Feature

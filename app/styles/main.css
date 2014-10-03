@@ -2595,6 +2595,37 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.listing-basic-info-wrap {
+  padding-top: 10px;
+}
+.ul-basic-info {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.ul-basic-info li {
+  color: #505050;
+  font-size: 12px;
+  font-style: italic;
+}
+.ul-basic-social {
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.ul-basic-social li a {
+  color: #767676;
+  font-size: 12px;
+}
+.ul-basic-social li a:hover,
+.ul-basic-social li a:active,
+.ul-basic-social li a:focus {
+  color: #505050;
+  text-decoration: none;
+}
+.prop-type {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
 .head-panel {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -3406,6 +3437,10 @@ h6 {
 /**********************
       =buttons
 ***********************/
+.app-content-five {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 .btn-mob-dev {
   vertical-align: center;
 }
@@ -3425,7 +3460,7 @@ h6 {
   background-color: #fbfbfb;
   border: 1px #ddd solid;
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 7px;
   font-size: 14px;
   font-weight: 700;

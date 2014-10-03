@@ -68,6 +68,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				controller:"Broker-profileCtrl",
 				templateUrl: "../views/broker-profile.html"
 			})
+			.state("-one-listing", {
+				url: "/-one-listing", 
+				controller:"OneListingCtrl",
+				templateUrl: "../views/-one-listing.html"
+			})
 //#state
   });
 

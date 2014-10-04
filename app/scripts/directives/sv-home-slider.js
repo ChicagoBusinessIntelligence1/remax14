@@ -8,12 +8,11 @@ angular.module('app')
       scope: {
         title: '@',
         map: '=',
-        description:'@',
-        info:'=',
-        isShown:'='
+        description: '@',
+        info: '=',
+        isShown: '='
       },
       link: function ($scope, element, attr) {
-
       }
     };
   });

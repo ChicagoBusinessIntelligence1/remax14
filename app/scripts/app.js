@@ -63,10 +63,10 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "Manage-listingsCtrl",
         templateUrl: "../views/manage-listings.html"
       })
-      .state("app.profile.broker-profile", {
-        url: "/broker-profile",
-        controller: "Broker-profileCtrl",
-        templateUrl: "../views/broker-profile.html"
+      .state("app.profile.user-profile", {
+        url: "/user-profile",
+        controller: "UserProfileCtrl",
+        templateUrl: "../views/user-profile.html"
       })
       .state("app.profile.one-listing", {
         url: "/remax-property-listing",

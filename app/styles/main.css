@@ -2950,6 +2950,9 @@ label {
 .add-new-listing {
   color: #4f8bbc !important;
 }
+.app-form .form-group {
+  margin-bottom: 5px !important;
+}
 .form-group {
   margin-bottom: 10px;
 }

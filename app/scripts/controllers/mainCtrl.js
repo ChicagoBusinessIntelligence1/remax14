@@ -30,6 +30,10 @@ angular.module('app')
         $scope.userLink = user.thirdPartyUserData.link;
         $scope.userName = user.thirdPartyUserData.first_name;
         $scope.userPic = user.thirdPartyUserData.picture.data.url;
+
+        $scope.firstName = user.thirdPartyUserData.first_name;
+        $scope.lastName = user.thirdPartyUserData.last_name;
+        $scope.email = user.thirdPartyUserData.email;
       }
       if (user.provider === 'password') {
         $scope.isAdmin = true;
@@ -56,8 +60,15 @@ angular.module('app')
       ).then(function (user) {
           $scope.userLink = user.thirdPartyUserData.link;
           $scope.userName = user.thirdPartyUserData.first_name;
+
+          $scope.firstName = user.thirdPartyUserData.first_name;
+          $scope.lastName = user.thirdPartyUserData.last_name;
+          $scope.email = user.thirdPartyUserData.email;
+
+
+
           $scope.userPic = user.thirdPartyUserData.picture.data.url;
-          ;
+          $state.go('app.profile.user-profile', null, {reload: true});
         });
     }
   });

@@ -9,8 +9,8 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var repo = 'https://remax14.firebaseio.com/houses/house1/rooms/kitchen';
         $scope.kitchenProps = $firebase(new Firebase(repo)).$asArray();
-
-
+        var repo = 'https://remax14.firebaseio.com/houses/house1/rooms/bedrooms';
+        $scope.bedroomsProps = $firebase(new Firebase(repo)).$asArray();
       }
     };
   });

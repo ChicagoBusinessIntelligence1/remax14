@@ -44,7 +44,7 @@ module.exports = function (grunt) {
   }
 
 
-  // Project configuration.
+// Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json')
   });
@@ -93,7 +93,7 @@ module.exports = function (grunt) {
       var content = minify(grunt.file.read(fileName).trim(), options).replace('\n', '').replace('\t', '');
 
       var fullChunk = '<script type="text/ng-template" id="' + key + '">' + content + '</script>';
-//            grunt.log.subhead(content);
+// grunt.log.subhead(content);
       fileContent += fullChunk;
       if (final > index) {
         index = final;
@@ -106,7 +106,7 @@ module.exports = function (grunt) {
     grunt.file.recurse(dirFolder, function (file) {
 
       var content = minify(grunt.file.read(file).trim(), options).replace('\n', '').replace('\t', '');
-//            grunt.log.ok(content);
+// grunt.log.ok(content);
 
       var pos = file.indexOf('views');
       var key = file.substring(pos);
@@ -146,11 +146,11 @@ module.exports = function (grunt) {
     }
   });
   grunt.registerTask('vs', function () {
-//        grunt.task.run('typescript:same');
+// grunt.task.run('typescript:same');
     grunt.task.run(['ngmin']);
     grunt.task.run(['move-app-to-z']);
     grunt.task.run(['uglify:minvs']);
-//        grunt.task.run(['concat']);
+// grunt.task.run(['concat']);
     grunt.task.run(['copy-profile-to-root']);
     grunt.task.run(['templates']);
     grunt.task.run(['addcss']);
@@ -161,13 +161,13 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('c', function (cname) {
-//        delete option
+// delete option
     var rm = grunt.option('rm');
 
     rm = (rm === undefined) ? false : rm;
 
 
-//     C        //
+// C //
     var d = 'app/scripts/controllers/';
     var t = '.js';
     var ctrl = grunt.file.read('templates/ctrl.tpl');
@@ -183,7 +183,7 @@ module.exports = function (grunt) {
 
 ////////////////
 
-    // register
+// register
     var ref = '/// <reference path="controllers/' + name + '.js" />\r\n';
     var reg = 'profile.controller("' + name + 'Ctrl", ' + name + 'Ctrl);\r\n';
     var state = '\t\t\t.state("' + _.str.dasherize(lname) + '", {\r\n' +
@@ -193,26 +193,26 @@ module.exports = function (grunt) {
       '\t\t\t})\r\n';
 
     var apath = 'app/scripts/app.js';
-    var tpath = 'app/views/' + lname + '.jade';
+    var tpath = 'app/views/' + _.str.dasherize(lname) + '.jade';
     var app = grunt.file.read(apath);
     if (rm) {
-      //app = removeFromInside(app, ref);
-      //app = removeFromInside(app, reg);
+//app = removeFromInside(app, ref);
+//app = removeFromInside(app, reg);
       app = removeFromInside(app, state);
     }
     else {
 
-      //app = enterInside(app, '//#ctrl', reg);
-      //app = enterInside(app, '//#ref', ref);
+//app = enterInside(app, '//#ctrl', reg);
+//app = enterInside(app, '//#ref', ref);
       app = enterInside(app, '//#state', state);
     }
 
 
-    /////////////////// index
+/////////////////// index
     var ipath = 'app/index.html';
     var src = '<script src="scripts/controllers/' + name + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
-    //////////////////
+//////////////////
     if (rm) {
       indf = removeFromInside(indf, src);
 
@@ -227,7 +227,7 @@ module.exports = function (grunt) {
       console.log(tpath);
       delFileDep(file);
       delFileDep(tpath);
-      //grunt.file.delete(tpath);
+//grunt.file.delete(tpath);
     } else {
       grunt.file.write(d + name + t, ctrlr);
       grunt.file.write(tpath, grunt.file.read("templates/ctrl-template.tpl"));
@@ -239,13 +239,13 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('s', function (sname) {
-//        delete option
+// delete option
     var rm = grunt.option('rm');
 
     rm = (rm === undefined) ? false : rm;
 
 
-//     C        //
+// C //
     var d = 'app/scripts/services/';
     var t = 'Service.js';
     var serv = grunt.file.read('templates/serv.tpl');
@@ -259,7 +259,7 @@ module.exports = function (grunt) {
 ////////////////
 
 
-    // register
+// register
     var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
     var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
 
@@ -277,11 +277,11 @@ module.exports = function (grunt) {
     }
 
 
-    /////////////////// index
+/////////////////// index
     var ipath = 'app/index.html';
     var src = '<script src="scripts/services/' + name + 'Service.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
-    //////////////////
+//////////////////
     if (rm) {
       indf = removeFromInside(indf, src);
 
@@ -305,12 +305,12 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('f', function (fname) {
-//        delete option
+// delete option
     var rm = grunt.option('rm');
     rm = (rm === undefined) ? false : rm;
 
 
-//     C        //
+// C //
     var d = 'app/scripts/filters/';
     var t = '.js';
     var filt = grunt.file.read('templates/filt.tpl');
@@ -326,22 +326,22 @@ module.exports = function (grunt) {
 
 ////////////////
 
-    // register
+// register
     var ref = '/// <reference path="filters/' + name + '.js" />\r\n';
     var reg = "profile.filter('" + jname + "', () => {" +
       " return (value:boolean):string => {" +
-      "return " + name + ".filter(value);     } });\r\n";
+      "return " + name + ".filter(value); } });\r\n";
 
 
     var apath = 'app/scripts/app.js';
     var app = grunt.file.read(apath);
 
 
-    /////////////////// index
+/////////////////// index
     var ipath = 'app/index.html';
     var src = '<script src="scripts/filters/' + name + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
-    //////////////////
+//////////////////
     if (rm) {
       indf = removeFromInside(indf, src);
 
@@ -365,7 +365,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('d', function (dname, dtype) {
-//        delete option
+// delete option
     var rm = grunt.option('rm');
 
     rm = (rm === undefined) ? false : rm;
@@ -391,14 +391,14 @@ module.exports = function (grunt) {
 
     });
 
-      jnameDashed = _.str.dasherize(jname);
+    jnameDashed = _.str.dasherize(jname);
 
 
     var oname = dname;
     var directivef = directive.replace(/#uname#/g, uname).replace(/#lname#/g, lname)
       .replace(/#jname#/g, jname).replace(/#dname#/g, dname);
 
-      var dirFileName = d + jnameDashed + '.js', directivef;
+    var dirFileName = d + jnameDashed + '.js', directivef;
     if (!rm)
       grunt.file.write(dirFileName, directivef);
     else {
@@ -410,34 +410,34 @@ module.exports = function (grunt) {
 ////////////////
 
 
-    // register
+// register
     var ref = '/// <reference path="directives/' + jname + '.js" />\r\n';
-//        grunt.log.ok(ref);
-//        grunt.log.ok(reg);
-//        grunt.fail.fatal();
+// grunt.log.ok(ref);
+// grunt.log.ok(reg);
+// grunt.fail.fatal();
 
 
     var apath = 'app/scripts/app.js';
     var tpath = 'app/views/directives/' + oname + '.jade';
     var app = grunt.file.read(apath);
-    //if (rm) {
-    //  app = removeFromInside(app, ref);
-    //  app = removeFromInside(app, reg);
-    //}
-    //else {
-    //
-    //  app = enterInside(app, '//#dir', reg);
-    //  app = enterInside(app, '//#ref', ref);
-    //}
+//if (rm) {
+// app = removeFromInside(app, ref);
+// app = removeFromInside(app, reg);
+//}
+//else {
+//
+// app = enterInside(app, '//#dir', reg);
+// app = enterInside(app, '//#ref', ref);
+//}
 
 
-    /////////////////// index/
+/////////////////// index/
     var ipath = 'app/index.html';
-      var src = '<script src="scripts/directives/' + jnameDashed + '.js"></script>\r\n';
+    var src = '<script src="scripts/directives/' + jnameDashed + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
-    //////////////////
-    var directiveTemplate = '.well ' + oname + ' Template';
-    /////////////////
+//////////////////
+    var directiveTemplate = 'div ' + oname + ' Template';
+/////////////////
     if (dtype && dtype == 'info') {
       var directiveTemplate = grunt.file.read('templates/dir-info.tpl');
     }
@@ -465,6 +465,4 @@ module.exports = function (grunt) {
     grunt.file.write(ipath, indf);
 
   })
-
-
 };

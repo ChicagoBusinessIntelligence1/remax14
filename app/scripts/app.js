@@ -49,30 +49,30 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "GenerateCtrl",
         templateUrl: "../views/generate.html"
       })
-			.state("app.profile", {
+      .state("app.profile", {
         abstract: true,
-				templateUrl: "../views/profile.html"
-			})
-			.state("app.profile.listings", {
-				url: "/listings",
-				controller:"ListingsCtrl",
-				templateUrl: "../views/listings.html"
-			})
-			.state("app.profile.manage-listings", {
-				url: "/manage-listings",
-				controller:"Manage-listingsCtrl",
-				templateUrl: "../views/manage-listings.html"
-			})
-			.state("app.profile.broker-profile", {
-				url: "/broker-profile",
-				controller:"Broker-profileCtrl",
-				templateUrl: "../views/broker-profile.html"
-			})
-			.state("app.profile.one-listing", {
-				url: "/remax-property-listing",
-				controller:"OneListingCtrl",
-				templateUrl: "../views/one-listing.html"
-			})
+        templateUrl: "../views/profile.html"
+      })
+      .state("app.profile.listings", {
+        url: "/listings",
+        controller: "ListingsCtrl",
+        templateUrl: "../views/listings.html"
+      })
+      .state("app.profile.manage-listings", {
+        url: "/manage-listings",
+        controller: "Manage-listingsCtrl",
+        templateUrl: "../views/manage-listings.html"
+      })
+      .state("app.profile.broker-profile", {
+        url: "/broker-profile",
+        controller: "Broker-profileCtrl",
+        templateUrl: "../views/broker-profile.html"
+      })
+      .state("app.profile.one-listing", {
+        url: "/remax-property-listing",
+        controller: "OneListingCtrl",
+        templateUrl: "../views/one-listing.html"
+      })
 //#state
   });
 
@@ -96,7 +96,7 @@ app.animation('.prop-info', function () {
 });
 app.animation('.accord-house', function () {
   var height,
-      duration=0.5;
+    duration = 0.5;
   return {
 
     addClass: function (element, className, done) {
@@ -104,17 +104,40 @@ app.animation('.accord-house', function () {
 
       if (className == 'ng-hide') {
         TweenMax.to(element, duration, {
-          top:-height,
-          onComplete: done });
+          top: -height,
+          onComplete: done
+        });
       }
     },
     removeClass: function (element, className, done) {
       if (className == 'ng-hide') {
         TweenMax.to(element, duration, {
-          top:0,
-          onComplete: done });
+          top: 0,
+          onComplete: done
+        });
       }
 
+    }
+  }
+});
+app.animation('.info-slider', function () {
+  var height,
+    width;
+  return {
+    addClass: function (element, className, done) {
+
+      if (className == 'ng-hide') {
+        $(element).slideUp('400', function () {
+          done();
+        })
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        $(element).slideDown('400', function () {
+          done();
+        })
+      }
 
     }
   }

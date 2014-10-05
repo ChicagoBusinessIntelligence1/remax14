@@ -33,8 +33,21 @@ gulp.task('nib', function () {
 
 
 gulp.task('stylus', function () {
+
+  var onError = function(err) {
+    notify.onError({
+      title:    "Gulp",
+      subtitle: "Failure!",
+      message:  "Error: <%= error.message %>",
+      sound:    "Beep"
+    })(err);
+
+    this.emit('end');
+  };
+
+
   gulp.src('app/styles/**/*.styl')
-    .pipe(plumber({errorHandler: notify.onError("Che za na... Stylus?!")}))
+    .pipe(plumber({errorHandler: onError}))
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'));
 });

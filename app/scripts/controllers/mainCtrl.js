@@ -5,14 +5,12 @@ angular.module('app')
 
     $(window).resize(function () {
       $scope.$apply(function () {
-
       });
     });
 
     $scope.fenElementActive = {val: 'null'};
 
     $scope.$watch('auth.user.provider', function (newVal) {
-
       if (newVal === 'password') {
         $scope.isAdmin = true;
       }
@@ -64,8 +62,6 @@ angular.module('app')
           $scope.firstName = user.thirdPartyUserData.first_name;
           $scope.lastName = user.thirdPartyUserData.last_name;
           $scope.email = user.thirdPartyUserData.email;
-
-
 
           $scope.userPic = user.thirdPartyUserData.picture.data.url;
           $state.go('app.profile.user-profile', null, {reload: true});

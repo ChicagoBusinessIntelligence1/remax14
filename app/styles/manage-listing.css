@@ -167,6 +167,7 @@ label {
   display: inline-block;
 }
 .ul-data-just li span:first-child {
+  font-weight: 700;
   width: 145px;
 }
 @media screen and (max-width: 992px) {

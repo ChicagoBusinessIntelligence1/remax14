@@ -3053,8 +3053,15 @@ label {
 .table-elements {
   margin: 0 auto;
 }
-.nav-profile-container {
+.header-cteate-account {
+  background-color: #3d3d3d !important;
   padding: 10px;
+}
+.h-logo-mod {
+  font-size: 17px !important;
+  font-weight: 700;
+  color: #f7f7f4 !important;
+  margin-top: 10px;
 }
 .nav-profile {
   margin-bottom: 10px;

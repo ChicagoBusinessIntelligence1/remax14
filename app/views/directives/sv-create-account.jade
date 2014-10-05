@@ -1,0 +1,45 @@
+div
+  .header-cteate-account
+    .row
+      .col-xs-2
+        img(ng-src="../images/logo/remax-sm.png")
+      .col-xs-10.text-right
+        h1.h-logo-mod REMAX FIRST CLASS
+    .row
+  .col-sm-12.create-account
+    h3 Create Your Accout
+    form(name="create-account-form" id="create-account-form")
+      .row
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") First Name:
+            input.form-control(name="bedrooms" id="bedrooms" placeholder="Your name"  required)
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Last Name:
+            input.form-control(name="bathrooms" id="bathrooms" placeholder="Your last name"  required)
+
+      .row
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Email:
+            .form-group
+              .input-group
+                .input-group-addon @
+                input.form-control(name="bathrooms" id="bathrooms" placeholder="Your email"  required)
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Mobile Phone:
+            input.form-control(name="bathrooms" id="bathrooms" placeholder="(***)***-****"  required)
+
+      .row
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Password:
+            input.form-control(name="bedrooms" id="bedrooms" required)
+        .col-md-6.col-sm-6.col-xs-12
+          .form-group
+            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Confirm Password:
+            input.form-control(name="bathrooms" id="bathrooms"  required)
+
+      input.btn.bnt-radius.btn-primary.btn-mob-dev(type="submit" value="Create your free account" ng-disabled="login.$invalid")

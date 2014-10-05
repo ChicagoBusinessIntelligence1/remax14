@@ -1,4 +1,11 @@
-.row
+div
+  .header-cteate-account
+    .row
+      .col-xs-2
+        img(ng-src="../images/logo/remax-sm.png")
+      .col-xs-10.text-right
+        h1.h-logo-mod REMAX FIRST CLASS
+    .row
   .col-sm-12.create-account
     h3 Create Your Accout
     form(name="create-account-form" id="create-account-form")
@@ -34,3 +41,5 @@
           .form-group
             label(ng-class="{'error':login.password.$invalid && login.$dirty}") Confirm Password:
             input.form-control(name="bathrooms" id="bathrooms"  required)
+
+      input.btn.bnt-radius.btn-primary.btn-mob-dev(type="submit" value="Create your free account" ng-disabled="login.$invalid")

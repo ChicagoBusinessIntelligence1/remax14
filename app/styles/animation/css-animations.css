@@ -1,0 +1,77 @@
+/*******************************
+     notice animation
+********************************/
+.notice.ng-hide-add,
+.notice.ng-leave {
+  position: relative;
+  animation: 0.5s notice_animation_go;
+}
+.notice.ng-hide-remove,
+.notice.ng-enter {
+  position: relative;
+  animation: 1s notice_animation_come;
+}
+@-moz-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -184,3 +184,9 @@ label {
 .cursor-p {
   cursor: pointer;
 }
+.error {
+  border: 1px solid #f00 !important;
+}
+.error-note {
+  color: #f00;
+}

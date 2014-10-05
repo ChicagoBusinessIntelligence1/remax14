@@ -55,9 +55,20 @@ gulp.task('stylus', function () {
 //register task jade
 gulp.task('jade', function () {
 
+  var onError = function(err) {
+    notify.onError({
+      title:    "Gulp",
+      subtitle: "Failure!",
+      message:  "Error: <%= error.message %>",
+      sound:    "Beep"
+    })(err);
+
+    this.emit('end');
+  };
+
   gulp.src('app/**/*.jade')
     //compiler does not stop on error
-    .pipe(plumber({errorHandler: notify.onError("Che za na... Jade?!")}))
+    .pipe(plumber({errorHandler: onError}))
     .pipe(jade({
       compileDebug: true
     }))

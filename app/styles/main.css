@@ -394,6 +394,120 @@ label {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
+.notice.ng-hide-add,
+.notice.ng-leave {
+  position: relative;
+  -webkit-animation: 0.5s notice_animation_go;
+  -moz-animation: 0.5s notice_animation_go;
+  -o-animation: 0.5s notice_animation_go;
+  -ms-animation: 0.5s notice_animation_go;
+  animation: 0.5s notice_animation_go;
+}
+.notice.ng-hide-remove,
+.notice.ng-enter {
+  position: relative;
+  -webkit-animation: 1s notice_animation_come;
+  -moz-animation: 1s notice_animation_come;
+  -o-animation: 1s notice_animation_come;
+  -ms-animation: 1s notice_animation_come;
+  animation: 1s notice_animation_come;
+}
+@-moz-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-webkit-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-o-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-moz-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@-webkit-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@-o-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
 .selected-house-wrapper {
   position: relative;
   cursor: pointer;
@@ -2768,6 +2882,12 @@ label {
 }
 .cursor-p {
   cursor: pointer;
+}
+.error {
+  border: 1px solid #f00 !important;
+}
+.error-note {
+  color: #f00;
 }
 .form-group {
   margin-bottom: 10px;

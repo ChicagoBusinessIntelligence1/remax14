@@ -10,9 +10,17 @@ angular.module('app')
         map: '=',
         description: '@',
         info: '=',
-        isShown: '='
+        initiallyOpen: '='
       },
       link: function ($scope, element, attr) {
+        if ($scope.initiallyOpen) {
+          $scope.isVisible = true;
+        } else {
+          $scope.isVisible = false;
+        }
+        $scope.toggleShow = function () {
+          $scope.isVisible = !$scope.isVisible;
+        };
       }
     };
   });

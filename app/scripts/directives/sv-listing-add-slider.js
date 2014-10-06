@@ -18,7 +18,7 @@ angular.module('app')
           if (validity) {
             $scope.isSaveDisabled = false;
           } else {
-            $scope.isSaveDisabled = true;
+            $scope.isSaveDisabled = truew;
           }
         });
 

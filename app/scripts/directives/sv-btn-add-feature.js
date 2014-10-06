@@ -1,16 +1,20 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBtnRoom', function () {
+  .directive('svBtnAddFeature', function () {
     return {
       restrict: 'E',
       replace: true,
-      template: '<button class="btn btn-primary btn-sm" name="{{nameId}}" id="{{nameId}}">' +
+      template:
+      '<div class="form-group">' +
+      '<button class="btn btn-primary btn-sm" name="{{nameId}}" id="{{nameId}}">' +
       '<i class="fa fa-plus fa-fw"></i>' +
       '{{titleCap}}' +
-      '</button>',
+      '</button>' +
+      '</div>',
       scope: {
-        title: '@',
+        form:'=',
+        title: '@'
       },
 
       link: function ($scope, element, attr) {

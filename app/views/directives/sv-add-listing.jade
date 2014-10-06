@@ -1,54 +1,26 @@
 h3 New Listing
 hr
 form.new-listing-form(name="add-listing-form" id="add-listing-form")
-  .head-panel
-    .row
-      .col-xs-11
-        ul.list-inline
-          li
-            h4.text-info Property Description
-          li
-            a(href="")
-              i.fa.fa-save.fa-fw
-      .col-xs-1.text-right
-        a(href="")
-          i.fa.fa-angle-double-down.fa-fw
-  .panel.panel-default.panel-listing
+  sv-listing-add-slider(title='Property Description' initially-open='true')
     .row
       .col-md-4
-        .form-group
-          label Street:
-          input.form-control(type='text' name='street' id='street' )
+        sv-txt(title='Street' r='true')
       .col-md-4
-        .form-group
-          label City
-          input.form-control(type='text' name='city' id='city' )
-      .col-md-2
-        .form-group
-          label State
-          input.form-control(type='text' name='state' id='state' )
-      .col-md-2
-        .form-group
-          label Zip
-          input.form-control(type='text' name='zip' id='zip' )
+        sv-txt(title='City' r='true')
+      .col-md-4
+        sv-txt(title='State' r='true')
+      .col-md-4
+        sv-txt(title='Zip' r='true')
     .row
       .col-md-12
-        .form-group
-          label Property Details
-          textarea.form-control(type='text' name='property-details' id='property-details' rows='10' )
+        sv-area(title='Property Details' r='true')
     .row
-      .col-sm-4
-        .form-group
-          label Property Type:
-          input.form-control(type='text' name='property-type' id='property-type' required)
-      .col-sm-4
-        .form-group
-          label Year of Build
-          input.form-control(type='text' name='property-type' id='property-type' required)
-      .col-sm-4
-        .form-group
-          label MLS #
-          input.form-control(type='text' name='property-type' id='property-type' required)
+      .col-md-4
+        sv-txt(title='Property Type' r='true')
+      .col-md-4
+        sv-txt(title='Year of Build' r='true')
+      .col-md-4
+        sv-txt(title='MLS #' r='true')
     .row
       .col-sm-3
         sv-checkbox(title='Short Sale')
@@ -63,10 +35,7 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
         sv-txt(title='Bedrooms Number' r='true')
     .row
       .col-sm-3
-        .form-group
-          button.btn.btn-primary.btn-sm
-            i.fa.fa-plus.fa-fw
-            | Add Bedroom
+        sv-btn-add-feature(title='Add bedroom')
 
   sv-listing-add-slider(title='Bathrooms')
     .row
@@ -76,15 +45,9 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
         sv-txt(title='Half Bathrooms Number' r='true')
     .row
       .col-sm-3
-        .form-group
-          button.btn.btn-primary.btn-sm
-            i.fa.fa-plus.fa-fw
-            | Add Full Bathroom
+        sv-btn-add-feature(title='Add full bathroom')
       .col-sm-3
-        .form-group
-          button.btn.btn-primary.btn-sm
-            i.fa.fa-plus.fa-fw
-            | Add Half Bathroom
+        sv-btn-add-feature(title='Add half bathroom')
 
   sv-listing-add-slider(title='Dining Room')
     .row
@@ -125,8 +88,7 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
   sv-listing-add-slider(title='Other Rooms')
     .row
       .col-sm-3
-        .form-group
-          sv-btn-room(title='Add other room')
+        sv-btn-add-feature(title='Add other room')
 
   sv-listing-add-slider(title='Basement')
     .row
@@ -199,10 +161,7 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
         sv-checkbox(title='Bike Room')
     .row
       .col-sm-12
-        .form-group
-          button.btn.btn-primary.btn-sm
-            i.fa.fa-plus.fa-fw
-            | Add Feature
+        sv-btn-add-feature(title='Add feature')
   sv-listing-add-slider(title='Appliances')
     .row
       .col-md-2
@@ -219,7 +178,5 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
         sv-checkbox(title='Refrigerator')
     .row
       .col-sm-12
-        .form-group
-          button.btn.btn-primary.btn-sm
-            i.fa.fa-plus.fa-fw
-            | Add Feature
+        sv-btn-add-feature(title='Add more appliances')
+

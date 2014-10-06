@@ -8,10 +8,15 @@ angular.module('app')
       transclude: true,
       replace: true,
       scope: {
-        title: '@'
+        title: '@',
+        initiallyOpen: '='
       },
       link: function ($scope, element, attr) {
-        $scope.isVisible = true;
+        if ($scope.initiallyOpen) {
+          $scope.isVisible = true;
+        } else {
+          $scope.isVisible = false;
+        }
 
         $scope.toggleShow = function () {
 

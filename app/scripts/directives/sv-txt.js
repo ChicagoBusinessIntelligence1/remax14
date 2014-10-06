@@ -13,6 +13,7 @@ angular.module('app')
       '<span ng-show="r && form.$dirty && !text.val.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
+        form:'=',
         title: '@',
         maxLen: '=',
         r: '='
@@ -37,7 +38,7 @@ angular.module('app')
           }
         })
         $scope.titleCap = $scope.title.charAt(0).toUpperCase() + $scope.title.slice(1);
-        $scope.nameId = $scope.title.split(' ')[0].toLowerCase();
+        $scope.nameId = $scope.title.split(' ').join('-').toLowerCase();
 
       }
     };

@@ -1,4 +1,5 @@
 @import 'nib'
+
 @import 'functions'
 
 /**********************
@@ -6,9 +7,7 @@
 ***********************/
 
 .footer-container
-  background-color lighten(color-skin, 75%)
-  padding-left 10px
-  padding-right 10px
+  background-color lighten(color-skin, 85%)
   hr
     margin-top 0px
     margin-bottom 5px
@@ -38,3 +37,11 @@
   margin-top 10px
 
 
+.properties-footer
+  h5
+    color color-blue
+    text-shadow app-text-shadow
+  p
+    a
+      color lighten(color-blue, 30%)
+      text-shadow-blue app-text-shadow

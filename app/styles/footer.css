@@ -11,9 +11,7 @@ label {
     =footer
 ***********************/
 .footer-container {
-  background-color: #c9c9c9;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: #dfdfdf;
 }
 .footer-container hr {
   margin-top: 0px;
@@ -45,4 +43,12 @@ label {
 .copyright {
   display: inline-block;
   margin-top: 10px;
+}
+.properties-footer h5 {
+  color: #396c95;
+  text-shadow: app-text-shadow;
+}
+.properties-footer p a {
+  color: #659ac4;
+  text-shadow-blue: app-text-shadow;
 }

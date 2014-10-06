@@ -12,6 +12,16 @@ angular.module('app')
         initiallyOpen: '='
       },
       link: function ($scope, element, attr) {
+        $scope.isSaveDisabled = true;
+
+        $scope.$watch('form.$valid', function (validity) {
+          if (validity) {
+            $scope.isSaveDisabled = false;
+          } else {
+            $scope.isSaveDisabled = true;
+          }
+        });
+
         if ($scope.initiallyOpen) {
           $scope.isVisible = true;
         } else {

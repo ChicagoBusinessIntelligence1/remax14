@@ -51,23 +51,11 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
           input.form-control(type='text' name='property-type' id='property-type' required)
     .row
       .col-sm-3
-        ul.list-unstyled
-          li
-            h5.text-danger Short Sale
-          li
-            input(type='checkbox' name='short-sale' id='short-sale' )
+        sv-checkbox(title='Short Sale')
       .col-sm-3
-        ul.list-unstyled
-          li
-            h5.text-danger Foreclosure
-          li
-            input(type='checkbox' name='short-sale' id='short-sale' )
+        sv-checkbox(title='Foreclosure')
       .col-sm-3
-        ul.list-unstyled
-          li
-            h5.text-danger Bank Owned
-          li
-            input(type='checkbox' name='bank-owned' id='bank-owned' )
+        sv-checkbox(title='Bank Owned')
 
   sv-listing-add-slider(title='Bedrooms')
     .row
@@ -201,100 +189,36 @@ form.new-listing-form(name="add-listing-form" id="add-listing-form")
       .col-sm-3
         sv-txt(title='Sewer' r='true')
 
-  .head-panel
-    .row
-      .col-xs-11
-        ul.list-inline
-          li
-            h4.text-info Amenities and Communities Features
-          li
-            a(href="")
-              i.fa.fa-save.fa-fw
-      .col-xs-1.text-right
-        a(href="")
-          i.fa.fa-angle-double-down.fa-fw
-  .panel.panel-default.panel-listing
+  sv-listing-add-slider(title='Amenities and Communities Features')
     .row
       .col-md-3
-        ul.list-inline
-          li
-            h5 Elevator
-          li
-            input(type='checkbox' name='elevator' id='elevator' )
+        sv-checkbox(title='Elevator')
       .col-md-3
-        ul.list-inline
-          li
-            h5 Storage
-          li
-            input(type='checkbox' name='storage' id='storage' )
+        sv-checkbox(title='Storage')
       .col-md-3
-        ul.list-inline
-          li
-            h5 Sundeck
-          li
-            input(type='checkbox' name='sundeck' id='sundeck' )
+        sv-checkbox(title='Sundeck')
       .col-md-3
-        ul.list-inline
-          li
-            h5 Bike Room
-          li
-            input(type='checkbox' name='bike-room' id='bike-room' )
+        sv-checkbox(title='Bike Room')
     .row
       .col-sm-12
         .form-group
           button.btn.btn-primary.btn-sm
             i.fa.fa-plus.fa-fw
             | Add Feature
-  .head-panel
-    .row
-      .col-xs-11
-        ul.list-inline
-          li
-            h4.text-info Appliances
-          li
-            a(href="")
-              i.fa.fa-save.fa-fw
-      .col-xs-1.text-right
-        a(href="")
-          i.fa.fa-angle-double-down.fa-fw
-  .panel.panel-default.panel-listing
+  sv-listing-add-slider(title='Appliances')
     .row
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Oven/Range
-          li
-            input(type='checkbox' name='oven-range' id='oven-range' )
+        sv-checkbox(title='Oven/Range')
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Dishwasher
-          li
-            input(type='checkbox' name='dishwasher' id='dishwasher' )
+        sv-checkbox(title='Dishwasher')
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Washer
-          li
-            input(type='checkbox' name='washer' id='washer' )
+        sv-checkbox(title='Washer')
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Dryer
-          li
-            input(type='checkbox' name='dryer' id='dryer' )
+        sv-checkbox(title='Dryer')
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Microwave
-          li
-            input(type='checkbox' name='microwave' id='microwave' )
+        sv-checkbox(title='Microwave')
       .col-md-2
-        ul.list-unstyled
-          li
-            h5 Refrigerator
-          li
-            input(type='checkbox' name='refrigerator' id='refrigerator' )
+        sv-checkbox(title='Refrigerator')
     .row
       .col-sm-12
         .form-group

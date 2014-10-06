@@ -6,14 +6,10 @@ div
           li
             h4.text-info {{title}}
           li
-            button.btn.btn-link(ng-disabled='isSaveDisabled')
-              i.fa.fa-save.fa-fw
+            i.fa.fa-save.fa-fw
           li.pull-right
             i.fa.fa-angle-double-down.fa-fw
             //i.fa.fa-angle-double-up.fa-fw
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
-    .row
-      .col-md-3
-        form(name='form' novalidate='novalidate')
-          div(ng-transclude)
+    div(ng-transclude)
 

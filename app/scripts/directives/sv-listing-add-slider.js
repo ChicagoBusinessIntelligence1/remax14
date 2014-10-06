@@ -27,9 +27,7 @@ angular.module('app')
         } else {
           $scope.isVisible = false;
         }
-
         $scope.toggleShow = function () {
-
           $scope.isVisible = !$scope.isVisible;
         };
       }

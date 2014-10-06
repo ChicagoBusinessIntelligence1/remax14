@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('app')
-  .directive('svTxt', function () {
+  .directive('svArea', function () {
     return {
       restrict: 'E',
       replace: true,
       template:
       '<div class="form-group">' +
       '<label>{{titleCap}}:</label>' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="text.val" type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" />' +
+      '<textarea ng-class="{error:isMaxInvalid}" ng-model="area.val" type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" >{{area.val}}</textarea>' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
-      '<span ng-show="r && form.$dirty && !text.val.length" class="notice error-note">Required</span>' +
+      '<span ng-show="r && form.$dirty && !area.val.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
         title: '@',
@@ -20,9 +20,9 @@ angular.module('app')
       link: function ($scope, element, attr) {
         $scope.isMaxInvalid = false;
 
-        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 250;
+        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
 
-        $scope.$watch('text.val', function (newValue) {
+        $scope.$watch('area.val', function (newValue) {
           if (_.isUndefined(newValue)) {
             $scope.isMaxInvalid = false;
             return;

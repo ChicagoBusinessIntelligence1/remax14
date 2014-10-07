@@ -3053,6 +3053,14 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.add-container {
+  padding: 10px;
+}
+@media screen and (min-width: 992px) {
+  .btn-add-listing {
+    float: right;
+  }
+}
 .header-cteate-account {
   background-color: #3d3d3d !important;
   padding: 10px;
@@ -3080,6 +3088,25 @@ label {
 }
 .app-form .form-group {
   margin-bottom: 5px !important;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+.img-contain {
+  border: 1px #000 solid;
+  height: 150px;
+  background: url("../images/houses/4.jpg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: relative;
+  background-position: center;
 }
 .form-group {
   margin-bottom: 10px;

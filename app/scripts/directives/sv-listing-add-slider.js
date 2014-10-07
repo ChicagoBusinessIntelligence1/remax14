@@ -8,14 +8,17 @@ angular.module('app')
       transclude: true,
       replace: true,
       scope: {
+        form:'=',
+        save:'&',
         title: '@',
         open: '='
       },
       link: function ($scope, element, attr, cltrls, transclude) {
         $scope.isSaveDisabled = true;
 
-        transclude($scope, function(clone, scope) {
-          scope=$scope;
+        transclude($scope, function (clone, scope) {
+          var section = element.find('section');
+          section.append(clone);
         });
 
         $scope.$watch('form.$valid', function (validity) {

@@ -1,27 +1,26 @@
 h3 New Listing
 hr
 form.new-listing-form(name="form" id="form" novalidate='novalidate')
-  sv-listing-add-slider(title='Property Description' open='true')
-    div open {{open}}
+  sv-listing-add-slider(title='Property Description' open='true' form='form' save='saveDescription()')
     .row
       .col-md-4
-        sv-txt(title='Street' model='street')
+        sv-txt(title='Street' open='open' is-saved='isSaved' )
       .col-md-4
-        sv-txt(title='City' form='form' r='true')
+        sv-txt(title='City' r='true' open='open' is-saved='isSaved' )
       .col-md-4
-        sv-txt(title='State' form='form' r='true')
+        sv-txt(title='State' r='true' open='open' is-saved='isSaved' )
       .col-md-4
-        sv-txt(title='Zip'  form='form' r='true')
+        sv-txt(title='Zip'  r='true' open='open' is-saved='isSaved' )
     .row
       .col-md-12
-        sv-area(title='Property Details' r='true' )
+        sv-area(title='Property Details' r='true' open='open' is-saved='isSaved' )
     .row
       .col-md-4
-        sv-txt(title='Property Type' )
+        sv-txt(title='Property Type' open='open' is-saved='isSaved' )
       .col-md-4
-        sv-txt(title='Year of Build' )
+        sv-txt(title='Year of Build' open='open' is-saved='isSaved' )
       .col-md-4
-        sv-txt(title='MLS #' )
+        sv-txt(title='MLS #' open='open' is-saved='isSaved' )
     .row
       .col-sm-3
         sv-checkbox(title='Short Sale')
@@ -31,7 +30,7 @@ form.new-listing-form(name="form" id="form" novalidate='novalidate')
         sv-checkbox(title='Bank Owned')
     .row
       .col-sm-12
-        sv-btn-save(title='Save description' form='form')
+        sv-btn-save(save='save()' title='Save description' form='form')
 
   sv-listing-add-slider(title='Bedrooms')
     .row

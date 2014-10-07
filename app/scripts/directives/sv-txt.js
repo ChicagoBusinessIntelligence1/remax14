@@ -8,16 +8,15 @@ angular.module('app')
       template:
       '<div class="form-group">' +
       '<label>{{titleCap}}:</label>' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="model" type="text" name="{{nameId}}" id="{{nameId}}" ' +
+      '<input ng-class="{error:isMaxInvalid}" ng-model="txt.val" ng-disabled="!r && !open && !isSaved" type="text" name="{{nameId}}" id="{{nameId}}" ' +
       'class="form-control" ng-required="r" />' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
-      '<span ng-show="r && !text.val.length" class="notice error-note">Required</span>' +
+      '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
-        initiallyOpen:'=',
+        open:'=',
         isSaved:'=',
         form:'=',
-        model:'=',
         title: '@',
         maxLen: '=',
         r: '='
@@ -39,10 +38,12 @@ angular.module('app')
 
           if (newValue.length <= $scope.max) {
             $scope.isMaxInvalid = false;
+
           }
         })
+
         $scope.titleCap = $scope.title.charAt(0).toUpperCase() + $scope.title.slice(1);
-        $scope.nameId = $scope.title.split(' ').join('-').toLowerCase();
+        $scope.nameId = _.str.camelize($scope.title.split(' ').join('-').toLowerCase());
 
       }
     };

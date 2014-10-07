@@ -38,7 +38,7 @@ angular.module('app')
           }
         })
         $scope.titleCap = $scope.title.charAt(0).toUpperCase() + $scope.title.slice(1);
-        $scope.nameId = $scope.title.split(' ')[0].toLowerCase();
+        $scope.nameId = _.str.camelize($scope.title.split(' ').join('-').toLowerCase());
 
       }
     };

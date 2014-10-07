@@ -1,9 +1,12 @@
-ul.nav.navbar-nav
-  li
-    a.btn.btn-link(ui-sref='app.profile.user-profile') Home
-  li
-    a.btn.btn-link(ui-sref='app.profile.listings') My Listings
-  li
-    a.btn.btn-link.text-info(ui-sref='app.profile.manage-listings') Add New Listing
-  li
-    a.btn.btn-link(ui-sref='app.profile.user-profile') Account settings
+.row
+  .col-sm-9
+    ul.nav.navbar-nav
+      li
+        a.btn.btn-link(ui-sref='app.profile.user-profile') Home
+      li
+        a.btn.btn-link(ui-sref='app.profile.listings') My Listings
+      li
+        a.btn.btn-link(ui-sref='app.profile.user-profile') Account settings
+  .col-sm-r
+    .add-container.text-center
+      button.btn.btn-default.text-info.btn-add-listing(ui-sref='app.profile.manage-listings') Add New Listing

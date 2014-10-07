@@ -10,6 +10,14 @@ label {
 /**********************
      =profile
 ***********************/
+.add-container {
+  padding: 10px;
+}
+@media screen and (min-width: 992px) {
+  .btn-add-listing {
+    float: right;
+  }
+}
 .header-cteate-account {
   background-color: #3d3d3d !important;
   padding: 10px;

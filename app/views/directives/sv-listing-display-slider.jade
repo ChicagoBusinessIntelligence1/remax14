@@ -16,13 +16,13 @@ div
     .row
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li(ng-repeat='p in info' ng-hide='$even')
-            span {{p.$id}}:
-            span {{p.$value}}
+          li(ng-repeat='(id, p) in info' ng-hide='$even')
+            span {{id}} :
+            span {{p}}
 
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li(ng-repeat='p in info' ng-hide='$odd')
-            span {{p.$id}}:
-            span {{p.$value}}
+          li(ng-repeat='(id, p) in info' ng-hide='$odd')
+            span {{id}}:
+            span {{p}}
 

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSlider', function () {
+  .directive('svListingDisplaySlider', function () {
     return {
       restrict: 'E',
-      templateUrl: '../../views/directives/sv-home-slider.html',
+      templateUrl: '../../views/directives/sv-listing-display-slider.html',
       scope: {
         title: '@',
         map: '=',

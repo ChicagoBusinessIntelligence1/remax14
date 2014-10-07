@@ -9,7 +9,11 @@ angular.module('app')
 
       },
       link: function ($scope, element, attr) {
+        $scope.isSaved=false;
 
+        $scope.saveDescription = function () {
+
+        };
       }
     };
   });

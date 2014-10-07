@@ -10,7 +10,7 @@ angular.module('app')
       '<label>{{titleCap}}:</label>' +
       '<textarea ng-class="{error:isMaxInvalid}" ng-model="area.val" type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" placeholder="{{placeholder}}" ng-required="r" >{{area.val}}</textarea>' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
-      '<span ng-show="r && form.$dirty && !area.val.length" class="notice error-note">Required</span>' +
+      '<span ng-show="r && !area.val.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
         title: '@',

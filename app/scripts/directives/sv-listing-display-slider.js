@@ -4,10 +4,10 @@ angular.module('app')
   .directive('svListingDisplaySlider', function () {
     return {
       restrict: 'E',
+      replace: true,
       templateUrl: '../../views/directives/sv-listing-display-slider.html',
       scope: {
         title: '@',
-        map: '=',
         description: '@',
         info: '=',
         initiallyOpen: '='

@@ -9,10 +9,14 @@ angular.module('app')
       replace: true,
       scope: {
         title: '@',
-        initiallyOpen: '='
+        open: '='
       },
-      link: function ($scope, element, attr) {
+      link: function ($scope, element, attr, cltrls, transclude) {
         $scope.isSaveDisabled = true;
+
+        transclude($scope, function(clone, scope) {
+          scope=$scope;
+        });
 
         $scope.$watch('form.$valid', function (validity) {
           if (validity) {
@@ -22,7 +26,7 @@ angular.module('app')
           }
         });
 
-        if ($scope.initiallyOpen) {
+        if ($scope.open) {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;

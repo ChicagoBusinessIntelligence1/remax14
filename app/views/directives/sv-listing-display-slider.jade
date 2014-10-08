@@ -17,8 +17,7 @@ div
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
     .row(ng-if='title==="2_propertyDescription"')
       .col-md-12
-        div {{area.val}}
-        p(ng-if='!isEdit') {{info.text}}
+        p(ng-if='!isEdit') {{house[title]}}
         sv-area(ng-if='isEdit' house='house' label='{{title}}' area='area')
     .row(ng-if='title!=="2_propertyDescription"')
       .col-sm-6.col-xs-12

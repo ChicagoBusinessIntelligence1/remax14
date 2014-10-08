@@ -3975,3 +3975,6 @@ Selected House
   -webkit-border-radius: 9px;
   border-radius: 9px;
 }
+.btn-padding {
+  padding: 20;
+}

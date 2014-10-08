@@ -8,10 +8,16 @@ angular.module('app')
       scope: {},
       link: function ($scope, element, attr) {
         var mls = $stateParams.mls;
-        var houseRepo = 'https://remax14.firebaseio.com/houses/'+mls;
+        var houseRepo = 'https://remax14.firebaseio.com/houses/' + mls;
 
-        var house = $firebase(new Firebase(houseRepo)).$asObject();
-        house.$bindTo($scope, 'house');
+        $scope.house = $firebase(new Firebase(houseRepo)).$asObject();
+
+        $scope.updateHouse = function (house) {
+          $scope.house = house;
+          $scope.house.$save();
+
+        };
+
       }
     };
   });

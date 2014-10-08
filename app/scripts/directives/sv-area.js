@@ -6,10 +6,9 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<div class="form-group">' +
-      '<textarea ng-class="{error:isMaxInvalid}" ng-model="area.val" type="text" name="{{nameId}}" id="{{nameId}}" rows="10" class="form-control"  ng-required="r" ></textarea>' +
+      '<textarea ng-class="{error:isMaxInvalid}" ng-model="house[label]" type="text" name="{{nameId}}" id="{{nameId}}" rows="10" class="form-control"  ng-required="r" ></textarea>' +
       '</div>',
       scope: {
-        area: '=',
         house: '=',
         label: '@',
         placeholder: "@",
@@ -18,7 +17,6 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
 
-        $scope.area.val = $scope.house[$scope.label].text;
 
         $scope.isMaxInvalid = false;
 

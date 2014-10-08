@@ -10,7 +10,8 @@ angular.module('app')
         house: '=',
         title: '@',
         description: '@',
-        info: '='
+        info: '=',
+        updateHouse: '&'
       },
       link: function ($scope, element, attr) {
         $scope.isEdit = false;
@@ -19,10 +20,7 @@ angular.module('app')
           $scope.isEdit = true;
         };
 
-        $scope.saveListing = function (value) {
-          $scope.house[$scope.title] = value;
-          $scope.isEdit = false;
-        };
+
 
         if ($scope.title === '1_generalInformation' || $scope.title === '2_propertyDescription') {
           $scope.isVisible = true;

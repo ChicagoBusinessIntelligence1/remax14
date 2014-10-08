@@ -6,10 +6,10 @@ div
           li
             h4.text-info {{title | keyConversion}}
           li
-            button.btn.btn-link(ng-show='!isEdit')
-              i.fa.fa-edit.fa-fw(ng-click='editListing()')
-            button.btn.btn-link(ng-show='isEdit')
-              i.fa.fa-save.fa-fw(ng-click='saveListing(area.val)')
+            button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
+              i.fa.fa-edit.fa-fw
+            button.btn.btn-link(ng-show='isEdit')(ng-click='updateHouse({house:house})')
+              i.fa.fa-save.fa-fw
           li.pull-right(ng-click='toggleShow()')
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')

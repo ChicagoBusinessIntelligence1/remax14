@@ -4,20 +4,23 @@ div
       .col-xs-12
         ul.list-inline
           li
-            h4.text-info {{title}}
+            h4.text-info {{title | keyConversion}}
           li
-            a(href="")
+            button.btn.btn-link(ng-show='!isEdit')
               i.fa.fa-edit.fa-fw(ng-click='editListing()')
+            button.btn.btn-link(ng-show='isEdit')
+              i.fa.fa-save.fa-fw(ng-click='saveListing(area.val)')
           li.pull-right(ng-click='toggleShow()')
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
               i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
-    .row(ng-if='title==="Property Description"')
+    .row(ng-if='title==="2_propertyDescription"')
       .col-md-12
-        p {{info.text}}
-        sv-area
-    .row(ng-if='title!=="Property Description"')
+        div {{area.val}}
+        p(ng-if='!isEdit') {{info.text}}
+        sv-area(ng-if='isEdit' house='house' label='{{title}}' area='area')
+    .row(ng-if='title!=="2_propertyDescription"')
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
           li(ng-repeat='(id, p) in info' ng-hide='$even')

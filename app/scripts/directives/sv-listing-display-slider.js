@@ -7,22 +7,24 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-listing-display-slider.html',
       scope: {
+        house: '=',
         title: '@',
         description: '@',
         info: '='
       },
       link: function ($scope, element, attr) {
         $scope.isEdit = false;
-
+        $scope.area = {};
         $scope.editListing = function () {
           $scope.isEdit = true;
         };
 
-        $scope.saveListing = function () {
+        $scope.saveListing = function (value) {
+          $scope.house[$scope.title] = value;
           $scope.isEdit = false;
         };
 
-        if ($scope.title === 'General Information' || $scope.title === 'Property Description') {
+        if ($scope.title === '1_generalInformation' || $scope.title === '2_propertyDescription') {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;

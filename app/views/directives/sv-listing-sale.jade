@@ -32,7 +32,7 @@ div
 
   ul.list-unstyled
     li(ng-repeat='(k,v) in house')
-      sv-listing-display-slider(title='{{k | keyConversion}}' info='v')
+      sv-listing-display-slider(title='{{k}}' info='v' house='house')
   .head-panel
     .row
       .col-xs-12

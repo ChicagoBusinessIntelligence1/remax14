@@ -7,18 +7,20 @@ angular.module('app')
       replace: true,
       template:
       '<div class="form-group">' +
-      '<label>{{titleCap}}:</label>' +
-      '<textarea ng-class="{error:isMaxInvalid}" ng-model="area.val" type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" placeholder="{{placeholder}}" ng-required="r" >{{area.val}}</textarea>' +
-      '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
-      '<span ng-show="r && !area.val.length" class="notice error-note">Required</span>' +
+      '<textarea ng-class="{error:isMaxInvalid}" ng-model="area.val" type="text" name="{{nameId}}" id="{{nameId}}" rows="10" class="form-control"  ng-required="r" ></textarea>' +
       '</div>',
       scope: {
-        title: '@',
+        area:'=',
+        house:'=',
+        label: '@',
         placeholder: "@",
         maxLen: '=',
         r: '='
       },
       link: function ($scope, element, attr) {
+
+        $scope.area.val=$scope.house[$scope.label].text;
+
         $scope.isMaxInvalid = false;
 
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
@@ -37,8 +39,8 @@ angular.module('app')
             $scope.isMaxInvalid = false;
           }
         })
-        $scope.titleCap = $scope.title.charAt(0).toUpperCase() + $scope.title.slice(1);
-        $scope.nameId = _.str.camelize($scope.title.split(' ').join('-').toLowerCase());
+        $scope.labelCap = $scope.label.charAt(0).toUpperCase() + $scope.label.slice(1);
+        $scope.nameId = _.str.camelize($scope.label.split(' ').join('-').toLowerCase());
 
       }
     };

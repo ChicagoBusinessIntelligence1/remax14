@@ -12,7 +12,17 @@ angular.module('app')
         info: '='
       },
       link: function ($scope, element, attr) {
-        if ($scope.title==='General Information') {
+        $scope.isEdit = false;
+
+        $scope.editListing = function () {
+          $scope.isEdit = true;
+        };
+
+        $scope.saveListing = function () {
+          $scope.isEdit = false;
+        };
+
+        if ($scope.title === 'General Information' || $scope.title === 'Property Description') {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;

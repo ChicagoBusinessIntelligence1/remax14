@@ -12,7 +12,6 @@ angular.module('app')
 
         var house = $firebase(new Firebase(houseRepo)).$asObject();
         house.$bindTo($scope, 'house');
-
       }
     };
   });

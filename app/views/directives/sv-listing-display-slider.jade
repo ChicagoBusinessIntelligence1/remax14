@@ -1,11 +1,14 @@
 div
-  .head-panel.cursor-p(ng-click='toggleShow()')
+  .head-panel.cursor-p
     .row
       .col-xs-12
         ul.list-inline
           li
             h4.text-info {{title}}
-          li.pull-right
+          li
+            a(href="")
+              i.fa.fa-edit.fa-fw(ng-click='editListing()')
+          li.pull-right(ng-click='toggleShow()')
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
               i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
@@ -13,6 +16,7 @@ div
     .row(ng-if='title==="Property Description"')
       .col-md-12
         p {{info.text}}
+        sv-area
     .row(ng-if='title!=="Property Description"')
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled

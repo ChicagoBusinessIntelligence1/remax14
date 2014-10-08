@@ -4,7 +4,7 @@
   .alert.alert-address
     .row
       .col-md-9.col-xs-12
-        a.text-app.address-basic(ui-sref='app.profile.one-listing')
+        a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:12345678})')
           | Morton Grove IL 60053
       .col-md-3.col-xs-12
         a.price-style(ui-sref='app.profile.one-listing')
@@ -34,7 +34,7 @@
 
   .row
     .col-sm-7
-      a.thumbnail(ui-sref='app.profile.one-listing')
+      a.thumbnail(ui-sref='app.profile.one-listing({mls:012345678})')
         sv-photo-thumb(img='../images/houses/9.jpg' height='270')
       //img.img-responsive(ng-src="../images/houses/1.jpg")
     .col-sm-5
@@ -48,7 +48,7 @@
           | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. &nbsp
           span
             em
-              a(ui-sref='app.profile.one-listing').read-more  Read more...
+              a(ui-sref='app.profile.one-listing({mls:012345678})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

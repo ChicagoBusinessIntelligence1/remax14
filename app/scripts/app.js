@@ -69,7 +69,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         templateUrl: "../views/user-profile.html"
       })
       .state("app.profile.one-listing", {
-        url: "/remax-property-listing",
+        url: "/remax-property-sale/:mls",
         controller: "OneListingCtrl",
         templateUrl: "../views/one-listing.html"
       })

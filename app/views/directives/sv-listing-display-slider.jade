@@ -10,19 +10,19 @@ div
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
               i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
-    .row
+    .row(ng-if='title==="Property Description"')
       .col-md-12
-        p {{description}}
-    .row
+        p {{info.text}}
+    .row(ng-if='title!=="Property Description"')
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
           li(ng-repeat='(id, p) in info' ng-hide='$even')
-            span {{id}} :
-            span {{p}}
+            span {{id | keyConversion}} :
+            span {{p | boolToBinery}}
 
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
           li(ng-repeat='(id, p) in info' ng-hide='$odd')
-            span {{id}}:
-            span {{p}}
+            span {{id | keyConversion}} :
+            span {{p | boolToBinery}}
 

@@ -9,11 +9,10 @@ angular.module('app')
       scope: {
         title: '@',
         description: '@',
-        info: '=',
-        initiallyOpen: '='
+        info: '='
       },
       link: function ($scope, element, attr) {
-        if ($scope.initiallyOpen) {
+        if ($scope.title==='General Information') {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;

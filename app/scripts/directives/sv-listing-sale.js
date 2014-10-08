@@ -1,16 +1,17 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function ($firebase) {
+  .directive('svListingSale', function ($firebase, $stateParams) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
       scope: {},
       link: function ($scope, element, attr) {
+        var mls = $stateParams.mls;
+        var houseRepo = 'https://remax14.firebaseio.com/houses/'+mls;
 
-        var repo = 'https://remax14.firebaseio.com/houses/house1';
-        var house1 = $firebase(new Firebase(repo)).$asObject();
-        house1.$bindTo($scope, 'house1');
+        var house = $firebase(new Firebase(houseRepo)).$asObject();
+        house.$bindTo($scope, 'house');
 
       }
     };

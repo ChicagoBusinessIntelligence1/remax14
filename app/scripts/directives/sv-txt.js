@@ -14,10 +14,11 @@ angular.module('app')
       '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
+        house:"=",
+        title: '@',
         open:'=',
         isSaved:'=',
         form:'=',
-        title: '@',
         maxLen: '=',
         r: '='
       },

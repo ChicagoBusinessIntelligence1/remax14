@@ -27,11 +27,9 @@ angular.module('app')
             $scope.isMaxInvalid = false;
             return;
           }
-
           if (newValue.length > $scope.max) {
             $scope.isMaxInvalid = true;
           }
-
           if (newValue.length <= $scope.max) {
             $scope.isMaxInvalid = false;
           }

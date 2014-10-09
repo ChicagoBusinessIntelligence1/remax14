@@ -19,18 +19,19 @@ div
       .col-md-12
         p(ng-if='!isEdit') {{house[title]}}
         sv-area(ng-if='isEdit' house='house' label='{{title}}' area='area')
-    .row(ng-if='title!=="2_propertyDescription"')
+    .row
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li(ng-if='!isEdit' ng-repeat='(id, p) in info' ng-hide='$even')
+          li(ng-repeat='(id, p) in info track by $index' ng-hide='$even')
             span {{id | keyConversion}} :
-            span {{p | boolToBinery}}
-          li(ng-if='isEdit')
-            sv-txt(house='house' label='{{title}}' area='area')
+            span(ng-if='!isEdit') {{p }}
+            div(ng-if='isEdit'): sv-txt(house='house' title='{{title}}' label='{{id}}')
 
-      .col-sm-6.col-xs-12
-        ul.ul-data-just.list-unstyled
-          li(ng-repeat='(id, p) in info' ng-hide='$odd')
-            span {{id | keyConversion}} :
-            span {{p | boolToBinery}}
+
+
+      //.col-sm-6.col-xs-12
+      //  ul.ul-data-just.list-unstyled
+      //    li(ng-repeat='(id, p) in info track by $index' ng-hide='$odd')
+      //      span {{id | keyConversion}} :
+      //      span {{p | boolToBinery}}
 

@@ -14,8 +14,10 @@ angular.module('app')
         updateHouse: '&'
       },
       link: function ($scope, element, attr) {
-        $scope.isEdit = false;
+        $scope.isEdit = true;
         $scope.area = {};
+
+
         $scope.editListing = function () {
           $scope.isEdit = true;
         };

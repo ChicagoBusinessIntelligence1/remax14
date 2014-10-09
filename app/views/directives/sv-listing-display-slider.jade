@@ -8,7 +8,7 @@ div
           li
             button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
               i.fa.fa-edit.fa-fw
-            button.btn.btn-link(ng-show='isEdit')(ng-click='updateHouse({house:house})')
+            button.btn.btn-link(ng-show='isEdit')(ng-click='updateHouse({house:house}); isEdit=false')
               i.fa.fa-save.fa-fw
           li.pull-right(ng-click='toggleShow()')
             a.pull-right(href="")
@@ -22,9 +22,11 @@ div
     .row(ng-if='title!=="2_propertyDescription"')
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li(ng-repeat='(id, p) in info' ng-hide='$even')
+          li(ng-if='!isEdit' ng-repeat='(id, p) in info' ng-hide='$even')
             span {{id | keyConversion}} :
             span {{p | boolToBinery}}
+          li(ng-if='isEdit')
+            sv-txt(house='house' label='{{title}}' area='area')
 
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled

@@ -7,8 +7,8 @@ angular.module('app')
       replace: true,
       template:
       '<div class="form-group">' +
-      '<label>{{titleCap}}:</label>' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="txt.val" ng-disabled="!r && !open && !isSaved" type="text" name="{{nameId}}" id="{{nameId}}" ' +
+      '<label>{{labelCap}}:</label>' +
+      '<input ng-class="{error:isMaxInvalid}" ng-model="house[label]" ng-disabled="!r && !open && !isSaved" type="text" name="{{nameId}}" id="{{nameId}}" ' +
       'class="form-control" ng-required="r" />' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
       '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +
@@ -16,6 +16,7 @@ angular.module('app')
       scope: {
         house:"=",
         title: '@',
+        label: '@',
         open:'=',
         isSaved:'=',
         form:'=',
@@ -43,9 +44,8 @@ angular.module('app')
           }
         })
 
-        $scope.titleCap = $scope.title.charAt(0).toUpperCase() + $scope.title.slice(1);
-        $scope.nameId = _.str.camelize($scope.title.split(' ').join('-').toLowerCase());
-
+        $scope.labelCap = $scope.label.charAt(0).toUpperCase() + $scope.label.slice(1);
+        $scope.nameId = _.str.camelize($scope.label.split(' ').join('-').toLowerCase());
       }
     };
   });

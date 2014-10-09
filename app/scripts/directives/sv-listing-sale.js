@@ -13,6 +13,7 @@ angular.module('app')
         $scope.house = $firebase(new Firebase(houseRepo)).$asObject();
 
         $scope.updateHouse = function (house) {
+          //when click on button 
           $scope.house = house;
           $scope.house.$save();
 

@@ -10,12 +10,12 @@ angular.module('app')
         house: '=',
         title: '@',
         description: '@',
-        info: '=',
         updateHouse: '&'
       },
       link: function ($scope, element, attr) {
-        $scope.isEdit = true;
+        $scope.isEdit = false;
         $scope.area = {};
+
 
 
         $scope.editListing = function () {

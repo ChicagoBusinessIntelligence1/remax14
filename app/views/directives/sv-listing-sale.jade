@@ -32,17 +32,17 @@ div
 
   ul.list-unstyled
     li(ng-repeat='(k,v) in house')
-      sv-listing-display-slider(title='{{k}}' info='v' house='house' update-house='updateHouse(house)')
-  .head-panel
-    .row
-      .col-xs-12
-        ul.list-inline
-          li
-            h4.text-info Location
-          li.pull-right
-            a.pull-right(href="")
-              i.fa.fa-angle-double-down.fa-fw
-  .panel.panel-default.panel-listing
-    .row
-      .col-xs-12
-        img.thumbnail.img-responsive(ng-src="../images/listing/map-mock.png")
+      sv-listing-display-slider(title='{{k}}' house='house' update-house='updateHouse(house)')
+  //.head-panel
+  //  .row
+  //    .col-xs-12
+  //      ul.list-inline
+  //        li
+  //          h4.text-info Location
+  //        li.pull-right
+  //          a.pull-right(href="")
+  //            i.fa.fa-angle-double-down.fa-fw
+  //.panel.panel-default.panel-listing
+  //  .row
+  //    .col-xs-12
+  //      img.thumbnail.img-responsive(ng-src="../images/listing/map-mock.png")

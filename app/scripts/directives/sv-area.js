@@ -6,13 +6,12 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<div class="form-group">' +
-      '<textarea ng-class="{error:isMaxInvalid}" ng-model="house[label]" type="text" name="{{nameId}}" id="{{nameId}}" rows="10" class="form-control"  ng-required="r" ></textarea>' +
+      '<textarea ng-class="{error:isMaxInvalid}" ng-model="house[title][label].value" type="text" name="{{nameId}}" id="{{nameId}}" rows="5" class="form-control"  ng-required="r" ></textarea>' +
       '</div>',
       scope: {
         house: '=',
         label: '@',
-        placeholder: "@",
-        maxLen: '=',
+        title:'@',
         r: '='
       },
       link: function ($scope, element, attr) {

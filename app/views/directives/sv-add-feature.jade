@@ -1,0 +1,11 @@
+div
+  button.btn.btn-default(ng-click='showAddFields()' ng-show='!isStateAdded') Add New Property
+  div(ng-show='isStateAdded')
+    div.row
+      div.col-sm-5
+        input(type='text' placeholder='name' ng-model='newFieldName.val').form-control
+      div.col-sm-7
+        sv-new-field
+    div
+      button.btn.btn-sm.btn-default(ng-click='cancelNewField()' ) Cancel
+      button.btn.btn-sm.btn-default(ng-click='addNewField()' ng-disabled='!newFieldName.val || !selectedType' ) Add

@@ -8,30 +8,21 @@ div
           li
             button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
               i.fa.fa-edit.fa-fw
-            button.btn.btn-link(ng-show='isEdit')(ng-click='updateHouse({house:house}); isEdit=false')
+            button.btn.btn-link(ng-show='isEdit' ng-click='updateHouse({house:house}); isEdit=false')
               i.fa.fa-save.fa-fw
           li.pull-right(ng-click='toggleShow()')
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
               i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
-    .row(ng-if='title==="2_propertyDescription"')
-      .col-md-12
-        p(ng-if='!isEdit') {{house[title]}}
-        sv-area(ng-if='isEdit' house='house' label='{{title}}' area='area')
     .row
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li(ng-repeat='(id, p) in info track by $index' ng-hide='$even')
-            span {{id | keyConversion}} :
-            span(ng-if='!isEdit') {{p }}
-            div(ng-if='isEdit'): sv-txt(house='house' title='{{title}}' label='{{id}}')
-
-
-
-      //.col-sm-6.col-xs-12
-      //  ul.ul-data-just.list-unstyled
-      //    li(ng-repeat='(id, p) in info track by $index' ng-hide='$odd')
-      //      span {{id | keyConversion}} :
-      //      span {{p | boolToBinery}}
-
+          li.row(ng-repeat='(id, p) in house[title] track by $index' )
+            div.bold.col-sm-5 {{id | keyConversion}}:
+            div.col-sm-7(ng-if='!isEdit') {{p.value | boolToBinery}}
+            div.col-sm-7(ng-switch='p.type' ng-if='isEdit')
+              sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
+              sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
+              sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+        sv-add-feature(house='house' title='{{title}}' ng-show='isEdit')

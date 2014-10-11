@@ -16,9 +16,7 @@ angular.module('app')
           //when click on button
           $scope.house = house;
           $scope.house.$save();
-
         };
-
       }
     };
   });

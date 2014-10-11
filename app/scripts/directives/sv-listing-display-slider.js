@@ -10,6 +10,7 @@ angular.module('app')
         house: '=',
         title: '@',
         description: '@',
+        open: '=',
         updateHouse: '&'
       },
       link: function ($scope, element, attr) {
@@ -20,7 +21,11 @@ angular.module('app')
           $scope.isEdit = true;
         };
 
-        if ($scope.title === '1_generalInformation' || $scope.title === '2_propertyDescription') {
+        $scope.cancelEditListing = function () {
+          $scope.isEdit = false;
+        };
+
+        if ($scope.title === '01_generalInformation' || $scope.title === '02_propertyDescription') {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;

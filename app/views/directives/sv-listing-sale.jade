@@ -3,7 +3,13 @@ div
     .col-sm-6.col-xs-12
       h5.prop-type.text-info Single Family Home
     .col-sm-6.col-xs-12.sale-type
-      h5.label.label-danger Short Sale
+      ul.list-inline
+        li(ng-show="house['01_generalInformation']['08_short_sale'].value")
+          h5.label.label-danger Short Sale
+        li(ng-show="house['01_generalInformation']['10_bank_owned'].value")
+          h5.label.label-info Bank Owned
+        li(ng-show="house['01_generalInformation']['09_foreclosure'].value")
+          h5.label.label-success Foreclosure
   .alert.alert-address
     .row
       .col-md-10
@@ -32,7 +38,7 @@ div
 
   ul.list-unstyled
     li(ng-repeat='(k,v) in house')
-      sv-listing-display-slider(title='{{k}}' house='house' update-house='updateHouse(house)')
+      sv-listing-display-slider(title='{{k}}' house='house' update-house='updateHouse(house)' open='true' )
   //.head-panel
   //  .row
   //    .col-xs-12

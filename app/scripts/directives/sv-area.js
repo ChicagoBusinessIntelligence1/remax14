@@ -11,12 +11,10 @@ angular.module('app')
       scope: {
         house: '=',
         label: '@',
-        title:'@',
+        title: '@',
         r: '='
       },
       link: function ($scope, element, attr) {
-
-
         $scope.isMaxInvalid = false;
 
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
@@ -35,7 +33,6 @@ angular.module('app')
         })
         $scope.labelCap = $scope.label.charAt(0).toUpperCase() + $scope.label.slice(1);
         $scope.nameId = _.str.camelize($scope.label.split(' ').join('-').toLowerCase());
-
       }
     };
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingDisplaySlider', function () {
+  .directive('svListingDisplaySlider', function ($filter) {
     return {
       restrict: 'E',
       replace: true,
@@ -17,7 +17,11 @@ angular.module('app')
         $scope.isEdit = false;
         $scope.area = {};
 
+
+        $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
+
         $scope.editListing = function () {
+
           $scope.isEdit = true;
         };
 

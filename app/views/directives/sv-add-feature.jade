@@ -6,6 +6,7 @@ div
         input(type='text' placeholder='name' ng-model='newFieldName.val').form-control
       div.col-sm-7
         sv-new-field
+        div {{isAreaHidden}}
     div
       button.btn.btn-sm.btn-default(ng-click='cancelNewField()' ) Cancel
       button.btn.btn-sm.btn-default(ng-click='addNewField()' ng-disabled='!newFieldName.val || !selectedType' ) Add

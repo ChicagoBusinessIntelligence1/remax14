@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svAddFeature', function () {
+  .directive('svAddFeature', function ($filter) {
     return {
       restrict: 'E',
       replace: true,
@@ -11,9 +11,15 @@ angular.module('app')
         title: '@'
       },
       link: function ($scope, element, attr) {
+
+
         $scope.isStateAdded = false;
         $scope.newFieldName = {val: ''};
         $scope.showAddFields = function () {
+          var hideAreaIn = ['appliances'];
+          var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
+
+          $scope.isAreaHidden = (hideAreaIn.indexOf(sectionName) === -1) ? false : true;
           $scope.isStateAdded = true;
 
         };
@@ -25,8 +31,9 @@ angular.module('app')
 
           var type = $scope.selectedType;
           var houseProperty = $scope.house[$scope.title];
-          var count = Object.keys(houseProperty).length;
-          name = (count + 1) + '_' + name;
+          var count = Object.keys(houseProperty).length + 1;
+          var prefix = count.toString().length === 1 ? '0' + count.toString() : count.toString();
+          name = prefix + '_' + name;
 
           houseProperty[name] = {type: type, value: ''};
           $scope.isStateAdded = false;

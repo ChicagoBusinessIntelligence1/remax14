@@ -18,11 +18,21 @@ div
     .row
       .col-sm-6.col-xs-12
         ul.ul-data-just.list-unstyled
-          li.row(ng-repeat='(id, p) in house[title] track by $index' )
+          li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$even' )
             div.bold.col-sm-5 {{id | keyConversion}}:
             div.col-sm-7(ng-if='!isEdit') {{p.value | boolToBinery}}
             div.col-sm-7(ng-switch='p.type' ng-if='isEdit')
               sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
               sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
               sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
-        sv-add-feature(house='house' title='{{title}}' ng-show='isEdit')
+      .col-sm-6.col-xs-12
+        ul.ul-data-just.list-unstyled
+          li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$odd' )
+            div.bold.col-sm-5 {{id | keyConversion}}:
+            div.col-sm-7(ng-if='!isEdit') {{p.value | boolToBinery}}
+            div.col-sm-7(ng-switch='p.type' ng-if='isEdit')
+              sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
+              sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
+              sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+
+    sv-add-feature(house='house' title='{{title}}' ng-show='isEdit')

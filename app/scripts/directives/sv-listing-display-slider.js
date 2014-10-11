@@ -16,13 +16,9 @@ angular.module('app')
         $scope.isEdit = false;
         $scope.area = {};
 
-
-
         $scope.editListing = function () {
           $scope.isEdit = true;
         };
-
-
 
         if ($scope.title === '1_generalInformation' || $scope.title === '2_propertyDescription') {
           $scope.isVisible = true;

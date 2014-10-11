@@ -25,8 +25,14 @@ angular.module('app')
 
           var type = $scope.selectedType;
           var houseProperty = $scope.house[$scope.title];
-          var count = Object.keys(houseProperty).length;
-          name = (count + 1) + '_' + name;
+          var count = Object.keys(houseProperty).length+1;
+          var order;
+          if (count.toString().length===1) {
+           order='0'+count.toString() ;
+          } else{
+           order=count.toString() ;
+          }
+          name = order + '_' + name;
 
           houseProperty[name] = {type: type, value: ''};
           $scope.isStateAdded = false;

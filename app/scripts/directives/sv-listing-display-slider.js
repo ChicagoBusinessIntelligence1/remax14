@@ -16,19 +16,17 @@ angular.module('app')
         $scope.area = {};
 
         $scope.saveSection = function () {
-          $scope.updateHouse($scope.title, $scope.house[$scope.title]);
-          $scope.isVisible = true;
+          $scope.updateHouse({sectionTitle:$scope.title, sectionContent:$scope.house[$scope.title]});
+          $scope.isEdit = false;
         };
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {
 
-          $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = true;
         };
 
         $scope.cancelEditListing = function () {
-          $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = false;
         };
 /*General Information and Property Description Sections are vis. by default*/

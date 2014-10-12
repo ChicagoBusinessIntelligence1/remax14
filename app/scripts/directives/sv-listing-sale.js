@@ -14,7 +14,7 @@ angular.module('app')
 
         $scope.updateHouse = function (sectionTitle, sectionContent) {
           //when click on button
-          $scope.house[sectionName] = section;
+          $scope.house[sectionTitle] = sectionContent;
           $scope.house.$save();
         };
       }

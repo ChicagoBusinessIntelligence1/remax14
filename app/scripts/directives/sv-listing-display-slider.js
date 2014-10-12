@@ -19,10 +19,10 @@ angular.module('app')
           $scope.updateHouse($scope.title, $scope.house[$scope.title]);
           $scope.isVisible = true;
         };
+        /*If there is only one property on section*/
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {
-
           $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = true;
         };
@@ -31,7 +31,7 @@ angular.module('app')
           $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = false;
         };
-/*General Information and Property Description Sections are vis. by default*/
+        /*General Information and Property Description Sections are vis. by default*/
 
         if ($scope.title === '01_generalInformation' || $scope.title === '02_propertyDescription') {
           $scope.isVisible = true;

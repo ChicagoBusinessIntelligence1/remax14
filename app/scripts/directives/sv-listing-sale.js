@@ -13,8 +13,8 @@ angular.module('app')
         $scope.house = $firebase(new Firebase(houseRepo)).$asObject();
 
         $scope.updateHouse = function (sectionTitle, sectionContent) {
-          //when click on button
-          $scope.house[sectionName] = section;
+          //when click on button section content info is saved
+          $scope.house[sectionTitle] = sectionContent;
           $scope.house.$save();
         };
       }

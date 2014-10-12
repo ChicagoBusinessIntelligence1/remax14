@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         house: '=',
         title: '@',
-        save: '&'
+        saveSection: '&'
       },
 
       link: function ($scope, element, attr) {
@@ -37,19 +37,20 @@ angular.module('app')
           name = input[0].toLowerCase() + input.substr(1);
 
           var type = $scope.selectedType;
-          var houseProperty = $scope.house[$scope.title];
-          var count = Object.keys(houseProperty).length + 1;
+          var count = Object.keys($scope.house[$scope.title]).length + 1;
           var prefix = count.toString().length === 1 ? '0' + count.toString() : count.toString();
           name = prefix + '_' + name;
           var value = (type === 'chbx') ? true : initialInput + ' description';
 
-          houseProperty[name] = {type: type, value: value};
+          $scope.house[$scope.title][name] = {type: type, value: value};
+
+          $scope.saveSection();
+
           $scope.selectedType = '';
           $scope.newFieldName = {val: ''};
         };
         $scope.cancelNewField = function () {
           $scope.isStateAdded = false;
-
         };
       }
     };

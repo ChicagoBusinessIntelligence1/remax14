@@ -19,6 +19,8 @@ angular.module('app')
           $scope.updateHouse({sectionTitle:$scope.title, sectionContent:$scope.house[$scope.title]});
           $scope.isEdit = false;
         };
+
+        /*If there is only one property on section*/
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {

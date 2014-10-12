@@ -9,16 +9,15 @@ angular.module('app')
       scope: {
         house: '=',
         title: '@',
-        description: '@',
-        open: '=',
         updateHouse: '&'
       },
       link: function ($scope, element, attr) {
         $scope.isEdit = false;
         $scope.area = {};
 
-        $scope.save = function () {
-          $scope.updateHouse($scope.house);
+        $scope.saveSection = function () {
+          $scope.updateHouse($scope.title, $scope.house[$scope.title]);
+          $scope.isVisible = true;
         };
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
@@ -32,12 +31,14 @@ angular.module('app')
           $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = false;
         };
+/*General Information and Property Description Sections are vis. by default*/
 
         if ($scope.title === '01_generalInformation' || $scope.title === '02_propertyDescription') {
           $scope.isVisible = true;
         } else {
           $scope.isVisible = false;
         }
+
         $scope.toggleShow = function () {
           $scope.isVisible = !$scope.isVisible;
         };

@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         house: '=',
         title: '@',
-        save:'&'
+        save: '&'
       },
 
       link: function ($scope, element, attr) {
@@ -23,7 +23,7 @@ angular.module('app')
           "label": "<i class=\"fa fa-tablet\"></i> Text Area"
         }, {"value": "chbx", "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"}];
 
-        $scope.types={};
+        $scope.types = {};
         $scope.newFieldName = {val: ''};
         $scope.showAddFields = function () {
 
@@ -41,10 +41,10 @@ angular.module('app')
           var count = Object.keys(houseProperty).length + 1;
           var prefix = count.toString().length === 1 ? '0' + count.toString() : count.toString();
           name = prefix + '_' + name;
-          var value=(type ==='chbx')? true: initialInput+' description';
+          var value = (type === 'chbx') ? true : initialInput + ' description';
 
           houseProperty[name] = {type: type, value: value};
-          $scope.selectedType='';
+          $scope.selectedType = '';
           $scope.newFieldName = {val: ''};
         };
         $scope.cancelNewField = function () {

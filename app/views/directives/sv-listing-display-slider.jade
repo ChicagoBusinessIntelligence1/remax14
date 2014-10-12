@@ -8,7 +8,7 @@ div
           li(ng-show='isVisible')
             button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
               i.fa.fa-edit.fa-fw
-            button.btn.btn-link(ng-show='isEdit' ng-click='updateHouse({house:house}); isEdit=false;isVisible=!isVisible')
+            button.btn.btn-link(ng-show='isEdit' ng-click='saveSection(); isVisible="true"')
               i.fa.fa-save.fa-fw
             button.btn.btn-link(ng-show='isEdit' ng-click="cancelEditListing();")
               i.fa.fa-remove.fa-fw
@@ -27,7 +27,6 @@ div
               sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
               sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
               sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
-
 
     .row(ng-if="isSingleProp>1")
       .col-sm-6.col-xs-12

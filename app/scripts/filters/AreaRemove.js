@@ -9,7 +9,6 @@ angular.module('app')
           return elem.value === 'area';
         });
       }
-
       return input;
     };
   });

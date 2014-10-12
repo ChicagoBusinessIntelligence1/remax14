@@ -6,12 +6,9 @@ div
           li
             h4.text-info {{title | keyConversion}}
           li(ng-show='isVisible')
-            button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
-              i.fa.fa-edit.fa-fw
-            button.btn.btn-link(ng-show='isEdit' ng-click='saveSection(); isVisible="true"')
-              i.fa.fa-save.fa-fw
-            button.btn.btn-link(ng-show='isEdit' ng-click="cancelEditListing();")
-              i.fa.fa-remove.fa-fw
+            sv-btn-action(icon='fa-edit' action='editListing()' ng-show='!isEdit')
+            sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit')
+            sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit')
           li.pull-right
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')

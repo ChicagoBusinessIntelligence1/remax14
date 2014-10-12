@@ -10,16 +10,22 @@ angular.module('app')
         house: '=',
         title: '@'
       },
+
       link: function ($scope, element, attr) {
+        var hideAreaIn = ['appliances'];
+        var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
 
+        $scope.isAreaHidden = hideAreaIn.indexOf(sectionName) !== -1;
 
-        $scope.isStateAdded = false;
+        $scope.features = [{"value": "txt", "label": "<i class=\"fa fa-square-o\"></i> Text Field"}, {
+          "value": "area",
+          "label": "<i class=\"fa fa-tablet\"></i> Text Area"
+        }, {"value": "chbx", "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"}];
+
+        $scope.types={};
         $scope.newFieldName = {val: ''};
         $scope.showAddFields = function () {
-          var hideAreaIn = ['appliances'];
-          var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
 
-          $scope.isAreaHidden = (hideAreaIn.indexOf(sectionName) === -1) ? false : true;
           $scope.isStateAdded = true;
 
         };
@@ -36,9 +42,6 @@ angular.module('app')
           name = prefix + '_' + name;
 
           houseProperty[name] = {type: type, value: ''};
-          $scope.isStateAdded = false;
-          $scope.newFieldName = {val: ''};
-          $scope.selectedType = '';
         };
         $scope.cancelNewField = function () {
           $scope.isStateAdded = false;

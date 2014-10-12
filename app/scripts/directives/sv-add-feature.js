@@ -8,7 +8,8 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-add-feature.html',
       scope: {
         house: '=',
-        title: '@'
+        title: '@',
+        save:'&'
       },
 
       link: function ($scope, element, attr) {
@@ -31,7 +32,7 @@ angular.module('app')
         };
         $scope.addNewField = function () {
           var name = $scope.newFieldName.val;
-
+          var initialInput = name;
           var input = _.str.camelize(name.replace(' ', '-'));
           name = input[0].toLowerCase() + input.substr(1);
 
@@ -40,8 +41,11 @@ angular.module('app')
           var count = Object.keys(houseProperty).length + 1;
           var prefix = count.toString().length === 1 ? '0' + count.toString() : count.toString();
           name = prefix + '_' + name;
+          var value=(type ==='chbx')? true: initialInput+' description';
 
-          houseProperty[name] = {type: type, value: ''};
+          houseProperty[name] = {type: type, value: value};
+          $scope.selectedType='';
+          $scope.newFieldName = {val: ''};
         };
         $scope.cancelNewField = function () {
           $scope.isStateAdded = false;

@@ -1,5 +1,5 @@
 div
-  .head-panel.cursor-p
+  .head-panel.cursor-p(ng-click='toggleShow()')
     .row
       .col-xs-12
         ul.list-inline
@@ -8,11 +8,11 @@ div
           li(ng-show='isVisible')
             button.btn.btn-link(ng-show='!isEdit' ng-click='editListing()')
               i.fa.fa-edit.fa-fw
-            button.btn.btn-link(ng-show='isEdit' ng-click='updateHouse({house:house}); isEdit=false')
+            button.btn.btn-link(ng-show='isEdit' ng-click='updateHouse({house:house}); isEdit=false;isVisible=!isVisible')
               i.fa.fa-save.fa-fw
-            button.btn.btn-link(ng-show='isEdit' ng-click="cancelEditListing()")
+            button.btn.btn-link(ng-show='isEdit' ng-click="cancelEditListing();")
               i.fa.fa-remove.fa-fw
-          li.pull-right(ng-click='toggleShow()')
+          li.pull-right
             a.pull-right(href="")
               i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
               i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')

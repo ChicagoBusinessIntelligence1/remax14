@@ -17,15 +17,19 @@ angular.module('app')
         $scope.isEdit = false;
         $scope.area = {};
 
-
+        $scope.save = function () {
+          $scope.updateHouse($scope.house);
+        };
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {
 
+          $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = true;
         };
 
         $scope.cancelEditListing = function () {
+          $scope.isVisible = !$scope.isVisible;
           $scope.isEdit = false;
         };
 

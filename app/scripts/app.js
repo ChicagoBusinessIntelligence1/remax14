@@ -73,6 +73,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "OneListingCtrl",
         templateUrl: "../views/one-listing.html"
       })
+			.state("app.profile.add-listing", {
+				url: "/add-listing",
+				controller:"AddListingCtrl",
+				templateUrl: "../views/add-listing.html"
+			})
 //#state
   });
 

@@ -21,6 +21,19 @@ angular.module('app')
           $scope.isEdit = false;
         };
 
+        /*Show button for adding properties only on some sections*/
+        var showAddProperty = ['appliances'];
+        //converting our current title('@') to title name lower case
+        var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
+        // search
+        var showButton = showAddProperty.indexOf(sectionName);
+        if (showButton === -1) {
+          $scope.isButtonShown = false;
+        }
+        else {
+          $scope.isButtonShown = true;
+        }
+
         /*If there is only one property on section*/
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 

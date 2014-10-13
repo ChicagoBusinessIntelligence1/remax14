@@ -23,8 +23,6 @@ angular.module('app')
 
           var addr = _.toArray(_.toArray($scope.house)[3]);
           $scope.address = addr[0].value + ', ' + addr[1].value + ' ' + addr[2].value + ' ' + addr[3].value;
-          console.log($scope.address);
-
         })
 
         $scope.updateHouse = function (sectionTitle, sectionContent) {

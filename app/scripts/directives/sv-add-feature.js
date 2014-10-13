@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svAddFeature', function ($filter) {
+  .directive('svAddFeature', function ($filter, inputTypes) {
     return {
       restrict: 'E',
       replace: true,
@@ -25,20 +25,7 @@ angular.module('app')
           $scope.isAreaHidden = true;
         }
 
-        $scope.features = [
-          {
-            "value": "txt",
-            "label": "<i class=\"fa fa-square-o\"></i> Text Field"
-          },
-          {
-            "value": "area",
-            "label": "<i class=\"fa fa-tablet\"></i> Text Area"
-          },
-          {
-            "value": "chbx",
-            "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
-          }
-        ];
+        $scope.features = inputTypes;
 
         /*creating an obj that has empty prop "val" (Property Name)*/
         $scope.newFieldName = {val: ''};

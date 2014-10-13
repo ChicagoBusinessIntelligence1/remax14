@@ -73,11 +73,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "OneListingCtrl",
         templateUrl: "../views/one-listing.html"
       })
-			.state("app.profile.add-listing", {
-				url: "/add-listing",
-				controller:"AddListingCtrl",
-				templateUrl: "../views/add-listing.html"
-			})
+      .state("app.profile.add-listing", {
+        url: "/add-listing",
+        controller: "AddListingCtrl",
+        templateUrl: "../views/add-listing.html"
+      })
 //#state
   });
 
@@ -147,3 +147,21 @@ app.animation('.info-slider', function () {
     }
   }
 });
+/*=VALUES*/
+app.value('inputTypes',
+  [
+    {
+      "value": "txt",
+      "label": "<i class=\"fa fa-square-o\"></i> Text Field"
+    },
+    {
+      "value": "area",
+      "label": "<i class=\"fa fa-tablet\"></i> Text Area"
+    },
+    {
+      "value": "chbx",
+      "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
+    }
+  ]);
+app.value('urlResidential', 'https://remax14.firebaseio.com/houses/residential/');
+app.value('urlResidentialTemp', 'https://remax14.firebaseio.com/tempalates/residential/12345678');

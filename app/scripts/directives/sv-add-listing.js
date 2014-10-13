@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svAddListing', function (url,$firebase) {
+  .directive('svAddListing', function (urlResidentialTemp, $firebase) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-add-listing.html',
@@ -21,9 +21,9 @@ angular.module('app')
           if (street) {
             house.street = street.value;
           }
+          var houseTemp = urlResidentialTemp;
 
-          var repo = url + 'houses';
-          $scope.houses = $firebase(new Firebase(repo)).$asArray();
+          $scope.houses = $firebase(new Firebase(houseTemp)).$asArray();
 
           $scope.houses.$add(house);
         };

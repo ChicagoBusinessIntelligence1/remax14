@@ -14,7 +14,6 @@ angular.module('app')
         label: '@'
       },
       link: function ($scope, element, attr) {
-
       }
     };
   });

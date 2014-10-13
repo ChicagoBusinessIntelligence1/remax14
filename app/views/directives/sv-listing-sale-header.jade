@@ -1,0 +1,19 @@
+div
+  .row(ng-if='isTemplate')
+    .col-xs-12
+      h3 New Listing for Sale
+      hr
+  div(ng-if='!isTemplate')
+    .row
+      .col-sm-6.col-xs-12
+        h5.prop-type.text-info Single Family Home
+      .col-sm-6.col-xs-12
+        sv-sale-type(house='house')
+    .alert.alert-address
+      .row
+        .col-md-9.col-xs-12
+          .text-app.address-basic {{address}}
+        .col-md-3.col-xs-12
+          .price-style  $100,000
+
+    sv-listing-inline-info

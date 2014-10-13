@@ -1,34 +1,10 @@
 div
-  .row(ng-if='isTemplate')
-    .col-xs-12
-      h3 New Listing for Sale
-      hr
-  div(ng-if='!isTemplate')
+  sv-listing-sale-header(house='house' is-template='isTemplate' )
+  .gallery-wrapper
     .row
-      .col-sm-6.col-xs-12
-        h5.prop-type.text-info Single Family Home
-      .col-sm-6.col-xs-12.sale-type
-        ul.list-inline
-          li(ng-show="house['01_generalInformation']['08_short_sale'].value")
-            h5.label.label-danger Short Sale
-          li(ng-show="house['01_generalInformation']['10_bank_owned'].value")
-            h5.label.label-info Bank Owned
-          li(ng-show="house['01_generalInformation']['09_foreclosure'].value")
-            h5.label.label-success Foreclosure
-    .alert.alert-address
-      .row
-        .col-md-9.col-xs-12
-          .text-app.address-basic {{address}}
-        .col-md-3.col-xs-12
-          .price-style  $100,000
-
-    sv-listing-inline-info
-    .gallery-wrapper
-      .row
-        .col-sm-4
-          a.thumbnail(ui-sref='app.profile.one-listing')
-            img.img-responsive(ng-src="../images/houses/9.jpg")
-
+      .col-sm-4
+        a.thumbnail(ui-sref='app.profile.one-listing')
+          img.img-responsive(ng-src="../images/houses/9.jpg")
   ul.list-unstyled
     li(ng-repeat='(k,v) in house')
       sv-listing-display-slider(house='house' title='{{k}}' is-template='isTemplate' update-house='updateHouse(sectionTitle,sectionContent)')

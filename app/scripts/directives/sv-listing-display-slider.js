@@ -8,6 +8,7 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-listing-display-slider.html',
       scope: {
         house: '=',
+        isTemplate: '=',
         title: '@',
         updateHouse: '&'
       },
@@ -16,7 +17,7 @@ angular.module('app')
         $scope.area = {};
 
         $scope.saveSection = function () {
-          $scope.updateHouse({sectionTitle:$scope.title, sectionContent:$scope.house[$scope.title]});
+          $scope.updateHouse({sectionTitle: $scope.title, sectionContent: $scope.house[$scope.title]});
           $scope.isEdit = false;
         };
 
@@ -30,7 +31,7 @@ angular.module('app')
         $scope.cancelEditListing = function () {
           $scope.isEdit = false;
         };
-/*General Information and Property Description Sections are vis. by default*/
+        /*General Information and Property Description Sections are vis. by default*/
 
         if ($scope.title === '01_generalInformation' || $scope.title === '02_propertyDescription') {
           $scope.isVisible = true;

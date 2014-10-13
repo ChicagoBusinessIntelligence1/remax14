@@ -38,4 +38,4 @@ div
 
   ul.list-unstyled
     li(ng-repeat='(k,v) in house')
-      sv-listing-display-slider(house='house' title='{{k}}' update-house='updateHouse(sectionTitle,sectionContent)')
+      sv-listing-display-slider(house='house' title='{{k}}' is-template='isTemplate' update-house='updateHouse(sectionTitle,sectionContent)')

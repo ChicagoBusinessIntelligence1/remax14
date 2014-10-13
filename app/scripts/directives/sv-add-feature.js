@@ -11,41 +11,69 @@ angular.module('app')
         title: '@',
         saveSection: '&'
       },
-
       link: function ($scope, element, attr) {
+        //Hiding Text Area for Adding on Section
         var hideAreaIn = ['appliances'];
+        //converting our current title('@') to title name lower case
         var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
+        // search
+        var hideArea = hideAreaIn.indexOf(sectionName);
+        if (hideArea === -1) {
+          $scope.isAreaHidden = false;
+        }
+        else {
+          $scope.isAreaHidden = true;
+        }
 
-        $scope.isAreaHidden = hideAreaIn.indexOf(sectionName) !== -1;
+        $scope.features = [
+          {
+            "value": "txt",
+            "label": "<i class=\"fa fa-square-o\"></i> Text Field"
+          },
+          {
+            "value": "area",
+            "label": "<i class=\"fa fa-tablet\"></i> Text Area"
+          },
+          {
+            "value": "chbx",
+            "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
+          }
+        ];
 
-        $scope.features = [{"value": "txt", "label": "<i class=\"fa fa-square-o\"></i> Text Field"}, {
-          "value": "area",
-          "label": "<i class=\"fa fa-tablet\"></i> Text Area"
-        }, {"value": "chbx", "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"}];
-
-        $scope.types = {};
+        /*creating an obj that has empty prop "val" (Property Name)*/
         $scope.newFieldName = {val: ''};
+
         $scope.showAddFields = function () {
-
           $scope.isStateAdded = true;
-
         };
+
+        /*add new prop to database and save it*/
         $scope.addNewField = function () {
+          /*take a prop input type_ and prop name_ given by user*/
+          var type = $scope.selectedType;
           var name = $scope.newFieldName.val;
           var initialInput = name;
+
+          /*convert to snake case then camelize*/
           var input = _.str.camelize(name.replace(' ', '-'));
+          /*convert first letter to lower case and CONCATINATE TO THE REST OF THE PROP NAM_E*/
           name = input[0].toLowerCase() + input.substr(1);
 
-          var type = $scope.selectedType;
+          /*defining a num of our new prop by counting all elements + 1*/
           var count = Object.keys($scope.house[$scope.title]).length + 1;
+
+          /*defining whether we need to add 0 in the beginning (num of digits that length contains)
+           * THEN add 0 or just convert to string*/
           var prefix = count.toString().length === 1 ? '0' + count.toString() : count.toString();
           name = prefix + '_' + name;
-          var value = (type === 'chbx') ? true : initialInput + ' description';
 
-          $scope.house[$scope.title][name] = {type: type, value: value};
+          /*provide a default value for automatic saving to DB*/
+          var defaultValue = (type === 'chbx') ? true : initialInput + ' description';
 
+          /*adding created prop to house section [locally on snapshot] then saving to DB*/
+          $scope.house[$scope.title][name] = {type: type, value: defaultValue};
           $scope.saveSection();
-
+          /*clear our form*/
           $scope.selectedType = '';
           $scope.newFieldName = {val: ''};
         };

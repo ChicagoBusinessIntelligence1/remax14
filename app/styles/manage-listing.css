@@ -133,21 +133,35 @@ label {
   margin-top: 0px;
   margin-bottom: 10px;
 }
-.new-listing-form h5 {
+.add-property button,
+.add-property .btn-sm,
+.add-property input {
+  width: 100%;
+}
+.txt-group label {
+  color: #686868;
+  font-size: 12px;
+}
+.txt-group .form-control {
+  height: 30px;
+  padding: 5px;
+  font-size: 12px;
+}
+.listing-form h5 {
   font-size: 13px;
   font-weight: 700;
 }
-.new-listing-form h4 {
+.listing-form h4 {
   font-weight: 700;
   font-size: 16px;
   margin: 0px;
 }
-.new-listing-form .form-group label {
-  color: ligh;
+.listing-form .form-group label {
+  color: #686868;
   font-size: 12px;
 }
-.new-listing-form .form-group input {
-  height: 25px;
+.listing-form .form-group input {
+  height: 30px;
   padding: 5px;
   font-size: 12px;
 }

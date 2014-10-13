@@ -1,7 +1,7 @@
 div
   .head-panel.cursor-p(ng-click='toggleShow()')
     .row
-      .col-xs-12
+      .col-xs-11
         ul.list-inline
           li
             h4.text-info {{title | keyConversion}}
@@ -9,41 +9,44 @@ div
             sv-btn-action(icon='fa-edit' action='editListing()' ng-hide='isEdit')
             sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit')
             sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit')
-          li.pull-right
-            a.pull-right(href="")
-              i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
-              i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
+      .col-xs-1
+        .text-right(href="")
+          i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
+          i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
   .panel.panel-default.panel-listing.info-slider(ng-show='isVisible')
-    .row(ng-if="isSingleProp===1")
-      .col-sm-12
-        ul.ul-data-just.list-unstyled
-          li.row(ng-repeat='(id, p) in house[title] track by $index')
-            .col-xs-12(ng-if='!isEdit') {{p.value | boolToBinery}}
-            //  edit
-            .col-xs-12(ng-switch='p.type' ng-if='isEdit')
-              sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-              sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-              sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+    // If there is only one property on section
+    form(name="form" id="form")
+      .row(ng-if="isSingleProp===1")
 
-    .row(ng-if="isSingleProp>1")
-      .col-sm-6.col-xs-12
-        ul.ul-data-just.list-unstyled
-          li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$even')
-            div.bold.col-sm-5.col-xs-6 {{id | keyConversion}}:
-            div.col-sm-7.col-xs-6(ng-if='!isEdit') {{p.value | boolToBinery}}
-            div.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit')
-              sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-              sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-              sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
-      .col-sm-6.col-xs-12
-        ul.ul-data-just.list-unstyled
-          li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$odd')
-            div.bold.col-sm-5.col-xs-6 {{id | keyConversion}}:
-            div.col-sm-7.col-xs-6(ng-if='!isEdit') {{p.value | boolToBinery}}
-            div.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit')
-              sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-              sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-              sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+        .col-sm-12
+          ul.ul-data-just.list-unstyled
+            li.row(ng-repeat='(id, p) in house[title] track by $index')
+              .col-xs-12(ng-if='!isEdit') {{p.value | boolToBinery}}
+              //  edit
+              .col-xs-12(ng-switch='p.type' ng-if='isEdit')
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
 
-    sv-add-feature(house='house' title='{{title}}' save-section='saveSection()' ng-if='isEdit')
+      .row(ng-if="isSingleProp>1")
+        .col-sm-6.col-xs-12
+          ul.ul-data-just.list-unstyled
+            li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$even')
+              div.bold.col-sm-5.col-xs-6 {{id | keyConversion}}:
+              div.col-sm-7.col-xs-6(ng-if='!isEdit') {{p.value | boolToBinery}}
+              div.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit')
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+        .col-sm-6.col-xs-12
+          ul.ul-data-just.list-unstyled
+            li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$odd')
+              div.bold.col-sm-5.col-xs-6 {{id | keyConversion}}:
+              div.col-sm-7.col-xs-6(ng-if='!isEdit') {{p.value | boolToBinery}}
+              div.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit')
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+
+      sv-add-feature(house='house' title='{{title}}' save-section='saveSection()' ng-if='isEdit')
 

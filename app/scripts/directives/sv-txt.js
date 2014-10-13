@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="form-group">' +
+      template: '<div class="form-group txt-group">' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="house[title][label].value"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
       '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +

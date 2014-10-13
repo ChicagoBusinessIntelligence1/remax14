@@ -1,12 +1,28 @@
-div
-  button.btn.btn-default(ng-click='showAddFields()' ng-show='!isStateAdded') Add New Property
-  div(ng-show='isStateAdded')
-    div.row
-      div.col-sm-3
-        input(type='text' placeholder='Property name' ng-model='newFieldName.val').form-control
-      div.col-sm-7.form-group
-        button.btn.btn-default.btn-sm(ng-model='selectedType', data-html='1', placeholder='Property Type', ng-options='feature.value as feature.label for feature in features | areaRemove:isAreaHidden', bs-select='types') Field Type
-          span.caret
-    div
-      button.btn.btn-sm.btn-default(ng-click='cancelNewField()' ) Cancel
-      button.btn.btn-sm.btn-default(ng-click='addNewField()' ng-disabled='!newFieldName.val || !selectedType' ) Save Property
+div.well
+  .row
+    .col-sm-6.col-sm-offset-3
+      button.btn.btn-block.btn-sm.btn-primary(ng-click='showAddFields()' ng-if='!isStateAdded') Add New Property
+  form.listing-form.add-property(name="form" id="form" ng-show='isStateAdded')
+    .row
+      .col-sm-3.col-xs-12
+        .form-group
+          input.form-control.text-center(type='text' placeholder='Property name' ng-model='newFieldName.val')
+      .col-sm-3.col-xs-12
+        .form-group
+          button.btn.btn-sm.btn-default.text-right(placeholder='Property Type'
+          ng-model='selectedType'
+          data-html='1'
+          ng-options='feature.value as feature.label for feature in features | areaRemove:isAreaHidden',
+          bs-select='types') Field Type
+            span.caret
+      .col-sm-3.col-xs-12
+        .form-group
+          button.btn.btn-sm.btn-primary(ng-click='addNewField()'
+          ng-disabled='!newFieldName.val || !selectedType' )
+            i.fa.fa-save.fa-fw
+            | Save Property
+      .col-sm-3.col-xs-12
+        .form-group
+          button.btn.btn-sm.btn-warning(ng-click='cancelNewField()' )
+            i.fa.fa-times.fa-fw
+            | Cancel

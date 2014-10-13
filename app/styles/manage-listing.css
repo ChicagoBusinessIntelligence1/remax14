@@ -30,7 +30,6 @@ label {
 .price-style {
   color: #417cab;
   font-weight: 700;
-  display: block;
   font-size: 20px;
   letter-spacing: 1px;
   text-align: right;
@@ -46,11 +45,15 @@ label {
     text-align: center;
   }
 }
+h4 {
+  margin-top: 0px !important;
+}
 .address-basic {
   color: #3c3c3c;
   display: block;
+  height: 100%;
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: 0px false;
 }
 .address-basic:hover,

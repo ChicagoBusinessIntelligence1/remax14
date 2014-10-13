@@ -49,14 +49,14 @@ angular.module('app')
 
         /*add new prop to database and save it*/
         $scope.addNewField = function () {
-          /*take a prop input type_ and prop name_ given by user*/
+          /*take a prop input type and prop name given by user*/
           var type = $scope.selectedType;
           var name = $scope.newFieldName.val;
           var initialInput = name;
 
           /*convert to snake case then camelize*/
           var input = _.str.camelize(name.replace(' ', '-'));
-          /*convert first letter to lower case and CONCATINATE TO THE REST OF THE PROP NAM_E*/
+          /*convert first letter to lower case and CONCATINATE TO THE REST OF THE PROP NAME*/
           name = input[0].toLowerCase() + input.substr(1);
 
           /*defining a num of our new prop by counting all elements + 1*/

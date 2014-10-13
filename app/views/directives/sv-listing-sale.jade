@@ -12,12 +12,11 @@ div
           h5.label.label-success Foreclosure
   .alert.alert-address
     .row
-      .col-md-10
-        .text-app.address-basic(ui-sref='app.profile.one-listing')
-          h4(ng-show="house['01_generalInformation']['01_street'].value")
-          | 123 Main St. Morton Grove IL 60053
-      .col-md-2
-        .price-style(ui-sref='app.profile.one-listing')
+      .col-md-9.col-xs-12
+        .text-app.address-basic
+          | Morton Grove IL 60053
+      .col-md-3.col-xs-12
+        .price-style
           | $100,000
   .row
     .col-sm-12

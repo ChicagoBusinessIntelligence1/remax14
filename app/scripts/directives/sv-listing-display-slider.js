@@ -24,7 +24,6 @@ angular.module('app')
         $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {
-
           $scope.isEdit = true;
         };
 

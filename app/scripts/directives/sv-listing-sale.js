@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function ($firebase, $stateParams, urlResidential) {
+  .directive('svListingSale', function ($firebase, $stateParams, urlResidential, urlResidentialTemp) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
@@ -10,9 +10,22 @@ angular.module('app')
         /*take param mls from browser url using stateParams*/
         var mls = $stateParams.mls;
         /*Firebase string reference*/
-        var houseRepo = urlResidential + mls;
+        if (_.isUndefined(mls)) {
+          var houseRepo = urlResidentialTemp;
+          $scope.isTemplate = true;
+        } else {
+          var houseRepo = urlResidential + mls;
+          $scope.isTemplate = false;
+        }
 
         $scope.house = $firebase(new Firebase(houseRepo)).$asObject();
+        $scope.house.$loaded(function () {
+
+          var addr = _.toArray(_.toArray($scope.house)[3]);
+          $scope.address = addr[0].value + ', ' + addr[1].value + ' ' + addr[2].value + ' ' + addr[3].value;
+          console.log($scope.address);
+
+        })
 
         $scope.updateHouse = function (sectionTitle, sectionContent) {
           //when click on button

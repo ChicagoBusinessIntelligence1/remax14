@@ -14,6 +14,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: 'LoginCtrl',
         templateUrl: '../views/login.html'
       })
+      .state("app.remax-auth", {
+        url: "/remax-auth",
+        controller:"RemaxAuthCtrl",
+        templateUrl: "../views/remax-auth.html"
+      })
       .state('app.contact', {
         url: '/contact',
         controller: 'ContactusCtrl',

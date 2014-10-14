@@ -10,6 +10,13 @@ label {
 /**********************
     =manage-listing
 ***********************/
+.listing-label {
+  font-size: 13px !important;
+  font-weight: 700;
+}
+.content-info {
+  font-size: 13px !important;
+}
 .listing-basic-info-wrap {
   padding-top: 10px;
 }
@@ -19,11 +26,12 @@ label {
 }
 .ul-basic-info li {
   color: #505050;
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
 }
 @media screen and (max-width: 992px) {
   .ul-basic-info {
+    font-size: 12px;
     text-align: center;
   }
 }
@@ -170,14 +178,6 @@ h4 {
 }
 .basic-info-short {
   font-size: 12px;
-}
-.inline-info-style {
-  font-size: 14px;
-}
-@media screen and (max-width: 992px) {
-  .inline-info-style {
-    font-size: 12px;
-  }
 }
 .ul-data-just li span {
   font-size: 13px;

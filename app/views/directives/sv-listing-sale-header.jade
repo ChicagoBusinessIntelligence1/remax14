@@ -6,7 +6,7 @@ div
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
-        h5.prop-type.text-info Single Family Home
+        h5.prop-type.text-info {{(house['01_generalInformation']['09_propertyType']).value}}
       .col-sm-6.col-xs-12
         sv-sale-type(house='house')
     .alert.alert-address
@@ -14,6 +14,6 @@ div
         .col-md-9.col-xs-12
           .text-app.address-basic {{address}}
         .col-md-3.col-xs-12
-          .price-style  $100,000
+          .price-style  ${{(house['01_generalInformation']['08_price']).value}}
 
     sv-listing-inline-info

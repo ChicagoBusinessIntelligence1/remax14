@@ -8,7 +8,8 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-listing-sale-header.html',
       scope: {
         house: '=',
-        isTemplate: '='
+        isTemplate: '=',
+        address: '='
       },
       link: function ($scope, element, attr) {
       }

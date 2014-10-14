@@ -22,7 +22,7 @@ angular.module('app')
         };
 
         /*Show button for adding properties only on some sections*/
-        var showAddProperty = ['appliances', 'other rooms'];
+        var showAddProperty = ['appliances', 'other rooms', 'property features', 'exterior and lot features'];
         //converting our current title('@') to title name lower case
         var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
         // search

@@ -19,33 +19,32 @@ div
       .row(ng-if="isSingleProp===1")
         .col-sm-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='(id, p) in house[title] track by $index')
+            li.row(ng-repeat='p in section|removeOrder | orderBy:"order"')
               .col-xs-12(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               //  edit
               .col-xs-12(ng-switch='p.type' ng-if='isEdit || isTemplate')
-                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
-
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{p.$id}}')
       .row(ng-if="isSingleProp>1")
         .col-sm-6.col-xs-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$even')
-              div.listing-label.col-sm-5.col-xs-6 {{id | keyConversion}}:
+            li.row(ng-repeat='p in section|removeOrder|orderBy:"order"' ng-show='$even')
+              div.listing-label.col-sm-5.col-xs-6 {{p.$id | keyConversion}}:
               div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               div.content-info.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit || isTemplate')
-                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{p.$id}}')
         .col-sm-6.col-xs-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='(id, p) in house[title] track by $index' ng-show='$odd')
-              div.listing-label.col-sm-5.col-xs-6 {{id | keyConversion}}:
+            li.row(ng-repeat='p in section|removeOrder|orderBy:"order"' ng-show='$odd')
+              div.listing-label.col-sm-5.col-xs-6 {{p.$id | keyConversion}}:
               div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               div.content-info.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit || isTemplate')
-                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{id}}')
-                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{id}}')
-                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{id}}')
+                sv-txt(ng-switch-when='txt' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-chbx(ng-switch-when='chbx' house='house' title='{{title}}' label='{{p.$id}}')
+                sv-area(ng-switch-when='area' house='house' title='{{title}}' label='{{p.$id}}')
 
       sv-add-feature(house='house' title='{{title}}' save-section='saveSection()' ng-if='(isEdit || isTemplate) && isButtonShown')
 

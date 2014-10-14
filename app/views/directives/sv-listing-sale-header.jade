@@ -12,7 +12,7 @@ div
     .alert.alert-address
       .row
         .col-md-9.col-xs-12
-          .text-app.address-basic {{address}}
+          .text-app.address-basic {{(house['01_generalInformation']['09_propertyType']).value}}
         .col-md-3.col-xs-12
           .price-style  ${{(house['01_generalInformation']['08_price']).value}}
 

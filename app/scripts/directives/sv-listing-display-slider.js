@@ -1,18 +1,27 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingDisplaySlider', function ($filter) {
+  .directive('svListingDisplaySlider', function ($filter, $firebase) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-listing-display-slider.html',
       scope: {
+        houseRepo: '@',
         house: '=',
         isTemplate: '=',
+        index: '=',
         title: '@',
         updateHouse: '&'
       },
       link: function ($scope, element, attr) {
+        var repo = $scope.houseRepo + '/' + $scope.title;
+        console.log(repo);
+        $scope.section = $firebase(new Firebase(repo)).$asArray();
+        $scope.section.$loaded(function () {
+
+          $scope.isSingleProp = $scope.section.length;
+        })
         $scope.isEdit = false;
         $scope.area = {};
 
@@ -35,7 +44,6 @@ angular.module('app')
         }
 
         /*If there is only one property on section*/
-        $scope.isSingleProp = _.keys($scope.house[$scope.title]).length;
 
         $scope.editListing = function () {
           $scope.isEdit = true;
@@ -46,12 +54,12 @@ angular.module('app')
         };
         /*General Information and Property Description Sections are vis. by default*/
 
-        if ($scope.title === '01_generalInformation' || $scope.title === '02_propertyDescription') {
-          $scope.isVisible = true;
-        } else {
-          $scope.isVisible = false;
-        }
-
+        //if ($scope.title === 'generalInformation' || $scope.title === 'propertyDescription') {
+        //  $scope.isVisible = true;
+        //} else {
+        //  $scope.isVisible = false;
+        //}
+        $scope.isVisible = true;
         $scope.toggleShow = function () {
           $scope.isVisible = !$scope.isVisible;
         };

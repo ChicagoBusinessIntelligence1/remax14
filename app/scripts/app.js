@@ -169,5 +169,5 @@ app.value('inputTypes',
     }
   ]);
 app.value('urlResidential', 'https://remax14.firebaseio.com/houses/residential/');
-app.value('urlResidentialTemp', 'https://remax14.firebaseio.com/templates/residential/12345678');
+app.value('urlResidentialTemp', 'https://remax14.firebaseio.com/templates/residential/0');
 

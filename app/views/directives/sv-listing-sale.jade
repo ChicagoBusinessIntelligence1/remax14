@@ -1,10 +1,10 @@
 .listing
   sv-listing-sale-header(house='house' is-template='isTemplate' address='address' )
-  .gallery-wrapper
+  .gallery-wrapper(ng-if='!isTemplate')
     .row
       .col-sm-4
         a.thumbnail(ui-sref='app.profile.one-listing')
           img.img-responsive(ng-src="../images/houses/9.jpg")
   ul.list-unstyled
-    li(ng-repeat='(k,v) in house')
-      sv-listing-display-slider(house='house' title='{{k}}' is-template='isTemplate' update-house='updateHouse(sectionTitle,sectionContent)')
+    li(ng-repeat='v in house | orderBy:"order":false')
+      sv-listing-display-slider(house='house' house-repo='{{houseRepo}}' index='$index' title='{{v.$id}}' is-template='isTemplate' update-house='updateHouse(sectionTitle,sectionContent)')

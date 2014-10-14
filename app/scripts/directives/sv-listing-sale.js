@@ -11,18 +11,17 @@ angular.module('app')
         var mls = $stateParams.mls;
         /*Firebase string reference*/
         if (_.isUndefined(mls)) {
-          var houseRepo = urlResidentialTemp;
+          $scope.houseRepo = urlResidentialTemp;
           $scope.isTemplate = true;
         } else {
-          var houseRepo = urlResidential + mls;
+          $scope.houseRepo = urlResidential + mls;
           $scope.isTemplate = false;
         }
 
-        $scope.house = $firebase(new Firebase(houseRepo)).$asObject();
+        $scope.house = $firebase(new Firebase($scope.houseRepo)).$asArray();
         $scope.house.$loaded(function () {
 
           var addr = _.toArray(_.toArray($scope.house)[3]);
-          $scope.address = addr[0].value + ', ' + addr[1].value + ' ' + addr[2].value + ' ' + addr[3].value;
         })
 
         $scope.updateHouse = function (sectionTitle, sectionContent) {

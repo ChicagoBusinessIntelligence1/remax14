@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state, $window) {
+  .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state, $rootScope) {
 
     $(window).resize(function () {
       $scope.$apply(function () {
@@ -25,6 +25,7 @@ angular.module('app')
         return;
       }
       if (user.provider === 'facebook') {
+        $rootScope.user = user;
         $scope.userLink = user.thirdPartyUserData.link;
         $scope.userName = user.thirdPartyUserData.first_name;
         $scope.userPic = user.thirdPartyUserData.picture.data.url;
@@ -46,6 +47,7 @@ angular.module('app')
       $scope.userName = null;
       $scope.userPic = null;
       $scope.isAdmin = null;
+      $rootScope.user= null;
       $state.go('app.home', null, {reload: true});
     }
 
@@ -56,6 +58,7 @@ angular.module('app')
           scope: 'email,user_likes'
         }
       ).then(function (user) {
+          $rootScope.user = user;
           $scope.userLink = user.thirdPartyUserData.link;
           $scope.userName = user.thirdPartyUserData.first_name;
 

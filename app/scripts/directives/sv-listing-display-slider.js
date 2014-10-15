@@ -16,7 +16,6 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         var repo = $scope.houseRepo + '/' + $scope.title;
-        console.log(repo);
         $scope.section = $firebase(new Firebase(repo)).$asArray();
         $scope.section.$loaded(function () {
 

@@ -1,8 +1,10 @@
 div
   .row(ng-if='isTemplate')
-    .col-xs-12
+    .col-xs-10
       h3 New Listing for Sale
-      hr
+    .col-xs-2
+      button.btn.btn-sm.btn-info(ng-click='saveTemplate()') Save Listing
+  hr
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12

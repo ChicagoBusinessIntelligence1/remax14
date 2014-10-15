@@ -16,7 +16,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
       })
       .state("app.remax-auth", {
         url: "/remax-auth",
-        controller:"RemaxAuthCtrl",
+        controller: "RemaxAuthCtrl",
         templateUrl: "../views/remax-auth.html"
       })
       .state('app.contact', {
@@ -168,6 +168,16 @@ app.value('inputTypes',
       "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
     }
   ]);
-app.value('urlResidential', 'https://remax14.firebaseio.com/houses/residential/');
-app.value('urlResidentialTemp', 'https://remax14.firebaseio.com/templates/residential/0');
+
+app.value('url', 'https://remax14.firebaseio.com/');
+app.factory('urlResidential',function(url){
+  return url + 'listings/residential/'
+});
+app.factory('urlResidentialTemp',function(url){
+  return url + 'templates/residential/0'
+});
+
+app.factory('urlBrokers',function(url){
+  return url + 'brokers/'
+});
 

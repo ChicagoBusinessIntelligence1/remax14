@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         house: '=',
         isTemplate: '=',
-        address: '='
+        saveTemplate: '&'
       },
       link: function ($scope, element, attr) {
       }

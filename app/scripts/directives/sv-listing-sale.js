@@ -25,7 +25,7 @@ angular.module('app')
           $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
           $scope.house = $scope.houseRef.$asArray();
           $scope.house.$loaded(function () {
-            var n = 0;
+            //$scope.house= _.omit($scope.house,'brokers');
           })
         });
         $scope.saveTemplate = function () {
@@ -40,7 +40,10 @@ angular.module('app')
           $scope.house.forEach(function (oneHouse) {
             $scope.drafts[oneHouse.$id] = oneHouse;
           })
-
+          $scope.drafts['brokers']=[{
+            id:$rootScope.user.id,
+            name:$rootScope.user.displayName
+          }];
           $scope.drafts.$save().then(function (mls) {
             $state.go('app.profile.drafts');
           });

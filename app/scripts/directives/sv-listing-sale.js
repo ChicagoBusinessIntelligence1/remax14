@@ -1,29 +1,33 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function ($firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope) {
+  .directive('svListingSale', function ($firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
-      scope: {},
+      scope: {
+        isDraft: '='
+      },
       link: function ($scope, element, attr) {
+        $rootScope.auth.$getCurrentUser().then(function (user) {
+          /*take param mls from browser url using stateParams*/
+          var mls = $stateParams.mls;
+          /*Firebase string reference*/
+          if (_.isUndefined(mls)) {
+            $scope.houseRepo = urlResidentialTemp;
+            $scope.isTemplate = true;
+          } else {
 
-        /*take param mls from browser url using stateParams*/
-        var mls = $stateParams.mls;
-        /*Firebase string reference*/
-        if (_.isUndefined(mls)) {
-          $scope.houseRepo = urlResidentialTemp;
-          $scope.isTemplate = true;
-        } else {
-          $scope.houseRepo = urlResidential + mls;
-          $scope.isTemplate = false;
-        }
+            $scope.houseRepo = $scope.isDraft ? urlBrokers + user.id + '/drafts/residential/' + mls : urlResidential + mls;
+            $scope.isTemplate = false;
+          }
 
-        $scope.house = $firebase(new Firebase($scope.houseRepo)).$asArray();
-        $scope.house.$loaded(function () {
-          var n = 0;
-        })
-
+          $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
+          $scope.house = $scope.houseRef.$asArray();
+          $scope.house.$loaded(function () {
+            var n = 0;
+          })
+        });
         $scope.saveTemplate = function () {
           var mlsSection = _.find($scope.house, function (el) {
             return !_.isUndefined(el.mls);
@@ -37,13 +41,17 @@ angular.module('app')
             $scope.drafts[oneHouse.$id] = oneHouse;
           })
 
-          $scope.drafts.$save();
+          $scope.drafts.$save().then(function (mls) {
+            $state.go('app.profile.drafts');
+          });
         };
 
-        $scope.updateHouse = function (sectionTitle, sectionContent) {
+        $scope.updateHouse = function (sectionIndex,  sectionContent) {
           //when click on button
-          $scope.house[sectionTitle] = sectionContent;
-          $scope.house.$save();
+
+          $scope.houseObj =  $scope.houseRef.$asObject();
+          $scope.houseObj[sectionContent.$id]=sectionContent;
+          $scope.houseObj.$save();
         };
       }
     };

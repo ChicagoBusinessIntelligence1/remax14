@@ -63,6 +63,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "ListingsCtrl",
         templateUrl: "../views/listings.html"
       })
+      .state("app.profile.drafts", {
+        url: "/listing-drafts",
+        controller: "ListingDraftsCtrl",
+        templateUrl: "../views/listing-drafts.html"
+      })
+      .state("app.profile.one-listing-draft", {
+        url: "/one-listing-draft/:mls",
+        controller:"OneListingDraftCtrl",
+        templateUrl: "../views/one-listing-draft.html"
+      })
       .state("app.profile.manage-listings", {
         url: "/manage-listings",
         controller: "Manage-listingsCtrl",
@@ -169,15 +179,16 @@ app.value('inputTypes',
     }
   ]);
 
+/*=Sercices*/
 app.value('url', 'https://remax14.firebaseio.com/');
-app.factory('urlResidential',function(url){
+app.factory('urlResidential', function (url) {
   return url + 'listings/residential/'
 });
-app.factory('urlResidentialTemp',function(url){
+app.factory('urlResidentialTemp', function (url) {
   return url + 'templates/residential/0'
 });
 
-app.factory('urlBrokers',function(url){
+app.factory('urlBrokers', function (url) {
   return url + 'brokers/'
 });
 

@@ -10,7 +10,7 @@ angular.module('app')
         houseRepo: '@',
         house: '=',
         isTemplate: '=',
-        index: '=',
+        index: '@',
         title: '@',
         updateHouse: '&'
       },
@@ -25,7 +25,7 @@ angular.module('app')
         $scope.area = {};
 
         $scope.saveSection = function () {
-          $scope.updateHouse({sectionTitle: $scope.title, sectionContent: $scope.house[$scope.title]});
+          $scope.updateHouse({sectionIndex: $scope.index, sectionContent: $scope.house[$scope.index]});
           $scope.isEdit = false;
         };
 

@@ -1,0 +1,8 @@
+.row
+  .col-sm-12
+    h3 My Drafts
+    hr
+.drafts-container
+  ul.row.list-inline
+    li.col-sm-6(ng-repeat='draft in drafts')
+      sv-listing-draft-sm(draft='draft' remove-draft='removeDraft(mls)')

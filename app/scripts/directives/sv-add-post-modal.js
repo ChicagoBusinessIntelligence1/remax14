@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       scope: {
-        posts: '='
+        drafts: '='
       },
       template: '<button ng-click="showModal()" class="btn btn-link btn-link-dark"><i class="fa fa-pencil"></i> Добавить Пост</button>',
       controller: function ($scope) {
@@ -32,7 +32,7 @@ angular.module('app')
         };
 
         $scope.addPost = function (title, author, body, postElementSelected) {
-          $scope.posts.$add(
+          $scope.drafts.$add(
             {
               title: title,
               fenelement: postElementSelected.$id,

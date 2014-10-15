@@ -4,7 +4,7 @@ angular.module('app')
   .controller('HomeCtrl', function ($scope, url, $firebase) {
 
     var repo = url + 'posts';
-    $scope.posts = $firebase(new Firebase(repo)).$asArray();
+    $scope.drafts = $firebase(new Firebase(repo)).$asArray();
 
 
     $scope.addComment = function (postId, comment, userName, userPic, userLink) {

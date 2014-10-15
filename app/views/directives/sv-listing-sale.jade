@@ -7,4 +7,4 @@
           img.img-responsive(ng-src="../images/houses/9.jpg")
   ul.list-unstyled
     li(ng-repeat='v in house | orderBy:"order":false')
-      sv-listing-display-slider(house='house' house-repo='{{houseRepo}}' index='$index' title='{{v.$id}}' is-template='isTemplate' update-house='updateHouse(sectionTitle,sectionContent)')
+      sv-listing-display-slider(house='house' house-repo='{{houseRepo}}' index='{{$index}}' title='{{v.$id}}' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')

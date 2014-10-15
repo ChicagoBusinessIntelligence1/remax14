@@ -2906,6 +2906,13 @@ h4 {
 .error-note {
   color: #f00;
 }
+.drafts-container {
+  padding: 10px;
+}
+.draft-info-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .form-group {
   margin-bottom: 10px;
 }

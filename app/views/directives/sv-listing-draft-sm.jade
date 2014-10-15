@@ -1,0 +1,26 @@
+.well
+  .row
+    .col-sm-6
+      a.thumbnail(ui-sref='app.profile.one-listing-draft({mls:draft.$id})')
+        sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+    .col-sm-6
+      .draft-info-container
+        ul.list-unstyled
+          li
+            | MLS#:
+          li
+            | Price:
+          li
+            | Property Type:
+          li
+            | Address:
+      .draft-info-container
+        ul.list-inline
+          li
+            button.btn.btn-default.btn-sm Edit
+          li
+            button.btn.btn-default.btn-sm Post Listing
+          li
+            button.btn.btn-default.btn-sm(ng-click='removeDraft({mls:draft.$id})') Remove Draft
+
+

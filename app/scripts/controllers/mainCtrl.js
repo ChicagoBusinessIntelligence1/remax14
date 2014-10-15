@@ -17,9 +17,9 @@ angular.module('app')
     })
 
     var mainRef = new Firebase(url);
-    $scope.auth = $firebaseSimpleLogin(mainRef);
+    $rootScope.auth = $firebaseSimpleLogin(mainRef);
 
-    $scope.auth.$getCurrentUser().then(function (user) {
+    $rootScope.auth.$getCurrentUser().then(function (user) {
 
       if ((user === null)) {
         return;
@@ -42,17 +42,17 @@ angular.module('app')
     })
 
     $scope.fenLogout = function () {
-      $scope.auth.$logout();
+      $rootScope.auth.$logout();
       $scope.userLink = null;
       $scope.userName = null;
       $scope.userPic = null;
       $scope.isAdmin = null;
-      $rootScope.user= null;
+      $rootScopescope.userId = null;
       $state.go('app.home', null, {reload: true});
     }
 
     $scope.loginFb = function () {
-      $scope.auth.$login('facebook',
+      $rootScope.auth.$login('facebook',
         {
           rememberMe: true,
           scope: 'email,user_likes'

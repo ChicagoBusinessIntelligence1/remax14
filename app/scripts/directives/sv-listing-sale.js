@@ -56,8 +56,8 @@ angular.module('app')
         $scope.updateHouse = function (sectionIndex,  sectionContent) {
           //when click on button
 
-          $scope.houseObj[sectionContent.$id]=sectionContent;
-          $scope.houseObj.$save();
+          $scope.houseObj[sectionIndex]= $scope.house.$getRecord(sectionIndex);
+          $scope.houseObj.$save(sectionIndex);
         };
       }
     };

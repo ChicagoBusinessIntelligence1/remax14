@@ -9,7 +9,6 @@ angular.module('app')
 
       $scope.removeDraft = function (mls) {
         $scope.draftsRef.$remove(mls);
-        $scope.draftsRef.$save();
       };
     })
   });

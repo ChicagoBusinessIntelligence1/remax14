@@ -6,7 +6,7 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<div class="form-group txt-group">' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="house[title][label].value"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
+      '<input ng-class="{error:isMaxInvalid}" ng-model="model.value"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
       '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +
       '</div>',
@@ -21,6 +21,17 @@ angular.module('app')
         r: '='
       },
       link: function ($scope, element, attr) {
+
+        $scope.model = $scope.house.$getRecord($scope.title)[$scope.label];
+        $scope.$watch('model', function (newValue, oldValue) {
+          if (newValue == oldValue) {
+            return;
+          }
+          console.log($scope.house.$getRecord($scope.title)[$scope.label]);
+          console.log($scope.title);
+          console.log($scope.label);
+          console.log($scope.model);
+        });
         $scope.isMaxInvalid = false;
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 250;
 

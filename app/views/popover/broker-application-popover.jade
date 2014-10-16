@@ -10,7 +10,7 @@
       .form-group
         input.form-control(type='text' name='email' id='email' ng-model='email' placeholder="Email" required)
       .form-group
-        button.btn.btn-primary.btn-sm.btn-save(ng-click='submitBrokerApp(fname,lname,email);$hide()' ng-disabled='form.$invalid')
+        button.btn.btn-primary.btn-sm.btn-save(ng-click='submitBrokerApp(fname,lname,email);$hide()' ng-disabled='form.$invalid' )
           i.fa.fa-check
           | Submit
         button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')

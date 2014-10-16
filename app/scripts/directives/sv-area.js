@@ -6,7 +6,7 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<div class="form-group">' +
-      '<textarea ng-class="{error:isMaxInvalid}" ng-model="house[title][label].value" type="text" name="{{nameId}}" id="{{nameId}}" rows="5" class="form-control"  ng-required="r" ></textarea>' +
+      '<textarea ng-class="{error:isMaxInvalid}" ng-model="model.value" type="text" name="{{nameId}}" id="{{nameId}}" rows="5" class="form-control"  ng-required="r" ></textarea>' +
       '</div>',
       scope: {
         house: '=',
@@ -16,6 +16,8 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.isMaxInvalid = false;
+
+        $scope.model = $scope.house.$getRecord($scope.title)[$scope.label];
 
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
 

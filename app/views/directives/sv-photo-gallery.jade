@@ -1,0 +1,23 @@
+div(ng-switch="selected" ng-init="selected=1")
+  .slider-wrapper
+    .slider-content(ng-switch-when='1')
+      a(href='#')
+        sv-photo-thumb(img='../images/houses/1.jpg' height='430')
+    .slider-content(ng-switch-when='2')
+      a(href='#')
+        sv-photo-thumb(img='../images/houses/2.jpg' height='430')
+    .slider-content(ng-switch-when='3')
+      a(href='#')
+        sv-photo-thumb(img='../images/houses/3.jpg' height='430')
+    .slider-content(ng-switch-when='4')
+      a(href='#')
+        sv-photo-thumb(img='../images/houses/4.jpg' height='430')
+    .slider-nav-remax
+      .pic-th
+        sv-photo-thumb(img='../images/houses/1.jpg' height='50' ng-click='selected=1')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/2.jpg' height='50' ng-click='selected=2')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/3.jpg' height='50' ng-click='selected=3')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/1.jpg' height='50' ng-click='selected=4')

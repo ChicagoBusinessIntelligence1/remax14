@@ -8,7 +8,12 @@ angular.module('app')
       scope: {
         isDraft: '='
       },
+      controller: function ($scope) {
+       this.required =['mls', 'state', 'city','zip'];
+
+      },
       link: function ($scope, element, attr) {
+
         $rootScope.auth.$getCurrentUser().then(function (user) {
           /*take param mls from browser url using stateParams*/
           var mls = $stateParams.mls;
@@ -24,9 +29,8 @@ angular.module('app')
 
           $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
           $scope.house = $scope.houseRef.$asArray();
-          $scope.house.$loaded(function () {
-            //$scope.house= _.omit($scope.house,'brokers');
-          })
+          $scope.houseObj = $scope.houseRef.$asObject();
+
         });
         $scope.saveTemplate = function () {
           var mlsSection = _.find($scope.house, function (el) {
@@ -52,7 +56,6 @@ angular.module('app')
         $scope.updateHouse = function (sectionIndex,  sectionContent) {
           //when click on button
 
-          $scope.houseObj =  $scope.houseRef.$asObject();
           $scope.houseObj[sectionContent.$id]=sectionContent;
           $scope.houseObj.$save();
         };

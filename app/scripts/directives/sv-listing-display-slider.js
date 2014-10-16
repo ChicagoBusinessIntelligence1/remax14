@@ -14,11 +14,14 @@ angular.module('app')
         title: '@',
         updateHouse: '&'
       },
-      link: function ($scope, element, attr) {
+      require: '^sv-listing-sale',
+      link: function ($scope, element, attr, svCtrl) {
+        $scope.required = svCtrl.required;
         var repo = $scope.houseRepo + '/' + $scope.title;
+        $scope.required = ['mls', 'state', 'city', 'zip', 'street'];
+
         $scope.section = $firebase(new Firebase(repo)).$asArray();
         $scope.section.$loaded(function () {
-
           $scope.isSingleProp = $scope.section.length;
         })
         $scope.isEdit = false;

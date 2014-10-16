@@ -11,7 +11,10 @@ angular.module('app')
         isTemplate: '=',
         saveTemplate: '&'
       },
-      link: function ($scope, element, attr) {
+      require: '^sv-listing-sale',
+      link: function ($scope, element, attr, svCtrl) {
+
+
       }
     };
   });

@@ -8,7 +8,7 @@ div
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
-        h5.prop-type.text-info {{(house['01_generalInformation']['09_propertyType']).value}}
+        h5.prop-type.text-info {{(house['generalInformation']['propertyType']).value}}
       .col-sm-6.col-xs-12
         sv-sale-type(house='house')
     .alert.alert-address

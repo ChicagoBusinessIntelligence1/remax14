@@ -19,7 +19,7 @@ div
       .row(ng-if="isSingleProp===1")
         .col-sm-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='p in section | orderBy:"order"')
+            li.row(ng-repeat='p in section')
               .col-xs-12(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               //  edit
               .col-xs-12(ng-switch='p.type' ng-if='isEdit || isTemplate')
@@ -29,7 +29,7 @@ div
       .row(ng-if="isSingleProp>1")
         .col-sm-6.col-xs-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='p in section|orderBy:"order"' ng-show='$even')
+            li.row(ng-repeat='p in section' ng-show='$even')
               div.listing-label.col-sm-5.col-xs-6 {{p.$id | keyConversion}}:
               div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               div.content-info.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit || isTemplate')
@@ -38,7 +38,7 @@ div
                 sv-area(ng-switch-when='area' house='house' title='{{index}}' label='{{p.$id}}' r='required.indexOf(p.$id)>-1')
         .col-sm-6.col-xs-12
           ul.ul-data-just.list-unstyled
-            li.row(ng-repeat='p in section|orderBy:"order"' ng-show='$odd')
+            li.row(ng-repeat='p in section' ng-show='$odd')
               div.listing-label.col-sm-5.col-xs-6 {{p.$id | keyConversion}}:
               div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{p.value | boolToBinery}}
               div.content-info.col-sm-7.col-xs-6(ng-switch='p.type' ng-if='isEdit || isTemplate')

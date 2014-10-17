@@ -9,7 +9,7 @@ angular.module('app')
       scope: {},
       link: function ($scope, element, attr) {
         $scope.cancelView = function () {
-          $state.go('/');
+          $state.go('app.profile.drafts');
         };
       }
     };

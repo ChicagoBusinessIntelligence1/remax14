@@ -8,7 +8,7 @@ angular.module('app')
       template: '<div class="form-group txt-group">' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
-      '<span ng-show="r && !txt.val.length" class="notice error-note">Required</span>' +
+      '<span ng-show="r && !model.value.length" class="notice error-note">Required</span>' +
       '</div>',
       scope: {
         house: "=",

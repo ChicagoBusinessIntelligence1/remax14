@@ -1,45 +1,60 @@
 .well.listing-basic-info-wrap
   h5.prop-type.text-info
-    | Single Family Home
+    | {{listing.generalInformation.propertyType.value}}
   .alert.alert-address
     .row
-      .col-md-9.col-xs-12
-        a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:12345678})')
-          | Morton Grove IL 60053
-      .col-md-3.col-xs-12
-        a.price-style(ui-sref='app.profile.one-listing')
-          | $100,000
+      .col-sm-12
+        ul.list-inline
+          li
+            a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:$id})')
+              | {{listing.generalInformation.street.value}}
+              | {{listing.generalInformation.city.value}}
+              | {{listing.generalInformation.state.value}}
+              | {{listing.generalInformation.zip.value}}
+          li.pull-right
+            a.price-style(ui-sref='app.profile.one-listing')
+              | {{listing.generalInformation.price.value}}
   .app-content-five
     .row
       .col-sm-7
-        sv-listing-inline-info
+        ul.ul-basic-info.list-inline
+          li
+            i.fa.fa-check-circle-o.fa-fw
+            | MLS# {{listing.generalInformation.mls.value}}
+          li
+            i.fa.fa-check-circle-o.fa-fw
+            | {{listing.bedrooms.bedrooms.value}} beds
+          li
+            i.fa.fa-check-circle-o.fa-fw
+            | {{listing.bathrooms.fullBathrooms.value}} full baths
+          li
+            i.fa.fa-check-circle-o.fa-fw
+            | {{listing.generalInformation.propertySize.value}} sq ft
       .col-sm-5
-        ul.list-inline.text-right.ul-basic-social
           li
-            a(href='#')
-              i.fa.fa-plus.fa-fw
-              | Add to watch list
-          li
-            a(href='#')
-              i.fa.fa-share-alt.fa-fw
-              | Share
+            ul.list-inline.text-right.ul-basic-social
+              li
+                a(href='#')
+                  i.fa.fa-plus.fa-fw
+                  | Add to watch list
+              li
+                a(href='#')
+                  i.fa.fa-share-alt.fa-fw
+                  | Share
   .row
     .col-sm-7
-      a.thumbnail(ui-sref='app.profile.one-listing({mls:012345678})')
-        sv-photo-thumb(img='../images/houses/9-1.jpg' height='270')
+      a.thumbnail(ui-sref='app.profile.one-listing({mls:$id})')
+        sv-photo-thumb(img='../images/houses/1.jpg' height='270')
       //img.img-responsive(ng-src="../images/houses/1.jpg")
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information
         hr
-        p.basic-info-short At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-          | quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-          | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-          | Quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-          | similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. &nbsp
+        p.basic-info-short
+          | {{listing.propertyDescription.propertyDescription.value}}
           span
             em
-              a(ui-sref='app.profile.one-listing({mls:012345678})').read-more  Read more...
+              a(ui-sref='app.profile.one-listing({mls:$id})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

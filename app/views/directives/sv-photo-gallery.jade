@@ -1,23 +1,48 @@
 div(ng-switch="selected" ng-init="selected=1")
   .slider-wrapper
     .slider-content(ng-switch-when='1')
-      a(href='#')
-        sv-photo-thumb(img='../images/houses/1.jpg' height='430')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/1.jpg' height='480')
     .slider-content(ng-switch-when='2')
-      a(href='#')
-        sv-photo-thumb(img='../images/houses/2.jpg' height='430')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/2.jpg' height='480')
     .slider-content(ng-switch-when='3')
-      a(href='#')
-        sv-photo-thumb(img='../images/houses/3.jpg' height='430')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/3.jpg' height='480')
     .slider-content(ng-switch-when='4')
-      a(href='#')
-        sv-photo-thumb(img='../images/houses/4.jpg' height='430')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/4.jpg' height='480')
+    .slider-content(ng-switch-when='5')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/5.jpg' height='480')
+    .slider-content(ng-switch-when='6')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/6.jpg' height='480')
+    .slider-content(ng-switch-when='7')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/7.jpg' height='480')
+    .slider-content(ng-switch-when='8')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/8.jpg' height='480')
+    .slider-content(ng-switch-when='9')
+      .thumbnail
+        sv-photo-thumb(img='../images/houses/9.jpg' height='480')
     .slider-nav-remax
       .pic-th
-        sv-photo-thumb(img='../images/houses/1.jpg' height='50' ng-click='selected=1')
+        sv-photo-thumb(img='../images/houses/1.jpg' height='70' ng-click='selected=1')
       .pic-th
-        sv-photo-thumb(img='../images/houses/2.jpg' height='50' ng-click='selected=2')
+        sv-photo-thumb(img='../images/houses/2.jpg' height='70' ng-click='selected=2')
       .pic-th
-        sv-photo-thumb(img='../images/houses/3.jpg' height='50' ng-click='selected=3')
+        sv-photo-thumb(img='../images/houses/3.jpg' height='70' ng-click='selected=3')
       .pic-th
-        sv-photo-thumb(img='../images/houses/1.jpg' height='50' ng-click='selected=4')
+        sv-photo-thumb(img='../images/houses/4.jpg' height='70' ng-click='selected=4')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/5.jpg' height='70' ng-click='selected=5')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/6.jpg' height='70' ng-click='selected=6')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/7.jpg' height='70' ng-click='selected=7')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/8.jpg' height='70' ng-click='selected=8')
+      .pic-th
+        sv-photo-thumb(img='../images/houses/9.jpg' height='70' ng-click='selected=9')

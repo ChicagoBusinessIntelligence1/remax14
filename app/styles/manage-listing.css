@@ -217,3 +217,31 @@ h4 {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.btn-draft {
+  padding-left: 5px;
+  padding-left: 5px;
+  font-size: 11px;
+}
+.draft-sm-container hr {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.draft-sm-container h4 {
+  color: #767676;
+}
+.draft-sm-container h3,
+.draft-sm-container h4,
+.draft-sm-container h5 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.draft-sm-container ul li {
+  line-height: 1.5;
+}
+.draft-sm-container ul li p {
+  line-height: 1.5;
+  margin-bottom: 0px;
+}

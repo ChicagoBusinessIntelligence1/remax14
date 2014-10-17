@@ -7,8 +7,6 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
-
-
       }
     };
   });

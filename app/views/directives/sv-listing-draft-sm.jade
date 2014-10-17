@@ -1,4 +1,12 @@
-.well
+.well.draft-sm-container
+  .row
+    .col-sm-12
+      ul.list-inline
+        li
+          h4 {{draft.generalInformation.propertyType.value}}
+        li.pull-right
+          h5 $&nbsp{{draft.generalInformation.price.value}}
+  hr
   .row
     .col-sm-6
       a.thumbnail(ui-sref='app.profile.one-listing-draft({mls:draft.$id})')
@@ -7,20 +15,29 @@
       .draft-info-container
         ul.list-unstyled
           li
-            | MLS#: {{draft.generalInformation.mls.value}}
+            h3 MLS#: {{draft.generalInformation.mls.value}}
           li
-            | Price:
+            h4
+              | {{draft.generalInformation.street.value}}
+              | {{draft.generalInformation.city.value}}
+              | {{draft.generalInformation.state.value}}
+              | {{draft.generalInformation.zip.value}}
           li
-            | Property Type:
-          li
-            | Address:
+            ul.list-inline
+              li
+                p {{draft.bedrooms.bedrooms.value}} beds, &nbsp
+              li
+                p {{draft.bathrooms.fullBathrooms.value}} full baths
+
       .draft-info-container
         ul.list-inline
           li
-            button.btn.btn-default.btn-sm Edit
+            button.btn.btn-default.btn-sm.btn-draft
+              i.fa.fa-globe.fa-fw.fa-lg
+              | Post
           li
-            button.btn.btn-default.btn-sm Post Listing
-          li
-            button.btn.btn-default.btn-sm(ng-click='removeDraft({mls:draft.$id})') Remove Draft
+            button.btn.btn-default.btn-sm.btn-draft(ng-click='removeDraft({mls:draft.$id})')
+              i.fa.fa-trash.fa-fw.fa-lg
+              | Delete
 
 

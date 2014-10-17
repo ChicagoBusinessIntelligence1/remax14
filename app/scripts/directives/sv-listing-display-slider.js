@@ -23,7 +23,7 @@ angular.module('app')
 
         $scope.section = $firebase(new Firebase(repo)).$asArray();
         $scope.section.$loaded(function () {
-          $scope.isSingleProp = $scope.section.length;
+          $scope.isSingleProp = $scope.section.length-1;
         })
         $scope.isEdit = false;
         $scope.area = {};

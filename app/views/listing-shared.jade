@@ -4,5 +4,5 @@
     hr
 .drafts-container
   ul.row.list-inline
-    li.col-sm-6(ng-repeat='draft in listings')
-      sv-listing-draft-sm(draft='draft' post-draft='postDraft(mls)' remove-draft='removeDraft(mls)')
+    li.col-sm-6(ng-repeat='listing in listings')
+      sv-listing-draft-sm(draft='listing' post-draft='postDraft(mls)' remove-draft='removeDraft(mls)')

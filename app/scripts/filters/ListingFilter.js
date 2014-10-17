@@ -2,8 +2,13 @@
 
 angular.module('app')
   .filter('listingFilter', function () {
-    return function (listing) {
-      listing = _.omit(listing,'brokers');
+    return function (listing, omit) {
+      if (_.isUndefined(listing)) {
+        return;
+      }
+      listing = _.reject(listing, function (elem) {
+        return _.isArray(elem) && elem.$id==='brokers';
+      });
       return  listing;
     };
   });

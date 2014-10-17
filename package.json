@@ -64,7 +64,7 @@
     "node-notifier": "^3.4.1",
     "protractor": "^1.0.0",
     "require-dir": "^0.1",
-    "stylus": "^0.48.1",
+    "stylus": "0.48.1",
     "uglify-save-license": "^0.4.1",
     "underscore.string": "^2.3.3",
     "vinyl-source-stream": "^1.0.0",

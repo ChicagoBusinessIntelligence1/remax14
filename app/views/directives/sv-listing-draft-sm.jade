@@ -32,7 +32,7 @@
       .draft-info-container
         ul.list-inline
           li
-            button.btn.btn-default.btn-sm.btn-draft
+            button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})')
               i.fa.fa-globe.fa-fw.fa-lg
               | Post
           li

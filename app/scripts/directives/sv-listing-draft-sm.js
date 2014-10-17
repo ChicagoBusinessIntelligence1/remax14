@@ -8,7 +8,8 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-listing-draft-sm.html',
       scope: {
         draft: '=',
-        removeDraft:'&'
+        removeDraft:'&',
+        postDraft:'&'
       },
       link: function ($scope, element, attr) {
 

@@ -11,7 +11,7 @@ angular.module('app')
         isTemplate: '=',
         saveTemplate: '&',
         draft: '=',
-        removeDraft:'&'
+        delDraft:'&'
       },
       require: '^sv-listing-sale',
       link: function ($scope, element, attr, svCtrl) {

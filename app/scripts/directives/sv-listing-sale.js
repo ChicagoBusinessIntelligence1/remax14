@@ -7,10 +7,10 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-listing-sale.html',
       scope: {
         isDraft: '=',
-        removeDraft:'&'
+        removeDraft: '&'
       },
       controller: function ($scope) {
-       this.required =['mls', 'state', 'city','zip'];
+        this.required = ['mls', 'state', 'city', 'zip'];
 
       },
       link: function ($scope, element, attr) {
@@ -33,6 +33,10 @@ angular.module('app')
           $scope.houseObj = $scope.houseRef.$asObject();
 
         });
+        $scope.delDraft = function () {
+          $scope.house.$remove();
+        };
+
         $scope.saveTemplate = function () {
           var mlsSection = _.find($scope.house, function (el) {
             return !_.isUndefined(el.mls);
@@ -45,19 +49,19 @@ angular.module('app')
           $scope.house.forEach(function (oneHouse) {
             $scope.drafts[oneHouse.$id] = oneHouse;
           })
-          $scope.drafts['brokers']=[{
-            id:$rootScope.user.id,
-            name:$rootScope.user.displayName
+          $scope.drafts['brokers'] = [{
+            id: $rootScope.user.id,
+            name: $rootScope.user.displayName
           }];
           $scope.drafts.$save().then(function (mls) {
             $state.go('app.profile.drafts');
           });
         };
 
-        $scope.updateHouse = function (sectionIndex,  sectionContent) {
+        $scope.updateHouse = function (sectionIndex, sectionContent) {
           //when click on button
 
-          $scope.houseObj[sectionIndex]= $scope.house.$getRecord(sectionIndex);
+          $scope.houseObj[sectionIndex] = $scope.house.$getRecord(sectionIndex);
           $scope.houseObj.$save(sectionIndex);
         };
       }

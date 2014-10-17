@@ -9,7 +9,9 @@ angular.module('app')
       scope: {
         house: '=',
         isTemplate: '=',
-        saveTemplate: '&'
+        saveTemplate: '&',
+        draft: '=',
+        removeDraft:'&'
       },
       require: '^sv-listing-sale',
       link: function ($scope, element, attr, svCtrl) {

@@ -6,7 +6,8 @@ angular.module('app')
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
       scope: {
-        isDraft: '='
+        isDraft: '=',
+        removeDraft:'&'
       },
       controller: function ($scope) {
        this.required =['mls', 'state', 'city','zip'];

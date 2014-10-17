@@ -1,10 +1,23 @@
-div
-  .row(ng-if='isTemplate')
-    .col-xs-10
-      h3 New Listing for Sale
-    .col-xs-2
-      button.btn.btn-sm.btn-info(ng-click='saveTemplate()' ng-disabled="form.$invalid || form.$pristine") Save Listing
-  hr
+.listing-header-container
+  div(ng-if='!isTemplate')
+    .row(ng-if='!isTemplate')
+      .col-sm-12
+        ul.list-inline.pull-right
+          li
+            button.btn.btn-default.btn-draft
+              i.fa.fa-globe.fa-fw.fa-lg
+              | Post
+          li
+            button.btn.btn-default.btn-draft(ng-click='removeDraft({mls:draft.$id})')
+              i.fa.fa-trash.fa-fw.fa-lg
+              | Delete
+  div(ng-if='isTemplate')
+    .row
+      .col-xs-10
+        h3 New Listing for Sale
+      .col-xs-2
+        button.btn.btn-sm.btn-info(ng-click='saveTemplate()' ng-disabled="form.$invalid || form.$pristine") Save Listing
+    hr
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
@@ -14,8 +27,15 @@ div
     .alert.alert-address
       .row
         .col-md-9.col-xs-12
-          .text-app.address-basic {{(house['01_generalInformation']['09_propertyType']).value}}
+          h4
+            | {{house.$getRecord('generalInformation').street.value}}
+            | {{house.$getRecord('generalInformation').city.value}}
+            | {{house.$getRecord('generalInformation').state.value}}
+            | {{house.$getRecord('generalInformation').zip.value}}
         .col-md-3.col-xs-12
-          .price-style  $ {{house.$getRecord('generalInformation').price.value}}
+          h4.text-right  $ {{house.$getRecord('generalInformation').price.value}}
 
-    sv-listing-inline-info
+    .row
+      .col-sm-12
+        .inline-info-container
+          sv-listing-inline-info(house='house')

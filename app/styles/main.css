@@ -2887,8 +2887,18 @@ label {
     text-align: center;
   }
 }
-h4 {
-  margin-top: 0px !important;
+.listing-header-container .inline-info-container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.listing-header-container .alert-address {
+  margin-top: 5px;
+  padding: 15px;
+}
+.listing-header-container .alert-address h4 {
+  margin-bottom: 0px;
+  font-weight: 700;
+  color: #505050;
 }
 .address-basic {
   color: #3c3c3c;
@@ -2929,9 +2939,10 @@ h4 {
   }
 }
 .prop-type {
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   margin-bottom: 15px;
+  font-weight: 400;
 }
 @media screen and (max-width: 992px) {
   .prop-type {
@@ -2939,6 +2950,7 @@ h4 {
   }
 }
 .sale-type {
+  margin-top: 10px;
   margin-bottom: 15px;
   text-align: right;
 }

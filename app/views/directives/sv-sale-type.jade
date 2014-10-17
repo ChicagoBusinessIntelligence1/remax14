@@ -1,8 +1,8 @@
 .sale-type
   ul.list-inline
-    li(ng-show="house['01_generalInformation']['05_shortSale'].value")
+    li(ng-show="house.$getRecord('generalInformation').shortSale.value")
       h5.label.label-danger Short Sale
-    li(ng-show="house['01_generalInformation']['06_bankOwned'].value")
+    li(ng-show="house.$getRecord('generalInformation').bankOwned.value")
       h5.label.label-info Bank Owned
-    li(ng-show="house['01_generalInformation']['07_foreclosure'].value")
+    li(ng-show="house.$getRecord('generalInformation').foreclosure.value")
       h5.label.label-success Foreclosure

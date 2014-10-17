@@ -1,14 +1,14 @@
 ul.ul-basic-info.list-inline
   li
     i.fa.fa-check-circle-o.fa-fw
-    | MLS# 123456
+    | MLS# {{house.$getRecord('generalInformation').mls.value}}
   li
     i.fa.fa-check-circle-o.fa-fw
-    | 1 bd
+    | {{house.$getRecord('bedrooms').bedrooms.value}} beds
   li
     i.fa.fa-check-circle-o.fa-fw
-    | 1 full & 1 half bath
+    | {{house.$getRecord('bathrooms').fullBathrooms.value}} full baths
   li
     i.fa.fa-check-circle-o.fa-fw
-    | 2,000 sq ft
+    | {{house.$getRecord('generalInformation').propertySize.value}} sq ft
 

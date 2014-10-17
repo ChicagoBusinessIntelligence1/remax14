@@ -1,23 +1,39 @@
 .listing-header-container
   div(ng-if='!isTemplate')
+    .listing-navigation-container
+      .row
+        .col-sm-6
+          ol.breadcrumb.breadcrumb-app
+            li
+              a(href='#') Home
+            li
+              a(href='#') Library
+            li.active Data
 
-    .row(ng-if='!isTemplate')
-      .col-sm-6
-        ul.list-inline.pull-right
-          li
-            button.btn.btn-default.btn-draft
-              i.fa.fa-globe.fa-fw.fa-lg
-              | Post
-          li
-            button.btn.btn-default.btn-draft(ng-click='delDraft()')
-              i.fa.fa-trash.fa-fw.fa-lg
-              | Delete
+        .col-sm-6
+          ul.list-inline.text-right
+            li
+              button.btn.btn-default.btn-draft
+                i.fa.fa-globe.fa-fw.fa-lg
+                | Post
+            li
+              button.btn.btn-default.btn-draft(ng-click='delDraft()')
+                i.fa.fa-trash.fa-fw.fa-lg
+                | Delete
+
   div(ng-if='isTemplate')
     .row
-      .col-xs-10
+      .col-sm-6
         h3 New Listing for Sale
-      .col-xs-2
-        button.btn.btn-sm.btn-info(ng-click='saveTemplate()' ng-disabled="form.$invalid || form.$pristine") Save Listing
+      .col-sm-6
+        ul.list-inline.text-right
+          li
+            sv-cancel-view
+
+          li
+            button.btn.btn-sm.btn-info(ng-click='saveTemplate()' ng-disabled="form.$invalid || form.$pristine")
+              i-i.fa.fa-save.fa-fw
+              | Save Listing
     hr
   div(ng-if='!isTemplate')
     .row

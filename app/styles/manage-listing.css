@@ -85,6 +85,34 @@ label {
     text-align: center;
   }
 }
+.listing-navigation-container {
+  background-color: #f5f5f5;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.listing-navigation-container ul {
+  padding-top: 3px;
+  margin-bottom: 0px;
+}
+.breadcrumb-app {
+  background: none;
+  margin-bottom: 0px;
+}
+.breadcrumb-app li.active {
+  color: #767676;
+  font-size: 12px;
+}
+.breadcrumb-app li a {
+  color: color-info;
+  font-size: 12px;
+}
+.breadcrumb-app li a:hover,
+.breadcrumb-app li a:active,
+.breadcrumb-app li a:focus {
+  color: #505050;
+  text-decoration: none;
+}
 .ul-basic-social {
   margin-bottom: 0px;
   margin-top: 5px;

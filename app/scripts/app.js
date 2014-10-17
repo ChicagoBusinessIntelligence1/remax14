@@ -68,7 +68,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         controller: "ListingDraftsCtrl",
         templateUrl: "../views/listing-drafts.html"
       })
-      .state("app.profile.one-listing-draft", {
+      .state("app.profile.drafts.one-listing-draft", {
         url: "/one-listing-draft/:mls",
         controller:"OneListingDraftCtrl",
         templateUrl: "../views/one-listing-draft.html"
@@ -94,7 +94,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         templateUrl: "../views/add-listing.html"
       })
 			.state("listing-shared", {
-				url: "/listing-shared", 
+				url: "/listing-shared",
 				controller:"ListingSharedCtrl",
 				templateUrl: "../views/listing-shared.html"
 			})

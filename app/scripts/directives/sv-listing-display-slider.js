@@ -23,6 +23,9 @@ angular.module('app')
 
         $scope.section = $firebase(new Firebase(repo)).$asArray();
         $scope.section.$loaded(function () {
+          $scope.section = _.reject($scope.section, function (elem) {
+            return elem.$id==='order';
+          });
           $scope.isSingleProp = $scope.section.length-1;
         })
         $scope.isEdit = false;

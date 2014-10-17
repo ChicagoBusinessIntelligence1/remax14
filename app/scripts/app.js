@@ -56,7 +56,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state("app.profile", {
           resolve: {
-            user: function ($firebaseSimpleLogin,$q) {
+             user: function ($firebaseSimpleLogin,$q) {
               var def = $q.defer();
 
 	            var url = 'https://remax14.firebaseio.com/';

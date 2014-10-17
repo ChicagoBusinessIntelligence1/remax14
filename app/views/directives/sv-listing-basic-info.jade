@@ -6,7 +6,7 @@
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:$id})')
+            a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:listing.generalInformation.mls.value})')
               | {{listing.generalInformation.street.value}}
               | {{listing.generalInformation.city.value}}
               | {{listing.generalInformation.state.value}}

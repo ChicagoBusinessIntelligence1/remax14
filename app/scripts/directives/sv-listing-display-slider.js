@@ -26,7 +26,7 @@ angular.module('app')
           $scope.section = _.reject($scope.section, function (elem) {
             return elem.$id==='order';
           });
-          $scope.isSingleProp = $scope.section.length-1;
+          $scope.isSingleProp = $scope.section.length;
         })
         $scope.isEdit = false;
         $scope.area = {};

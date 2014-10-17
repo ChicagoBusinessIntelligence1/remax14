@@ -2,9 +2,8 @@
   sv-listing-sale-header(house='house' is-template='isTemplate' save-template='saveTemplate()' )
   .gallery-wrapper(ng-if='!isTemplate')
     .row
-      .col-sm-4
-        a.thumbnail(ui-sref='app.profile.one-listing')
-          img.img-responsive(ng-src="../images/houses/9.jpg")
+      .col-sm-12
+        sv-photo-gallery
   div {{house.generalInformation.street.value}}
   ul.list-unstyled
     li(ng-repeat='v in house |orderBy:"order"')

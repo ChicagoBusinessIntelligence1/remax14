@@ -294,7 +294,6 @@ module.exports = function (grunt) {
     } else {
       grunt.file.write(d + name + t, servr);
     }
-    //grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
 
     if (injectFile) {

@@ -12,8 +12,7 @@ angular.module('app')
         } else {
           houseRepo = isDraft ? urlBrokers + $rootScope.user.id + '/residential/drafts/' + mls : urlResidential + mls;
         }
-        console.log(houseRepo);
-        return $firebase(new Firebase(houseRepo));
+        return houseRepo;
       }
     };
   })

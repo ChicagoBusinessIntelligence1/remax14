@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function (HomeRepo, $stateParams, $state) {
+  .directive('svListingSale', function (HomeRepo, $stateParams, $state, $firebase) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
@@ -17,12 +17,14 @@ angular.module('app')
 
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
-        $scope.houseRef = HomeRepo.get(mls, $scope.isDraft);
+
+        $scope.houseRepo = HomeRepo.get(mls, $scope.isDraft);
+        $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
 
         $scope.house = $scope.houseRef.$asArray();
         $scope.houseObj = $scope.houseRef.$asObject();
 
-        $scope.delDraft = function () {
+        $scope.deleteDraft = function () {
           $scope.house.$remove(mls);
         };
 

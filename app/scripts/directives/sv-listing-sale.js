@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function (HomeRepo, HomeRepo, Homerepo, $firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {;
+  .directive('svListingSale', function (HomeRepo, $stateParams, $state) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
@@ -14,21 +14,13 @@ angular.module('app')
       },
 
       link: function ($scope, element, attr) {
-          /*take param mls from browser url using stateParams*/
 
-          var mls = $stateParams.mls;
-          /*Firebase string reference*/
-          if (_.isUndefined(mls)) {
-            $scope.houseRepo = urlResidentialTemp;
-            $scope.isTemplate = true;
-          } else {
-            $scope.houseRepo = $scope.isDraft ? urlBrokers + $rootScope.user.id + '/residential/drafts/' + mls : urlResidential + mls;
-            $scope.isTemplate = false;
-          }
+        var mls = $stateParams.mls;
+        $scope.isTemplate = mls ? false : true;
+        $scope.houseRef = HomeRepo.get(mls, $scope.isDraft);
 
-          $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
-          $scope.house = $scope.houseRef.$asArray();
-          $scope.houseObj = $scope.houseRef.$asObject();
+        $scope.house = $scope.houseRef.$asArray();
+        $scope.houseObj = $scope.houseRef.$asObject();
 
         $scope.delDraft = function () {
           $scope.house.$remove(mls);

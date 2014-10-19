@@ -4,6 +4,7 @@
 /// <reference path="services/MyService.js" />
 /// <reference path="services/MyService.js" />
 /// <reference path="services/MyService.js" />
+/// <reference path="services/MyService.js" />
 profile.service("MyService", MyService);
 /// <reference path="services/MyseerService.js" />
 profile.service("MyseerService", MyseerService);

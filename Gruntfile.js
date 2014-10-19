@@ -298,6 +298,7 @@ module.exports = function (grunt) {
     grunt.file.write(ipath, indf);
 
     if (injectFile) {
+      injectFile = injectFile+'.js';
       var files = grunt.file.expand('app/scripts/**/*.js');
       files.every(function (file) {
         if (file.indexOf(injectFile) > -1) {

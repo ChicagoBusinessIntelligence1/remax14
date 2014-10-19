@@ -113,6 +113,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "ListingSharedCtrl",
           templateUrl: "../views/listing-shared.html"
         })
+			.state("-test", {
+				url: "/-test", 
+				controller:"TestCtrl",
+				templateUrl: "../views/test-ctrl.html"
+			})
 //#state
     })
   ;

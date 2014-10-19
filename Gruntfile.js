@@ -1,3 +1,4 @@
+
 var enterInside = function (target, before, insert) {
   if (target === undefined) {
     return target;
@@ -21,9 +22,13 @@ var removeFromInside = function (target, remove) {
 }
 
 module.exports = function (grunt) {
+
   var _ = require('underscore');
   _.str = require('underscore.string');
   _.str.include('Underscore.string', 'string');
+
+
+  grunt.loadNpmTasks('grunt-git');
 
   var delFileDep = function (fileName) {
     var arrExt = ['jade', 'js', 'html'];
@@ -42,7 +47,19 @@ module.exports = function (grunt) {
 
 // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON('package.json'),
+    gitcommit: {
+      task: {
+        options: {
+          message: 'Add files',
+          noVerify: true,
+          noStatus: false
+        },
+        files: {
+          src: ['.']
+        }
+      }
+    }
   });
   grunt.registerTask('move-app-to-z', function () {
     if (grunt.file.exists('vs/app.js')) {
@@ -178,7 +195,7 @@ module.exports = function (grunt) {
       '\t\t\t})\r\n';
 
     var apath = 'app/scripts/app.js';
-    var tpath = 'app/views/' + dashedName  + '.jade';
+    var tpath = 'app/views/' + dashedName + '.jade';
     var app = grunt.file.read(apath);
     if (rm) {
 //app = removeFromInside(app, ref);

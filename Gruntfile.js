@@ -1,4 +1,3 @@
-
 var enterInside = function (target, before, insert) {
   if (target === undefined) {
     return target;
@@ -26,7 +25,6 @@ module.exports = function (grunt) {
   var _ = require('underscore');
   _.str = require('underscore.string');
   _.str.include('Underscore.string', 'string');
-
 
   grunt.loadNpmTasks('grunt-git');
 
@@ -235,7 +233,7 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
-
+    grunt.task.run('gitcommit');
   })
 
   grunt.registerTask('s', function (sname) {

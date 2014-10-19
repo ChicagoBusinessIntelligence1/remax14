@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function ($firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {
+  .directive('svListingSale', function (izya, $firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {;
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
@@ -11,7 +11,6 @@ angular.module('app')
       },
       controller: function ($scope) {
         this.required = ['mls', 'state', 'city', 'zip'];
-
       },
       link: function ($scope, element, attr) {
 

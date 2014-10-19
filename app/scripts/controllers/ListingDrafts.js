@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ListingDraftsCtrl', function ($scope, $firebase, urlResidential, urlBrokers, $rootScope) {
+  .controller('ListingDraftsCtrl', function ($scope, $firebase, urlResidential, urlBrokers, $rootScope) {;
     $rootScope.auth.$getCurrentUser().then(function (user) {
       var draftsRepo = urlBrokers + user.id + '/drafts/residential/';
       $scope.draftsRef = $firebase(new Firebase(draftsRepo));

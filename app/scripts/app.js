@@ -56,13 +56,13 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state("app.profile", {
           resolve: {
-             user: function ($firebaseSimpleLogin,$q) {
+            user: function ($firebaseSimpleLogin, $q) {
               var def = $q.defer();
 
-	            var url = 'https://remax14.firebaseio.com/';
+              var url = 'https://remax14.firebaseio.com/';
               var mainRef = new Firebase(url);
               var auth = $firebaseSimpleLogin(mainRef);
-               auth.$getCurrentUser().then(function (user) {
+              auth.$getCurrentUser().then(function (user) {
                 def.resolve(user);
               });
               return def.promise;
@@ -200,11 +200,17 @@ app.value('inputTypes',
 
 /*=Sercices*/
 app.value('url', 'https://remax14.firebaseio.com/');
+
 app.factory('urlResidential', function (url) {
-  return url + 'listings/residential/'
+  return url + '/residential/homes/'
 });
+
+app.factory('urlResidentialTrash', function (url) {
+  return url + 'residential/trash/'
+});
+
 app.factory('urlResidentialTemp', function (url) {
-  return url + 'templates/residential/0'
+  return url + '/residential/templates/0'
 });
 
 app.factory('urlBrokers', function (url) {

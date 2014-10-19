@@ -16,7 +16,6 @@ angular.module('app')
       },
       require: '^sv-listing-sale',
       link: function ($scope, element, attr, svCtrl) {
-        $scope.required = ['mls', 'state', 'city', 'zip', 'street'];
         $scope.required = svCtrl.required;
 
         var repo = $scope.houseRepo + '/' + $scope.title;

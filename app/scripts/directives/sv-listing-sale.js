@@ -6,15 +6,14 @@ angular.module('app')
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
       scope: {
-        isDraft: '=',
-        removeDraft: '&'
+        isDraft: '='
       },
+
       controller: function ($scope) {
         this.required = ['mls', 'state', 'city', 'zip'];
-
       },
-      link: function ($scope, element, attr) {
 
+      link: function ($scope, element, attr) {
         $rootScope.auth.$getCurrentUser().then(function (user) {
           /*take param mls from browser url using stateParams*/
           var mls = $stateParams.mls;
@@ -23,8 +22,7 @@ angular.module('app')
             $scope.houseRepo = urlResidentialTemp;
             $scope.isTemplate = true;
           } else {
-
-            $scope.houseRepo = $scope.isDraft ? urlBrokers + user.id + '/drafts/residential/' + mls : urlResidential + mls;
+            $scope.houseRepo = $scope.isDraft ? urlBrokers + user.id + '/residential/drafts/' + mls : urlResidential + mls;
             $scope.isTemplate = false;
           }
 
@@ -34,7 +32,7 @@ angular.module('app')
 
         });
         $scope.delDraft = function () {
-          $scope.house.$remove();
+          $scope.house.$remove(mls);
         };
 
         $scope.saveTemplate = function () {
@@ -43,12 +41,13 @@ angular.module('app')
           });
           var mls = mlsSection.mls.value;
 
-          var draftRepo = urlBrokers + $rootScope.user.id + '/drafts/residential/' + mls;
+          var draftRepo = urlBrokers + $rootScope.user.id + '/residential/drafts/' + mls;
           $scope.drafts = $firebase(new Firebase(draftRepo)).$asObject();
 
           $scope.house.forEach(function (oneHouse) {
             $scope.drafts[oneHouse.$id] = oneHouse;
           })
+
           $scope.drafts['brokers'] = [{
             id: $rootScope.user.id,
             name: $rootScope.user.displayName

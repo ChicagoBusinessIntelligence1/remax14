@@ -1,5 +1,6 @@
 /// <reference path="services/SomeService.js" />
 /// <reference path="services/SomeService.js" />
+/// <reference path="services/SomeService.js" />
 profile.service("SomeService", SomeService);
 /// <reference path="services/MyService.js" />
 /// <reference path="services/MyService.js" />

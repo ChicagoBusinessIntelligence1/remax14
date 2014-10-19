@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('Some', function () {
+  .factory('Somework', function () {
     // Service logic
     // ...
 

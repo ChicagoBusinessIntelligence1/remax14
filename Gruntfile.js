@@ -257,25 +257,25 @@ module.exports = function (grunt) {
 
 ////////////////
 
-// register
-    var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
-    var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
-
-    var apath = 'app/scripts/app.js';
-    var app = grunt.file.read(apath);
-    if (rm) {
-      app = removeFromInside(app, ref);
-      app = removeFromInside(app, reg);
-    }
-    else {
-
-      app = enterInside(app, '//#serv', reg);
-      app = enterInside(app, '//#ref', ref);
-    }
+//// register
+//    var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
+//    var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
+//
+//    var apath = 'app/scripts/app.js';
+//    var app = grunt.file.read(apath);
+//    if (rm) {
+//      app = removeFromInside(app, ref);
+//      app = removeFromInside(app, reg);
+//    }
+//    else {
+//
+//      app = enterInside(app, '//#serv', reg);
+//      app = enterInside(app, '//#ref', ref);
+//    }
 
 /////////////////// index
     var ipath = 'app/index.html';
-    var src = '<script src="scripts/services/' + name + '.js"></script>\r\n';
+    var src = '<script src="scripts/services/' + name + 'Service.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
 //////////////////
     if (rm) {
@@ -294,7 +294,7 @@ module.exports = function (grunt) {
     } else {
       grunt.file.write(d + name + t, servr);
     }
-    grunt.file.write(apath, app);
+    //grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
 
     if (injectFile) {

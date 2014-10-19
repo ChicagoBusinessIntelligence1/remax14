@@ -1,20 +1,3 @@
-/// <reference path="services/SomeService.js" />
-/// <reference path="services/SomeService.js" />
-/// <reference path="services/SomeService.js" />
-profile.service("SomeService", SomeService);
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-/// <reference path="services/MyService.js" />
-profile.service("MyService", MyService);
-/// <reference path="services/MyseerService.js" />
-profile.service("MyseerService", MyseerService);
 'use strict';
 
 var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])

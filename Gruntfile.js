@@ -298,7 +298,7 @@ module.exports = function (grunt) {
     grunt.file.write(ipath, indf);
 
     if (injectFile) {
-      var fileContent = grunt.file.expand('app/scripts/*.js');
+      var fileContent = grunt.file.expand('app/scripts/**/*.js');
       console.log(fileContent);
     }
 

@@ -240,7 +240,10 @@ module.exports = function (grunt) {
 // delete option
     var rm = grunt.option('rm');
 
+    var injectFile = grunt.option('file');
+
     rm = (rm === undefined) ? false : rm;
+    injectFile = (injectFile === undefined) ? false : injectFile;
 
 // C //
     var d = 'app/scripts/services/';
@@ -294,6 +297,14 @@ module.exports = function (grunt) {
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
 
+    if (injectFile) {
+      var fileContent = grunt.file.expand(injectFile);
+      console.log(fileContent);
+    }
+
+
+
+    grunt.task.run('gitcommit');
   })
 
   grunt.registerTask('f', function (fname) {
@@ -343,6 +354,7 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
+    grunt.task.run('gitcommit');
 
   })
 
@@ -438,6 +450,6 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
-
+    grunt.task.run('gitcommit');
   })
 };

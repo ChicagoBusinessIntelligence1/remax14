@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function (izya, $firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {;
+  .directive('svListingSale', function ($firebase, $stateParams, urlBrokers, urlResidential, urlResidentialTemp, $rootScope, $state) {;
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',
@@ -14,15 +14,15 @@ angular.module('app')
       },
 
       link: function ($scope, element, attr) {
-        $rootScope.auth.$getCurrentUser().then(function (user) {
           /*take param mls from browser url using stateParams*/
+
           var mls = $stateParams.mls;
           /*Firebase string reference*/
           if (_.isUndefined(mls)) {
             $scope.houseRepo = urlResidentialTemp;
             $scope.isTemplate = true;
           } else {
-            $scope.houseRepo = $scope.isDraft ? urlBrokers + user.id + '/residential/drafts/' + mls : urlResidential + mls;
+            $scope.houseRepo = $scope.isDraft ? urlBrokers + $rootScope.user.id + '/residential/drafts/' + mls : urlResidential + mls;
             $scope.isTemplate = false;
           }
 
@@ -30,7 +30,6 @@ angular.module('app')
           $scope.house = $scope.houseRef.$asArray();
           $scope.houseObj = $scope.houseRef.$asObject();
 
-        });
         $scope.delDraft = function () {
           $scope.house.$remove(mls);
         };

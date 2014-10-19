@@ -20,19 +20,19 @@ var removeFromInside = function (target, remove) {
   return target;
 }
 
-
 module.exports = function (grunt) {
+
   var _ = require('underscore');
   _.str = require('underscore.string');
   _.str.include('Underscore.string', 'string');
 
+  grunt.loadNpmTasks('grunt-git');
 
   var delFileDep = function (fileName) {
     var arrExt = ['jade', 'js', 'html'];
 
     var dotCoord = fileName.lastIndexOf('.');
     fileName = dotCoord > 0 ? fileName.substring(0, dotCoord) : fileName;
-
 
     arrExt.forEach(function (e) {
       var fileNameFull = fileName + '.' + e;
@@ -43,10 +43,21 @@ module.exports = function (grunt) {
 
   }
 
-
 // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON('package.json'),
+    gitcommit: {
+      task: {
+        options: {
+          message: 'Add files',
+          noVerify: true,
+          noStatus: false
+        },
+        files: {
+          src: ['.']
+        }
+      }
+    }
   });
   grunt.registerTask('move-app-to-z', function () {
     if (grunt.file.exists('vs/app.js')) {
@@ -54,7 +65,6 @@ module.exports = function (grunt) {
       grunt.file.delete('vs/app.js');
     }
   });
-
 
   grunt.registerTask('copy-profile-to-root', function () {
     var address = 'app/profile.js';
@@ -64,7 +74,6 @@ module.exports = function (grunt) {
     grunt.file.write(address, content);
     grunt.file.copy('app/profile.js', 'profile.js');
   });
-
 
   grunt.registerTask('templates', function () {
     var file = grunt.file.read('app/scripts/app.js');
@@ -100,7 +109,6 @@ module.exports = function (grunt) {
       }
     }
 
-
     var dirFolder = 'app/views/directives';
 
     grunt.file.recurse(dirFolder, function (file) {
@@ -119,7 +127,6 @@ module.exports = function (grunt) {
 
   });
 
-
   grunt.registerTask('addcss', function () {
 
     grunt.task.run('cssmin');
@@ -127,7 +134,6 @@ module.exports = function (grunt) {
     var cssFile = '<style>' + grunt.file.read('app/styles/Profile.min.css') + '</style>';
 
     var fileContent = tempFile + cssFile;
-
 
     fileContent = fileContent.replace(/imgdir\//g, '/Scripts/app/profile/app/imgdir/');
     fileContent = fileContent.replace(/..\/..\/img\//g, '/Scripts/app/profile/app/img/');
@@ -159,13 +165,11 @@ module.exports = function (grunt) {
 
   });
 
-
   grunt.registerTask('c', function (cname) {
 // delete option
     var rm = grunt.option('rm');
 
     rm = (rm === undefined) ? false : rm;
-
 
 // C //
     var d = 'app/scripts/controllers/';
@@ -173,27 +177,23 @@ module.exports = function (grunt) {
     var ctrl = grunt.file.read('templates/ctrl.tpl');
 
     var lname = cname;
-    var name = lname.charAt(0).toUpperCase() + lname.substring(1);
-
+    var name = lname.charAt(0).toUpperCase() + lname.substring(1) + 'Ctrl';
 
     var ctrlr = ctrl.replace(/#name#/g, name).replace(/#lname#/g, lname);
 
 ////////////////
-
-
-////////////////
-
+    var dashedName = _.str.dasherize(name).slice(1);
 // register
-    var ref = '/// <reference path="controllers/' + name + '.js" />\r\n';
-    var reg = 'profile.controller("' + name + 'Ctrl", ' + name + 'Ctrl);\r\n';
+//    var ref = '/// <reference path="controllers/' + name + '.js" />\r\n';
+//    var reg = 'profile.controller("' + name + 'Ctrl", ' + name + 'Ctrl);\r\n';
     var state = '\t\t\t.state("' + _.str.dasherize(lname) + '", {\r\n' +
       '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
-      '\t\t\t\tcontroller:"' + name + 'Ctrl",\r\n' +
-      '\t\t\t\ttemplateUrl: "../views/' + _.str.dasherize(lname) + '.html"\r\n' +
+      '\t\t\t\tcontroller:"' + name + '",\r\n' +
+      '\t\t\t\ttemplateUrl: "../views/' + dashedName + '.html"\r\n' +
       '\t\t\t})\r\n';
 
     var apath = 'app/scripts/app.js';
-    var tpath = 'app/views/' + _.str.dasherize(lname) + '.jade';
+    var tpath = 'app/views/' + dashedName + '.jade';
     var app = grunt.file.read(apath);
     if (rm) {
 //app = removeFromInside(app, ref);
@@ -206,7 +206,6 @@ module.exports = function (grunt) {
 //app = enterInside(app, '//#ref', ref);
       app = enterInside(app, '//#state', state);
     }
-
 
 /////////////////// index
     var ipath = 'app/index.html';
@@ -234,16 +233,17 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
-
+    grunt.task.run('gitcommit');
   })
-
 
   grunt.registerTask('s', function (sname) {
 // delete option
     var rm = grunt.option('rm');
 
-    rm = (rm === undefined) ? false : rm;
+    var injectFile = grunt.option('file');
 
+    rm = (rm === undefined) ? false : rm;
+    injectFile = (injectFile === undefined) ? false : injectFile;
 
 // C //
     var d = 'app/scripts/services/';
@@ -253,29 +253,25 @@ module.exports = function (grunt) {
     var lname = sname.toLowerCase();
     var name = lname.charAt(0).toUpperCase() + lname.substring(1);
 
-
     var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname);
 
 ////////////////
 
-
-// register
-    var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
-    var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
-
-
-    var apath = 'app/scripts/app.js';
-    var app = grunt.file.read(apath);
-    if (rm) {
-      app = removeFromInside(app, ref);
-      app = removeFromInside(app, reg);
-    }
-    else {
-
-      app = enterInside(app, '//#serv', reg);
-      app = enterInside(app, '//#ref', ref);
-    }
-
+//// register
+//    var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
+//    var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
+//
+//    var apath = 'app/scripts/app.js';
+//    var app = grunt.file.read(apath);
+//    if (rm) {
+//      app = removeFromInside(app, ref);
+//      app = removeFromInside(app, reg);
+//    }
+//    else {
+//
+//      app = enterInside(app, '//#serv', reg);
+//      app = enterInside(app, '//#ref', ref);
+//    }
 
 /////////////////// index
     var ipath = 'app/index.html';
@@ -298,17 +294,32 @@ module.exports = function (grunt) {
     } else {
       grunt.file.write(d + name + t, servr);
     }
-    grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
 
-  })
+    if (injectFile) {
+      injectFile = injectFile+'.js';
+      var files = grunt.file.expand('app/scripts/**/*.js');
+      files.every(function (file) {
+        if (file.indexOf(injectFile) > -1) {
 
+          var fileContent = grunt.file.read(file);
+          fileContent = fileContent.replace('function (', 'function ('+name+', ');
+          grunt.file.write(file,  fileContent);
+
+          return false;
+        }
+        return true;
+      })
+
+    }
+
+    grunt.task.run('gitcommit');
+  })
 
   grunt.registerTask('f', function (fname) {
 // delete option
     var rm = grunt.option('rm');
     rm = (rm === undefined) ? false : rm;
-
 
 // C //
     var d = 'app/scripts/filters/';
@@ -318,13 +329,7 @@ module.exports = function (grunt) {
     var name = fname.charAt(0).toUpperCase() + fname.substring(1);
     var jname = name.charAt(0).toLowerCase() + name.substring(1);
 
-
     var filtr = filt.replace(/#name#/g, name);
-
-////////////////
-
-
-////////////////
 
 // register
     var ref = '/// <reference path="filters/' + name + '.js" />\r\n';
@@ -332,10 +337,8 @@ module.exports = function (grunt) {
       " return (value:boolean):string => {" +
       "return " + name + ".filter(value); } });\r\n";
 
-
     var apath = 'app/scripts/app.js';
     var app = grunt.file.read(apath);
-
 
 /////////////////// index
     var ipath = 'app/index.html';
@@ -360,16 +363,15 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
+    grunt.task.run('gitcommit');
 
   })
-
 
   grunt.registerTask('d', function (dname, dtype) {
 // delete option
     var rm = grunt.option('rm');
 
     rm = (rm === undefined) ? false : rm;
-
 
     var d = 'app/scripts/directives/';
     var directive = grunt.file.read('templates/dir.tpl');
@@ -393,7 +395,6 @@ module.exports = function (grunt) {
 
     jnameDashed = _.str.dasherize(jname);
 
-
     var oname = dname;
     var directivef = directive.replace(/#uname#/g, uname).replace(/#lname#/g, lname)
       .replace(/#jname#/g, jname).replace(/#dname#/g, dname);
@@ -405,17 +406,14 @@ module.exports = function (grunt) {
       delFileDep(dirFileName);
     }
 
-
     var reg = 'profile.directive("' + jname + '", ' + jname + ');\r\n';
 ////////////////
-
 
 // register
     var ref = '/// <reference path="directives/' + jname + '.js" />\r\n';
 // grunt.log.ok(ref);
 // grunt.log.ok(reg);
 // grunt.fail.fatal();
-
 
     var apath = 'app/scripts/app.js';
     var tpath = 'app/views/directives/' + oname + '.jade';
@@ -429,7 +427,6 @@ module.exports = function (grunt) {
 // app = enterInside(app, '//#dir', reg);
 // app = enterInside(app, '//#ref', ref);
 //}
-
 
 /////////////////// index/
     var ipath = 'app/index.html';
@@ -445,7 +442,6 @@ module.exports = function (grunt) {
     if (dtype && dtype == 'edit') {
       var directiveTemplate = grunt.file.read('templates/dir-edit.tpl');
     }
-
 
 /////
     if (rm) {
@@ -463,6 +459,6 @@ module.exports = function (grunt) {
     }
     grunt.file.write(apath, app);
     grunt.file.write(ipath, indf);
-
+    grunt.task.run('gitcommit');
   })
 };

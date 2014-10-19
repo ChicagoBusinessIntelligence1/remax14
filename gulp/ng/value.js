@@ -30,17 +30,17 @@ gulp.task('fileInject', function () {
   var fileInc = '**/' + argv.file + '.js';
   var filter = gulpFilter(fileInc);
 
-  var injString = ', ' + argv.name;
+  var injString = argv.name+ ', ';
   return gulp.src(allJsFiles)
     .pipe(filter)
-    .pipe(gulpif(rm != true, inject.after('$scope', injString), replace(injString, '')))
+    .pipe(gulpif(rm != true, inject.after('function (', injString), replace(injString, '')))
     .pipe(gulp.dest(scripts))
 
   //.pipe(gulp.dest(scripts));
 
 });
 gulp.task('appInject', function () {
-  return gulp.src(scripts + 'app.js')
+  return gulp.src(scripts + 'values.js')
     .pipe(gulpif(rm != true, inject.append(injectLine), replace(injectLine, '')))
     .pipe(gulp.dest(scripts));
 

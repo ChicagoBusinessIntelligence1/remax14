@@ -304,7 +304,7 @@ module.exports = function (grunt) {
         if (file.indexOf(injectFile) > -1) {
 
           var fileContent = grunt.file.read(file);
-          fileContent = fileContent.replace('function (', 'function (name, ');
+          fileContent = fileContent.replace('function (', 'function ('+name+', ');
           console.log(fileContent);
 
           return false;

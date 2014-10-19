@@ -275,7 +275,7 @@ module.exports = function (grunt) {
 
 /////////////////// index
     var ipath = 'app/index.html';
-    var src = '<script src="scripts/services/' + name + 'Service.js"></script>\r\n';
+    var src = '<script src="scripts/services/' + name + '.js"></script>\r\n';
     var indf = grunt.file.read(ipath);
 //////////////////
     if (rm) {

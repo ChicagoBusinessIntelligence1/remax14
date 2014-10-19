@@ -107,7 +107,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/add-listing.html"
         })
         .state("app.profile.listings", {
-          url: "/listing-shared",
+          url: "/listings-shared",
           controller: "ListingSharedCtrl",
           templateUrl: "../views/listing-shared.html"
         })

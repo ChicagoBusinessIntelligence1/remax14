@@ -2,86 +2,89 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'i',
-1 verbose cli   '-g',
-1 verbose cli   'npm-notify' ]
+1 verbose cli   '--save-dev',
+1 verbose cli   'grunt-commit' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
 4 verbose node symlink C:\Program Files\nodejs\\node.exe
-5 verbose cache add [ 'npm-notify', null ]
-6 verbose cache add name=undefined spec="npm-notify" args=["npm-notify",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'npm-notify',
-7 verbose parsed url   path: 'npm-notify',
-7 verbose parsed url   href: 'npm-notify' }
-8 silly lockFile a414fdc9-npm-notify npm-notify
-9 verbose lock npm-notify C:\Users\Svitlana\AppData\Roaming\npm-cache\a414fdc9-npm-notify.lock
-10 silly lockFile a414fdc9-npm-notify npm-notify
-11 silly lockFile a414fdc9-npm-notify npm-notify
-12 verbose addNamed [ 'npm-notify', '' ]
-13 verbose addNamed [ null, '*' ]
-14 silly lockFile cab983ee-npm-notify npm-notify@
-15 verbose lock npm-notify@ C:\Users\Svitlana\AppData\Roaming\npm-cache\cab983ee-npm-notify.lock
-16 silly addNameRange { name: 'npm-notify', range: '*', hasData: false }
-17 verbose request where is /npm-notify
-18 verbose request registry https://registry.npmjs.org/
-19 verbose request id bf9f0ed1a3881c1d
-20 verbose url raw /npm-notify
-21 verbose url resolving [ 'https://registry.npmjs.org/', './npm-notify' ]
-22 verbose url resolved https://registry.npmjs.org/npm-notify
-23 verbose request where is https://registry.npmjs.org/npm-notify
-24 info trying registry request attempt 1 at 16:02:51
-25 http GET https://registry.npmjs.org/npm-notify
-26 http 404 https://registry.npmjs.org/npm-notify
-27 verbose headers { date: 'Fri, 26 Sep 2014 21:02:45 GMT',
-27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-27 verbose headers   'content-type': 'application/json',
-27 verbose headers   'cache-control': 'max-age=0',
-27 verbose headers   'content-length': '52',
-27 verbose headers   'accept-ranges': 'bytes',
-27 verbose headers   via: '1.1 varnish',
-27 verbose headers   age: '0',
-27 verbose headers   'x-served-by': 'cache-iad2130-IAD',
-27 verbose headers   'x-cache': 'MISS',
-27 verbose headers   'x-cache-hits': '0',
-27 verbose headers   'x-timer': 'S1411765364.759061,VS0,VE356',
-27 verbose headers   'keep-alive': 'timeout=10, max=50',
-27 verbose headers   connection: 'Keep-Alive' }
-28 silly registry.get cb [ 404,
-28 silly registry.get   { date: 'Fri, 26 Sep 2014 21:02:45 GMT',
-28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-28 silly registry.get     'content-type': 'application/json',
-28 silly registry.get     'cache-control': 'max-age=0',
-28 silly registry.get     'content-length': '52',
-28 silly registry.get     'accept-ranges': 'bytes',
-28 silly registry.get     via: '1.1 varnish',
-28 silly registry.get     age: '0',
-28 silly registry.get     'x-served-by': 'cache-iad2130-IAD',
-28 silly registry.get     'x-cache': 'MISS',
-28 silly registry.get     'x-cache-hits': '0',
-28 silly registry.get     'x-timer': 'S1411765364.759061,VS0,VE356',
-28 silly registry.get     'keep-alive': 'timeout=10, max=50',
-28 silly registry.get     connection: 'Keep-Alive' } ]
-29 silly lockFile cab983ee-npm-notify npm-notify@
-30 silly lockFile cab983ee-npm-notify npm-notify@
-31 error 404 404 Not Found: npm-notify
-31 error 404
-31 error 404 'npm-notify' is not in the npm registry.
-31 error 404 You should bug the author to publish it
-31 error 404
-31 error 404 Note that you can also install from a
-31 error 404 tarball, folder, or http url, or git url.
-32 error System Windows_NT 6.2.9200
-33 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "-g" "npm-notify"
-34 error cwd C:\App\remax14
-35 error node -v v0.10.32
-36 error npm -v 1.4.28
-37 error code E404
-38 verbose exit [ 1, true ]
+5 warn package.json app@0.0.0 No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'grunt-commit', null ]
+8 verbose cache add name=undefined spec="grunt-commit" args=["grunt-commit",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'grunt-commit',
+9 verbose parsed url   path: 'grunt-commit',
+9 verbose parsed url   href: 'grunt-commit' }
+10 silly lockFile e60f2df9-grunt-commit grunt-commit
+11 verbose lock grunt-commit C:\Users\Svitlana\AppData\Roaming\npm-cache\e60f2df9-grunt-commit.lock
+12 silly lockFile e60f2df9-grunt-commit grunt-commit
+13 silly lockFile e60f2df9-grunt-commit grunt-commit
+14 verbose addNamed [ 'grunt-commit', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile f9823bdc-grunt-commit grunt-commit@
+17 verbose lock grunt-commit@ C:\Users\Svitlana\AppData\Roaming\npm-cache\f9823bdc-grunt-commit.lock
+18 silly addNameRange { name: 'grunt-commit', range: '*', hasData: false }
+19 verbose request where is /grunt-commit
+20 verbose request registry https://registry.npmjs.org/
+21 verbose request id 77f49eca0d5e795a
+22 verbose url raw /grunt-commit
+23 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-commit' ]
+24 verbose url resolved https://registry.npmjs.org/grunt-commit
+25 verbose request where is https://registry.npmjs.org/grunt-commit
+26 info trying registry request attempt 1 at 16:14:18
+27 http GET https://registry.npmjs.org/grunt-commit
+28 http 404 https://registry.npmjs.org/grunt-commit
+29 verbose headers { date: 'Sun, 19 Oct 2014 21:14:13 GMT',
+29 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'cache-control': 'max-age=0',
+29 verbose headers   'content-length': '52',
+29 verbose headers   'accept-ranges': 'bytes',
+29 verbose headers   via: '1.1 varnish',
+29 verbose headers   age: '0',
+29 verbose headers   'x-served-by': 'cache-ord1730-ORD',
+29 verbose headers   'x-cache': 'MISS',
+29 verbose headers   'x-cache-hits': '0',
+29 verbose headers   'x-timer': 'S1413753253.660313,VS0,VE164',
+29 verbose headers   'keep-alive': 'timeout=10, max=50',
+29 verbose headers   connection: 'Keep-Alive' }
+30 silly registry.get cb [ 404,
+30 silly registry.get   { date: 'Sun, 19 Oct 2014 21:14:13 GMT',
+30 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '52',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     'x-served-by': 'cache-ord1730-ORD',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1413753253.660313,VS0,VE164',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 silly lockFile f9823bdc-grunt-commit grunt-commit@
+32 silly lockFile f9823bdc-grunt-commit grunt-commit@
+33 error 404 404 Not Found: grunt-commit
+33 error 404
+33 error 404 'grunt-commit' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'app'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Windows_NT 6.2.9200
+35 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i" "--save-dev" "grunt-commit"
+36 error cwd C:\App\remax14
+37 error node -v v0.10.32
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]

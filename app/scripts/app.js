@@ -26,7 +26,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state('app.home', {
           url: '/home',
-          controller: 'HomeCtrl',
           templateUrl: '../partials/home.html'
         })
         .state('app.remax-articles', {

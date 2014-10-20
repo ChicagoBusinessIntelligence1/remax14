@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingDisplaySlider', function ($filter, $firebase) {
+  .directive('svHomeDisplaySlider', function ($filter, $firebase) {
     return {
       restrict: 'E',
       replace: true,
@@ -14,7 +14,7 @@ angular.module('app')
         title: '@',
         updateHouse: '&'
       },
-      require: '^sv-listing-sale',
+      require: '^sv-home-sale',
       link: function ($scope, element, attr, svCtrl) {
         $scope.required = svCtrl.required;
 

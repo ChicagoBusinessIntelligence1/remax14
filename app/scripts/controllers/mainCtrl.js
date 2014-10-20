@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('MainCtrl', function ($scope, $firebase, url, $firebaseSimpleLogin, $state, $rootScope) {
+  .controller('MainCtrl', function ($scope, $firebase, mainUrl, $firebaseSimpleLogin, $state, $rootScope) {
 
     $(window).resize(function () {
       $scope.$apply(function () {
@@ -16,7 +16,7 @@ angular.module('app')
       }
     })
 
-    var mainRef = new Firebase(url);
+    var mainRef = new Firebase(mainUrl);
     $rootScope.auth = $firebaseSimpleLogin(mainRef);
 
     $rootScope.auth.$getCurrentUser().then(function (user) {

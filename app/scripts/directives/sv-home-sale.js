@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSale', function (Home, $stateParams, $state, $firebase) {
+  .directive('svHomeSale', function (HomeService, $stateParams, $state, $firebase) {
     return {
       restrict: 'E',
-      templateUrl: '../../views/directives/sv-listing-sale.html',
+      templateUrl: '../../views/directives/sv-home-sale.html',
       scope: {
         isDraft: '='
       },
@@ -18,14 +18,10 @@ angular.module('app')
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
 
-        $scope.houseRepo = HomeRepo.get(mls, $scope.isDraft);
-        $scope.houseRef = $firebase(new Firebase($scope.houseRepo));
+        $scope.home = HomeService.getArrayFire(mls,$scope.isDraft);
 
-        $scope.house = $scope.houseRef.$asArray();
-        $scope.houseObj = $scope.houseRef.$asObject();
-
-        $scope.deleteDraft = function () {
-          $scope.house.$remove(mls);
+        $scope.moveToTrash = function () {
+          HomeService.moveToTrash();
         };
 
         $scope.saveTemplate = function () {
@@ -53,7 +49,8 @@ angular.module('app')
         $scope.updateHouse = function (sectionIndex, sectionContent) {
           //when click on button
 
-          $scope.houseObj[sectionIndex] = $scope.house.$getRecord(sectionIndex);
+          $scope.houseObj[sectionIndex] = $scope.ho
+            .e.$getRecord(sectionIndex);
           $scope.houseObj.$save(sectionIndex);
         };
       }

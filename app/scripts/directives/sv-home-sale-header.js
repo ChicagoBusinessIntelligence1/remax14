@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSaleHeader', function () {
+  .directive('svHomeSaleHeader', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-listing-sale-header.html',
+      templateUrl: '../../views/directives/sv-home-sale-header.html',
       scope: {
         house: '=',
         isTemplate: '=',
@@ -13,7 +13,7 @@ angular.module('app')
         draft: '=',
         deleteDraft:'&'
       },
-      require: '^sv-listing-sale',
+      require: '^sv-home-sale',
       link: function ($scope, element, attr, svCtrl) {
 
 

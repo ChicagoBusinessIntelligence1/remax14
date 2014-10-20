@@ -1,4 +1,16 @@
-app.value('url', 'https://remax14.firebaseio.com/');
+
+
+/*=Sercices*/
+app.value('mainUrl', 'https://remax14.firebaseio.com/');
+
+app.factory('url', function (mainUrl) {
+  return {
+   residential: mainUrl+ 'residential/home/',
+   residentialTemplate: mainUrl+ 'residential/templates/0',
+   brokers: mainUrl+ 'brokers/'
+  }
+});
+
 app.value('inputTypes',
   [
     {
@@ -14,17 +26,3 @@ app.value('inputTypes',
       "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
     }
   ]);
-
-/*=Sercices*/
-app.value('url', 'https://remax14.firebaseio.com/');
-app.factory('urlResidential', function (url) {
-  return url + 'listings/residential/'
-});
-app.factory('urlResidentialTemp', function (url) {
-  return url + 'residential/templates/0'
-});
-
-app.factory('urlBrokers', function (url) {
-  return url + 'brokers/'
-});
-

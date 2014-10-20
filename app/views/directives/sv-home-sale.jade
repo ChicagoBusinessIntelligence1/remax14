@@ -1,5 +1,5 @@
 .listing
-  sv-listing-sale-header(house='house' is-template='isTemplate' save-template='saveTemplate()' draft='draft' del-draft='delDraft')
+  sv-home-sale-header(house='house' is-template='isTemplate' save-template='saveTemplate()' draft='draft' del-draft='delDraft')
   .gallery-wrapper(ng-if='!isTemplate')
     .row
       .col-sm-12
@@ -7,4 +7,4 @@
   div {{house.generalInformation.street.value}}
   ul.list-unstyled
     li(ng-repeat='v in house |listingFilter:"brokers" |orderBy:"order"')
-      sv-listing-display-slider(house='house' house-repo='{{houseRepo}}' index='{{house.$keyAt(v)}}' title='{{v.$id}}' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')
+      sv-home-display-slider(house='house' house-repo='{{houseRepo}}' index='{{house.$keyAt(v)}}' title='{{v.$id}}' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')

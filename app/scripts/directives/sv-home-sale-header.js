@@ -7,15 +7,15 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-sale-header.html',
       scope: {
-        homeFormIn: '=',
         isTemplate: '=',
         saveTemplate: '&',
         draft: '=',
         deleteDraft:'&'
       },
-      require: '^sv-home-sale',
-      link: function ($scope, element, attr, svCtrl) {
-
+      require: 'sv-home-display-slider',
+      link: function ($scope, element, attr, svDisplayCtrl) {
+        $scope.ngFormName = svDisplayCtrl.ngFormName;
+        $scope.mlsViaForms = 'homeForm.'+ $scope.ngFormName+'.mls'
 
       }
     };

@@ -5,8 +5,7 @@
       .col-sm-12
         sv-photo-gallery
   form(name="homeForm" id="form" novalidate='novalidate')
-    ng-form(name="homeFormIn")
-      ul.list-unstyled
-        li(ng-repeat='section in home |listingFilter:"brokers" |orderBy:"order"')
-          sv-home-display-slider(section='section' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')
+    ul.list-unstyled
+      li(ng-repeat='section in home |listingFilter:"brokers" |orderBy:"order"')
+        sv-home-display-slider(section='section' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')
 

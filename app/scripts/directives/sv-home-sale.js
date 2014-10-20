@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSale', function (Broker, AddBrokerService, HomeService, $stateParams, $state, $firebase) {
+  .directive('svHomeSale', function (BrokerService, AddBrokerService, HomeService, $stateParams, $state, $rootScope) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-sale.html',
@@ -24,9 +24,10 @@ angular.module('app')
           HomeService.moveToTrash();
         };
 
-        $scope.saveTemplate = function () {
-          HomeService.saveTemplate();
-
+        $scope.saveTemplate = function (mls) {
+          console.log(mls);
+          $scope.home = BrokerService.addBroker($scope.home, $rootScope.user);
+          HomeService.saveTemplate($scope.home);
         };
 
         $scope.updateHouse = function (sectionIndex, sectionContent) {

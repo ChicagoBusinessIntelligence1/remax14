@@ -17,6 +17,10 @@ angular.module('app')
       },
       moveToTrash: function () {
         this.homeRef.$remove();
+      },
+
+      saveTemplate: function (home) {
+        //var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls:
       }
 
     };

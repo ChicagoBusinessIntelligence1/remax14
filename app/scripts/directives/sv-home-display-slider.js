@@ -12,13 +12,19 @@ angular.module('app')
         updateHouse: '&'
       },
       require: '^sv-home-sale',
+      controller: function ($scope) {
+        this.ngFormName = $scope.section.title + 'Form';
+        $scope.ngFormName = this.ngFormName;
+      },
       link: function ($scope, element, attr, svCtrl) {
         $scope.required = svCtrl.required;
 
         $scope.isEdit = false;
         $scope.isSingleProp = $scope.section.content.length;
+        $scope.saveTest = function (mls) {
+          console.log(mls);
 
-
+        };
         $scope.saveSection = function () {
           $scope.updateHouse({sectionIndex: $scope.index, sectionContent: $scope.house[$scope.index]});
           $scope.isEdit = false;

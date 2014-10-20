@@ -18,32 +18,15 @@ angular.module('app')
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
 
-        $scope.home = HomeService.getArrayFire(mls,$scope.isDraft);
+        $scope.home = HomeService.getArrayFire(mls, $scope.isDraft);
 
         $scope.moveToTrash = function () {
           HomeService.moveToTrash();
         };
 
         $scope.saveTemplate = function () {
-          var mlsSection = _.find($scope.house, function (el) {
-            return !_.isUndefined(el.mls);
-          });
-          var mls = mlsSection.mls.value;
+          HomeService.saveTemplate();
 
-          var draftRepo = urlBrokers + $rootScope.user.id + '/residential/drafts/' + mls;
-          $scope.drafts = $firebase(new Firebase(draftRepo)).$asObject();
-
-          $scope.house.forEach(function (oneHouse) {
-            $scope.drafts[oneHouse.$id] = oneHouse;
-          })
-
-          $scope.drafts['brokers'] = [{
-            id: $rootScope.user.id,
-            name: $rootScope.user.displayName
-          }];
-          $scope.drafts.$save().then(function (mls) {
-            $state.go('app.profile.drafts');
-          });
         };
 
         $scope.updateHouse = function (sectionIndex, sectionContent) {

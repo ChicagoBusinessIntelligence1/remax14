@@ -7,7 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-sale-header.html',
       scope: {
-        house: '=',
+        homeFormIn: '=',
         isTemplate: '=',
         saveTemplate: '&',
         draft: '=',

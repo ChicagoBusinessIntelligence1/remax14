@@ -18,5 +18,6 @@ angular.module('app')
       moveToTrash: function () {
         this.homeRef.$remove();
       }
+
     };
   });

@@ -5,30 +5,19 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-listing-display-slider.html',
+      templateUrl: '../../views/directives/sv-home-display-slider.html',
       scope: {
-        houseRepo: '@',
-        house: '=',
+        section: '=',
         isTemplate: '=',
-        index: '@',
-        title: '@',
         updateHouse: '&'
       },
       require: '^sv-home-sale',
       link: function ($scope, element, attr, svCtrl) {
         $scope.required = svCtrl.required;
 
-        var repo = $scope.houseRepo + '/' + $scope.title;
-
-        $scope.section = $firebase(new Firebase(repo)).$asArray();
-        $scope.section.$loaded(function () {
-          $scope.section = _.reject($scope.section, function (elem) {
-            return elem.$id==='order';
-          });
-          $scope.isSingleProp = $scope.section.length;
-        })
         $scope.isEdit = false;
-        $scope.area = {};
+        $scope.isSingleProp = $scope.section.content.length;
+
 
         $scope.saveSection = function () {
           $scope.updateHouse({sectionIndex: $scope.index, sectionContent: $scope.house[$scope.index]});
@@ -38,9 +27,8 @@ angular.module('app')
         /*Show button for adding properties only on some sections*/
         var showAddProperty = ['appliances', 'other rooms', 'property features', 'exterior and lot features'];
         //converting our current title('@') to title name lower case
-        var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
         // search
-        var showButton = showAddProperty.indexOf(sectionName);
+        var showButton = showAddProperty.indexOf($scope.section.title);
         if (showButton === -1) {
           $scope.isButtonShown = false;
         }

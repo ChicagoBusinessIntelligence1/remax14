@@ -9,32 +9,13 @@ angular.module('app')
       '<textarea ng-class="{error:isMaxInvalid}" ng-model="model.value" type="text" name="{{nameId}}" id="{{nameId}}" rows="5" class="form-control"  ng-required="r" ></textarea>' +
       '</div>',
       scope: {
-        house: '=',
-        label: '@',
-        title: '@',
+        sectionProperty: '=',
         r: '='
       },
       link: function ($scope, element, attr) {
-        $scope.isMaxInvalid = false;
 
-        $scope.model = $scope.house.$getRecord($scope.title)[$scope.label];
-
-        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
-
-        $scope.$watch('area.val', function (newValue) {
-          if (_.isUndefined(newValue)) {
-            $scope.isMaxInvalid = false;
-            return;
-          }
-          if (newValue.length > $scope.max) {
-            $scope.isMaxInvalid = true;
-          }
-          if (newValue.length <= $scope.max) {
-            $scope.isMaxInvalid = false;
-          }
-        })
-        $scope.labelCap = $scope.label.charAt(0).toUpperCase() + $scope.label.slice(1);
-        $scope.nameId = _.str.camelize($scope.label.split(' ').join('-').toLowerCase());
+        $scope.model = $scope.sectionProperty;
+        $scope.nameId = _.str.camelize($scope.sectionProperty.title.split(' ').join('-').toLowerCase());
       }
     };
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingSale', function ($stateParams, $state, $firebase) {
+  .directive('svHomeSale', function ($stateParams, $state, $firebase) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-listing-sale.html',

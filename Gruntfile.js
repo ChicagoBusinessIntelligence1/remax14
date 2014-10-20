@@ -251,7 +251,7 @@ module.exports = function (grunt) {
     var serv = grunt.file.read('templates/serv.tpl');
 
     var lname = sname;
-    var name = lname.charAt(0).toUpperCase() + lname.substring(1)+'Service';
+    var name = lname.charAt(0).toUpperCase() + lname.substring(1);
 
     var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname);
 

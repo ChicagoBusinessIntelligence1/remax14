@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('#name#', function () {
+  .factory('#name#Service', function () {
     return {
       get: function () {
         return ;

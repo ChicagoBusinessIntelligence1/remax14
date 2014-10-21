@@ -43,12 +43,6 @@ angular.module('app')
           }
         );
         return defered.promise;
-      },
-      firebaseClean: function (home) {
-        for (var i = 0; i < home.length; i++) {
-          home[i] = _.omit(home, ['$id', '$priority', '$$hashKey']);
-        }
-        return home;
       }
 
     };

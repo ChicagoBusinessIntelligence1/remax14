@@ -255,24 +255,6 @@ module.exports = function (grunt) {
 
     var servr = serv.replace(/#name#/g, name).replace(/#lname#/g, lname);
 
-////////////////
-
-//// register
-//    var ref = '/// <reference path="services/' + name + 'Service.js" />\r\n';
-//    var reg = 'profile.service("' + name + 'Service", ' + name + 'Service);\r\n';
-//
-//    var apath = 'app/scripts/app.js';
-//    var app = grunt.file.read(apath);
-//    if (rm) {
-//      app = removeFromInside(app, ref);
-//      app = removeFromInside(app, reg);
-//    }
-//    else {
-//
-//      app = enterInside(app, '//#serv', reg);
-//      app = enterInside(app, '//#ref', ref);
-//    }
-
 /////////////////// index
     var ipath = 'app/index.html';
     var src = '<script src="scripts/services/' + name + 'Service.js"></script>\r\n';
@@ -297,14 +279,20 @@ module.exports = function (grunt) {
     grunt.file.write(ipath, indf);
 
     if (injectFile) {
-      injectFile = injectFile+'.js';
+      injectFile = injectFile + '.js';
       var files = grunt.file.expand('app/scripts/**/*.js');
       files.every(function (file) {
         if (file.indexOf(injectFile) > -1) {
 
           var fileContent = grunt.file.read(file);
-          fileContent = fileContent.replace('function (', 'function ('+name+', ');
-          grunt.file.write(file,  fileContent);
+
+          if (!rm) {
+            fileContent = fileContent.replace('function (', 'function (' + name + 'Service, ');
+          } else {
+            fileContent = fileContent.replace('function (' + name + 'Service, ', 'function (');
+          }
+
+          grunt.file.write(file, fileContent);
 
           return false;
         }

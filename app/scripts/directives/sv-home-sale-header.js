@@ -12,10 +12,8 @@ angular.module('app')
         draft: '=',
         deleteDraft:'&'
       },
-      require: 'sv-home-display-slider',
       link: function ($scope, element, attr, svDisplayCtrl) {
-        $scope.ngFormName = svDisplayCtrl.ngFormName;
-        $scope.mlsViaForms = 'homeForm.'+ $scope.ngFormName+'.mls'
+
       }
     };
   });

@@ -20,6 +20,8 @@ angular.module('app')
       },
 
       saveTemplate: function (home) {
+        console.log(home);
+
         //var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls:
       }
 

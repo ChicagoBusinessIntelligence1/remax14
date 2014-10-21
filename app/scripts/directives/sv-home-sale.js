@@ -24,8 +24,8 @@ angular.module('app')
           HomeService.moveToTrash();
         };
 
-        $scope.saveTemplate = function (mls) {
-          console.log(mls);
+        $scope.saveTemplate = function () {
+
           $scope.home = BrokerService.addBroker($scope.home, $rootScope.user);
           HomeService.saveTemplate($scope.home);
         };

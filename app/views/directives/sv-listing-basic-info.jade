@@ -1,19 +1,19 @@
 .well.listing-basic-info-wrap
   h5.prop-type.text-info
-    | {{home|showSectionProp}}
+    | {{home|showSectionProp:'propertyType'}}
   .alert.alert-address
     .row
       .col-sm-12
         ul.list-inline
           li
             a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:home.generalInformation.mls.value})')
-              | {{home.generalInformation.street.value}}
-              | {{home.generalInformation.city.value}}
-              | {{home.generalInformation.state.value}}
-              | {{home.generalInformation.zip.value}}
+              | {{home|showSectionProp:'street'}}
+              | {{home|showSectionProp:'city'}}
+              | {{home|showSectionProp:'state'}}
+              | {{home|showSectionProp:'zip'}}
           li.pull-right
             a.price-style(ui-sref='app.profile.one-listing')
-              | ${{home.generalInformation.price.value}}
+              | {{home|showSectionProp:'price'}}
   .app-content-five
     .row
       .col-sm-7

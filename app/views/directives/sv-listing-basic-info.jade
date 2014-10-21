@@ -1,35 +1,35 @@
 .well.listing-basic-info-wrap
   h5.prop-type.text-info
-    | {{listing.generalInformation.propertyType.value}}
+    | {{home.generalInformation.propertyType.value}}
   .alert.alert-address
     .row
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:listing.generalInformation.mls.value})')
-              | {{listing.generalInformation.street.value}}
-              | {{listing.generalInformation.city.value}}
-              | {{listing.generalInformation.state.value}}
-              | {{listing.generalInformation.zip.value}}
+            a.text-app.address-basic(ui-sref='app.profile.one-listing({mls:home.generalInformation.mls.value})')
+              | {{home.generalInformation.street.value}}
+              | {{home.generalInformation.city.value}}
+              | {{home.generalInformation.state.value}}
+              | {{home.generalInformation.zip.value}}
           li.pull-right
             a.price-style(ui-sref='app.profile.one-listing')
-              | ${{listing.generalInformation.price.value}}
+              | ${{home.generalInformation.price.value}}
   .app-content-five
     .row
       .col-sm-7
         ul.ul-basic-info.list-inline
           li
             i.fa.fa-check-circle-o.fa-fw
-            | MLS# {{listing.generalInformation.mls.value}}
+            | MLS# {{home.generalInformation.mls.value}}
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{listing.bedrooms.bedrooms.value}} beds
+            | {{home.bedrooms.bedrooms.value}} beds
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{listing.bathrooms.fullBathrooms.value}} full baths
+            | {{home.bathrooms.fullBathrooms.value}} full baths
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{listing.generalInformation.propertySize.value}} sq ft
+            | {{home.generalInformation.propertySize.value}} sq ft
       .col-sm-5
           li
             ul.list-inline.text-right.ul-basic-social
@@ -51,7 +51,7 @@
         h4 Basic Information
         hr
         p.basic-info-short
-          | {{listing.propertyDescription.propertyDescription.value}}
+          | {{home.propertyDescription.propertyDescription.value}}
           span
             em
               a(ui-sref='app.profile.one-listing({mls:$id})').read-more  Read more...

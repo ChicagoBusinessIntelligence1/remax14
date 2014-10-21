@@ -16,21 +16,18 @@ angular.module('app')
         allHomes.$loaded(function () {
           allHomes.forEach(function (home) {
             var homeBrokers = _.where(home, {title: 'brokers'});
-            var allbrokers = homeBrokers[0].content;
+            var allBrokers = homeBrokers[0].content;
 
-            for (var i = 0; i < allbrokers.length; i++) {
-              var broker = allbrokers[i];
+            for (var i = 0; i < allBrokers.length; i++) {
+              var broker = allBrokers[i];
               if (broker.id === userId) {
                 brokerHomes.push(home);
                 break;
-
               }
             }
-
           });
           defer.resolve(brokerHomes);
         })
-
         return defer.promise;
       }
     };

@@ -2,16 +2,10 @@
 
 angular.module('app')
   .controller('ListingSharedCtrl', function (ListingsService, $scope, $firebase, $rootScope) {
-    var userId = $rootScope.user.id;
+    ListingsService.findBrokerHomes($rootScope.user.id).then(function (myHomes) {
+      $scope.brokerHomes = myHomes;
+      console.log(myHomes);
 
-    var repo = urlResidential;
-    var listings = $firebase(new Firebase(repo)).$asArray();
-
-    listings.$loaded(function () {
-      $scope.listings = _.filter(listings, function (elem) {
-        return _.find(elem.brokers, function (el) {
-          return el.id === userId;
-        })
-      })
     })
+
   });

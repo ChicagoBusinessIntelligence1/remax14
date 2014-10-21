@@ -1,10 +1,37 @@
 'use strict';
 
 angular.module('app')
-  .factory('ListingsService', function () {
+  .factory('ListingsService', function ($firebase, url, $q) {
     return {
-      get: function () {
-        return ;
+      repoUrl: null,
+      repoRef: null,
+      findBrokerHomes: function (userId) {
+        var defer = $q.defer();
+
+        this.repoUrl = url.residential;
+        this.repoRef = $firebase(new Firebase(this.repoUrl));
+        var allHomes = this.repoRef.$asArray();
+        var brokerHomes = [];
+
+        allHomes.$loaded(function () {
+          allHomes.forEach(function (home) {
+            var homeBrokers = _.where(home, {title: 'brokers'});
+            var allbrokers = homeBrokers[0].content;
+
+            for (var i = 0; i < allbrokers.length; i++) {
+              var broker = allbrokers[i];
+              if (broker.id === userId) {
+                brokerHomes.push(home);
+                break;
+
+              }
+            }
+
+          });
+          defer.resolve(brokerHomes);
+        })
+
+        return defer.promise;
       }
     };
   });

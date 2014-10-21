@@ -16,7 +16,6 @@ angular.module('app')
       link: function ($scope, element, attr, svDisplayCtrl) {
         $scope.ngFormName = svDisplayCtrl.ngFormName;
         $scope.mlsViaForms = 'homeForm.'+ $scope.ngFormName+'.mls'
-
       }
     };
   });

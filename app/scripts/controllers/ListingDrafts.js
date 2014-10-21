@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ListingDraftsCtrl', function ($scope, $firebase, urlResidential, urlBrokers, $rootScope) {;
-    $rootScope.auth.$getCurrentUser().then(function (user) {
+  .controller('ListingDraftsCtrl', function (DraftsService, $scope, $firebase, url, $rootScope) {
       var draftsRepo = urlBrokers + user.id + '/residential/drafts/';
       $scope.draftsRef = $firebase(new Firebase(draftsRepo));
       $scope.drafts = $scope.draftsRef.$asArray();
@@ -18,5 +17,4 @@ angular.module('app')
 
         $scope.draftsRef.$remove(mls);
       };
-    })
   });

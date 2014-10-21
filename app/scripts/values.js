@@ -1,13 +1,11 @@
-
-
 /*=Sercices*/
 app.value('mainUrl', 'https://remax14.firebaseio.com/');
 
 app.factory('url', function (mainUrl) {
   return {
-   residential: mainUrl+ 'residential/home/',
-   residentialTemplate: mainUrl+ 'residential/templates/0',
-   brokers: mainUrl+ 'brokers/'
+    residential: mainUrl + 'residential/home/',
+    residentialTemplate: mainUrl + 'residential/templates/0',
+    brokers: mainUrl + 'brokers/'
   }
 });
 
@@ -26,3 +24,7 @@ app.value('inputTypes',
       "label": "<i class=\"fa fa-toggle-on\"></i> Checkbox"
     }
   ]);
+app.value('notifications', {
+  draftSaved:'Listing has been succesfully saved to DB'
+
+});

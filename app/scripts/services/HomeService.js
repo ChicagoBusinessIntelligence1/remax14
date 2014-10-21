@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HomeService', function (MlsService, $firebase, url, $rootScope) {
+  .factory('HomeService', function (notifications, MlsService, $firebase, url, $rootScope, $q) {
     return {
       homeRef: null,
       getArrayFire: function (mls, isDraft) {
@@ -19,10 +19,36 @@ angular.module('app')
         this.homeRef.$remove();
       },
 
-      saveTemplate: function (home) {
-        console.log(home);
+      saveToDrafts: function (home) {
+        var defered = $q.defer();
 
-        //var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls:
+        var mls = MlsService.find(home);
+
+        var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls;
+        var brokers = $firebase(new Firebase(brokerDraftsRepo)).$asObject();
+
+        for (var i = 0; i < home.length; i++) {
+          var section = home[i];
+          brokers[section.$id] = section;
+        }
+        brokers.$save().then(function () {
+            // success
+            defered.resolve(true);
+            toastr.success(notifications.draftSaved);
+          },
+          function (error) {
+            //  error
+            toastr.error(error);
+            defered.reject(error)
+          }
+        );
+        return defered.promise;
+      },
+      firebaseClean: function (home) {
+        for (var i = 0; i < home.length; i++) {
+          home[i] = _.omit(home, ['$id', '$priority', '$$hashKey']);
+        }
+        return home;
       }
 
     };

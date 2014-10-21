@@ -27,7 +27,9 @@ angular.module('app')
         $scope.saveTemplate = function () {
 
           $scope.home = BrokerService.addBroker($scope.home, $rootScope.user);
-          HomeService.saveTemplate($scope.home);
+          HomeService.saveToDrafts($scope.home).then(function (result) {
+            $state.go("app.profile.drafts");
+          });
         };
 
         $scope.updateHouse = function (sectionIndex, sectionContent) {

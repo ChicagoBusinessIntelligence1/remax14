@@ -19,6 +19,9 @@ angular.module('app')
         $scope.isTemplate = mls ? false : true;
 
         $scope.home = HomeService.getArrayFire(mls, $scope.isDraft);
+        $scope.home.$loaded(function () {
+          $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
+        })
 
         $scope.moveToTrash = function () {
           HomeService.moveToTrash();

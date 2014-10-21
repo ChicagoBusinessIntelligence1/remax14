@@ -5,7 +5,8 @@ app.factory('url', function (mainUrl) {
   return {
     residential: mainUrl + 'residential/home/',
     residentialTemplate: mainUrl + 'residential/templates/0',
-    brokers: mainUrl + 'brokers/'
+    brokers: mainUrl + 'brokers/',
+    residentialDrafts:'/residential/drafts'
   }
 });
 
@@ -25,6 +26,8 @@ app.value('inputTypes',
     }
   ]);
 app.value('notifications', {
-  draftSaved:'Listing has been succesfully saved to DB'
+  draftSaved:'Listing has been succesfully saved to DB',
+  draftShared:'Listing has been succesfully shared',
+  draftDeleted:'Listing has been succesfully removed from DB'
 
 });

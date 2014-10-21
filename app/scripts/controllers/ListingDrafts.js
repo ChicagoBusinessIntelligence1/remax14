@@ -1,20 +1,15 @@
 'use strict';
 
 angular.module('app')
-  .controller('ListingDraftsCtrl', function (DraftsService, $scope, $firebase, url, $rootScope) {
-      var draftsRepo = urlBrokers + user.id + '/residential/drafts/';
-      $scope.draftsRef = $firebase(new Firebase(draftsRepo));
-      $scope.drafts = $scope.draftsRef.$asArray();
+  .controller('ListingDraftsCtrl', function (DraftsService, $scope, $firebase,  $rootScope) {
+
+      $scope.drafts = DraftsService.all($rootScope.user.id);
 
       $scope.removeDraft = function (mls) {
-        $scope.draftsRef.$remove(mls);
+        DraftsService.remove(mls)
       };
       $scope.postDraft = function (mls) {
-        var draft = $scope.drafts.$getRecord(mls);
-        draft = _.omit(draft, ['$id','$priority','$$hashKey']);
-        $scope.listingsRef = $firebase(new Firebase(urlResidential + mls));
-        $scope.listingsRef.$set(draft);
+        DraftsService.moveToHomes(mls);
 
-        $scope.draftsRef.$remove(mls);
       };
   });

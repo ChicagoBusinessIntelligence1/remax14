@@ -4,5 +4,5 @@
     hr
 .drafts-container
   ul.row.list-inline
-    li.col-sm-12(ng-repeat='(key, listing) in listings')
+    li.col-sm-12(ng-repeat='(key, listing) in listings') {{key.listing}}
       sv-listing-basic-info(listing='listing')

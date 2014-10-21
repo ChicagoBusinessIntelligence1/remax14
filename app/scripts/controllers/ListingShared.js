@@ -1,17 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .controller('ListingSharedCtrl', function ($scope, $firebase, $rootScope, urlResidential) {
-    var userId = $rootScope.user.id;
+  .controller('ListingSharedCtrl', function (ListingsService, $scope, $firebase, $rootScope) {
+    ListingsService.findBrokerHomes($rootScope.user.id).then(function (myHomes) {
+      $scope.brokerHomes = myHomes;
+      console.log(myHomes);
 
-    var repo = urlResidential;
-    var listings = $firebase(new Firebase(repo)).$asArray();
-
-    listings.$loaded(function () {
-      $scope.listings = _.filter(listings, function (elem) {
-        return _.find(elem.brokers, function (el) {
-          return el.id === userId;
-        })
-      })
     })
+
   });

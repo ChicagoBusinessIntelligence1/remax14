@@ -9,12 +9,12 @@ angular.module('app')
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ' +
       'type="checkbox" name="{{nameId}}" id="{{nameId}}" /></div>',
       scope: {
-        house: "=",
-        title: '@',
-        label: '@'
+        sectionProperty: '=',
+        r: '='
       },
       link: function ($scope, element, attr) {
-        $scope.model = $scope.house.$getRecord($scope.title)[$scope.label];
+        $scope.model = $scope.sectionProperty;
+        $scope.nameId = _.str.camelize($scope.sectionProperty.title.split(' ').join('-').toLowerCase());
       }
     };
   });

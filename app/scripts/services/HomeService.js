@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HomeService', function ($firebase, url, $rootScope) {
+  .factory('HomeService', function (MlsService, $firebase, url, $rootScope) {
     return {
       homeRef: null,
       getArrayFire: function (mls, isDraft) {
@@ -20,6 +20,8 @@ angular.module('app')
       },
 
       saveTemplate: function (home) {
+        console.log(home);
+
         //var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls:
       }
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ListingSharedCtrl', function ($scope, $firebase, $rootScope, urlResidential) {
+  .controller('ListingSharedCtrl', function (ListingsServiceService, $scope, $firebase, $rootScope) {
     var userId = $rootScope.user.id;
 
     var repo = urlResidential;

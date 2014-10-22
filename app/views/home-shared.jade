@@ -1,8 +1,8 @@
 .row
   .col-sm-12
-    h3 My Listings
+    h3 My Home Listings
     hr
 .drafts-container
   ul.row.list-inline
     li.col-sm-12(ng-repeat='(key, home) in brokerHomes')
-      sv-listing-basic-info(home='home')
+      sv-home-basic-info(home='home')

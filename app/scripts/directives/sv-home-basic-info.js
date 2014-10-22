@@ -1,13 +1,12 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingInlineInfo', function () {
+  .directive('svHomeBasicInfo', function () {
     return {
       restrict: 'E',
-      replace: true,
-      templateUrl: '../../views/directives/sv-listing-inline-info.html',
+      templateUrl: '../../views/directives/sv-home-basic-info.html',
       scope: {
-        house: '='
+        home: '='
       },
       link: function ($scope, element, attr) {
       }

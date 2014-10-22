@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .filter('listingFilter', function () {
+  .filter('homeFilter', function () {
     return function (listing, omit) {
       if (_.isUndefined(listing)) {
         return;

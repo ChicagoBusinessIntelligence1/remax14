@@ -6,6 +6,6 @@
         sv-photo-gallery
   form(name="homeForm" id="form" novalidate='novalidate')
     ul.list-unstyled
-      li(ng-repeat='section in home |listingFilter:"brokers" |orderBy:"order"')
+      li(ng-repeat='section in home|homeFilter:"brokers" |orderBy:"order"')
         sv-home-display-slider(section='section' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')
 

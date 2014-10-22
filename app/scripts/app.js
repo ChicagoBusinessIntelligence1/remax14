@@ -111,8 +111,8 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "HomeSharedCtrl",
           templateUrl: "../views/home-shared.html"
         })
-			.state("search-results", {
-				url: "/search-results", 
+			.state("app.search-results", {
+				url: "/search-results",
 				controller:"SearchResultsCtrl",
 				templateUrl: "../views/search-results-ctrl.html"
 			})

@@ -1,6 +1,12 @@
 'use strict';
 
 angular.module('app')
-  .controller('SearchResultsCtrlCtrl', function ($scope) {
+  .controller('SearchResultsCtrl', function (SearchService, $scope,url) {
+    $scope.query;
+    $scope.$on('search', function (event, query) {
 
+
+
+    });
   });
+

@@ -30,5 +30,6 @@
   },
   "_source": "git://github.com/victorquinn/chancejs.git",
   "_target": "~0.6.1",
-  "_originalSource": "chance"
+  "_originalSource": "chance",
+  "_direct": true
 }

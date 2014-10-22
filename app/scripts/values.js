@@ -31,3 +31,4 @@ app.value('notifications', {
   draftDeleted:'Listing has been succesfully removed from DB'
 
 });
+app.value('query', {});

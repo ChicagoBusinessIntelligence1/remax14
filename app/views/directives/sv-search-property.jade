@@ -1,4 +1,3 @@
-
 .search-tabs-wrapper
   ul.nav.nav-tabs(role="tablist")
     li.active
@@ -7,29 +6,29 @@
       a(href="#for-rent" role="tab" data-toggle="tab") PROPERTY FOR RENT
   .tab-content.search-tabs-content
     .tab-pane.active(id="for-sale")
-      form(id="form-search-sale", name="form-search-sale", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+      form(id="form-search-sale", name="form-search-sale", ng-submit="mainSearch()", novalidate)
         //.alert-box.warning.round(data-alert, ng-show="loginError")
         //  | Incorrect login or password
         //  | a.close(href="#") &times;
         .form-group
-          label(ng-class="{'error':login.email.$invalid && login.$dirty}") Location:
-          input.form-control(type="email", name="email" id="email", placeholder="City and State, or Zip Code", ng-model="email.data",  required)
+          label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
+          input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="query.location",  required)
         .form-group
           label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
           .row
             .col-md-6.col-sm-6.col-xs-6
-              input.form-control(name="from" id="from", placeholder="$ From",  required)
+              input.form-control(name="priceMin" id="priceMin", ng-model='query.priceMin' placeholder="$ From",  required)
             .col-md-6.col-sm-6.col-xs-6
-              input.form-control(name="to" id="to", placeholder="$ To",  required)
+              input.form-control(name="priceMax" id="priceMax", ng-model='query.priceMax' placeholder="$ To",  required)
         .form-group
           .row
             .col-md-6.col-sm-6.col-xs-6
               label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
-              input.form-control(name="bedrooms" id="bedrooms", placeholder="#",  required)
+              input.form-control(name="bedrooms" id="bedrooms", ng-model='query.bedrooms' placeholder="#",  required)
             .col-md-6.col-sm-6.col-xs-6
               label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
-              input.form-control(name="bathrooms" id="bathrooms", placeholder="#",  required)
-        input.btn.bnt-radius.submit-search.btn-mob-dev(type="submit" value="Search" ng-disabled="login.$invalid")
+              input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#",  required)
+        input.btn.bnt-radius.submit-query.btn-mob-dev(type="submit" value="Search" )
         hr
         .form-group.text-center
           button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR SALE
@@ -40,13 +39,13 @@
 
     .tab-pane(id="for-rent")
       .tab-pane.active(id="for-sale")
-        form(id="form-search-sale", name="form-search-sale", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+        form(id="form-search-sale", name="form-search-sale", ng-submit="", novalidate)
           //.alert-box.warning.round(data-alert, ng-show="loginError")
           //  | Incorrect login or password
           //  | a.close(href="#") &times;
           .form-group
-            label(ng-class="{'error':login.email.$invalid && login.$dirty}") Location:
-            input.form-control(type="email", name="email" id="email", placeholder="City and State, or Zip Code", ng-model="email.data",  required)
+            label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
+            input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="location.data",  required)
           .form-group
             label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
             .row
@@ -62,7 +61,7 @@
               .col-md-6.col-sm-6.col-xs-6
                 label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
                 input.form-control(name="bathrooms" id="bathrooms", placeholder="#",  required)
-          input.btn.bnt-radius.submit-search.btn-mob-dev(type="submit" value="Search" ng-disabled="login.$invalid")
+          input.btn.bnt-radius.submit-query.btn-mob-dev(type="submit" value="Search" ng-disabled="login.$invalid")
           hr
           .form-group.text-center
             button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR RENT

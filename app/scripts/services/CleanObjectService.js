@@ -2,20 +2,14 @@
 
 angular.module('app')
   .factory('CleanObjectService', function ($firebase, $q, url) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+    return {
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
-
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
-
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
-          }
-        };
+      clean: function (obj) {
+        var removeProp = ['$id','$priority'];
+        obj=angular.fromJson(angular.toJson(obj));
+        obj = _.omit(obj,removeProp);
+        return obj;
+      }
+    };
 
   });

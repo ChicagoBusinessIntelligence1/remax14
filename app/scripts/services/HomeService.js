@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HomeService', function (notifications, MlsService, $firebase, url, $rootScope, $q) {
+  .factory('HomeService', function (notifications, CleanObjectService, MlsService, $firebase, url, $rootScope, $q) {
     return {
       homeRef: null,
       homeRepo: null,
@@ -19,11 +19,12 @@ angular.module('app')
         this.homeRef.$remove();
       },
       updateHomeSection: function (section) {
+        var id = section.$id;
+        section = CleanObjectService.clean(section);
         console.log(section);
-        var id=section.$id;
-       var sectionRepo = this.homeRepo+'/'+id;
-       var sectionRef = $firebase(new Firebase(sectionRepo));
-       //console.log(sectionRepo);
+        var sectionRepo = this.homeRepo + '/' + id;
+        var sectionRef = $firebase(new Firebase(sectionRepo));
+        console.log(sectionRepo);
         //var refObj = this.homeRef.$asObject();
         sectionRef.$update(section);
         //sectionRef.$save();

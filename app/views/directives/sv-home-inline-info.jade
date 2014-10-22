@@ -1,14 +1,13 @@
 ul.ul-basic-info.list-inline
   li
     i.fa.fa-check-circle-o.fa-fw
-    | MLS# {{house.$getRecord('generalInformation').mls.value}}
+    | MLS# {{home|showSectionProp:'mls'}}
   li
     i.fa.fa-check-circle-o.fa-fw
-    | {{house.$getRecord('bedrooms').bedrooms.value}} beds
+    | {{home|showSectionProp:'bedrooms'}} beds
   li
     i.fa.fa-check-circle-o.fa-fw
-    | {{house.$getRecord('bathrooms').fullBathrooms.value}} full baths
+    | {{home|showSectionProp:'fullBathrooms'}} full baths
   li
     i.fa.fa-check-circle-o.fa-fw
-    | {{house.$getRecord('generalInformation').propertySize.value}} sq ft
-
+    | {{home|showSectionProp:'propertySize'}}

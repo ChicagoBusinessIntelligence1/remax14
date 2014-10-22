@@ -51,7 +51,7 @@
         h4 Basic Information
         hr
         p.basic-info-short
-          | {{home.propertyDescription.propertyDescription.value}}
+          | {{home|showSectionProp:'propertyDescription'}}
           span
             em
               a(ui-sref='app.profile.one-listing({mls:$id})').read-more  Read more...

@@ -6,6 +6,7 @@ angular.module('app')
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-sale.html',
       scope: {
+        draft: '=',
         isDraft: '='
       },
 

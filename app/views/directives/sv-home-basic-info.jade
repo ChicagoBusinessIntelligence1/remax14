@@ -6,9 +6,9 @@
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.profile.one-home({mls:home.generalInformation.mls.value})')
-              | {{home|showSectionProp:'street'}}
-              | {{home|showSectionProp:'city'}}
+            a.text-app.address-basic(ui-sref='app.profile.one-home({mls:home.generalInformation.mls})')
+              | {{home|showSectionProp:'street'}},
+              | {{home|showSectionProp:'city'}},
               | {{home|showSectionProp:'state'}}
               | {{home|showSectionProp:'zip'}}
           li.pull-right
@@ -20,16 +20,16 @@
         ul.ul-basic-info.list-inline
           li
             i.fa.fa-check-circle-o.fa-fw
-            | MLS# {{home.generalInformation.mls.value}}
+            | MLS# {{home|showSectionProp:'mls'}}
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.bedrooms.bedrooms.value}} beds
+            | {{home|showSectionProp:'bedrooms'}} beds
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.bathrooms.fullBathrooms.value}} full baths
+            | {{home|showSectionProp:'fullBathrooms'}} full baths
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.generalInformation.propertySize.value}} sq ft
+            | {{home|showSectionProp:'propertySize'}} sq ft
       .col-sm-5
         li
           ul.list-inline.text-right.ul-basic-social

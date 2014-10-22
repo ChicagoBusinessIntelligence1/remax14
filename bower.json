@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "mockfirebase": "~0.3.0",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.3.3",
+    "chance": "~0.6.1"
   }
 }

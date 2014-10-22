@@ -55,20 +55,20 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state("app.profile", {
           resolve: {
-             user: function ($firebaseSimpleLogin,$q) {
+            user: function ($firebaseSimpleLogin, $q) {
               var def = $q.defer();
 
-	            var url = 'https://remax14.firebaseio.com/';
+              var url = 'https://remax14.firebaseio.com/';
               var mainRef = new Firebase(url);
               var auth = $firebaseSimpleLogin(mainRef);
-               auth.$getCurrentUser().then(function (user) {
+              auth.$getCurrentUser().then(function (user) {
                 def.resolve(user);
               });
               return def.promise;
             }
           },
           abstract: true,
-          controller:'ProfileCtrl',
+          controller: 'ProfileCtrl',
           templateUrl: "../views/profile.html"
         })
         .state("app.profile.remax-homes", {
@@ -77,39 +77,39 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/homes.html"
         })
         .state("app.profile.drafts", {
-          url: "/listing-drafts",
-          controller: "ListingDraftsCtrl",
-          templateUrl: "../views/listing-drafts.html"
+          url: "/home-drafts",
+          controller: "HomeDraftsCtrl",
+          templateUrl: "../views/home-drafts.html"
         })
-        .state("app.profile.one-listing-draft", {
-          url: "/one-listing-draft/:mls",
-          controller: "OneListingDraftCtrl",
-          templateUrl: "../views/one-listing-draft.html"
+        .state("app.profile.one-home-draft", {
+          url: "/one-home-draft/:mls",
+          controller: "OneHomeDraftCtrl",
+          templateUrl: "../views/one-home-draft.html"
         })
-        .state("app.profile.manage-listings", {
-          url: "/manage-listings",
-          controller: "Manage-listingsCtrl",
-          templateUrl: "../views/manage-listings.html"
+        .state("app.profile.manage-homes", {
+          url: "/manage-homes",
+          controller: "ManageHomesCtrl",
+          templateUrl: "../views/manage-homes.html"
         })
         .state("app.profile.user-profile", {
           url: "/user-profile",
           controller: "UserProfileCtrl",
           templateUrl: "../views/user-profile.html"
         })
-        .state("app.profile.one-listing", {
-          url: "/remax-property-sale/:mls",
-          controller: "OneListingCtrl",
-          templateUrl: "../views/one-listing.html"
+        .state("app.profile.one-home", {
+          url: "/remax-home-sale/:mls",
+          controller: "OneHomeCtrl",
+          templateUrl: "../views/one-home.html"
         })
-        .state("app.profile.add-listing", {
-          url: "/add-listing",
-          controller: "AddListingCtrl",
-          templateUrl: "../views/add-listing.html"
+        .state("app.profile.add-home", {
+          url: "/add-home",
+          controller: "AddHomeCtrl",
+          templateUrl: "../views/add-home.html"
         })
-        .state("app.profile.listings", {
-          url: "/listings-shared",
-          controller: "ListingSharedCtrl",
-          templateUrl: "../views/listing-shared.html"
+        .state("app.profile.homes", {
+          url: "/homes-shared",
+          controller: "HomeSharedCtrl",
+          templateUrl: "../views/home-shared.html"
         })
 //#state
     })

@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         section: '=',
         isTemplate: '=',
-        updateHouse: '&'
+        updateHomeSection: '&'
       },
       require: '^sv-home-sale',
       controller: function ($scope) {
@@ -26,7 +26,7 @@ angular.module('app')
 
         };
         $scope.saveSection = function () {
-          $scope.updateHouse({sectionIndex: $scope.index, sectionContent: $scope.house[$scope.index]});
+          $scope.updateHomeSection({section: $scope.section})
           $scope.isEdit = false;
         };
 

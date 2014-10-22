@@ -34,12 +34,8 @@ angular.module('app')
           });
         };
 
-        $scope.updateHouse = function (sectionIndex, sectionContent) {
-
-          //when click on button
-          $scope.houseObj[sectionIndex] = $scope.ho
-            .e.$getRecord(sectionIndex);
-          $scope.houseObj.$save(sectionIndex);
+        $scope.updateHomeSection = function (section) {
+          HomeService.updateHomeSection(section);
         };
       }
     };

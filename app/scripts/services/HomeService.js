@@ -4,19 +4,30 @@ angular.module('app')
   .factory('HomeService', function (notifications, MlsService, $firebase, url, $rootScope, $q) {
     return {
       homeRef: null,
+      homeRepo: null,
       getArrayFire: function (mls, isDraft) {
-        var homeRepo;
         if (_.isUndefined(mls)) {
-          homeRepo = url.residentialTemplate;
+          this.homeRepo = url.residentialTemplate;
         } else {
-          homeRepo = isDraft ? url.brokers + $rootScope.user.id + '/residential/drafts/' + mls : url.residential + mls;
+          this.homeRepo = isDraft ? url.brokers + $rootScope.user.id + '/residential/drafts/' + mls : url.residential + mls;
         }
-        this.homeRef = $firebase(new Firebase(homeRepo));
+        this.homeRef = $firebase(new Firebase(this.homeRepo));
 
         return this.homeRef.$asArray();
       },
       moveToTrash: function () {
         this.homeRef.$remove();
+      },
+      updateHomeSection: function (section) {
+        console.log(section);
+        var id=section.$id;
+       var sectionRepo = this.homeRepo+'/'+id;
+       var sectionRef = $firebase(new Firebase(sectionRepo));
+       //console.log(sectionRepo);
+        //var refObj = this.homeRef.$asObject();
+        sectionRef.$update(section);
+        //sectionRef.$save();
+        //this.homeRef.$asObject().$set(section.$id,section);
       },
 
       saveToDrafts: function (home) {

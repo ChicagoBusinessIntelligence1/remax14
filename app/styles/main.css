@@ -4190,35 +4190,35 @@ Selected House
 .selected-house {
   cursor: pointer !important;
 }
-.selecerd-prop-info-container {
+.selected-prop-info-container {
   padding: 5px;
 }
-.selecerd-prop-info-container table {
+.selected-prop-info-container table {
   margin-bottom: 0px;
 }
-.selecerd-prop-info-container tbody tr th {
+.selected-prop-info-container tbody tr th {
   color: #272727;
   font-size: 10px !important;
 }
-.selecerd-prop-info-container tbody tr td {
+.selected-prop-info-container tbody tr td {
   font-size: 10px !important;
   padding-top: 3px;
   padding-bottom: 3px;
 }
-.selecerd-prop-info-container h5 {
+.selected-prop-info-container h5 {
   color: #272727;
   margin-top: 7px;
   margin-bottom: 3px;
   font-size: 11px !important;
   font-weight: 700;
 }
-.selecerd-prop-info-container a {
+.selected-prop-info-container a {
   font-size: 11px;
   color: #272727;
 }
-.selecerd-prop-info-container a:hover,
-.selecerd-prop-info-container a:active,
-.selecerd-prop-info-container a:focus {
+.selected-prop-info-container a:hover,
+.selected-prop-info-container a:active,
+.selected-prop-info-container a:focus {
   text-decoration: none;
 }
 /**********************

@@ -6,7 +6,6 @@ angular.module('app')
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-sale.html',
       scope: {
-        draft: '=',
         isDraft: '='
       },
 
@@ -18,7 +17,6 @@ angular.module('app')
 
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
-
         $scope.home = HomeService.getArrayFire(mls, $scope.isDraft);
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
@@ -37,8 +35,8 @@ angular.module('app')
         };
 
         $scope.updateHouse = function (sectionIndex, sectionContent) {
-          //when click on button
 
+          //when click on button
           $scope.houseObj[sectionIndex] = $scope.ho
             .e.$getRecord(sectionIndex);
           $scope.houseObj.$save(sectionIndex);

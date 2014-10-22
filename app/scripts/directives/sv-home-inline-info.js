@@ -7,7 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-inline-info.html',
       scope: {
-        house: '='
+        home: '='
       },
       link: function ($scope, element, attr) {
       }

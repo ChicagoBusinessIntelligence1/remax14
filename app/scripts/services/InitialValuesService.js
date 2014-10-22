@@ -18,7 +18,7 @@ angular.module('app')
                 var randomVal = '';
                 switch (sectionProp.type) {
                   case 'txt':
-                    randomVal = that.randomString();
+                    randomVal = that.randomString(5);
                     break;
                   case 'area':
                     randomVal = that.randomString(100) + ' ' + that.randomString(50);

@@ -3,16 +3,18 @@
 angular.module('app')
   .factory('IzyaService', function ($firebase, $q, url) {
     return {
-      repoUrl:null,
-      repoRef:null,
+      repoUrl: null,
+      repoRef: null,
 
-      get: function () {
-      var that = this;
-      var defered = $q.defer();
-      this.repoUrl=url.;
-      this.repoRef = $firebase(new Firebase(this.repoUrl));
-       defered.resolve();
-      return defered.promise;
+      all: function () {
+        var that = this;
+        var defered = $q.defer();
+
+        that.repoUrl = url.residential;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+
+        defered.resolve(that.repoRef.$asArray());
+        return defered.promise;
       }
     };
   });

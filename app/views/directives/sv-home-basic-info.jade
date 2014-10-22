@@ -6,9 +6,9 @@
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.profile.one-home({mls:home.generalInformation.mls.value})')
-              | {{home|showSectionProp:'street'}}
-              | {{home|showSectionProp:'city'}}
+            a.text-app.address-basic(ui-sref='app.profile.one-home({mls:home.$id})')
+              | {{home|showSectionProp:'street'}},
+              | {{home|showSectionProp:'city'}},
               | {{home|showSectionProp:'state'}}
               | {{home|showSectionProp:'zip'}}
           li.pull-right
@@ -20,16 +20,16 @@
         ul.ul-basic-info.list-inline
           li
             i.fa.fa-check-circle-o.fa-fw
-            | MLS# {{home.generalInformation.mls.value}}
+            | MLS# {{home|showSectionProp:'mls'}}
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.bedrooms.bedrooms.value}} beds
+            | {{home|showSectionProp:'bedrooms'}} beds
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.bathrooms.fullBathrooms.value}} full baths
+            | {{home|showSectionProp:'fullBathrooms'}} full baths
           li
             i.fa.fa-check-circle-o.fa-fw
-            | {{home.generalInformation.propertySize.value}} sq ft
+            | {{home|showSectionProp:'propertySize'}} sq ft
       .col-sm-5
         li
           ul.list-inline.text-right.ul-basic-social
@@ -43,9 +43,8 @@
                 | Share
   .row
     .col-sm-7
-      a.thumbnail(ui-sref='app.profile.one-home({mls:$id})')
+      a.thumbnail(ui-sref='app.profile.one-home({mls:home.$id})')
         sv-photo-thumb(img='../images/houses/1.jpg' height='270')
-      //img.img-responsive(ng-src="../images/houses/1.jpg")
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information
@@ -54,7 +53,7 @@
           | {{home|showSectionProp:'propertyDescription'}}
           span
             em
-              a(ui-sref='app.profile.one-home({mls:$id})').read-more  Read more...
+              a(ui-sref='app.profile.one-home({mls:home.$id})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

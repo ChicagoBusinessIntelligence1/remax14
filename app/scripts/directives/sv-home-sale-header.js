@@ -7,10 +7,11 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-sale-header.html',
       scope: {
+        home: '=',
         isTemplate: '=',
         saveTemplate: '&',
         draft: '=',
-        deleteDraft:'&'
+        delDraft:'&'
       },
       link: function ($scope, element, attr, svDisplayCtrl) {
 

@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .directive('svListingAddSlider', function () {
+  .directive('svHomeAddSlider', function () {
     return {
       restrict: 'E',
-      templateUrl: '../../views/directives/sv-listing-add-slider.html',
+      templateUrl: '../../views/directives/sv-home-add-slider.html',
       transclude: true,
       replace: true,
       scope: {

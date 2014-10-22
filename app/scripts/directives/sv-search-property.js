@@ -6,17 +6,12 @@ angular.module('app')
       templateUrl: '../views/directives/sv-search-property.html',
       restrict: 'E',
       link: function ($scope, element, attrs) {
-        $scope.query = {
-          location: '',
-          priceMin: '',
-          priceMax: '',
-          bedrooms: '',
-          bathrooms: ''
-        };
-        $scope.mainSearch = function () {
-          $rootScope.$broadcast('search', $scope.query);
 
-          $state.go('app.search-results')
+
+        $scope.mainSearch = function () {
+
+          $rootScope.query = $scope.query;
+          $state.go('app.search-results',null, {reload:true});
         };
       }
 

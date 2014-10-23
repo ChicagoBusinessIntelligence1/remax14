@@ -13,6 +13,23 @@ angular.module('app')
         r: '='
       },
       link: function ($scope, element, attr) {
+        $scope.isMaxInvalid = false;
+        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 150;
+
+        $scope.$watch('model.value', function (newValue) {
+          if (_.isUndefined(newValue)) {
+            $scope.isMaxInvalid = false;
+            return;
+          }
+
+          if (newValue.length > $scope.max) {
+            $scope.isMaxInvalid = true;
+          }
+
+          if (newValue.length <= $scope.max) {
+            $scope.isMaxInvalid = false;
+          }
+        })
 
         $scope.model = $scope.sectionProperty;
         $scope.nameId = _.str.camelize($scope.sectionProperty.title.split(' ').join('-').toLowerCase());

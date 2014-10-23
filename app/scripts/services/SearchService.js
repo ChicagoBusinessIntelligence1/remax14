@@ -14,11 +14,11 @@ angular.module('app')
         that.repoUrl = url.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var allHomes = that.repoRef.$asArray();
-        if (_.isUndefined(query)) {
-          defered.resolve(that.repoRef.$asArray());
-        } else {
-          var finalHomes = [];
-          allHomes.$loaded(function () {
+        allHomes.$loaded(function () {
+          if (_.isUndefined(query)) {
+            defered.resolve(allHomes);
+          } else {
+            var finalHomes = [];
 
             for (var i = 0; i < allHomes.length; i++) {
               var home = allHomes[i];
@@ -26,15 +26,26 @@ angular.module('app')
               for (var j = 0; j < home.length; j++) {
                 var section = home[j];
                 var sectionProps = section.content;
+                var isLocationPass = false;
+
                 for (var k = 0; k < sectionProps.length; k++) {
                   var property = sectionProps[k];
 
                   switch (property.title) {
+
                     case 'city':
                     case 'state':
                     case 'zip':
+                      if (_.isUndefined(query.location)) {
+                        break;
+                      }
                       if (property.value.indexOf(query.location) === -1) {
-                        isHomeIncluded = false;
+                        if (!isLocationPass) {
+                          isHomeIncluded = false;
+                        }
+                      } else {
+                        isLocationPass = true;
+                        isHomeIncluded = true;
                       }
                       break;
 
@@ -42,7 +53,23 @@ angular.module('app')
                       var housePrice = parseInt(property.value);
                       var maxPrice = parseInt(query.priceMax);
                       var minPrice = parseInt(query.priceMin);
-                      if (housePrice < maxPrice || housePrice >= minPrice) {
+                      if (housePrice > maxPrice || housePrice < minPrice) {
+                        isHomeIncluded = false;
+                      }
+                      break;
+
+                    case'bedrooms':
+                      var houseBedrooms = parseInt(property.value);
+                      var queryBedrooms = parseInt(query.bedrooms);
+                      if ((houseBedrooms < queryBedrooms)) {
+                        isHomeIncluded = false;
+                      }
+                      break;
+
+                    case'bathrooms':
+                      var houseBathrooms = parseInt(property.value);
+                      var queryBathrooms = parseInt(query.bathrooms);
+                      if ((houseBathrooms < queryBathrooms)) {
                         isHomeIncluded = false;
                       }
                       break;
@@ -51,11 +78,14 @@ angular.module('app')
                 }
 
               }
+              if (isHomeIncluded) {
+                finalHomes.push(home);
+              }
             }
 
             defered.resolve(finalHomes);
-          });
-        }
+          }
+        });
 
         return defered.promise;
       }

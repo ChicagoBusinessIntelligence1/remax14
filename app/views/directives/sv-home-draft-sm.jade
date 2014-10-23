@@ -3,9 +3,9 @@
     .col-sm-12
       ul.list-inline
         li
-          h4 {{draft|showSectionDraft:'propertyType'}}
+          h5.prop-type.text-info {{draft|showSectionProp:'propertyType'}}
         li.pull-right
-          h5 $&nbsp{{draft|showSectionDraft:'price'}}
+          h5 {{draft|showSectionDraft:'price'|currency:'$':0}}
   hr
   .row
     .col-sm-6
@@ -23,11 +23,6 @@
               | {{draft|showSectionDraft:'state'}}
               | {{draft|showSectionDraft:'zip'}}
           li
-            ul.list-inline
-              li
-                p beds, &nbsp
-              li
-                p full baths
 
       .draft-info-container
         ul.list-inline

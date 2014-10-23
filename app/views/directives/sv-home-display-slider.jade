@@ -21,8 +21,8 @@ div
                 .col-xs-12(ng-if='!isEdit && !isTemplate') {{property.title | boolToBinery}}
                 //  edit
                 .col-xs-12(ng-switch='property.type' ng-if='isEdit || isTemplate')
-                  sv-txt(ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
-                  sv-area(ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-area(max-len='maxLen' ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
                   sv-chbx(ng-switch-when='chbx' section-property='property'  r='required.indexOf(property.title)>-1')
         .row(ng-if="isSingleProp>1")
           .col-sm-6.col-xs-12
@@ -31,8 +31,8 @@ div
                 div.listing-label.col-sm-5.col-xs-6 {{property.title | keyConversion}}:
                 div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{property.value | boolToBinery}}
                 div.content-info.col-sm-7.col-xs-6(ng-switch='property.type' ng-if='isEdit || isTemplate')
-                  sv-txt(ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
-                  sv-area(ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-area(max-len='maxLen' ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
                   sv-chbx(ng-switch-when='chbx' section-property='property'  r='required.indexOf(property.title)>-1')
           .col-sm-6.col-xs-12
             ul.ul-data-just.list-unstyled
@@ -40,8 +40,8 @@ div
                 div.listing-label.col-sm-5.col-xs-6 {{property.title | keyConversion}}:
                 div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{property.value | boolToBinery}}
                 div.content-info.col-sm-7.col-xs-6(ng-switch='property.type' ng-if='isEdit || isTemplate')
-                  sv-txt(ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
-                  sv-area(ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
+                  sv-area(max-len='maxLen' ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
                   sv-chbx(ng-switch-when='chbx' section-property='property'  r='required.indexOf(property.title)>-1')
 
         sv-add-feature(house='house' title='{{index}}' save-section='saveSection()' ng-if='(isEdit || isTemplate) && isButtonShown')

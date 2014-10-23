@@ -10,7 +10,7 @@ angular.module('app')
         home: '=',
         isTemplate: '=',
         saveTemplate: '&',
-        draft: '=',
+        isDraft: '=',
         delDraft:'&'
       },
       link: function ($scope, element, attr, svDisplayCtrl) {

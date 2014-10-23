@@ -1,6 +1,9 @@
 .well.listing-basic-info-wrap
-  h5.prop-type.text-info
-    | {{home|showSectionProp:'propertyType'}}
+  .row
+    .col-sm-6.col-xs-12
+      h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
+    .col-sm-6.col-xs-12
+      sv-sale-type(home='home')
   .alert.alert-address
     .row
       .col-sm-12
@@ -17,19 +20,7 @@
   .app-content-five
     .row
       .col-sm-7
-        ul.ul-basic-info.list-inline
-          li
-            i.fa.fa-check-circle-o.fa-fw
-            | MLS# {{home|showSectionProp:'mls'}}
-          li
-            i.fa.fa-check-circle-o.fa-fw
-            | {{home|showSectionProp:'bedrooms'}} beds
-          li
-            i.fa.fa-check-circle-o.fa-fw
-            | {{home|showSectionProp:'fullBathrooms'}} full baths
-          li
-            i.fa.fa-check-circle-o.fa-fw
-            | {{home|showSectionProp:'propertySize'}} sq ft
+        sv-home-inline-info(home='home')
       .col-sm-5
         li
           ul.list-inline.text-right.ul-basic-social

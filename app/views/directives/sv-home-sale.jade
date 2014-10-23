@@ -1,5 +1,5 @@
 .listing
-  sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' draft='draft' del-draft='delDraft')
+  sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
   .gallery-wrapper(ng-if='!isTemplate')
     .row
       .col-sm-12
@@ -7,5 +7,5 @@
   form(name="homeForm" id="form" novalidate='novalidate')
     ul.list-unstyled
       li(ng-repeat='section in home|homeFilter:"brokers" |orderBy:"order"')
-        sv-home-display-slider(section='section' is-template='isTemplate' update-house='updateHouse(sectionIndex,sectionContent)')
+        sv-home-display-slider(section='section' is-template='isTemplate' update-home-section='updateHomeSection(section)')
 

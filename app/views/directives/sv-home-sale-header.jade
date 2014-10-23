@@ -1,13 +1,13 @@
 .listing-header-container
-  div(ng-if='!isTemplate')
-    .listing-navigation-container
+  div
+    .listing-navigation-container(ng-if='!isTemplate')
       .row
         .col-sm-6
           ol.breadcrumb.breadcrumb-app
-            li
-              a(href='#') Home
-            li
-              a(href='#') Library
+            li(ng-if='!isDraft')
+              a(ui-sref='app.profile.homes') Home
+            li(ng-if='isDraft')
+              a(ui-sref='app.profile.drafts') Home
             li.active Data
 
         .col-sm-6
@@ -21,37 +21,32 @@
                 i.fa.fa-trash.fa-fw.fa-lg
                 | Delete
 
-  div(ng-if='isTemplate')
-    .row
-      .col-sm-6
-        h3 New Listing for Sale
-      .col-sm-6
-        ul.list-inline.text-right
-          li
-            sv-cancel-view
-          li
-            button.btn.btn-sm.btn-info(ng-click='saveTemplate(homeForm)' ng-disabled="homeForm.$valid || homeForm.$pristine")
-              i-i.fa.fa-save.fa-fw
-              | Save Listing
-    hr
+    div(ng-if='isTemplate')
+      .row
+        .col-sm-12
+          h3 New Listing for Sale
+          hr
+      ul.list-inline.text-right
+        li
+          sv-cancel-view
+        li
+          button.btn.btn-sm.btn-info(ng-click='saveTemplate(homeForm)' ng-disabled="homeForm.$valid || homeForm.$pristine")
+            i-i.fa.fa-save.fa-fw
+            | Save Listing
+
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
         h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
       .col-sm-6.col-xs-12
         sv-sale-type(home='home')
-    .alert.alert-address
-      .row
-        .col-md-9.col-xs-12
-          h4
-            | {{home|showSectionProp:'street'}},
-            | {{home|showSectionProp:'city'}},
-            | {{home|showSectionProp:'state'}}
-            | {{home|showSectionProp:'zip'}}
-        .col-md-3.col-xs-12
-          h4.text-right  $ {{home|showSectionProp:'price'}}
-
     .row
-      .col-sm-12
-        .inline-info-container
-          sv-home-inline-info(home='home')
+      .col-md-9.col-xs-12
+        h4.h-address
+          | {{home|showSectionProp:'street'}},
+          | {{home|showSectionProp:'city'}},
+          | {{home|showSectionProp:'state'}}
+          | {{home|showSectionProp:'zip'}}
+      .col-md-3.col-xs-12
+        h4.price-style.text-right  {{home|showSectionProp:'price'| currency:"$":0}}
+

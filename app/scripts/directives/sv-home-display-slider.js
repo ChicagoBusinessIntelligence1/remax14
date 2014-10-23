@@ -54,12 +54,12 @@ angular.module('app')
         };
         /*General Information and Property Description Sections are vis. by default*/
 
-        //if ($scope.title === 'generalInformation' || $scope.title === 'propertyDescription') {
-        //  $scope.isVisible = true;
-        //} else {
-        //  $scope.isVisible = false;
-        //}
-        $scope.isVisible = true;
+        if ($scope.section.title === 'generalInformation' || $scope.section.title === 'propertyDescription') {
+          $scope.isVisible = true;
+        } else {
+          $scope.isVisible = false;
+        }
+
         $scope.toggleShow = function () {
           $scope.isVisible = !$scope.isVisible;
         };

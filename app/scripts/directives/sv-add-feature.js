@@ -7,7 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-add-feature.html',
       scope: {
-        house: '=',
+        home: '=',
         title: '@',
         saveSection: '&'
       },

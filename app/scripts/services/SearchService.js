@@ -32,7 +32,7 @@ angular.module('app')
                   switch (property.title) {
                     case 'city':
                     case 'state':
-                    case 'zip':
+                    case 'zip':/
                       if (property.value.indexOf(query.location) === -1) {
                         isHomeIncluded = false;
                       }

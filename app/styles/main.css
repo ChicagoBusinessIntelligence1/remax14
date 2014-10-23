@@ -2900,16 +2900,27 @@ label {
   font-weight: 700;
   color: #505050;
 }
-.h-address {
-  font-weight: 700;
+.address-style {
+  color: #636363;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 20px;
 }
 .address-container {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.btn-back {
+  color: #767676;
+}
+.btn-back:hover,
+.btn-back:active,
+.btn-back:focus {
+  color: #505050;
+  text-decoration: none;
+}
 .address-basic {
-  color: #3c3c3c;
+  color: #767676;
   display: block;
   height: 100%;
   font-size: 18px;
@@ -2975,7 +2986,7 @@ label {
   }
 }
 .prop-type {
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
   margin-bottom: 15px;
   font-weight: 400;
@@ -2989,6 +3000,10 @@ label {
   margin-top: 10px;
   margin-bottom: 15px;
   text-align: right;
+}
+.sale-type li {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .sale-type h5 {
   font-size: 14px;

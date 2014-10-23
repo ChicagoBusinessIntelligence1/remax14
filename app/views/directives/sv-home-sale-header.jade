@@ -4,14 +4,10 @@
       .row
         .col-sm-6
           ol.breadcrumb.breadcrumb-app
-            li(ng-if='!isDraft')
-              a(ui-sref='app.profile.homes')
+            li
+              a.btn.btn-link.btn-back(sv-back)
                 i.fa.fa-arrow-left.fa-fw
-                | Previous Page
-            li(ng-if='isDraft')
-              a(ui-sref='app.profile.drafts')
-                i.fa.fa-arrow-left.fa-fw
-                | Previous Page
+                | &nbsp Previous Page
 
         .col-sm-6
           ul.list-inline.text-right
@@ -40,17 +36,15 @@
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
-        h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
-      .col-sm-6.col-xs-12
-        sv-sale-type(home='home')
-    .address-container
-      .row
-        .col-md-9.col-xs-12
-          h4.h-address
-            | {{home|showSectionProp:'street'}},
+        blockquote
+          h3 {{home|showSectionProp:'price'| currency:"$":0}}
+          h4.address-style {{home|showSectionProp:'street'}},
+          h4.address-style
             | {{home|showSectionProp:'city'}},
             | {{home|showSectionProp:'state'}}
             | {{home|showSectionProp:'zip'}}
-        .col-md-3.col-xs-12
-          h4.price-style.text-right  {{home|showSectionProp:'price'| currency:"$":0}}
+          h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
+
+      .col-sm-6.col-xs-12
+        sv-sale-type(home='home')
 

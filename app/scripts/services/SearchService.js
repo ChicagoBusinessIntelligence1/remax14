@@ -27,7 +27,7 @@ angular.module('app')
                 var section = home[j];
                 var sectionProps = section.content;
                 var isLocationPass = false;
-
+                var isPriceBedPass = false;
                 for (var k = 0; k < sectionProps.length; k++) {
                   var property = sectionProps[k];
 
@@ -45,7 +45,10 @@ angular.module('app')
                         }
                       } else {
                         isLocationPass = true;
+                        if (!isPriceBedPass) {
+
                         isHomeIncluded = true;
+                        }
                       }
                       break;
 
@@ -55,6 +58,7 @@ angular.module('app')
                       var minPrice = parseInt(query.priceMin);
                       if (housePrice > maxPrice || housePrice < minPrice) {
                         isHomeIncluded = false;
+                        isPriceBedPass=true;
                       }
                       break;
 
@@ -63,6 +67,7 @@ angular.module('app')
                       var queryBedrooms = parseInt(query.bedrooms);
                       if ((houseBedrooms < queryBedrooms)) {
                         isHomeIncluded = false;
+                        isPriceBedPass=true;
                       }
                       break;
 

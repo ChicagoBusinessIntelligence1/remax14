@@ -18,7 +18,7 @@ div
           .col-sm-12
             ul.ul-data-just.list-unstyled
               li.row(ng-repeat='property in section.content | orderBy:"order"')
-                .col-xs-12(ng-if='!isEdit && !isTemplate') {{property.title | boolToBinery}}
+                .col-xs-12(ng-if='!isEdit && !isTemplate') {{property.value}}
                 //  edit
                 .col-xs-12(ng-switch='property.type' ng-if='isEdit || isTemplate')
                   sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')

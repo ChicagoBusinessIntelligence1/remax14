@@ -38,8 +38,8 @@
       .col-sm-6.col-xs-12
         blockquote
           h3 {{home|showSectionProp:'price'| currency:"$":0}}
-          h4.h-address
-            | {{home|showSectionProp:'street'}},
+          h4.address-style {{home|showSectionProp:'street'}},
+          h4.address-style
             | {{home|showSectionProp:'city'}},
             | {{home|showSectionProp:'state'}}
             | {{home|showSectionProp:'zip'}}

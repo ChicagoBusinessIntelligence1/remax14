@@ -2900,8 +2900,10 @@ label {
   font-weight: 700;
   color: #505050;
 }
-.h-address {
-  font-weight: 700;
+.address-style {
+  color: #636363;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 20px;
 }
 .address-container {
@@ -2984,7 +2986,7 @@ label {
   }
 }
 .prop-type {
-  font-size: 16px;
+  font-size: 14px;
   font-style: italic;
   margin-bottom: 15px;
   font-weight: 400;

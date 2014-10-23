@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeBasicInfo', function (TestService, ) {
+  .directive('svHomeBasicInfo', function () {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-basic-info.html',

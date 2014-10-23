@@ -74,8 +74,17 @@ label {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.btn-back {
+  color: #767676;
+}
+.btn-back:hover,
+.btn-back:active,
+.btn-back:focus {
+  color: #505050;
+  text-decoration: none;
+}
 .address-basic {
-  color: #3c3c3c;
+  color: #767676;
   display: block;
   height: 100%;
   font-size: 18px;

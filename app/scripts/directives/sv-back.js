@@ -1,19 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBack', function () {
+  .directive('svBack', ['$window', function ($window) {
     return {
-      restrict: 'E',
-      replace: true,
-      templateUrl: '../../views/directives/sv-back.html',
-      scope: {
-
-      },
-      link: function ($scope, element, attr) {
-
-      },
-      controller: function ($scope) {
-      //this.var=something;
-      },
+      restrict: 'A',
+      link: function ($scope, elem, attr) {
+        elem.bind('click', function () {
+          $window.history.back();
+        });
+      }
     };
-  });
+  }]);

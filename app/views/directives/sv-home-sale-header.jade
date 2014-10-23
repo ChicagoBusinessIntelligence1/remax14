@@ -4,14 +4,10 @@
       .row
         .col-sm-6
           ol.breadcrumb.breadcrumb-app
-            li(ng-if='!isDraft')
-              a(ui-sref='app.profile.homes')
+            li
+              a.btn.btn-link.btn-back(sv-back)
                 i.fa.fa-arrow-left.fa-fw
-                | Previous Page
-            li(ng-if='isDraft')
-              a(ui-sref='app.profile.drafts')
-                i.fa.fa-arrow-left.fa-fw
-                | Previous Page
+                | &nbsp Previous Page
 
         .col-sm-6
           ul.list-inline.text-right

@@ -36,17 +36,19 @@
   div(ng-if='!isTemplate')
     .row
       .col-sm-6.col-xs-12
-        h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
-      .col-sm-6.col-xs-12
-        sv-sale-type(home='home')
-    .address-container
-      .row
-        .col-md-9.col-xs-12
+        blockquote
+          h3 {{home|showSectionProp:'price'| currency:"$":0}}
           h4.h-address
             | {{home|showSectionProp:'street'}},
             | {{home|showSectionProp:'city'}},
             | {{home|showSectionProp:'state'}}
             | {{home|showSectionProp:'zip'}}
-        .col-md-3.col-xs-12
-          h4.price-style.text-right  {{home|showSectionProp:'price'| currency:"$":0}}
+          h5.prop-type.text-info {{home|showSectionProp:'propertyType'}}
+
+      .col-sm-6.col-xs-12
+        h4.label.label-default {{home|showSectionProp:'propertyStatus'}}
+        sv-sale-type(home='home')
+    .address-container
+      .row
+        .col-md-9.col-xs-12
 

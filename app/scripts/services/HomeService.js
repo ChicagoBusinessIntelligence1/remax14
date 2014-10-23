@@ -21,10 +21,8 @@ angular.module('app')
       updateHomeSection: function (section) {
         var id = section.$id;
         section = CleanObjectService.clean(section);
-        console.log(section);
         var sectionRepo = this.homeRepo + '/' + id;
         var sectionRef = $firebase(new Firebase(sectionRepo));
-        console.log(sectionRepo);
         //var refObj = this.homeRef.$asObject();
         sectionRef.$update(section);
         //sectionRef.$save();

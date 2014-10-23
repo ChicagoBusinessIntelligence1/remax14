@@ -16,7 +16,7 @@
               | {{home|showSectionProp:'zip'}}
           li.pull-right
             a.price-style(ui-sref='app.profile.one-home')
-              | ${{home|showSectionProp:'price'}}
+              | {{home|showSectionProp:'price'|currency:"$":0}}
   .app-content-five
     .row
       .col-sm-7

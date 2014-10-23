@@ -48,9 +48,5 @@
           | {{home|showSectionProp:'state'}}
           | {{home|showSectionProp:'zip'}}
       .col-md-3.col-xs-12
-        h4.price-style.text-right  ${{home|showSectionProp:'price'}}
+        h4.price-style.text-right  {{home|showSectionProp:'price'| currency:"$":0}}
 
-    .row
-      .col-sm-12
-        .inline-info-container
-          sv-home-inline-info(home='home')

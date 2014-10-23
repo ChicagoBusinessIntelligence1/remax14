@@ -15,6 +15,7 @@ angular.module('app')
         sectionProperty: '=',
         r: '='
       },
+
       link: function ($scope, element, attr) {
         $scope.isMaxInvalid = false;
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 150;

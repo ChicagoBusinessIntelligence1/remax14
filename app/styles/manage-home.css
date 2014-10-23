@@ -66,6 +66,9 @@ label {
   font-weight: 700;
   color: #505050;
 }
+.h-address {
+  font-weight: 700;
+}
 .address-basic {
   color: #3c3c3c;
   display: block;

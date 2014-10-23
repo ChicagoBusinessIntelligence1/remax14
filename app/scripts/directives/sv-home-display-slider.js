@@ -12,6 +12,7 @@ angular.module('app')
         updateHomeSection: '&'
       },
       require: '^sv-home-sale',
+
       controller: function ($scope) {
         this.ngFormName = $scope.section.title + 'Form';
         $scope.ngFormName = this.ngFormName;

@@ -18,9 +18,7 @@ angular.module('app')
         allHomes.$loaded(function () {
           for (var i = 0; i < allHomes.length; i++) {
             var home = allHomes[i];
-
           }
-
         })
         defered.resolve(that.repoRef.$asArray());
 

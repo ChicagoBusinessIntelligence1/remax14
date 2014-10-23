@@ -1,5 +1,7 @@
 .sale-type
-  ul.list-inline
+  ul.list-unstyled
+    li
+      h5.label.label-primary {{home|showSectionProp:'propertyStatus'}}
     li(ng-show="home|showSectionProp:'shortSale'")
       h5.label.label-danger Short Sale
     li(ng-show="home|showSectionProp:'bankOwned'")

@@ -47,7 +47,7 @@ angular.module('app')
       $scope.userName = null;
       $scope.userPic = null;
       $scope.isAdmin = null;
-      $rootScopescope.userId = null;
+      $rootScope.userId = null;
       $state.go('app.home', null, {reload: true});
     }
 

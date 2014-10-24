@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ProfileCtrl', function ($scope, user, $rootScope) {
+  .controller('ProfileCtrl', function (ProfileTypeService, $scope, user, $rootScope) {
     $rootScope.user = user;
 
   });

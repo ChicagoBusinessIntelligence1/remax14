@@ -1,9 +1,6 @@
 div(ng-switch="user.profileType")
   div(ng-switch-when="broker")
-    sv-broker-application(fname='firstName' lname='lastName' email='email')
   div(ng-switch-when="customer")
-    | Customer Panel
-  div(ng-switch-default)
-    |Please log in to see this page.
+    sv-broker-application(fname='firstName' lname='lastName' email='email')
 
 

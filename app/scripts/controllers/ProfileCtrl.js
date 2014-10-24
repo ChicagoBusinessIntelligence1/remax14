@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('app')
-  .controller('ProfileCtrl', function (ProfileTypeService, $scope, user, $rootScope) {
+  .controller('ProfileCtrl', function (ProfileTypeService, $scope,$state, user, $rootScope) {
     if (user === null) {
-      toaster.warning('Please sign in');
+      toastr.warning('Please sign in');
       $state.go('login');
     } else {
 

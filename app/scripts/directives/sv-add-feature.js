@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svAddFeature', function ($filter, inputTypes) {
+  .directive('svAddFeature', function (HideAreaService, $filter, inputTypes) {
     return {
       restrict: 'E',
       replace: true,

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('ListingService', function ($firebase, $q, url) {
+  .factory('HideAreaService', function ($firebase, $q, url) {
         return {
           repoUrl: null,
           repoRef: null,

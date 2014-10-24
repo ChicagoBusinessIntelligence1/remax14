@@ -13,17 +13,11 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         //Hiding Text Area for Adding on Section
-        var hideAreaIn = ['appliances'];
-        //converting our current title('@') to title name lower case
-        var sectionName = ($filter('keyConversion')($scope.title)).toLowerCase();
+        var hiddenAreaInSections = ['Appliances'];
         // search
-        var hideArea = hideAreaIn.indexOf(sectionName);
-        if (hideArea === -1) {
-          $scope.isAreaHidden = false;
-        }
-        else {
-          $scope.isAreaHidden = true;
-        }
+
+        $scope.isAreaHidden = HideAreaService.hideArea(hiddenAreaInSections,$scope.title);
+
 
         $scope.features = inputTypes;
 

@@ -1,21 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .factory('HideAreaService', function ($firebase, $q, url) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+  .factory('HideAreaService', function ($filter) {
+    return {
+      hideArea: function (hiddenAreaInSections, title) {
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
-
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
-
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
-          }
-        };
+        var sectionTitle = ($filter('keyConversion')(title));
+        return hiddenAreaInSections.indexOf(sectionTitle)>-1;
+      }
+    };
 
   });

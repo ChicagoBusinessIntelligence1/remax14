@@ -47,7 +47,7 @@ angular.module('app')
           name = input[0].toLowerCase() + input.substr(1);
 
           /*defining a num of our new prop by counting all elements + 1*/
-          var count = Object.keys($scope.house[$scope.title]).length + 1;
+          var count = Object.keys($scope.home[$scope.title]).length + 1;
 
           /*defining whether we need to add 0 in the beginning (num of digits that length contains)
            * THEN add 0 or just convert to string*/
@@ -57,8 +57,8 @@ angular.module('app')
           /*provide a default value for automatic saving to DB*/
           var defaultValue = (type === 'chbx') ? true : initialInput + ' description';
 
-          /*adding created prop to house section [locally on snapshot] then saving to DB*/
-          $scope.house[$scope.title][name] = {type: type, value: defaultValue};
+          /*adding created prop to home section [locally on snapshot] then saving to DB*/
+          $scope.home[$scope.title][name] = {type: type, value: defaultValue};
           $scope.saveSection();
           /*clear our form*/
           $scope.selectedType = '';

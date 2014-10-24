@@ -3,10 +3,8 @@
     .container
       span.real-estate-rc RESIDENTIAL, COMMERCIAL & INVESTMENT REAL ESTATE
       ul.list-inline.pull-right.nav-auth
-        li.li-create-account
+        li.li-create-account(ng-if='auth.user')
           a(ui-sref="app.profile.user-profile") Hello, User!
-        li.li-create-account
-          a(ui-sref="app.remax-auth") Create Your Free Account
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg

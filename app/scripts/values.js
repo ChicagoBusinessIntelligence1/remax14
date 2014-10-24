@@ -6,6 +6,7 @@ app.factory('url', function (mainUrl) {
     residential: mainUrl + 'residential/home/',
     residentialTemplate: mainUrl + 'residential/templates/0',
     brokers: mainUrl + 'brokers/',
+    registeredBrokers: mainUrl + 'registeredBrokers/',
     residentialDrafts:'/residential/drafts'
   }
 });

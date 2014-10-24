@@ -2,6 +2,13 @@
 
 angular.module('app')
   .controller('ProfileCtrl', function (ProfileTypeService, $scope, user, $rootScope) {
-    $rootScope.user = user;
+    if (user === null) {
+      toaster.warning('Please sign in');
+      $state.go('login');
+    } else {
 
+      ProfileTypeService.determine(user).then(function (user) {
+        $rootScope.user = user;
+      })
+    }
   });

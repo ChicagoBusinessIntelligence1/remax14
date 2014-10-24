@@ -43,6 +43,7 @@ angular.module('app')
 
     $scope.fenLogout = function () {
       $rootScope.auth.$logout();
+      $rootScope.user = null;
       $scope.userLink = null;
       $scope.userName = null;
       $scope.userPic = null;
@@ -54,7 +55,6 @@ angular.module('app')
     $scope.loginFb = function () {
       $rootScope.auth.$login('facebook',
         {
-          rememberMe: true,
           scope: 'email,user_likes'
         }
       ).then(function (user) {

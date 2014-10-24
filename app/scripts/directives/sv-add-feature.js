@@ -16,9 +16,7 @@ angular.module('app')
         var hiddenAreaInSections = ['Appliances'];
         // search
 
-        $scope.isAreaHidden = HideAreaService.hideArea(hiddenAreaInSections,$scope.title);
-
-
+        $scope.isAreaHidden = HideAreaService.hideArea(hiddenAreaInSections, $scope.title);
         $scope.features = inputTypes;
 
         /*creating an obj that has empty prop "val" (Property Name)*/

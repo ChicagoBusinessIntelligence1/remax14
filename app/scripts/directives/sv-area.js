@@ -17,7 +17,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.isMaxInvalid = false;
-        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 500;
+        $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 700;
 
         $scope.$watch('model.value', function (newValue) {
           if (_.isUndefined(newValue)) {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSale', function (TestService, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope) {
+  .directive('svHomeSale', function (InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-sale.html',

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HomeService', function (notifications, CleanObjectService, MlsService, $firebase, url, $rootScope, $q) {
+  .factory('HomeService', function (MyServiceService, notifications, CleanObjectService, MlsService, $firebase, url, $rootScope, $q) {
     return {
       homeRef: null,
       homeRepo: null,

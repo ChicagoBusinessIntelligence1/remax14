@@ -5,6 +5,9 @@
       ul.list-inline.pull-right.nav-auth
         li.li-create-account(ng-if='auth.user')
           a(ui-sref="app.profile.user-profile") Hello, User!
+        li.li-create-account(ng-if='auth.user')
+          a(ui-sref="app.profile.user-profile" title='Notifications')
+            i.fa.fa-bell.fa-fw
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg

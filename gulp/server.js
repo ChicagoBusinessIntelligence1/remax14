@@ -40,14 +40,13 @@ function browserSyncInit(baseDir, files, browser) {
 
 }
 
-gulp.task('serve', ['watch', 'stylus'], function () {
+gulp.task('serve', ['watch'], function () {
     browserSyncInit([
         'app'
     ], [
-        'app/*.html',
+        'app/index.html',
         'app/styles/**/*.css',
         'app/scripts/**/*.js',
-        'app/partials/**/*.html',
         'app/views/**/*.html'
     ]);
 });

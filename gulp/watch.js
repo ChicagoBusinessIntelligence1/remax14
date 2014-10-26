@@ -2,8 +2,8 @@
 
 var gulp = require('gulp');
 
-gulp.task('watch', ['wiredep'] ,function () {
+gulp.task('watch', function () {
   gulp.watch('app/styles/**/*.styl', ['stylus']);
   gulp.watch('app/**/*.jade', ['jade']);
-  gulp.watch('bower.json', ['wiredep']);
+  //gulp.watch('bower.json', ['wiredep']);
 });

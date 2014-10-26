@@ -1,19 +1,27 @@
 'use strict';
 
 angular.module('app')
-  .directive('svEmailAlertSettings', function () {
+  .directive('svEmailAlertSettings', function ($popover) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-email-alert-settings.html',
+      template: '<button class="btn btn-success">Email Alert Settings</button>',
       scope: {
-
+        fname: '=',
+        lname: '=',
+        email: '='
       },
       link: function ($scope, element, attr) {
-
-      },
-      controller: function ($scope) {
-      //this.var=something;
-      },
+        $scope.saveEmailAlertSettings = function (fname, lname, email) {
+          toastr.success('Your settings are successfully saved');
+        };
+        var emailAlertPopover = $popover(element, {
+          container: 'body',
+          template: '../../views/popover/email-alert-popover.html',
+          placement: 'bottom',
+          animation: 'am-flip-x',
+          scope: $scope
+        });
+      }
     };
   });

@@ -49,3 +49,6 @@ label {
 .app-form .form-group {
   margin-bottom: 5px !important;
 }
+.save-profile-changes {
+  padding-top: 15px;
+}

@@ -4,7 +4,8 @@ angular.module('app')
   .directive('svBrokerApplication', function ($popover) {
     return {
       restrict: 'E',
-      template: '<button class="btn btn-info">Apply for Remax 1st class Broker Account</button>',
+      replace: true,
+      template: '<button class="btn btn-default">Apply for Remax 1st class Broker Account</button>',
       scope: {
         fname: '=',
         lname: '=',

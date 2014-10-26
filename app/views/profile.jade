@@ -6,7 +6,52 @@ div(ng-switch="user.profileType")
         div(ui-view='')
   div(ng-switch-when="customer")
     sv-customer-profile-nav
-    div Customer Navigation Directive
+    h3 My Profile
+    hr
+    .row
+      .col-sm-7
+        .well
+          form.form-horizontal(name="form" id="form")
+            .form-group
+              label.col-sm-5(for='fName') User Name:
+              .col-sm-7
+                input.input-sm.input-sm.form-control(id="fName" placeholder="User Name")
+
+            .form-group
+              .col-sm-5
+                label First Name:
+              .col-sm-7
+                input.input-sm.form-control(id="fName" placeholder="First Name")
+
+            .form-group
+              .col-sm-5
+                label Last Name:
+              .col-sm-7
+                input.input-sm.form-control(id="fName" placeholder="Last Name")
+
+            .form-group
+              .col-sm-5
+                label Email:
+              .col-sm-7
+                input.input-sm.form-control(id="fName" placeholder="Fb Email")
+
+            .form-group
+              .col-sm-5
+                label Phone Number:
+              .col-sm-7
+                input.input-sm.form-control(id="fName" placeholder="Phone Number")
+
+            .save-profile-changes
+              sv-btn-save(title='Save Changes')
+            hr
+            .text-right
+              button.btn.btn-link.btn-sm
+                i.fa.fa-remove.fa-fw
+                | Delete Profile
+      .col-sm-3
+
+
     sv-broker-application(fname='firstName' lname='lastName' email='email')
+    sv-email-alert-settings(fname='firstName' lname='lastName' email='email')
 
 

@@ -131,6 +131,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
+			.state("user-profile-settings", {
+				url: "/user-profile-settings", 
+				controller:"UserProfileSettingsCtrl",
+				templateUrl: "../views/user-profile-settings-ctrl.html"
+			})
 //#state
     })
   ;

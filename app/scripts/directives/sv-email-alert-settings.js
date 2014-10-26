@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      template: '<button class="btn btn-success">Email Alert Settings</button>',
+      template: '<button class="btn btn-default btn-block">Email Alert Settings</button>',
       scope: {
         fname: '=',
         lname: '=',

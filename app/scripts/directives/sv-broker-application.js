@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      template: '<button class="btn btn-default">Apply for Remax 1st class Broker Account</button>',
+      template: '<button class="btn btn-default btn-block">Apply for Broker Account</button>',
       scope: {
         fname: '=',
         lname: '=',

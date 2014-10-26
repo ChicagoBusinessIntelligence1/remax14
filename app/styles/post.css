@@ -66,18 +66,6 @@ label {
   line-height: 20px;
   font-size: 11px;
 }
-.p-post-time {
-  font-size: 12px;
-  color: #808080;
-  line-height: 24px;
-  margin-bottom: 0px;
-}
-.p-comment-time {
-  font-size: 11px;
-  color: #808080;
-  line-height: 24px;
-  margin-bottom: 0px;
-}
 .user-name-comment {
   font-size: 12px;
   font-weight: bold !important;
@@ -94,14 +82,14 @@ label {
   border-bottom: dashed 1px #08c !important;
 }
 .popover-title {
-  color: #505050 !important;
+  color: #565656 !important;
 }
 .color-danger {
-  color: #ff4d4d;
+  color: color-danger;
   cursor: pointer;
 }
 .color-edit {
-  color: #62b1ff;
+  color: #b7dbff;
   cursor: pointer;
 }
 .editable-form textarea {
@@ -113,12 +101,12 @@ label {
   margin-right: 10px;
 }
 .btn-cancel {
-  color: #8a8a8a;
+  color: #a2a2a2;
 }
 .btn-cancel:hover,
 .btn-cancel:active,
 .btn-cancel:focus {
-  color: #636363;
+  color: #6f6f6f;
 }
 .btn-remove {
   background-color: #ffa500;

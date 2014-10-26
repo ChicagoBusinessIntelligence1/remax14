@@ -1,5 +1,15 @@
 @import 'nib'
-
+color-skin =#272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98)
+color-blue = #396C95
+color-lighten = lighten(color-app, 98)
+color-light = light(color-app, 70)
+color-link = lighten(color-app, 30)
+color-link-hover = lighten(color-app, 10)
+color-nav = lighten(color-app, 20)
+shadow-blue = lighten(color-blue, 88)
+text-shadow-blue = shadow-blue 1px 1px 0px;
 @import 'functions'
 
 /**********************
@@ -7,7 +17,7 @@
 ***********************/
 
 .footer-container
-  background-color lighten(color-skin, 85%)
+  background-color lighten(color-skin, 85)
   hr
     margin-top 0px
     margin-bottom 5px
@@ -23,7 +33,7 @@
   padding 10px
 
 .footer
-  background-color lighten(color-skin, 25%)
+  background-color lighten(color-skin, 25)
   height 60px
   p
     color color-lighten
@@ -43,5 +53,5 @@
     text-shadow app-text-shadow
   p
     a
-      color lighten(color-blue, 30%)
+      color lighten(color-blue, 30)
       text-shadow-blue app-text-shadow

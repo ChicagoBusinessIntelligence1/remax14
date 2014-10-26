@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])
+var app = angular.module('app', ['cgBusy','firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker'])
     .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/home');
 
@@ -141,3 +141,135 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
   ;
 
 
+app.animation('.svv', function () {
+  var height,
+      width;
+  return {
+    enter: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+    leave: function (element, done) {
+      TweenMax.to(element, 1, { opacity: 0, onComplete: done });
+
+    },
+    move: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+
+    addClass: function (element, className, done) {
+      height = element.height();
+      width = element.width();
+      element.css('height',height);
+      element.css('width',width);
+
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:0,
+          width:0,
+          rotation:360,
+          onComplete: done });
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:height,
+          width:width,
+          rotation:-360,
+          onComplete: done });
+      }
+
+
+    }
+  }
+});
+app.animation('.svv', function () {
+  var height,
+      width;
+  return {
+    enter: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+    leave: function (element, done) {
+      TweenMax.to(element, 1, { opacity: 0, onComplete: done });
+
+    },
+    move: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+
+    addClass: function (element, className, done) {
+      height = element.height();
+      width = element.width();
+      element.css('height',height);
+      element.css('width',width);
+
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:0,
+          width:0,
+          rotation:360,
+          onComplete: done });
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:height,
+          width:width,
+          rotation:-360,
+          onComplete: done });
+      }
+
+
+    }
+  }
+});
+app.animation('.svv', function () {
+  var height,
+      width;
+  return {
+    enter: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+    leave: function (element, done) {
+      TweenMax.to(element, 1, { opacity: 0, onComplete: done });
+
+    },
+    move: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+
+    addClass: function (element, className, done) {
+      height = element.height();
+      width = element.width();
+      element.css('height',height);
+      element.css('width',width);
+
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:0,
+          width:0,
+          rotation:360,
+          onComplete: done });
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.to(element, 1, {
+          height:height,
+          width:width,
+          rotation:-360,
+          onComplete: done });
+      }
+
+
+    }
+  }
+});

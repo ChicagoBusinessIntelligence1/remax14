@@ -33,7 +33,7 @@ label {
 }
 /*template*/
 .left-sidebar {
-  background-color: #f3f3f3;
+  background-color: #fff;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
@@ -42,14 +42,14 @@ label {
   color: #f7f7f4 !important;
   font-size: 13px !important;
   letter-spacing: 1px;
-  background-color: #4684b6 !important;
-  border-color: #4684b6 !important;
+  background-color: #5a93c0 !important;
+  border-color: #5a93c0 !important;
   margin-top: 10px !important;
 }
 .submit-search:hover,
 .submit-search:focus,
 .submit-search:active {
-  background-color: #3d74a0 !important;
+  background-color: #4079a7 !important;
   color: #f7f7f4 !important;
 }
 /*------------------------------------------------*/
@@ -58,7 +58,7 @@ label {
 /* aside menu */
 .aside-menu {
   padding-left: 0;
-  border-bottom: #dedede 1px solid;
+  border-bottom: #fff 1px solid;
   list-style-type: none;
   line-height: 30px;
 }
@@ -67,14 +67,14 @@ label {
   position: relative;
   padding: 10px 0 10px 15px;
   color: #3c3c3c;
-  background-color: #ebebeb;
-  border-top: #dedede 1px solid;
+  background-color: #fff;
+  border-top: #fff 1px solid;
 }
 .aside-menu li a:hover,
 .aside-menu li a:active,
 .aside-menu li a:focus {
-  border-top: #dedede 1px solid;
-  background-color: #f3f3f3;
+  border-top: #fff 1px solid;
+  background-color: #fff;
   text-decoration: none;
 }
 .aside-menu > li:first-child > a {
@@ -112,10 +112,10 @@ label {
 .app-tips .panel-heading {
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-color: #f2f2f2 !important;
+  background-color: #fff !important;
 }
 .app-tips .panel-body {
-  background-color: #fbfbfb !important;
+  background-color: #fff !important;
 }
 .app-tips .panel-body p {
   font-size: 12px;
@@ -126,7 +126,7 @@ label {
 /* info panel */
 h5.label-default-head {
   padding: 10px 15px;
-  background-color: #777;
+  background-color: #858585;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   display: block;
@@ -136,7 +136,7 @@ h5.label-default-head {
 }
 .list-info-sidebar {
   padding: 5px 10px;
-  border: 1px solid #c9c9c9;
+  border: 1px solid #e6e6e6;
 }
 .list-info-sidebar li {
   font-size: 10px;
@@ -152,7 +152,7 @@ h5.label-default-head {
 .list-info-sidebar .info-name {
   width: 100%;
   background-color: transparent;
-  color: #ababab !important;
+  color: #cdcdcd !important;
   font-size: 11px;
   vertical-align: top;
 }

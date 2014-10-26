@@ -25,7 +25,7 @@ label {
   margin-top: 5px;
 }
 .ul-basic-info li {
-  color: #505050;
+  color: #565656;
   font-size: 13px;
   font-style: italic;
 }
@@ -36,17 +36,10 @@ label {
   }
 }
 .price-style {
-  color: #417cab;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 1px;
   text-align: right;
-}
-.price-style:hover,
-.price-style:active,
-.price-style:focus {
-  color: #396c95;
-  text-decoration: none;
 }
 @media screen and (max-width: 992px) {
   .price-style {
@@ -64,10 +57,10 @@ label {
 .listing-header-container .alert-address h4 {
   margin-bottom: 0px;
   font-weight: 700;
-  color: #505050;
+  color: #565656;
 }
 .address-style {
-  color: #636363;
+  color: #6f6f6f;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 20px;
@@ -76,28 +69,12 @@ label {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.btn-back {
-  color: #767676;
-}
-.btn-back:hover,
-.btn-back:active,
-.btn-back:focus {
-  color: #505050;
-  text-decoration: none;
-}
 .address-basic {
-  color: #767676;
   display: block;
   height: 100%;
   font-size: 18px;
   margin-top: 0px;
   margin-bottom: 0px false;
-}
-.address-basic:hover,
-.address-basic:active,
-.address-basic:focus {
-  color: #505050;
-  text-decoration: none;
 }
 @media screen and (max-width: 992px) {
   .address-basic {
@@ -119,7 +96,7 @@ label {
   margin-bottom: 0px;
 }
 .breadcrumb-app li.active {
-  color: #767676;
+  color: #898989;
   font-size: 12px;
 }
 .breadcrumb-app li a {
@@ -129,7 +106,7 @@ label {
 .breadcrumb-app li a:hover,
 .breadcrumb-app li a:active,
 .breadcrumb-app li a:focus {
-  color: #505050;
+  color: #565656;
   text-decoration: none;
 }
 .ul-basic-social {
@@ -137,13 +114,13 @@ label {
   margin-top: 5px;
 }
 .ul-basic-social li a {
-  color: #767676;
+  color: #898989;
   font-size: 12px;
 }
 .ul-basic-social li a:hover,
 .ul-basic-social li a:active,
 .ul-basic-social li a:focus {
-  color: #505050;
+  color: #565656;
   text-decoration: none;
 }
 @media screen and (max-width: 992px) {
@@ -183,8 +160,8 @@ label {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 10px;
-  background-color: #f4f4f4;
-  border: 1px #ddd solid;
+  background-color: #fff;
+  border: border-boot;
 }
 .head-panel h4 {
   margin-top: 0px;
@@ -213,7 +190,7 @@ label {
   width: 100%;
 }
 .txt-group label {
-  color: #686868;
+  color: #747474;
   font-size: 12px;
 }
 .txt-group .form-control {
@@ -231,7 +208,7 @@ label {
   margin: 0px;
 }
 .listing-form .form-group label {
-  color: #686868;
+  color: #747474;
   font-size: 12px;
 }
 .listing-form .form-group input {
@@ -259,7 +236,7 @@ label {
   margin-bottom: 10px;
 }
 .stripe-dark {
-  background-color: #f2f2f2;
+  background-color: #fff;
 }
 .cursor-p {
   cursor: pointer;
@@ -290,7 +267,7 @@ label {
   margin-top: 5px;
 }
 .draft-sm-container h4 {
-  color: #767676;
+  color: #898989;
 }
 .draft-sm-container h3,
 .draft-sm-container h4,

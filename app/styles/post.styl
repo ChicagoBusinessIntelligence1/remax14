@@ -1,5 +1,15 @@
 @import 'nib'
-
+color-skin =#272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98)
+color-blue = #396C95
+color-lighten = lighten(color-app, 98)
+color-light = light(color-app, 70)
+color-link = lighten(color-app, 30)
+color-link-hover = lighten(color-app, 10)
+color-nav = lighten(color-app, 20)
+shadow-blue = lighten(color-blue, 88)
+text-shadow-blue = shadow-blue 1px 1px 0px;
 @import 'functions'
 
 /**********************
@@ -84,7 +94,7 @@
   border-bottom dashed 1px #0088cc !important;
 
 .popover-title
-  color lighten(color-app, 10%) !important
+  color lighten(color-app, 10) !important
 
 .color-danger
   color color-danger
@@ -92,9 +102,9 @@
   cursor pointer
 
 .color-edit
-  color lighten(dodgerblue, 30%)
+  color lighten(dodgerblue, 30)
   cursor pointer
-  hover-darken(30%)
+  hover-darken(30)
 
 .editable-form
   textarea
@@ -106,11 +116,11 @@
   margin-right 10px
 
 .btn-cancel
-  color lighten(color-app, 40%)
+  color lighten(color-app, 40)
   &:hover
   &:active
   &:focus
-    color lighten(color-app, 20%)
+    color lighten(color-app, 20)
 
 .btn-remove
   background-color orange

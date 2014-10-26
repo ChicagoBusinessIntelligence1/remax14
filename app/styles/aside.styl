@@ -1,5 +1,15 @@
 @import 'nib'
-
+color-skin =#272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98)
+color-blue = #396C95
+color-lighten = lighten(color-app, 98)
+color-light = light(color-app, 70)
+color-link = lighten(color-app, 30)
+color-link-hover = lighten(color-app, 10)
+color-nav = lighten(color-app, 20)
+shadow-blue = lighten(color-blue, 88)
+text-shadow-blue = shadow-blue 1px 1px 0px;
 @import 'functions'
 
 /**********************
@@ -104,7 +114,7 @@
   border-radius 0px
   .panel-heading
     border-radius 0px
-    background-color lighten(color-skin, 94%) !important
+    background-color lighten(color-skin, 94) !important
   .panel-body
     background-color color-lighten !important
     p
@@ -120,7 +130,7 @@ h5.label-default-head
 
 .list-info-sidebar
   padding 5px 10px
-  border lighten(color-skin, 75%)
+  border lighten(color-skin, 75)
   li
     font-size 10px
     margin-bottom 0
@@ -133,7 +143,7 @@ h5.label-default-head
   .info-name
     width 100%
     background-color transparent
-    color lighten(color-app, 57%) !important
+    color lighten(color-app, 57) !important
     font-size 11px
     vertical-align top
   .info-value

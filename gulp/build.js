@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
-var stylus = require('stylus');
 
 var Notification = require('node-notifier');
 
@@ -87,10 +86,10 @@ gulp.task('jade', function () {
 //    .pipe(gulp.dest('app/styles'))
 //})
 
-gulp.task('scripts', function () {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe($.jshint())
-});
+//gulp.task('scripts', function () {
+//  return gulp.src('app/scripts/**/*.js')
+//    .pipe($.jshint())
+//});
 
 gulp.task('partials', function () {
   return gulp.src('app/partials/**/*.html')
@@ -106,7 +105,7 @@ gulp.task('partials', function () {
     .pipe(gulp.dest('.tmp/partials'))
 });
 
-gulp.task('html', ['stylus', 'scripts', 'partials'], function () {
+gulp.task('html', ['stylus', 'partials'], function () {
   var jsFilter = $.filter('**/*.js');
   var cssFilter = $.filter('**/*.css');
 
@@ -151,4 +150,5 @@ gulp.task('clean', function () {
   return gulp.src(['.tmp', 'dist'], {read: false}).pipe($.rimraf());
 });
 
-gulp.task('build', ['jade', 'html', 'partials', 'images', 'fonts']);
+//gulp.task('build', ['jade', 'html', 'partials', 'images', 'fonts']);
+gulp.task('build', ['jade', 'html']);

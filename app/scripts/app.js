@@ -9,6 +9,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           abstract: true,
           templateUrl: '../partials/main.html'
         })
+        .state("app.remax-home-sale", {
+          url: "/remax-home-sale/:mls",
+          controller: "OneHomeCtrl",
+          templateUrl: "../views/one-home.html"
+        })
         .state('app.admin', {
           url: '/admin',
           controller: 'LoginCtrl',
@@ -96,11 +101,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "UserProfileCtrl",
           templateUrl: "../views/user-profile.html"
         })
-        .state("app.profile.one-home", {
-          url: "/remax-home-sale/:mls",
-          controller: "OneHomeCtrl",
-          templateUrl: "../views/one-home.html"
-        })
         .state("app.profile.add-home", {
           url: "/add-home",
           controller: "AddHomeCtrl",
@@ -117,7 +117,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				templateUrl: "../views/search-results-ctrl.html"
 			})
 			.state("login", {
-				url: "/login", 
+				url: "/login",
 				controller:"LoginCtrl",
 				templateUrl: "../views/login-ctrl.html"
 			})

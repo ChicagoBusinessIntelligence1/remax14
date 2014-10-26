@@ -28,6 +28,7 @@ angular.module('app')
                 var sectionProps = section.content;
                 var isLocationPass = false;
                 var isPriceBedPass = false;
+
                 for (var k = 0; k < sectionProps.length; k++) {
                   var property = sectionProps[k];
 

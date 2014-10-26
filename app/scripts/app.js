@@ -101,12 +101,12 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "UserProfileCtrl",
           templateUrl: "../views/user-profile.html"
         })
-        .state("app.profile.saved-searches", {
+        .state("app.profile.user-profile.saved-searches", {
           url: "/saved-searches",
           controller: "SavedSearchesCtrl",
           templateUrl: "../views/saved-searches-ctrl.html"
         })
-        .state("app.profile.wish-list", {
+        .state("app.profile.user-profile.wish-list", {
           url: "/wish-list",
           controller: "WishListCtrl",
           templateUrl: "../views/wish-list-ctrl.html"
@@ -132,7 +132,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/login-ctrl.html"
         })
 			.state("user-profile-settings", {
-				url: "/user-profile-settings", 
+				url: "/user-profile-settings",
 				controller:"UserProfileSettingsCtrl",
 				templateUrl: "../views/user-profile-settings-ctrl.html"
 			})

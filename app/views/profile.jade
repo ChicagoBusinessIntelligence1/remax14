@@ -1,11 +1,7 @@
 div(ng-switch="user.profileType")
   div(ng-switch-when="broker")
     sv-broker-profile-nav
-    .row
-      .col-xs-12
-        div(ui-view='')
+    div(ui-view='')
   div(ng-switch-when="customer")
     sv-customer-profile-nav
     div(ui-view='')
-
-

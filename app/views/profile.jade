@@ -5,6 +5,7 @@ div(ng-switch="user.profileType")
       .col-xs-12
         div(ui-view='')
   div(ng-switch-when="customer")
+    sv-customer-profile-nav
     div Customer Navigation Directive
     sv-broker-application(fname='firstName' lname='lastName' email='email')
 

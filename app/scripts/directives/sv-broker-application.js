@@ -12,10 +12,13 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.submitBrokerApp = function (fname, lname, email) {
-          toastr.success('You application has been successfully submited');
+          toastr.success('You application has been successfully submitted');
         };
         var brokerPopover = $popover(element, {
+          container: 'body',
           template: '../../views/popover/broker-application-popover.html',
+          placement: 'bottom',
+          animation: 'am-flip-x',
           scope: $scope
         });
       }

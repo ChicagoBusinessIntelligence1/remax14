@@ -36,10 +36,17 @@ label {
   }
 }
 .price-style {
+  color: #4887b9;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 1px;
   text-align: right;
+}
+.price-style:hover,
+.price-style:active,
+.price-style:focus {
+  color: #396c95;
+  text-decoration: none;
 }
 @media screen and (max-width: 992px) {
   .price-style {
@@ -69,12 +76,28 @@ label {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.btn-back {
+  color: #898989;
+}
+.btn-back:hover,
+.btn-back:active,
+.btn-back:focus {
+  color: #565656;
+  text-decoration: none;
+}
 .address-basic {
+  color: #898989;
   display: block;
   height: 100%;
   font-size: 18px;
   margin-top: 0px;
   margin-bottom: 0px false;
+}
+.address-basic:hover,
+.address-basic:active,
+.address-basic:focus {
+  color: #565656;
+  text-decoration: none;
 }
 @media screen and (max-width: 992px) {
   .address-basic {
@@ -161,7 +184,7 @@ label {
   border-top-right-radius: 5px;
   padding: 10px;
   background-color: #fff;
-  border: border-boot;
+  border: 1px #ddd solid;
 }
 .head-panel h4 {
   margin-top: 0px;

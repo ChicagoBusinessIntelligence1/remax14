@@ -25,7 +25,7 @@ label {
 .h-logo-mod {
   font-size: 17px !important;
   font-weight: 700;
-  color: color-off-white !important;
+  color: #f7f7f4 !important;
   margin-top: 10px;
 }
 .user-nav-container {
@@ -53,5 +53,5 @@ label {
   padding-top: 15px;
 }
 .btn-delete-account {
-  color: #d2242a;
+  color: #db3136;
 }

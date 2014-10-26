@@ -121,6 +121,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				controller:"LoginCtrl",
 				templateUrl: "../views/login-ctrl.html"
 			})
+			.state("saved-searches", {
+				url: "/saved-searches", 
+				controller:"SavedSearchesCtrl",
+				templateUrl: "../views/saved-searches-ctrl.html"
+			})
 //#state
     })
   ;

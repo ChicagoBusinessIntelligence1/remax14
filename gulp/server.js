@@ -42,15 +42,13 @@ function browserSyncInit(baseDir, files, browser) {
 
 gulp.task('serve', ['watch', 'stylus'], function () {
     browserSyncInit([
-        'app',
-        '.tmp'
+        'app'
     ], [
         'app/*.html',
         'app/styles/**/*.css',
         'app/scripts/**/*.js',
         'app/partials/**/*.html',
-        'app/views/**/*.html',
-        'app/images/**/*'
+        'app/views/**/*.html'
     ]);
 });
 

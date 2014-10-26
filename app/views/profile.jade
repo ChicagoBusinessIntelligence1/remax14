@@ -6,13 +6,6 @@ div(ng-switch="user.profileType")
         div(ui-view='')
   div(ng-switch-when="customer")
     sv-customer-profile-nav
-    h3 My Profile
-    hr
-    .row
-      .col-sm-7
-        sv-user-info-form
-      .col-sm-5
-        sv-broker-application(fname='firstName' lname='lastName' email='email')
-        sv-email-alert-settings(fname='firstName' lname='lastName' email='email')
+    div(ui-view='')
 
 

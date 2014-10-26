@@ -28,7 +28,7 @@ label {
   color: color-off-white !important;
   margin-top: 10px;
 }
-.broker-nav-container {
+.user-nav-container {
   margin-bottom: 15px;
 }
 .nav-profile {
@@ -48,4 +48,7 @@ label {
 }
 .app-form .form-group {
   margin-bottom: 5px !important;
+}
+.save-profile-changes {
+  padding-top: 15px;
 }

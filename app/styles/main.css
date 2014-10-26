@@ -3345,6 +3345,9 @@ label {
 .save-profile-changes {
   padding-top: 15px;
 }
+.btn-delete-account {
+  color: #d2242a;
+}
 .form-group {
   margin-bottom: 10px;
 }

@@ -18,8 +18,10 @@ angular.module('app')
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
         $scope.home = HomeService.getArrayFire(mls, $scope.isDraft);
+        $scope.isDataLoading = true;
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
+          $scope.isDataLoading = false;
         })
 
         $scope.moveToTrash = function () {

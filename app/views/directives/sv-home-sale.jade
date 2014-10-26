@@ -1,10 +1,12 @@
 .listing
-  sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
-  .gallery-wrapper(ng-if='!isTemplate')
-    .row
-      .col-sm-12
-        sv-photo-gallery
-  form(name="homeForm" id="form" novalidate='novalidate')
-    ul.list-unstyled
-      li(ng-repeat='section in home|homeFilter:"brokers" |orderBy:"order"')
-        sv-home-display-slider(section='section' is-template='isTemplate' update-home-section='updateHomeSection(section)')
+  div(ng-show='isDataLoading') Loading
+  div(ng-hide='isDataLoading')
+    sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
+    .gallery-wrapper(ng-if='!isTemplate')
+      .row
+        .col-sm-12
+          sv-photo-gallery
+    form(name="homeForm" id="form" novalidate='novalidate')
+      ul.list-unstyled
+        li(ng-repeat='section in home|homeFilter:"brokers" |orderBy:"order"')
+          sv-home-display-slider(section='section' is-template='isTemplate' update-home-section='updateHomeSection(section)')

@@ -1,6 +1,16 @@
 @import 'nib'
 
-@import 'functions'
+color-skin =#272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98)
+color-blue = #396C95
+color-lighten = lighten(color-app, 98)
+color-light = light(color-app, 70)
+color-link = lighten(color-app, 30)
+color-link-hover = lighten(color-app, 10)
+color-nav = lighten(color-app, 20)
+shadow-blue = lighten(color-blue, 88)
+text-shadow-blue = shadow-blue 1px 1px 0px;
 
 /*Remax*/
 .elements-wrapper
@@ -89,7 +99,7 @@ height = 80px
   position relative
   span
     color color-light
-    text-shadow 1px 0px lighten(color-app, 10%)
+    text-shadow 1px 0px lighten(color-app, 10)
     font-size 12px
 
 .fen-element-cover

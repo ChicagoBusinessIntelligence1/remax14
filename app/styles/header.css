@@ -16,7 +16,7 @@ label {
 .header-container {
   padding-right: 15px;
   padding-left: 15px;
-  background-color: #d4d4d4;
+  background-color: #f3f3f3;
 }
 .header-wrapper {
   padding: 10px;
@@ -33,9 +33,6 @@ label {
 @media screen and (max-width: 992px) {
   .logo-content img {
     position: relative;
-    display: block !important;
-    width: 120px;
-    margin: 0 auto;
   }
 }
 .slogan-text {
@@ -50,7 +47,7 @@ label {
   letter-spacing: 1px;
   line-height: 30px;
   margin-bottom: 0px;
-  text-shadow: #fff 1px 1px 0px;
+  text-shadow: my-text-shadow;
 }
 .ul-call-us {
   margin: 0px 0px 10px 0px;
@@ -65,8 +62,8 @@ label {
   width: 28px;
 }
 .call-us {
-  color: #d2242a;
-  text-shadow: #f7f7f4 1px 1px 0px;
+  color: color-red;
+  text-shadow: color-off-white 1px 1px 0px;
   font-size: 26px;
   font-weight: bold;
   margin-left: 5px !important;
@@ -74,11 +71,6 @@ label {
 .one-stop-service {
   padding: 0px;
   margin-bottom: 10px;
-}
-.one-stop-service img {
-  display: block !important;
-  width: 399px;
-  margin: 0 auto;
 }
 /*Social Media*/
 @media screen and (max-width: 992px) {

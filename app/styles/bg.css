@@ -11,13 +11,13 @@ label {
   background-color: #090;
 }
 .fire-bg {
-#f0c0b3
+#f1c2b5
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .water-bg {
 #b9cff7
@@ -26,7 +26,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .hard-wood-bg {
 #a3c8c8
@@ -35,7 +35,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .soft-wood-bg {
 #c0d6c2
@@ -44,7 +44,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .soft-metal-bg {
 #fcefdf
@@ -53,7 +53,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .hard-metal-bg {
 #c9d7e0
@@ -62,7 +62,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .mountain-earth-bg {
 #ede2c9
@@ -71,7 +71,7 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 .mother-earth-bg {
 #cebdb6
@@ -80,5 +80,5 @@ label {
   -ms-transition: all 5s ease;
   -o-transition: all 5s ease;
   transition: all 5s ease;
-  background-color: #ebebeb;
+  background-color: #fff;
 }

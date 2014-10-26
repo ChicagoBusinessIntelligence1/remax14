@@ -2,17 +2,8 @@
 
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-
 var Notification = require('node-notifier');
-
-
-
-
 var notify = require("gulp-notify");
-
-
-
-
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
@@ -29,13 +20,7 @@ gulp.task('nib', function () {
 gulp.task('stylus', function () {
 
   var onError = function(err) {
-    notify.onError({
-      title:    "Gulp",
-      subtitle: "Failure!",
-      message:  "Error: <%= error.message %>",
-      sound:    "Beep"
-    })(err);
-
+    notify.onError({ title:    "Gulp", subtitle: "Failure!", message:  "Error: <%= error.message %>", sound:    "Beep"})(err);
     this.emit('end');
   };
 

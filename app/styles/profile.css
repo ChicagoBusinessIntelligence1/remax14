@@ -19,13 +19,13 @@ label {
   }
 }
 .header-cteate-account {
-  background-color: #3d3d3d !important;
+  background-color: #414141 !important;
   padding: 10px;
 }
 .h-logo-mod {
   font-size: 17px !important;
   font-weight: 700;
-  color: #f7f7f4 !important;
+  color: color-off-white !important;
   margin-top: 10px;
 }
 .broker-nav-container {
@@ -35,16 +35,16 @@ label {
   margin-bottom: 10px;
 }
 .nav-profile li a {
-  color: #636363;
+  color: #6f6f6f;
   font-weight: 700;
 }
 .nav-profile li a:hover,
 .nav-profile li a:active,
 .nav-profile li a:focus {
-  color: #505050;
+  color: #565656;
 }
 .add-new-listing {
-  color: #4f8bbc !important;
+  color: #6d9fc7 !important;
 }
 .app-form .form-group {
   margin-bottom: 5px !important;

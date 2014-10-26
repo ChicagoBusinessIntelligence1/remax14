@@ -1,4 +1,15 @@
 @import 'nib'
+color-skin =#272727
+color-app = #3C3C3C
+color-white = lighten(color-app, 98)
+color-blue = #396C95
+color-lighten = lighten(color-app, 98)
+color-light = light(color-app, 70)
+color-link = lighten(color-app, 30)
+color-link-hover = lighten(color-app, 10)
+color-nav = lighten(color-app, 20)
+shadow-blue = lighten(color-blue, 88)
+text-shadow-blue = shadow-blue 1px 1px 0px;
 @import 'functions'
 
 /**********************
@@ -47,10 +58,10 @@
     h4
       margin-bottom 0px
       font-weight 700
-      color lighten(color-app, 10%)
+      color lighten(color-app, 10)
 
 .address-style
-  color lighten(color-app, 20%)
+  color lighten(color-app, 20)
   margin-top 5px
   margin-bottom 5px
   font-size 20px
@@ -140,7 +151,7 @@
   border-top-left-radius 5px
   border-top-right-radius 5px
   padding 10px
-  background-color lighten(color-skin, 95%)
+  background-color lighten(color-skin, 95)
   border border-boot
   h4
     margin-top 0px
@@ -169,7 +180,7 @@
 
 .txt-group
   label
-    color lighten(color-skin, 30%)
+    color lighten(color-skin, 30)
     font-size 12px
   .form-control
     height 30px
@@ -186,7 +197,7 @@
     margin 0px
   .form-group
     label
-      color lighten(color-skin, 30%)
+      color lighten(color-skin, 30)
       font-size 12px
     input
       height 30px
@@ -213,7 +224,7 @@
   margin-bottom 10px
 
 .stripe-dark
-  background-color lighten(color-skin, 94%)
+  background-color lighten(color-skin, 94)
 
 .cursor-p
   cursor pointer
@@ -244,7 +255,7 @@
     margin-bottom 10px
     margin-top 5px
   h4
-    color lighten(color-app, 30%)
+    color lighten(color-app, 30)
   h3, h4, h5
     font-size 14px
     font-weight 700

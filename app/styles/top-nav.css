@@ -126,11 +126,12 @@ label {
   line-height: 26px;
 }
 .user-profile-popover ul li a {
-  color: #767676;
+  color: #636363;
   cursor: pointer;
 }
 .user-profile-popover ul li a:hover,
 .user-profile-popover ul li a:active,
 .user-profile-popover ul li a:focus {
   text-decoration: none;
+  color: #3c3c3c;
 }

@@ -79,7 +79,7 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('default', ['jade','stylus', 'browser-sync'], function () {
-  gulp.watch('app/styles/**/*.styl', ['stylus', browserSync.reload]);
+  gulp.watch('app/styles/**/*.styl', ['stylus']);
   gulp.watch('app/views/**/*.jade', ['jade']);
   gulp.watch('app/scripts/**/*.js', ['bs-reload']);
   gulp.watch('app/index.html', ['bs-reload']);

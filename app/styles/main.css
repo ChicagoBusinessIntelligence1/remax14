@@ -3654,6 +3654,9 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.spinner-style {
+  color: #396c95;
+}
 .add-container {
   padding: 10px;
 }

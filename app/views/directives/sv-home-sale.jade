@@ -1,6 +1,6 @@
 .listing
   div(ng-show='isDataLoading')
-    .text-center
+    .text-center.spinner-style
       i.fa.fa-spinner.fa-spin.fa-5x
   div(ng-hide='isDataLoading')
     sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')

@@ -19,6 +19,9 @@ label {
 /**********************
      =profile
 ***********************/
+.spinner-style {
+  color: #396c95;
+}
 .add-container {
   padding: 10px;
 }

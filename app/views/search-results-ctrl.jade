@@ -7,7 +7,7 @@ div(ng-hide='isDataLoading')
       sv-pagination(total-pages='totalPages' current-page='currentPage')
   .drafts-container
     ul.row.list-inline
-      li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:paging')
+      li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:paging').repeat-animation
         sv-home-basic-info(home='home')
 
       sv-pagination(total-pages='totalPages' current-page='currentPage')

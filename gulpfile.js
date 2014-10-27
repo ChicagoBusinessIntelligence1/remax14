@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var filter      = require('gulp-filter');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -37,7 +38,8 @@ gulp.task('stylus', function () {
     .pipe(plumber({errorHandler: onError}))
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
-
+    .pipe(filter('**/*.css'))
+    .pipe(reload({stream:true}));
 });
 
 //register task jade
@@ -53,21 +55,18 @@ gulp.task('jade', function () {
     this.emit('end');
   };
 
-  gulp.src('app/**/*.jade')
+  gulp.src('app/views/**/*.jade')
     //compiler does not stop on error
     .pipe(plumber({errorHandler: onError}))
     .pipe(jade({
       compileDebug: false
     }))
-    .pipe(gulp.dest('app/'))
+    .pipe(gulp.dest('app/views/'))
+    .pipe(filter('**/*.html'))
+    .pipe(reload({stream:true}));
 });
 
-gulp.task('js', function () {
 
-  gulp.src('app/scripts/**/*.js')
-    //compiler does not stop on error
-    .pipe(gulp.dest('app/'))
-});
 gulp.task('html', function () {
 
   gulp.src('app/index.html')
@@ -75,12 +74,15 @@ gulp.task('html', function () {
     .pipe(gulp.dest('app/'))
 });
 
+gulp.task('bs-reload', function () {
+  browserSync.reload();
+});
 
 gulp.task('default', ['jade','stylus', 'browser-sync'], function () {
-  gulp.watch('app/styles/**/*.styl', ['stylus', browserSync.reload]);
-  gulp.watch('app/views/**/*.jade', ['jade',browserSync.reload]);
-  gulp.watch('app/scripts/**/*.js', ['js',browserSync.reload]);
-  gulp.watch('app/index.html', ['html',browserSync.reload]);
+  gulp.watch('app/styles/**/*.styl', ['stylus']);
+  gulp.watch('app/views/**/*.jade', ['jade']);
+  gulp.watch('app/scripts/**/*.js', ['bs-reload']);
+  gulp.watch('app/index.html', ['bs-reload']);
 });
 
 /**********************

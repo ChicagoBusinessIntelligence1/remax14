@@ -27,12 +27,12 @@
       .col-sm-5
         label Phone Number:
       .col-sm-7
-        button.btn.btn-link.btn-sm.btn-delete-account(ng-click='updateProfileInfo(fname,lname,email,phone)' ng-disabled='form.$invalid')
+        input.input-sm.form-control(id="phone" placeholder="Phone Number" required)
 
     .save-profile-changes
-      sv-btn-save(title='Save Changes')
+      button.btn.btn-info.btn-sm(ng-click='updateProfileInfo(fname,lname,email,phone)' ng-disabled='form.$invalid')
+        i.fa.fa-save.fa-fw
+        | Save Changes
     hr
     .text-right
-      button.btn.btn-link.btn-sm.btn-delete-account
-        i.fa.fa-remove.fa-fw
-        | Delete My Profile
+      sv-del-profile

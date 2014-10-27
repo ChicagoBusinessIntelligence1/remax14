@@ -1,33 +1,33 @@
 .well
-  form.form-horizontal(name="form" id="form")
+  form.form-horizontal(name="form" id="form" novalidate)
     .form-group
-      label.col-sm-5(for='fName') User Name:
+      label.col-sm-5(for='uName') User Name:
       .col-sm-7
-        input.input-sm.input-sm.form-control(id="fName" placeholder="User Name")
+        input.input-sm.input-sm.form-control(id="uName" placeholder="User Name"  required)
 
     .form-group
       .col-sm-5
         label First Name:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="First Name")
+        input.input-sm.form-control(id="fName" placeholder="First Name"  required)
 
     .form-group
       .col-sm-5
         label Last Name:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="Last Name")
+        input.input-sm.form-control(id="lName" placeholder="Last Name" required)
 
     .form-group
       .col-sm-5
         label Email:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="Fb Email")
+        input.input-sm.form-control(id="email" placeholder="Fb Email" required)
 
     .form-group
       .col-sm-5
         label Phone Number:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="Phone Number")
+        button.btn.btn-link.btn-sm.btn-delete-account(ng-click='updateProfileInfo(fname,lname,email,phone)' ng-disabled='form.$invalid')
 
     .save-profile-changes
       sv-btn-save(title='Save Changes')

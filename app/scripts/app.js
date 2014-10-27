@@ -131,11 +131,6 @@ var app = angular.module('app', ['cgBusy','firebase', 'ngAnimate', 'ngSanitize',
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-			.state("user-profile-settings", {
-				url: "/user-profile-settings",
-				controller:"UserProfileSettingsCtrl",
-				templateUrl: "../views/user-profile-settings-ctrl.html"
-			})
 //#state
     })
   ;

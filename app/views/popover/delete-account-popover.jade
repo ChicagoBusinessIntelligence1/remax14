@@ -1,0 +1,10 @@
+.popover.broker-app-popover
+  .arrow
+  h3.popover-title Broker Application
+  .popover-content
+    button.btn.btn-primary.btn-sm.btn-save(ng-click='deleteProfile();$hide()' ng-disabled='form.$invalid' )
+      i.fa.fa-check
+      | Delete
+    button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
+      i.fa.fa-times
+      | Cancel

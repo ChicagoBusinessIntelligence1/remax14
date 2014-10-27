@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svCustomerInfoForm', function () {
+  .directive('svCustomerInfoForm', function ($rootScope) {
     return {
       restrict: 'E',
       replace: true,
@@ -13,6 +13,7 @@ angular.module('app')
         phone: '='
       },
       link: function ($scope, element, attr) {
+
         $scope.updateProfileInfo = function (fname, lname, email, phone) {
           toastr.success('You changes have been successfully saved');
         };

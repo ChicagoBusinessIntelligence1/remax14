@@ -6,7 +6,7 @@ angular.module('app')
     $scope.currentPage = 1;
 
     $scope.homes = homes;
-    $scope.totalPages = homes.length / paging;
+    $scope.totalPages = Math.ceil(homes.length / paging);
     $scope.isDataLoading = false;
 
   });

@@ -4,8 +4,10 @@ div(ng-hide='isDataLoading')
     .col-sm-12
       h5 Found {{homes.length}} homes
       hr
-      sv-pagination(total-pages='homes.length/paging' current-page='currentPage')
+      sv-pagination(total-pages='totalPages' current-page='currentPage')
   .drafts-container
     ul.row.list-inline
       li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:paging')
         sv-home-basic-info(home='home')
+
+      sv-pagination(total-pages='totalPages' current-page='currentPage')

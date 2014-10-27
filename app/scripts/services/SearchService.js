@@ -12,7 +12,8 @@ angular.module('app')
         var query = $rootScope.query;
 
         that.repoUrl = url.residential;
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
+	      var firebase = new Firebase(that.repoUrl);
+        that.repoRef = $firebase(firebase);
         var allHomes = that.repoRef.$asArray();
         allHomes.$loaded(function () {
           if (_.isUndefined(query)) {

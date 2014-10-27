@@ -1,7 +1,5 @@
 .listing
-  div(ng-show='isDataLoading')
-    .text-center.spinner-style
-      i.fa.fa-spinner.fa-spin.fa-5x
+  sv-spinner(ng-show='isDataLoading')
   div(ng-hide='isDataLoading')
     sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
     .gallery-wrapper(ng-if='!isTemplate')

@@ -1,8 +1,11 @@
-.row
-  .col-sm-12
-    h5 Found {{homes.length}} homes
-    hr
-.drafts-container
-  ul.row.list-inline
-    li.col-sm-12(ng-repeat='(key, home) in homes')
-      sv-home-basic-info(home='home')
+sv-spinner(ng-show='isDataLoading')
+div(ng-hide='isDataLoading')
+  .row
+    .col-sm-12
+      h5 Found {{homes.length}} homes
+      hr
+
+  .drafts-container
+    ul.row.list-inline
+      li.col-sm-12(ng-repeat='(key, home) in homes|limitTo:paging')
+        sv-home-basic-info(home='home')

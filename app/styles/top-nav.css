@@ -46,8 +46,16 @@ label {
     text-align: center;
   }
 }
-.li-create-account a {
-  font-style: italic;
+.btn-user {
+  font-size: 12px;
+  color: #d0d0d0 !important;
+  cursor: pointer;
+}
+.btn-user:hover,
+.btn-user:focus,
+.btn-user:active {
+  color: #f7f7f4 !important;
+  text-decoration: none;
 }
 .real-estate-rc {
   display: inline-block;
@@ -113,4 +121,16 @@ label {
 }
 .navbar-app li a .fa-angle-down {
   margin-left: 5px !important;
+}
+.user-profile-popover {
+  line-height: 26px;
+}
+.user-profile-popover ul li a {
+  color: #767676;
+  cursor: pointer;
+}
+.user-profile-popover ul li a:hover,
+.user-profile-popover ul li a:active,
+.user-profile-popover ul li a:focus {
+  text-decoration: none;
 }

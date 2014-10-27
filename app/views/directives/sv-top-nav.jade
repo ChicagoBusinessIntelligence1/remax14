@@ -3,9 +3,9 @@
     .container
       span.real-estate-rc RESIDENTIAL, COMMERCIAL & INVESTMENT REAL ESTATE
       ul.list-inline.pull-right.nav-auth
-        li.li-create-account(ng-if='auth.user')
-          a(ui-sref="app.profile.user-profile") Hello, {{userName}}!
-        li.li-create-account(ng-if='auth.user')
+        li(ng-if='auth.user')
+          sv-link-user-profile(user-name='{{userName}}')
+        li(ng-if='auth.user')
           a(ui-sref="app.profile.user-profile" title='Notifications')
             i.fa.fa-bell.fa-fw
         li(ng-show='!auth.user')
@@ -20,10 +20,6 @@
           a.btn-link-light
             i.fa.fa-user.fa-lg
             span.fb-name Admin
-        li(ng-show='auth.user')
-          a.btn-link-light(ng-click='fenLogout()')
-            i.fa.fa-sign-out.fa-lg
-            span.span-top-nav Sign Out
   .navbar.navbar-default.navbar-app(role="navigation")
     .container
       <!-- Brand and toggle get grouped for better mobile display -->

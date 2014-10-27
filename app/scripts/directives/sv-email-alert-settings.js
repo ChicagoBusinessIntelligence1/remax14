@@ -7,18 +7,19 @@ angular.module('app')
       replace: true,
       template: '<button class="btn btn-default btn-block">Email Alert Settings</button>',
       scope: {
-        fname: '=',
-        lname: '=',
+        fName: '=',
+        lName: '=',
         email: '='
       },
       link: function ($scope, element, attr) {
-        $scope.saveEmailAlertSettings = function (fname, lname, email) {
+        $scope.saveEmailAlertSettings = function (fName, lName, email) {
           toastr.success('Your settings are successfully saved');
         };
         var emailAlertPopover = $popover(element, {
           container: 'body',
           template: '../../views/popover/email-alert-popover.html',
           placement: 'bottom',
+          trigger: 'focus',
           animation: 'am-flip-x',
           scope: $scope
         });

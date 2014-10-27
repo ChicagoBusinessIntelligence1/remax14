@@ -1,6 +1,7 @@
 div(ng-switch="user.profileType")
   h3 My Profile
   hr
+  sv-link-user-profile(user-name='{{userName}}')
   div(ng-switch-when="broker")
     .row
       .col-sm-7

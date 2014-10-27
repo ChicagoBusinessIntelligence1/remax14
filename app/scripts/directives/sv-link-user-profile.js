@@ -1,19 +1,21 @@
 'use strict';
 
 angular.module('app')
-  .directive('svLinkUserProfile', function () {
+  .directive('svLinkUserProfile', function ($popover) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-link-user-profile.html',
-      scope: {
-
-      },
+      template: '<button ng-click="toggleUserProfile()" class="btn btn-link btn-user" name="toggleUserProfile" id="toggleUserProfile"> Hello, {{userName}}! </button>',
       link: function ($scope, element, attr) {
 
-      },
-      controller: function ($scope) {
-      //this.var=something;
-      },
+        var userProfilePopover = $popover(element, {
+          container: 'body',
+          template: '../../views/popover/user-profile-popover.html',
+          placement: 'bottom',
+          trigger: 'focus',
+          animation: 'am-flip-x',
+          scope: $scope
+        });
+      }
     };
   });

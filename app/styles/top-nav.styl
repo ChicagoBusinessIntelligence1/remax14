@@ -36,10 +36,15 @@
   @media screen and (max-width: 992px)
     text-align center
 
-
-.li-create-account
-  a
-    font-style italic
+.btn-user
+  font-size 12px
+  color lighten(color-app, 76%) !important
+  cursor pointer
+  &:hover
+  &:focus
+  &:active
+    color color-off-white !important
+    text-decoration none
 
 .real-estate-rc
   display inline-block
@@ -49,7 +54,7 @@
   letter-spacing 1px !important
 
   @media screen and (max-width: 992px)
-        text-align center
+    text-align center
 
 .fb-name
   display inline-block
@@ -101,3 +106,14 @@
 
 
 
+.user-profile-popover
+  line-height 26px
+  ul
+    li
+      a
+        color lighten(color-app, 30%)
+        cursor pointer
+        &:hover
+        &:active
+        &:focus
+          text-decoration none

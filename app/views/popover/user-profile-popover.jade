@@ -1,8 +1,12 @@
-.popover.broker-app-popover
+.popover
   .arrow
-  .popover-content
+  .popover-content.user-profile-popover
     ul.list-unstyled
       li
-        a(ui-sref='app.profile.user-profile') Profile Settings
+        a(ui-sref='app.profile.user-profile')
+          i-i.fa.fa-gear.fa-fw
+          | Profile Settings
       li
-      li
+        a(ng-click='fenLogout()')
+          i.fa.fa-sign-out.fa-fw
+          | Sign Out

@@ -1,15 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .controller('SearchResultsCtrl', function (paging, SearchService, $scope, url) {
-
+  .controller('SearchResultsCtrl', function (paging, homes, $scope) {
     $scope.paging = paging;
+    $scope.currentPage = 1;
 
-    $scope.isDataLoading = true;
-    SearchService.find().then(function (homes) {
-      $scope.homes = homes;
-      $scope.isDataLoading = false;
+    $scope.homes = homes;
+    $scope.totalPages = homes.length / paging;
+    $scope.isDataLoading = false;
 
-    })
   });
 

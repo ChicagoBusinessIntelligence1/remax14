@@ -19,6 +19,18 @@
 
     .form-group
       .col-sm-5
+        label MLS Id:
+      .col-sm-7
+        input.input-sm.form-control(id="mls-id" placeholder="MLS Id" required)
+
+    .form-group
+      .col-sm-5
+        label Website:
+      .col-sm-7
+        input.input-sm.form-control(id="website" placeholder="Website" required)
+
+    .form-group
+      .col-sm-5
         label Email:
       .col-sm-7
         input.input-sm.form-control(id="email" placeholder="Fb Email" required)
@@ -30,7 +42,7 @@
         input.input-sm.form-control(id="phone" placeholder="Phone Number" required)
 
     .save-profile-changes
-      button.btn.btn-info.btn-sm(ng-click='updateProfileInfo(fname,lname,email,phone)' ng-disabled='form.$invalid')
+      button.btn.btn-info.btn-sm(ng-click='updateProfileInfo(uName, fName,lName,email,phone)' ng-disabled='form.$invalid')
         i.fa.fa-save.fa-fw
         | Save Changes
     hr

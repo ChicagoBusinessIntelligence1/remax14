@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      template: '<button ng-click="toggleUserProfile()" class="btn btn-link btn-user" name="toggleUserProfile" id="toggleUserProfile"> Hello, {{userName}}! </button>',
+      template: '<button class="btn btn-link btn-user" name="toggleUserProfile" id="toggleUserProfile"> Hello, {{userName}}! </button>',
       link: function ($scope, element, attr) {
 
         var userProfilePopover = $popover(element, {

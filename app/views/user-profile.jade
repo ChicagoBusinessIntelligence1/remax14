@@ -1,7 +1,6 @@
 div(ng-switch="user.profileType")
   h3 My Profile
   hr
-  sv-link-user-profile(user-name='{{userName}}')
   div(ng-switch-when="broker")
     .row
       .col-sm-7
@@ -15,4 +14,3 @@ div(ng-switch="user.profileType")
       .col-sm-5
         sv-broker-application(f-name='fName' l-name='lName' email='email')
         sv-email-alert-settings(f-name='fName' l-name='lName' email='email')
-

@@ -6,8 +6,7 @@
         li(ng-if='auth.user')
           sv-link-user-profile(user-name='{{userName}}')
         li(ng-if='auth.user')
-          a(ui-sref="app.profile.user-profile" title='Notifications')
-            i.fa.fa-bell.fa-fw
+          sv-btn-notifications
         li(ng-show='!auth.user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg

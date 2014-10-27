@@ -7,13 +7,13 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-customer-info-form.html',
       scope: {
-        fname: '=',
-        lname: '=',
+        fName: '=',
+        lName: '=',
         email: '=',
         phone: '='
       },
       link: function ($scope, element, attr) {
-        $scope.updateProfileInfo = function (fname, lname, email, phone) {
+        $scope.updateProfileInfo = function (fName, lName, email, phone) {
           toastr.success('You changes have been successfully saved');
         };
       }

@@ -7,12 +7,12 @@ angular.module('app')
       replace: true,
       template: '<button class="btn btn-default btn-block">Apply for Broker Account</button>',
       scope: {
-        fname: '=',
-        lname: '=',
+        fName: '=',
+        lName: '=',
         email: '='
       },
       link: function ($scope, element, attr) {
-        $scope.submitBrokerApp = function (fname, lname, email) {
+        $scope.submitBrokerApp = function (fName, lName, email) {
           toastr.success('You application has been successfully submitted');
         };
         var brokerPopover = $popover(element, {

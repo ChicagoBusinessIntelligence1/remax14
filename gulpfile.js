@@ -66,7 +66,7 @@ gulp.task('js', function () {
 
   gulp.src('app/scripts/**/*.js')
     //compiler does not stop on error
-    .pipe(gulp.dest('app/'))
+    .pipe(gulp.dest('app/scripts/'))
 });
 gulp.task('html', function () {
 

@@ -4,16 +4,16 @@ div(ng-switch="user.profileType")
     hr
     .row
       .col-sm-7
-        sv-customer-info-form
+        sv-broker-info-form(u-name='uName' f-name='fName' l-name='lName' email='email' phone='phone')
       .col-sm-5
-        sv-email-alert-settings(fname='firstName' lname='lastName' email='email')
+        sv-email-alert-settings(f-name='fName' l-name='lName' email='email')
   div(ng-switch-when="customer")
     h3 My Profile
     hr
     .row
       .col-sm-7
-        sv-customer-info-form
+        sv-customer-info-form(u-name='uName' f-name='fName' l-name='lName' email='email' phone='phone')
       .col-sm-5
-        sv-broker-application(fname='firstName' lname='lastName' email='email')
-        sv-email-alert-settings(fname='firstName' lname='lastName' email='email')
+        sv-broker-application(f-name='fName' l-name='lName' email='email')
+        sv-email-alert-settings(f-name='fName' l-name='lName' email='email')
 

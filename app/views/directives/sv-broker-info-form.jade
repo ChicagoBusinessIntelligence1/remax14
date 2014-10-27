@@ -42,9 +42,7 @@
         input.input-sm.form-control(id="phone" placeholder="Phone Number" required)
 
     .save-profile-changes
-      button.btn.btn-info.btn-sm(ng-click='updateProfileInfo(uName, fName,lName,email,phone)' ng-disabled='form.$invalid')
-        i.fa.fa-save.fa-fw
-        | Save Changes
+      sv-btn-save-profile-info
     hr
     .text-right
       sv-del-profile

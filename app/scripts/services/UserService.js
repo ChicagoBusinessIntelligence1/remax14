@@ -1,21 +1,21 @@
 'use strict';
 
 angular.module('app')
-  .factory('UserService', function ($firebase, $q, url) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+  .factory('UserService', function ($firebase, $q, url, $rootScope) {
+    return {
+      repoUrl: null,
+      repoRef: null,
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
+      getUserData: function (fbId) {
+        var that = this;
+        var userRepo = $rootScope.user.profileType === 'customer' ? url.customers : url.brokers;
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
+        that.repoUrl = userRepo + fbId;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var user = that.repoRef.$asObject();
 
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
-          }
-        };
+        return user;
+      }
+    };
 
   });

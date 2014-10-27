@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svUserInfoForm', function () {
+  .directive('svCustomerInfoForm', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-user-info-form.html',
+      templateUrl: '../../views/directives/sv-customer-info-form.html',
       scope: {
         fname: '=',
         lname: '=',

@@ -14,6 +14,7 @@ angular.module('app')
       },
 
       link: function ($scope, element, attr) {
+
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
         $scope.home = HomeService.getArrayFire(mls, $scope.isDraft);

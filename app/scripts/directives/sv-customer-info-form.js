@@ -5,7 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-user-info-form.html',
+      templateUrl: '../../views/directives/sv-customer-info-form.html',
       scope: {
         fname: '=',
         lname: '=',

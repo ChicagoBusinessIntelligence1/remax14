@@ -1,11 +1,18 @@
 div(ng-switch="user.profileType")
   div(ng-switch-when="broker")
+    h3 My Profile
+    hr
+    .row
+      .col-sm-7
+        sv-customer-info-form
+      .col-sm-5
+        sv-email-alert-settings(fname='firstName' lname='lastName' email='email')
   div(ng-switch-when="customer")
     h3 My Profile
     hr
     .row
       .col-sm-7
-        sv-user-info-form
+        sv-customer-info-form
       .col-sm-5
         sv-broker-application(fname='firstName' lname='lastName' email='email')
         sv-email-alert-settings(fname='firstName' lname='lastName' email='email')

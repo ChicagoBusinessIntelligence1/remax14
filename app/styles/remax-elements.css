@@ -1,3 +1,12 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
 /*Remax*/
 .elements-wrapper {
   padding: 15px;
@@ -6,6 +15,150 @@
 .article-wrapper {
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+.element-1 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-2 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-3 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-4 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-5 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-6 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-7 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-8 {
+  background-color: #fff;
+  border-top: 1px #fff solid;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-1 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-2 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-3 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-4 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-5 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-6 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-7 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.element-post-8 {
+  background-color: #fff;
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  border-top: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
 }
 .info {
   color: #272727 !important;
@@ -84,11 +237,11 @@ ul.fen-elements li {
 }
 .slide-up {
   position: relative;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .slide-up {
   top: -27.586206896551726px;
@@ -97,138 +250,138 @@ ul.fen-elements li {
   top: 0px;
 }
 .fire {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/fire-bw.png");
 }
 .fire-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/fire.png") !important;
 }
 .water {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/water-bw.png") !important;
 }
 .water-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/water.png") !important;
 }
 .soft-wood {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/soft-wood-bw.png");
 }
 .soft-wood-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/soft-wood.png") !important;
 }
 .hard-wood {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/hard-wood-bw.png") !important;
 }
 .hard-wood-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
   background-image: url("../images/elements/hard-wood.png") !important;
 }
 .soft-metal {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s;
-  background-color: label-default-background;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background-color: #858585;
   background-image: url("../images/elements/mother-earth.png") !important;
 }

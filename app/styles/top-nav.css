@@ -1,3 +1,12 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
 /**********************
      =top-nav
 ***********************/
@@ -5,7 +14,7 @@
   font-size: 17px !important;
   font-weight: 700;
   font-size: 17px !important;
-  color: color-off-white !important;
+  color: #f7f7f4 !important;
   margin: 0px !important;
 }
 .navbar-auth {
@@ -24,7 +33,7 @@
 }
 .nav-auth li a {
   font-size: 12px;
-  color: color-off-white !important;
+  color: #f7f7f4 !important;
   cursor: pointer;
 }
 .nav-auth li a:hover,

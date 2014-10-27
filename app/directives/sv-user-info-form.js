@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svUserInfoForm', function ($popover) {
+  .directive('svUserInfoForm', function () {
     return {
       restrict: 'E',
       replace: true,

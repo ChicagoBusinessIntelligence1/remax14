@@ -1,19 +1,20 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBtnNotifications', function () {
+  .directive('svBtnNotifications', function ($popover) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-btn-notifications.html',
-      scope: {
-
-      },
+      template: '<button class="btn btn-link btn-user" name="toggleNotifications" title="Notifications" id="toggleNotifications"><i class="fa fa-bell fa-fw"></i> </button>',
       link: function ($scope, element, attr) {
-
-      },
-      controller: function ($scope) {
-      //this.var=something;
-      },
+        var btnNotificationsPopover = $popover(element, {
+          container: 'body',
+          template: '../../views/popover/notifications-popover.html',
+          placement: 'bottom',
+          trigger: 'focus',
+          animation: 'am-flip-x',
+          scope: $scope
+        });
+      }
     };
   });

@@ -3546,7 +3546,7 @@ label {
 }
 h5.label-default-head {
   padding: 10px 15px;
-  background-color: #858585;
+  background-color: #a7a7a7;
   -webkit-border-radius: 0px;
   border-radius: 0px;
   display: block;
@@ -4083,7 +4083,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/soft-metal-bw.png") !important;
 }
 .soft-metal-hover {
@@ -4092,7 +4092,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/soft-metal.png") !important;
 }
 .hard-metal {
@@ -4101,7 +4101,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/hard-metal-bw.png") !important;
 }
 .hard-metal-hover {
@@ -4110,7 +4110,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/hard-metal.png") !important;
 }
 .mountain-earth {
@@ -4119,7 +4119,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/mountain-earth-bw.png") !important;
 }
 .mountain-earth-hover {
@@ -4128,7 +4128,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/mountain-earth.png") !important;
 }
 .mother-earth {
@@ -4137,7 +4137,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/mother-earth-bw.png") !important;
 }
 .mother-earth-hover {
@@ -4146,7 +4146,7 @@ ul.fen-elements li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  background-color: #858585;
+  background-color: #a7a7a7;
   background-image: url("../images/elements/mother-earth.png") !important;
 }
 /**********************
@@ -4212,15 +4212,17 @@ h6 {
 .btn-link-light:focus {
   color: #cdcdcd !important;
 }
-.btn-primary {
-  background-color: #858585;
+.btn-default-app {
+  background-color: #9c9c9c;
   border-color: #929292;
+  color: #f5f5f5;
 }
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  background-color: #ababab;
-  border-color: #9f9f9f;
+.btn-default-app:hover,
+.btn-default-app:focus,
+.btn-default-app:active {
+  background-color: #8d8d8d;
+  border-color: #838383;
+  color: #f5f5f5;
 }
 /*Bootstrap custom styles*/
 /**********************

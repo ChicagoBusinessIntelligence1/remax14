@@ -15,4 +15,4 @@
             textarea.add-article.form-control(ng-model='post.body',required, name='body',class='add-article form-control' rows='10'
             placeholder='Текст...')
           .text-right
-            button.btn.btn-info(ng-disabled="formPost.$dirty && formPost.$invalid || formPost.$pristine", ng-click='addPost(post.title,post.author,post.body,post.fenElementSelected)') Добавить
+            button.btn.btn-default-app(ng-disabled="formPost.$dirty && formPost.$invalid || formPost.$pristine", ng-click='addPost(post.title,post.author,post.body,post.fenElementSelected)') Добавить

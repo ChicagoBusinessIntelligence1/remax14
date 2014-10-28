@@ -4,12 +4,12 @@ app.value('mainUrl', 'https://remax14.firebaseio.com/');
 
 app.factory('url', function (mainUrl) {
   return {
-    residential: mainUrl + 'residential/home/',
-    residentialTemplate: mainUrl + 'residential/templates/0',
+    residentialSale: mainUrl + 'residential/sale/homes/',
+    residentialSaleTemplate: mainUrl + 'residential/sale/templates/0',
     brokers: mainUrl + 'brokers/',
     customers: mainUrl + 'customers/',
     registeredBrokers: mainUrl + 'registeredBrokers/',
-    residentialDrafts:'/residential/drafts'
+    residentialSaleDrafts:'/residential/sale/drafts'
   }
 });
 

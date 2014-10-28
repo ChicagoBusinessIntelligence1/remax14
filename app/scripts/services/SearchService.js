@@ -11,7 +11,7 @@ angular.module('app')
         var defered = $q.defer();
         var query = $rootScope.query;
 
-        that.repoUrl = url.residential;
+        that.repoUrl = url.residentialSale;
 	      var firebase = new Firebase(that.repoUrl);
         that.repoRef = $firebase(firebase);
         var allHomes = that.repoRef.$asArray();

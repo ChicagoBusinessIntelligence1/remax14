@@ -11,6 +11,10 @@ angular.module('app')
           $rootScope.query = $scope.query;
           $state.go('app.search-results', null, {reload: true});
         };
+        $scope.showAllSaleHomes = function () {
+          $rootScope.query = undefined;
+          $state.go('app.search-results', null, {reload: true});
+        };
       }
 
     };

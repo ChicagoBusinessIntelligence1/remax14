@@ -30,18 +30,20 @@
               input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#")
         button.btn.btn-primary.submit-query.btn-mob-dev
           i.fa.fa-search.fa-fw
-          |Search
+          | Search
         hr
-        .form-group.text-center
-          button.btn.btn-default.bnt-lg.btn-block(type="button" ng-click="mainSearch()") BROWSE ALL LISTINGS FOR SALE
-        .form-group.text-center
+      .text-center.aside-browse-buttons
+        .form-group
+          button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR SALE
+            a(ui-sref='app.remax-homes-sale')
+        .form-group
           button.btn.btn-default.bnt-lg.btn-block(type="button") SINGLE FAMILY HOMES FOR SALE
-        .form-group.text-center
+        .form-group
           button.btn.btn-default.bnt-lg.btn-block(type="button") CONDOS FOR SALE
 
     .tab-pane(id="for-rent")
-      .tab-pane.active(id="for-sale")
-        form(id="form-search-sale", name="form-search-sale", ng-submit="", novalidate)
+      .tab-pane.active(id="for-rent")
+        form(id="form-search-rent", name="form-search-rent", ng-submit="", novalidate)
           //.alert-box.warning.round(data-alert, ng-show="loginError")
           //  | Incorrect login or password
           //  | a.close(href="#") &times;
@@ -63,7 +65,9 @@
               .col-md-6.col-sm-6.col-xs-6
                 label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
                 input.form-control(name="bathrooms" id="bathrooms", placeholder="#")
-          input.btn.bnt-radius.submit-query.btn-mob-dev(type="submit" value="Search" ng-disabled="login.$invalid")
+          button.btn.btn-primary.submit-query.btn-mob-dev
+            i.fa.fa-search.fa-fw
+            | Search
           hr
           .form-group.text-center
             button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR RENT

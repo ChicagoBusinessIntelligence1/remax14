@@ -3441,18 +3441,19 @@ label {
 .table-elements {
   margin: 0 auto;
 }
-.search-tabs-wrapper input {
+search-tabs-wrapper input {
+  margin-top: 5px;
   font-size: 1em;
 }
-.search-tabs-wrapper li a {
+search-tabs-wrapper li a {
   font-size: 1em !important;
   padding: 10px;
 }
 @media screen and (max-width: 992px) {
-  .search-tabs-wrapper {
+  search-tabs-wrapper {
     font-size: 0.8em;
   }
-  .search-tabs-wrapper input {
+  search-tabs-wrapper input {
     font-size: 1em !important;
   }
 }

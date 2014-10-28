@@ -8,7 +8,7 @@ angular.module('app')
       findBrokerHomes: function (userId) {
         var defer = $q.defer();
 
-        this.repoUrl = url.residential;
+        this.repoUrl = url.residentialSale;
         this.repoRef = $firebase(new Firebase(this.repoUrl));
         var allHomes = this.repoRef.$asArray();
         var brokerHomes = [];

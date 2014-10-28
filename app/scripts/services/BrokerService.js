@@ -6,7 +6,7 @@ angular.module('app')
       addBroker: function (home, loggedUser) {
        var brokerContent=[{
           id: loggedUser.id,
-          name: loggedUser.displayName
+          name: loggedUser.name
         }];
         var index = home.length;
         var brokers = {

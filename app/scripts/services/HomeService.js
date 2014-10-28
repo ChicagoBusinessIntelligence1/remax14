@@ -7,7 +7,7 @@ angular.module('app')
       homeRepo: null,
       getArrayFire: function (mls, isDraft) {
         if (_.isUndefined(mls)) {
-          this.homeRepo = url.residentialTemplate;
+          this.homeRepo = url.residentialSaleTemplate;
         } else {
           this.homeRepo = isDraft ? url.brokers + $rootScope.user.id + '/residential/drafts/' + mls : url.residential + mls;
         }
@@ -34,7 +34,7 @@ angular.module('app')
 
         var mls = MlsService.find(home);
 
-        var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/drafts/' + mls;
+        var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/sale/drafts/' + mls;
         var brokers = $firebase(new Firebase(brokerDraftsRepo)).$asObject();
 
         for (var i = 0; i < home.length; i++) {

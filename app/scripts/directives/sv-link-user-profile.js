@@ -5,6 +5,10 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
+      scope:{
+        userName:'@',
+        logoutFb:'&'
+      },
       template: '<button class="btn btn-link btn-user" name="toggleUserProfile" id="toggleUserProfile"> Hello, {{userName}}! </button>',
       link: function ($scope, element, attr) {
 

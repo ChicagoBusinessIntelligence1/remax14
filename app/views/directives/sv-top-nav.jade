@@ -3,22 +3,18 @@
     .container
       span.real-estate-rc RESIDENTIAL, COMMERCIAL & INVESTMENT REAL ESTATE
       ul.list-inline.pull-right.nav-auth
-        li(ng-if='auth.user')
-          sv-link-user-profile(user-name='{{userName}}')
-        li(ng-if='auth.user')
+        li(ng-if='user')
+          sv-link-user-profile(user-name='{{user.first_name}}' logout-fb='logoutFb()')
+        li(ng-if='user')
           sv-btn-notifications
-        li(ng-show='!auth.user')
+        li(ng-show='!user')
           a.btn-link-light(data-sv-login-popover='')
             i.fa.fa-sign-out.fa-lg
             span.auth-text Sign In
-        li(ng-if='auth.user.provider==\'facebook\'')
-          a.btn-link-light(href='{{userLink}}')
-            img.img-fb(ng-src="{{userPic}}")
-            span.fb-name {{userName}}
-        li(ng-if='auth.user.provider==\'password\'')
-          a.btn-link-light
-            i.fa.fa-user.fa-lg
-            span.fb-name Admin
+        li(ng-if='user')
+          a.btn-link-light(href='{{user.link}}')
+            img.img-fb(ng-src="{{user.picture.data.url}}")
+            span.fb-name {{user.first_name}}
   .navbar.navbar-default.navbar-app(role="navigation")
     .container
       <!-- Brand and toggle get grouped for better mobile display -->

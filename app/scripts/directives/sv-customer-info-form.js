@@ -8,23 +8,28 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-customer-info-form.html',
       scope: {},
       link: function ($scope, element, attr) {
-        UserService.getUserData($rootScope.user.id).$loaded(function (savedUser) {
-          var tuser = $rootScope.user.thirdPartyUserData;
 
+        $scope.saveProfileInfo = function () {
+          UserService.saveProfile($scope.customer);
+        };
+        $scope.isDataLoading = true;
+        UserService.getProfile($rootScope.user.id).$loaded(function (savedUser) {
+          var user;
           if (savedUser.$value === null) {
-            $scope.customer = {
-              userName: tuser.first_name + ' ' + tuser.last_name,
-              fname: tuser.first_name,
-              lname: tuser.last_name,
-              email: tuser.email,
-              phone: ''
-            };
+            user = $rootScope.user;
+          } else {
+            user = savedUser;
           }
 
-        })
-        $scope.updateProfileInfo = function (uName, fName, lName, email, phone) {
-          toastr.success('You changes have been successfully saved');
-        };
+          $scope.customer = {
+            first_name: user.first_name,
+            last_name: user.last_name,
+            email: user.email,
+            phone: ''
+          };
+        $scope.isDataLoading = false;
+        });
+
       }
     };
   });

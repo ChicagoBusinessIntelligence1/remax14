@@ -7,8 +7,7 @@ app.factory('url', function (mainUrl) {
     residential: mainUrl + 'residential/home/',
     residentialTemplate: mainUrl + 'residential/templates/0',
     brokers: mainUrl + 'brokers/',
-    brokerProfiles: mainUrl + 'brokers/profiles',
-    customerProfiless: mainUrl + 'customers/profiles',
+    customers: mainUrl + 'customers/',
     registeredBrokers: mainUrl + 'registeredBrokers/',
     residentialDrafts:'/residential/drafts'
   }

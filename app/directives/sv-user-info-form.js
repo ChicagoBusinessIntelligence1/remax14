@@ -10,9 +10,6 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
 
-        $scope.updateProfileInfo = function (fname, lname, email, phone) {
-          toastr.success('You changes have been successfully saved');
-        };
       }
     };
   });

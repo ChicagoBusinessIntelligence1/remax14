@@ -2674,9 +2674,9 @@ fb.core.util.warn = function(var_args) {
   if (typeof console !== "undefined") {
     var message = "FIREBASE WARNING: " + fb.core.util.buildLogMessage_.apply(null, arguments);
     if (typeof console.warn !== "undefined") {
-      console.warn(message);
+      //console.warn(message);
     } else {
-      console.log(message);
+      //console.log(message);
     }
   }
 };
@@ -7641,7 +7641,7 @@ fb.core.view.EventList.prototype.getPath = function() {
   return this.path_;
 };
 goog.provide("fb.login.Constants");
-fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html", 
+fb.login.Constants = {SESSION_PERSISTENCE_KEY_PREFIX:"session", DEFAULT_SERVER_HOST:"auth.firebase.com", SERVER_HOST:"auth.firebase.com", API_VERSION:"v2", POPUP_PATH_TO_CHANNEL:"/auth/channel", POPUP_RELAY_FRAME_NAME:"__winchan_relay_frame", POPUP_CLOSE_CMD:"die", JSONP_CALLBACK_NAMESPACE:"__firebase_auth_jsonp", REDIR_REQUEST_ID_KEY:"redirect_request_id", REDIR_REQUEST_COMPLETION_KEY:"__firebase_request_key", REDIR_CLIENT_OPTIONS_KEY:"redirect_client_options", INTERNAL_REDIRECT_SENTINAL_PATH:"/blank/page.html",
 CLIENT_OPTION_SESSION_PERSISTENCE:"remember", CLIENT_OPTION_REDIRECT_TO:"redirectTo"};
 goog.provide("fb.login.RequestInfo");
 goog.require("fb.login.Constants");

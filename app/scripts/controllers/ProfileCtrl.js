@@ -2,13 +2,9 @@
 
 angular.module('app')
   .controller('ProfileCtrl', function (ProfileTypeService, $scope, $state, user, $rootScope) {
-    if (user === null) {
-      toastr.warning('Please sign in');
-      $state.go('login');
-    } else {
-
+    if (!_.isEmpty(user)) {
       ProfileTypeService.determine(user).then(function (user) {
-        $rootScope.user = user;
+        $rootScope.user = user.thirdPartyUserData;
       })
     }
   });

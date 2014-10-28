@@ -7,6 +7,25 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
       $stateProvider
         .state('app', {
           abstract: true,
+          resolve: {
+            user: function ($firebaseSimpleLogin, $q) {
+              var def = $q.defer();
+
+              var url = 'https://remax14.firebaseio.com/';
+              var mainRef = new Firebase(url);
+              var auth = $firebaseSimpleLogin(mainRef);
+              auth.$getCurrentUser().then(function (user) {
+                if (user === null) {
+                  def.resolve('');
+                } else{
+
+                def.resolve(user);
+                }
+              });
+              return def.promise;
+            }
+          },
+          controller: 'ProfileCtrl',
           templateUrl: '../partials/main.html'
         })
         .state("app.remax-home-sale", {
@@ -59,21 +78,9 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/generate.html"
         })
         .state("app.profile", {
-          resolve: {
-            user: function ($firebaseSimpleLogin, $q) {
-              var def = $q.defer();
 
-              var url = 'https://remax14.firebaseio.com/';
-              var mainRef = new Firebase(url);
-              var auth = $firebaseSimpleLogin(mainRef);
-              auth.$getCurrentUser().then(function (user) {
-                def.resolve(user);
-              });
-              return def.promise;
-            }
-          },
           abstract: true,
-          controller: 'ProfileCtrl',
+
           templateUrl: "../views/profile.html"
         })
         .state("app.profile.remax-homes", {

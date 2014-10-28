@@ -6,15 +6,18 @@ angular.module('app')
       repoUrl: null,
       repoRef: null,
 
-      getUserData: function (fbId) {
+      getProfile: function (fbId) {
         var that = this;
         var userRepo = $rootScope.user.profileType === 'customer' ? url.customers : url.brokers;
 
-        that.repoUrl = userRepo + fbId;
+        that.repoUrl = userRepo + fbId + /profile/;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
-        var user = that.repoRef.$asObject();
-
-        return user;
+        return that.repoRef.$asObject();
+      },
+      saveProfile: function (profile) {
+        this.repoRef.$set(profile).then(function () {
+          toastr.success('Profile has been saved');
+        });
       }
     };
 

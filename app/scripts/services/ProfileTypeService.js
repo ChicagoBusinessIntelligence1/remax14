@@ -9,6 +9,7 @@ angular.module('app')
       determine: function (user) {
         var that = this;
         var defered = $q.defer();
+
         var email = user.thirdPartyUserData.email;
 
 
@@ -23,7 +24,7 @@ angular.module('app')
               profileType = 'broker';
             }
           }
-        user.profileType = profileType;
+        user.thirdPartyUserData.profileType = profileType;
         defered.resolve(user);
 
         })

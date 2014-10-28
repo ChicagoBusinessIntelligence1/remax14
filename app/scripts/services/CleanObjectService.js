@@ -5,9 +5,22 @@ angular.module('app')
     return {
 
       clean: function (obj) {
-        var removeProp = ['$id','$priority'];
-        obj=angular.fromJson(angular.toJson(obj));
-        obj = _.omit(obj,removeProp);
+        var that = this;
+        var removeProp = ['$id', '$priority'];
+        obj = angular.fromJson(angular.toJson(obj));
+        obj = _.omit(obj, removeProp);
+
+        angular.forEach(obj, function (prop, key) {
+          prop = that.cleanProp(prop);
+          obj[key] = prop;
+        });
+
+        return obj;
+      },
+      cleanProp: function (obj) {
+        var removeProp = ['$id', '$priority'];
+        obj = angular.fromJson(angular.toJson(obj));
+        obj = _.omit(obj, removeProp);
         return obj;
       }
     };

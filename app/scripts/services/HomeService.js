@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HomeService', function (AddSearchFeaturesService, notifications, CleanObjectService, MlsService, $firebase, url, $rootScope, $q) {
+  .factory('HomeService', function (notifications, CleanObjectService, HomePropertyService, $firebase, url, $rootScope, $q) {
     return {
       homeRef: null,
       homeRepo: null,
@@ -32,16 +32,14 @@ angular.module('app')
       saveToDrafts: function (home) {
         var defered = $q.defer();
 
-        var mls = MlsService.find(home);
+        var mls = HomePropertyService.find(home, 'mls');
 
         var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/sale/drafts/' + mls;
-        var brokers = $firebase(new Firebase(brokerDraftsRepo)).$asObject();
+        var brokers = $firebase(new Firebase(brokerDraftsRepo));
 
-        for (var i = 0; i < home.length; i++) {
-          var section = home[i];
-          brokers[section.$id] = section;
-        }
-        brokers.$save().then(function () {
+        home=CleanObjectService.clean(home);
+
+        brokers.$set(home).then(function () {
             // success
             defered.resolve(true);
             toastr.success(notifications.draftSaved);

@@ -1,20 +1,16 @@
 'use strict';
 
 angular.module('app')
-  .factory('AddSearchFeaturesService', function ($firebase, $q, url) {
+  .factory('AddSearchFeaturesService', function (HomePropertyService) {
         return {
           repoUrl: null,
           repoRef: null,
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
+          decorate: function (home) {
+            home[0]['date']= new Date().toLocaleString();
+            home[0]['type']= HomePropertyService.find(home, 'propertyType')
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
-
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
+            return home;
           }
         };
 

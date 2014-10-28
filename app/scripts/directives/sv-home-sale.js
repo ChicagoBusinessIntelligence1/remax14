@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSale', function (InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope) {
+  .directive('svHomeSale', function (AddSearchFeaturesService, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-sale.html',
@@ -30,6 +30,7 @@ angular.module('app')
 
         $scope.saveTemplate = function () {
           $scope.home = BrokerService.addBroker($scope.home, $rootScope.user);
+          $scope.home = AddSearchFeaturesService.decorate($scope.home);
           HomeService.saveToDrafts($scope.home).then(function (result) {
             $state.go("app.profile.drafts");
           });

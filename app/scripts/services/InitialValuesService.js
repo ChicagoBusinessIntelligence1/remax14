@@ -107,7 +107,7 @@ angular.module('app')
                 var randomVal = '';
                 switch (sectionProp.type) {
                   case 'txt':
-                    randomVal = chance.word()+' '+ _.str.humanize(sectionTitle);
+                    randomVal = chance.word();
                     break;
                   case 'area':
                   randomVal = chance.paragraph() ;

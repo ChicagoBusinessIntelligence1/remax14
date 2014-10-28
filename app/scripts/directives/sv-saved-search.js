@@ -6,14 +6,12 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-saved-search.html',
-      scope: {
-
-      },
+      scope: {},
       link: function ($scope, element, attr) {
-
-      },
-      controller: function ($scope) {
-      //this.var=something;
-      },
+        $scope.search = {
+          name: "Skokie",
+          details: "At vero eos et accusamus et iusto odio dignissimos ducimus"
+        };
+      }
     };
   });

@@ -4228,6 +4228,9 @@ h6 {
 /**********************
       =buttons
 ***********************/
+.fa-remove {
+  color: #db3136;
+}
 .app-content-five {
   padding-top: 5px;
   padding-bottom: 5px;

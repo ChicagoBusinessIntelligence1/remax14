@@ -17,10 +17,14 @@
           td.col-xs-4
             a(href='#' editable-text='search.name' buttons="no" e-required e-placeholder="Enter name") {{search.name || 'empty'}} &nbsp
               i.fa.fa-edit.fa-fw
-          td.col-xs-5
+          td.col-xs-4
             a(href='#' editable-textarea='search.details' buttons="no" e-rows="5" e-cols="28") {{search.details || 'empty'}} &nbsp
               i.fa.fa-edit.fa-fw
           td.col-xs-1
-            i.fa.fa-remove.fa-fw
+            button.btn.btn-primary(data-toggle="tooltip" data-placement="top" title="Run this Search")
+              | Run
+          td.col-xs-1
+            button.btn.btn-default(data-toggle="tooltip" data-placement="top" title="Remove this Search")
+              i.fa.fa-remove.fa-fw
 
 

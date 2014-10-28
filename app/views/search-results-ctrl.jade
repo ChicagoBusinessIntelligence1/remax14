@@ -5,10 +5,10 @@ div(ng-hide='isDataLoading')
       h5 Found {{homes.length}} homes
       hr
       ul.list-inline.row
-        li.col-sm-8
+        li.col-sm-9
           sv-pagination(total-pages='totalPages' current-page='currentPage')
-        li.col-sm-4
-          sv-sort-homes
+        li.col-sm-3
+          sv-sort-homes(sort-by='sortBy')
   .drafts-container
     ul.row.list-inline
       li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:paging').repeat-animation

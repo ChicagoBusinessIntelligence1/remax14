@@ -2,6 +2,10 @@
 
 angular.module('app')
   .controller('SearchResultsCtrl', function (paging, homes, $scope) {
+    $scope.sortBy = {
+      val: 'date'
+    };
+
     $scope.paging = paging;
     $scope.currentPage = 1;
 

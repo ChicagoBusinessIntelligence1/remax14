@@ -34,12 +34,11 @@
         hr
       .text-center.aside-browse-buttons
         .form-group
-          button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR SALE
-            a(ui-sref='app.remax-homes-sale')
+          a.btn.btn-default.bnt-lg.btn-block(ui-sref='app.all-sale-homes') BROWSE ALL LISTINGS FOR SALE
         .form-group
           button.btn.btn-default.bnt-lg.btn-block(type="button") SINGLE FAMILY HOMES FOR SALE
         .form-group
-          button.btn.btn-default.bnt-lg.btn-block(type="button") CONDOS FOR SALE
+          a.btn.btn-default.bnt-lg.btn-block(ui-sref='app.condos-sale-homes') CONDOS FOR SALE
 
     .tab-pane(id="for-rent")
       .tab-pane.active(id="for-rent")

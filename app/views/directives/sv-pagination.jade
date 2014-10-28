@@ -1,4 +1,3 @@
-div
-  ul.ul.list-inline
-    li(ng-repeat='p in pages')
-      button.btn.btn-sm(ng-class='{"btn-default-app":$index+1==currentPage}' ng-click='setCurrentPage(p.id)') {{p.id}}
+ul.ul.list-inline
+  li(ng-repeat='p in pages')
+    button.btn.btn-sm(ng-class='{"btn-default-app":$index+1==currentPage}' ng-click='setCurrentPage(p.id)') {{p.id}}

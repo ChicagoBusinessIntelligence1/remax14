@@ -4,7 +4,11 @@ div(ng-hide='isDataLoading')
     .col-sm-12
       h5 Found {{homes.length}} homes
       hr
-      sv-pagination(total-pages='totalPages' current-page='currentPage')
+      ul.list-inline.row
+        li.col-sm-8
+          sv-pagination(total-pages='totalPages' current-page='currentPage')
+        li.col-sm-4
+          sv-sort-homes
   .drafts-container
     ul.row.list-inline
       li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:paging').repeat-animation

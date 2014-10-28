@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSortHomes', function () {
+  .directive('svSortHomes', function ($popover) {
     return {
       restrict: 'E',
       replace: true,

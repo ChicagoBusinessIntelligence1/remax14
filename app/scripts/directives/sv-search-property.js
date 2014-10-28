@@ -7,11 +7,9 @@ angular.module('app')
       restrict: 'E',
       link: function ($scope, element, attrs) {
 
-
         $scope.mainSearch = function () {
-
           $rootScope.query = $scope.query;
-          $state.go('app.search-results',null, {reload:true});
+          $state.go('app.search-results', null, {reload: true});
         };
       }
 

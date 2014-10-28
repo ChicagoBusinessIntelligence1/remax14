@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('app')
-  .controller('CondosSaleHomesCtrl', function ($scope) {
+  .controller('CondosSaleHomesCtrl', function (TypeHomesService, $scope) {
 
   });

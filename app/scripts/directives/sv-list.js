@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svList', function (url) {
+  .directive('svList', function (SettingsService, url) {
     return {
       restrict: 'E',
       replace: true,

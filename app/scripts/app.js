@@ -108,11 +108,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "OneHomeDraftCtrl",
           templateUrl: "../views/one-home-draft.html"
         })
-        .state("app.profile.manage-homes", {
-          url: "/manage-homes",
-          controller: "ManageHomesCtrl",
-          templateUrl: "../views/manage-homes.html"
-        })
         .state("app.profile.user-profile", {
           url: "/user-profile",
           controller: "UserProfileCtrl",
@@ -133,7 +128,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "AddHomeCtrl",
           templateUrl: "../views/add-home.html"
         })
-        .state("app.profile.homes", {
+        .state("app.profile.broker-homes", {
           url: "/homes-shared",
           controller: "HomesSharedCtrl",
           templateUrl: "../views/homes-shared.html"

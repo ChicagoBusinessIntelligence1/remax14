@@ -17,9 +17,9 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
               auth.$getCurrentUser().then(function (user) {
                 if (user === null) {
                   def.resolve('');
-                } else{
+                } else {
 
-                def.resolve(user);
+                  def.resolve(user);
                 }
               });
               return def.promise;
@@ -88,6 +88,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "HomesCtrl",
           templateUrl: "../views/homes.html"
         })
+        .state("app.all-sale-homes", {
+          url: "/all-sale-homes",
+          controller: "AllSaleHomesCtrl",
+          templateUrl: "../views/all-sale-homes-ctrl.html"
+        })
+        .state("app.condos-sale-homes", {
+          url: "/condos-sale-homes",
+          controller: "CondosSaleHomesCtrl",
+          templateUrl: "../views/condos-sale-homes-ctrl.html"
+        })
         .state("app.profile.drafts", {
           url: "/home-drafts",
           controller: "HomeDraftsCtrl",
@@ -123,7 +133,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "AddHomeCtrl",
           templateUrl: "../views/add-home.html"
         })
-        .state("app.profile.homes", {
+        .state("app.profile.broker.homes", {
           url: "/homes-shared",
           controller: "HomeSharedCtrl",
           templateUrl: "../views/home-shared.html"
@@ -143,21 +153,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-			.state("app.all-sale-homes", {
-				url: "/all-sale-homes",
-				controller:"AllSaleHomesCtrl",
-				templateUrl: "../views/all-sale-homes-ctrl.html"
-			})
-			.state("app.condos-sale-homes", {
-				url: "/condos-sale-homes",
-				controller:"CondosSaleHomesCtrl",
-				templateUrl: "../views/condos-sale-homes-ctrl.html"
-			})
 //#state
     })
   ;
 
-app.run(function(editableOptions) {
+app.run(function (editableOptions) {
   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 });
 

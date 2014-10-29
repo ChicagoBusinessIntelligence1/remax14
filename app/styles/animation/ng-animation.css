@@ -16,8 +16,7 @@
   -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
-;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 /* easeOutQuad */
 }
 /* line 66, ../sass/ng-animation.scss */

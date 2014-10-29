@@ -1,6 +1,19 @@
 h3 My Home Listings
 hr
+.shared-listings-tabs
+  ul.nav.nav-tabs(role='tablist')
+    li.active
+      a(href='#sale', role='tab', data-toggle='tab') Sale
+    li
+      a(href='#rent', role='tab', data-toggle='tab') Rent
+  // Tab panes
+  .tab-content
+    .tab-pane(id='sale') ...
+    .tab-pane(id='rent') ...
+
+
 .drafts-container
   ul.row.list-inline
     li.col-sm-12(ng-repeat='(key, home) in brokerHomes')
       sv-home-basic-info(home='home')
+

@@ -3,6 +3,6 @@
 angular.module('app')
   .controller('AllSaleHomesCtrl', function ($scope) {
 
-    $scope.homes = homes;
+    //$scope.homes = homes;
 
   });

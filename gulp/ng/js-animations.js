@@ -36,7 +36,7 @@ var fs = require('fs')
   gulp.task('gja', function () {
     fs.readFile(injection, 'utf8', function (err, injStr) {
       injectLine = injStr.replace(/svv/g, cname);
-    return gulp.src(scripts + 'app.js')
+    return gulp.src(scripts + 'animations.js')
       .pipe(gulpif(rm != true, inject.append(injectLine), replace(injectLine, '')))
       .pipe(gulp.dest(scripts));
     });

@@ -2,20 +2,31 @@
 
 angular.module('app')
   .factory('TypeHomesService', function ($firebase, $q, url) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+    return {
+      repoUrl: null,
+      repoRef: null,
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
+      getCondos: function () {
+        var that = this;
+        var defered = $q.defer();
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
+        that.repoUrl = url.residentialSale;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var allHomes = that.repoRef.$asArray();
+        var condos = [];
 
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
+        allHomes.$loaded(function () {
+          for (var i = 0; i < allHomes.length; i++) {
+            var home = allHomes[i];
+            if (home[0].type === 'Condo') {
+              condos.push(home);
+            }
           }
-        };
+          defered.resolve(condos);
+
+        })
+        return defered.promise;
+      }
+    };
 
   });

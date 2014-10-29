@@ -56,7 +56,4 @@ app.value('notifications', {
 
 });
 app.value('query', {});
-app.value('value', 'value');
-app.value('value', 'value');
-app.value('value', 'value');
-app.value('paging', '3');
+app.value('pageHomesNumber', '3');

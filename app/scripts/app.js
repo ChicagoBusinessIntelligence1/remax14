@@ -133,10 +133,10 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "AddHomeCtrl",
           templateUrl: "../views/add-home.html"
         })
-        .state("app.profile.broker.homes", {
+        .state("app.profile.homes", {
           url: "/homes-shared",
-          controller: "HomeSharedCtrl",
-          templateUrl: "../views/home-shared.html"
+          controller: "HomesSharedCtrl",
+          templateUrl: "../views/homes-shared.html"
         })
         .state("app.search-results", {
           url: "/search-results",

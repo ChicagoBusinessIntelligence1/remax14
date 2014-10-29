@@ -9,7 +9,7 @@ angular.module('app')
         if (_.isUndefined(mls)) {
           this.homeRepo = url.residentialSaleTemplate;
         } else {
-          this.homeRepo = isDraft ? url.brokers + $rootScope.user.id + '/residential/drafts/' + mls : url.residential + mls;
+          this.homeRepo = isDraft ? url.brokers + $rootScope.user.id + '/residential/sale/drafts/' + mls : url.residentialSale + mls;
         }
         this.homeRef = $firebase(new Firebase(this.homeRepo));
 
@@ -37,7 +37,7 @@ angular.module('app')
         var brokerDraftsRepo = url.brokers + $rootScope.user.id + '/residential/sale/drafts/' + mls;
         var brokers = $firebase(new Firebase(brokerDraftsRepo));
 
-        home=CleanObjectService.clean(home);
+        home = CleanObjectService.clean(home);
 
         brokers.$set(home).then(function () {
             // success

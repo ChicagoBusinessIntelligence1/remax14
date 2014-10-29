@@ -186,8 +186,8 @@ module.exports = function (grunt) {
 // register
 //    var ref = '/// <reference path="controllers/' + name + '.js" />\r\n';
 //    var reg = 'profile.controller("' + name + 'Ctrl", ' + name + 'Ctrl);\r\n';
-    var state = '\t\t\t.state("' + _.str.dasherize(lname) + '", {\r\n' +
-      '\t\t\t\turl: "/' + _.str.dasherize(lname) + '", \r\n' +
+    var state = '\t\t\t.state("' + dashedName + '", {\r\n' +
+      '\t\t\t\turl: "/' + dashedName + '", \r\n' +
       '\t\t\t\tcontroller:"' + name + '",\r\n' +
       '\t\t\t\ttemplateUrl: "../views/' + dashedName + '.html"\r\n' +
       '\t\t\t})\r\n';

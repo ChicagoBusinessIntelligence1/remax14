@@ -334,3 +334,17 @@ Selected House
 
 .bold
   font-weight bold
+
+.tab-pane.am-fade
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  opacity: 1;
+
+  &.active-remove
+    display: none !important;
+
+  &.active-add
+    animation-name: fadeIn;
+
+

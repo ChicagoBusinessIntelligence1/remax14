@@ -11,13 +11,13 @@
     div(ng-if='isTemplate')
       h3 New Listing for Sale
       hr
-    ul.list-inline.text-right
-      li
-        sv-cancel-view
-      li
-        button.btn.btn-sm.btn-primary(ng-click='saveTemplate(homeForm)' ng-disabled="homeForm.$valid || homeForm.$pristine")
-          i-i.fa.fa-save.fa-fw
-          | Save Listing
+      ul.list-inline.text-right
+        li
+          sv-cancel-view
+        li
+          button.btn.btn-sm.btn-primary(ng-click='saveTemplate(homeForm)' ng-disabled="homeForm.$valid || homeForm.$pristine")
+            i-i.fa.fa-save.fa-fw
+            | Save Listing
 
   div(ng-if='!isTemplate')
     .row

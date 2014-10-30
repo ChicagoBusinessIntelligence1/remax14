@@ -7,19 +7,19 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-tabs.html',
       scope: {
+        homes: '=',
         tabs2: '='
       },
       link: function ($scope, element, attr) {
-        $scope.tabActive ='Sale';
-
+        $scope.tabActive = 'Sale';
 
         $scope.setActiveTab = function (key) {
-        $scope.tabActive =key;
+          $scope.tabActive = key;
 
         };
       },
       controller: function ($scope) {
-      //this.var=something;
+        //this.var=something;
       }
     };
   });

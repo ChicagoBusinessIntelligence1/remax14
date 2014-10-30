@@ -10,7 +10,7 @@ angular.module('app')
         sectionProperty: '='
       },
       link: function ($scope, element, attr) {
-        var repo = url.settingsResidential + $scope.sectionProperty.title+'s';
+        var repo = SettingsService.getOptions(sectionProperty.title);
         $scope.posts = $firebase(new Firebase(repo)).$asArray();
       },
       controller: function ($scope) {

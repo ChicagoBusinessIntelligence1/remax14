@@ -1,7 +1,5 @@
 div
-  ul.nav.nav-tabs(role="tablist")
-    li.active(ng-repeat="(k,v) in tabs2")
-      a.cursor-p(role="tab")(ng-click='setActiveTab(k)') {{k}}
-  .tab-content
-    .tab-pane.active
-      ng-include(src='tabs2[tabActive]')
+  ul.list-inline
+    li(ng-class='{active:$index===tabActive}' ng-repeat="tab in tabs")
+      .cursor-p(ng-click='setActiveTab($index)') {{tab.title}}
+    ng-include(src='tabs[tabActive].view')

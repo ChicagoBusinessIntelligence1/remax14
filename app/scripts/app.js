@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ui.bootstrap.tabs','firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
+var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
     .config(function ($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/home');
 
@@ -124,7 +124,7 @@ var app = angular.module('app', ['ui.bootstrap.tabs','firebase', 'ngAnimate', 'n
         .state("app.profile.broker-homes", {
           url: "/homes-shared",
           controller: "HomesSharedCtrl",
-          templateUrl: "../views/homes-shared.html"
+          templateUrl: "../views/homes-shared-ctrl.html"
         })
         .state("app.search-results", {
           url: "/search-results",

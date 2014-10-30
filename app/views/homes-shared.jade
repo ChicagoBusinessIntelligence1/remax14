@@ -1,8 +1,0 @@
-h3 My Home Listings
-hr
-div(bs-tabs ng-model='activeTab')
-  div {{tabs.activeTab}}
-  div(ng-repeat='tab in tabs', title='{{ tab.title }}',  bs-pane)
-  div(ng-include='', src='tabs[tabs.activeTab].page')
-
-

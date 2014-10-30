@@ -4213,6 +4213,9 @@ h6 {
 .btn-link-light:focus {
   color: #cdcdcd !important;
 }
+.bg-red {
+  background-color: #f00;
+}
 .btn-default-app {
   background-color: #9c9c9c;
   border-color: #929292;

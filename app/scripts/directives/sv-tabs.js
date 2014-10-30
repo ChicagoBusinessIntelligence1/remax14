@@ -16,6 +16,8 @@ angular.module('app')
         $scope.setActiveTab = function (key) {
           $scope.tabActive = key;
         };
+
+        $scope.tests=['1','2','3','4','5'];
       }
     };
   });

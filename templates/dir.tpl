@@ -14,6 +14,6 @@ angular.module('app')
       },
       controller: function ($scope) {
       //this.var=something;
-      },
+      }
     };
   });

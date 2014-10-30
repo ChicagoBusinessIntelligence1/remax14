@@ -8,10 +8,10 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-tabs.html',
       scope: {
         homes: '=',
-        tabs2: '='
+        tabs: '='
       },
       link: function ($scope, element, attr) {
-        $scope.tabActive = 'Sale';
+        $scope.tabActive = 0;
 
         $scope.setActiveTab = function (key) {
           $scope.tabActive = key;

@@ -5,9 +5,15 @@ angular.module('app')
     BrokerHomesService.findBrokerHomes($rootScope.user.id).then(function (myHomes) {
       $scope.brokerHomes = myHomes;
 
-      $scope.tabs2 = {
-        'Sale': 'views/tabs/saleRent/sale.html',
-        'Rent': 'views/tabs/saleRent/rent.html'
-      };
+      $scope.tabs = [
+        {
+          title: 'Sale',
+          view: 'views/tabs/saleRent/sale.html'
+        },
+        {
+          title: 'Rent',
+          view: 'views/tabs/saleRent/rent.html'
+        }
+      ];
     })
   });

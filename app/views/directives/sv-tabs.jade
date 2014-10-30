@@ -1,5 +1,5 @@
 div
   ul.list-inline
-    li(ng-repeat="(k,v) in tabs2|orderBy:k:true")
-      .cursor-p(ng-click='setActiveTab(k)') {{k}}
-    ng-include(src='tabs2[tabActive]')
+    li(ng-class='{active:$index===tabActive}' ng-repeat="tab in tabs")
+      .cursor-p(ng-click='setActiveTab($index)') {{tab.title}}
+    ng-include(src='tabs[tabActive].view')

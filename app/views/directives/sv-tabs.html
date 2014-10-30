@@ -1,1 +1,1 @@
-<div><ul class="list-inline"><li ng-repeat="(k,v) in tabs2|orderBy:k:true"><div ng-click="setActiveTab(k)" class="cursor-p">{{k}}</div></li><ng-include src="tabs2[tabActive]"></ng-include></ul></div>
+<div><ul class="list-inline"><li ng-class="{active:$index===tabActive}" ng-repeat="tab in tabs"><div ng-click="setActiveTab($index)" class="cursor-p">{{tab.title}}</div></li><ng-include src="tabs[tabActive].view"></ng-include></ul></div>

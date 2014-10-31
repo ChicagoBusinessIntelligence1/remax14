@@ -3,7 +3,7 @@ div
     .col-sm-12
       h5 Found {{homes.length}} homes
       hr
-      ul.list-inline.row
+      ul.list-inline.row(ng-hide="totalPages==1")
         li.col-sm-9
           sv-pagination(total-pages='totalPages' current-page='currentPage')
         li.col-sm-3
@@ -13,4 +13,4 @@ div
       li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:pageHomesNumber').repeat-animation
         sv-home-basic-info(home='home')
 
-      sv-pagination(total-pages='totalPages' current-page='currentPage')
+      sv-pagination(ng-hide="totalPages==1" total-pages='totalPages' current-page='currentPage')

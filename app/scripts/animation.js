@@ -65,3 +65,23 @@ app.animation('.info-slider', function () {
 });
 
 
+app.animation('.tabs', function () {
+  var height,
+      width;
+  return {
+    enter: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+    leave: function (element, done) {
+      TweenMax.to(element, 1, { opacity: 0, onComplete: done });
+
+    },
+    move: function (element, done) {
+      element.css('opacity',0);
+      TweenMax.to(element, 1, { opacity: 1, onComplete: done });
+    },
+
+
+  }
+});

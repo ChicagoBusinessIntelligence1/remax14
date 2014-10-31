@@ -10,4 +10,15 @@ angular.module('app')
     $scope.postDraft = function (mls) {
       DraftsService.moveToHomes(mls);
     };
+
+    $scope.tabs = [
+      {
+        title: 'Property for Sale',
+        view: 'views/tabs/saleRent/sale-drafts.html'
+      },
+      {
+        title: 'Property for Rent',
+        view: 'views/tabs/saleRent/rent-drafts.html'
+      }
+    ];
   });

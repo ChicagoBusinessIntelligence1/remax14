@@ -4291,6 +4291,9 @@ h5 {
 /**********************
      =main content
 **********************/
+.pagination-container {
+  padding-left: 10px;
+}
 .remax-phone-sm {
   font-size: 18px;
   font-weight: 700;

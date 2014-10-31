@@ -7,6 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-tabs.html',
       scope: {
+        drafts: '=',
         homes: '=',
         tabs: '='
       },

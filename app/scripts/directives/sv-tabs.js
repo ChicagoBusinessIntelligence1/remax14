@@ -7,6 +7,9 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-tabs.html',
       scope: {
+        draft: '=',
+        removeDraft: '&',
+        postDraft: '&',
         drafts: '=',
         homes: '=',
         tabs: '='
@@ -18,7 +21,7 @@ angular.module('app')
           $scope.tabActive = key;
         };
 
-        $scope.tests=['1','2','3','4','5'];
+        $scope.tests = ['1', '2', '3', '4', '5'];
       }
     };
   });

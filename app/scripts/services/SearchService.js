@@ -47,7 +47,12 @@ angular.module('app')
 	                    var foundQueryTerm = _.intersection(queryArr, propValueArr);
                       queryArr = _.without(queryArr,foundQueryTerm);
 
-                      if (queryArr.length  === 0) {
+                      if (queryArr.length  > 0) {
+                        if (!isLocationPass) {
+                          isHomeIncluded = false;
+                        }
+                      } else {
+                        isLocationPass = true;
                         if (!isPriceBedPass) {
                           isHomeIncluded = true;
                         }

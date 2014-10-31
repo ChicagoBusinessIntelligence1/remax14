@@ -7,4 +7,4 @@ div
       div
         ul.list-unstyled
           li.tabs(ng-repeat="tab in tabs" ng-if='$index  === tabActive')
-            div(ng-include=''
+            div(ng-include='tab.view')

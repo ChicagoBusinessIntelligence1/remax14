@@ -12,13 +12,14 @@ angular.module('app')
         var query = $rootScope.query;
 
         that.repoUrl = url.residentialSale;
-	      var firebase = new Firebase(that.repoUrl);
+        var firebase = new Firebase(that.repoUrl);
         that.repoRef = $firebase(firebase);
         var allHomes = that.repoRef.$asArray();
         allHomes.$loaded(function () {
           if (_.isUndefined(query)) {
             defered.resolve(allHomes);
           } else {
+            var queryArr = query.location.split(' ');
             var finalHomes = [];
 
             for (var i = 0; i < allHomes.length; i++) {
@@ -41,15 +42,14 @@ angular.module('app')
                       if (_.isUndefined(query.location)) {
                         break;
                       }
-                      if (property.value.indexOf(query.location) === -1) {
-                        if (!isLocationPass) {
-                          isHomeIncluded = false;
-                        }
-                      } else {
-                        isLocationPass = true;
-                        if (!isPriceBedPass) {
+                      var propValueArr = property.value.split(' ');
 
-                        isHomeIncluded = true;
+	                    var foundQueryTerm = _.intersection(queryArr, propValueArr);
+                      queryArr = _.without(queryArr,foundQueryTerm);
+
+                      if (queryArr.length  === 0) {
+                        if (!isPriceBedPass) {
+                          isHomeIncluded = true;
                         }
                       }
                       break;
@@ -60,7 +60,7 @@ angular.module('app')
                       var minPrice = parseInt(query.priceMin);
                       if (housePrice > maxPrice || housePrice < minPrice) {
                         isHomeIncluded = false;
-                        isPriceBedPass=true;
+                        isPriceBedPass = true;
                       }
                       break;
 
@@ -69,7 +69,7 @@ angular.module('app')
                       var queryBedrooms = parseInt(query.bedrooms);
                       if ((houseBedrooms < queryBedrooms)) {
                         isHomeIncluded = false;
-                        isPriceBedPass=true;
+                        isPriceBedPass = true;
                       }
                       break;
 

@@ -8,6 +8,7 @@ angular.module('app')
       link: function ($scope, element, attrs) {
 
         $scope.mainSearch = function () {
+
           $rootScope.query = $scope.query;
           $state.go('app.search-results', null, {reload: true});
         };

@@ -11,15 +11,14 @@ angular.module('app')
       DraftsService.moveToHomes(mls);
     };
 
-
     $scope.tabs = [
       {
         title: 'Property for Sale',
-        view: 'views/tabs/saleRent/sale.html'
+        view: 'views/tabs/saleRent/sale-drafts.html'
       },
       {
         title: 'Property for Rent',
-        view: 'views/tabs/saleRent/rent.html'
+        view: 'views/tabs/saleRent/rent-drafts.html'
       }
     ];
   });

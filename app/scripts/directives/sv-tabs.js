@@ -6,14 +6,6 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-tabs.html',
-      scope: {
-        draft: '=',
-        removeDraft: '&',
-        postDraft: '&',
-        drafts: '=',
-        homes: '=',
-        tabs: '='
-      },
       link: function ($scope, element, attr) {
         $scope.tabActive = 0;
 

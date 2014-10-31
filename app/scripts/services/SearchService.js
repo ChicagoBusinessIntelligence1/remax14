@@ -24,8 +24,14 @@ angular.module('app')
             for (var i = 0; i < allHomes.length; i++) {
               var home = allHomes[i];
               var isHomeIncluded = true;
+              if (!_.isUndefined(query.location)) {
+                var queryLocationArr = _.map(query.location.split(' '), function (el) {
+                  return el.trim().toLowerCase()
+                });
+              } else {
+                var queryLocationArr =[];
 
-              var queryLocationArr = _.map(query.location.split(' '), function (el) {return el.trim().toLowerCase()});
+              }
               for (var j = 0; j < home.length; j++) {
 
                 var section = home[j];
@@ -44,7 +50,9 @@ angular.module('app')
                       if (_.isUndefined(query.location)) {
                         break;
                       }
-                      var propValueArr =_.map(property.value.split(' '), function (el) {return el.trim().toLowerCase()});
+                      var propValueArr = _.map(property.value.split(' '), function (el) {
+                        return el.trim().toLowerCase()
+                      });
 
                       var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
                       queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);

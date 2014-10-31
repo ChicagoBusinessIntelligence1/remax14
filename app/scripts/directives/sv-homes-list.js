@@ -13,7 +13,13 @@ angular.module('app')
 
         $scope.pageHomesNumber = pageHomesNumber;
         $scope.currentPage = 1;
+        if ($scope.homes) {
+
         $scope.totalPages = Math.ceil($scope.homes.length / pageHomesNumber);
+        } else{
+        $scope.totalPages = 1;
+
+        }
         $scope.isDataLoading = false;
       },
       controller: function ($scope) {

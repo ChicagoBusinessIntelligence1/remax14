@@ -19,13 +19,15 @@ angular.module('app')
           if (_.isUndefined(query)) {
             defered.resolve(allHomes);
           } else {
-            var queryArr = query.location.split(' ');
             var finalHomes = [];
 
             for (var i = 0; i < allHomes.length; i++) {
               var home = allHomes[i];
               var isHomeIncluded = true;
+
+              var queryLocationArr = _.map(query.location.split(' '), function (el) {return el.trim().toLowerCase()});
               for (var j = 0; j < home.length; j++) {
+
                 var section = home[j];
                 var sectionProps = section.content;
                 var isLocationPass = false;
@@ -42,21 +44,11 @@ angular.module('app')
                       if (_.isUndefined(query.location)) {
                         break;
                       }
-                      var propValueArr = property.value.split(' ');
+                      var propValueArr =_.map(property.value.split(' '), function (el) {return el.trim().toLowerCase()});
 
-	                    var foundQueryTerm = _.intersection(queryArr, propValueArr);
-                      queryArr = _.without(queryArr,foundQueryTerm);
+                      var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
+                      queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);
 
-                      if (queryArr.length  > 0) {
-                        if (!isLocationPass) {
-                          isHomeIncluded = false;
-                        }
-                      } else {
-                        isLocationPass = true;
-                        if (!isPriceBedPass) {
-                          isHomeIncluded = true;
-                        }
-                      }
                       break;
 
                     case'price':
@@ -90,7 +82,7 @@ angular.module('app')
                 }
 
               }
-              if (isHomeIncluded) {
+              if (isHomeIncluded && queryLocationArr.length === 0) {
                 finalHomes.push(home);
               }
             }

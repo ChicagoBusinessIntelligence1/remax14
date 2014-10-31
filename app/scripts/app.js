@@ -101,6 +101,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "OneHomeDraftCtrl",
           templateUrl: "../views/one-home-draft.html"
         })
+        .state("app.profile.broker-sold-homes", {
+          url: "/broker-sold-homes",
+          controller: "BrokerSoldHomesCtrl",
+          templateUrl: "../views/broker-sold-homes-ctrl.html"
+        })
         .state("app.profile.user-profile", {
           url: "/user-profile",
           controller: "UserProfileCtrl",
@@ -115,6 +120,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           url: "/wish-list",
           controller: "WishListCtrl",
           templateUrl: "../views/wish-list-ctrl.html"
+        })
+        .state("app.profile.watch-list", {
+          url: "/watch-list",
+          controller: "WatchListCtrl",
+          templateUrl: "../views/watch-list-ctrl.html"
         })
         .state("app.profile.add-home", {
           url: "/add-home",
@@ -141,16 +151,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-			.state("app.watch-list", {
-				url: "/watch-list", 
-				controller:"WatchListCtrl",
-				templateUrl: "../views/watch-list-ctrl.html"
-			})
-			.state("app.broker-sold-listins", {
-				url: "/broker-sold-listins", 
-				controller:"BrokerSoldListinsCtrl",
-				templateUrl: "../views/broker-sold-listins-ctrl.html"
-			})
 //#state
     })
   ;

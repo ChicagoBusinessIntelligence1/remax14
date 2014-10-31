@@ -1,0 +1,25 @@
+.popover
+  .arrow
+  .popover-content.user-dashboard-popover
+    ul.list-unstyled
+      li
+        a(ui-sref='app.profile.broker-homes')
+          i-i.fa.fa-list-alt.fa-fw
+          | &nbsp Active Listings
+      li
+        a(ui-sref='app.profile.drafts')
+          i-i.fa.fa-pencil.fa-fw
+          | &nbsp Drafts
+      li
+        a
+          i.fa.fa-check.fa-fw
+          | &nbsp Sold
+      hr
+      li
+        button.btn.btn-default.btn-sm.btn-add-listing
+          i.fa.fa-plus.fa-fw
+          | Listing for Rent
+      li
+        button.btn.btn-default.btn-sm.btn-add-listing(ui-sref='app.profile.add-home')
+          i.fa.fa-plus.fa-fw
+          | Listing for Sale

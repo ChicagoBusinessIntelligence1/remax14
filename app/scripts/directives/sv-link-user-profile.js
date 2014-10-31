@@ -5,12 +5,12 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      scope:{
-        user: '=',
-        userName:'@',
-        logoutFb:'&'
-      },
       template: '<button class="btn btn-link btn-user" name="toggleUserProfile" id="toggleUserProfile"> Hello, {{userName}}! </button>',
+      scope: {
+        user: '=',
+        userName: '@',
+        logoutFb: '&'
+      },
       link: function ($scope, element, attr) {
 
         var userProfilePopover = $popover(element, {
@@ -18,7 +18,6 @@ angular.module('app')
           template: '../../views/popover/user-profile-popover.html',
           placement: 'bottom',
           trigger: 'focus',
-          animation: 'am-flip-x',
           scope: $scope
         });
       }

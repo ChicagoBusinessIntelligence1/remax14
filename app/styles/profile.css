@@ -25,10 +25,9 @@ label {
 .add-container {
   padding: 10px;
 }
-@media screen and (min-width: 992px) {
-  .btn-add-listing {
-    float: right;
-  }
+.btn-add-listing {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .header-cteate-account {
   background-color: #414141 !important;

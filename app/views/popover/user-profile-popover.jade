@@ -4,18 +4,31 @@
     ul.list-unstyled
       li
         a(ui-sref='app.profile.saved-searches')
-          i-i.fa.fa-user.fa-fw
-          | My Profile
+          i.fa.fa-user.fa-fw
+          | &nbsp My Profile
+      li
+        a
+          i.fa.fa-eye.fa-fw
+          | &nbsp Watch List
+      li
+        a(ui-sref='app.profile.wish-list')
+          i.fa.fa-star.fa-fw
+          | &nbsp Wish List
+      li
+        a(ui-sref='app.profile.saved-searches')
+          i.fa.fa-bookmark.fa-fw
+          | &nbsp Saved Searches
       li
         a(ui-sref='app.profile.user-profile')
-          i-i.fa.fa-gear.fa-fw
-          | Settings
+          i.fa.fa-gear.fa-fw
+          | &nbsp Settings
       li
         a(ng-click='logoutFb()')
           i.fa.fa-sign-out.fa-fw
-          | Sign Out
+          | &nbsp Sign Out
+      hr
       li
         a(href='{{user.link}}')
-          img(ng-src="../images/header/facebook.png")
+          i.fa.fa-facebook.fa-fw
           img.img-fb(ng-src="{{user.picture.data.url}}")
           span.fb-name  {{user.first_name}}

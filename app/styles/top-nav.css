@@ -115,19 +115,32 @@ label {
 .navbar-app li a .fa-angle-down {
   margin-left: 5px !important;
 }
+.user-dashboard-popover,
 .notifications-popover,
 .user-profile-popover {
   line-height: 26px;
 }
+.user-dashboard-popover hr,
+.notifications-popover hr,
+.user-profile-popover hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.user-dashboard-popover ul li a,
 .notifications-popover ul li a,
 .user-profile-popover ul li a {
   color: #636363;
   cursor: pointer;
 }
+.user-dashboard-popover ul li a:hover,
 .notifications-popover ul li a:hover,
 .user-profile-popover ul li a:hover,
+.user-dashboard-popover ul li a:active,
 .notifications-popover ul li a:active,
 .user-profile-popover ul li a:active,
+.user-dashboard-popover ul li a:focus,
 .notifications-popover ul li a:focus,
 .user-profile-popover ul li a:focus {
   text-decoration: none;

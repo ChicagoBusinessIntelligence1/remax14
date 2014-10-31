@@ -4,9 +4,7 @@ div
       a.cursor-p(role="tab" ng-click='setActiveTab($index)') {{tab.title}}
   .tab-content
     .tab-pane.active
-    ng-include(src='tabs[tabActive].view')
-
-  //ul
-  //  li(ng-repeat='t in tests')
-  //    span(ng-class="{'bg-red':$middle}")   {{t}}
-
+      div
+        ul.list-unstyled
+          li.tabs(ng-repeat="tab in tabs" ng-if='$index  === tabActive')
+            div(ng-include=''

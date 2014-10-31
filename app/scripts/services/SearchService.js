@@ -70,7 +70,7 @@ angular.module('app')
                       }
                       break;
 
-                    case'bathrooms':
+                    case'fullBathrooms':
                       var houseBathrooms = parseInt(property.value);
                       var queryBathrooms = parseInt(query.bathrooms);
                       if ((houseBathrooms < queryBathrooms)) {

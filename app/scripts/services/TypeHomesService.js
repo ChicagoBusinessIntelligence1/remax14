@@ -26,6 +26,19 @@ angular.module('app')
 
         })
         return defered.promise;
+      },
+      getAllForSale: function () {
+        var that = this;
+        var defered = $q.defer();
+
+        that.repoUrl = url.residentialSale;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var allHomes = that.repoRef.$asArray();
+
+        allHomes.$loaded(function () {
+          defered.resolve(allHomes);
+        })
+        return defered.promise;
       }
     };
 

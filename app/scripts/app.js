@@ -83,11 +83,21 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state("app.all-sale-homes", {
           url: "/all-sale-homes",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getAllForSale();
+            }
+          },
           controller: "AllSaleHomesCtrl",
           templateUrl: "../views/all-sale-homes-ctrl.html"
         })
         .state("app.condos-sale-homes", {
           url: "/condos-sale-homes",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getCondos();
+            }
+          },
           controller: "CondosSaleHomesCtrl",
           templateUrl: "../views/condos-sale-homes-ctrl.html"
         })

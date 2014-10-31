@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('app')
-  .controller('AllSaleHomesCtrl', function (TypeHomesService,$scope) {
+  .controller('AllSaleHomesCtrl', function (homes,$scope) {
 
-    TypeHomesService.getCondos().then(function (condos) {
-      $scope.homes = condos;
-    })
+      $scope.homes = homes;
 
   });

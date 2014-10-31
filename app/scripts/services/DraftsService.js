@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('DraftsService', function (notifications, $firebase, url, $q) {
+  .factory('DraftsService', function (notifications, $firebase, url, $rootScope, $q) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -25,12 +25,12 @@ angular.module('app')
         var defered = $q.defer();
         var draft = draftRef.$asArray().$getRecord(mls);
 
-        var sharedRepo = url.residentialSale+mls;
+        var sharedRepo = url.residentialSale + mls;
         var sharedRef = $firebase(new Firebase(sharedRepo)).$asObject();
         // create a property mls and set it to draft
         for (var i = 0; i < draft.length; i++) {
           var section = draft[i];
-          sharedRef[i]=section;
+          sharedRef[i] = section;
         }
         sharedRef.$save().then(function () {
 

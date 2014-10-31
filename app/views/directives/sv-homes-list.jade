@@ -1,16 +1,17 @@
 div
+  h5 Found {{homes.length}} homes
+  hr
   .row
     .col-sm-12
-      h5 Found {{homes.length}} homes
-      hr
-      ul.list-inline.row(ng-hide="totalPages==1")
-        li.col-sm-9
-          sv-pagination(total-pages='totalPages' current-page='currentPage')
-        li.col-sm-3
-          sv-sort-homes(sort-by='sortBy')
+      .pagination-container
+        ul.list-inline.row(ng-hide="totalPages==1")
+          li.col-sm-9
+            sv-pagination(total-pages='totalPages' current-page='currentPage')
+          li.col-sm-3
+            sv-sort-homes(sort-by='sortBy')
   .drafts-container
     ul.row.list-inline
       li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:pageHomesNumber').repeat-animation
         sv-home-basic-info(home='home')
 
-      sv-pagination(ng-hide="totalPages==1" total-pages='totalPages' current-page='currentPage')
+  sv-pagination(ng-hide="totalPages==1" total-pages='totalPages' current-page='currentPage')

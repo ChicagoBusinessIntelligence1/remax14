@@ -17,7 +17,7 @@ angular.module('app')
             prop = that.cleanProp(prop);
             obj[key] = prop;
           }
-        });
+        })
 
         return obj;
       },

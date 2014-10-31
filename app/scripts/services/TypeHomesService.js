@@ -27,6 +27,27 @@ angular.module('app')
         })
         return defered.promise;
       },
+      getSingleFamily: function () {
+        var that = this;
+        var defered = $q.defer();
+
+        that.repoUrl = url.residentialSale;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var allHomes = that.repoRef.$asArray();
+        var condos = [];
+
+        allHomes.$loaded(function () {
+          for (var i = 0; i < allHomes.length; i++) {
+            var home = allHomes[i];
+            if (home[0].type === 'Single Family House') {
+              condos.push(home);
+            }
+          }
+          defered.resolve(condos);
+
+        })
+        return defered.promise;
+      },
       getAllForSale: function () {
         var that = this;
         var defered = $q.defer();

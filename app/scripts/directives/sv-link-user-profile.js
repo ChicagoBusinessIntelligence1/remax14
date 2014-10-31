@@ -6,6 +6,7 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       scope:{
+        user: '=',
         userName:'@',
         logoutFb:'&'
       },

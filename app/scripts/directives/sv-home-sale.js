@@ -37,7 +37,7 @@ angular.module('app')
         };
 
         $scope.updateHomeSection = function (section) {
-        HomeService.updateHomeSection(section);
+          HomeService.updateHomeSection(section);
         };
       }
     };

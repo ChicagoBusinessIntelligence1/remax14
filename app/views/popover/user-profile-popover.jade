@@ -3,14 +3,19 @@
   .popover-content.user-profile-popover
     ul.list-unstyled
       li
-        a(ui-sref='app.profile.wish-list')
+        a(ui-sref='app.profile.saved-searches')
           i-i.fa.fa-user.fa-fw
           | My Profile
       li
         a(ui-sref='app.profile.user-profile')
           i-i.fa.fa-gear.fa-fw
-          | Profile Settings
+          | Settings
       li
         a(ng-click='logoutFb()')
           i.fa.fa-sign-out.fa-fw
           | Sign Out
+      li
+        a(href='{{user.link}}')
+          img(ng-src="../images/header/facebook.png")
+          img.img-fb(ng-src="{{user.picture.data.url}}")
+          span.fb-name  {{user.first_name}}

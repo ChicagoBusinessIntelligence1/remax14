@@ -7,11 +7,11 @@ angular.module('app')
 
       $scope.tabs = [
         {
-          title: 'Sale',
+          title: 'Property for Sale',
           view: 'views/tabs/saleRent/sale.html'
         },
         {
-          title: 'Rent',
+          title: 'Property for Rent',
           view: 'views/tabs/saleRent/rent.html'
         }
       ];

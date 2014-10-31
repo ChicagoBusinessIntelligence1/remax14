@@ -1,7 +1,5 @@
 div(ng-switch="user.profileType")
   div(ng-switch-when="broker")
-    sv-broker-profile-nav
     div(ui-view='')
   div(ng-switch-when="customer")
-    sv-customer-profile-nav
     div(ui-view='')

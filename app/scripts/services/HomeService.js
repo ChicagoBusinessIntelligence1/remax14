@@ -24,7 +24,7 @@ angular.module('app')
         var sectionRepo = this.homeRepo + '/' + id;
         var sectionRef = $firebase(new Firebase(sectionRepo));
         //var refObj = this.homeRef.$asObject();
-        sectionRef.$update(section);
+        sectionRef.$set(section);
         //sectionRef.$save();
         //this.homeRef.$asObject().$set(section.$id,section);
       },

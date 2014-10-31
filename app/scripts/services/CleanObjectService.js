@@ -11,8 +11,12 @@ angular.module('app')
         obj = _.omit(obj, removeProp);
 
         angular.forEach(obj, function (prop, key) {
-          prop = that.cleanProp(prop);
-          obj[key] = prop;
+          var isArray = _.isArray(prop);
+          var isObject = _.isObject(prop);
+          if (isArray || isObject) {
+            prop = that.cleanProp(prop);
+            obj[key] = prop;
+          }
         });
 
         return obj;

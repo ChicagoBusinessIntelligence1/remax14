@@ -7,11 +7,11 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-rent-header.html',
       scope: {
-        home: '=',
+        rent: '=',
         isTemplate: '=',
         saveTemplate: '&',
         isDraft: '=',
-        delDraft:'&'
+        delDraft: '&'
       },
       link: function ($scope, element, attr) {
 

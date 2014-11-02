@@ -14,7 +14,7 @@ app.factory('url', function (mainUrl) {
     brokers: mainUrl + 'brokers/',
     customers: mainUrl + 'customers/',
     registeredBrokers: mainUrl + 'registeredBrokers/',
-    residentialSaleDrafts: '/residential/sale/drafts'
+    residentialSaleDrafts: '/residential/sale/drafts',
     residentialRentalDrafts: '/residential/rental/drafts'
   }
 });

@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('#jname#', function () {
+  .directive('svDropDown', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/#dname#.html',
+      templateUrl: '../../views/directives/sv-drop-down.html',
       scope: {
 
       },

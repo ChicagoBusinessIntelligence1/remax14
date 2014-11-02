@@ -4,7 +4,7 @@ app.value('mainUrl', 'https://remax14.firebaseio.com/');
 
 app.factory('url', function (mainUrl) {
   return {
-    residentialSettings: mainUrl + 'settings/residentials/',
+    residentialSettings: mainUrl + 'settings/residential/',
     residentialSale: mainUrl + 'residential/sale/homes/',
     residentialSaleTemplate: mainUrl + 'residential/sale/templates/0',
     brokers: mainUrl + 'brokers/',

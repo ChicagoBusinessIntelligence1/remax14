@@ -7,7 +7,7 @@ angular.module('app')
         return;
       }
       listing = _.reject(listing, function (elem) {
-        return _.isArray(elem) && elem.$id==='brokers';
+        return elem.title===omit.toLowerCase();
       });
       return  listing;
     };

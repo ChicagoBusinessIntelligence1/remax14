@@ -109,7 +109,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
               return TypeHomesService.getSingleFamily();
             }
           },
-          controller:"SingleFamilyHomesCtrl",
+          controller: "SingleFamilyHomesCtrl",
           templateUrl: "../views/single-family-homes-ctrl.html"
         })
 
@@ -150,8 +150,8 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state("app.profile.add-home", {
           url: "/add-home",
-          controller: "AddHomeCtrl",
-          templateUrl: "../views/add-home.html"
+          controller: "AddHomeSaleCtrl",
+          templateUrl: "../views/add-home-sale.html"
         })
         .state("app.profile.broker-homes", {
           url: "/homes-shared",
@@ -173,12 +173,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-
-			.state("app.add-home-rent", {
-				url: "/add-home-rent", 
-				controller:"AddHomeRentCtrl",
-				templateUrl: "../views/add-home-rent-ctrl.html"
-			})
+        .state("app.profile.add-home-rent", {
+          url: "/add-home-rent",
+          controller: "AddHomeRentCtrl",
+          templateUrl: "../views/add-home-rent-ctrl.html"
+        })
 //#state
     })
   ;

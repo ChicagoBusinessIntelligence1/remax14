@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeRent', function () {
+  .directive('svHomeRental', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-home-rent.html',
+      templateUrl: '../../views/directives/sv-home-rental.html',
       scope: {
 
       },

@@ -6,7 +6,7 @@
       .row
         .col-sm-12
           sv-photo-gallery
-    form(name="homeForm" id="form" novalidate='novalidate')
+    form(name="rentForm" id="form" novalidate='novalidate')
       ul.list-unstyled
-        li(ng-repeat='section in home|homeFilter:"brokers" |orderBy:"order"')
+        li(ng-repeat='section in rent|homeFilter:"brokers" |orderBy:"order"')
           sv-home-display-slider(section='section' is-template='isTemplate' update-home-section='updateHomeSection(section)')

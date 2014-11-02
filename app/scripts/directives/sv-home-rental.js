@@ -1,19 +1,22 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeRental', function () {
+  .directive('svHomeRental', function ($stateParams, $state, $rootScope) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-home-rental.html',
       scope: {
-
+        isDraft: '='
       },
-      link: function ($scope, element, attr) {
 
-      },
       controller: function ($scope) {
-      //this.var=something;
+        this.required = ['mls', 'state', 'city', 'zip'];
+      },
+
+      link: function ($scope, element, attr) {
+        var mls = $stateParams.mls;
+
       }
     };
   });

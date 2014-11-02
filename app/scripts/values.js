@@ -6,11 +6,16 @@ app.factory('url', function (mainUrl) {
   return {
     residentialSettings: mainUrl + 'settings/residential/',
     residentialSale: mainUrl + 'residential/sale/homes/',
+    residentialRental: mainUrl + 'residential/rental/rents/',
+
     residentialSaleTemplate: mainUrl + 'residential/sale/templates/0',
+    residentialRentalTemplate: mainUrl + 'residential/rental/templates/1',
+
     brokers: mainUrl + 'brokers/',
     customers: mainUrl + 'customers/',
     registeredBrokers: mainUrl + 'registeredBrokers/',
     residentialSaleDrafts: '/residential/sale/drafts'
+    residentialRentalDrafts: '/residential/rental/drafts'
   }
 });
 

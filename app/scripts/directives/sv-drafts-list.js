@@ -19,7 +19,6 @@ angular.module('app')
         $scope.postDraft = function (mls) {
           DraftsService.moveToHomes(mls);
         };
-
       }
     };
   });

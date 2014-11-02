@@ -1,4 +1,4 @@
 .drafts-container
   ul.row.list-inline
-    li.col-sm-12(ng-repeat='(key, home) in drafts')
-      sv-home-basic-info(home='home')
+    li.col-sm-6(ng-repeat='(key, draft) in drafts')
+      sv-home-draft-sm(draft='draft')

@@ -1,7 +1,7 @@
 .listing
   sv-spinner(ng-show='isDataLoading')
   div(ng-hide='isDataLoading')
-    sv-home-sale-header(home='home' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
+    sv-home-rental-header(rent='rent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
     .gallery-wrapper(ng-if='!isTemplate')
       .row
         .col-sm-12

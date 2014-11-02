@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeRentHeader', function () {
+  .directive('svHomeRentalHeader', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-home-rent-header.html',
+      templateUrl: '../../views/directives/sv-home-rental-header.html',
       scope: {
         rent: '=',
         isTemplate: '=',

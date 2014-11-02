@@ -8,5 +8,5 @@
           sv-photo-gallery
     form(name="rentForm" id="form" novalidate='novalidate')
       ul.list-unstyled
-        li(ng-repeat='section in rent|homeFilter:"brokers" |orderBy:"order"')
+        li(ng-repeat='section in rent |orderBy:"order"')
           sv-home-display-slider(section='section' is-template='isTemplate' update-home-section='updateHomeSection(section)')

@@ -113,10 +113,10 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/single-family-homes-ctrl.html"
         })
 
-        .state("app.profile.drafts", {
-          url: "/home-drafts",
-          controller: "HomeDraftsCtrl",
-          templateUrl: "../views/home-drafts.html"
+        .state("app.profile.drafts-sale", {
+          url: "/home-drafts-sale",
+          controller: "HomeDraftsSaleCtrl",
+          templateUrl: "../views/home-drafts-sale-ctrl.html"
         })
         .state("app.profile.one-home-draft", {
           url: "/one-home-draft/:mls",
@@ -151,7 +151,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         .state("app.profile.add-home-sale", {
           url: "/add-home-sale",
           controller: "AddHomeSaleCtrl",
-          templateUrl: "../views/add-home-sale.html"
+          templateUrl: "../views/add-home-sale-ctrl.html"
         })
         .state("app.profile.broker-homes", {
           url: "/homes-shared",

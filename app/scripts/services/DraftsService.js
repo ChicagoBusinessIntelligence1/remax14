@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('app')
-  .factory('DraftsService', function (notifications, $firebase, url, $rootScope, $q) {
+  .factory('DraftsService', function (notifications, $firebase, urlCommon, $rootScope, $q) {
     return {
       repoUrl: null,
       repoRef: null,
       all: function (userId) {
-        this.repoUrl = url.brokers + userId + url.residentialSaleDrafts;
+        this.repoUrl = urlCommon.brokers + userId + url.residentialSaleDrafts;
         this.repoRef = $firebase(new Firebase(this.repoUrl));
 
         return this.repoRef.$asArray();

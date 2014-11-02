@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('AddNewFieldService', function ($firebase, $q, url) {
+  .factory('AddNewFieldService', function ($firebase, $q) {
     return {
       addField: function (section, newFieldType, newFieldTitle) {
         var initialInput = newFieldTitle;

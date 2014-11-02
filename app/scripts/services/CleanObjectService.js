@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('CleanObjectService', function ($firebase, $q, url) {
+  .factory('CleanObjectService', function ($firebase, $q) {
     return {
 
       clean: function (obj) {

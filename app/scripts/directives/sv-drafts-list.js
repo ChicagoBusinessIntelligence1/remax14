@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('app')
-  .directive('svDropDown', function (urlCommon, $firebase) {
+  .directive('svDraftsList', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-drop-down.html',
+      templateUrl: '../../views/directives/sv-drafts-list.html',
       scope: {
-        sectionProperty: '='
+
       },
       link: function ($scope, element, attr) {
-        console.log('here');
+
       }
     };
   });

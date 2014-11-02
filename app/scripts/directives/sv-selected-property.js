@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSelectedProperty', function ($firebase, url) {
+  .directive('svSelectedProperty', function ($firebase, urlCommon) {
     return {
       templateUrl: '../views/directives/sv-selected-property.html',
       restrict: 'E',

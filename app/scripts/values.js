@@ -2,22 +2,33 @@
 //root of project
 app.value('mainUrl', 'https://remax14.firebaseio.com/');
 
-app.factory('url', function (mainUrl) {
+app.factory('urlCommon', function (mainUrl) {
   return {
     residentialSettings: mainUrl + 'settings/residential/',
-    residentialSale: mainUrl + 'residential/sale/homes/',
-    residentialRental: mainUrl + 'residential/rental/rents/',
-
-    residentialSaleTemplate: mainUrl + 'residential/sale/templates/0',
-    residentialRentalTemplate: mainUrl + 'residential/rental/templates/1',
-
     brokers: mainUrl + 'brokers/',
     customers: mainUrl + 'customers/',
-    registeredBrokers: mainUrl + 'registeredBrokers/',
-    residentialSaleDrafts: '/residential/sale/drafts',
-    residentialRentalDrafts: '/residential/rental/drafts'
+    registeredBrokers: mainUrl + 'registeredBrokers/'
   }
-});
+})
+
+app.factory('urlSale', function (mainUrl) {
+  return {
+    residentialTemplate: mainUrl + 'residential/templates/sale/0',
+
+    residentialDrafts: '/residential/drafts/sale/',
+
+    residential: mainUrl + 'residential/sale/homes/'
+  }
+})
+app.factory('urlRental', function (mainUrl) {
+  return {
+    residentialTemplate: mainUrl + 'residential/templates/rental/0',
+
+    residentialDrafts: '/residential/drafts/rental/',
+
+    residential: mainUrl + 'residential/rental/homes/'
+  }
+})
 
 app.value('inputTypes',
   [

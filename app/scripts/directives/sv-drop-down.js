@@ -10,7 +10,7 @@ angular.module('app')
         sectionProperty: '='
       },
       link: function ($scope, element, attr) {
-        console.log('here');
+
       }
     };
   });

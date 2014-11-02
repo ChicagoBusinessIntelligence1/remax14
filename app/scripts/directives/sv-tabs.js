@@ -4,7 +4,6 @@ angular.module('app')
   .directive('svTabs', function () {
     return {
       restrict: 'E',
-      replace: true,
       templateUrl: '../../views/directives/sv-tabs.html',
       link: function ($scope, element, attr) {
         $scope.tabActive = 0;
@@ -13,6 +12,16 @@ angular.module('app')
           $scope.tabActive = key;
         };
 
+        $scope.tabs = [
+          {
+            title: 'Property for Sale',
+            view: 'views/tabs/saleRent/sale.html'
+          },
+          {
+            title: 'Property for Rent',
+            view: 'views/tabs/saleRent/rent.html'
+          }
+        ];
       }
     };
   });

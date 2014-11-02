@@ -1,1 +1,4 @@
-div sv-drafts-list Template
+.drafts-container
+  ul.row.list-inline
+    li.col-sm-12(ng-repeat='(key, home) in drafts')
+      sv-home-basic-info(home='home')

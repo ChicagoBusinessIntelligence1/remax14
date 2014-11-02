@@ -5,8 +5,8 @@ angular.module('app')
     return {
       repoUrl: null,
       repoRef: null,
-      all: function (userId) {
-        this.repoUrl = urlCommon.brokers + userId + url.residentialSaleDrafts;
+      all: function (url,userId) {
+        this.repoUrl = urlCommon.brokers + userId + url.residentialDrafts;
         this.repoRef = $firebase(new Firebase(this.repoUrl));
 
         return this.repoRef.$asArray();

@@ -11,9 +11,6 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
 
-      },
-      controller: function ($scope) {
-      //this.var=something;
       }
     };
   });

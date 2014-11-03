@@ -22,8 +22,8 @@ angular.module('app')
               condos.push(home);
             }
           }
-        });
           defered.resolve(condos);
+        });
         return defered.promise;
       },
       getSingleFamily: function () {

@@ -38,6 +38,7 @@ angular.module('app')
         };
 
         $scope.updateHomeSection = function (section) {
+          section = AddSearchFeaturesService.decorateSection(section);
           HomeService.updateHomeSection(section);
         };
       }

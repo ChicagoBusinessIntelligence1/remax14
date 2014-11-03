@@ -16,6 +16,17 @@ angular.module('app')
           }
         }
         return null;
+      },
+      findInSection: function (section, propertyTitle) {
+
+          for (var j = section.content.length - 1; j >= 0; j--) {
+            var sectionProperty = section.content[j];
+            if (sectionProperty.title === propertyTitle ) {
+              return sectionProperty.value;
+              break;
+            }
+          }
+        return null;
       }
     };
   });

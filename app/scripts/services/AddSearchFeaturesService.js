@@ -10,6 +10,11 @@ angular.module('app')
         home[0]['date'] = new Date().toLocaleString();
         home[0]['type'] = HomePropertyService.find(home, 'propertyType')
         return home;
-      }
+      },
+      decorateSection: function (section) {
+        section['type'] = HomePropertyService.findInSection(section, 'propertyType')
+        return section;
+      },
+
     };
   });

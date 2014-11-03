@@ -4553,3 +4553,6 @@ Selected House
   -ms-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+.remove-width {
+  width: 100px !important;
+}

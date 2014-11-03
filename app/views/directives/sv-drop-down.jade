@@ -1,2 +1,9 @@
-div sdfsdfsdfsdfsd
+div
+  button.btn.btn-sm.btn-default(
+  placeholder='Listing Type'
+  ng-model='sectionProperty.value'
+  data-html='1'
+  ng-options='type.$value as type.$value for type in types',
+  bs-select='types')
+    span.caret.remove-width &nbsp T
 

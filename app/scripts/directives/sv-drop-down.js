@@ -10,7 +10,12 @@ angular.module('app')
         sectionProperty: '='
       },
       link: function ($scope, element, attr) {
+        var dropDownRepo = urlCommon.residentialSettings + $scope.sectionProperty.title + 's';
+        var dropDownRef = $firebase(new Firebase(dropDownRepo)).$asArray();
+        dropDownRef.$loaded(function (types) {
+          $scope.types = types;
 
+        })
       }
     };
   });

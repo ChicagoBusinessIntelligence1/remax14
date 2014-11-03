@@ -5,10 +5,9 @@ angular.module('app')
     return {
       homeRef: null,
       homeRepo: null,
-      url:null,
+      url: null,
       getArrayFire: function (url, mls, isDraft) {
-
-        this.url=url;
+        this.url = url;
         if (_.isUndefined(mls)) {
           this.homeRepo = url.residentialTemplate;
         } else {

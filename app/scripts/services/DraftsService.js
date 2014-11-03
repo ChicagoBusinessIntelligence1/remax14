@@ -5,7 +5,9 @@ angular.module('app')
     return {
       repoUrl: null,
       repoRef: null,
+      url:null,
       all: function (url,userId) {
+      this.url=url;
         this.repoUrl = urlCommon.brokers + userId + url.residentialDrafts;
         this.repoRef = $firebase(new Firebase(this.repoUrl));
 
@@ -25,7 +27,7 @@ angular.module('app')
         var defered = $q.defer();
         var draft = draftRef.$asArray().$getRecord(mls);
 
-        var sharedRepo = url.residentialSale + mls;
+        var sharedRepo = this.url.residential + mls;
         var sharedRef = $firebase(new Firebase(sharedRepo)).$asObject();
         // create a property mls and set it to draft
         for (var i = 0; i < draft.length; i++) {

@@ -11,7 +11,7 @@ angular.module('app')
         isTemplate: '=',
         updateHomeSection: '&'
       },
-      require: '^sv-home-sale',
+      require: '^sv-remax-home',
 
       controller: function ($scope) {
         this.ngFormName = $scope.section.title + 'Form';

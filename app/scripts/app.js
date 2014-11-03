@@ -77,10 +77,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "GenerateCtrl",
           templateUrl: "../views/generate.html"
         })
-        .state("app.profile", {
-          abstract: true,
-          templateUrl: "../views/profile.html"
-        })
         .state("app.all-sale-homes", {
           url: "/all-sale-homes",
           resolve: {
@@ -112,11 +108,24 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "SingleFamilyHomesCtrl",
           templateUrl: "../views/single-family-homes-ctrl.html"
         })
-
-        .state("app.profile.drafts-sale", {
-          url: "/home-drafts-sale",
-          controller: "HomeDraftsSaleCtrl",
-          templateUrl: "../views/home-drafts-sale-ctrl.html"
+        .state("app.profile", {
+          abstract: true,
+          templateUrl: "../views/profile.html"
+        })
+        .state("app.profile.add-home-sale", {
+          url: "/add-home-sale",
+          controller: "AddHomeSaleCtrl",
+          templateUrl: "../views/add-home-sale-ctrl.html"
+        })
+        .state("app.profile.add-home-rental", {
+          url: "/add-home-rental",
+          controller: "AddHomeRentalCtrl",
+          templateUrl: "../views/add-home-rental-ctrl.html"
+        })
+        .state("app.profile.drafts", {
+          url: "/home-drafts",
+          controller: "HomeDraftsCtrl",
+          templateUrl: "../views/home-drafts-ctrl.html"
         })
         .state("app.profile.one-home-draft", {
           url: "/one-home-draft/:mls",
@@ -148,11 +157,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "WatchListCtrl",
           templateUrl: "../views/watch-list-ctrl.html"
         })
-        .state("app.profile.add-home-sale", {
-          url: "/add-home-sale",
-          controller: "AddHomeSaleCtrl",
-          templateUrl: "../views/add-home-sale-ctrl.html"
-        })
         .state("app.profile.broker-homes", {
           url: "/homes-shared",
           controller: "HomesSharedCtrl",
@@ -172,11 +176,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           url: "/login",
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
-        })
-        .state("app.profile.add-home-rental", {
-          url: "/add-home-rental",
-          controller: "AddHomeRentalCtrl",
-          templateUrl: "../views/add-home-rental-ctrl.html"
         })
 //#state
     })

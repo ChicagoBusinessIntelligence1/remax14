@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('app')
-  .factory('BrokerHomesService', function ($firebase, url, $q) {
+  .factory('BrokerHomesService', function ($firebase, $q) {
     return {
       repoUrl: null,
       repoRef: null,
-      findBrokerHomes: function (userId) {
+      findBrokerHomes: function (url, userId) {
         var defer = $q.defer();
 
-        this.repoUrl = url.residentialSale;
+        this.repoUrl = url.residential;
         this.repoRef = $firebase(new Firebase(this.repoUrl));
         var allHomes = this.repoRef.$asArray();
         var brokerHomes = [];

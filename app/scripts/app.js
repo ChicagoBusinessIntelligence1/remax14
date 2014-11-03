@@ -133,12 +133,12 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/home-sale-posted-ctrl.html"
         })
         .state("app.profile.home-rent-draft", {
-          url: "/home-rent-draft",
+          url: "/home-rent-draft/:mls",
           controller: "HomeRentDraftCtrl",
           templateUrl: "../views/home-rent-draft-ctrl.html"
         })
         .state("app.remax-home-rent", {
-          url: "/remax-home-rent",
+          url: "/remax-home-rent/:mls",
           controller: "HomeRentPostedCtrl",
           templateUrl: "../views/home-rent-posted-ctrl.html"
         })

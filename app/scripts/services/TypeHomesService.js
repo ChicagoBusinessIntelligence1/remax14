@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('TypeHomesService', function ($firebase, $q, url) {
+  .factory('TypeHomesService', function ($firebase, $q) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -10,7 +10,7 @@ angular.module('app')
         var that = this;
         var defered = $q.defer();
 
-        that.repoUrl = url.residentialSale;
+        that.repoUrl = 'https://remax14.firebaseio.com/residential/sale/homes';
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var allHomes = that.repoRef.$asArray();
         var condos = [];
@@ -22,16 +22,15 @@ angular.module('app')
               condos.push(home);
             }
           }
+        });
           defered.resolve(condos);
-
-        })
         return defered.promise;
       },
       getSingleFamily: function () {
         var that = this;
         var defered = $q.defer();
 
-        that.repoUrl = url.residentialSale;
+        that.repoUrl = 'https://remax14.firebaseio.com/residential/sale/homes';
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var allHomes = that.repoRef.$asArray();
         var condos = [];
@@ -52,7 +51,7 @@ angular.module('app')
         var that = this;
         var defered = $q.defer();
 
-        that.repoUrl = url.residentialSale;
+        that.repoUrl = 'https://remax14.firebaseio.com/residential/sale/homes';
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var allHomes = that.repoRef.$asArray();
 

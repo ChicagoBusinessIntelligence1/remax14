@@ -8,11 +8,12 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-home-draft-sm.html',
       scope: {
         draft: '=',
-        removeDraft:'&',
-        postDraft:'&'
+        removeDraft: '&',
+        postDraft: '&'
       },
-      link: function ($scope, element, attr) {
-
+      require: '^sv-drafts-list',
+      link: function ($scope, element, attr, svListCtrl) {
+        $scope.homeStatus = svListCtrl.homeStatus;
       }
     };
   });

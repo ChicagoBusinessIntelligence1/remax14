@@ -28,11 +28,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: 'ProfileCtrl',
           templateUrl: '../partials/main.html'
         })
-        .state("app.remax-home-sale", {
-          url: "/remax-home-sale/:mls",
-          controller: "OneHomeCtrl",
-          templateUrl: "../views/one-home.html"
-        })
         .state('app.admin', {
           url: '/admin',
           controller: 'LoginCtrl',
@@ -127,10 +122,15 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "HomeDraftsCtrl",
           templateUrl: "../views/home-drafts-ctrl.html"
         })
-        .state("app.profile.one-home-draft", {
-          url: "/one-home-draft/:mls",
-          controller: "OneHomeDraftCtrl",
-          templateUrl: "../views/one-home-draft.html"
+        .state("app.profile.home-sale-draft", {
+          url: "/home-sale-draft/:mls",
+          controller: "HomeSaleDraftCtrl",
+          templateUrl: "../views/home-sale-draft-ctrl.html"
+        })
+        .state("app.remax-home", {
+          url: "/remax-home/:mls",
+          controller: "HomeSalePostedCtrl",
+          templateUrl: "../views/home-sale-posted-ctrl.html"
         })
         .state("app.profile.broker-sold-homes", {
           url: "/broker-sold-homes",

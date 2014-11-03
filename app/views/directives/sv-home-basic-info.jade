@@ -9,13 +9,13 @@
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.remax-home-sale({mls:home.$id})')
+            a.text-app.address-basic(ui-sref='app.remax-home({mls:home.$id})')
               | {{home|showSectionProp:'street'}},
               | {{home|showSectionProp:'city'}},
               | {{home|showSectionProp:'state'}}
               | {{home|showSectionProp:'zip'}}
           li.pull-right
-            a.price-style(ui-sref='app.remax-home-sale')
+            a.price-style(ui-sref='app.remax-home')
               | {{home|showSectionProp:'price'|currency:"$":0}}
   .app-content-five
     .row
@@ -34,7 +34,7 @@
                 | Share
   .row
     .col-sm-7
-      a.thumbnail(ui-sref='app.remax-home-sale({mls:home.$id})')
+      a.thumbnail(ui-sref='app.remax-home({mls:home.$id})')
         sv-photo-thumb(img='../images/houses/1.jpg' height='270')
     .col-sm-5
       .panel.panel-default.panel-basic-info
@@ -44,7 +44,7 @@
           | {{home|showSectionProp:'propertyDescription'}}
           span
             em
-              a(ui-sref='app.remax-home-sale({mls:home.$id})').read-more  Read more...
+              a(ui-sref='app.remax-home({mls:home.$id})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

@@ -8,9 +8,14 @@
           h5 {{draft|showSectionDraft:'price'|currency:'$':0}}
   hr
   .row
-    .col-sm-6
-      a.thumbnail(ui-sref='app.profile.one-home-draft({mls:draft.$id})')
-        sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+    .col-sm-6(ng-switch="homeStatus")
+      div(ng-switch-when="draft")
+        a.thumbnail(ui-sref='app.profile.home-sale-draft({mls:draft.$id})')
+          sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+      div(ng-switch-when="active")
+        a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
+          sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+
     .col-sm-6
       .draft-info-container
         ul.list-unstyled
@@ -23,8 +28,8 @@
               | {{draft|showSectionDraft:'state'}}
               | {{draft|showSectionDraft:'zip'}}
           li
-      .draft-info-container
-        ul.list-inline
+      .draft-info-container(ng-switch="homeStatus")
+        ul.list-inline(ng-switch-when="draft")
           li
             button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})')
               i.fa.fa-globe.fa-fw.fa-lg
@@ -33,4 +38,14 @@
             button.btn.btn-default.btn-sm.btn-draft(ng-click='removeDraft({mls:draft.$id})')
               i.fa.fa-trash.fa-fw.fa-lg
               | Delete
+
+        ul.list-inline(ng-switch-when="active")
+          li
+            button.btn.btn-default.btn-sm.btn-draft()
+              i.fa.fa-globe.fa-fw.fa-lg
+              | Trash
+          li
+            button.btn.btn-default.btn-sm.btn-draft()
+              i.fa.fa-trash.fa-fw.fa-lg
+              | Archive
 

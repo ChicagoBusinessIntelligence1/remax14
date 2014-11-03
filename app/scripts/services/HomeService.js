@@ -33,14 +33,11 @@ angular.module('app')
 
       saveToDrafts: function (home) {
         var defered = $q.defer();
-
         var mls = HomePropertyService.find(home, 'mls');
-
         var brokerDraftsRepo = urlCommon.brokers + $rootScope.user.id + this.url.residentialDrafts + mls;
         var brokers = $firebase(new Firebase(brokerDraftsRepo));
 
         home = CleanObjectService.clean(home);
-
         brokers.$set(home).then(function () {
             // success
             defered.resolve(true);
@@ -54,6 +51,5 @@ angular.module('app')
         );
         return defered.promise;
       }
-
     };
   });

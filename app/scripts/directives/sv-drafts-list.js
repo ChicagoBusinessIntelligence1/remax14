@@ -7,16 +7,23 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-drafts-list.html',
       scope: {
         isRent: '=',
-        isDraft: '='
+        homeStatus: '='
+      },
+      controller: function ($scope) {
+        this.homeStatus = $scope.homeStatus;
       },
       link: function ($scope, element, attr) {
         var url = $scope.isRent ? urlRental : urlSale;
-        if ($scope.isDraft) {
-          $scope.homes = DraftsService.all(url, $rootScope.user.id);
-        } else {
-          BrokerHomesService.findBrokerHomes(url, $rootScope.user.id).then(function (myHomes) {
-            $scope.homes = myHomes;
-          })
+        switch ($scope.homeStatus) {
+          case 'draft':
+            $scope.homes = DraftsService.all(url, $rootScope.user.id);
+            break;
+          case 'active':
+            BrokerHomesService.findBrokerHomes(url, $rootScope.user.id).then(function (myHomes) {
+              $scope.homes = myHomes;
+            })
+            break;
+
         }
         $scope.removeDraft = function (mls) {
           DraftsService.remove(mls)

@@ -14,6 +14,7 @@ angular.module('app')
       require: '^sv-drafts-list',
       link: function ($scope, element, attr, svListCtrl) {
         $scope.homeStatus = svListCtrl.homeStatus;
+        $scope.isRent = svListCtrl.isRent;
       }
     };
   });

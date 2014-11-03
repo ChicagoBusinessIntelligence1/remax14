@@ -11,6 +11,7 @@ angular.module('app')
       },
       controller: function ($scope) {
         this.homeStatus = $scope.homeStatus;
+        this.isRent = $scope.isRent;
       },
       link: function ($scope, element, attr) {
         var url = $scope.isRent ? urlRental : urlSale;

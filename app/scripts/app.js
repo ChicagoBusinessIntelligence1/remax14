@@ -132,6 +132,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "HomeSalePostedCtrl",
           templateUrl: "../views/home-sale-posted-ctrl.html"
         })
+        .state("app.profile.home-rent-draft", {
+          url: "/home-rent-draft",
+          controller: "HomeRentDraftCtrl",
+          templateUrl: "../views/home-rent-draft-ctrl.html"
+        })
+        .state("app.remax-home-rent", {
+          url: "/remax-home-rent",
+          controller: "HomeRentPostedCtrl",
+          templateUrl: "../views/home-rent-posted-ctrl.html"
+        })
         .state("app.profile.broker-sold-homes", {
           url: "/broker-sold-homes",
           controller: "BrokerSoldHomesCtrl",
@@ -177,16 +187,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-			.state("app.home-rent-draft", {
-				url: "/home-rent-draft", 
-				controller:"HomeRentDraftCtrl",
-				templateUrl: "../views/home-rent-draft-ctrl.html"
-			})
-			.state("app.home-rent-posted", {
-				url: "/home-rent-posted", 
-				controller:"HomeRentPostedCtrl",
-				templateUrl: "../views/home-rent-posted-ctrl.html"
-			})
 //#state
     })
   ;

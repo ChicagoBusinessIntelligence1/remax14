@@ -10,11 +10,19 @@
   .row
     .col-sm-6(ng-switch="homeStatus")
       div(ng-switch-when="draft")
-        a.thumbnail(ui-sref='app.profile.home-sale-draft({mls:draft.$id})')
-          sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.profile.home-rent-draft({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.profile.home-sale-draft({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
       div(ng-switch-when="active")
-        a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
-          sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.remax-home-rent({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
 
     .col-sm-6
       .draft-info-container

@@ -11,7 +11,6 @@ angular.module('app')
       },
 
       controller: function ($scope) {
-
         this.required = ['mls', 'state', 'city', 'zip'];
       },
 

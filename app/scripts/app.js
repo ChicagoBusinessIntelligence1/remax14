@@ -175,8 +175,8 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         .state("app.search-results", {
           url: "/search-results",
           resolve: {
-            homes: function (SearchService) {
-              return SearchService.find();
+            homes: function (SearchService, urlSale) {
+              return SearchService.find(urlSale);
             }
           },
           controller: "SearchResultsCtrl",

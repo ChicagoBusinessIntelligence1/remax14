@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .directive('svDraftsList', function (urlRental, urlSale, DraftsService, $rootScope, BrokerHomesService) {
+  .directive('svHomesUserList', function (urlRental, urlSale, DraftsService, $rootScope, BrokerHomesService) {
     return {
       restrict: 'E',
-      templateUrl: '../../views/directives/sv-drafts-list.html',
+      templateUrl: '../../views/directives/sv-homes-user-list.html',
       scope: {
         isRent: '=',
         homeStatus: '='

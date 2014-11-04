@@ -1,0 +1,4 @@
+.drafts-container
+  ul.row.list-inline
+    li.col-sm-6(ng-repeat='(key, home) in homes')
+      sv-home-sm( draft='home' post-draft='postDraft(mls)' remove-draft='removeDraft(mls)')

@@ -193,10 +193,10 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "WishListCtrl",
           templateUrl: "../views/wish-list-ctrl.html"
         })
-        .state("app.profile.watch-list", {
-          url: "/watch-list",
-          controller: "WatchListCtrl",
-          templateUrl: "../views/watch-list-ctrl.html"
+        .state("app.profile.watch-property", {
+          url: "/watch-property",
+          controller: "WatchPropertyCtrl",
+          templateUrl: "../views/watch-property-ctrl.html"
         })
         .state("app.profile.broker-homes", {
           url: "/homes-shared",

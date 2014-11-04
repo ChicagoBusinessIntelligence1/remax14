@@ -59,6 +59,19 @@ angular.module('app')
           defered.resolve(allHomes);
         })
         return defered.promise;
+      },
+      getAllForRent: function () {
+        var that = this;
+        var defered = $q.defer();
+
+        that.repoUrl = 'https://remax14.firebaseio.com/residential/rental/homes';
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var allHomes = that.repoRef.$asArray();
+
+        allHomes.$loaded(function () {
+          defered.resolve(allHomes);
+        })
+        return defered.promise;
       }
     };
 

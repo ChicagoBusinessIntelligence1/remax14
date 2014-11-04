@@ -34,8 +34,12 @@
                 | Share
   .row
     .col-sm-7
-      a.thumbnail(ui-sref='app.remax-home({mls:home.$id})')
-        sv-photo-thumb(img='../images/houses/1.jpg' height='270')
+      div(ng-if="!isRent")
+        a.thumbnail(ui-sref='app.remax-home({mls:home.$id})')
+          sv-photo-thumb(img='../images/houses/1.jpg' height='270')
+      div(ng-if="isRent")
+        a.thumbnail(ui-sref='app.remax-home-rent({mls:home.$id})')
+          sv-photo-thumb(img='../images/houses/1.jpg' height='270')
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('SearchService', function ($firebase, $q,  $rootScope) {
+  .factory('SearchService', function ($firebase, $q, $rootScope) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -10,7 +10,7 @@ angular.module('app')
         var that = this;
         var defered = $q.defer();
         var query = $rootScope.query;
-
+        console.log(query);
         that.repoUrl = url.residential;
         var firebase = new Firebase(that.repoUrl);
         that.repoRef = $firebase(firebase);
@@ -24,12 +24,12 @@ angular.module('app')
             for (var i = 0; i < allHomes.length; i++) {
               var home = allHomes[i];
               var isHomeIncluded = true;
-              if (!_.isUndefined(query.location)) {
+              if (!_.isUndefined(query.location) && !_.isEmpty(query.location)) {
                 var queryLocationArr = _.map(query.location.split(' '), function (el) {
                   return el.trim().toLowerCase()
                 });
               } else {
-                var queryLocationArr =[];
+                var queryLocationArr = [];
 
               }
               for (var j = 0; j < home.length; j++) {

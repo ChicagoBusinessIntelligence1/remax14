@@ -3375,11 +3375,9 @@ label {
 }
 .ul-data-just li span {
   font-size: 13px;
-  display: inline-block;
 }
 .ul-data-just li span:first-child {
   font-weight: 700;
-  width: 145px;
 }
 @media screen and (max-width: 992px) {
   .ul-data-just li span {
@@ -4554,5 +4552,5 @@ Selected House
   animation-name: fadeIn;
 }
 .remove-width {
-  width: 100px !important;
+  width: 100% !important;
 }

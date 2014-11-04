@@ -35,7 +35,7 @@ div
                   sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
                   sv-area(max-len='maxLen' ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
                   sv-chbx(ng-switch-when='chbx' section-property='property'  r='required.indexOf(property.title)>-1')
-                  sv-drop-down(ng-switch-when='drdwn' section-property='property') sdfsdfsdfsdf
+                  sv-drop-down(ng-switch-when='drdwn' section-property='property'  r='required.indexOf(property.title)>-1')
           .col-sm-6.col-xs-12
             ul.ul-data-just.list-unstyled
               li.row(ng-repeat='property in section.content| orderBy:"order"' ng-show='$odd')

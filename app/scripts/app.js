@@ -26,7 +26,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
             }
           },
           controller: 'ProfileCtrl',
-          templateUrl: '../partials/main.html'
+          templateUrl: '../views/main.html'
         })
         .state('app.admin', {
           url: '/admin',
@@ -45,7 +45,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state('app.home', {
           url: '/home',
-          templateUrl: '../partials/home.html'
+          templateUrl: '../views/home.html'
         })
         .state('app.remax-articles', {
           url: '/remax-1st-class-articles',

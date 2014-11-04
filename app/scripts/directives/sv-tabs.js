@@ -12,16 +12,6 @@ angular.module('app')
           $scope.tabActive = key;
         };
 
-        $scope.tabs = [
-          {
-            title: 'Property for Sale',
-            view: 'views/tabs/saleRent/sale.html'
-          },
-          {
-            title: 'Property for Rent',
-            view: 'views/tabs/saleRent/rent.html'
-          }
-        ];
       }
     };
   });

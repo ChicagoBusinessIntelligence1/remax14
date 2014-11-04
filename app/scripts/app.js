@@ -103,6 +103,16 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "CondosSaleHomesCtrl",
           templateUrl: "../views/condos-sale-homes-ctrl.html"
         })
+        .state("app.all-rental-houses", {
+          url: "/all-rental-houses",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getRentalHouses();
+            }
+          },
+          controller: "AllRentalHousesCtrl",
+          templateUrl: "../views/all-rental-houses-ctrl.html"
+        })
 
         .state("app.single-family-homes", {
           url: "/single-family-homes",
@@ -198,11 +208,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
-			.state("app.all-rental-houses", {
-				url: "/all-rental-houses", 
-				controller:"AllRentalHousesCtrl",
-				templateUrl: "../views/all-rental-houses-ctrl.html"
-			})
 //#state
     })
   ;

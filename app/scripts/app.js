@@ -82,6 +82,17 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "AllSaleHomesCtrl",
           templateUrl: "../views/all-sale-homes-ctrl.html"
         })
+        .state("app.all-rental-homes", {
+          url: "/all-rental-homes",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getAllForRent();
+            }
+          },
+          controller: "AllRentalHomesCtrl",
+          templateUrl: "../views/all-rental-homes-ctrl.html"
+        })
+
         .state("app.condos-sale-homes", {
           url: "/condos-sale-homes",
           resolve: {
@@ -91,6 +102,26 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           },
           controller: "CondosSaleHomesCtrl",
           templateUrl: "../views/condos-sale-homes-ctrl.html"
+        })
+        .state("app.all-rental-houses", {
+          url: "/all-rental-houses",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getRentalHouses();
+            }
+          },
+          controller: "AllRentalHousesCtrl",
+          templateUrl: "../views/all-rental-houses-ctrl.html"
+        })
+        .state("app.all-rental-apartments", {
+          url: "/all-rental-apartments",
+          resolve: {
+            homes: function (TypeHomesService) {
+              return TypeHomesService.getRentalApartments();
+            }
+          },
+          controller: "AllRentalApartmentsCtrl",
+          templateUrl: "../views/all-rental-apartments-ctrl.html"
         })
 
         .state("app.single-family-homes", {

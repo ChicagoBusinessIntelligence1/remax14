@@ -8,7 +8,10 @@ angular.module('app')
       scope: {
         home: '='
       },
-      link: function ($scope, element, attr) {
+      require: '^sv-homes-list',
+      link: function ($scope, element, attr, svRentalsCtrl) {
+        $scope.isRent = svRentalsCtrl.isRent;
+        console.log($scope.isRent);
       }
     };
   });

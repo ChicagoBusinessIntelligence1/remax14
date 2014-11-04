@@ -24,7 +24,6 @@ angular.module('app')
               $scope.homes = myHomes;
             })
             break;
-
         }
         $scope.removeDraft = function (mls) {
           DraftsService.remove(mls)

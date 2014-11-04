@@ -7,7 +7,11 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-homes-list.html',
       scope: {
-        homes: '='
+        homes: '=',
+        isRent: '='
+      },
+      controller: function ($scope) {
+        this.isRent = $scope.isRent;
       },
       link: function ($scope, element, attr) {
 
@@ -16,8 +20,5 @@ angular.module('app')
         $scope.totalPages = Math.ceil($scope.homes.length / pageHomesNumber);
         $scope.isDataLoading = false;
       },
-      controller: function ($scope) {
-        //this.var=something;
-      }
     };
   });

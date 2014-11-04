@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('WatchListCtrl', function ($scope, $firebase, $rootScope) {
+  .controller('WatchPropertyCtrl', function ($scope, $firebase, $rootScope) {
     $scope.homeStatus = 'active';
 
     $scope.tabs = [

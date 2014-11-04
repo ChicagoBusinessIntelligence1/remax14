@@ -11,7 +11,7 @@ angular.module('app')
         removeDraft: '&',
         postDraft: '&'
       },
-      require: '^sv-drafts-list',
+      require: '^sv-homes-user-list',
       link: function ($scope, element, attr, svListCtrl) {
         $scope.homeStatus = svListCtrl.homeStatus;
         $scope.isRent = svListCtrl.isRent;

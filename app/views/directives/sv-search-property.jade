@@ -1,77 +1,26 @@
-.search-tabs-wrapper
-  ul.nav.nav-tabs(role="tablist")
-    li.active
-      a(href="#for-sale" role="tab" data-toggle="tab") PROPERTY FOR SALE
-    li
-      a(href="#for-rent" role="tab" data-toggle="tab") PROPERTY FOR RENT
-  .tab-content.search-tabs-content
-    .tab-pane.active(id="for-sale")
-      form(id="form-search-sale", name="form-search-sale", ng-submit="mainSearch()")
-        //.alert-box.warning.round(data-alert, ng-show="loginError")
-        //  | Incorrect login or password
-        //  | a.close(href="#") &times;
-        .form-group
-          label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
-          input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="query.location")
-        .form-group
-          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
-          .row
-            .col-md-6.col-sm-6.col-xs-6
-              input.form-control(name="priceMin" id="priceMin", ng-model='query.priceMin' placeholder="$ From")
-            .col-md-6.col-sm-6.col-xs-6
-              input.form-control(name="priceMax" id="priceMax", ng-model='query.priceMax' placeholder="$ To")
-        .form-group
-          .row
-            .col-md-6.col-sm-6.col-xs-6
-              label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
-              input.form-control(name="bedrooms" id="bedrooms", ng-model='query.bedrooms' placeholder="#")
-            .col-md-6.col-sm-6.col-xs-6
-              label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
-              input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#")
-        button.btn.btn-primary.submit-query.btn-mob-dev
-          i.fa.fa-search.fa-fw
-          | Search
-        hr
-      .text-center.aside-browse-buttons
-        .form-group
-          button.btn.btn-default.bnt-lg.btn-block(ui-sref='app.all-sale-homes') BROWSE ALL LISTINGS FOR SALE
-        .form-group
-          button.btn.btn-default.bnt-lg.btn-block(ui-sref='app.single-family-homes') SINGLE FAMILY HOMES FOR SALE
-        .form-group
-          button.btn.btn-default.bnt-lg.btn-block(ui-sref='app.condos-sale-homes') CONDOS FOR SALE
-
-    .tab-pane(id="for-rent")
-      .tab-pane.active(id="for-rent")
-        form(id="form-search-rent", name="form-search-rent", ng-submit="", novalidate)
-          //.alert-box.warning.round(data-alert, ng-show="loginError")
-          //  | Incorrect login or password
-          //  | a.close(href="#") &times;
-          .form-group
-            label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
-            input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="location.data")
-          .form-group
-            label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
-            .row
-              .col-md-6.col-sm-6.col-xs-6
-                input.form-control(name="from" id="from", placeholder="$ From")
-              .col-md-6.col-sm-6.col-xs-6
-                input.form-control(name="to" id="to", placeholder="$ To")
-          .form-group
-            .row
-              .col-md-6.col-sm-6.col-xs-6
-                label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
-                input.form-control(name="bedrooms" id="bedrooms", placeholder="#")
-              .col-md-6.col-sm-6.col-xs-6
-                label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
-                input.form-control(name="bathrooms" id="bathrooms", placeholder="#")
-          button.btn.btn-primary.submit-query.btn-mob-dev
-            i.fa.fa-search.fa-fw
-            | Search
-          hr
-          .form-group.text-center
-            button.btn.btn-default.bnt-lg.btn-block(type="button") BROWSE ALL LISTINGS FOR RENT
-          .form-group.text-center
-            button.btn.btn-default.bnt-lg.btn-block(type="button") APARTMENTS
-          .form-group.text-center
-            button.btn.btn-default.bnt-lg.btn-block(type="button") HOUSES
-
+.app-container-10
+  form.search-form(id="form", name="form", ng-submit="mainSearch()")
+    //.alert-box.warning.round(data-alert, ng-show="loginError")
+    //  | Incorrect login or password
+    //  | a.close(href="#") &times;
+    .form-group
+      label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
+      input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="query.location")
+    .form-group
+      label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
+      .row
+        .col-md-6.col-sm-6.col-xs-6
+          input.form-control(name="priceMin" id="priceMin", ng-model='query.priceMin' placeholder="$ From")
+        .col-md-6.col-sm-6.col-xs-6
+          input.form-control(name="priceMax" id="priceMax", ng-model='query.priceMax' placeholder="$ To")
+    .form-group
+      .row
+        .col-md-6.col-sm-6.col-xs-6
+          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
+          input.form-control(name="bedrooms" id="bedrooms", ng-model='query.bedrooms' placeholder="#")
+        .col-md-6.col-sm-6.col-xs-6
+          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
+          input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#")
+    button.btn.btn-primary.submit-query.btn-mob-dev
+      i.fa.fa-search.fa-fw
+      | Search

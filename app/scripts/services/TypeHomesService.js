@@ -46,6 +46,26 @@ angular.module('app')
         });
         return defered.promise;
       },
+      getRentalApartments: function () {
+        var that = this;
+        var defered = $q.defer();
+
+        that.repoUrl = 'https://remax14.firebaseio.com/residential/rental/homes';
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var allHomes = that.repoRef.$asArray();
+        var apartments = [];
+
+        allHomes.$loaded(function () {
+          for (var i = 0; i < allHomes.length; i++) {
+            var home = allHomes[i];
+            if (home[0].type === 'Apartment') {
+              apartments.push(home);
+            }
+          }
+          defered.resolve(apartments);
+        });
+        return defered.promise;
+      },
       getSingleFamily: function () {
         var that = this;
         var defered = $q.defer();

@@ -5,22 +5,23 @@
     //  | a.close(href="#") &times;
     .form-group
       label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
-      input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="query.location")
+      input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="location.data")
     .form-group
       label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
       .row
         .col-md-6.col-sm-6.col-xs-6
-          input.form-control(name="priceMin" id="priceMin", ng-model='query.priceMin' placeholder="$ From")
+          input.form-control(name="from" id="from", placeholder="$ From")
         .col-md-6.col-sm-6.col-xs-6
-          input.form-control(name="priceMax" id="priceMax", ng-model='query.priceMax' placeholder="$ To")
+          input.form-control(name="to" id="to", placeholder="$ To")
     .form-group
       .row
         .col-md-6.col-sm-6.col-xs-6
           label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
-          input.form-control(name="bedrooms" id="bedrooms", ng-model='query.bedrooms' placeholder="#")
+          input.form-control(name="bedrooms" id="bedrooms", placeholder="#")
         .col-md-6.col-sm-6.col-xs-6
           label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
-          input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#")
+          input.form-control(name="bathrooms" id="bathrooms", placeholder="#")
     button.btn.btn-primary.submit-query.btn-mob-dev
       i.fa.fa-search.fa-fw
       | Search
+

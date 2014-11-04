@@ -7,4 +7,15 @@ angular.module('app')
         $rootScope.user = user.thirdPartyUserData;
       })
     }
+
+    $scope.tabs = [
+      {
+        title: 'PROPERTY FOR SALE',
+        view: 'views/tabs/search/searchSale.html'
+      },
+      {
+        title: 'PROPERTY FOR RENT',
+        view: 'views/tabs/search/searchRent.html'
+      }
+    ];
   });

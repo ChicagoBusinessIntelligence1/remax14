@@ -182,6 +182,17 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "SearchSaleResultsCtrl",
           templateUrl: "../views/search-results-ctrl.html"
         })
+
+        .state("app.search-rent-results", {
+          url: "/search-rent-results?location&priceMin&priceMax&bedrooms&bathrooms",
+          resolve: {
+            homes: function (SearchService, urlRent) {
+              return SearchService.find(urlRent);
+            }
+          },
+          controller:"SearchRentResultsCtrl",
+          templateUrl: "../views/search-rent-results-ctrl.html"
+        })
         .state("login", {
           url: "/login",
           controller: "LoginCtrl",
@@ -191,11 +202,6 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 				url: "/setting-states-fill",
 				controller:"SettingStatesFillCtrl",
 				templateUrl: "../views/setting-states-fill-ctrl.html"
-			})
-			.state("app.search-rent-results", {
-				url: "/search-rent-results", 
-				controller:"SearchRentResultsCtrl",
-				templateUrl: "../views/search-rent-results-ctrl.html"
 			})
 //#state
     })

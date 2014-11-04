@@ -5,6 +5,5 @@ angular.module('app')
 
     $scope.homes = homes;
     $scope.isRent = true;
-    console.log($scope.homes);
 
   });

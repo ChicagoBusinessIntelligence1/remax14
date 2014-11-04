@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .directive('svTxt', function () {
+  .directive('svTxt', function (urlCommon, $firebase) {
     return {
       restrict: 'E',
       replace: true,
       template: '<div ng-form="{{nameId+\'Form\'}}" class="form-group txt-group">' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText"   type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
+      '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText && isTypesHeaded" ng-options="state for state  in states" bs-typeahead  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
+      '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText && !isTypesHeaded"   type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value"  ng-if="!isText" sv-only-numbers type="number" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +
       '<span ng-show="r && isRequiredInvalid" class="notice error-note">Required</span>' +
@@ -17,12 +18,27 @@ angular.module('app')
         r: '='
       },
       link: function ($scope, element, attr) {
+        var title = $scope.sectionProperty.title;
+        $scope.isTypesHeaded = title === 'state';
+
+        if ($scope.isTypesHeaded) {
+          var repo = urlCommon.residentialSettings + title + 's';
+          $scope.states = [];
+          $scope.hints = $firebase(new Firebase(repo)).$asArray();
+          $scope.hints.$loaded(function () {
+            angular.forEach($scope.hints, function (hint) {
+              $scope.states.push(hint.abbreviation);
+            })
+          });
+
+        }
+
         $scope.isMaxInvalid = false;
         $scope.isRequiredInvalid = false;
         $scope.max = (!!$scope.maxLen) ? $scope.maxLen : 150;
 
         $scope.$watch('model.value', function (newValue) {
-          if (_.isUndefined(newValue)|| _.isNull(newValue)) {
+          if (_.isUndefined(newValue) || _.isNull(newValue)) {
             $scope.isMaxInvalid = false;
             $scope.isRequiredInvalid = true;
             return;

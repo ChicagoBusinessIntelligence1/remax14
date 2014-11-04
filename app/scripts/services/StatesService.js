@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('StatesService', function ($firebase, $q, url) {
+  .factory('StatesService', function () {
         return {
 
           all: function () {

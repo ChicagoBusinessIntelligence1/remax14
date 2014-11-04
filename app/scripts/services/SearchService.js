@@ -10,7 +10,6 @@ angular.module('app')
         var that = this;
         var defered = $q.defer();
         var query = $rootScope.query;
-        console.log(query);
         that.repoUrl = url.residential;
         var firebase = new Firebase(that.repoUrl);
         that.repoRef = $firebase(firebase);

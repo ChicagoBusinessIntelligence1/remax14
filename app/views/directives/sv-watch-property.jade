@@ -1,1 +1,28 @@
-div sv-watch-property Template
+.row
+  .col-xs-12
+    table.table.table-hover
+      thead
+        tr.row
+          th.col-xs-2
+            | Date Created
+          th.col-xs-4
+            | Search Name
+          th.col-xs-5
+            | Details
+          th.col-xs-1
+      tbody
+        tr.row
+          td.col-xs-2
+            span 01/01/2014
+          td.col-xs-4
+            a(href='#' editable-text='search.name' buttons="no" e-required e-placeholder="Enter name") {{search.name || 'empty'}} &nbsp
+              i.fa.fa-edit.fa-fw
+          td.col-xs-4
+            a(href='#' editable-textarea='search.details' buttons="no" e-rows="5" e-cols="28") {{search.details || 'empty'}} &nbsp
+              i.fa.fa-edit.fa-fw
+          td.col-xs-1
+            button.btn.btn-primary(data-toggle="tooltip" data-placement="top" title="Run this Search")
+              | Run
+          td.col-xs-1
+            sv-btn-remove-search
+

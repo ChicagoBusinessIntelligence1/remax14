@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeDraftSm', function () {
+  .directive('svHomeSm', function () {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-home-draft-sm.html',
+      templateUrl: '../../views/directives/sv-home-sm.html',
       scope: {
         draft: '=',
         removeDraft: '&',

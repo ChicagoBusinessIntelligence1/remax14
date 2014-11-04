@@ -172,14 +172,14 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "HomesSharedCtrl",
           templateUrl: "../views/homes-shared-ctrl.html"
         })
-        .state("app.search-results", {
-          url: "/search-results",
+        .state("app.search-sale-results", {
+          url: "/search-sale-results?location&priceMin&priceMax&bedrooms&bathrooms",
           resolve: {
             homes: function (SearchService, urlSale) {
               return SearchService.find(urlSale);
             }
           },
-          controller: "SearchResultsCtrl",
+          controller: "SearchSaleResultsCtrl",
           templateUrl: "../views/search-results-ctrl.html"
         })
         .state("login", {
@@ -188,9 +188,14 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/login-ctrl.html"
         })
 			.state("app.setting-states-fill", {
-				url: "/setting-states-fill", 
+				url: "/setting-states-fill",
 				controller:"SettingStatesFillCtrl",
 				templateUrl: "../views/setting-states-fill-ctrl.html"
+			})
+			.state("app.search-rent-results", {
+				url: "/search-rent-results", 
+				controller:"SearchRentResultsCtrl",
+				templateUrl: "../views/search-rent-results-ctrl.html"
 			})
 //#state
     })

@@ -198,6 +198,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           controller: "LoginCtrl",
           templateUrl: "../views/login-ctrl.html"
         })
+			.state("app.all-rental-houses", {
+				url: "/all-rental-houses", 
+				controller:"AllRentalHousesCtrl",
+				templateUrl: "../views/all-rental-houses-ctrl.html"
+			})
 //#state
     })
   ;

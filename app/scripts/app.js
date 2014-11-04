@@ -211,14 +211,14 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
             }
           },
           controller: "SearchSaleResultsCtrl",
-          templateUrl: "../views/search-results-ctrl.html"
+          templateUrl: "../views/search-sale-results-ctrl.html"
         })
 
         .state("app.search-rent-results", {
           url: "/search-rent-results?location&priceMin&priceMax&bedrooms&bathrooms",
           resolve: {
-            homes: function (SearchService, urlRent) {
-              return SearchService.find(urlRent);
+            homes: function (SearchService, urlRental) {
+              return SearchService.find(urlRental);
             }
           },
           controller:"SearchRentResultsCtrl",

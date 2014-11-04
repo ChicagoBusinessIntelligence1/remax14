@@ -5,28 +5,27 @@ angular.module('app')
     return {
       templateUrl: '../views/directives/sv-search-property.html',
       restrict: 'E',
-      scope:{
-       isRent:'='
+      scope: {
+        isRent: '='
       },
       link: function ($scope, element, attrs) {
 
         console.log($scope.isRent);
 
         $scope.mainSearch = function () {
-          var nameType = $scope.isRent ? 'rent':'sale';
+          var nameType = $scope.isRent ? 'rent' : 'sale';
 
-
-
-
+          var stateName = "app.search-" + nameType + "-results";
+          console.log(stateName);
           $rootScope.query = $scope.query;
 
           if (_.isUndefined($scope.query)) {
             $scope.query = {
-              location:''
+              location: ''
             };
 
           }
-          $state.go('app.search-'+nameType+'-results', {
+          $state.go(stateName, {
             location: $scope.query.location,
             priceMin: $scope.query.priceMin,
             priceMax: $scope.query.priceMax,
@@ -34,10 +33,6 @@ angular.module('app')
             bathrooms: $scope.query.bathrooms
           });
 
-        };
-        $scope.showAllSaleHomes = function () {
-          $rootScope.query = undefined;
-          $state.go('app.search-results', null, {reload: true});
         };
       }
 

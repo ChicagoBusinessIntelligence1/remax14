@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('SearchResultsCtrl', function (homes, $scope) {
+  .controller('SearchSaleResultsCtrl', function (homes, $scope) {
     $scope.sortBy = {
       val: 'date'
     };

@@ -28,7 +28,7 @@ angular.module('app')
 
         var floorings = ['Bamboo', 'Carpet and Carpet Tiles', 'Cork', 'Hardwood', 'Engineered Wood', 'Laminate flooring', 'Hard Flooring', 'Linoleum', 'Vinyl', 'Rubber'];
         var roomFeatures = ['floor heating', 'ceiling and floor fan', 'eastern side', '2 levels conditioning', 'extra lights', 'high ceilings', 'modern design', 'electronic control'];
-        var propertyTypes =['Single Family House','Apartment','Condo','Multi Family House'];
+        var propertyTypes =['Single Family Home','Apartment','Condo','Multi Family Home'];
         var propertyStyles =['Colonial','Contemporary','Federal','Colonial Revival','Strict Style'];
         switch (true) {
           case title.indexOf('price') > -1:

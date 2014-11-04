@@ -38,7 +38,7 @@ angular.module('app')
         allHomes.$loaded(function () {
           for (var i = 0; i < allHomes.length; i++) {
             var home = allHomes[i];
-            if (home[0].type === 'Single Family House') {
+            if (home[0].type === 'Single Family Home') {
               condos.push(home);
             }
           }

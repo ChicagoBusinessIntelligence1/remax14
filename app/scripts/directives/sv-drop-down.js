@@ -14,7 +14,6 @@ angular.module('app')
         var dropDownRef = $firebase(new Firebase(dropDownRepo)).$asArray();
         dropDownRef.$loaded(function (types) {
           $scope.types = types;
-
         })
       }
     };

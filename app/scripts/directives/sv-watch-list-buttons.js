@@ -7,22 +7,24 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-watch-list-buttons.html',
       scope: {
-        mls: '@'
+        mls: '@',
+        isRent:'='
       },
       link: function ($scope, element, attr) {
+        var saleRent = $scope.isRent ? 'rent':'sale';
         $rootScope.$watch('user.watchList', function (list) {
           if (_.isUndefined(list)) {
             return;
           }
-          $scope.isWatched = $rootScope.user.watchList.indexOf($scope.mls) > -1;
+          $scope.isWatched = $rootScope.user.watchList[saleRent].indexOf($scope.mls) > -1;
         });
         $scope.addToWatchList = function (mls) {
-          WatchListService.addHome(mls).then(function () {
+          WatchListService.addHome($scope.isRent,mls).then(function () {
             $scope.isWatched = true;
           });
         };
         $scope.removeFromWatchList = function (mls) {
-          WatchListService.removeHome(mls).then(function () {
+          WatchListService.removeHome($scope.isRent,mls).then(function () {
             $scope.isWatched = false;
           });
         };

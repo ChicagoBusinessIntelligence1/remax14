@@ -5,8 +5,8 @@ angular.module('app')
     if (!_.isEmpty(user)) {
       ProfileTypeService.determine(user).then(function (user) {
         $rootScope.user = user.thirdPartyUserData;
-        WatchListService.getList().then(function (watchList) {
-          $rootScope.user.watchList = _.pluck(watchList, '$value');
+        WatchListService.getSaleRentLists().then(function (watchList) {
+          $rootScope.user.watchList = watchList;
         })
 
       })

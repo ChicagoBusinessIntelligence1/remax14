@@ -8,13 +8,13 @@ angular.module('app')
 
           all: function () {
             var that = this;
-            var defered = $q.defer();
+            var deferred = $q.defer();
 
             that.repoUrl = url.residential;
             that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
+            deferred.resolve(that.repoRef.$asArray());
+            return deferred.promise;
           }
         };
 

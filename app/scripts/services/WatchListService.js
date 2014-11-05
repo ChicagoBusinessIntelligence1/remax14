@@ -10,59 +10,69 @@ angular.module('app')
 
       getSaleRentLists: function () {
         var that = this;
-        var defered = $q.defer();
+        var deferred = $q.defer();
 
-        var watchlists={};
+        var watchLists = {};
 
         var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/watchList/';
-        that.repoUrlSale = repoUrl+'sale';
-        that.repoUrlRent = repoUrl+'rent';
+        that.repoUrlSale = repoUrl + 'sale';
+        that.repoUrlRent = repoUrl + 'rent';
 
-
-        that.repoRefSale = $firebase(new Firebase(that.repoUrSale));
+        that.repoRefSale = $firebase(new Firebase(that.repoUrlSale));
         that.repoRefRent = $firebase(new Firebase(that.repoUrlRent));
 
         var watchListSale = that.repoRefSale.$asArray();
+        var watchListRent = that.repoRefRent.$asArray();
+
         watchListSale.$loaded(function () {
-
+          watchLists.sale = _.pluck(watchListSale, '$value');
+          watchListRent.$loaded(function () {
+            watchLists.rent = _.pluck(watchListRent, '$value');
+            deferred.resolve(watchLists);
+          });
         });
-          defered.resolve(watchList);
 
-        return defered.promise;
+        return deferred.promise;
       },
-      addHome: function (mls) {
+      addHome: function (isRent, mls) {
+        var saleRent = isRent ? 'rent':'sale';
         var that = this;
-        var defered = $q.defer();
+        var deferred = $q.defer();
+        var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
 
-        that.repoRef.$asArray().$add(mls).then(function () {
+        repoRef.$asArray().$add(mls).then(function () {
           try {
-            $rootScope.user.watchList.push(mls);
+            $rootScope.user.watchList[saleRent].push(mls);
+
             toastr.success(notifications.savedToWatchlist);
-            defered.resolve(true);
+            deferred.resolve(true);
           } catch (e) {
             toastr.error('Error' + e.message);
-            defered.reject(e);
+            deferred.reject(e);
           }
         });
-        return defered.promise;
+        return deferred.promise;
       },
-      removeHome: function (mls) {
+      removeHome: function (isRent, mls) {
         var that = this;
-        var defered = $q.defer();
+        var saleRent = isRent ? 'rent':'sale';
+        var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
+        var deferred = $q.defer();
 
-        var fireIndex = $rootScope.user.watchList.indexOf(mls);
+	      var watchList = $rootScope.user.watchList[saleRent];
+        var fireIndex = watchList.indexOf(mls);
 
-        that.repoRef.$asArray().$remove(fireIndex).then(function () {
+        repoRef.$asArray().$remove(fireIndex).then(function () {
           try {
-            $rootScope.user.watchList.slice(fireIndex, 1);
+            watchList = _.without(watchList,mls);
             toastr.success(notifications.savedToWatchlist);
-            defered.resolve(true);
+            deferred.resolve(true);
           } catch (e) {
             toastr.error('Error' + e.message);
-            defered.reject(e);
+            deferred.reject(e);
           }
         });
-        return defered.promise;
+        return deferred.promise;
       }
     };
   });

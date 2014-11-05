@@ -3,22 +3,30 @@
 angular.module('app')
   .factory('WatchListService', function ($firebase, $q, mainUrl, $rootScope, notifications) {
     return {
-      repoUrl: null,
-      repoRef: null,
+      repoUrlSale: null,
+      repoRefSale: null,
+      repoUrlRent: null,
+      repoRefRent: null,
 
-      getList: function () {
+      getSaleRentLists: function () {
         var that = this;
-        this.repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/watchList/';
         var defered = $q.defer();
 
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var watchlists={};
 
-        var watchList = that.repoRef.$asArray();
+        var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/watchList/';
+        that.repoUrlSale = repoUrl+'sale';
+        that.repoUrlRent = repoUrl+'rent';
 
-        watchList.$loaded(function () {
 
-          defered.resolve(watchList);
+        that.repoRefSale = $firebase(new Firebase(that.repoUrSale));
+        that.repoRefRent = $firebase(new Firebase(that.repoUrlRent));
+
+        var watchListSale = that.repoRefSale.$asArray();
+        watchListSale.$loaded(function () {
+
         });
+          defered.resolve(watchList);
 
         return defered.promise;
       },

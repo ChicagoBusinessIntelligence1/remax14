@@ -8,10 +8,12 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-watch-list-buttons.html',
       scope: {
         mls: '@',
-        isRent:'='
       },
 
-      link: function ($scope, element, attr) {
+      require: '^sv-homes-list',
+      link: function ($scope, element, attr,svListCtrl) {
+        $scope.isRent = svListCtrl.isRent;
+
         var saleRent = $scope.isRent ? 'rent':'sale';
         $rootScope.$watch('user.watchList', function (list) {
           if (_.isUndefined(list)) {

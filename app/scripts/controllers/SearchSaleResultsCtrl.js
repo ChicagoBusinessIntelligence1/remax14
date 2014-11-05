@@ -8,5 +8,6 @@ angular.module('app')
 
     $scope.homes = homes;
 
+    $scope.isRent = false;
   });
 

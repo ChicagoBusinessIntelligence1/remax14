@@ -10,6 +10,7 @@ angular.module('app')
         mls: '@',
         isRent:'='
       },
+
       link: function ($scope, element, attr) {
         var saleRent = $scope.isRent ? 'rent':'sale';
         $rootScope.$watch('user.watchList', function (list) {

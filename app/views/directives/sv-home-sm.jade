@@ -23,6 +23,13 @@
         div(ng-if='!isRent')
           a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
             sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+      div(ng-switch-when="watchList")
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.remax-home-rent({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
 
     .col-sm-6
       .draft-info-container

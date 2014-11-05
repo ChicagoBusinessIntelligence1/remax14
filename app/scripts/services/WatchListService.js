@@ -1,21 +1,22 @@
 'use strict';
 
 angular.module('app')
-  .factory('WatchListService', function ($firebase, $q, url) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+  .factory('WatchListService', function ($firebase, $q, mainUrl, $rootScope) {
+    return {
+      repoUrl: null,
+      repoRef: null,
 
-          all: function () {
-            var that = this;
-            var defered = $q.defer();
+      addHome: function (mls) {
+        this.repoUrl = mainUrl + $rootScope.user.profileType + "s/" +$rootScope.user.id+ '/watchList/';
+        console.log(customerFolder);
+        var that = this;
+        var defered = $q.defer();
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-            defered.resolve(that.repoRef.$asArray());
-            return defered.promise;
-          }
-        };
+        defered.resolve(that.repoRef.$asArray());
+        return defered.promise;
+      }
+    };
 
   });

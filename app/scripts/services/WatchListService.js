@@ -16,6 +16,7 @@ angular.module('app')
         var watchList = that.repoRef.$asArray();
 
         watchList.$loaded(function () {
+
           defered.resolve(watchList);
         });
 

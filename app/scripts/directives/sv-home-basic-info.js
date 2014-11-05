@@ -13,7 +13,7 @@ angular.module('app')
 
         //$scope.watchList = $rootScope.user.watchList;
 
-        $rootScope.$watch('user', function (user) {
+        $rootScope.$watch('user.watchList', function (user) {
 
           if (_.isUndefined(user)) {
             return;

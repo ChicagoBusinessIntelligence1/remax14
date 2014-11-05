@@ -20,7 +20,7 @@ angular.module('app')
             $scope.homes = DraftsService.all(url, $rootScope.user.id);
             break;
           case 'watchList':
-            $scope.homes = WatchListService.all(url, $rootScope.user.id);
+            $scope.homes = HomeWatchListService.all(url, $rootScope.user.id);
             break;
           case 'active':
             BrokerHomesService.findBrokerHomes(url, $rootScope.user.id).then(function (myHomes) {

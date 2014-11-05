@@ -68,6 +68,8 @@ app.value('sortTypes',
   ]);
 
 app.value('notifications', {
+  shareHome: 'Share this Listing in Social Media',
+  archiveHome: 'Move this Listing to Archive',
   draftSaved: 'Listing has been succesfully saved to DB',
   draftShared: 'Listing has been succesfully shared',
   draftDeleted: 'Listing has been succesfully removed from DB',

@@ -25,11 +25,15 @@
         li
           ul.list-inline.text-right.ul-basic-social
             li
-              a( ng-click='addToWatchList(home.$id)')
+              button.btn.btn-default(ng-click='addToWatchList(home.$id)' ng-if='!isWatched')
                 i.fa.fa-plus.fa-fw
-                | Add to watch list
+                | Add to Watchlist
             li
-              a(href='#')
+              button.btn.btn-default(ng-if='isWatched')
+                i.fa.fa-plus.fa-fw
+                | Remove from Watchlist
+            li
+              button.btn.btn-default
                 i.fa.fa-share-alt.fa-fw
                 | Share
   .row

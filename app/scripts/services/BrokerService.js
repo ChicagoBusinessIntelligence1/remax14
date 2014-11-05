@@ -15,10 +15,7 @@ angular.module('app')
           order:199,
           content:brokerContent
         }
-
         home[index]=brokers;
-
-
         return home;
       }
     };

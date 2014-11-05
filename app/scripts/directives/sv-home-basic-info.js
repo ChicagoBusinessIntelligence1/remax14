@@ -23,7 +23,7 @@ angular.module('app')
         });
 
 
-        $scope.isRent = svRentalsCtrl.isRent;
+        $scope.isRent = svRentalsCtrl.isRent/**/;
 
         $scope.addToWatchList = function (mls) {
           WatchListService.addHome(mls).then(function () {

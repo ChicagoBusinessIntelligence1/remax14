@@ -12,7 +12,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        var watchLists = {};
+        var watchList = {};
 
         var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/watchList/';
         that.repoUrlSale = repoUrl + 'sale';
@@ -25,17 +25,17 @@ angular.module('app')
         var watchListRent = that.repoRefRent.$asArray();
 
         watchListSale.$loaded(function () {
-          watchLists.sale = _.pluck(watchListSale, '$value');
+          watchList.sale = _.pluck(watchListSale, '$value');
           watchListRent.$loaded(function () {
-            watchLists.rent = _.pluck(watchListRent, '$value');
-            deferred.resolve(watchLists);
+            watchList.rent = _.pluck(watchListRent, '$value');
+            deferred.resolve(watchList);
           });
         });
 
         return deferred.promise;
       },
       addHome: function (isRent, mls) {
-        var saleRent = isRent ? 'rent':'sale';
+        var saleRent = isRent ? 'rent' : 'sale';
         var that = this;
         var deferred = $q.defer();
         var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
@@ -55,16 +55,16 @@ angular.module('app')
       },
       removeHome: function (isRent, mls) {
         var that = this;
-        var saleRent = isRent ? 'rent':'sale';
+        var saleRent = isRent ? 'rent' : 'sale';
         var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
         var deferred = $q.defer();
 
-	      var watchList = $rootScope.user.watchList[saleRent];
+        var watchList = $rootScope.user.watchList[saleRent];
         var fireIndex = watchList.indexOf(mls);
 
         repoRef.$asArray().$remove(fireIndex).then(function () {
           try {
-            watchList = _.without(watchList,mls);
+            watchList = _.without(watchList, mls);
             toastr.success(notifications.savedToWatchlist);
             deferred.resolve(true);
           } catch (e) {

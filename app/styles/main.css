@@ -3434,6 +3434,14 @@ label {
   line-height: 1.5;
   margin-bottom: 0px;
 }
+.ul-listing-buttons .btn-sm {
+  color: #898989;
+}
+.ul-listing-buttons .btn-sm:hover,
+.ul-listing-buttons .btn-sm:active,
+.ul-listing-buttons .btn-sm:focus {
+  color: #565656;
+}
 .form-group {
   margin-bottom: 10px;
 }

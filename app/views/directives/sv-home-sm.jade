@@ -47,13 +47,11 @@
               i.fa.fa-trash.fa-fw.fa-lg
               | Delete
 
-        ul.list-inline(ng-switch-when="active")
+        ul.list-inline.ul-listing-buttons(ng-switch-when="active")
+          li
+            button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="Our GooglePlus Page")
+              i.fa.fa-share.fa-fw.fa-lg
           li
             button.btn.btn-default.btn-sm.btn-draft()
-              i.fa.fa-globe.fa-fw.fa-lg
-              | Trash
-          li
-            button.btn.btn-default.btn-sm.btn-draft()
-              i.fa.fa-trash.fa-fw.fa-lg
-              | Archive
+              i.fa.fa-archive.fa-fw.fa-lg
 

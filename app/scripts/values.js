@@ -68,10 +68,14 @@ app.value('sortTypes',
   ]);
 
 app.value('notifications', {
-  draftSaved: 'Listing has been succesfully saved to DB',
-  draftShared: 'Listing has been succesfully shared',
-  draftDeleted: 'Listing has been succesfully removed from DB',
-  savedToWatchlist: 'Listing has been succesfully saved to watchlist'
+  postDraft: 'Make this Listing Public',
+  deleteDraft: 'Delete this listing',
+  shareHome: 'Share this Listing in Social Media',
+  archiveHome: 'Move this Listing to Archive',
+  draftSaved: 'Listing has been successfully saved to DB',
+  draftShared: 'Listing has been successfully shared',
+  draftDeleted: 'Listing has been successfully removed from DB',
+  savedToWatchlist: 'Listing has been successfully saved to watchlist'
 
 });
 app.value('query', {});

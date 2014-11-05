@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSm', function () {
+  .directive('svHomeSm', function (notifications) {
     return {
       restrict: 'E',
       replace: true,
@@ -15,6 +15,10 @@ angular.module('app')
       link: function ($scope, element, attr, svListCtrl) {
         $scope.homeStatus = svListCtrl.homeStatus;
         $scope.isRent = svListCtrl.isRent;
+        $scope.shareHome = notifications.shareHome;
+        $scope.archiveHome = notifications.archiveHome;
+        $scope.postDraft = notifications.postDraft;
+        $scope.deleteDraft = notifications.deleteDraft;
       }
     };
   });

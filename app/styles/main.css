@@ -3408,7 +3408,7 @@ label {
 }
 .btn-draft {
   padding-left: 5px;
-  padding-left: 5px;
+  padding-right: 5px;
   font-size: 11px;
 }
 .draft-sm-container hr {
@@ -3433,6 +3433,9 @@ label {
 .draft-sm-container ul li p {
   line-height: 1.5;
   margin-bottom: 0px;
+}
+.ul-listing-buttons {
+  margin-top: 15px;
 }
 .ul-listing-buttons .btn-sm {
   color: #898989;

@@ -17,6 +17,8 @@ angular.module('app')
         $scope.isRent = svListCtrl.isRent;
         $scope.shareHome = notifications.shareHome;
         $scope.archiveHome = notifications.archiveHome;
+        $scope.postDraft = notifications.postDraft;
+        $scope.deleteDraft = notifications.deleteDraft;
       }
     };
   });

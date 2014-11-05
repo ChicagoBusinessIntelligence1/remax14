@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomesUserList', function (urlRental, urlSale, DraftsService, $rootScope, BrokerHomesService) {
+  .directive('svHomesUserList', function (HomeWatchListService, urlRental, urlSale, DraftsService, $rootScope, WatchListService, BrokerHomesService) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-homes-user-list.html',
@@ -18,6 +18,9 @@ angular.module('app')
         switch ($scope.homeStatus) {
           case 'draft':
             $scope.homes = DraftsService.all(url, $rootScope.user.id);
+            break;
+          case 'watchList':
+            $scope.homes = WatchListService.all(url, $rootScope.user.id);
             break;
           case 'active':
             BrokerHomesService.findBrokerHomes(url, $rootScope.user.id).then(function (myHomes) {

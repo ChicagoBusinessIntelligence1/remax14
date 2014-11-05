@@ -2,7 +2,7 @@
 
 angular.module('app')
   .controller('WatchPropertyCtrl', function ($scope, $firebase, $rootScope) {
-    $scope.homeStatus = 'active';
+    $scope.homeStatus = 'watchList';
 
     $scope.tabs = [
       {

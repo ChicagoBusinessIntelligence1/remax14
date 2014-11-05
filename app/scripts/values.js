@@ -69,7 +69,8 @@ app.value('sortTypes',
 app.value('notifications', {
   draftSaved: 'Listing has been succesfully saved to DB',
   draftShared: 'Listing has been succesfully shared',
-  draftDeleted: 'Listing has been succesfully removed from DB'
+  draftDeleted: 'Listing has been succesfully removed from DB',
+  savedToWatchlist: 'Listing has been succesfully saved to watchlist'
 
 });
 app.value('query', {});

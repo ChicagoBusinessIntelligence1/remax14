@@ -1,1 +1,7 @@
-div sv-watch-list-buttons Template
+div
+  button.btn.btn-default(ng-click='addToWatchList(mls)' ng-if='!isWatched')
+    i.fa.fa-plus.fa-fw
+    | Add to Watchlist
+  button.btn.btn-default(ng-click='removeFromWatchList(mls)' ng-if='isWatched')
+    i.fa.fa-plus.fa-fw
+    | Remove from Watchlist

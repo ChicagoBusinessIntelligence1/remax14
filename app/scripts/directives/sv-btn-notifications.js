@@ -12,7 +12,6 @@ angular.module('app')
           template: '../../views/popover/notifications-popover.html',
           placement: 'bottom',
           trigger: 'focus',
-          animation: 'am-flip-x',
           scope: $scope
         });
       }

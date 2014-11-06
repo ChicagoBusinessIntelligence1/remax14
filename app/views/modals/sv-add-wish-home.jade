@@ -1,0 +1,46 @@
+.modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(ng-click='$hide()') &times
+        h4.modal-title(ng-bind='title')
+      .modal-body
+        form(name="form" id="form" novalidate)
+          .row
+            .col-sm-4
+              .form-group
+                label State
+                input.form-control(type='text' name='input' id='input' required)
+            .col-sm-4
+              .form-group
+                label City
+                input.form-control(type='text' name='input' id='input' required)
+            .col-sm-4
+              .form-group
+                label Property Type
+                input.form-control(type='text' name='input' id='input' required)
+          .row
+            .col-sm-4
+              .form-group
+                label Bedrooms
+                input.form-control(type='number' name='input' id='input' required)
+            .col-sm-4
+              .form-group
+                label Bathrooms
+                input.form-control(type='number' name='input' id='input' required)
+            .col-sm-4
+              .form-group
+                label Parking Type
+                input.form-control(type='text' name='input' id='input' required)
+          .row
+            .col-sm-12
+              .form-group
+                label Additional Info
+                textarea.form-control(type='text' name='input' id='input' rows="10")
+          .row
+            .col-sm-12
+              button.btn.btn-default-app
+                i.fa.fa-save.fa-fw
+                |Save
+
+

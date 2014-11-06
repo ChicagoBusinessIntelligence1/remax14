@@ -15,6 +15,7 @@ app.factory('urlCommon', function (mainUrl) {
 app.factory('urlSale', function (mainUrl) {
   return {
     residentialTemplate: mainUrl + 'residential/templates/sale/0',
+    residentialWishListTemplate: mainUrl + 'residential/templates/sale/1',
 
     residentialDrafts: '/residential/drafts/sale/',
 

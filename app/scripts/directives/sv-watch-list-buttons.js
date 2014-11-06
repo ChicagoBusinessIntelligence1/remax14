@@ -9,13 +9,13 @@ angular.module('app')
       scope: {
         mls: '@'
       },
+      require: ['?^sv-homes-list', '?^sv-homes-user-list'],
 
-      require: '^sv-homes-list',
-      link: function ($scope, element, attr, svListCtrl) {
+      link: function ($scope, element, attr, svListCtrls) {
         $scope.addToWatch = notifications.addToWatch;
         $scope.removeFromWatch = notifications.removeFromWatch;
 
-        $scope.isRent = svListCtrl.isRent;
+        $scope.isRent = !!svListCtrls[0]?svListCtrls[0].isRent:svListCtrls[1].isRent;
 
         var saleRent = $scope.isRent ? 'rent' : 'sale';
         $rootScope.$watch('user.watchList', function (list) {

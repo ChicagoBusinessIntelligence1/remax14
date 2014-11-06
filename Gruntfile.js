@@ -318,7 +318,7 @@ module.exports = function (grunt) {
     var name = fname.charAt(0).toUpperCase() + fname.substring(1);
     var jname = name.charAt(0).toLowerCase() + name.substring(1);
 
-    var filtr = filt.replace(/#name#/g, name);
+    var filtr = filt.replace(/#name#/g, jname);
 
 // register
     var ref = '/// <reference path="filters/' + name + '.js" />\r\n';

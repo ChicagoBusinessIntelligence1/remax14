@@ -18,6 +18,8 @@ app.factory('urlSale', function (mainUrl) {
 
     residentialDrafts: '/residential/drafts/sale/',
 
+    residentialWatchList: 'watchList/sale',
+
     residential: mainUrl + 'residential/sale/homes/'
   }
 })
@@ -26,6 +28,8 @@ app.factory('urlRental', function (mainUrl) {
     residentialTemplate: mainUrl + 'residential/templates/rental/0',
 
     residentialDrafts: '/residential/drafts/rental/',
+
+    residentialWatchList: 'watchList/rent',
 
     residential: mainUrl + 'residential/rental/homes/'
   }
@@ -68,6 +72,8 @@ app.value('sortTypes',
   ]);
 
 app.value('notifications', {
+  addToWatch: 'Add to Watchlist',
+  removeFromWatch: 'Remove from Watchlist',
   postDraft: 'Make this Listing Public',
   deleteDraft: 'Delete this listing',
   shareHome: 'Share this Listing in Social Media',

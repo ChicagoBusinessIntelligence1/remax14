@@ -7,6 +7,7 @@
         li.pull-right
           h5 {{draft|showSectionDraft:'price'|currency:'$':0}}
   hr
+  div {{shareHome}}
   .row
     .col-sm-6(ng-switch="homeStatus")
       div(ng-switch-when="draft")
@@ -17,6 +18,13 @@
           a.thumbnail(ui-sref='app.profile.home-sale-draft({mls:draft.$id})')
             sv-photo-thumb(img='../images/houses/1.jpg' height='120')
       div(ng-switch-when="active")
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.remax-home-rent({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.remax-home({mls:draft.$id})')
+            sv-photo-thumb(img='../images/houses/1.jpg' height='120')
+      div(ng-switch-when="watchList")
         div(ng-if='isRent')
           a.thumbnail(ui-sref='app.remax-home-rent({mls:draft.$id})')
             sv-photo-thumb(img='../images/houses/1.jpg' height='120')
@@ -52,4 +60,11 @@
           li
             button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{archiveHome}}")
               i.fa.fa-archive.fa-fw.fa-lg
+
+        ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="watchList")
+          li
+            sv-watch-list-buttons(mls='{{home.$id}}')
+          li
+            button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{shareHome}}")
+              i.fa.fa-share-alt.fa-fw.fa-lg
 

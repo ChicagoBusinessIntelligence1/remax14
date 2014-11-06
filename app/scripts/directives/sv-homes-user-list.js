@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomesUserList', function (urlRental, urlSale, DraftsService, $rootScope, BrokerHomesService) {
+  .directive('svHomesUserList', function (HomeWatchListService, urlRental, urlSale, DraftsService, $rootScope, WatchListService, BrokerHomesService) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-homes-user-list.html',
@@ -18,6 +18,22 @@ angular.module('app')
         switch ($scope.homeStatus) {
           case 'draft':
             $scope.homes = DraftsService.all(url, $rootScope.user.id);
+            break;
+          case 'watchList':
+            $rootScope.$watch('user.watchList', function (list) {
+              if (_.isUndefined(list)) {
+                return;
+              }
+              if (!$scope.isRent) {
+                HomeWatchListService.getSales().then(function (watchListHomes) {
+                  $scope.homes = watchListHomes;
+                });
+              } else {
+                HomeWatchListService.getRent().then(function (watchListHomes) {
+                  $scope.homes = watchListHomes;
+                });
+              }
+            });
             break;
           case 'active':
             BrokerHomesService.findBrokerHomes(url, $rootScope.user.id).then(function (myHomes) {

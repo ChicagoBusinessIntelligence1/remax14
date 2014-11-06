@@ -15,6 +15,9 @@ angular.module('app')
       link: function ($scope, element, attr, svListCtrl) {
         $scope.homeStatus = svListCtrl.homeStatus;
         $scope.isRent = svListCtrl.isRent;
+
+        $scope.addToWatch = notifications.addToWatch;
+        $scope.removeFromWatch = notifications.removeFromWatch;
         $scope.shareHome = notifications.shareHome;
         $scope.archiveHome = notifications.archiveHome;
         $scope.postDraft = notifications.postDraft;

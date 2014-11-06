@@ -1,16 +1,28 @@
 'use strict';
 
 angular.module('app')
-  .directive('svShareProperty', function () {
+  .directive('svShareProperty', function ($popover, notifications) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '../../views/directives/sv-share-property.html',
-      scope: {
+      template: '<button class="btn btn-default btn-sm btn-draft" data-toggle="tooltip" data-placement="left" title="{{shareHomeTitle}}">' +
+      '<i class="fa fa-share-alt fa-fw"></i>' +
+      '</button>',
+      scope: {},
 
-      },
       link: function ($scope, element, attr) {
-
+        $scope.shareHomeTitle = notifications.shareHomeTitle;
+        $scope.sharedHomeFbTitle = notifications.sharedHomeFbTitle;
+        $scope.shareHome = function (fName, lName, email) {
+          toastr.success(notifications.sharedHomeFbTitle);
+        };
+        var sharePropertyPopover = $popover(element, {
+          container: 'body',
+          template: '../../views/popover/share-property-popover.html',
+          placement: 'bottom',
+          trigger: 'focus',
+          scope: $scope
+        });
       }
     };
   });

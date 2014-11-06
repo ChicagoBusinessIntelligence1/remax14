@@ -2,9 +2,12 @@
   .arrow
   h3.popover-title Share this Property
   .popover-content
-    button.btn.btn-default
-      i.fa.fa-facebook.fa-fw
-      | Share on Facebook
-    button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
-      i.fa.fa-times
-      | Cancel
+    ul.list-inline
+      li
+        button.btn.btn-default.btn-sm(ng-click='shareHome();$hide')
+          i.fa.fa-facebook.fa-fw
+          | Share
+      li
+        button.btn.btn-default.btn-sm(ng-click='$hide()')
+          i.fa.fa-times.fa-fw
+          | Cancel

@@ -7,7 +7,6 @@ angular.module('app')
       replace: true,
       template: '<div ng-form="{{nameId+\'Form\'}}" class="form-group txt-group">' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText && isTypesHeaded" typeahead="hint.abbreviation as hint.name for hint in hints|filter:$viewValue|limitTo:8"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
-      '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText && isTypesHeaded" typeahead="hint.abbreviation as hint.name for hint in hints|filter:$viewValue|limitTo:8"  type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value" ng-if="isText && !isTypesHeaded"   type="text" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<input ng-class="{error:isMaxInvalid}" ng-model="model.value"  ng-if="!isText" sv-only-numbers type="number" name="{{nameId}}" id="{{nameId}}" class="form-control" ng-required="r" /> ' +
       '<span ng-show="isMaxInvalid" class="notice ng-hide error-note">Maximum {{max}} exceeded</span>' +

@@ -3665,6 +3665,12 @@ label {
 .btn-delete-account {
   color: #db3136;
 }
+.modal-dialog-wishlist {
+  padding: 10px;
+}
+.modal-wishlist label {
+  margin-bottom: 5px;
+}
 .form-group {
   margin-bottom: 10px;
 }

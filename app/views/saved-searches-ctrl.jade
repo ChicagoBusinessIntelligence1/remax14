@@ -1,5 +1,6 @@
 div(ng-switch="user.profileType")
   h3 My Saved Searches
   hr
-  sv-saved-search
-
+  ul.list-unstyled
+    li(ng-repeat='search in searches|orderBy:date').repeat-animation
+      sv-saved-search(search='search')

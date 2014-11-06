@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .filter('#jname#', function () {
+  .filter('#name#', function () {
     return function (input) {
       return input;
     };

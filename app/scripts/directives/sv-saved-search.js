@@ -1,17 +1,23 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSavedSearch', function () {
+  .directive('svSavedSearch', function (QueryService,$rootScope, $state) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-saved-search.html',
-      scope: {},
+      scope: {
+        search:'='
+      },
       link: function ($scope, element, attr) {
-        $scope.search = {
-          name: "Skokie",
-          details: "At vero eos et accusamus et iusto odio dignissimos ducimus"
+        $scope.runSearch = function () {
+          QueryService.run($scope.search.$id).then(function (query) {
+            $rootScope.query = query;
+
+            $state.go('app.search-sale-results', query);
+          });
         };
+
       }
     };
   });

@@ -11,9 +11,9 @@ angular.module('app')
         isRent:'='
       },
 
+
       link: function ($scope, element, attr) {
-        var saleRent = $scope.isRent ? 'rent':'sale';
-        $rootScope.$watch('user.watchList', function (list) {
+        var saleRent = $scope.isRent ? 'rent':'sale'; $rootScope.$watch('user.watchList', function (list) {
           if (_.isUndefined(list)) {
             return;
           }

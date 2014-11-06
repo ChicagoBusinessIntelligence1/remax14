@@ -45,7 +45,7 @@
       .draft-info-container(ng-switch="homeStatus")
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="draft")
           li
-            button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{postDraft}}")
+            button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{postDraftTitle}}")
               i.fa.fa-globe.fa-fw.fa-lg
           li
             button.btn.btn-default.btn-sm.btn-draft(ng-click='removeDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{deleteDraft}}")

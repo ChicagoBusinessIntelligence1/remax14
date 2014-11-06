@@ -7,7 +7,6 @@
         li.pull-right
           h5 {{draft|showSectionDraft:'price'|currency:'$':0}}
   hr
-  div {{shareHome}}
   .row
     .col-sm-6(ng-switch="homeStatus")
       div(ng-switch-when="draft")
@@ -43,7 +42,6 @@
               | {{draft|showSectionDraft:'city'}}
               | {{draft|showSectionDraft:'state'}}
               | {{draft|showSectionDraft:'zip'}}
-          li
       .draft-info-container(ng-switch="homeStatus")
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="draft")
           li

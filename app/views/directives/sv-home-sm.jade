@@ -48,8 +48,7 @@
             button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{postDraftTitle}}")
               i.fa.fa-globe.fa-fw
           li
-            button.btn.btn-default.btn-sm.btn-draft(ng-click='removeDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{deleteDraft}}")
-              i.fa.fa-remove.fa-fw
+            sv-del-draft(remove-draft='removeDraft({mls:mls})' mls='{{draft.$id}}' draft='draft')
 
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="active")
           li
@@ -60,7 +59,7 @@
 
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="watchList")
           li
-            sv-watch-list-buttons(mls='{{home.$id}}')
+            sv-watch-list-buttons(mls='{{draft.$id}}')
           li
             button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{shareHome}}")
               i.fa.fa-share-alt.fa-fw

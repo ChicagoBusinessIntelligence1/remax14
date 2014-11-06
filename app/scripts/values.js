@@ -72,13 +72,13 @@ app.value('notifications', {
   addToWatch: 'Add to Watchlist',
   removeFromWatch: 'Remove from Watchlist',
   postDraftTitle: 'Make this Listing Public',
-  deleteDraft: 'Delete this listing',
+  deleteDraftTitle: 'Delete this listing',
   shareHomeTitle: 'Share this Listing in Social Media',
   sharedHomeFbTitle: 'Share this Listing in Social Media',
   archiveHome: 'Move this Listing to Archive',
   draftSaved: 'Listing has been successfully saved to DB',
   draftShared: 'Listing has been successfully shared',
-  draftDeleted: 'Listing has been successfully removed from DB',
+  draftDeleted: 'Listing draft has been successfully removed from DB',
   savedToWatchlist: 'Listing has been successfully saved to watchlist'
 
 });

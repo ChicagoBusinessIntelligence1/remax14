@@ -6,7 +6,6 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<button class="btn btn-link btn-sm btn-delete-account"><i class="fa fa-remove"></i> Delete My Profile</button>',
-      scope: {},
       link: function ($scope, element, attr) {
 
         $scope.deleteProfile = function () {

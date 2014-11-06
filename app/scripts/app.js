@@ -40,7 +40,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
         .state('app.contact', {
           url: '/contact',
-          controller: 'ContactusCtrl',
+          controller: 'ContactUsCtrl',
           templateUrl: '../views/contactus.html'
         })
         .state('app.home', {

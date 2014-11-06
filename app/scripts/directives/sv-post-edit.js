@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPostEdit', function ($popover, $firebase, url) {
+  .directive('svPostEdit', function ($popover, $firebase) {
     return {
       restrict: 'E',
       replace: true,

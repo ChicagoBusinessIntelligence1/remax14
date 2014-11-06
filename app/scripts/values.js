@@ -64,10 +64,6 @@ app.value('sortTypes',
     {
       "value": "priceHigh",
       "label": "<i class=\"fa fa-dollar\"></i>  Price: Highest First"
-    },
-    {
-      "value": "priceReduced",
-      "label": "<i class=\"fa fa-arrow-down\"></i> Price Reduced"
     }
   ]);
 

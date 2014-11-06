@@ -12,7 +12,7 @@ div
             sv-sort-homes(sort-by='sortBy')
   .drafts-container
     ul.row.list-inline
-      li.col-sm-12(ng-repeat='(key, home) in homes|startFrom:currentPage|limitTo:pageHomesNumber').repeat-animation
+      li.col-sm-12(ng-repeat='home in homes|startFrom:currentPage|limitTo:pageHomesNumber').repeat-animation
         sv-home-basic-info(home='home')
 
   sv-pagination(ng-hide="totalPages==1" total-pages='totalPages' current-page='currentPage')

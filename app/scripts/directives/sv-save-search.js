@@ -6,13 +6,12 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-save-search.html',
-      scope: {
-
-      },
+      scope: {},
       link: function ($scope, element, attr) {
         $scope.saveThisSearch = function () {
           var query = $rootScope.query;
-
+          query  = QueryService.process(query);
+          QueryService.save(query);
         };
       }
     };

@@ -1,21 +1,41 @@
 'use strict';
 
 angular.module('app')
-  .factory('QueryService', function ($firebase, $q) {
-        return {
-          repoUrl: null,
-          repoRef: null,
+  .factory('QueryService', function ($firebase, $q, $rootScope, mainUrl) {
+    return {
+      repoUrl: null,
+      repoRef: null,
 
-          all: function () {
-            var that = this;
-            var deferred = $q.defer();
+      save: function (query) {
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
+        var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/queries/';
+        var that = this;
+        var deferred = $q.defer();
 
-            deferred.resolve(that.repoRef.$asArray());
-            return deferred.promise;
-          }
-        };
+        that.repoUrl = repoUrl;
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        that.repoRef.$asArray().$add(query).then(function () {
+          deferred.resolve(true);
+        })
+        return deferred.promise;
+      },
+      all: function () {
 
-  });
+        var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/queries/';
+        var that = this;
+        var deferred = $q.defer();
+
+        that.repoRef = $firebase(new Firebase(repoUrl));
+        that.repoRef.$asArray().$loaded(function (queries) {
+          deferred.resolve(queries);
+        })
+        return deferred.promise;
+      },
+      process: function (query) {
+        query.date = Date.now();
+        return query;
+      }
+    };
+
+  })
+;

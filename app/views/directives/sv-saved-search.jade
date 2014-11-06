@@ -13,12 +13,15 @@
       tbody
         tr.row
           td.col-xs-2
-            span 01/01/2014
+            span {{search.date|date}}
           td.col-xs-4
             a(href='#' editable-text='search.name' buttons="no" e-required e-placeholder="Enter name") {{search.name || 'empty'}} &nbsp
               i.fa.fa-edit.fa-fw
           td.col-xs-4
-            a(href='#' editable-textarea='search.details' buttons="no" e-rows="5" e-cols="28") {{search.details || 'empty'}} &nbsp
+            a(href='#' editable-textarea='search.details' buttons="no" e-rows="5" e-cols="28")
+              ul.list-unstyled
+                li(ng-repeat='(k,v) in search')
+                  span {{k}}- {{v}}
               i.fa.fa-edit.fa-fw
           td.col-xs-1
             button.btn.btn-primary(data-toggle="tooltip" data-placement="top" title="Run this Search")

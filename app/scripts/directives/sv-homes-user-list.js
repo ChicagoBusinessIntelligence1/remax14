@@ -20,24 +20,19 @@ angular.module('app')
             $scope.homes = DraftsService.all(url, $rootScope.user.id);
             break;
           case 'watchList':
-
             $rootScope.$watch('user.watchList', function (list) {
               if (_.isUndefined(list)) {
                 return;
               }
               if (!$scope.isRent) {
-
                 HomeWatchListService.getSales().then(function (watchListHomes) {
                   $scope.homes = watchListHomes;
                 });
               } else {
-
                 HomeWatchListService.getRent().then(function (watchListHomes) {
                   $scope.homes = watchListHomes;
                 });
-
               }
-
             });
             break;
           case 'active':

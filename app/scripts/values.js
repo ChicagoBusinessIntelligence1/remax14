@@ -72,6 +72,8 @@ app.value('sortTypes',
   ]);
 
 app.value('notifications', {
+  addToWatch: 'Add to Watchlist',
+  removeFromWatch: 'Remove from Watchlist',
   postDraft: 'Make this Listing Public',
   deleteDraft: 'Delete this listing',
   shareHome: 'Share this Listing in Social Media',

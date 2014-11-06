@@ -19,6 +19,25 @@ angular.module('app')
         })
         return deferred.promise;
       },
+      remove: function (key) {
+
+        var that = this;
+        var deferred = $q.defer();
+
+        that.repoRef.$remove(key).then(function () {
+          deferred.resolve(true);
+        })
+        return deferred.promise;
+      },
+      run: function (key) {
+
+        var that = this;
+        var deferred = $q.defer();
+
+       var query =  that.repoRef.$asArray().$getRecord(key);
+          deferred.resolve(query);
+        return deferred.promise;
+      },
       all: function () {
 
         var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/queries/';
@@ -32,9 +51,13 @@ angular.module('app')
         return deferred.promise;
       },
       process: function (query) {
+        var keys = _.keys(query);
+        query.name = keys.join(' ');
+
         query.date = Date.now();
         return query;
-      }
+      },
+
     };
 
   })

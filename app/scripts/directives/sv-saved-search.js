@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSavedSearch', function () {
+  .directive('svSavedSearch', function (QueryService,$rootScope, $state) {
     return {
       restrict: 'E',
       replace: true,
@@ -10,6 +10,13 @@ angular.module('app')
         search:'='
       },
       link: function ($scope, element, attr) {
+        $scope.runSearch = function () {
+          QueryService.run($scope.search.$id).then(function (query) {
+            $rootScope.query = query;
+
+            $state.go('app.search-sale-results', query);
+          });
+        };
 
       }
     };

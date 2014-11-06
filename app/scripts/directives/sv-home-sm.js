@@ -18,7 +18,7 @@ angular.module('app')
 
         $scope.addToWatch = notifications.addToWatch;
         $scope.removeFromWatch = notifications.removeFromWatch;
-        $scope.shareHome = notifications.shareHome;
+        $scope.shareHomeTitle = notifications.shareHomeTitle;
         $scope.archiveHome = notifications.archiveHome;
         $scope.postDraftTitle = notifications.postDraftTitle;
         $scope.deleteDraft = notifications.deleteDraft;

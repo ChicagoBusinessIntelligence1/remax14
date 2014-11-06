@@ -3411,6 +3411,12 @@ label {
   padding-right: 5px;
   font-size: 12px;
   min-width: 32px;
+  color: #898989;
+}
+.btn-draft:hover,
+.btn-draft:active,
+.btn-draft:focus {
+  color: #565656;
 }
 .draft-sm-container hr {
   margin-bottom: 10px;
@@ -3437,14 +3443,6 @@ label {
 }
 .ul-listing-buttons {
   margin-top: 15px;
-}
-.ul-listing-buttons .btn-sm {
-  color: #898989;
-}
-.ul-listing-buttons .btn-sm:hover,
-.ul-listing-buttons .btn-sm:active,
-.ul-listing-buttons .btn-sm:focus {
-  color: #565656;
 }
 .form-group {
   margin-bottom: 10px;

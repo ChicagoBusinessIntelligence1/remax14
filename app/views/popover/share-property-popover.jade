@@ -1,0 +1,18 @@
+.popover.broker-app-popover
+  .arrow
+  h3.popover-title Email Alerts
+  .popover-content
+    form.editable-form.app-form(name='form', id='form' novalidate)
+      .form-group
+        input.form-control(type='text' name='fname' id='fname' ng-model='fname' placeholder="First Name" required)
+      .form-group
+        input.form-control(type='text' name='lname' id='lname' ng-model='lname' placeholder="Last Name" required)
+      .form-group
+        input.form-control(type='text' name='email' id='email' ng-model='email' placeholder="Email" required)
+      .form-group
+        button.btn.btn-primary.btn-sm.btn-save(ng-click='saveEmailAlertSettings(fname,lname,email);$hide()' ng-disabled='form.$invalid' )
+          i.fa.fa-check
+          | Save
+        button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
+          i.fa.fa-times
+          | Cancel

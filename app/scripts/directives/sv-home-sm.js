@@ -20,7 +20,7 @@ angular.module('app')
         $scope.removeFromWatch = notifications.removeFromWatch;
         $scope.shareHome = notifications.shareHome;
         $scope.archiveHome = notifications.archiveHome;
-        $scope.postDraft = notifications.postDraft;
+        $scope.postDraftTitle = notifications.postDraftTitle;
         $scope.deleteDraft = notifications.deleteDraft;
       }
     };

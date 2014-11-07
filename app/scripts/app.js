@@ -204,7 +204,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/homes-shared-ctrl.html"
         })
         .state("app.search-sale-results", {
-          url: "/search-sale-results?location&priceMin&priceMax&bedrooms&bathrooms",
+          url: "/search-sale-results",
           resolve: {
             homes: function (SearchService, urlSale,$rootScope) {
 
@@ -219,7 +219,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         })
 
         .state("app.search-rent-results", {
-          url: "/search-rent-results?location&priceMin&priceMax&bedrooms&bathrooms",
+          url: "/search-rent-results",
           resolve: {
             homes: function (SearchService, urlRental) {
               return SearchService.find(urlRental);

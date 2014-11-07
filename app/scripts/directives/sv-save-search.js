@@ -8,11 +8,7 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-save-search.html',
       scope: {},
       link: function ($scope, element, attr) {
-        $scope.isRunFromSaved = false
-        $scope.$on('ss', function (event, data) {
-          console.log('run');
-          $scope.isRunFromSaved = true;
-        });
+        $scope.isRunFromSaved = $rootScope.query ? $rootScope.query.isRunFromSaved : false;
 
         $scope.isQueryEmpty = _.isUndefined($rootScope.query);
         $scope.saveThisSearch = function () {
@@ -20,7 +16,7 @@ angular.module('app')
           query = QueryService.process(query);
 
           QueryService.save(query).then(function () {
-            toastr.success('search saved');
+            $scope.isRunFromSaved = true;
           });
         };
       }

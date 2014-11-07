@@ -8,7 +8,6 @@ angular.module('app')
       template: '<button class="btn btn-default btn-sm btn-draft"><i class="fa fa-remove"  data-toggle="tooltip" data-placement="left" title="{{deleteDraftTitle}}"></i> </button>',
       scope: {
         draft: '=',
-        //removeDraft: '&',
         mls: '@'
       },
       link: function ($scope, element, attr) {
@@ -24,7 +23,6 @@ angular.module('app')
           placement: 'bottom',
           scope: $scope
         });
-
       }
     };
   });

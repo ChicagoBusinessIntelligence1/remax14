@@ -12,9 +12,9 @@ angular.module('app')
       link: function ($scope, element, attr) {
         $scope.runSearch = function () {
           QueryService.run($scope.search.$id).then(function (query) {
+            query.isRunFromSaved = true;
             $rootScope.query = query;
-            $rootScope.$broadcast('ss',true);
-            $state.go('app.search-sale-results', query);
+            $state.go('app.search-sale-results', query, {reload: true});
           });
         };
       }

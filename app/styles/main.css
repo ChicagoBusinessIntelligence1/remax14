@@ -3444,6 +3444,9 @@ label {
 .ul-listing-buttons {
   margin-top: 15px;
 }
+.listing-type {
+  color: #898989;
+}
 .form-group {
   margin-bottom: 10px;
 }
@@ -3673,6 +3676,18 @@ label {
 }
 .saved-search-date {
   font-size: 12px;
+}
+ol.breadcrumb.breadcrumb-search padding 5px !important li {
+  font-size: 13px;
+}
+.b-link {
+  color: #898989 !important;
+  padding: 0px !important;
+}
+.b-link:hover,
+.b-link:active,
+.b-link:focus {
+  color: #565656 !important;
 }
 .form-group {
   margin-bottom: 10px;

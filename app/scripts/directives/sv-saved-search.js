@@ -13,7 +13,7 @@ angular.module('app')
         $scope.runSearch = function () {
           QueryService.run($scope.search.$id).then(function (query) {
             $rootScope.query = query;
-            $rootScope.$broadcast('run-saved-search');
+            $rootScope.$broadcast('ss',true);
             $state.go('app.search-sale-results', query);
           });
         };

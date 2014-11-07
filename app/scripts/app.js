@@ -206,7 +206,11 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
         .state("app.search-sale-results", {
           url: "/search-sale-results?location&priceMin&priceMax&bedrooms&bathrooms",
           resolve: {
-            homes: function (SearchService, urlSale) {
+            homes: function (SearchService, urlSale,$rootScope) {
+
+              $rootScope.$on('ss', function (event, data) {
+                console.log('run');
+              });
               return SearchService.find(urlSale);
             }
           },

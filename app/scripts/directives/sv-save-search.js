@@ -8,12 +8,13 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-save-search.html',
       scope: {},
       link: function ($scope, element, attr) {
-        $scope.isRunFromSaved = false;
-        $scope.$on('run-saved-search', function () {
+        $scope.isRunFromSaved = false
+        $scope.$on('ss', function (event, data) {
+          console.log('run');
           $scope.isRunFromSaved = true;
         });
 
-        $scope.isQueryEmpty = (_.pluck($rootScope.query, 'location', 'priceMin', 'priceMax', 'bedrooms', 'bathrooms')).length === 0;
+        $scope.isQueryEmpty = _.isUndefined($rootScope.query);
         $scope.saveThisSearch = function () {
           var query = $rootScope.query;
           query = QueryService.process(query);

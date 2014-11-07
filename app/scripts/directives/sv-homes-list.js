@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomesList', function (pageHomesNumber,$filter) {
+  .directive('svHomesList', function (pageHomesNumber, $filter) {
     return {
       restrict: 'E',
       replace: true,
@@ -20,7 +20,7 @@ angular.module('app')
         $scope.totalPages = Math.ceil($scope.homes.length / pageHomesNumber);
         $scope.isDataLoading = false;
 
-        $scope.sortBy ='date';
+        $scope.sortBy = 'date';
 
         $scope.$watch('sortBy', function (sortParam, oldValue) {
           switch (sortParam) {
@@ -37,7 +37,9 @@ angular.module('app')
         });
 
         $scope.setSortPrice = function (reverse) {
-          $scope.homes = orderBy($scope.homes, function (home) { return home[0].price;},reverse);
+          $scope.homes = orderBy($scope.homes, function (home) {
+            return home[0].price;
+          }, reverse);
         };
         $scope.setSortDate = function () {
           $scope.homes = orderBy($scope.homes, function (home) {
@@ -52,7 +54,6 @@ angular.module('app')
         $scope.priceLow = function (home) {
           return home[0].price;
         };
-
       }
     };
   });

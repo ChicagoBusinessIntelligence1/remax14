@@ -17,7 +17,6 @@ angular.module('app')
 
           QueryService.save(query).then(function () {
             $scope.isRunFromSaved = true;
-            toastr.success('search saved');
           });
         };
       }

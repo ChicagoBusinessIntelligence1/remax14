@@ -4,7 +4,7 @@ angular.module('app')
   .directive('svBtnRemoveSearch', function ($popover,QueryService) {
     return {
       restrict: 'E',
-      template: '<button class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Remove this Search"><i class="fa fa-remove fa-fw"></i></button>',
+      template: '<button class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Remove this Search"><i class="fa fa-remove fa-fw"></i></button>',
       replace: true,
       scope: {
         key:'@'
@@ -21,7 +21,6 @@ angular.module('app')
           template: '../../views/popover/remove-search-popover.html',
           placement: 'bottom',
           trigger: 'focus',
-          animation: 'am-flip-x',
           scope: $scope
         });
 

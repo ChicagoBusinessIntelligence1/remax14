@@ -5,9 +5,7 @@ angular.module('app')
     $scope.sortBy = {
       val: 'date'
     };
-
     $scope.homes = homes;
-
     $scope.isRent = false;
   });
 

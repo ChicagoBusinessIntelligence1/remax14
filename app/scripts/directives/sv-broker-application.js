@@ -19,7 +19,6 @@ angular.module('app')
           container: 'body',
           template: '../../views/popover/broker-application-popover.html',
           placement: 'bottom',
-          animation: 'am-flip-x',
           scope: $scope
         });
       }

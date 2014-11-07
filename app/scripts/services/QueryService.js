@@ -7,7 +7,6 @@ angular.module('app')
       repoRef: null,
 
       save: function (query) {
-
         var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/queries/';
         var that = this;
         var deferred = $q.defer();
@@ -20,7 +19,6 @@ angular.module('app')
         return deferred.promise;
       },
       remove: function (key) {
-
         var that = this;
         var deferred = $q.defer();
 
@@ -30,16 +28,14 @@ angular.module('app')
         return deferred.promise;
       },
       run: function (key) {
-
         var that = this;
         var deferred = $q.defer();
 
-       var query =  that.repoRef.$asArray().$getRecord(key);
-          deferred.resolve(query);
+        var query = that.repoRef.$asArray().$getRecord(key);
+        deferred.resolve(query);
         return deferred.promise;
       },
       all: function () {
-
         var repoUrl = mainUrl + $rootScope.user.profileType + "s/" + $rootScope.user.id + '/queries/';
         var that = this;
         var deferred = $q.defer();
@@ -53,12 +49,8 @@ angular.module('app')
       process: function (query) {
         var keys = _.keys(query);
         query.name = keys.join(' ');
-
         query.date = Date.now();
         return query;
       },
-
     };
-
-  })
-;
+  });

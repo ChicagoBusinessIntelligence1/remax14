@@ -41,9 +41,11 @@ angular.module('app')
             })
             break;
         }
-        $scope.removeDraft = function (mls) {
+
+        $scope.$on('remove-draft', function (event, mls) {
           DraftsService.remove(mls)
-        };
+        });
+
         $scope.postDraft = function (mls) {
           DraftsService.moveToHomes(mls);
         };

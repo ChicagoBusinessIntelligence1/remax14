@@ -8,10 +8,10 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-save-search.html',
       scope: {},
       link: function ($scope, element, attr) {
-          $scope.isQueryEmpty =(_.pluck($rootScope.query,'location','priceMin','priceMax','bedrooms','bathrooms')).length ===0;
+        $scope.isQueryEmpty = (_.pluck($rootScope.query, 'location', 'priceMin', 'priceMax', 'bedrooms', 'bathrooms')).length === 0;
         $scope.saveThisSearch = function () {
           var query = $rootScope.query;
-          query  = QueryService.process(query);
+          query = QueryService.process(query);
 
           QueryService.save(query).then(function () {
             toastr.success('search saved');

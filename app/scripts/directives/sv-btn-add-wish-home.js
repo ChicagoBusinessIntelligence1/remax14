@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBtnAddWishHome', function ($modal) {
+  .directive('svBtnAddWishHome', function ($modal,urlSale,urlRental) {
     return {
       restrict: 'E',
       replace: true,
@@ -12,7 +12,7 @@ angular.module('app')
       '</button>' +
       '</div>',
       scope: {
-        form: '='
+        isRent: '='
       },
       link: function ($scope, element, attr) {
 
@@ -27,6 +27,11 @@ angular.module('app')
         $scope.showModal = function () {
           addWishHomeModal.$promise.then(addWishHomeModal.show);
         };
+        $scope.saveWishList = function () {
+          var url = isRent ? urlSale:urlRental;
+
+        };
+
       }
     };
   });

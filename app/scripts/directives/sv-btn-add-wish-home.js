@@ -12,8 +12,7 @@ angular.module('app')
       '</button>' +
       '</div>',
       scope: {
-        isRent: '=',
-        homes:'='
+        isRent: '='
       },
       link: function ($scope, element, attr) {
 

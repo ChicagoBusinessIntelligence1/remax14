@@ -3445,7 +3445,16 @@ label {
   margin-top: 15px;
 }
 .listing-type {
-  color: #898989;
+  color: color-li;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
 }
 .form-group {
   margin-bottom: 10px;

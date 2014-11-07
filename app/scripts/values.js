@@ -21,6 +21,8 @@ app.factory('urlSale', function (mainUrl) {
 
     residentialWatchList: 'watchList/sale',
 
+    residentialWishList: 'wishList/sale',
+
     residential: mainUrl + 'residential/sale/homes/'
   }
 })
@@ -31,6 +33,8 @@ app.factory('urlRental', function (mainUrl) {
     residentialDrafts: '/residential/drafts/rental/',
 
     residentialWatchList: 'watchList/rent',
+
+    residentialWishList: 'wishList/rent',
 
     residential: mainUrl + 'residential/rental/homes/'
   }

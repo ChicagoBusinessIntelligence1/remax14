@@ -10,7 +10,7 @@ angular.module('app')
       link: function ($scope, element, attr) {
         $scope.isRunFromSaved = $rootScope.query ? $rootScope.query.isRunFromSaved : false;
 
-        $scope.isQueryEmpty = (_.pluck($rootScope.query, 'location', 'priceMin', 'priceMax', 'bedrooms', 'bathrooms')).length === 0;
+        $scope.isQueryEmpty = _.isUndefined($rootScope.query);
         $scope.saveThisSearch = function () {
           var query = $rootScope.query;
           query = QueryService.process(query);

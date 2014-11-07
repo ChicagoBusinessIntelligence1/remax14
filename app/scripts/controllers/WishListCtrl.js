@@ -12,4 +12,5 @@ angular.module('app')
         title: 'Property for Rent',
         view: 'views/tabs/wishList/wishRent.html'
       }];
+
   });

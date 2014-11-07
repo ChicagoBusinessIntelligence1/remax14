@@ -1,3 +1,3 @@
 div
   button.btn.btn-default.btn-sm(ng-if='!isRunFromSaved' ng-click='saveThisSearch()' ng-disabled='isQueryEmpty') Save this Search
-  button.btn.btn-default.btn-sm(ng-if='isRunFromSaved') This Search is Saved
+  span(ng-if='isRunFromSaved') This Search is Saved

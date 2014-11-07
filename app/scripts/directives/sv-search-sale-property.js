@@ -18,7 +18,7 @@ angular.module('app')
 
           if (_.isUndefined($scope.query)) {
 
-            $state.go(stateName, null);
+            $state.go(stateName, null, {reload:true});
 
           } else {
             $state.go(stateName, {
@@ -28,7 +28,7 @@ angular.module('app')
                 bedrooms: $scope.query.bedrooms,
                 bathrooms: $scope.query.bathrooms
               },
-              {reload: false}
+              {reload: true}
             );
           }
         }

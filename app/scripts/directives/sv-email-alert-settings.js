@@ -20,7 +20,6 @@ angular.module('app')
           template: '../../views/popover/email-alert-popover.html',
           placement: 'bottom',
           trigger: 'focus',
-          animation: 'am-flip-x',
           scope: $scope
         });
       }

@@ -5,5 +5,4 @@ angular.module('app')
     QueryService.all().then(function (searches) {
       $scope.searches = searches;
     })
-
   });

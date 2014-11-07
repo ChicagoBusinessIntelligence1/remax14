@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSearchProperty', function ($state, $rootScope) {
+  .directive('svSearchSaleProperty', function ($state, $rootScope) {
     return {
-      templateUrl: '../views/directives/sv-search-property.html',
+      templateUrl: '../views/directives/sv-search-sale-property.html',
       restrict: 'E',
       scope: {
         isRent: '='
@@ -30,11 +30,8 @@ angular.module('app')
               },
               {reload: false}
             );
-
           }
-
         }
       }
-
     };
   });

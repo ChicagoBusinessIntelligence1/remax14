@@ -15,7 +15,6 @@ angular.module('app')
 
         $scope.removeHomeDraft = function (mls) {
           $rootScope.$broadcast('remove-draft', mls);
-
         };
 
         $scope.deleteDraftTitle = notifications.deleteDraftTitle;

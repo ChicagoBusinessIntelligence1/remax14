@@ -3671,6 +3671,9 @@ label {
 .modal-wishlist label {
   margin-bottom: 5px;
 }
+.saved-search-date {
+  font-size: 12px;
+}
 .form-group {
   margin-bottom: 10px;
 }

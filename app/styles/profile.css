@@ -72,3 +72,9 @@ label {
 .modal-wishlist label {
   margin-bottom: 5px;
 }
+/**********************
+    =Saved Searches
+***********************/
+.saved-search-date {
+  font-size: 12px;
+}

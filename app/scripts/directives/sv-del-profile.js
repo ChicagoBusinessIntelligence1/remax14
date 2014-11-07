@@ -15,7 +15,6 @@ angular.module('app')
           container: 'body',
           template: '../../views/popover/delete-account-popover.html',
           placement: 'bottom',
-          animation: 'am-flip-x',
           scope: $scope
         });
       },

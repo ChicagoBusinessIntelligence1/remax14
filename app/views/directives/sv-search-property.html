@@ -1,1 +1,43 @@
-<div class="app-container-10"><form id="form" name="form" ng-submit="mainSearch()" class="search-form"><!--.alert-box.warning.round(data-alert, ng-show="loginError")--><!--  | Incorrect login or password--><!--  | a.close(href="#") &times;--><div class="form-group"><label ng-class="{'error':login.location.$invalid &amp;&amp; login.$dirty}">Location:</label><input type="location" name="location" id="location" placeholder="City and State, or Zip Code" ng-model="query.location" class="form-control"/></div><div class="form-group"><label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Price Range:</label><div class="row"><div class="col-md-6 col-sm-6 col-xs-6"><input name="priceMin" id="priceMin" ng-model="query.priceMin" placeholder="$ From" class="form-control"/></div><div class="col-md-6 col-sm-6 col-xs-6"><input name="priceMax" id="priceMax" ng-model="query.priceMax" placeholder="$ To" class="form-control"/></div></div></div><div class="form-group"><div class="row"><div class="col-md-6 col-sm-6 col-xs-6"><label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Bedrooms:</label><input name="bedrooms" id="bedrooms" ng-model="query.bedrooms" placeholder="#" class="form-control"/></div><div class="col-md-6 col-sm-6 col-xs-6"><label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Bathrooms:</label><input name="bathrooms" ng-model="query.bathrooms" id="bathrooms" placeholder="#" class="form-control"/></div></div></div><button class="btn btn-primary submit-query btn-mob-dev"><i class="fa fa-search fa-fw"></i>Search</button></form></div>
+<div class="app-container-10">
+  <form id="form" name="form" ng-submit="mainSearch()" class="search-form">
+    <!--.alert-box.warning.round(data-alert, ng-show="loginError")--><!--  | Incorrect login or password-->
+    <!--  | a.close(href="#") &times;-->
+    <div class="form-group"><label
+      ng-class="{'error':login.location.$invalid &amp;&amp; login.$dirty}">Location:</label><input type="location"
+                                                                                                   name="location"
+                                                                                                   id="location"
+                                                                                                   placeholder="City and State, or Zip Code"
+                                                                                                   ng-model="query.location"
+                                                                                                   class="form-control"/>
+    </div>
+    <div class="form-group"><label ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Price
+      Range:</label>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6"><input name="priceMin" id="priceMin" ng-model="query.priceMin"
+                                                       placeholder="$ From" class="form-control"/></div>
+        <div class="col-md-6 col-sm-6 col-xs-6"><input name="priceMax" id="priceMax" ng-model="query.priceMax"
+                                                       placeholder="$ To" class="form-control"/></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6"><label
+          ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Bedrooms:</label><input name="bedrooms"
+                                                                                                       id="bedrooms"
+                                                                                                       ng-model="query.bedrooms"
+                                                                                                       placeholder="#"
+                                                                                                       class="form-control"/>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6"><label
+          ng-class="{'error':login.password.$invalid &amp;&amp; login.$dirty}">Bathrooms:</label><input name="bathrooms"
+                                                                                                        ng-model="query.bathrooms"
+                                                                                                        id="bathrooms"
+                                                                                                        placeholder="#"
+                                                                                                        class="form-control"/>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary submit-query btn-mob-dev"><i class="fa fa-search fa-fw"></i>Search</button>
+  </form>
+</div>

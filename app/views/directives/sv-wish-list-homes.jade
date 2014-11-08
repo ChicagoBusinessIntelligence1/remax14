@@ -1,18 +1,5 @@
 div
   ul.list-unstyled
     li(ng-repeat='wishHome in wishHomes')
-    .row
-      .col-sm-1
-        span {{$index+1}}.
-      .col-sm-8
-        ul.list-unstyled
-          li(ng-repeat='(key,value) in wishHome')
-            .row
-              .col-sm-6
-                span {{key}}
-              .col-sm-6
-                span {{value}}
-      .col-sm-2
-        button.btn.btn-danger.btn-sm Delete
-
+      div {{wishHome}}
   sv-btn-add-wish-home

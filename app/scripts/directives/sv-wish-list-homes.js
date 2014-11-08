@@ -10,10 +10,10 @@ angular.module('app')
         isRent: '='
       },
       link: function ($scope, element, attr) {
-        $scope.url = $scope.isRent ?  urlRental:urlSale;
+        $scope.url = $scope.isRent ? urlRental : urlSale;
         WishListService.all($scope.url).then(function (wishHomes) {
           $scope.wishHomes = wishHomes;
-
+          console.log($scope.wishHomes);
         })
       }
     };

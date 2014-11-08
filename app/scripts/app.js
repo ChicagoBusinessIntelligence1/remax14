@@ -1,8 +1,9 @@
 'use strict';
 
 var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
       $urlRouterProvider.otherwise('/home');
+      $locationProvider.html5Mode(true).hashPrefix('!');
 
       $stateProvider
         .state('app', {
@@ -159,7 +160,7 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
           templateUrl: "../views/home-sale-draft-ctrl.html"
         })
         .state("app.remax-home", {
-          url: "/remax-home/:mls",
+          url: "/remax-home-sale/:mls",
           controller: "HomeSalePostedCtrl",
           templateUrl: "../views/home-sale-posted-ctrl.html"
         })

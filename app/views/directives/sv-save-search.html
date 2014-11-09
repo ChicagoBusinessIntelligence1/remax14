@@ -1,1 +1,1 @@
-<div><button ng-if="!isRunFromSaved" ng-click="saveThisSearch()" ng-disabled="isQueryEmpty" class="btn btn-default btn-sm">Save this Search</button><h4 ng-if="isRunFromSaved" class="text-info"><i class="fa fa-check fa-fw"></i>This Search is Saved</h4></div>
+<div><button ng-if="!isRunFromSaved" ng-click="saveThisSearch()" ng-disabled="isQueryEmpty" class="btn btn-default btn-sm"><i class="fa fa-save fa-fw"></i>Save this Search</button><h4 ng-if="isRunFromSaved" class="text-info"><i class="fa fa-check fa-fw"></i>{{searchSaved}}</h4></div>

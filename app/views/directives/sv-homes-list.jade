@@ -8,7 +8,9 @@ div
 
   ul.list-inline
     li
-      h5 Found {{homes.length}} homes
+      h5.h-found
+        i.fa.fa-binoculars.fa-fw
+        | &nbsp Found {{homes.length}} homes
         span.text-info &nbsp  for {{isRent?'Rent':'Sale'}}
     li
       sv-save-search

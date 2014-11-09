@@ -75,16 +75,24 @@ app.value('sortTypes',
 app.value('notifications', {
   addToWatch: 'Add to Watchlist',
   removeFromWatch: 'Remove from Watchlist',
-  postDraftTitle: 'Make this Listing Public',
   deleteDraftTitle: 'Delete this listing',
   shareHomeTitle: 'Share this Listing in Social Media',
-  sharedHomeFbTitle: 'You Listing has been successfuly shared on FB',
+  sharedHomeFbTitle: 'You Listing has been successfully shared on FB',
   archiveHome: 'Move this Listing to Archive',
   draftSaved: 'Listing has been successfully saved to DB',
-  draftShared: 'Listing has been successfully shared',
+  draftPosted: 'Listing has been successfully posted',
+  postDraftTitle: 'Make this Listing Public',
   draftDeleted: 'Listing draft has been successfully removed from DB',
   savedToWatchlist: 'Listing has been successfully saved to watchlist',
+  searchSaved: 'This Search is Saved to Your Profile',
+  brokerAppSubmitted: 'You Broker Application has been successfully submitted',
+  profileDeleted: 'You profile has been successfully deleted',
+  settingsSaved: 'You settings have been successfully saved',
+  profileSaved: 'You profile has been successfully saved',
+  wishListUpdated: 'You wishlist has been successfully updated',
+  changesSaved: 'You changes has been successfully saved',
   noPropWishList: 'You do not have any homes in the wishList yet'
+
 
 });
 app.value('query', {});

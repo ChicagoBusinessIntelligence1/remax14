@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svEmailAlertSettings', function ($popover) {
+  .directive('svEmailAlertSettings', function ($popover, notifications) {
     return {
       restrict: 'E',
       replace: true,
@@ -13,7 +13,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.saveEmailAlertSettings = function (fName, lName, email) {
-          toastr.success('Your settings are successfully saved');
+          toastr.success(notifications.settingsSaved);
         };
         var emailAlertPopover = $popover(element, {
           container: 'body',

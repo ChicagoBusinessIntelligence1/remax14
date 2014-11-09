@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBrokerApplication', function ($popover) {
+  .directive('svBrokerApplication', function ($popover, notifications) {
     return {
       restrict: 'E',
       replace: true,
@@ -13,7 +13,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.submitBrokerApp = function (fName, lName, email) {
-          toastr.success('You application has been successfully submitted');
+          toastr.success(notifications.brokerAppSubmitted);
         };
         var brokerPopover = $popover(element, {
           container: 'body',

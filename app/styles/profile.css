@@ -75,6 +75,9 @@ label {
 /**********************
     =Saved Searches
 ***********************/
+.h-found {
+  color: #626262;
+}
 .saved-search-date {
   font-size: 12px;
 }
@@ -95,5 +98,5 @@ ol.breadcrumb.breadcrumb-search padding 5px !important li {
 **********************/
 .table-wish {
   font-size: 12px;
-  margin-top: 15px;
+  margin-top: 15px G;
 }

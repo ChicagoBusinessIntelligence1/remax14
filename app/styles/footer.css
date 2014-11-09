@@ -11,7 +11,7 @@ label {
     =footer
 ***********************/
 .footer-container {
-  background-color: #fff;
+  background-color: #dfdfdf;
 }
 .footer-container hr {
   margin-top: 0px;
@@ -30,11 +30,11 @@ label {
   padding: 10px;
 }
 .footer {
-  background-color: #676767;
+  background-color: #a9a9a9;
   height: 60px;
 }
 .footer p {
-  color: #fff;
+  color: #626262;
 }
 .footer-content {
   padding-top: 15px;
@@ -49,6 +49,6 @@ label {
   text-shadow: app-text-shadow;
 }
 .properties-footer p a {
-  color: #92b7d5;
+  color: #659ac4;
   text-shadow-blue: app-text-shadow;
 }

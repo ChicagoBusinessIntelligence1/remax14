@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('UserService', function ($firebase, $q, urlCommon, $rootScope) {
+  .factory('UserService', function ($firebase, $q, urlCommon, $rootScope, notifications) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -16,7 +16,7 @@ angular.module('app')
       },
       saveProfile: function (profile) {
         this.repoRef.$set(profile).then(function () {
-          toastr.success('Profile has been saved');
+          toastr.success(notifications.profileSaved);
         });
       }
     };

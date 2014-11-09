@@ -37,7 +37,7 @@ angular.module('app')
         sharedRef.$save().then(function () {
 
           draftRef.$remove(mls).then(function () {
-            toastr.success(notifications.draftShared);
+            toastr.success(notifications.draftPosted);
             defered.resolve(true);
           })
         })

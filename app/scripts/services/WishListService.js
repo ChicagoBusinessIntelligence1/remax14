@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('WishListService', function ($firebase, $q, $rootScope, urlCommon,CleanObjectService) {
+  .factory('WishListService', function ($firebase, $q, $rootScope, urlCommon, CleanObjectService, notifications) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -11,7 +11,7 @@ angular.module('app')
         var deferred = $q.defer();
 
         var userType = $rootScope.user.profileType;
-        that.repoUrl = urlCommon[userType + 's'] +'/'+ $rootScope.user.id + '/' + url.residentialWishList;
+        that.repoUrl = urlCommon[userType + 's'] + '/' + $rootScope.user.id + '/' + url.residentialWishList;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
         deferred.resolve(that.repoRef.$asArray());
@@ -20,13 +20,9 @@ angular.module('app')
       save: function (wishList) {
         var that = this;
         var deferred = $q.defer();
-
-
-
-
         that.repoRef.$asArray().$add(wishList).then(function () {
           deferred.resolve(true);
-          toastr.success('Wish list has been updated');
+          toastr.success(notifications.wishListUpdated);
         });
         return deferred.promise;
       },
@@ -34,12 +30,11 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-
         var id = wishList.$id;
         wishList = CleanObjectService.clean(wishList);
-        that.repoRef.$update(id,wishList).then(function () {
+        that.repoRef.$update(id, wishList).then(function () {
           deferred.resolve(true);
-          toastr.success('Wish list has been changed');
+          toastr.success(notifications.changesSaved);
         });
         return deferred.promise;
       },
@@ -48,11 +43,9 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-
-
         that.repoRef.$remove(key).then(function () {
           deferred.resolve(true);
-          toastr.warning('Wish list has been deleted');
+          toastr.warning(notifications.wishListUpdated);
         });
         return deferred.promise;
       }

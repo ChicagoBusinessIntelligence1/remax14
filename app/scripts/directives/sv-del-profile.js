@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svDelProfile', function ($popover) {
+  .directive('svDelProfile', function ($popover, notifications) {
     return {
       restrict: 'E',
       replace: true,
@@ -9,7 +9,7 @@ angular.module('app')
       link: function ($scope, element, attr) {
 
         $scope.deleteProfile = function () {
-          toastr.success('You profile was successfully deleted');
+          toastr.success(notifications.profileDeleted);
         };
         var deleteProfilePopover = $popover(element, {
           container: 'body',

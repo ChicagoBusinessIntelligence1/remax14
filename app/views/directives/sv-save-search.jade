@@ -1,5 +1,7 @@
 div
-  button.btn.btn-default.btn-sm(ng-if='!isRunFromSaved' ng-click='saveThisSearch()' ng-disabled='isQueryEmpty') Save this Search
+  button.btn.btn-default.btn-sm(ng-if='!isRunFromSaved' ng-click='saveThisSearch()' ng-disabled='isQueryEmpty')
+    i.fa.fa-save.fa-fw
+    | Save this Search
   h4.text-info(ng-if='isRunFromSaved')
     i.fa.fa-check.fa-fw
-    | This Search is Saved
+    | {{searchSaved}}

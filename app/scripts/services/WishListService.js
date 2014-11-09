@@ -17,7 +17,7 @@ angular.module('app')
         deferred.resolve(that.repoRef.$asArray());
         return deferred.promise;
       },
-      save: function (url, wishList) {
+      save: function (wishList) {
         var that = this;
         var deferred = $q.defer();
 

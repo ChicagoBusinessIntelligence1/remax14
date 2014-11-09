@@ -1,5 +1,12 @@
 div
   ul.list-unstyled
     li(ng-repeat='wishHome in wishHomes')
-      div {{wishHome}}
+      ul.list-unstyled.alert
+        li(ng-repeat='(key,value) in wishHome')
+          .row
+            .col-sm-6
+              |{{key}}
+            .col-sm-6
+              |{{value}}
   sv-btn-add-wish-home
+

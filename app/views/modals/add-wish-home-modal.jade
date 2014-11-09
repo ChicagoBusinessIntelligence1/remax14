@@ -10,37 +10,37 @@
             .col-sm-4
               .form-group
                 label State
-                input.form-control(type='text' name='input' id='input' required)
+                input.form-control(type='text' ng-model='wishList.state' name='state' id='state' required)
             .col-sm-4
               .form-group
                 label City
-                input.form-control(type='text' name='input' id='input' required)
+                input.form-control(type='text' ng-model='wishList.city' name='city' id='city' required)
             .col-sm-4
               .form-group
                 label Property Type
-                input.form-control(type='text' name='input' id='input' required)
+                input.form-control(type='text' ng-model='wishList.propertyType' name='propertyType' id='propertyType' required)
           .row
             .col-sm-4
               .form-group
                 label Bedrooms
 
-                input.form-control(type='number' name='input' id='input' required)
+                input.form-control(type='number' ng-model='wishList.beddrooms' name='beddrooms' id='beddrooms' required)
             .col-sm-4
               .form-group
                 label Bathrooms
-                input.form-control(type='number' name='input' id='input' required)
+                input.form-control(type='number' ng-model='wishList.bathrooms' name='bethrooms' id='bethrooms' required)
             .col-sm-4
               .form-group
                 label Parking Type
-                input.form-control(type='text' name='input' id='input' required)
+                input.form-control(type='text' ng-model='wishList.parkingType' name='parkingType' id='parkingType' required)
           .row
             .col-sm-12
               .form-group
                 label Additional Info
-                textarea.form-control(type='text' name='input' id='input' rows="10")
+                textarea.form-control(ng-model='wishList.addInfo' name='addInfo' id='addInfo')
           .row
             .col-sm-12
-              button.btn.btn-primary(ng-click='saveWishList()')
+              button.btn.btn-primary(ng-click='saveWishList(wishList)')
                 i.fa.fa-save.fa-fw
                 |Save
 

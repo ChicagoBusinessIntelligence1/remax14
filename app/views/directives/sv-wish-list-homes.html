@@ -1,1 +1,1 @@
-<div><ul class="list-unstyled"><li ng-repeat="wishHome in wishHomes"><div>{{wishHome}}</div></li></ul><sv-btn-add-wish-home></sv-btn-add-wish-home></div>
+<div><ul class="list-unstyled"><li ng-repeat="wishHome in wishHomes"><ul class="list-unstyled alert"><li ng-repeat="(key,value) in wishHome"><div class="row"><div class="col-sm-6">{{key}}</div><div class="col-sm-6">{{value}}</div></div></li></ul></li></ul><sv-btn-add-wish-home></sv-btn-add-wish-home></div>

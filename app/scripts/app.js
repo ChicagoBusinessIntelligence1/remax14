@@ -3,7 +3,7 @@
 var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
     .config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
       $urlRouterProvider.otherwise('/home');
-      $locationProvider.html5Mode(true).hashPrefix('!');
+      //$locationProvider.html5Mode(true);
 
       $stateProvider
         .state('app', {
@@ -245,9 +245,9 @@ var app = angular.module('app', ['firebase', 'ngAnimate', 'ngSanitize', 'mgcrea.
 
 app.run(function (editableOptions) {
   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-})
-
-  .run(function ($FB) {
-    $FB.init('1552476308299249');
-  });
+});
+  //
+  //.run(function ($FB) {
+  //  $FB.init('1552476308299249');
+  //});
 

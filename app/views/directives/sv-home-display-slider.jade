@@ -2,10 +2,10 @@ div
     .head-panel.cursor-p(ng-click='toggleShow()')
       .row
         .col-xs-11
-          ul.list-inline
+          ul.list-inline(ng-switch="user.profileType")
             li
               h4.text-info {{section.title | keyConversion}}
-            li(ng-show='isVisible')
+            li(ng-show='isVisible' ng-switch-when="broker")
               sv-btn-action(icon='fa-edit' action='editListing()' ng-hide='isEdit || isTemplate')
               sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit || isTemplate')
               sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit || isTemplate')

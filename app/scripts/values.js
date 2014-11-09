@@ -91,7 +91,8 @@ app.value('notifications', {
   profileSaved: 'You profile has been successfully saved',
   wishListUpdated: 'You wishlist has been successfully updated',
   changesSaved: 'You changes has been successfully saved',
-  noPropWishList: 'You do not have any homes in the wishList yet'
+  noPropWishList: 'You do not have any homes in the wishList yet',
+  contactMessageSent: 'Your message has been successfully sent'
 
 
 });

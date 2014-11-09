@@ -83,7 +83,8 @@ app.value('notifications', {
   draftSaved: 'Listing has been successfully saved to DB',
   draftShared: 'Listing has been successfully shared',
   draftDeleted: 'Listing draft has been successfully removed from DB',
-  savedToWatchlist: 'Listing has been successfully saved to watchlist'
+  savedToWatchlist: 'Listing has been successfully saved to watchlist',
+  noPropWishList: 'You do not have any homes in the wishList yet'
 
 });
 app.value('query', {});

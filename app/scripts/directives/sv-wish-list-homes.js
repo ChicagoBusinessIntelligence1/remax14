@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svWishListHomes', function (WishListService, urlSale, urlRental, $modal) {
+  .directive('svWishListHomes', function (WishListService, urlSale, urlRental, $modal, notifications) {
     return {
       restrict: 'E',
       replace: true,
@@ -11,6 +11,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.url = $scope.isRent ? urlRental : urlSale;
+        $scope.noPropWishList = notifications.noPropWishList;
 
         WishListService.all($scope.url).then(function (wishHomes) {
           $scope.wishHomes = wishHomes;

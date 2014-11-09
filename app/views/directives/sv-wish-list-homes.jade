@@ -1,12 +1,32 @@
 div
-  ul.list-unstyled
-    li(ng-repeat='wishHome in wishHomes')
-      ul.list-unstyled.alert
-        li(ng-repeat='(key,value) in wishHome')
-          .row
-            .col-sm-6
-              |{{key}}
-            .col-sm-6
-              |{{value}}
+  h4(ng-hide='wishHomes.length') You do not have any homes in the wishList
+  table.table.table-bordered(ng-show='wishHomes && wishHomes.length>0')
+    tr
+      th #
+      th State
+      th City
+      th Property Type
+      th Bedrooms
+      th Bathrooms
+      th Parking Type
+      th Additional Info
+      th
+      th
+    tr(ng-repeat='l in wishHomes')
+      td {{$index+1}}
+      td {{l.state}}
+      td {{l.city}}
+      td {{l.propertyType}}
+      td {{l.bedrooms}}
+      td {{l.bathrooms}}
+      td {{l.parkingType}}
+      td {{l.addInfo}}
+      td
+        button.btn.btn-danger.btn-sm(ng-click='removeWishList(l.$id)')
+          i.fa.fa-remove.fa-fw
+      td
+        button.btn.btn-info.btn-sm(ng-click='editList(l.$id,$index)')
+          i.fa.fa-edit.fa-fw
+
   sv-btn-add-wish-home
 

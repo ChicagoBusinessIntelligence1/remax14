@@ -24,11 +24,12 @@ angular.module('app')
             template: '../../views/modals/add-wish-home-modal.html',
             show: false
           });
+
         $scope.showModal = function () {
           $scope.addWishHomeModal.$promise.then($scope.addWishHomeModal.show);
         };
-        $scope.saveWishList = function (wishList) {
 
+        $scope.saveWishList = function (wishList) {
           WishListService.save(wishList).then(function () {
           $scope.addWishHomeModal.$promise.then($scope.addWishHomeModal.hide);
           });

@@ -31,7 +31,7 @@ angular.module('app')
 
         $scope.saveWishList = function (wishList) {
           WishListService.save(wishList).then(function () {
-          $scope.addWishHomeModal.$promise.then($scope.addWishHomeModal.hide);
+            $scope.addWishHomeModal.$promise.then($scope.addWishHomeModal.hide);
           });
         };
 

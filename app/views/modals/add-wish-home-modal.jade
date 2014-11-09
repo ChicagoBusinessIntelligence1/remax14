@@ -40,7 +40,7 @@
                 textarea.form-control(ng-model='wishList.addInfo' name='addInfo' id='addInfo')
           .row
             .col-sm-12
-              button.btn.btn-primary(ng-click='saveWishList(wishList)')
+              button.btn.btn-primary(ng-click='saveWishList(wishList)' ng-disabled='form.$invalid || form.$pristine')
                 i.fa.fa-save.fa-fw
                 |Save
 

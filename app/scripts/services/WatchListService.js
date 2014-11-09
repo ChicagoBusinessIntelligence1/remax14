@@ -35,7 +35,7 @@ angular.module('app')
         return deferred.promise;
       },
       addHome: function (isRent, mls) {
-        var saleRent = isRent ? 'rent':'sale';
+        var saleRent = isRent ? 'rent' : 'sale';
         var that = this;
         var deferred = $q.defer();
         var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
@@ -55,16 +55,16 @@ angular.module('app')
       },
       removeHome: function (isRent, mls) {
         var that = this;
-        var saleRent = isRent ? 'rent':'sale';
+        var saleRent = isRent ? 'rent' : 'sale';
         var repoRef = isRent ? that.repoRefRent : that.repoRefSale;
         var deferred = $q.defer();
 
-	      var watchList = $rootScope.user.watchList[saleRent];
+        var watchList = $rootScope.user.watchList[saleRent];
         var fireIndex = watchList.indexOf(mls);
 
         repoRef.$asArray().$remove(fireIndex).then(function () {
           try {
-            $rootScope.user.watchList[saleRent] = _.without(watchList,mls);
+            $rootScope.user.watchList[saleRent] = _.without(watchList, mls);
             toastr.success(notifications.savedToWatchlist);
             deferred.resolve(true);
           } catch (e) {

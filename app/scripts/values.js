@@ -78,7 +78,7 @@ app.value('notifications', {
   postDraftTitle: 'Make this Listing Public',
   deleteDraftTitle: 'Delete this listing',
   shareHomeTitle: 'Share this Listing in Social Media',
-  sharedHomeFbTitle: 'Share this Listing in Social Media',
+  sharedHomeFbTitle: 'You Listing has been successfuly shared on FB',
   archiveHome: 'Move this Listing to Archive',
   draftSaved: 'Listing has been successfully saved to DB',
   draftShared: 'Listing has been successfully shared',

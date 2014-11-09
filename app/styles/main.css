@@ -3698,6 +3698,10 @@ ol.breadcrumb.breadcrumb-search padding 5px !important li {
 .b-link:focus {
   color: #565656 !important;
 }
+.table-wish {
+  font-size: 12px;
+  margin-top: 15px;
+}
 .form-group {
   margin-bottom: 10px;
 }

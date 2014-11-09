@@ -90,3 +90,10 @@ ol.breadcrumb.breadcrumb-search padding 5px !important li {
 .b-link:focus {
   color: #565656 !important;
 }
+/**********************
+    =Wish List
+**********************/
+.table-wish {
+  font-size: 12px;
+  margin-top: 15px;
+}

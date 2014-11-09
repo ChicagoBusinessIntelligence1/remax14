@@ -4,7 +4,9 @@
   .popover-content
     ul.list-inline
       li
-        a.facebookShare(shares='shares' url='sharedUrl' facebook='') {{ shares }}
+        button.btn.btn-primary.btn-sm(ng-click='shareHome();$hide')
+          i.fa.fa-facebook.fa-fw
+          | Share
       li
         button.btn.btn-default.btn-sm(ng-click='$hide()')
           i.fa.fa-times.fa-fw

@@ -15,7 +15,6 @@ angular.module('app')
         isRent: '='
       },
       link: function ($scope, element, attr) {
-
         $scope.addWishHomeModal = $modal(
           {
             scope: $scope,
@@ -34,7 +33,6 @@ angular.module('app')
             $scope.addWishHomeModal.$promise.then($scope.addWishHomeModal.hide);
           });
         };
-
       }
     };
   });

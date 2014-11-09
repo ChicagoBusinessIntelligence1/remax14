@@ -9,10 +9,11 @@ angular.module('app')
       '<i class="fa fa-share-alt fa-fw"></i>' +
       '</button>',
       scope: {
-        sharedUrl: '@'
+        sharedUrl:'@'
       },
 
       link: function ($scope, element, attr) {
+
         $scope.shareHomeTitle = notifications.shareHomeTitle;
         $scope.sharedHomeFbTitle = notifications.sharedHomeFbTitle;
         $scope.shareHome = function (fName, lName, email) {

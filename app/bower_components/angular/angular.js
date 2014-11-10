@@ -23428,7 +23428,15 @@ var ngIncludeDirective = ['$templateRequest', '$anchorScroll', '$animate', '$sce
               // directives to non existing elements.
               var clone = $transclude(newScope, function(clone) {
                 cleanupLastIncludeContent();
+
+                try {
                 $animate.enter(clone, null, $element).then(afterAnimation);
+                } catch(e){
+
+                }
+
+
+
               });
 
               currentScope = newScope;

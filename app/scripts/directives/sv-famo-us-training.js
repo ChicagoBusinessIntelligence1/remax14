@@ -6,7 +6,6 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-famo-us-training.html',
-      },
       link: function ($scope, element, attr) {
 
       }

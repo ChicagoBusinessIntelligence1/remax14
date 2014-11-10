@@ -3,19 +3,19 @@
     .form-group
       label.col-sm-5(for='uName') User Name:
       .col-sm-7
-        input.input-sm.input-sm.form-control(id="uName" placeholder="User Name"  required)
+        input.input-sm.input-sm.form-control(id="uName" placeholder="{{user.first_name}}"  required)
 
     .form-group
       .col-sm-5
         label First Name:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="First Name"  required)
+        input.input-sm.form-control(id="fName" placeholder="{{user.first_name}}"  required)
 
     .form-group
       .col-sm-5
         label Last Name:
       .col-sm-7
-        input.input-sm.form-control(id="lName" placeholder="Last Name" required)
+        input.input-sm.form-control(id="lName" placeholder="{{user.last_name}}" required)
 
     .form-group
       .col-sm-5
@@ -33,7 +33,7 @@
       .col-sm-5
         label Email:
       .col-sm-7
-        input.input-sm.form-control(id="email" placeholder="Fb Email" required)
+        input.input-sm.form-control(id="email" placeholder="{{user.email}}" required)
 
     .form-group
       .col-sm-5

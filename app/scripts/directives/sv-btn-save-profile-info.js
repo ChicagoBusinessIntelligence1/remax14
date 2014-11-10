@@ -14,7 +14,6 @@ angular.module('app')
         saveProfileInfo: '&'
       },
       link: function ($scope, element, attr) {
-
       }
     };
   });

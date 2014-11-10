@@ -9,40 +9,40 @@
       .col-sm-5
         label First Name:
       .col-sm-7
-        input.input-sm.form-control(id="fName" placeholder="{{user.first_name}}"  required)
+        input.input-sm.form-control(id="fName"  ng-model='broker.first_name' placeholder="{{user.first_name}}"  required)
 
     .form-group
       .col-sm-5
         label Last Name:
       .col-sm-7
-        input.input-sm.form-control(id="lName" placeholder="{{user.last_name}}" required)
+        input.input-sm.form-control(id="lName" ng-model='broker.last_name' placeholder="{{user.last_name}}" required)
 
     .form-group
       .col-sm-5
         label MLS Id:
       .col-sm-7
-        input.input-sm.form-control(id="mls-id" placeholder="MLS Id" required)
+        input.input-sm.form-control(id="mls-id" ng-model='broker.mls' placeholder="MLS Id" required)
 
     .form-group
       .col-sm-5
         label Website:
       .col-sm-7
-        input.input-sm.form-control(id="website" placeholder="Website" required)
+        input.input-sm.form-control(id="website" ng-model='broker.website' placeholder="Website" required)
 
     .form-group
       .col-sm-5
         label Email:
       .col-sm-7
-        input.input-sm.form-control(id="email" placeholder="{{user.email}}" required)
+        input.input-sm.form-control(id="email" ng-model='broker.email' placeholder="{{user.email}}" required)
 
     .form-group
       .col-sm-5
         label Phone Number:
       .col-sm-7
-        input.input-sm.form-control(id="phone" placeholder="Phone Number" required)
+        input.input-sm.form-control(id="phone" ng-model='broker.phone' placeholder="Phone Number" required)
 
     .save-profile-changes
-      sv-btn-save-profile-info
+      sv-btn-save-profile-info(save-profile-info='saveProfileInfo')
     hr
     .text-right
       sv-del-profile

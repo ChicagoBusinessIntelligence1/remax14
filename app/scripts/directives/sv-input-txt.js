@@ -7,10 +7,17 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-input-txt.html',
       scope: {
-
+        name: '@',
+        type: '@',
+        model:'=',
+        labelClass:'@',
+        inputClass:'@',
+        fieldClass:'@',
+        required:'=',
+        form:'='
       },
       link: function ($scope, element, attr) {
-
+        $scope.label =_.str.humanize($scope.name);
       }
     };
   });

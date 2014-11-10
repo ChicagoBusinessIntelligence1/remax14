@@ -1,1 +1,7 @@
-div sv-input-txt Template
+.form-group
+  div(class='{{labelClass}}')
+    label {{label}}
+  div(class='{{inputClass}}')
+    input.form-control(class='{{fieldClass}}' type='{{type}}' name='{{name}}' id='{{name}}' required ng-form='{{form.name}}')
+
+

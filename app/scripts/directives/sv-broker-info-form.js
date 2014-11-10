@@ -30,8 +30,12 @@ angular.module('app')
           $scope.isDataLoading = false;
         });
 
-        $scope.saveProfileInfo = function () {
+        $scope.saveProfileInfo = function (form) {
+          if (form.$valid) {
           UserService.saveProfile($scope.broker);
+          } else{
+            alert('invalid');
+          }
         };
       }
     };

@@ -4336,6 +4336,12 @@ h5 {
 .thumbnail {
   margin-bottom: 5px;
 }
+.span-required {
+  font-size: 11px;
+  color: #e66f72;
+  display: block;
+  text-align: right;
+}
 /**********************
      =main content
 **********************/

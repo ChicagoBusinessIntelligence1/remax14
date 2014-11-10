@@ -1,6 +1,6 @@
 .well
   sv-spinner(ng-show='isDataLoading')
-  form.form-horizontal(name="customerForm" id="customerForm" novalidate ng-hide='isDataLoading')
+  form.form-horizontal(name="form" id="form" novalidate ng-hide='isDataLoading')
     .form-group
       .col-sm-5
         label First Name:
@@ -26,7 +26,7 @@
         input.input-sm.form-control(type='tel' id="phone" ng-model='customer.phone' placeholder="Phone Number" required)
 
     .save-profile-changes
-      sv-btn-save-profile-info(save-profile-info='saveProfileInfo()')
+      sv-btn-save-profile-info(save-profile-info='saveProfileInfo()' form='form')
     span(ng-show="!isLocal") Save your account locally
     hr
     .text-right

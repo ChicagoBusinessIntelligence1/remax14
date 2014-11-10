@@ -1,48 +1,48 @@
 .well
-  form.form-horizontal(name="form" id="form" novalidate)
-    .form-group
-      label.col-sm-5(for='uName') User Name:
-      .col-sm-7
-        input.input-sm.input-sm.form-control(id="uName" placeholder="{{user.first_name}}"  required)
-
+  form.form-horizontal(name="form" type='text' id="form" novalidate)
     .form-group
       .col-sm-5
         label First Name:
       .col-sm-7
-        input.input-sm.form-control(id="fName"  ng-model='broker.first_name' placeholder="{{user.first_name}}"  required)
+        span.span-required(ng-if='form.fName.$invalid') Required
+        input.input-sm.form-control(type='text' name="fName" id="fName"  ng-model='broker.first_name' placeholder="{{user.first_name}}"  required)
 
     .form-group
       .col-sm-5
         label Last Name:
       .col-sm-7
-        input.input-sm.form-control(id="lName" ng-model='broker.last_name' placeholder="{{user.last_name}}" required)
+        span.span-required(ng-if='form.lName.$invalid') Required
+        input.input-sm.form-control(type='text' name="lName" id="lName" ng-model='broker.last_name' placeholder="{{user.last_name}}" required)
 
     .form-group
       .col-sm-5
-        label MLS Id:
+        label   Id:
       .col-sm-7
-        input.input-sm.form-control(id="mls-id" ng-model='broker.mls' placeholder="MLS Id" required)
+        span.span-required(ng-if="form.mls.$invalid") Required
+        input.input-sm.form-control(type='text' name='mls' id="mls" ng-model='broker.mls' placeholder="MLS Id" required)
 
     .form-group
       .col-sm-5
         label Website:
       .col-sm-7
-        input.input-sm.form-control(id="website" ng-model='broker.website' placeholder="Website" required)
+        span.span-required(ng-if="form.website.$touched && form.website.$invalid") not a real url!
+        input.input-sm.form-control(type='url' name="website" id="website" ng-model='broker.website' placeholder="Website")
+
 
     .form-group
       .col-sm-5
         label Email:
       .col-sm-7
-        input.input-sm.form-control(id="email" ng-model='broker.email' placeholder="{{user.email}}" required)
+        span.span-required(ng-if='form.email.$invalid') Required
+        input.input-sm.form-control(type='text' name="email" id="email" ng-model='broker.email' placeholder="{{user.email}}" required)
 
     .form-group
       .col-sm-5
         label Phone Number:
       .col-sm-7
-        input.input-sm.form-control(id="phone" ng-model='broker.phone' placeholder="Phone Number" required)
-
+        input.input-sm.form-control(type='text' name="phone" id="phone" ng-model='broker.phone' placeholder="Phone Number")
     .save-profile-changes
-      sv-btn-save-profile-info(save-profile-info='saveProfileInfo')
+      sv-btn-save-profile-info(save-profile-info='saveProfileInfo(form)' form='form')
     hr
     .text-right
       sv-del-profile

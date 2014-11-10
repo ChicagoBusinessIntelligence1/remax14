@@ -23178,9 +23178,11 @@ var ngIfDirective = ['$animate', function($animate) {
             }
             if (block) {
               previousElements = getBlockNodes(block.clone);
+             try{
               $animate.leave(previousElements).then(function() {
                 previousElements = null;
               });
+             } catch(e){}
               block = null;
             }
           }

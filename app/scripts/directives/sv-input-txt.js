@@ -16,6 +16,7 @@ angular.module('app')
         isRequired:'='
       },
       link: function ($scope, element, attr) {
+        $scope.restictPattern= /^\d+$/;
         $scope.label =_.str.humanize($scope.inputName);
       }
     };

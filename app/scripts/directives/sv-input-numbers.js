@@ -3,19 +3,16 @@
 angular.module('app')
   .directive('svInputNumbers', function () {
     return {
-      link: function ($scope, element, attrs) {
-        $scope.$watch(function () {
-          return $scope.inputModel;
-        }, function (newValue, oldValue) {
-          if (_.isUndefined(newValue)) {
-            if (_.isUndefined(oldValue)) {
-              oldValue = '';
-            }
-            $scope.inputModel = oldValue;
-          }
-          console.log(newValue);
-          console.log(oldValue);
-        });
+      require: 'ngModel',
+      link: function ($scope, element, attrs, modelCtrl) {
+
+        modelCtrl.$parsers.push(function (inputValue) {
+          inputValue = inputValue.replace(/[^0-9]/g,'');
+          modelCtrl.$setViewValue(inputValue);
+          modelCtrl.$render();
+          return inputValue;
+        })
+
       }
     };
   });

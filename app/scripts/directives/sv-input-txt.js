@@ -13,7 +13,8 @@ angular.module('app')
         labelClass:'@',
         inputClass:'@',
         fieldClass:'@',
-        isRequired:'='
+        isRequired:'=',
+        form: '='
       },
       link: function ($scope, element, attr) {
         $scope.label =_.str.humanize($scope.inputName);

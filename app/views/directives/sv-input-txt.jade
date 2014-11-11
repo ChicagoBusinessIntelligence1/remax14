@@ -1,7 +1,12 @@
 .row.form-group(ng-form="form_{{inputName}}" ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}")
   div(class='{{labelClass}}')
-    label.contro-label {{label}}
-  div(class='{{inputClass}}')
-    input.form-control( sv-input-numbers class='{{fieldClass}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    //label.contro-label(ng-if='!isRequired') {{label}}
+    label.contro-label(ng-if='isRequired') {{label}}
+      span(ng-if='isRequired = true') *
+  div(class='{{inputClass}}' ng-switch="isRequired")
+    input.form-control(ng-switch-when="true" class='{{fieldClass}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+  div(class='has-error' ng-show='form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}' ng-messages='form_{{inputName}}.{{inputName}}.$error')
+    p.control-label(ng-message='isRequired') {{label}} is required
+    p.control-label(ng-repeat = '(k, v) in types' ng-message="{{k}}") {{label}} {{v[4]}}
 
 

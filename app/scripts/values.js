@@ -56,6 +56,13 @@ app.value('inputTypes',
     }
   ]);
 
+app.value('inputNotifications', {
+  text: ['Text', 'should be text'],
+  email: ['Email', 'should be email'],
+  url: ['Url', 'should be url'],
+  number: ['Number', 'should be number']
+});
+
 app.value('sortTypes',
   [
     {
@@ -93,7 +100,6 @@ app.value('notifications', {
   changesSaved: 'You changes has been successfully saved',
   noPropWishList: 'You do not have any homes in the wishList yet',
   contactMessageSent: 'Your message has been successfully sent'
-
 
 });
 app.value('query', {});

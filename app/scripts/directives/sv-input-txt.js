@@ -17,6 +17,7 @@ angular.module('app')
         form: '='
       },
       link: function ($scope, element, attr) {
+        $scope.types = fieldTypes;
         $scope.label =_.str.humanize($scope.inputName);
       }
     };

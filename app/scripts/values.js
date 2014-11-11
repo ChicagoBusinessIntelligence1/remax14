@@ -56,7 +56,7 @@ app.value('inputTypes',
     }
   ]);
 
-app.value('inputNotifications', {
+app.value('fieldTypes', {
   text: ['Text', 'should be text'],
   email: ['Email', 'should be email'],
   url: ['Url', 'should be url'],

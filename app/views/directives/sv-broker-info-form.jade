@@ -5,24 +5,14 @@
         label First Name:
       .col-sm-7
         span.span-required(ng-if='form.fName.$invalid') Required
-        input.input-sm.form-control(type='text' name="fName" id="fName"  ng-model='broker.first_name' placeholder="{{user.first_name}}"  required)
+        input.input-sm.form-control(type='text' name="fName" id="fName"  ng-model='broker.firstName' placeholder="{{user.firstName}}"  required)
 
-    .form-group
-      .col-sm-5
-        label Last Name:
-      .col-sm-7
-        span.span-required(ng-if='form.lName.$invalid') Required
-        input.input-sm.form-control(type='text' name="lName" id="lName" ng-model='broker.last_name' placeholder="{{user.last_name}}" required)
+
+    sv-input-txt(input-name='lastName' input-model='broker.lastName' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
     sv-input-txt(input-name='mls' input-model='broker.mls' input-type='number' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    .form-group
-      .col-sm-5
-        label Website:
-      .col-sm-7
-        span.span-required(ng-if="form.website.$touched && form.website.$invalid") not a real url!
-        input.input-sm.form-control(type='url' name="website" id="website" sv-http-prefix  ng-model='broker.website' placeholder="Website")
-
+    sv-input-txt(input-name='website' input-model='broker.website' input-type='url' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
     .form-group
       .col-sm-5

@@ -1,7 +1,7 @@
-.row.form-group(ng-form="form_{{inputName}}" ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.$invalid}")
+.row.form-group(ng-form="form_{{inputName}}" ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}")
   div(class='{{labelClass}}')
     label.contro-label {{label}}
   div(class='{{inputClass}}')
-    input.form-control( sv-only-numbers class='{{fieldClass}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    input.form-control( sv-input-numbers class='{{fieldClass}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
 
 

@@ -54,7 +54,7 @@ angular.module('app')
             $scope.isMaxInvalid = false;
           }
         })
-        $scope.isText = $scope.sectionProperty.title !== 'price';
+        $scope.isText = $scope.sectionProperty.title !== 'price'
 
         $scope.model = $scope.sectionProperty;
         $scope.nameId = _.str.camelize($scope.sectionProperty.title.split(' ').join('-').toLowerCase());

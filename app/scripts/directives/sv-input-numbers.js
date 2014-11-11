@@ -3,14 +3,13 @@
 angular.module('app')
   .directive('svInputNumbers', function () {
     return {
-      restrict: 'E',
-      replace: true,
-      templateUrl: '../../views/directives/sv-input-numbers.html',
-      scope: {
-
-      },
-      link: function ($scope, element, attr) {
-
+      link: function ($scope, element, attrs) {
+        $scope.$watch(function (newValue, oldValue) {
+            console.log($scope);
+          if (_.isUndefined(newValue)) {
+            $scope.inputModel = oldValue;
+          }
+        });
       }
     };
   });

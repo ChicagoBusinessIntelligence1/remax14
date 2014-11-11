@@ -13,11 +13,10 @@ angular.module('app')
         labelClass:'@',
         inputClass:'@',
         fieldClass:'@',
-        isRequired:'=',
-        form: '='
+        isRequired:'='
       },
       link: function ($scope, element, attr) {
-        $scope.types = fieldTypes;
+        $scope.restictPattern= /^\d+$/;
         $scope.label =_.str.humanize($scope.inputName);
       }
     };

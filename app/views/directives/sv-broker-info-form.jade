@@ -1,18 +1,19 @@
-.well(ng-if='!isDataLoading')
-  form.form-horizontal(name="form" type='text' id="form" novalidate)
+.well
+  form.form-horizontal(name="form" type='text' id="form" novalidate ng-if='customer')
 
-    sv-input-txt(input-name='firstName' input-model='broker' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='firstName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    sv-input-txt(input-name='lastName' input-model='broker' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='lastName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    sv-input-txt(input-name='mls' input-model='broker' input-type='number' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='mls' input-model='customer' input-type='number' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
+    sv-input-txt(input-name='website' input-model='customer' input-type='url' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    sv-input-txt(input-name='email' input-model='broker' input-type='email' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='email' input-model='customer' input-type='email' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    sv-input-txt(input-name='phone' input-model='broker' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='phone' input-model='customer' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
     .save-profile-changes
-      button.btn.btn-info.btn-sm(ng-click='saveProfileInfo(broker)')
+      button.btn.btn-info.btn-sm(ng-click='saveProfileInfo(customer,form)')
         i.fa.fa-save.fa-fw
         | Save Changes
     hr

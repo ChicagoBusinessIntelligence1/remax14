@@ -22,7 +22,7 @@ angular.module('app')
         return obj;
       },
       cleanProp: function (obj) {
-        var removeProp = ['$id', '$priority'];
+        var removeProp = ['$id', '$priority','$$conf'];
         obj = angular.fromJson(angular.toJson(obj));
         obj = _.omit(obj, removeProp);
         return obj;

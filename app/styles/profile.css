@@ -19,6 +19,9 @@ label {
 /**********************
      =profile
 ***********************/
+.color-danger {
+  color: #db3136;
+}
 .spinner-style {
   color: #396c95;
 }

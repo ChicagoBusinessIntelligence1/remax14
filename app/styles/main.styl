@@ -112,6 +112,47 @@ h6
   font-size 14px
   font-weight 700
 
+::-webkit-input-placeholder
+  color #f00
+
+::-moz-placeholder
+  color #f00
+
+:-ms-input-placeholder
+  color #f00
+
+input
+  &:-moz-placeholder
+    color #f00
+
+.field2
+  &::-webkit-input-placeholder
+    color lighten(color-app, 60%)
+  &::-moz-placeholder
+    color color-app
+
+.field3
+  &::-webkit-input-placeholder
+    color #090
+    background lightgreen
+    text-transform uppercase
+  &::-moz-placeholder
+    color #090
+    background lightgreen
+    text-transform uppercase
+
+.field4
+  &::-webkit-input-placeholder
+    font-style italic
+    text-decoration overline
+    letter-spacing 3px
+    color #999
+  &::-moz-placeholder
+    font-style italic
+    text-decoration overline
+    letter-spacing 3px
+    color #999
+
 
 
 

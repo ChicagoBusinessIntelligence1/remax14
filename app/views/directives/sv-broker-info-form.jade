@@ -1,12 +1,7 @@
 .well
   form.form-horizontal(name="form" type='text' id="form" novalidate)
-    .form-group
-      .col-sm-5
-        label First Name:
-      .col-sm-7
-        span.span-required(ng-if='form.fName.$invalid') Required
-        input.input-sm.form-control(type='text' name="fName" id="fName"  ng-model='broker.firstName' placeholder="{{user.firstName}}"  required)
 
+    sv-input-txt(input-name='firstName' input-model='broker.firstName' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
     sv-input-txt(input-name='lastName' input-model='broker.lastName' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
@@ -18,7 +13,7 @@
 
     sv-input-txt(input-name='phone' input-model='broker.phone' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
     .save-profile-changes
-      button.btn.btn-info.btn-sm(ng-click='saveProfileInfo()')
+      button.btn.btn-info.btn-sm(ng-click='saveProfileInfo(broker)')
         i.fa.fa-save.fa-fw
         | Save Changes
     hr

@@ -8,7 +8,7 @@ div
   .row.form-group
     .col-sm-12
       div.form-helper.color-danger(ng-messages='form_{{inputName}}.{{inputName}}.$error' ng-show="form_{{inputName}}.{{inputName}}.$touched")
-        div(ng-message='required') You did not enter a field
-        div(ng-message='email') It is not a valid email
-        div(ng-message='url') It is not a valid url
-        div(ng-message='tel') It is not a valid phone
+        div(ng-message='required') * {{label}} field is required
+        div(ng-message='email') * It is not a valid email
+        div(ng-message='url') * It is not a valid url
+        div(ng-message='tel') * It is not a valid phone

@@ -2,4 +2,5 @@
   div(class='{{labelClass}}')
     label.contro-label {{label}}
   div(class='{{inputClass}}')
-    input.form-control(sv-input-numbers sv-http-prefix class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    input.form-control(sv-input-numbers ng-if='inputType==="number" inputType==="tel"' class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    input.form-control(sv-http-prefix ng-if='inputType!=="number" inputType!=="tel"' class='{{fieldClass}}' placeholder='{{inputName}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')

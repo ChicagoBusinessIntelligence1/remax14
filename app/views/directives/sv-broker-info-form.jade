@@ -14,12 +14,9 @@
 
     sv-input-txt(input-name='website' input-model='broker.website' input-type='url' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    .form-group
-      .col-sm-5
-        label Email:
-      .col-sm-7
-        span.span-required(ng-if='form.email.$invalid') Required
-        input.input-sm.form-control(type='text' name="email" id="email" ng-model='broker.email' placeholder="{{user.email}}" required)
+    sv-input-txt(input-name='email' input-model='broker.email' input-type='email' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='mls' input-model='broker.mls' input-type='tel' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
     .form-group
       .col-sm-5

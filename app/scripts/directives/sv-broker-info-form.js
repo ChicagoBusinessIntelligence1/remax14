@@ -24,8 +24,10 @@ angular.module('app')
           $scope.broker = {
             firstName: user.first_name,
             lastName: user.last_name,
+            mls: '',
+            website: '',
             email: user.email,
-            phone: user.phone
+            phone: user.phone || ''
           };
           $scope.isDataLoading = false;
         });

@@ -8,6 +8,6 @@ div
   .row.form-group
     .col-sm-12
       div.form-helper(ng-messages='form_{{inputName}}.{{inputName}}.$error' ng-show="form_{{inputName}}.{{inputName}}.$touched" style='color:#db3136')
-        div(ng-message='required') {{label}} field is required
-        div(ng-message='email') It is not a valid {{label}}
-        div(ng-message='url') It is not a valid {{label}}
+        div(ng-message='required') * {{label}} field is required.
+        div(ng-message='email') * It is not a valid {{label}}.
+        div(ng-message='url') * It is not a valid url.

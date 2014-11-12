@@ -16,13 +16,8 @@
 
     sv-input-txt(input-name='email' input-model='broker.email' input-type='email' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    sv-input-txt(input-name='mls' input-model='broker.mls' input-type='tel' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='phone' input-model='broker.phone' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
-    .form-group
-      .col-sm-5
-        label Phone Number:
-      .col-sm-7
-        input.input-sm.form-control(type='text' name="phone" id="phone" ng-model='broker.phone' placeholder="Phone Number")
     .save-profile-changes
       sv-btn-save-profile-info(save-profile-info='saveProfileInfo(form)' form='form')
     hr

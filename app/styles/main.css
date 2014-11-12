@@ -4314,6 +4314,18 @@ h6 {
   font-size: 14px;
   font-weight: 700;
 }
+::-webkit-input-placeholder {
+  color: #f00 !important;
+}
+::-moz-placeholder {
+  color: #f00 !important;
+}
+:-ms-input-placeholder {
+  color: #f00 !important;
+}
+input:-moz-placeholder {
+  color: #f00 !important;
+}
 /**********************
       =Typography
   ***********************/

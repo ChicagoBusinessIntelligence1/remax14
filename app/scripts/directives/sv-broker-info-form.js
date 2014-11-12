@@ -32,9 +32,9 @@ angular.module('app')
 
         $scope.saveProfileInfo = function (form) {
           if (form.$valid) {
-          UserService.saveProfile($scope.broker);
-          } else{
-            alert('invalid');
+            UserService.saveProfile($scope.broker);
+          } else {
+            $rootScope.$broadcast('show-invalid-messages');
           }
         };
       }

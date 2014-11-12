@@ -10,11 +10,12 @@ angular.module('app')
           if ($scope.inputType !== 'number') {
             return inputValue;
           }
-
-          inputValue = inputValue.replace(/[^0-9]/g,'');
-          modelCtrl.$setViewValue(inputValue);
+          var modifiedVal = inputValue.replace(/[^0-9]/g, '');
+          if (modifiedVal !== inputValue) {
+          modelCtrl.$setViewValue(modifiedVal);
           modelCtrl.$render();
-          return inputValue;
+          }
+          return modifiedVal;
         })
 
       }

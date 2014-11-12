@@ -1,9 +1,11 @@
-.row.form-group(ng-form="form_{{inputName}}" ng-cloak ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}")
+.row.form-group(ng-form="form_{{inputName}}" ng-cloak='' ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}")
   div(class='{{labelClass}}')
     label.contro-label {{label}}
   div(class='{{inputClass}}')
-    input.form-control(sv-input-numbers sv-http-prefix class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    input.form-control(sv-input-numbers ng-if='inputType==="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
+    input.form-control(sv-http-prefix ng-if='inputType!=="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model='inputModel')
   div.form-helper(ng-messages='form_{{inputName}}.{{inputName}}.$error' ng-show="form_{{inputName}}.{{inputName}}.$touched" style='color:maroon')
     div(ng-message='required') You did not enter a field
     div(ng-message='email') It is not a valid email
     div(ng-message='url') It is not a valid url
+    div(ng-message='tel') It is not a valid phone

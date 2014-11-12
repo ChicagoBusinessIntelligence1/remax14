@@ -11,7 +11,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.isDataLoading = true;
-        $scope.myCustomer = 'Hello';
+        $scope.myBroker = 'Hello';
         UserService.getProfile($rootScope.user.id).$loaded(function (savedUser) {
           var user;
           if (savedUser.$value === null) {
@@ -23,24 +23,26 @@ angular.module('app')
               website: '',
               mls: '',
               phone: ''
-
             }
             $scope.isLocal = false;
           } else {
             $scope.isLocal = true;
             $scope.broker = savedUser;
           }
-
           $scope.isDataLoading = false;
         });
 
-        $scope.saveProfileInfo = function (broker, form) {
+        $scope.saveBrokerProfileInfo = function (broker, form) {
           if (form.$valid) {
             broker = CleanObjectService.clean(broker);
-              UserService.saveProfile(broker);
+            UserService.saveProfile(broker);
           } else {
             $rootScope.$broadcast('show-invalid-messages');
           }
+        };
+        $scope.removeBrokerAccount = function () {
+
+
         };
       }
     };

@@ -6,13 +6,15 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<button class="btn btn-link btn-sm btn-delete-account"><i class="fa fa-remove"></i> Delete My Profile</button>',
+      scope:{
+        removeProfile:'&'
+      },
       link: function ($scope, element, attr) {
 
         $scope.deleteProfile = function () {
           toastr.success(notifications.profileDeleted);
         };
         var deleteProfilePopover = $popover(element, {
-          container: 'body',
           template: '../../views/popover/delete-account-popover.html',
           placement: 'bottom',
           scope: $scope

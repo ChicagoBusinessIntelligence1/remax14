@@ -4317,23 +4317,11 @@ h6 {
   font-size: 14px;
   font-weight: 700;
 }
-::-webkit-input-placeholder {
-  color: #f00;
-}
-::-moz-placeholder {
-  color: #f00;
-}
-:-ms-input-placeholder {
-  color: #f00;
-}
-input:-moz-placeholder {
-  color: #f00;
-}
 .app-input::-webkit-input-placeholder {
   color: #b1b1b1;
 }
 .app-input::-moz-placeholder {
-  color: #3c3c3c;
+  color: #b1b1b1;
 }
 .field3::-webkit-input-placeholder {
   color: #090;

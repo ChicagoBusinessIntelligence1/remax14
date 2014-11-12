@@ -1,4 +1,5 @@
 .well
+  sv-spinner(ng-show='isDataLoading')
   form.form-horizontal(name="form" type='text' id="form" novalidate ng-if='broker')
 
     sv-input-txt(input-name='firstName' input-model='broker' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
@@ -13,9 +14,10 @@
 
     sv-input-txt(input-name='phone' input-model='broker' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
     .save-profile-changes
-      button.btn.btn-info.btn-sm(ng-click='saveProfileInfo(broker,form)')
+      button.btn.btn-info.btn-sm(ng-click='saveBrokerProfileInfo(broker,form)')
         i.fa.fa-save.fa-fw
         | Save Changes
     hr
     .text-right
-      sv-del-profile
+      sv-del-profile(remove-profile='removeBrokerAccount()')
+

@@ -1,33 +1,16 @@
 .well
   sv-spinner(ng-show='isDataLoading')
   form.form-horizontal(name="form" id="form" novalidate ng-hide='isDataLoading')
-    .form-group
-      .col-sm-5
-        label First Name:
-      .col-sm-7
-        input.input-sm.form-control(id="last_name" placeholder="First Name" ng-model='customer.first_name' required)
 
-    .form-group
-      .col-sm-5
-        label Last Name:
-      .col-sm-7
-        input.input-sm.form-control(id="lName" ng-model='customer.last_name' placeholder="Last Name" required)
-
-    .form-group
-      .col-sm-5
-        label Email:
-      .col-sm-7
-        input.input-sm.form-control(type='email' id="email" ng-model='customer.email' placeholder="Fb Email" required)
-
-    .form-group
-      .col-sm-5
-        label Phone Number:
-      .col-sm-7
-        input.input-sm.form-control(type='tel' id="phone" ng-model='customer.phone' placeholder="Phone Number" required)
+    sv-input-txt(input-name='firstName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='lastName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='email' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='phone' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
 
     .save-profile-changes
-      sv-btn-save-profile-info(save-profile-info='saveProfileInfo()' form='form')
-    span(ng-show="!isLocal") Save your account locally
+      button.btn.btn-info.btn-sm(ng-click='saveCustomerProfileInfo(customer,form)')
+        i.fa.fa-save.fa-fw
+        | Save Changes
     hr
     .text-right
-      sv-del-profile
+      sv-del-profile(remove-profile='removeBrokerAccount()')

@@ -2,7 +2,7 @@
   .arrow
   h3.popover-title Are you sure you want delete your profile?
   .popover-content
-    button.btn.btn-danger.btn-sm.btn-save(ng-click='deleteProfile();$hide()' ng-disabled='form.$invalid' )
+    button.btn.btn-danger.btn-sm.btn-save(ng-click='removeProfile();$hide()' ng-disabled='form.$invalid' )
       i.fa.fa-check
       | &nbsp Delete
     button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')

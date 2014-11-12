@@ -112,24 +112,12 @@ h6
   font-size 14px
   font-weight 700
 
-::-webkit-input-placeholder
-  color #f00
-
-::-moz-placeholder
-  color #f00
-
-:-ms-input-placeholder
-  color #f00
-
-input
-  &:-moz-placeholder
-    color #f00
 
 .app-input
   &::-webkit-input-placeholder
     color lighten(color-app, 60%)
   &::-moz-placeholder
-    color color-app
+    color lighten(color-app, 60%)
 
 .field3
   &::-webkit-input-placeholder

@@ -4329,10 +4329,10 @@ h6 {
 input:-moz-placeholder {
   color: #f00;
 }
-.field2::-webkit-input-placeholder {
+.app-input::-webkit-input-placeholder {
   color: #b1b1b1;
 }
-.field2::-moz-placeholder {
+.app-input::-moz-placeholder {
   color: #3c3c3c;
 }
 .field3::-webkit-input-placeholder {

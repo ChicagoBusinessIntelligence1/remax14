@@ -17,6 +17,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.restictPattern= /^\d+$/;
+        $scope.model = $scope.inputModel[$scope.inputName];
         $scope.label =_.str.humanize($scope.inputName);
 
         $scope.$on('show-invalid-messages', function () {

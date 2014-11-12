@@ -16,7 +16,7 @@ angular.module('app')
           var user;
           if (savedUser.$value === null) {
             user = $rootScope.user;
-            $scope.customer = {
+            $scope.broker = {
               firstName: user.first_name,
               lastName: user.last_name,
               email: user.email,
@@ -28,7 +28,7 @@ angular.module('app')
             $scope.isLocal = false;
           } else {
             $scope.isLocal = true;
-            $scope.customer = savedUser;
+            $scope.broker = savedUser;
           }
 
           $scope.isDataLoading = false;

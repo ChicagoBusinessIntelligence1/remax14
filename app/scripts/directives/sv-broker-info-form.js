@@ -21,14 +21,6 @@ angular.module('app')
             user = savedUser;
           }
 
-          $scope.broker = {
-            firstName: user.first_name,
-            lastName: user.last_name,
-            mls: '',
-            website: '',
-            email: user.email,
-            phone: user.phone || ''
-          };
           $scope.isDataLoading = false;
         });
 

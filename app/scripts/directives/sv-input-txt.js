@@ -9,7 +9,7 @@ angular.module('app')
       scope: {
         inputName: '@',
         inputType: '@',
-        inputModel:'=',
+        inputModel2:'=',
         labelClass:'@',
         inputClass:'@',
         fieldClass:'@',
@@ -17,9 +17,9 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.restictPattern= /^\d+$/;
-        $scope.model = $scope.inputModel[$scope.inputName];
         $scope.label =_.str.humanize($scope.inputName);
 
+        console.log($scope.inputModel2);
         $scope.$on('show-invalid-messages', function () {
           $scope['form_'+ $scope.inputName][$scope.inputName].$touched = true;
         })

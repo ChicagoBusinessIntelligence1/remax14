@@ -2,9 +2,10 @@ div
   .row.form-group(ng-form="form_{{inputName}}" ng-cloak='' ng-class="{'has-error':form_{{inputName}}.{{inputName}}.$touched && form_{{inputName}}.{{inputName}}.$invalid}")
     div(class='{{labelClass}}')
       label.contro-label {{label}}
+        span(ng-if="isRequired") *
     div(class='{{inputClass}}')
-      input.form-control(sv-input-numbers ng-if='inputType==="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model="inputModel['{{inputName}}']")
-      input.form-control(sv-http-prefix ng-if='inputType!=="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model="inputModel['{{inputName}}']")
+      input.app-input.form-control(sv-input-numbers ng-if='inputType==="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='text' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model="inputModel['{{inputName}}']")
+      input.app-input.form-control(sv-http-prefix ng-if='inputType!=="number"'  class='{{fieldClass}}' placeholder='{{inputName}}' type='{{inputType}}' name='{{inputName}}' id='{{inputName}}' ng-required='isRequired' ng-model="inputModel['{{inputName}}']")
   .row.form-group
     .col-sm-12
       div.form-helper.color-danger(ng-messages='form_{{inputName}}.{{inputName}}.$error' ng-show="form_{{inputName}}.{{inputName}}.$touched")

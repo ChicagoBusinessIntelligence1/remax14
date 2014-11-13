@@ -11,9 +11,9 @@ var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ng
           resolve: {
             user: function ($firebaseSimpleLogin, $q, $rootScope) {
               var def = $q.defer();
-              if ($rootScope.user === null) {
-                def.resolve(null);
-              }
+              //if ($rootScope.user === null) {
+              //  def.resolve(null);
+              //}
 
               var url = 'https://remax14.firebaseio.com/';
               var mainRef = new Firebase(url);

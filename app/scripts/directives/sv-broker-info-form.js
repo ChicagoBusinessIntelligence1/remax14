@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svBrokerInfoForm', function (UserService, $rootScope, CleanObjectService,BrokerProfileService) {
+  .directive('svBrokerInfoForm', function (UserService, $rootScope, CleanObjectService, BrokerProfileService, AuthService, $state) {
     return {
       restrict: 'E',
       replace: true,
@@ -41,7 +41,13 @@ angular.module('app')
           }
         };
         $scope.removeBrokerAccount = function () {
-          BrokerProfileService.archiveListings();
+          BrokerProfileService.archiveActiveListings().then(function () {
+            BrokerProfileService.archiveBrokersFolder().then(function () {
+              AuthService.logOut();
+              $state.go('app.home', null, {reload: true});
+            });
+
+          });
 
         };
       }

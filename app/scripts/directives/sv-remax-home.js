@@ -41,6 +41,15 @@ angular.module('app')
           section = AddSearchFeaturesService.decorateSection(section);
           HomeService.updateHomeSection(section);
         };
+
+        $scope.onUCUploadComplete = function (info) {
+          if (_.isUndefined($scope.home[0].images)) {
+            $scope.home[0].images = [];
+          }
+          $scope.home[0].images.push(info.cdnUrl);
+          var test='test';
+
+        };
       }
     };
   });

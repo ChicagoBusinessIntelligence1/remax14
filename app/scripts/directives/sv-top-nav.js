@@ -5,6 +5,9 @@ angular.module('app')
     return {
       templateUrl: '../views/directives/sv-top-nav.html',
       replace: 'true',
-      restrict: 'E'
+      restrict: 'E',
+      controller: function ($scope) {
+        console.log($scope.user);
+      }
     };
   });

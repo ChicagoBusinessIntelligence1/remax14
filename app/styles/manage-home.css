@@ -10,6 +10,14 @@ label {
 /**********************
     =manage-listing
 ***********************/
+.btn-select-prop {
+  text-align: left;
+}
+.btn-select-prop span {
+  display: inline-block;
+  margin-top: 7px;
+  float: right;
+}
 .listing-label {
   font-size: 13px !important;
   font-weight: 700;

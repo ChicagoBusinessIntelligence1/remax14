@@ -24,7 +24,6 @@ angular.module('app')
                 }
               }
             }
-
             var i=0;
           }
         })
@@ -33,8 +32,6 @@ angular.module('app')
         //move drafts to archieve
 
         deferred.resolve(true);
-        return deferred.promise;
-      }
+        return deferred.promise; }
     };
-
   });

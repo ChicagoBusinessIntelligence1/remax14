@@ -3141,6 +3141,15 @@ label {
 .table-elements {
   margin: 0 auto;
 }
+.btn-select-prop {
+  text-align: left;
+  height: 30px;
+}
+.btn-select-prop span {
+  display: inline-block;
+  margin-top: 7px;
+  float: right;
+}
 .listing-label {
   font-size: 13px !important;
   font-weight: 700;

@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .factory('ProfileTypeService', function ($firebase, $q, urlCommon) {
+  .factory('ProfileTypeService', function ($firebase, $q, urlCommon,$rootScope) {
     return {
       repoUrl: null,
       repoRef: null,
 
       determine: function (user) {
+        var user2=$rootScope.user;
         var that = this;
         var defered = $q.defer();
 

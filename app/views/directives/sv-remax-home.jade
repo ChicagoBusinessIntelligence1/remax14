@@ -10,7 +10,6 @@
     .gallery-wrapper(ng-if='!isTemplate')
       .row
         .col-sm-12
-          div {{home[0].images}}
           sv-photo-gallery(home='home')
 
     form(name="homeForm" id="form" novalidate='novalidate')

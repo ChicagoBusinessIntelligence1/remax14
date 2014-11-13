@@ -22,13 +22,18 @@ angular.module('app')
       },
       updateHomeSection: function (section) {
         var id = section.$id;
+        var images = angular.copy(section.content.images);
         section = CleanObjectService.clean(section);
-        var sectionRepo = this.homeRepo + '/' + id;
-        var sectionRef = $firebase(new Firebase(sectionRepo));
-        //var refObj = this.homeRef.$asObject();
-        sectionRef.$set(section);
-        //sectionRef.$save();
+       section.content.images = images ;
+        //var sectionRepo = this.homeRepo + '/' + id;
+        //var sectionRef = $firebase(new Firebase(sectionRepo));
+        //var breakPoint = 1;
+        ////var refObj = this.homeRef.$asObject();
+        //sectionRef.$set(section);
+        ////sectionRef.$save();
         //this.homeRef.$asObject().$set(section.$id,section);
+        this.homeRef.$update(id,section);
+
       },
 
       saveToDrafts: function (home) {

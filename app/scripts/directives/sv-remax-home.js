@@ -43,12 +43,13 @@ angular.module('app')
         };
 
         $scope.onUCUploadComplete = function (info) {
-          if (_.isUndefined($scope.home[0].images)) {
-            $scope.home[0].content.images = [];
+          var homeSection = this.home[0];
+          if (_.isUndefined(homeSection.content.images)) {
+            homeSection.content.images = [];
           }
-          $scope.home[0].images.push(info.cdnUrl);
-          var test='test';
-
+          homeSection.content.images.push(info.cdnUrl);
+          HomeService.updateHomeSection(homeSection);
+          var breakPoint = 1;
         };
       }
     };

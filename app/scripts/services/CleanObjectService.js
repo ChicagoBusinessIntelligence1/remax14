@@ -6,7 +6,7 @@ angular.module('app')
 
       clean: function (obj) {
         var that = this;
-        var removeProp = ['$id', '$priority'];
+        var removeProp = ['$id', '$priority','$$conf','$$hashKey'];
         obj = angular.fromJson(angular.toJson(obj));
         obj = _.omit(obj, removeProp);
 
@@ -21,8 +21,20 @@ angular.module('app')
 
         return obj;
       },
+      cleanImg: function (obj) {
+        var that = this;
+        var removeProp = ['$id', '$priority','$$hashKey'];
+        obj = _.omit(obj, removeProp);
+
+
+
+        var breakPoint=1;
+
+
+        return obj;
+      },
       cleanProp: function (obj) {
-        var removeProp = ['$id', '$priority','$$conf'];
+        var removeProp = ['$id', '$priority','$$conf','$$hashKey'];
         obj = angular.fromJson(angular.toJson(obj));
         obj = _.omit(obj, removeProp);
         return obj;

@@ -2,5 +2,5 @@
   .col-sm-12
     div Photo Galery
     ul.list-unstyled
-      li(ng-repeat='image in home[0]')
-        div {{image}}
+      li(ng-repeat='image in home[0].content.images')
+        img(ng-src="{{image}}")

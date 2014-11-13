@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular','ngSanitize','mgcrea.ngStrap.helpers.parseOptions', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
+var app = angular.module('app', ['firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.helpers.parseOptions', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       $urlRouterProvider.otherwise('/home');
       //$locationProvider.html5Mode(true);
@@ -9,15 +9,18 @@ var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ng
         .state('app', {
           abstract: true,
           resolve: {
-            user: function ($firebaseSimpleLogin, $q) {
+            user: function ($firebaseSimpleLogin, $q, $rootScope) {
               var def = $q.defer();
+              if ($rootScope.user === null) {
+                def.resolve(null);
+              }
 
               var url = 'https://remax14.firebaseio.com/';
               var mainRef = new Firebase(url);
               var auth = $firebaseSimpleLogin(mainRef);
               auth.$getCurrentUser().then(function (user) {
                 if (user === null) {
-                  def.resolve('');
+                  def.resolve(null);
                 } else {
 
                   def.resolve(user);

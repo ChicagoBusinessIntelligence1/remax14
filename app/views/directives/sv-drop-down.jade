@@ -1,10 +1,8 @@
 .form-group
-  button.btn.btn-default.btn-sm.btn-select-prop.form-control(
-  placeholder='Any'
-  sort = 'true'
+  button.btn.btn-default(
   ng-model='sectionProperty.value'
-  data-html='1'
+  trigger='click'
   ng-options='type.$value as type.$value for type in types',
-  bs-select='types')
+  bs-select)
     span.caret.app-caret.text-right
 

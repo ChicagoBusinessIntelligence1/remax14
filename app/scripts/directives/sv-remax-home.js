@@ -44,7 +44,7 @@ angular.module('app')
 
         $scope.onUCUploadComplete = function (info) {
           if (_.isUndefined($scope.home[0].images)) {
-            $scope.home[0].images = [];
+            $scope.home[0].content.images = [];
           }
           $scope.home[0].images.push(info.cdnUrl);
           var test='test';

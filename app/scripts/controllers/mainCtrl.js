@@ -2,7 +2,7 @@
 
 angular.module('app')
   .controller('MainCtrl', function ($scope, $firebase, mainUrl, $firebaseSimpleLogin, $state, $rootScope) {
-    $scope.logoutFb = function () {
+    $rootScope.logoutFb = function () {
       var mainRef = new Firebase(mainUrl);
       $rootScope.auth = $firebaseSimpleLogin(mainRef);
       $rootScope.auth.$logout();
@@ -10,7 +10,7 @@ angular.module('app')
       $state.go('app.home', null, {reload: true});
     }
 
-    $scope.loginFb = function () {
+    $rootScope.loginFb = function () {
 
       var mainRef = new Firebase(mainUrl);
       $rootScope.auth = $firebaseSimpleLogin(mainRef);

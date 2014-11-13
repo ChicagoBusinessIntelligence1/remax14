@@ -41,7 +41,12 @@ angular.module('app')
           }
         };
         $scope.removeBrokerAccount = function () {
-          BrokerProfileService.archiveListings();
+          BrokerProfileService.archiveActiveListings().then(function () {
+          BrokerProfileService.archiveBrokersFolder().then(function () {
+            $rootScope.logoutFB();
+          });
+
+          });
 
         };
       }

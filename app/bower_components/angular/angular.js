@@ -23178,9 +23178,11 @@ var ngIfDirective = ['$animate', function($animate) {
             }
             if (block) {
               previousElements = getBlockNodes(block.clone);
+             try{
               $animate.leave(previousElements).then(function() {
                 previousElements = null;
               });
+             } catch(e){}
               block = null;
             }
           }
@@ -23428,7 +23430,15 @@ var ngIncludeDirective = ['$templateRequest', '$anchorScroll', '$animate', '$sce
               // directives to non existing elements.
               var clone = $transclude(newScope, function(clone) {
                 cleanupLastIncludeContent();
+
+                try {
                 $animate.enter(clone, null, $element).then(afterAnimation);
+                } catch(e){
+
+                }
+
+
+
               });
 
               currentScope = newScope;
@@ -24787,7 +24797,9 @@ var ngSwitchDirective = ['$animate', function($animate) {
           var selected = getBlockNodes(selectedElements[i].clone);
           selectedScopes[i].$destroy();
           var promise = previousLeaveAnimations[i] = $animate.leave(selected);
+          if (promise) {
           promise.then(spliceFactory(previousLeaveAnimations, i));
+          }
         }
 
         selectedElements.length = 0;

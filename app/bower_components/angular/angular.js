@@ -24789,7 +24789,9 @@ var ngSwitchDirective = ['$animate', function($animate) {
       scope.$watch(watchExpr, function ngSwitchWatchAction(value) {
         var i, ii;
         for (i = 0, ii = previousLeaveAnimations.length; i < ii; ++i) {
+          try{
           $animate.cancel(previousLeaveAnimations[i]);
+          }catch(e){}
         }
         previousLeaveAnimations.length = 0;
 

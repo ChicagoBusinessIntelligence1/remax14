@@ -12,14 +12,10 @@ angular.module('app')
 
         $scope.mainSearch = function () {
           var nameType = $scope.isRent ? 'rent' : 'sale';
-
           var stateName = "app.search-" + nameType + "-results";
           $rootScope.query = $scope.query;
-
           if (_.isUndefined($scope.query)) {
-
-            $state.go(stateName, null, {reload:true});
-
+            $state.go(stateName, null, {reload: true});
           } else {
             $state.go(stateName, {
                 location: $scope.query.location,

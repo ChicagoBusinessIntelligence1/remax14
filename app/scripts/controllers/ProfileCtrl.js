@@ -2,13 +2,15 @@
 
 angular.module('app')
   .controller('ProfileCtrl', function (ProfileTypeService, WatchListService, $scope, $state, user, $rootScope) {
-    if (!_.isEmpty(user)) {
+    if (user !== null) {
       ProfileTypeService.determine(user).then(function (user) {
         $rootScope.user = user.thirdPartyUserData;
         WatchListService.getSaleRentLists().then(function (watchList) {
           $rootScope.user.watchList = watchList;
         })
       })
+    } else {
+      $rootScope.user = null;
     }
 
     $scope.tabs = [

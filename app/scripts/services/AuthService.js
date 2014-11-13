@@ -1,20 +1,17 @@
 'use strict';
 
 angular.module('app')
-  .factory('AuthService', function ($firebase, $q,$rootScope) {
+  .factory('AuthService', function ($firebase, $q,$rootScope,mainUrl,$firebaseSimpleLogin) {
         return {
           repoUrl: null,
           repoRef: null,
 
-          all: function () {
-            var that = this;
-            var deferred = $q.defer();
+          logOut: function () {
 
-            that.repoUrl = url.residential;
-            that.repoRef = $firebase(new Firebase(that.repoUrl));
+            var mainRef = new Firebase(mainUrl);
+            $rootScope = $firebaseSimpleLogin(mainRef);
+            $rootScope.$logout();
 
-            deferred.resolve(that.repoRef.$asArray());
-            return deferred.promise;
           }
         };
 

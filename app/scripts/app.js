@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular','ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
+var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular','ngSanitize','mgcrea.ngStrap.helpers.parseOptions', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab', 'djds4rce.angular-socialshare'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       $urlRouterProvider.otherwise('/home');
       //$locationProvider.html5Mode(true);

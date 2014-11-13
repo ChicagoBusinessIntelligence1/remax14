@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svLinkUserProfile', function ($popover) {
+  .directive('svLinkUserProfile', function ($popover, $rootScope) {
     return {
       restrict: 'E',
       replace: true,
@@ -18,7 +18,7 @@ angular.module('app')
           template: '../../views/popover/user-profile-popover.html',
           placement: 'bottom',
           trigger: 'focus',
-          scope: $scope
+          scope: $rootScope
         });
       }
     };

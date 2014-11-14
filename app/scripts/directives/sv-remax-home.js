@@ -12,6 +12,11 @@ angular.module('app')
 
       controller: function ($scope) {
         this.required = ['mls', 'state', 'city', 'zip'];
+        $scope.tooltip = {
+          "title": "Please save listing first",
+          "checked": false
+        };
+
       },
 
       link: function ($scope, element, attr) {
@@ -20,6 +25,7 @@ angular.module('app')
         $scope.isTemplate = mls ? false : true;
         $scope.home = HomeService.getArrayFire(url, mls, $scope.isDraft);
         $scope.isDataLoading = true;
+
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;

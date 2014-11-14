@@ -12,8 +12,8 @@
     "greensock": "1.14.1",
     "firebase": "1.2.0-beta.2",
     "toastr": "2.1.0",
-    "angular-ui-router": "0.2.12-pre1",
-    "angular-busy": "~4.1.1"
+    "angular-busy": "~4.1.1",
+    "angular-ui-router": "0.2.12"
   },
   "devDependencies": {
     "mockfirebase": "~0.3.0",

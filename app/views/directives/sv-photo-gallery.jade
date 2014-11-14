@@ -1,6 +1,11 @@
 .row
   .col-sm-12
     div Photo Galery
-    ul.list-unstyled
-      li(ng-repeat='image in home[0].content.images')
-        img(ng-src="{{image}}")
+    .slider-wrapper
+      .slider-content.row
+        img.col-xs-12(ng-src="{{selectedImage}}")
+
+      ul.list-inline.slider-nav-remax
+        li.slider-content.col-xs-2(ng-repeat='image in home[0].content.images')
+          a.thumbnail(ng-click='setSelectedImage(image)')
+            sv-photo-thumb(height='70' img='{{image}}')

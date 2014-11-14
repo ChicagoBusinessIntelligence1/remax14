@@ -1,21 +1,13 @@
 h1 Contact Us
 hr
-fa-app.full-screen
-  //Container modifier, which we're rotating over the y axis
-  fa-modifier( fa-origin='[.5, .5]' fa-rotate-y='rotateY.get()' )
-    //Front face
-    fa-surface( fa-size='[true, true]' fa-color="'rgb(255,255,250)'" )
-      img.logo( ng-src='images/houses/1.jpg' style='width: 200px; height: 200px;' )
 
-    //Back face:  same image, rotated pi radians
-    fa-modifier(fa-rotate-y='3.14159')
-      fa-surface( fa-size='[true, true]' fa-color="'rgb(255,255,250)'" )
-        img.logo(ng-src='images/houses/2.jpg', style='width: 200px; height: 200px;')
+div(fa-app='', style='height: 300px')
+  div(ng-controller='homepageExamplesCtrl')
+    fa-modifier.rotateMod(ng-repeat='square in squares', fa-translate='[square.x, 50, 2]', fa-origin='[.125, .125]')
+      fa-surface.square(fa-size='[40, 40]')
+    fa-animation(autoplay='true', duration='1200', loop='true')
+      animate(targetmodselector='.rotateMod', field='rotateZ', startvalue='0', endvalue='6.283', curve='linear')
 
-  //input slider
-  fa-modifier( fa-origin='[.5, .9]' fa-size='[200, 100]' )
-    fa-surface
-      input(style='width: 100%; text-align: center;', type='range', min='10', max='100', ng-model='spinner.speed')
 
 //sv-contact-us-form(user='user')
 

@@ -1384,7 +1384,12 @@ try {
       function i() {
         if (!g)return;
         var l;
+        try {
         while (l = g.shift())l();
+
+        } catch (e) {
+
+        }
         g = null;
       }
 

@@ -27,7 +27,7 @@
             li
               sv-watch-list-buttons(mls='{{home.$id}}')
             li
-              sv-share-property(shared-url='{{sharedUrl}}' home = 'home')
+              sv-share-property(is-rent='isRent' home = 'home')
   .row
     .col-sm-7
       div(ng-if="!isRent")

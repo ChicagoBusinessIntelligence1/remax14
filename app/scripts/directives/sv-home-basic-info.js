@@ -14,12 +14,6 @@ angular.module('app')
         $scope.addToWatch = notifications.addToWatch;
         $scope.removeFromWatch = notifications.removeFromWatch;
 
-        var saleRent = $scope.isRent ? 'rent' : 'sale';
-        $scope.sharedUrlEnd = 'remax-home-' + saleRent + '/' + $scope.home.$id;
-        var domainStart = $location.absUrl().indexOf('#');
-        //var domain = $location.absUrl().toString().substr(0, domainStart);
-        var domain = 'https://remax14.firebaseapp.com/'
-        $scope.sharedUrl = domain + $scope.sharedUrlEnd;
       }
     };
   });

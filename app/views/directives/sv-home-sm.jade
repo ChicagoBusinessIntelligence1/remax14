@@ -52,7 +52,7 @@
 
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="active")
           li
-            sv-share-property
+            sv-share-property(is-rent='isRent' home = 'draft')
           li
             button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{archiveHome}}")
               i.fa.fa-archive.fa-fw

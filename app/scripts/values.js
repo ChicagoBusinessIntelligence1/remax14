@@ -81,6 +81,7 @@ app.value('sortTypes',
   ]);
 
 app.value('notifications', {
+  homeDescription:'Home is on sale by Remax 1st class',
   addToWatch: 'Add to Watchlist',
   removeFromWatch: 'Remove from Watchlist',
   deleteDraftTitle: 'Delete this listing',

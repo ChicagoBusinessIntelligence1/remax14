@@ -20,7 +20,6 @@ angular.module('app')
         //var domain = $location.absUrl().toString().substr(0, domainStart);
         var domain = 'https://remax14.firebaseapp.com/'
         $scope.sharedUrl = domain + $scope.sharedUrlEnd;
-        console.log($scope.sharedUrl);
       }
     };
   });

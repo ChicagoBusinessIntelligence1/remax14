@@ -6,21 +6,24 @@ define(function(require, exports, module) {
   var Transform = require('famous/core/Transform');
   var StateModifier = require('famous/modifiers/StateModifier');
 
-  var SlideView = require('views/SlideView');
-
   function SlideshowView() {
     View.apply(this, arguments);
 
-    var slideView = new SlideView();
+    this.rootModifier = new StateModifier({
+      size: this.options.size,
+      origin: [0.5, 0],
+      align: [0.5, 0]
+    });
 
-    this.add(slideView);
+    this.mainNode = this.add(this.rootModifier);
   }
 
   SlideshowView.prototype = Object.create(View.prototype);
   SlideshowView.prototype.constructor = SlideshowView;
 
-  SlideshowView.DEFAULT_OPTIONS = {};
+  SlideshowView.DEFAULT_OPTIONS = {
+    sizd: [450, 500]
+  };
 
   module.exports = SlideshowView;
 });
-

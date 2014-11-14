@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('BrokerProfileService', function ($firebase, $q, $rootScope, CleanObjectService, BrokerHomesService, urlSale, urlRental, urlCommon) {
+  .factory('BrokerProfileService', function ($firebase, $q, $rootScope, HomeService, CleanObjectService, BrokerHomesService, urlSale, urlRental, urlCommon) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -48,7 +48,7 @@ angular.module('app')
           for (var i = 0; i < saleHomes.length; i++) {
 
             var saleHome = saleHomes[i];
-            var saleHomeSection = _.last(saleHome);
+            var saleHomeSection = HomeService.findSection(saleHome,'brokers');
             var brokers = saleHomeSection.content;
             if (_.isUndefined(brokers)) {
               continue;

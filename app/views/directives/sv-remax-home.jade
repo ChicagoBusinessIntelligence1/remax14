@@ -4,8 +4,8 @@
     sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
     .row
       .col-sm-12
-        uploadcare-widget(ng-model='object.image.info.uuid', data-autostore='true' data-public-key='238bd7bf0446738e2bbc', data-locale='en', data-tabs='file url facebook instagram flickr', data-images-only='true', data-path-value='true', data-preview-step='true', data-clearable='true', data-multiple='true', data-crop='400:300', on-upload-complete='onUCUploadComplete(info)', on-widget-ready='onUCWidgetReady(widget)', value='{{ object.image.info.cdnUrl }}')
-
+        uploadcare-widget(ng-if='!isTemplate' ng-model='object.image.info.uuid', data-autostore='true' data-public-key='238bd7bf0446738e2bbc', data-locale='en', data-tabs='file url facebook instagram flickr', data-images-only='true', data-path-value='true', data-preview-step='true', data-clearable='true', data-multiple='true', data-crop='400:300', on-upload-complete='onUCUploadComplete(info)', on-widget-ready='onUCWidgetReady(widget)', value='{{ object.image.info.cdnUrl }}')
+        button.btn.btn-info(ng-if='isTemplate' bs-tooltip='tooltip' type='info' ng-click='') Upload Images
     hr
     .gallery-wrapper(ng-if='!isTemplate')
       .row

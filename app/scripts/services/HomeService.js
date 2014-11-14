@@ -24,7 +24,7 @@ angular.module('app')
         var id = section.$id;
         var images = angular.copy(section.content.images);
         section = CleanObjectService.clean(section);
-       section.content.images = images ;
+        section.content.images = images;
         //var sectionRepo = this.homeRepo + '/' + id;
         //var sectionRef = $firebase(new Firebase(sectionRepo));
         //var breakPoint = 1;
@@ -32,7 +32,7 @@ angular.module('app')
         //sectionRef.$set(section);
         ////sectionRef.$save();
         //this.homeRef.$asObject().$set(section.$id,section);
-        this.homeRef.$update(id,section);
+        this.homeRef.$update(id, section);
 
       },
 
@@ -55,6 +55,16 @@ angular.module('app')
           }
         );
         return defered.promise;
-      }
+      },
+      findSection: function (home, sectionTitle) {
+        for (var i = 0; i < home.length; i++) {
+          var section = home[i];
+          if (section.title === sectionTitle) {
+            return section;
+          }
+        }
+      },
+
     };
-  });
+  })
+;

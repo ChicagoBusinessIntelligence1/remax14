@@ -16,22 +16,23 @@ angular.module('app')
         var EventHandler = $famous['famous/core/EventHandler'];
         var Transform = $famous['famous/core/Transform'];
 
-
-
-
-          $scope.variousTransforms = function() {
-            var translate = Transform.translate(100, 100, 0);
-            return Transform.multiply(translate, skew);
-          };
+        $scope.variousTransforms = function () {
+          var translate = Transform.translate(100, 100, 0);
+          return Transform.multiply(translate, skew);
+        };
         $scope.thumbOptions = {
-          dimensions: [1,2],
+          dimensions: [1, 2]
 
         };
         $scope.selectedImage = $scope.images.content[0];
         $scope.setSelectedImage = function (image) {
-          $scope.opacity={opacity:0.1,{duration:1000}};
-          $scope.selectedImage = image;
+          $scope.opacity = {
+            opacity: 0.1
+          }
+          duration: 1000
         };
+        $scope.selectedImage = image;
       }
     };
   });
+

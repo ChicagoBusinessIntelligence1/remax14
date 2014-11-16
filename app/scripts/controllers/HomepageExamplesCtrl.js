@@ -15,7 +15,6 @@ angular.module('app')
     $scope.squares = _.map(_.range(0, 4), function (index) {
       return {x: translateSquare(index)};
     });
-    console.log($scope.squares);
     $scope.repeatedItems = 1;
     $scope.modifiers = [0, 1, 2];
 

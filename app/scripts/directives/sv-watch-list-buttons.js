@@ -15,7 +15,7 @@ angular.module('app')
         $scope.addToWatch = notifications.addToWatch;
         $scope.removeFromWatch = notifications.removeFromWatch;
 
-        $scope.isRent = !!svListCtrls[0]?svListCtrls[0].isRent:svListCtrls[1].isRent;
+        $scope.isRent = !!svListCtrls[0] ? svListCtrls[0].isRent : svListCtrls[1].isRent;
 
         var saleRent = $scope.isRent ? 'rent' : 'sale';
         $rootScope.$watch('user.watchList', function (list) {

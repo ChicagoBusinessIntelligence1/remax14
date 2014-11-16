@@ -19,7 +19,7 @@ angular.module('app')
         $scope.isRent = !!svListCtrls[0] ? svListCtrls[0].isRent : svListCtrls[1].isRent;
 
         var saleRent = $scope.isRent ? 'rent' : 'sale';
-        $rootScope.$watch('user.watchList', function (list, oldList) {
+        $rootScope.$watch('user.watchList', function (list) {
           if (_.isUndefined(list)) {
             $scope.isWatched = false;
             return;

@@ -55,7 +55,7 @@ angular.module('app')
             return section;
           }
         }
-      },
+      }
 
     };
   })

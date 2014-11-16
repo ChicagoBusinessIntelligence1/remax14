@@ -1,11 +1,9 @@
 .row
-  .col-sm-12
-    div Photo Galery
-    .slider-wrapper
-      .slider-content.row
-        img.col-xs-12(ng-src="{{selectedImage}}")
-
-      ul.list-inline.slider-nav-remax
-        li.slider-content.col-xs-2(ng-repeat='image in home[0].content.images')
-          a.thumbnail(ng-click='setSelectedImage(image)')
-            sv-photo-thumb(height='70' img='{{image}}')
+  .col-sm-6
+    h1 Photo Galery
+      fa-app.slider-wrapper(style='width:400px;height:300px')
+        fa-modifier.slider-content.row(fa-opacity='opacity')
+          fa-image-surface(fa-image-url='{{selectedImage}}' fa-size = '[300,200]')
+        fa-view(ng-repeat='image in images.content')
+          fa-modifier(fa-translate='[100*$index,200,100]')
+            fa-image-surface(fa-image-url='{{image}}' fa-size='[50,50]' fa-click='setSelectedImage(image)').cursor-p

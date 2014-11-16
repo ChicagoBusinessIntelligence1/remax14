@@ -49,11 +49,16 @@ angular.module('app')
         };
 
         $scope.onUCUploadComplete = function (info) {
-          var homeSection = HomeService.findSection($scope.home,'images');
-          if (_.isUndefined(homeSection.content.images)) {
-            homeSection.content.images = [];
+          var homeSection = HomeService.findSection($scope.home, 'images');
+          if (_.isUndefined(homeSection)) {
+            homeSection = {
+              $id:$scope.home.length,
+              title: 'images',
+              order: $scope.home.length,
+              content: []
+            }
           }
-          homeSection.content.images.push(info.cdnUrl);
+          homeSection.content.push(info.cdnUrl);
           HomeService.updateHomeSection(homeSection);
         };
       }

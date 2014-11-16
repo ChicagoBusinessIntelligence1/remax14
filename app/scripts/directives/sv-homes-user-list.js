@@ -41,7 +41,15 @@ angular.module('app')
             })
             break;
         }
+        $scope.$on('remove-from-watch', function (event,mls ) {
+          if ($scope.homeStatus !== 'watchList') {
+            return;
+          }
+          $scope.homes = _.reject($scope.homes, function (home) {
+            return home.$id === mls;
+          })
 
+        });
         $scope.$on('remove-draft', function (event, mls) {
           DraftsService.remove(mls)
         });

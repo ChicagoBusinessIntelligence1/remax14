@@ -9,8 +9,8 @@ angular.module('app')
       '<i class="fa fa-share-alt fa-fw"></i>' +
       '</button>',
       scope: {
-        isRent:'=',
-        home:'='
+        isRent: '=',
+        home: '='
       },
 
       link: function ($scope, element, attr) {
@@ -23,16 +23,12 @@ angular.module('app')
         $scope.sharedUrl = domain + $scope.sharedUrlEnd;
 
         $scope.$watch('sharedUrl', function (newValue, oldValue) {
-          $scope.link = newValue  ;
+          $scope.link = newValue;
         });
-
 
         $scope.homeAddress = HomePropertyService.getHomeAddress($scope.home);
         $scope.shareHomeTitle = notifications.shareHomeTitle;
         $scope.sharedHomeFbTitle = notifications.sharedHomeFbTitle;
-
-
-
 
         $scope.shareHome = function () {
           FB.ui(

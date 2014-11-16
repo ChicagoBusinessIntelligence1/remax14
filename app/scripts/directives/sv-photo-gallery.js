@@ -20,7 +20,6 @@ angular.module('app')
           console.log(url);
           $scope.selectedImage = url;
         };
-
       }
     };
   });

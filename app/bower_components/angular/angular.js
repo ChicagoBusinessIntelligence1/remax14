@@ -12159,7 +12159,7 @@ Parser.prototype = {
             : fn(args[0], args[1], args[2], args[3], args[4]);
 
       return ensureSafeObject(v, expressionText);
-    };
+     };
   },
 
   // This is used with json array declaration

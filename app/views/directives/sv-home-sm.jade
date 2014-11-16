@@ -59,7 +59,7 @@
 
         ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="watchList")
           li
-            sv-watch-list-buttons(mls='{{draft.$id}}' is-watched='isWatched')
+            sv-watch-list-buttons(mls='{{draft.$id}}' )
           li
             button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{shareHome}}")
               i.fa.fa-share-alt.fa-fw

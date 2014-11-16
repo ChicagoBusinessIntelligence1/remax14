@@ -10,15 +10,7 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
-        $scope.$watch('home[0].content.images', function (newValue, oldValue) {
-          if (_.isUndefined(newValue)) {
-            return;
-          }
-          $scope.selectedImage = _.first(newValue);
-        });
-        $scope.setSelectedImage = function (url) {
-          $scope.selectedImage = url;
-        };
+
       }
     };
   });

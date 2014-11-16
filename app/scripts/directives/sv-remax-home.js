@@ -51,12 +51,10 @@ angular.module('app')
         $scope.onUCUploadComplete = function (info) {
           var homeSection = HomeService.findSection($scope.home,'images');
           if (_.isUndefined(homeSection.content.images)) {
-            var breakPoint=1;
             homeSection.content.images = [];
           }
           homeSection.content.images.push(info.cdnUrl);
           HomeService.updateHomeSection(homeSection);
-          var breakPoint = 1;
         };
       }
     };

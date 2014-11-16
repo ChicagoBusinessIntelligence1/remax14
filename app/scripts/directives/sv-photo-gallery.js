@@ -17,7 +17,6 @@ angular.module('app')
           $scope.selectedImage = _.first(newValue);
         });
         $scope.setSelectedImage = function (url) {
-          console.log(url);
           $scope.selectedImage = url;
         };
       }

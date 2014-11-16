@@ -16,7 +16,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         $scope.myGridLayoutOptions = {
-          dimensions: [1,4], // specifies number of columns and rows
+          dimensions: [1,4] // specifies number of columns and rows
         };
         $scope.grids = [{bgColor: "orange"}, {bgColor: "red"}, {bgColor: "green"}, {bgColor: "yellow"}];
         var _scales = {}
@@ -28,6 +28,7 @@ angular.module('app')
 
         $scope.boxTransitionable = new Transitionable([0, 0, 0]);
         $scope.scrollHandler = new EventHandler();
+
         $scope.animate = function () {
           $scope.boxTransitionable.set([200, 300, 0], {duration: 2000, curve: Easing.inOutBack});
         };
@@ -38,8 +39,8 @@ angular.module('app')
           return _.extend(home, {
             scale: scale,
             opacity:opacity
-          })
-        })
+          });
+        });
 
         $scope.getScale = function(i){
           if(!_scales[i]) return [1, 1, 1];

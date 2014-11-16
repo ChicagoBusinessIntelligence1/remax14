@@ -7,7 +7,8 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-watch-list-buttons.html',
       scope: {
-        mls: '@'
+        mls: '@',
+        isWatched: '='
       },
       require: ['?^sv-homes-list', '?^sv-homes-user-list'],
 
@@ -33,6 +34,7 @@ angular.module('app')
         $scope.removeFromWatchList = function (mls) {
           WatchListService.removeHome($scope.isRent, mls).then(function () {
             $scope.isWatched = false;
+
           });
         };
       }

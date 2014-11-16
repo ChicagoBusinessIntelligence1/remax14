@@ -22,12 +22,11 @@
       .col-sm-7
         sv-home-inline-info(home='home')
       .col-sm-5
-        li
-          ul.list-inline.text-right.ul-basic-social
-            li
-              sv-watch-list-buttons(mls='{{home.$id}}')
-            li
-              sv-share-property(is-rent='isRent' home = 'home')
+        ul.list-inline.text-right.ul-basic-social
+          li
+            sv-watch-list-buttons(mls='{{home.$id}}' is-watched='isWatched')
+          li
+            sv-share-property(is-rent='isRent' home = 'home')
   .row
     .col-sm-7
       div(ng-if="!isRent")

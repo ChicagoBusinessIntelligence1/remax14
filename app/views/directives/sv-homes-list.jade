@@ -1,6 +1,7 @@
 div
-  fa-app(style="height: 900px; width: 620px; margin: 0;" fa-background-color="blue")
+  fa-app(style="height: 2700px; margin: 0;")
     fa-grid-layout(fa-options='myGridLayoutOptions')
-        fa-modifier(fa-scale='home.scale.get()' ng-repeat='home in homes' style='margin:5;padding:10' fa-size = '[200, 100]' fa-animate-enter='cubeEnter(home,$done)' fa-translate="boxTransitionable.get()")
-          fa-image-surface(fa-image-url='images/houses/{{$index+1}}.jpg' fa-click='animate()').cursor-p
+        fa-modifier(fa-scale='home.scale.get()' fa-animate-enter='cubeEnter(home,$done)' ng-repeat='home in homes' style='height:100%; margin:5;padding:10' fa-translate="boxTransitionable.get()")
+          fa-surface(fa-image-url='images/houses/{{$index+1}}.jpg' fa-click='animate()').cursor-p
+            sv-home-basic-info(home='home')
 

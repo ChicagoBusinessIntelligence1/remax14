@@ -18,8 +18,6 @@ angular.module('app')
         $scope.myGridLayoutOptions = {
           dimensions: [1,4] // specifies number of columns and rows
         };
-        $scope.grids = [{bgColor: "orange"}, {bgColor: "red"}, {bgColor: "green"}, {bgColor: "yellow"}];
-        var _scales = {}
 
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var Timer = $famous['famous/utilities/Timer'];

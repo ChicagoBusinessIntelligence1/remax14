@@ -4213,13 +4213,6 @@ ul.fen-elements li {
   background-color: #a7a7a7;
   background-image: url("../images/elements/mother-earth.png") !important;
 }
-.full-screen {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
 /**********************
       =Variables
 ***********************/

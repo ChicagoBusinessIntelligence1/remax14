@@ -12150,6 +12150,7 @@ Parser.prototype = {
         }
       }
 
+
       ensureSafeObject(context, expressionText);
       ensureSafeFunction(fn, expressionText);
 

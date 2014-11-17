@@ -7,7 +7,7 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-new-listings.html',
       link: function ($scope, element, attr) {
-
+        
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];

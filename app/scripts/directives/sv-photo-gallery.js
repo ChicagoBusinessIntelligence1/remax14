@@ -14,25 +14,40 @@ angular.module('app')
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];
         var EventHandler = $famous['famous/core/EventHandler'];
+
+        $scope.scrollHandler = new EventHandler();
+        $scope.options = {
+          imageScroll: {
+            clipSize: 100,
+            paginated: false,
+            speedLimit: 5,
+            direction: 0,
+          }
+        };
+        $scope.images = _.map($scope.images, function (image) {
+
+          var opacity = new Transitionable(0);
+          return {
+            url: image,
+            opacity: opacity
+          }
+        });
+
+        var Timer = $famous['famous/utilities/Timer'];
+        var Easing = $famous['famous/transitions/Easing'];
+        var EventHandler = $famous['famous/core/EventHandler'];
         var Transform = $famous['famous/core/Transform'];
 
-        $scope.variousTransforms = function () {
-          var translate = Transform.translate(100, 100, 0);
-          return Transform.multiply(translate, skew);
-        };
-        $scope.thumbOptions = {
-          dimensions: [1, 2]
-
-        };
-        $scope.selectedImage = $scope.images.content[0];
-        $scope.setSelectedImage = function (image) {
-          $scope.opacity = {
-            opacity: 0.1
+        $scope.setSelectedImage = function (image, $done) {
+          if ($scope.selectedImage) {
+            $scope.selectedImage.opacity.set(0, {duration: 250, curve: "linear"});
           }
-          duration: 1000
+          $scope.selectedImage = image;
+          $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
         };
-        $scope.selectedImage = image;
+
+        $scope.setSelectedImage($scope.images[0]);
+
       }
     };
   });
-

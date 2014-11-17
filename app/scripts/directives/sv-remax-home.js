@@ -29,7 +29,11 @@ angular.module('app')
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;
-          $scope.images = HomeService.findSection($scope.home, 'images').content;
+          var imagesSection = HomeService.findSection($scope.home, 'images');
+          if (!_.isUndefined(imagesSection)) {
+
+          $scope.images = HomeService.findSection($scope.home, 'images');
+          }
 
 
         })

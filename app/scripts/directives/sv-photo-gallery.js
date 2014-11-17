@@ -21,6 +21,18 @@ angular.module('app')
             direction: 0,
           }
         };
+
+        $scope.slideRight = function () {
+          var scrollView = $famous.find('#imageScroll')[0].renderNode;
+          scrollView.goToNextPage();
+
+        };
+        $scope.slideLeft = function () {
+          var scrollView = $famous.find('#imageScroll')[0].renderNode;
+          scrollView.goToPreviousPage();
+
+        };
+
         $scope.images = _.map($scope.images, function (image) {
 
           var opacity = new Transitionable(0);

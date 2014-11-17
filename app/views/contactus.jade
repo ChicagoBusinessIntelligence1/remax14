@@ -1,3 +1,21 @@
 h1 Contact Us
 hr
-sv-contact-us-form
+div(fa-app='', style='height: 300px')
+  div(ng-controller='homepageExamplesCtrl')
+    fa-modifier.rotateMod(ng-repeat='square in squares', fa-translate='[square.x, 50, 2]', fa-origin='[.125, .125]')
+      fa-surface(fa-size='[140, 140]')
+        img(ng-src="images/houses/{{$index+1}}.jpg" height='70px' width="100px")
+    fa-animation(autoplay='true', duration='7000', loop='true')
+      animate(targetmodselector='.rotateMod', field='rotateZ', startvalue='0', endvalue='6.283', curve='linear')
+
+div(fa-app='', style='height: 300px')
+  div(ng-controller='homepageExamplesCtrl')
+    fa-grid-layout(fa-options='options.grid')
+      fa-surface.square(fa-size='[40, 40]', ng-repeat='square in squares')
+
+div(fa-app='', style='height: 300px')
+  div(ng-controller='homepageExamplesCtrl')
+    fa-surface
+      input(type='range', ng-model='translateX')
+    fa-modifier(fa-translate='[translateX, 0]')
+      fa-surface.square(fa-size='[40, 40]')

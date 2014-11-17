@@ -29,7 +29,7 @@ angular.module('app')
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;
-          $scope.images = HomeService.findSection($scope.home, 'images').content;
+          $scope.images = _.last($scope.home);
 
 
         })

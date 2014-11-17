@@ -1,9 +1,11 @@
 .row
   .col-sm-6
     h1 Photo Galery
-      fa-app.slider-wrapper(style='width:400px;height:300px')
-        fa-modifier.slider-content.row(fa-opacity='opacity')
-          fa-image-surface(fa-image-url='{{selectedImage}}' fa-size = '[300,200]')
-        fa-view(ng-repeat='image in images.content')
-          fa-modifier(fa-translate='[100*$index,200,100]')
-            fa-image-surface(fa-image-url='{{image}}' fa-size='[50,50]' fa-click='setSelectedImage(image)').cursor-p
+      fa-app.slider-wrapper(style='width:300px;height:300px;overflow:hidden')
+        fa-modifier.slider-content.row(fa-opacity='selectedImage.opacity.get()' )
+          fa-image-surface(fa-image-url='{{selectedImage.url}}' fa-size = '[300,200]' )
+        fa-modifier(fa-translate='[0,200,0]')
+          fa-scroll-view( fa-pipe-from='scrollHandler' fa-options='options.imageScroll' )
+            fa-view(ng-repeat='image in images' )
+              fa-modifier(fa-size='[60,60]' )
+                fa-image-surface(fa-pipe-to='scrollHandler'  fa-image-url='{{image.url}}' fa-size='[50,50]'  fa-click='setSelectedImage(image,$done)').cursor-p

@@ -1,7 +1,7 @@
 .row
   .col-sm-6
     h1 Photo Galery
-      fa-app.slider-wrapper(style='width:400px;height:300px')
+      fa-app.slider-wrapper(style='width:300px;height:300px;overflow:hidden')
         fa-modifier.slider-content.row(fa-opacity='selectedImage.opacity.get()' )
           fa-image-surface(fa-image-url='{{selectedImage.url}}' fa-size = '[300,200]' )
         fa-modifier(fa-translate='[0,200,0]')

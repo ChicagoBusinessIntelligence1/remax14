@@ -1,11 +1,19 @@
 .row
   .col-sm-6
     h1 Photo Galery
-      fa-app.slider-wrapper(style='width:300px;height:300px;overflow:hidden')
+      fa-app.slider-wrapper(style='width:400px;height:300px;overflow:hidden')
         fa-modifier.slider-content.row(fa-opacity='selectedImage.opacity.get()' )
-          fa-image-surface(fa-image-url='{{selectedImage.url}}' fa-size = '[300,200]' )
+          fa-image-surface(fa-image-url='{{selectedImage.url}}' fa-size = '[400,200]' )
         fa-modifier(fa-translate='[0,200,0]')
-          fa-scroll-view( fa-pipe-from='scrollHandler' fa-options='options.imageScroll' )
-            fa-view(ng-repeat='image in images' )
-              fa-modifier(fa-size='[60,60]' )
-                fa-image-surface(fa-pipe-to='scrollHandler'  fa-image-url='{{image.url}}' fa-size='[50,50]'  fa-click='setSelectedImage(image,$done)').cursor-p
+          fa-modifier(fa-translate='[0,0,0]')
+            fa-surface
+              i.fa.fa-long-arrow-left
+          fa-modifier(fa-translate='[40,0,0]' fa-size='[10,20]' fa-scale='[0.9]' )
+            fa-scroll-view(fa-pipe-from='scrollHandler' fa-options='options.imageScroll' style='widths:200px')
+              fa-view(ng-repeat='image in images track by $index' fa-size='[undefined,60]')
+                fa-modifier(fa-size='[60,60]')
+                  fa-surface(fa-pipe-to='scrollHandler'   fa-size='[60,60]' fa-click='setSelectedImage(image,$done)').cursor-p
+                    img(ng-src="{{image.url}}").nav-image
+          fa-modifier(fa-translate='[365,0,0]')
+            fa-surface
+              i.fa.fa-long-arrow-right

@@ -11,16 +11,13 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
-        var Timer = $famous['famous/utilities/Timer'];
-        var Easing = $famous['famous/transitions/Easing'];
         var EventHandler = $famous['famous/core/EventHandler'];
 
         $scope.scrollHandler = new EventHandler();
         $scope.options = {
           imageScroll: {
-            clipSize: 100,
-            paginated: false,
-            speedLimit: 5,
+            clipSize: 200,
+            paginated: true,
             direction: 0,
           }
         };
@@ -35,7 +32,6 @@ angular.module('app')
 
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];
-        var EventHandler = $famous['famous/core/EventHandler'];
         var Transform = $famous['famous/core/Transform'];
 
         $scope.setSelectedImage = function (image, $done) {
@@ -47,6 +43,10 @@ angular.module('app')
         };
 
         $scope.setSelectedImage($scope.images[0]);
+
+        $scope.sliderOptions = {
+          dimensions: [2,3]
+        };
 
       }
     };

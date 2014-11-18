@@ -18,7 +18,7 @@
               i.fa.fa-angle-right.fa-3x
         fa-app.slider-wrapper
           fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
-            fa-view(ng-repeat='image in images track by $index')
+            fa-view(ng-repeat='image in faImages track by $index')
               fa-modifier(fa-align="[5,0]" fa-size='[128,120]')
                 fa-surface(fa-pipe-to='scrollHandler'  fa-click='setSelectedImage(image,$done)'  fa-background-color="'lightgoldenrodyellow'").cursor-p
                   img.thumbnail(ng-src="{{image.url}}").nav-image

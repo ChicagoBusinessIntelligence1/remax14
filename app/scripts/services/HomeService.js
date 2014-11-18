@@ -21,11 +21,16 @@ angular.module('app')
         this.homeRef.$remove();
       },
       updateHomeSection: function (section) {
+
+        var defered = $q.defer();
         var id = section.$id;
         var images = angular.copy(section.content);
         section = CleanObjectService.clean(section);
         section.content = images;
-        this.homeRef.$update(id, section);
+        this.homeRef.$update(id, section).then(function () {
+         defered.resolve(true) ;
+        });
+        return defered.promise;
       },
 
       saveToDrafts: function (home) {

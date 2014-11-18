@@ -21,7 +21,7 @@ angular.module('app')
         $scope.required = svCtrl.required;
 
         $scope.isEdit = false;
-        $scope.isSingleProp = $scope.section.content.length;
+        $scope.isSingleProp = $scope.section.content ? $scope.section.content.length:0;
         $scope.saveTest = function (mls) {
           console.log(mls);
 

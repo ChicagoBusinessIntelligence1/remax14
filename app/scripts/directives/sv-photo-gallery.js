@@ -17,7 +17,7 @@ angular.module('app')
         $scope.options = {
           imageScroll: {
             clipSize: 200,
-            paginated: true,
+            paginated: false,
             direction: 0
           }
         };
@@ -33,14 +33,15 @@ angular.module('app')
 
         };
 
-        $scope.images = _.map($scope.images, function (image) {
+        $scope.images =
+          _.map(_.compact($scope.images), function (image) {
 
           var opacity = new Transitionable(0);
           return {
             url: image,
             opacity: opacity
           }
-        });
+          });
 
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];

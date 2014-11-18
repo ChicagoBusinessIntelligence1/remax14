@@ -3748,14 +3748,15 @@ label {
 .img-gallery-wrapper {
   height: 640px;
   background-color: #789;
+  overflow: hidden;
 }
 .main-gal-img {
   width: 700px;
   height: 480px;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 375px) {
   .main-gal-img {
-    width: 350px;
+    width: 330px;
     height: 240px;
   }
 }

@@ -3745,13 +3745,40 @@ label {
 .table-elements {
   margin: 0 auto;
 }
-.slider-wrapper {
+.slider-img-wrapper {
   position: relative;
+  width: 720px;
+  height: 560px;
+  overflow: hidden;
+  background-color: #789;
+}
+.slider-container {
+  position: relative;
+  width: 720px;
+  height: 120px;
+  background-color: #add8e6;
+}
+.slider-surface {
+  width: 720px;
+  margin: 0px auto;
+}
+.slider-wrapper {
+  display: block;
+  position: absolute;
+  left: 42px;
+  width: 640px;
+  height: 120px;
+  overflow: hidden;
+  background-color: #66cdaa;
+}
+.btn-slide {
+  padding-top: 30px;
 }
 .nav-image {
-  height: 50px;
-  width: 50px;
-  border: 2px #008000 solid;
+  margin: 5px;
+  display: block;
+  height: 110px;
+  width: 118px;
 }
 .number {
   display: block;

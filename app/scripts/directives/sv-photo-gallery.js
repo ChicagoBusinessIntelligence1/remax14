@@ -18,7 +18,7 @@ angular.module('app')
           imageScroll: {
             clipSize: 200,
             paginated: true,
-            direction: 0,
+            direction: 0
           }
         };
 

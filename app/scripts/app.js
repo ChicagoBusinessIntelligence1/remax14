@@ -247,11 +247,6 @@ var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ng
 				controller:"HomepageExamplesCtrl",
 				templateUrl: "../views/homepage-examples-ctrl.html"
 			})
-			.state("app.famous", {
-				url: "/famous", 
-				controller:"FamousCtrl",
-				templateUrl: "../views/famous-ctrl.html"
-			})
 //#state
     })
   ;

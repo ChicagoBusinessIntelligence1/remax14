@@ -32,16 +32,23 @@ angular.module('app')
           scrollView.goToPreviousPage();
 
         };
+        $scope.$watch('images', function (newValue, oldValue) {
+          if (_.isUndefined(newValue)) {
+            return;
 
-        $scope.images =
-          _.map(_.compact($scope.images), function (image) {
-
-          var opacity = new Transitionable(0);
-          return {
-            url: image,
-            opacity: opacity
           }
-          });
+          $scope.faImages =
+            _.map(_.compact($scope.images), function (image) {
+
+              var opacity = new Transitionable(0);
+              return {
+                url: image,
+                opacity: opacity
+              }
+            });
+
+          $scope.setSelectedImage($scope.faImages[0]);
+        });
 
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];
@@ -55,10 +62,8 @@ angular.module('app')
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
         };
 
-        $scope.setSelectedImage($scope.images[0]);
-
         $scope.sliderOptions = {
-          dimensions: [2,3]
+          dimensions: [2, 3]
         };
 
       }

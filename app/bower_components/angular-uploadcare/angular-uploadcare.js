@@ -12,7 +12,7 @@ angular.module('ng-uploadcare', [])
       restrict: 'E',
       replace: true,
       require: 'ngModel',
-      template: '<input type="hidden" role="ng-uploadcare-uploader" />',
+      template: '<input type="hidden" role="ng-uploadcare-uploader" data-multiple="true" />',
       scope: {
         onWidgetReady: '&',
         onUploadComplete: '&',
@@ -23,7 +23,7 @@ angular.module('ng-uploadcare', [])
           $log.error('Uploadcare script has not been loaded!.');
           return;
         }
-        $scope.widget = uploadcare.Widget('[role=ng-uploadcare-uploader]');
+        $scope.widget = uploadcare.MultipleWidget('[role=ng-uploadcare-uploader]');
         $scope.onWidgetReady({widget: $scope.widget});
         $scope.widget.onUploadComplete(function(info) {
           $scope.onUploadComplete({info: info});

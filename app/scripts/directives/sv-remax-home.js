@@ -11,6 +11,8 @@ angular.module('app')
       },
 
       controller: function ($scope) {
+        $scope.uploadedImages = [];
+
         this.required = ['mls', 'state', 'city', 'zip'];
         $scope.tooltip = {
           "title": "Please save listing first",
@@ -29,9 +31,8 @@ angular.module('app')
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;
+
           $scope.images = HomeService.findSection($scope.home, 'images').content;
-
-
         })
 
         $scope.moveToTrash = function () {
@@ -51,18 +52,34 @@ angular.module('app')
           HomeService.updateHomeSection(section);
         };
 
+
+
         $scope.onUCUploadComplete = function (info) {
           var homeSection = HomeService.findSection($scope.home, 'images');
           if (_.isUndefined(homeSection)) {
             homeSection = {
-              $id:$scope.home.length,
+              $id: $scope.home.length,
               title: 'images',
               order: $scope.home.length,
               content: []
             }
           }
-          homeSection.content.push(info.cdnUrl);
-          HomeService.updateHomeSection(homeSection);
+
+          if (_.isUndefined(homeSection.content)) {
+            homeSection.content = [];
+          }
+
+          var numberOfFiles = parseInt(info.name.split(' ')[0]);
+          for (var i = 0; i < numberOfFiles; i++) {
+            var fileUrl = info.cdnUrl + 'nth/' + i + '/';
+            homeSection.content.push(fileUrl);
+          }
+
+          HomeService.updateHomeSection(homeSection).then(function () {
+
+            $scope.images = HomeService.findSection($scope.home, 'images').content;
+            var breakPoint = 1;
+          })
         };
       }
     };

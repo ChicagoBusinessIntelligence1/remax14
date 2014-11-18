@@ -69,6 +69,7 @@ angular.module('app')
             homeSection.content = [];
           }
 
+
           var numberOfFiles = parseInt(info.name.split(' ')[0]);
           for (var i = 0; i < numberOfFiles; i++) {
             var fileUrl = info.cdnUrl + 'nth/' + i + '/';

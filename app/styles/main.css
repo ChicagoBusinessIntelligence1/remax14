@@ -3747,7 +3747,7 @@ label {
 }
 .img-gallery-wrapper {
   height: 640px;
-  background-color: #789;
+  background-color: #fff;
   overflow: hidden;
 }
 .main-gal-img {
@@ -3762,9 +3762,9 @@ label {
 }
 .slider-container {
   position: relative;
-  width: 720px;
+  overflow: hidden;
+  width: 500px;
   height: 120px;
-  background-color: #add8e6;
 }
 .slider-surface {
   width: 720px;
@@ -3777,10 +3777,10 @@ label {
   width: 640px;
   height: 120px;
   overflow: hidden;
-  background-color: #66cdaa;
+  background-color: #fff;
 }
 .btn-slide {
-  padding-top: 30px;
+  padding-top: 40px;
 }
 .nav-image {
   margin: 5px;

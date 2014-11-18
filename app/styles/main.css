@@ -3766,10 +3766,6 @@ label {
   width: 500px;
   height: 120px;
 }
-.slider-surface {
-  width: 720px;
-  margin: 0px auto;
-}
 .slider-wrapper {
   display: block;
   position: absolute;

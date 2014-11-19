@@ -1,12 +1,12 @@
 .row
   .col-sm-12
     h1 Photo Galery
-    fa-app(ng-style='galleryStyle' )
+    fa-app(ng-style='galleryStyle')
       fa-flexible-layout(fa-options='flex' )
-        fa-view
-          fa-modifier(fa-translate='[10,10,0]' fa-opacity='selectedImage.opacity.get()' )
+        fa-view(ts-sheet='State1Sheet')
+          fa-modifier(fa-translate='[10,10,0]' fa-opacity='selectedImage.opacity.get()' id='left-column' )
             fa-surface()
-              img(ng-style='galleryStyle' ng-src="/images/houses/10.jpg")
+              img(ng-style='galleryStyle' ng-src="/images/houses/10.jpg" )
 
       //fa-modifier(fa-translate='[0,500,0]')
       //  fa-surface.cursor-p(fa-size="[40, 100]" fa-background-color="'red'" fa-click='slideLeft()')

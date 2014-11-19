@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media,$timeline) {
+  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media, $timeline) {
     return {
       restrict: 'E',
       replace: true,
@@ -10,21 +10,22 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
-        $media.$sheet('State1Sheet', {
+        var Transitionable = $famous['famous/transitions/Transitionable'];
+        var EventHandler = $famous['famous/core/EventHandler'];
 
+        $media.$sheet('State1Sheet', {
           xs: {
             '#left-column': {
-              transform: function() {
+              transform: function () {
                 var translate = $timeline(
                   [0, [10, 150, 0]]);
                 return Transform.translate.apply(this, translate);
               }
             }
           },
-
           sm: {
             '#left-column': {
-              transform: function() {
+              transform: function () {
                 var translate = $timeline(
                   [0, [220, 190, 0]]);
                 return Transform.translate.apply(this, translate);
@@ -38,32 +39,29 @@ angular.module('app')
         $scope.width = 586;
         $scope.height = 500;
         $scope.galleryStyle = {
-          width: $scope.width+'px',
-          height: $scope.height+'px'
+          width: $scope.width + 'px',
+          height: $scope.height + 'px'
         };
-        $(window).resize(function(){
-          $scope.$apply(function(){
+        $(window).resize(function () {
+          $scope.$apply(function () {
 
             $scope.width = $scope.w.innerWidth();
             $scope.height = $scope.w.innerHeight();
 
-            if ($scope.width>586) {
+            if ($scope.width > 586) {
               $scope.width = 586;
             }
-            if ($scope.height>500) {
+            if ($scope.height > 500) {
               $scope.height = 500;
             }
             console.log($scope.width);
             $scope.galleryStyle = {
-              width: $scope.width+'px',
-              height: $scope.height+'px'
+              width: $scope.width + 'px',
+              height: $scope.height + 'px'
             };
           });
         });
 
-
-        var Transitionable = $famous['famous/transitions/Transitionable'];
-        var EventHandler = $famous['famous/core/EventHandler'];
 
         $scope.flex = {
           ratio: [2, 1],
@@ -72,11 +70,12 @@ angular.module('app')
         $scope.scrollHandler = new EventHandler();
         $scope.options = {
           imageScroll: {
-            clipSize: 200,
-            paginated: false,
+            margin: 600,
+            paginated: true,
             direction: 0
           }
         };
+
 
         $scope.slideRight = function () {
           var scrollView = $famous.find('#imageScroll')[0].renderNode;

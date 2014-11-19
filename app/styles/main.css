@@ -4265,7 +4265,7 @@ html {
   font-size: 0.8em;
 }
 fa-app {
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;

@@ -2,12 +2,12 @@
   sv-spinner(ng-show='isDataLoading')
 
   div(ng-hide='isDataLoading')
-    sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
-    .row
-      .col-sm-12
-        uploadcare-widget(ng-if='!isTemplate' ng-model='uploadedImages', data-autostore='true' data-public-key='238bd7bf0446738e2bbc', data-locale='en', data-tabs='file url facebook instagram flickr', data-images-only='false', data-path-value='false', data-preview-step='false', data-clearable='false', data-multiple='true', multiple-min='1' multiple-max='0' data-crop='400:300', on-upload-complete='onUCUploadComplete(info)', on-widget-ready='onUCWidgetReady(widget)')
-        button.btn.btn-info(ng-if='isTemplate' bs-tooltip='tooltip' type='warning' ng-click='') Upload Images
-    hr
+    //sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
+    //.row
+    //  .col-sm-12
+    //    uploadcare-widget(ng-if='!isTemplate' ng-model='uploadedImages', data-autostore='true' data-public-key='238bd7bf0446738e2bbc', data-locale='en', data-tabs='file url facebook instagram flickr', data-images-only='false', data-path-value='false', data-preview-step='false', data-clearable='false', data-multiple='true', multiple-min='1' multiple-max='0' data-crop='400:300', on-upload-complete='onUCUploadComplete(info)', on-widget-ready='onUCWidgetReady(widget)')
+    //    button.btn.btn-info(ng-if='isTemplate' bs-tooltip='tooltip' type='warning' ng-click='') Upload Images
+    //hr
     .gallery-wrapper(ng-if='!isTemplate')
       .row
         .col-sm-12

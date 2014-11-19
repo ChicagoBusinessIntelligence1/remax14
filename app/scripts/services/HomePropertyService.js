@@ -19,9 +19,11 @@ angular.module('app')
           }
           for (var j = section.length - 1; j >= 0; j--) {
             var sectionProperty = section[j];
+            if (_.isUndefined(sectionProperty)) {
+              continue;
+            }
             if (sectionProperty.title === propertyTitle) {
               return sectionProperty.value;
-              break;
             }
           }
         }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPhotoGallery', function (HomeService, $famous) {
+  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media) {
     return {
       restrict: 'E',
       replace: true,
@@ -10,9 +10,43 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+
+        $scope.w = angular.element($window);
+
+        $scope.width = 586;
+        $scope.height = 500;
+        $scope.galleryStyle = {
+          width: $scope.width+'px',
+          height: $scope.height+'px'
+        };
+        $(window).resize(function(){
+          $scope.$apply(function(){
+
+            $scope.width = $scope.w.innerWidth();
+            $scope.height = $scope.w.innerHeight();
+
+            if ($scope.width>586) {
+              $scope.width = 586;
+            }
+            if ($scope.height>500) {
+              $scope.height = 500;
+            }
+            console.log($scope.width);
+            $scope.galleryStyle = {
+              width: $scope.width+'px',
+              height: $scope.height+'px'
+            };
+          });
+        });
+
+
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
 
+        $scope.flex = {
+          ratio: [2, 1],
+          transition: true
+        };
         $scope.scrollHandler = new EventHandler();
         $scope.options = {
           imageScroll: {

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular','ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
+var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular','ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
       $urlRouterProvider.otherwise('/home');
       //$locationProvider.html5Mode(true);
@@ -243,12 +243,12 @@ var app = angular.module('app', [ 'firebase', 'ng-uploadcare', 'ngMessages', 'ng
           templateUrl: "../views/setting-states-fill-ctrl.html"
         })
 			.state("app.homepage-examples", {
-				url: "/homepage-examples", 
+				url: "/homepage-examples",
 				controller:"HomepageExamplesCtrl",
 				templateUrl: "../views/homepage-examples-ctrl.html"
 			})
 			.state("app.svetic", {
-				url: "/svetic", 
+				url: "/svetic",
 				controller:"SveticCtrl",
 				templateUrl: "../views/svetic-ctrl.html"
 			})

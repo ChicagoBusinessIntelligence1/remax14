@@ -11,6 +11,7 @@ angular.module('app')
         style: '@',
         img: '@',
         height: '@',
+        width: '@',
         backgroundPosition: '@'
       },
       link: function ($scope, element, attr) {
@@ -21,7 +22,8 @@ angular.module('app')
           'background-size': 'cover',
           'background-position': $scope.backgroundPosition,
           'position': 'relative',
-          'height': $scope.height + 'px'
+          'height': $scope.height + 'px',
+          'width': $scope.width + 'px'
         });
       }
     };

@@ -5,14 +5,25 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
-      template: '<img ng-src="{{img}}" ng-style="{width:size, height:size}" >',
+      template: '<div></div>',
 
       scope: {
+        style: '@',
         img: '@',
-        size: '=',
+        height: '@',
+        backgroundPosition: '@'
       },
       link: function ($scope, element, attr) {
-
+        element.addClass($scope.style);
+        $scope.backgroundPosition = $scope.backgroundPosition || '50% 25%';
+        element.css({
+          'background-image': 'url(' + $scope.img + ')',
+          'background-size': 'cover',
+          'background-position': $scope.backgroundPosition,
+          'position': 'relative',
+          'height': $scope.height + 'px'
+        });
       }
     };
   });
+

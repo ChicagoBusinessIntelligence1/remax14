@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media) {
+  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media,$timeline) {
     return {
       restrict: 'E',
       replace: true,
@@ -10,7 +10,29 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+        $media.$sheet('State1Sheet', {
 
+          xs: {
+            '#left-column': {
+              transform: function() {
+                var translate = $timeline(
+                  [0, [10, 150, 0]]);
+                return Transform.translate.apply(this, translate);
+              }
+            }
+          },
+
+          sm: {
+            '#left-column': {
+              transform: function() {
+                var translate = $timeline(
+                  [0, [220, 190, 0]]);
+                return Transform.translate.apply(this, translate);
+              },
+            }
+          }
+
+        });
         $scope.w = angular.element($window);
 
         $scope.width = 586;

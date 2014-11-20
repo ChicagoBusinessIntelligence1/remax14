@@ -10,6 +10,7 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+        var i = 5;
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
         var Timer = $famous['famous/utilities/Timer'];

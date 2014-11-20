@@ -12,6 +12,9 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
+        var Timer = $famous['famous/utilities/Timer'];
+        var Easing = $famous['famous/transitions/Easing'];
+        var Transform = $famous['famous/core/Transform'];
 
         $media.$sheet('State1Sheet', {
           xs: {
@@ -54,7 +57,6 @@ angular.module('app')
             if ($scope.height > 500) {
               $scope.height = 500;
             }
-            console.log($scope.width);
             $scope.galleryStyle = {
               width: $scope.width + 'px',
               height: $scope.height + 'px'
@@ -62,20 +64,18 @@ angular.module('app')
           });
         });
 
-
         $scope.flex = {
           ratio: [2, 1],
           transition: true
         };
+
         $scope.scrollHandler = new EventHandler();
         $scope.options = {
           imageScroll: {
-            margin: 600,
             paginated: true,
             direction: 0
           }
         };
-
 
         $scope.slideRight = function () {
           var scrollView = $famous.find('#imageScroll')[0].renderNode;
@@ -90,24 +90,18 @@ angular.module('app')
         $scope.$watch('images', function (newValue, oldValue) {
           if (_.isUndefined(newValue)) {
             return;
-
           }
           $scope.faImages =
             _.map(_.compact($scope.images), function (image) {
-
               var opacity = new Transitionable(0);
               return {
                 url: image,
                 opacity: opacity
               }
             });
-
           $scope.setSelectedImage($scope.faImages[0]);
         });
 
-        var Timer = $famous['famous/utilities/Timer'];
-        var Easing = $famous['famous/transitions/Easing'];
-        var Transform = $famous['famous/core/Transform'];
 
         $scope.setSelectedImage = function (image, $done) {
           if ($scope.selectedImage) {

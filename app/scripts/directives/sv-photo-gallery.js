@@ -106,6 +106,6 @@ angular.module('app')
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
         };
 
-      }
+    }
     };
   });

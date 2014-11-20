@@ -3,9 +3,12 @@
     h1 Photo Galery
     hr
     fa-app(ng-style='galleryStyle' style='overflow:hidden')
-      fa-modifier(fa-translate='[10,10,0]' fa-opacity='selectedImage.opacity.get()' )
-        fa-surface
-            sv-photo-thumb(height='{{height}}' width='{{width}}' img="{{selectedImage.url}}")
+      fa-modifier(fa-translate='[10,10,0]' fa-size='[{{thumbSize+10}},{{thumbSize+10}}]')  )
+        fa-surface(ng-style='galleryStyle')
+          div {{selectedImage.url}}
+          div {{height}}
+          div {{width}}
+          sv-photo-thumb(height='{{height}}' width='{{width}}' img="{{selectedImage.url}}")
       fa-modifier(fa-translate='[40,500,0]')
         fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
           fa-view(ng-repeat='image in faImages track by $index')

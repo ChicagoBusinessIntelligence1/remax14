@@ -10,53 +10,48 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
-        var i = 5;
+        var listing = $('.listing');
+
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
         var Timer = $famous['famous/utilities/Timer'];
         var Easing = $famous['famous/transitions/Easing'];
         var Transform = $famous['famous/core/Transform'];
 
-        $media.$sheet('State1Sheet', {
-          xs: {
-            '#left-column': {
-              transform: function () {
-                var translate = $timeline(
-                  [0, [10, 150, 0]]);
-                return Transform.translate.apply(this, translate);
-              }
-            }
-          },
-          sm: {
-            '#left-column': {
-              transform: function () {
-                var translate = $timeline(
-                  [0, [220, 190, 0]]);
-                return Transform.translate.apply(this, translate);
-              },
-            }
-          }
-
-        });
         $scope.w = angular.element($window);
 
-        $scope.width = 586;
-        $scope.height = 500;
+        $scope.initialWidth = listing.width();
+        $scope.initialHeight = 610;
+
+        var initialThumbSize = 110;
+
+        $scope.thumbSize = initialThumbSize;
+
+        $scope.width = $scope.initialWidth;
+        $scope.height = $scope.initialHeight;
+
         $scope.galleryStyle = {
           width: $scope.width + 'px',
           height: $scope.height + 'px'
         };
+        var coeficient = 1;
         $(window).resize(function () {
           $scope.$apply(function () {
 
-            $scope.width = $scope.w.innerWidth();
-            $scope.height = $scope.w.innerHeight();
+            var w = listing.width();
+            coeficient = w / $scope.initialWidth;
+            var h = coeficient * $scope.initialHeight + 120;
+            $scope.thumbSize = coeficient * initialThumbSize;
 
-            if ($scope.width > 586) {
-              $scope.width = 586;
+            if (w > $scope.initialWidth) {
+              $scope.width = $scope.initialWidth;
+            } else {
+              $scope.width = w;
             }
-            if ($scope.height > 500) {
-              $scope.height = 500;
+            if (h > $scope.initialHeight) {
+              $scope.height = $scope.initialHeight;
+            } else {
+              $scope.height = h;
             }
             $scope.galleryStyle = {
               width: $scope.width + 'px',

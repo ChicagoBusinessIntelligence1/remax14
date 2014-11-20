@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svRemaxHome', function (AddSearchFeaturesService, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
+  .directive('svRemaxHome', function (AddSearchFeaturesService, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-remax-home.html',
@@ -22,6 +22,9 @@ angular.module('app')
       },
 
       link: function ($scope, element, attr) {
+
+
+
         var url = $scope.isRent ? urlRental : urlSale;
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;

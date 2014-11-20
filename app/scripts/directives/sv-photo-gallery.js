@@ -14,6 +14,9 @@ angular.module('app')
 
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
+        var Timer = $famous['famous/utilities/Timer'];
+        var Easing = $famous['famous/transitions/Easing'];
+        var Transform = $famous['famous/core/Transform'];
 
         $scope.w = angular.element($window);
 
@@ -61,10 +64,10 @@ angular.module('app')
           ratio: [2, 1],
           transition: true
         };
+
         $scope.scrollHandler = new EventHandler();
         $scope.options = {
           imageScroll: {
-            margin: 600,
             paginated: true,
             direction: 0
           }
@@ -83,24 +86,17 @@ angular.module('app')
         $scope.$watch('images', function (newValue, oldValue) {
           if (_.isUndefined(newValue)) {
             return;
-
           }
           $scope.faImages =
             _.map(_.compact($scope.images), function (image) {
-
               var opacity = new Transitionable(0);
               return {
                 url: image,
                 opacity: opacity
               }
             });
-
           $scope.setSelectedImage($scope.faImages[0]);
         });
-
-        var Timer = $famous['famous/utilities/Timer'];
-        var Easing = $famous['famous/transitions/Easing'];
-        var Transform = $famous['famous/core/Transform'];
 
         $scope.setSelectedImage = function (image, $done) {
           if ($scope.selectedImage) {
@@ -108,10 +104,6 @@ angular.module('app')
           }
           $scope.selectedImage = image;
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
-        };
-
-        $scope.sliderOptions = {
-          dimensions: [2, 3]
         };
 
       }

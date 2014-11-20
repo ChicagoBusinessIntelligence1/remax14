@@ -10,6 +10,10 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+        var horizontalShiftRatio;
+        var verticalShiftRatio;
+        var thumbRatio;
+        var heightRatio;
         var listing = $('.listing');
 
         var Transitionable = $famous['famous/transitions/Transitionable'];
@@ -21,15 +25,23 @@ angular.module('app')
         $scope.w = angular.element($window);
 
         $scope.initialWidth = listing.width();
-        $scope.initialHeight = 610;
+        heightRatio = 0.85;
+        thumbRatio = 0.17;
+        verticalShiftRatio = 0.84;
+        horizontalShiftRatio = 0.94;
+        thumbRatio = 0.17;
+        $scope.initialHeight = $scope.initialWidth * heightRatio;
 
-        var initialThumbSize = 110;
-
-        $scope.thumbSize = initialThumbSize;
+        $scope.thumbSize = $scope.initialWidth * thumbRatio;
 
         $scope.width = $scope.initialWidth;
-        $scope.height = $scope.initialHeight;
 
+        $scope.arrowClass= $scope.width>500? 'fa-3x':'fa-2x';
+
+
+        $scope.height = $scope.initialHeight;
+        $scope.horizontalShift = $scope.width*horizontalShiftRatio
+        $scope.verticalShift= $scope.height*verticalShiftRatio;
         $scope.galleryStyle = {
           width: $scope.width + 'px',
           height: $scope.height + 'px'
@@ -40,19 +52,18 @@ angular.module('app')
 
             var w = listing.width();
             coeficient = w / $scope.initialWidth;
-            var h = coeficient * $scope.initialHeight + 120;
-            $scope.thumbSize = coeficient * initialThumbSize;
 
             if (w > $scope.initialWidth) {
               $scope.width = $scope.initialWidth;
             } else {
               $scope.width = w;
             }
-            if (h > $scope.initialHeight) {
-              $scope.height = $scope.initialHeight;
-            } else {
-              $scope.height = h;
-            }
+
+            $scope.arrowClass= $scope.width>500? 'fa-3x':'fa-2x';
+            $scope.thumbSize = thumbRatio * $scope.width;
+            $scope.height = $scope.width * heightRatio + $scope.thumbSize;
+            $scope.horizontalShift = $scope.width*horizontalShiftRatio
+            $scope.verticalShift= $scope.height*verticalShiftRatio;
             $scope.galleryStyle = {
               width: $scope.width + 'px',
               height: $scope.height + 'px'
@@ -106,6 +117,6 @@ angular.module('app')
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
         };
 
-    }
+      }
     };
   });

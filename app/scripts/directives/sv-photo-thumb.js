@@ -15,7 +15,6 @@ angular.module('app')
         backgroundPosition: '@'
       },
       link: function ($scope, element, attr) {
-        console.log($scope.img);
         element.addClass($scope.style);
         $scope.backgroundPosition = $scope.backgroundPosition || '50% 25%';
         element.css({

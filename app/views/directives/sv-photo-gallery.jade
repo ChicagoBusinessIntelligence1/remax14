@@ -3,25 +3,22 @@
     h1 Photo Galery
     hr
     fa-app(ng-style='galleryStyle' style='overflow:hidden')
-      fa-modifier(fa-translate='[10,10,0]' fa-size='[{{thumbSize+10}},{{thumbSize+10}}]')  )
-        fa-surface(ng-style='galleryStyle')
-          div {{selectedImage.url}}
-          div {{height}}
-          div {{width}}
-          sv-photo-thumb(height='{{height}}' width='{{width}}' img="{{selectedImage.url}}")
-      fa-modifier(fa-translate='[40,500,0]')
+      fa-modifier(fa-translate='[10,10,0]' fa-opacity='selectedImage.opacity.get()' )
+        fa-surface
+          img(ng-style='galleryStyle' ng-src="{{selectedImage.url}}")
+      fa-modifier(fa-translate='[{{thumbSize/2}},{{verticalShift}},0]')
         fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
           fa-view(ng-repeat='image in faImages track by $index')
-            fa-modifier(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]')
+            fa-modifier(fa-size='[{{1.1*thumbSize}},{{1.1*thumbSize}}]')
               fa-surface(fa-pipe-to='scrollHandler'  fa-click='setSelectedImage(image,$done)'  fa-background-color="'white'").cursor-p
                 sv-photo-thumb(height='{{thumbSize}}' width='{{thumbSize}}' img="{{image.url}}")
 
-      fa-modifier(fa-translate='[0,500,0]')
-        fa-surface.cursor-p(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]' fa-background-color="'white'" fa-click='slideLeft()')
+      fa-modifier(fa-translate='[0,{{verticalShift}},0]')
+        fa-surface.cursor-p(fa-size='[{{thumbSize/2}},{{thumbSize}}]' fa-background-color="'white'" fa-click='slideLeft()')
           a.btn.btn-link.btn-slide
-            i.fa.fa-angle-left.fa-3x
+            i.fa.fa-angle-left(class='{{arrowClass}}')
 
-      fa-modifier(fa-translate='[680,500,0]')
-        fa-surface(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]' fa-background-color="'white'" fa-click="slideRight()")
+      fa-modifier(fa-translate='[{{horizontalShift}},{{verticalShift}},0]')
+        fa-surface(fa-size='[{{thumbSize/2}},{{thumbSize}}]' fa-background-color="'white'" fa-click="slideRight()")
           a.btn.btn-link.btn-slide
-            i.fa.fa-angle-right.fa-3x
+            i.fa.fa-angle-right(class='{{arrowClass}}')

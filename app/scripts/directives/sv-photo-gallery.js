@@ -102,17 +102,12 @@ angular.module('app')
           $scope.setSelectedImage($scope.faImages[0]);
         });
 
-
         $scope.setSelectedImage = function (image, $done) {
           if ($scope.selectedImage) {
             $scope.selectedImage.opacity.set(0, {duration: 250, curve: "linear"});
           }
           $scope.selectedImage = image;
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
-        };
-
-        $scope.sliderOptions = {
-          dimensions: [2, 3]
         };
 
       }

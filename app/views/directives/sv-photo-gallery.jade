@@ -2,23 +2,23 @@
   .col-sm-12
     h1 Photo Galery
     hr
-    fa-app.img-gallery-wrapper
+    fa-app(ng-style='galleryStyle' style='overflow:hidden')
       fa-modifier(fa-translate='[10,10,0]' fa-opacity='selectedImage.opacity.get()' )
-        fa-surface(fa-size="[700, 480]")
-          img.thumbnail.main-gal-img(ng-src="{{selectedImage.url}}")
+        fa-surface
+            sv-photo-thumb(height='{{height}}' width='{{width}}' img="{{selectedImage.url}}")
       fa-modifier(fa-translate='[40,500,0]')
-        fa-scroll-view.slider-container(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
+        fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
           fa-view(ng-repeat='image in faImages track by $index')
-            fa-modifier(fa-size='[130,130]')
+            fa-modifier(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]')
               fa-surface(fa-pipe-to='scrollHandler'  fa-click='setSelectedImage(image,$done)'  fa-background-color="'white'").cursor-p
-                sv-photo-thumb(height='110' width='110' img="{{image.url}}")
+                sv-photo-thumb(height='{{thumbSize}}' width='{{thumbSize}}' img="{{image.url}}")
 
       fa-modifier(fa-translate='[0,500,0]')
-        fa-surface.cursor-p(fa-size="[40, 120]" fa-background-color="'white'" fa-click='slideLeft()')
+        fa-surface.cursor-p(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]' fa-background-color="'white'" fa-click='slideLeft()')
           a.btn.btn-link.btn-slide
             i.fa.fa-angle-left.fa-3x
 
       fa-modifier(fa-translate='[680,500,0]')
-        fa-surface(fa-size="[40, 120]" fa-background-color="'white'" fa-click="slideRight()")
+        fa-surface(fa-size='[{{thumbSize+10}},{{thumbSize+10}}]' fa-background-color="'white'" fa-click="slideRight()")
           a.btn.btn-link.btn-slide
             i.fa.fa-angle-right.fa-3x

@@ -10,6 +10,12 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+        var Transitionable = $famous['famous/transitions/Transitionable'];
+        var EventHandler = $famous['famous/core/EventHandler'];
+        var Timer = $famous['famous/utilities/Timer'];
+        var Easing = $famous['famous/transitions/Easing'];
+        var Transform = $famous['famous/core/Transform'];
+
         var coefficient;
         var horizontalShiftRatio;
         var verticalShiftRatio;
@@ -17,23 +23,15 @@ angular.module('app')
         var heightRatio;
         var listing = $('#home-listing');
 
-        var Transitionable = $famous['famous/transitions/Transitionable'];
-        var EventHandler = $famous['famous/core/EventHandler'];
-        var Timer = $famous['famous/utilities/Timer'];
-        var Easing = $famous['famous/transitions/Easing'];
-        var Transform = $famous['famous/core/Transform'];
-
-        $scope.w = angular.element($window);
-
-        $scope.initialWidth = listing.width();
         heightRatio = 0.66;
         thumbRatio = 0.17;
         verticalShiftRatio = 0.84;
         horizontalShiftRatio = 0.93;
+
+        $scope.w = angular.element($window);
+        $scope.initialWidth = listing.width();
         $scope.initialHeight = $scope.initialWidth * heightRatio;
-
         $scope.thumbSize = $scope.initialWidth * thumbRatio;
-
         $scope.width = $scope.initialWidth;
 
         switch (true) {
@@ -46,7 +44,6 @@ angular.module('app')
           default:
             $scope.arrowClass = 'fa-2x';
         }
-
 
         $scope.height = $scope.initialHeight+ $scope.thumbSize;
         $scope.horizontalShift = $scope.width*horizontalShiftRatio
@@ -68,7 +65,6 @@ angular.module('app')
             } else {
               $scope.width = w;
             }
-
             $scope.arrowClass= $scope.width>500? 'fa-3x':'fa-2x';
             $scope.thumbSize = thumbRatio * $scope.width;
             $scope.height = $scope.width * heightRatio + $scope.thumbSize;

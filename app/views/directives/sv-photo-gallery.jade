@@ -3,10 +3,10 @@
     h1 Photo Galery
     hr
     fa-app.img-gallery-wrapper(ng-style='galleryStyle')
-      fa-modifier(fa-opacity='selectedImage.opacity.get()' fa-size="[{{1*width}},undefined]")
-        fa-modifier(fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]" fa-size="[{{width}},undefined]")
+      fa-modifier(fa-opacity='selectedImage.opacity.get()' fa-size="[{{width}}px,undefined]")
+        fa-modifier(fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]" fa-size="[{{width}}px,undefined]")
           fa-surface
-            img(ng-src="{{selectedImage.url}}" style="width:{{width}}px")
+            img.thumbnail(ng-src="{{selectedImage.url}}" style="width:{{width}}px")
 
       fa-modifier(fa-translate='[0,{{verticalShift}},0]')
         fa-modifier(fa-translate='[{{thumbSize/2.3}},0,0]')

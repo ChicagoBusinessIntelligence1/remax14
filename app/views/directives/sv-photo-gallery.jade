@@ -3,27 +3,26 @@
     h1 Photo Galery
     hr
     fa-app.img-gallery-wrapper(ng-style='galleryStyle')
-      fa-modifier(fa-opacity='selectedImage.opacity.get()' fa-size="[{{width}},undefined]")
+      fa-modifier(fa-opacity='selectedImage.opacity.get()' fa-size="[{{1*width}},undefined]")
         fa-modifier(fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]" fa-size="[{{width}},undefined]")
           fa-surface
-            img.thumbnail(ng-src="{{selectedImage.url}}" style="width:{{width}}px")
+            img(ng-src="{{selectedImage.url}}" style="width:{{width}}px")
 
       fa-modifier(fa-translate='[0,{{verticalShift}},0]')
-        fa-modifier(fa-translate='[{{thumbSize/2.3}},0,0]')
-          fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
-            fa-view(ng-repeat='image in faImages track by $index')
-              fa-modifier(fa-size='[{{thumbSize}},{{.66*thumbSize}}]')
-                fa-modifier(fa-size='[{{thumbSize*.9}},{{.66*thumbSize}}]' fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]")
-                  fa-surface(fa-pipe-to='scrollHandler'  fa-click='setSelectedImage(image,$done)'  fa-background-color="'green'").cursor-p
-                    sv-photo-thumb(height='{{0.66*thumbSize}}' width='{{.9*thumbSize}}' img="{{image.url}}")
+        fa-scroll-view(fa-pipe-from='scrollHandler' id='imageScroll' fa-options='options.imageScroll')
+          fa-view(ng-repeat='image in faImages track by $index')
+            fa-modifier(fa-size='[{{thumbSize}},{{.66*thumbSize}}]')
+              fa-modifier(fa-size='[{{thumbSize*.9}},{{.66*thumbSize}}]' fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]")
+                fa-surface(fa-size='[{{thumbSize*.9}},{{.66*thumbSize}}]' fa-pipe-to='scrollHandler'  fa-click='setSelectedImage(image,$done)'  fa-background-color="'green'").cursor-p
+                  sv-photo-thumb(height='{{0.66*thumbSize}}' width='{{.9*thumbSize}}' img="{{image.url}}")
 
       fa-modifier(fa-translate='[0,{{verticalShift}},0]' fa-size="[{{width}}, {{.66*thumbSize}}]")
-        fa-modifier(fa-origin="[0, 0]" fa-align="[0, 0]" )
-          fa-surface.cursor-p(fa-size='[{{thumbSize/2.3}},{{.66*thumbSize}}]' fa-background-color="'white'" fa-click='slideLeft()')
-            a.btn.btn-link.btn-slide(style='height:{{thumbSize/3.1}}px')
+        fa-modifier(fa-origin="[0, 0]" fa-align="[0, 0]")
+          fa-surface(fa-size='[{{thumbSize/2.6}},{{.66*thumbSize}}]' fa-background-color="'red'" fa-click="slideLeft()")
+            a.btn.btn-link.btn-slide(style='height:{{thumbSize/3.3}}px')
               i.fa.fa-angle-left.arrow-center(class='{{arrowClass}}')
 
         fa-modifier(fa-origin="[1, 0]" fa-align="[1, 0]")
-          fa-surface(fa-size='[{{thumbSize/2.3}},{{.66*thumbSize}}]' fa-background-color="'white'" fa-click="slideRight()")
+          fa-surface(fa-size='[{{thumbSize/2.6}},{{.66*thumbSize}}]' fa-background-color="'red'" fa-click="slideRight()")
             a.btn.btn-link.btn-slide(style='height:{{thumbSize/3.3}}px')
               i.fa.fa-angle-right.arrow-center(class='{{arrowClass}}')

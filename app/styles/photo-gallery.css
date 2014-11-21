@@ -10,12 +10,17 @@ label {
 .img-gallery-wrapper {
   overflow: hidden;
 }
-.slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 500px;
-  height: 120px;
+.main-gal-img {
+  width: 700px;
+  height: 480px;
 }
+@media screen and (max-width: 375px) {
+  .main-gal-img {
+    width: 330px;
+    height: 240px;
+  }
+}
+.slider-container,
 .slider-wrapper {
   display: block;
   position: absolute;
@@ -26,18 +31,18 @@ label {
   background-color: #fff;
 }
 .btn-slide {
-  position: relative;
-  display: block;
-  text-align: center;
-  vertical-align: middle;
+  position: relative !important;
+  -webkit-transform: translateY(35%) !important;
+  -ms-transform: translateY(35%);
+  -webkit-transform: translateY(35%);
+  -moz-transform: translateY(35%);
+  -o-transform: translateY(35%);
+  -ms-transform: translateY(35%);
+  transform: translateY(35%);
+  cursor: pointer;
 }
-.arrow-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 30%;
-  width: 50%;
-  margin: -15% 0 0 -25%;
+.align-r {
+  text-align: rigth;
 }
 .nav-image {
   margin: 5px;

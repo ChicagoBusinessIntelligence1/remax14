@@ -10,11 +10,12 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-photo-gallery.html',
       link: function ($scope, element, attr) {
+        var coefficient;
         var horizontalShiftRatio;
         var verticalShiftRatio;
         var thumbRatio;
         var heightRatio;
-        var listing = $('.listing');
+        var listing = $('#home-listing');
 
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
@@ -27,9 +28,8 @@ angular.module('app')
         $scope.initialWidth = listing.width();
         heightRatio = 0.85;
         thumbRatio = 0.17;
-        verticalShiftRatio = 0.84;
+        verticalShiftRatio = 0.89;
         horizontalShiftRatio = 0.94;
-        thumbRatio = 0.17;
         $scope.initialHeight = $scope.initialWidth * heightRatio;
 
         $scope.thumbSize = $scope.initialWidth * thumbRatio;
@@ -42,16 +42,17 @@ angular.module('app')
         $scope.height = $scope.initialHeight;
         $scope.horizontalShift = $scope.width*horizontalShiftRatio
         $scope.verticalShift= $scope.height*verticalShiftRatio;
+
         $scope.galleryStyle = {
           width: $scope.width + 'px',
           height: $scope.height + 'px'
         };
-        var coeficient = 1;
+        coefficient = 1;
         $(window).resize(function () {
           $scope.$apply(function () {
 
             var w = listing.width();
-            coeficient = w / $scope.initialWidth;
+            coefficient = w / $scope.initialWidth;
 
             if (w > $scope.initialWidth) {
               $scope.width = $scope.initialWidth;

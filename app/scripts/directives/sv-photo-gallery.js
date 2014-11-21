@@ -60,14 +60,7 @@ angular.module('app')
         $(window).resize(function () {
           $scope.$apply(function () {
 
-            var w = listing.width();
-            coefficient = w / $scope.initialWidth;
-
-            if (w > $scope.initialWidth) {
-              $scope.width = $scope.initialWidth;
-            } else {
-              $scope.width = w;
-            }
+            $scope.width=listing.width() ;
 
             $scope.arrowClass= $scope.width>500? 'fa-3x':'fa-2x';
             $scope.thumbSize = thumbRatio * $scope.width;

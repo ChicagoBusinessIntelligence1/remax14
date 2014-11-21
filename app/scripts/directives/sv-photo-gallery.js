@@ -26,20 +26,29 @@ angular.module('app')
         $scope.w = angular.element($window);
 
         $scope.initialWidth = listing.width();
-        heightRatio = 0.85;
+        heightRatio = 0.66;
         thumbRatio = 0.17;
-        verticalShiftRatio = 0.89;
-        horizontalShiftRatio = 0.94;
+        verticalShiftRatio = 0.84;
+        horizontalShiftRatio = 0.93;
         $scope.initialHeight = $scope.initialWidth * heightRatio;
 
         $scope.thumbSize = $scope.initialWidth * thumbRatio;
 
         $scope.width = $scope.initialWidth;
 
-        $scope.arrowClass= $scope.width>500? 'fa-3x':'fa-2x';
+        switch (true) {
+          case $scope.width>=450 && $scope.width<600:
+            $scope.arrowClass = 'fa-2x';
+            break;
+          case $scope.width>=600:
+            $scope.arrowClass = 'fa-3x';
+            break;
+          default:
+            $scope.arrowClass = 'fa-2x';
+        }
 
 
-        $scope.height = $scope.initialHeight;
+        $scope.height = $scope.initialHeight+ $scope.thumbSize;
         $scope.horizontalShift = $scope.width*horizontalShiftRatio
         $scope.verticalShift= $scope.height*verticalShiftRatio;
 

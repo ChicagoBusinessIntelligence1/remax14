@@ -19,10 +19,8 @@
       fa-modifier(fa-translate='[0,{{verticalShift}},0]' fa-size="[{{width}}, {{.66*thumbSize}}]")
         fa-modifier(fa-origin="[0, 0]" fa-align="[0, 0]" )
           fa-surface.cursor-p(fa-size='[{{thumbSize/2.6}},{{.66*thumbSize}}]' fa-background-color="'red'" fa-click='slideLeft()')
-            a.btn.btn-link.btn-slide(style='height:{{thumbSize/3.1}}px')
-              i.fa.fa-angle-left.arrow-center(class='{{arrowClass}}')
+              i.fa.fa-angle-left.btn-slide(class='{{arrowClass}}')
 
         fa-modifier(fa-origin="[1, 0]" fa-align="[1, 0]")
           fa-surface(fa-size='[{{thumbSize/2.6}},{{.66*thumbSize}}]' fa-background-color="'red'" fa-click="slideRight()")
-            a.btn.btn-link.btn-slide(style='height:{{thumbSize/3.3}}px')
-              i.fa.fa-angle-right.arrow-center(class='{{arrowClass}}')
+              i.fa.fa-angle-right.btn-slide.right(class='{{arrowClass}}')

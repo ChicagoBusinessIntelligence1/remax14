@@ -7,30 +7,27 @@ label {
 .table-elements {
   margin: 0 auto;
 }
-.img-gallery-wrapper {
+.app-background {
+  background-color: #f00;
+}
+fa-app {
   overflow: hidden;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
-.main-gal-img {
-  width: 700px;
-  height: 480px;
+.slider-button {
+  background-color: #ebebeb;
 }
-@media screen and (max-width: 375px) {
-  .main-gal-img {
-    width: 330px;
-    height: 240px;
-  }
-}
-.slider-container,
-.slider-wrapper {
-  display: block;
-  position: absolute;
-  left: 42px;
-  width: 640px;
-  height: 120px;
-  overflow: hidden;
-  background-color: #fff;
+.slider-button .fa {
+  vertical-align: middle !important;
 }
 .btn-slide {
+  vertical-align: middle;
+  display: block;
+  line-height: 0.8em;
   position: relative !important;
   -webkit-transform: translateY(35%) !important;
   -ms-transform: translateY(35%);
@@ -40,34 +37,4 @@ label {
   -ms-transform: translateY(35%);
   transform: translateY(35%);
   cursor: pointer;
-}
-.align-r {
-  text-align: rigth;
-}
-.nav-image {
-  margin: 5px;
-  display: block;
-}
-.number {
-  display: block;
-  float: left;
-  margin: 3px;
-  width: 20px;
-  height: 20px;
-  background: #00f;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-}
-.pic-th {
-  display: block;
-  float: left;
-  margin: 3px;
-  width: 70px;
-  text-align: center;
-  cursor: pointer;
-  background-color: #fff;
-  border: 1px #fff solid;
 }

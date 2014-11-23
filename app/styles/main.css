@@ -3757,10 +3757,7 @@ fa-app {
   left: 0;
 }
 .slider-button {
-  background-color: #ebebeb;
-}
-.slider-button .fa {
-  vertical-align: middle !important;
+  background-color: #fff;
 }
 .btn-slide {
   vertical-align: middle;

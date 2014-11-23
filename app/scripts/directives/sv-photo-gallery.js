@@ -28,6 +28,8 @@ angular.module('app')
         $scope.thumbWidth = $scope.imageWidth * thumbRatio;
         $scope.thumbHeight = $scope.thumbWidth * heightRatio;
 
+        $scope.tw = $scope.thumbWidth;
+        $scope.th = $scope.thumbHeight;
         $scope.galleryHeight = $scope.imageHeight + $scope.thumbWidth;
         //parameter for vertical translation elements
         $scope.verticalShift = $scope.galleryHeight * verticalShiftRatio;
@@ -55,6 +57,11 @@ angular.module('app')
             $scope.imageWidth = listing.width();
             $scope.imageHeight = $scope.sectionWidth * heightRatio;
             $scope.thumbWidth = thumbRatio * $scope.imageWidth;
+            $scope.thumbHeight = $scope.thumbWidth * heightRatio;
+
+            $scope.tw = $scope.thumbWidth;
+            $scope.th = $scope.thumbHeight;
+
             $scope.galleryHeight = $scope.imageHeight + $scope.thumbWidth;
             $scope.horizontalShift = $scope.imageWidth * horizontalShiftRatio
             $scope.verticalShift = $scope.galleryHeight * verticalShiftRatio;
@@ -100,10 +107,10 @@ angular.module('app')
           $scope.faImages =
             _.map(_.compact($scope.images), function (image) {
               var opacity = new Transitionable(0);
-              var scale = new Transitionable([1,1]);
+              var size = new Transitionable([$scope.thumbWidth,$scope.thumbHeight]);
               return {
                 url: image,
-                scale:scale,
+                size:size,
                 opacity: opacity
               }
             });
@@ -121,11 +128,17 @@ angular.module('app')
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
         };
         $scope.scaleThumbUp = function (image, $done) {
-          image.scale.set([1.1,1.1], {duration: 250, curve: Easing.inOutQuad}, $done);
+          $scope.tw=1.1* $scope.tw;
+          $scope.th=1.1* $scope.th;
+          image.size.set([1.1*$scope.thumbWidth,.7* $scope.thumbHeight], {duration: 250, curve: Easing.inOutQuad}, $done);
         };
         $scope.scaleThumbDown = function (image, $done) {
-          image.scale.set([1,1], {duration: 250, curve: Easing.inOutQuad}, $done);
+
+          image.size.set([0.9* $scope.thumbWidth,.64* $scope.thumbHeight], {duration: 250, curve: Easing.inOutQuad}, $done);
         };
+
+
+        $scope.origScale ={scale: new Transitionable([1,1])};
       }
     };
   });

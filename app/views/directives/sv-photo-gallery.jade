@@ -14,7 +14,7 @@
                 fa-surface.cursor-p(fa-click='setSelectedImage(image,$done)' ng-mouseover='scaleThumbUp(image,$done)' ng-mouseleave='scaleThumbDown(image,$done)'  fa-pipe-to='scrollHandler'  )
                   sv-photo-thumb(img="{{image.url}}" height='{{0.64*thumbWidth}}' width='{{.9*thumbWidth}}' )
 
-      fa-modifier(fa-translate='[0,{{verticalShift}},0]' fa-size="[{{imageWidth}}, {{thumbHeight}}]")
+      fa-modifier(fa-translate='[0,{{verticalShift}},0]' fa-size="[{{imageWidth}}, {{thumbHeight}}]" fa-scale='initScale()')
         fa-modifier(fa-origin="[0, 0]" fa-align="[0, 0]")
           fa-surface.slider-button(fa-click="slideLeft()" fa-size='[{{thumbWidth/2.3}},{{thumbHeight}}]' )
             a.btn.btn-link.btn-slide.text-center(style='height:{{thumbWidth/4}}px')

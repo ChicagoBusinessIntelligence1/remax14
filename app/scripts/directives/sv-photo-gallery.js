@@ -12,6 +12,7 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
+        var Easing = $famous['famous/transitions/Easing'];
 
         var listing = $('#home-listing');
         var horizontalShiftRatio = 0.93;
@@ -48,8 +49,7 @@ angular.module('app')
           width: $scope.sectionWidth + 'px',
           height: $scope.galleryHeight + 'px'
         };
-        /*JQuery for resizing our gallery for different screens*/
-        /*Whenever windows is re-sized, another calc should apply*/
+
         $(window).resize(function () {
           $scope.$apply(function () {
             $scope.imageWidth = listing.width();
@@ -100,8 +100,10 @@ angular.module('app')
           $scope.faImages =
             _.map(_.compact($scope.images), function (image) {
               var opacity = new Transitionable(0);
+              var scale = new Transitionable([1,1]);
               return {
                 url: image,
+                scale:scale,
                 opacity: opacity
               }
             });
@@ -117,6 +119,12 @@ angular.module('app')
           }
           $scope.selectedImage = image;
           $scope.selectedImage.opacity.set(1, {duration: 1250, curve: "linear"}, $done);
+        };
+        $scope.scaleThumbUp = function (image, $done) {
+          image.scale.set([1.1,1.1], {duration: 250, curve: Easing.inOutQuad}, $done);
+        };
+        $scope.scaleThumbDown = function (image, $done) {
+          image.scale.set([1,1], {duration: 250, curve: Easing.inOutQuad}, $done);
         };
       }
     };

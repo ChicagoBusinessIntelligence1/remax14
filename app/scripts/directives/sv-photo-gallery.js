@@ -74,8 +74,7 @@ angular.module('app')
         $scope.scrollHandler = new EventHandler();
         /*options for displaying images on slider*/
         $scope.options = {
-          imageScroll: {
-            paginated: true,
+          imageScroll: { paginated: true,
             direction: 0
           }
         };

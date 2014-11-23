@@ -19,7 +19,7 @@ angular.module('app')
         $scope.backgroundPosition = $scope.backgroundPosition || '50% 25%';
         element.css({
           'background-image': 'url(' + $scope.img + ')',
-          'background-size': 'cover',
+          'background-size': '100% 100%',
           'background-position': $scope.backgroundPosition,
           'position': 'relative',
           'height': $scope.height + 'px',

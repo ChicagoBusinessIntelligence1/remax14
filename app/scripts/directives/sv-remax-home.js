@@ -35,7 +35,11 @@ angular.module('app')
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;
 
-          $scope.images = HomeService.findSection($scope.home, 'images').content;
+          var images = HomeService.findSection($scope.home, 'images');
+          if (!_.isUndefined(images)) {
+            $scope.images = images.content;
+
+          }
         })
 
         $scope.moveToTrash = function () {

@@ -17,14 +17,17 @@ angular.module('app')
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var regBrokers = that.repoRef.$asArray();
         regBrokers.$loaded(function () {
-          var profileType = 'customer';
+          var profileType = 'customer',
+              isAdmin = false;
           for (var i = 0; i < regBrokers.length; i++) {
             var broker = regBrokers[i];
-            if (broker.$value === email) {
+            if (broker.email === email) {
               profileType = 'broker';
+              isAdmin = broker.isAdmin;
             }
           }
           user.thirdPartyUserData.profileType = profileType;
+          user.thirdPartyUserData.isAdmin = isAdmin;
           defered.resolve(user);
 
         })

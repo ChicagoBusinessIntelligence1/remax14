@@ -7,6 +7,7 @@ app.factory('urlCommon', function (mainUrl) {
   return {
     residentialSettings: mainUrl + 'settings/residential/',
     brokers: mainUrl + 'brokers/',
+    brokerApplications: mainUrl + 'admin/brokerApplications/',
     archive: mainUrl + 'archive/',
     customers: mainUrl + 'customers/',
     registeredBrokers: mainUrl + 'registeredBrokers/'

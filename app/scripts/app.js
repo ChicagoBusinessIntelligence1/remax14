@@ -252,6 +252,11 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
 				controller:"SveticCtrl",
 				templateUrl: "../views/svetic-ctrl.html"
 			})
+			.state("app.admin-panel", {
+				url: "/admin-panel", 
+				controller:"AdminPanelCtrl",
+				templateUrl: "../views/admin-panel-ctrl.html"
+			})
 //#state
     }).config(function($mediaProvider, $famousProvider) {
       var $famous = $famousProvider.$get();

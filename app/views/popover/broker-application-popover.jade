@@ -4,13 +4,13 @@
   .popover-content
     form.editable-form.app-form(name='form', id='form' novalidate)
       .form-group
-        input.form-control(type='text' name='fname' id='fname' ng-model='fname' placeholder="First Name" required)
+        input.form-control(type='text' name='fname' id='fname' ng-model='applicant.fname' placeholder="First Name" required)
       .form-group
-        input.form-control(type='text' name='lname' id='lname' ng-model='lname' placeholder="Last Name" required)
+        input.form-control(type='text' name='lname' id='lname' ng-model='applicant.lname' placeholder="Last Name" required)
       .form-group
-        input.form-control(type='text' name='email' id='email' ng-model='email' placeholder="Email" required)
+        input.form-control(type='text' name='email' id='email' ng-model='applicant.email' placeholder="Email" required)
       .form-group
-        button.btn.btn-primary.btn-sm.btn-save(ng-click='submitBrokerApp(fname,lname,email);$hide()' ng-disabled='form.$invalid' )
+        button.btn.btn-primary.btn-sm.btn-save(ng-click='submitBrokerApp();$hide()' ng-disabled='form.$invalid' )
           i.fa.fa-check
           | Submit
         button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')

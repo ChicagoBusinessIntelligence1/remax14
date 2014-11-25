@@ -18,12 +18,9 @@ angular.module('app')
           "title": "Please save listing first",
           "checked": false
         };
-
       },
 
       link: function ($scope, element, attr) {
-
-
 
         var url = $scope.isRent ? urlRental : urlSale;
         var mls = $stateParams.mls;
@@ -59,8 +56,6 @@ angular.module('app')
           HomeService.updateHomeSection(section);
         };
 
-
-
         $scope.onUCUploadComplete = function (info) {
           var homeSection = HomeService.findSection($scope.home, 'images');
           if (_.isUndefined(homeSection)) {
@@ -76,7 +71,6 @@ angular.module('app')
             homeSection.content = [];
           }
 
-
           var numberOfFiles = parseInt(info.name.split(' ')[0]);
           for (var i = 0; i < numberOfFiles; i++) {
             var fileUrl = info.cdnUrl + 'nth/' + i + '/';
@@ -84,7 +78,6 @@ angular.module('app')
           }
 
           HomeService.updateHomeSection(homeSection).then(function () {
-
             $scope.images = HomeService.findSection($scope.home, 'images').content;
             var breakPoint = 1;
           })

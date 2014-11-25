@@ -26,14 +26,17 @@ angular.module('app')
           origin: [0, 1],
           align: [0.5, 0],
           size:[150,50],
+          properties: {
+            position:'relative'
+          },
           opacity:0
+
 
         });
 
         var firstSurface = new Surface({
           content: "<div>Buy or Sell Home</div>",
           properties: {
-            backgroundColor: 'rgb(240, 238, 233)',
             textAlign: 'left',
             padding: '5px',
             border: '2px solid rgb(210, 208, 203)',
@@ -73,10 +76,12 @@ angular.module('app')
             isObrbiting = false;
             mainContext.add(centerSpinModifierStatic).add(logo);
             featureModifier.setOpacity(0, {duration:1000});
+            featureModifier.setTransform(Transform.translate([100,0,0]), {duration:1000});
           } else {
             isObrbiting = true;
             mainContext.add(centerSpinModifierOrbit).add(logo);
             featureModifier.setOpacity(1, {duration:1000});
+            featureModifier.setTransform(Transform.translate([-100,0,0]), {duration:1000});
 
           }
           //centerSpinModifier.setTransform(Transform.rotateY(.002 * (Date.now() - initialTime)));

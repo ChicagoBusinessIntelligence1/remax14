@@ -30,8 +30,6 @@ angular.module('app')
             position:'relative'
           },
           opacity:0
-
-
         });
 
         var firstSurface = new Surface({

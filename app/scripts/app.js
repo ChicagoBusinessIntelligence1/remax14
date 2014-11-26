@@ -32,6 +32,10 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
           controller: 'ProfileCtrl',
           templateUrl: '../views/main.html'
         })
+        .state('home', {
+          url: '/home',
+          templateUrl: '../views/home.html'
+        })
         .state('app.admin', {
           url: '/admin',
           controller: 'LoginCtrl',
@@ -46,10 +50,6 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
           url: '/contact',
           controller: 'ContactUsCtrl',
           templateUrl: '../views/contactus.html'
-        })
-        .state('app.home', {
-          url: '/home',
-          templateUrl: '../views/home.html'
         })
         .state('app.remax-articles', {
           url: '/remax-1st-class-articles',
@@ -253,7 +253,7 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
 				templateUrl: "../views/svetic-ctrl.html"
 			})
 			.state("app.admin-panel", {
-				url: "/admin-panel", 
+				url: "/admin-panel",
 				controller:"AdminPanelCtrl",
 				templateUrl: "../views/admin-panel-ctrl.html"
 			})

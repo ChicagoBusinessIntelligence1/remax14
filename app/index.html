@@ -25,7 +25,6 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
   <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
-
   <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
   <!--Fonts-->
   <!--<link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>-->
@@ -43,35 +42,27 @@
 <body ng-controller="MainCtrl">
 <div id="fb-root"></div>
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({appId: '1552476308299249', status: true, cookie: true,
-      xfbml: true});
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '1552476308299249', status: true, cookie: true,
+      xfbml: true
+    });
   };
-  (function() {
-    var e = document.createElement('script'); e.async = true;
+  (function () {
+    var e = document.createElement('script');
+    e.async = true;
     e.src = document.location.protocol +
     'bower_components/fb/all.js';
     document.getElementById('fb-root').appendChild(e);
   }());
 </script>
-
-
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
 <sv-top-nav></sv-top-nav>
-<sv-header></sv-header>
-<div class="main-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 main-content">
-        <div class="center" ui-view></div>
-      </div>
-    </div>
-  </div>
-  <sv-footer-nav></sv-footer-nav>
-</div>
+<div class="main-wrapper" ui-view></div>
+<sv-footer-nav></sv-footer-nav>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <!--<script>-->
 <!--(function (b, o, i, l, e, r) {-->
@@ -111,7 +102,6 @@
 <script src="bower_components/angular-strap/src/helpers/parse-options.js"></script>
 <script src="bower_components/angular-strap/dist/modules/parse-options.js"></script>
 <script src="bower_components/angular-strap/src/helpers/dimensions.js"></script>
-
 <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
 <script src="bower_components/famous/dist/famous-global.js"></script>
 <script src="bower_components/famous-angular/dist/famous-angular.js"></script>
@@ -276,16 +266,17 @@
 <script src="scripts/controllers/WhyRemaxCtrl.js"></script>
 <!-- endbuild -->
 <style>
- .uploadcare-widget-button-open, uploadcare-widget-button {
-   visibility: visible !important;
-   display: block !important;
- }
- .uploadcare-widget-text{
-   visibility: hidden;!important;
-   display: none;
+  .uploadcare-widget-button-open, uploadcare-widget-button {
+    visibility: visible !important;
+    display: block !important;
+  }
 
- }
+  .uploadcare-widget-text {
+    visibility: hidden;
+  !important;
+    display: none;
 
+  }
 </style>
 </body>
 </html>

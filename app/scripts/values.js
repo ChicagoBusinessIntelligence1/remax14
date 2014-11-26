@@ -81,8 +81,20 @@ app.value('sortTypes',
     }
   ]);
 
+app.value('estateTypes',
+  [
+    {
+      "value": "date",
+      "label": "For Sale &nbsp"
+    },
+    {
+      "value": "priceLow",
+      "label": "For Rent &nbsp"
+    }
+  ]);
+
 app.value('notifications', {
-  homeDescription:'Home is on sale by Remax 1st class',
+  homeDescription: 'Home is on sale by Remax 1st class',
   addToWatch: 'Add to Watchlist',
   removeFromWatch: 'Remove from Watchlist',
   deleteDraftTitle: 'Delete this listing',

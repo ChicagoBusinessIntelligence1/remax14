@@ -1,10 +1,14 @@
 .one-stop-service
   .container
     .row
-      .col-sm-6
-        .remax-logo-container
-          img.remax-first-class(ng-src="../images/home/remax-first-class-logo.png")
-      .col-sm-6
+      .col-sm-7
+        ul.list-unstyled
+          li
+            .remax-logo-container
+              img.remax-first-class(ng-src="../images/home/remax-first-class-logo.png")
+          li.search-home-container
+            sv-home-page-search
+      .col-sm-5
         sv-one-stop
 .container
   .row

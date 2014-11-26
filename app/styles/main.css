@@ -203,13 +203,8 @@ label {
   margin-left: 5px !important;
 }
 .one-stop-service {
-  padding: 0px;
-  margin-bottom: 10px;
-}
-.one-stop-service img {
-  display: block !important;
-  width: 399px;
-  margin: 0 auto;
+  height: 400px;
+  background-color: #27b8f8;
 }
 @media screen and (max-width: 992px) {
   .media-wrap-a {
@@ -4223,6 +4218,23 @@ ul.fen-elements li {
   right: 0;
   left: 0;
 }
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+.octagon {
+  height: 350px;
+  width: 350px;
+  border-top: 175px solid #c66;
+  border-bottom: 175px solid #6c6;
+  border-left: 175px solid #66c;
+  border-right: 175px solid #cc6;
+}
 /**********************
       =Variables
 ***********************/
@@ -4291,6 +4303,10 @@ h6 {
 .btn-link-light:active,
 .btn-link-light:focus {
   color: #cdcdcd !important;
+}
+.bg-info {
+  background-color: #5a93c0;
+  color: #fff;
 }
 .bg-red {
   background-color: #f00;
@@ -4435,6 +4451,9 @@ h5 {
 .btn-wrapper {
   margin-bottom: 25px;
 }
+.home-ad-wrapper {
+  padding: 10px;
+}
 .content-wrapper {
   background-color: #fff;
   padding: 10px;
@@ -4448,12 +4467,24 @@ h5 {
 /**********************
     Home Page
 ***********************/
+.p-home {
+  font-size: 20px;
+  line-height: 36px;
+}
+.remax-logo-container {
+  padding: 20px;
+}
+.remax-first-class {
+  width: 360px;
+  height: 360px;
+}
 .ul-first-line {
   font-size: 16px;
 }
 .ul-first-line li a {
-  color: #8d8d8d;
-  line-height: 32px;
+  color: #396c95;
+  font-size: 18px;
+  line-height: 36px;
 }
 .ul-first-line li a:hover,
 .ul-first-line li a:active,

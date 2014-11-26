@@ -72,13 +72,8 @@ label {
   margin-left: 5px !important;
 }
 .one-stop-service {
-  padding: 0px;
-  margin-bottom: 10px;
-}
-.one-stop-service img {
-  display: block !important;
-  width: 399px;
-  margin: 0 auto;
+  height: 400px;
+  background-color: #27b8f8;
 }
 /*Social Media*/
 @media screen and (max-width: 992px) {

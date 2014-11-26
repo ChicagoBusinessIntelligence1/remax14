@@ -23,23 +23,16 @@ angular.module('app')
         var mainContext = Engine.createContext(orbitDom);
 
         var featureModifier = new Modifier({
-          origin: [0, 1],
-          align: [0.5, 0],
-          size:[150,50],
-          properties: {
-            position:'relative'
-          },
-          opacity:0
+          origin: [0.5, 0.5],
+          align: [0.5, 0.5],
+          opacity: 0
         });
 
         var firstSurface = new Surface({
-          content: "<div>Buy or Sell Home</div>",
+          content: "<div class='octagon'>Buy or Sell Home</div>",
           properties: {
-            textAlign: 'left',
-            padding: '5px',
-            border: '2px solid rgb(210, 208, 203)',
-            marginTop: '50px',
-            marginLeft: '50px'
+            marginTop: '30px',
+            marginLeft: '30px'
           }
         });
 
@@ -47,8 +40,11 @@ angular.module('app')
 
 // your app here
         var logo = new ImageSurface({
-          size: [108, 108],
-          content: 'images/header/one-stop-img.png',
+          size: [350, 350],
+          properties: {
+            marginTop: '150px'
+          },
+          content: 'images/home/one-stop-sign.png',
           classes: ['trans-origin']
         });
 
@@ -73,13 +69,13 @@ angular.module('app')
           if (isObrbiting) {
             isObrbiting = false;
             mainContext.add(centerSpinModifierStatic).add(logo);
-            featureModifier.setOpacity(0, {duration:1000});
-            featureModifier.setTransform(Transform.translate([100,0,0]), {duration:1000});
+            featureModifier.setOpacity(0, {duration: 1000});
+            featureModifier.setTransform(Transform.translate([100, 0, 0]), {duration: 1000});
           } else {
             isObrbiting = true;
             mainContext.add(centerSpinModifierOrbit).add(logo);
-            featureModifier.setOpacity(1, {duration:1000});
-            featureModifier.setTransform(Transform.translate([-100,0,0]), {duration:1000});
+            featureModifier.setOpacity(1, {duration: 1000});
+            featureModifier.setTransform(Transform.translate([-100, 0, 0]), {duration: 1000});
 
           }
           //centerSpinModifier.setTransform(Transform.rotateY(.002 * (Date.now() - initialTime)));

@@ -10,10 +10,15 @@ angular.module('app')
 
     $scope.approveBroker = function (applicant) {
 
-      BrokerApplicationService.approve(applicant)
+      BrokerApplicationService.approve(applicant).then(function () {
+        toastr.success('Broker request approved');
+      })
 
     };
     $scope.rejectBroker = function(applicant) {
 
+      BrokerApplicationService.reject(applicant).then(function () {
+        toastr.warning('Broker request rejected');
+      })
     }
   });

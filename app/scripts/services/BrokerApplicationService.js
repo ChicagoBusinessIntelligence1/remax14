@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon,CleanObjectService) {
+  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon, CleanObjectService) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -50,6 +50,19 @@ angular.module('app')
         })
 
         //var email = that.repoRef.$asObject()[id];
+
+        return deferred.promise;
+      },
+      reject: function (applicant) {
+        var that = this;
+        var deferred = $q.defer();
+
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+
+        that.repoRef.$remove(applicant.$id).then(function () {
+          deferred.resolve(true);
+        })
+
 
         return deferred.promise;
       }

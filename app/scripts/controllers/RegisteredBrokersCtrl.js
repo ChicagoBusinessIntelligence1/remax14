@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('app')
-  .controller('RegisteredBrokersCtrl', function ($scope) {
+  .controller('RegisteredBrokersCtrl', function (RegisteredBrokersService, $scope) {
 
   });

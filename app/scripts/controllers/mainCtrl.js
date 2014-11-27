@@ -5,7 +5,8 @@ angular.module('app')
 
     $rootScope.logoutFb = function () {
       AuthService.logOut();
-      $state.go('app.home', null, {reload: true});
+      $rootScope.user=null;
+      $state.go('home', null, {reload: true});
     }
 
     $rootScope.loginFb = function () {

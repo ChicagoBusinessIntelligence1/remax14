@@ -28,16 +28,27 @@ angular.module('app')
         });
         return deferred.promise;
       },
-      approve: function (email,id) {
+      approve: function (email, id) {
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.brokerApplications;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        var array = that.repoRef.$asArray().$add(user).then(function () {
+        var urlRegBrokers = urlCommon.registeredBrokers;
+        var refRegBrokers = $firebase(new Firebase(urlRegBrokers));
+        var newBroker = {
+          email: email,
+          isAdmin: false
+        }
+
+        refRegBrokers.$asArray().$add(newBroker).then(function () {
+          that.repoRef.$remove(id);
           deferred.resolve(true);
-        });
+        })
+
+        //var email = that.repoRef.$asObject()[id];
+
+        console.log(email);
         return deferred.promise;
       }
 

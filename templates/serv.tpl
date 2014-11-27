@@ -13,7 +13,9 @@ angular.module('app')
         that.repoUrl = urlCommon.;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        deferred.resolve(that.repoRef.$asArray());
+        that.repoRef.$asArray().$loaded(function (all) {
+        deferred.resolve(all);
+        })
         return deferred.promise;
       },
 

@@ -1,1 +1,1 @@
-<div>Controller content</div>
+<div><ul class="list-unstyled"><li ng-repeat="broker in brokers"><div class="row"><div class="col-sm-1"><div>{{$index+1}}</div></div><div class="col-sm-2"><div>{{broker.fname}}</div></div><div class="col-sm-2"><div>{{broker.lname}}</div></div><div class="col-sm-4"><div>{{broker.email}}</div></div><div class="col-sm-2"><button ng-click="deleteBroker(broker)" class="btn btn-default btn-sm">Delete Broker</button></div></div></li></ul></div>

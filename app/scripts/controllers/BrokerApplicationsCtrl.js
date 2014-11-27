@@ -8,12 +8,12 @@ angular.module('app')
 
     });
 
-    $scope.approveBroker = function (email, id) {
+    $scope.approveBroker = function (applicant) {
 
-      BrokerApplicationService.approve(email,id)
+      BrokerApplicationService.approve(applicant)
 
     };
-    $scope.rejectBroker = function(email,id) {
+    $scope.rejectBroker = function(applicant) {
 
     }
   });

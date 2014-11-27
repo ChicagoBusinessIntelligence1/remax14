@@ -7,7 +7,7 @@ div
           div {{r.fname}} {{r.lname}}
           div {{r.email}}
         .col-sm-3
-          button.btn.btn-success(ng-click='approveBroker(r.email,r.$id)') Approve Broker Acc.
+          button.btn.btn-success(ng-click='approveBroker(r)') Approve Broker Acc.
         .col-sm-3
-          button.btn.btn-warning(ng-click='rejectBroker(r.email,r.$id)') Reject Broker Acc.
+          button.btn.btn-warning(ng-click='rejectBroker(r)') Reject Broker Acc.
 

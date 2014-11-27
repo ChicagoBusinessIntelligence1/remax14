@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon) {
+  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon,CleanObjectService) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -28,7 +28,7 @@ angular.module('app')
         });
         return deferred.promise;
       },
-      approve: function (email, id) {
+      approve: function (applicant) {
         var that = this;
         var deferred = $q.defer();
 
@@ -36,22 +36,26 @@ angular.module('app')
 
         var urlRegBrokers = urlCommon.registeredBrokers;
         var refRegBrokers = $firebase(new Firebase(urlRegBrokers));
-        var newBroker = {
-          email: email,
-          isAdmin: false
-        }
+        var id = applicant.$id;
+        applicant = CleanObjectService.clean(applicant);
 
-        refRegBrokers.$asArray().$add(newBroker).then(function () {
+        applicant = _.extend(applicant, {
+            isAdmin: false
+          }
+        )
+
+        refRegBrokers.$asArray().$add(applicant).then(function () {
           that.repoRef.$remove(id);
           deferred.resolve(true);
         })
 
         //var email = that.repoRef.$asObject()[id];
 
-        console.log(email);
         return deferred.promise;
       }
 
-    };
+    }
+      ;
 
-  });
+  })
+;

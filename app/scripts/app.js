@@ -36,7 +36,7 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
         url: '/home',
         templateUrl: '../views/home.html'
       })
-      .state('app.admin', {
+      .state('app.auth', {
         url: '/admin',
         controller: 'LoginCtrl',
         templateUrl: '../views/login.html'
@@ -252,16 +252,21 @@ var app = angular.module('app', ['ts.sheets', 'firebase', 'ng-uploadcare', 'ngMe
         controller: "SveticCtrl",
         templateUrl: "../views/svetic-ctrl.html"
       })
-      .state("app.admin-panel", {
+      .state("app.admin", {
         abstract: true,
         url: "/admin-panel",
         controller: "AdminPanelCtrl",
         templateUrl: "../views/admin-panel-ctrl.html"
       })
-			.state("app.broker-applications", {
-				url: "/broker-applications", 
+			.state("app.admin.broker-applications", {
+				url: "/broker-applications",
 				controller:"BrokerApplicationsCtrl",
 				templateUrl: "../views/broker-applications-ctrl.html"
+			})
+			.state("app.registered-brokers", {
+				url: "/registered-brokers", 
+				controller:"RegisteredBrokersCtrl",
+				templateUrl: "../views/registered-brokers-ctrl.html"
 			})
 //#state
   })

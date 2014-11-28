@@ -10,9 +10,7 @@
     input(type='file', nv-file-select='', uploader='uploader', multiple='')
     br
   .col-md-9(style='margin-bottom: 40px')
-    h2 Uploads only images (with canvas preview)
-    h3 The queue
-    p Total images: {{ uploader.queue.length }}
+    h5 Total images: {{ uploader.queue.length }}
     table.table
       thead
         tr

@@ -114,7 +114,7 @@ angular.module('app')
             });
           /*When a gallery is loaded, first image is displayed as selected*/
           $scope.setSelectedImage($scope.faImages[0]);
-        });
+        },true);
 
         /*When user select and image it appears on large view with animation(Transitionable method .set)
          * Large image surface modifier we use Famo.Us/Angular directive fa-opacity with .get*/

@@ -15,7 +15,7 @@ angular.module('app')
 
         $scope.uploader = new FileUploader();
         var galleryModal = $modal({scope: $scope, template: '../../views/modals/gallery-modal.html', show: false});
-        $scope.showGalleryModal = function() {
+        $scope.showGalleryModal = function () {
           galleryModal.$promise.then(galleryModal.show);
         };
         var breakPoint = 1;
@@ -63,6 +63,16 @@ angular.module('app')
           HomeService.updateHomeSection(section);
         };
 
+        $scope.removeImage = function (image, index) {
+          var homeSection = HomeService.findSection($scope.home, 'images');
+          homeSection.content.splice(index, 1);
+
+          HomeService.updateHomeSection(homeSection).then(function () {
+            $scope.images.splice(index, 1);
+            var breakPoint = 1;
+          })
+
+        };
         $scope.addImage = function (img64) {
           var homeSection = HomeService.findSection($scope.home, 'images');
           if (_.isUndefined(homeSection)) {

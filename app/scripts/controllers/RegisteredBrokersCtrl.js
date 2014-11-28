@@ -2,6 +2,7 @@
 
 angular.module('app')
   .controller('RegisteredBrokersCtrl', function (RegisteredBrokersService, $scope) {
+
     RegisteredBrokersService.all().then(function (brokers) {
       $scope.brokers = brokers;
 

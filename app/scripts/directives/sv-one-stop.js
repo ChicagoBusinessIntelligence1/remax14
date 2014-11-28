@@ -40,9 +40,9 @@ angular.module('app')
 
 // your app here
         var logo = new ImageSurface({
-          size: [350, 350],
+          size: [280, 280],
           properties: {
-            marginTop: '150px'
+            marginTop: '120px'
           },
           content: 'images/home/one-stop-sign.png',
           classes: ['trans-origin']

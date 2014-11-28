@@ -1,0 +1,9 @@
+div(ng-if='uploader')
+  input(type='file', nv-file-select='', uploader='uploader' multiple)
+  br
+  ul
+    li(ng-repeat='item in uploader.queue')
+      | Name:
+      span(ng-bind='item.file.name')
+      br
+      button(ng-click='item.upload()') upload

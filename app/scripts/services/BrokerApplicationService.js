@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon) {
+  .factory('BrokerApplicationService', function ($firebase, $q, $rootScope, urlCommon, CleanObjectService) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -28,19 +28,47 @@ angular.module('app')
         });
         return deferred.promise;
       },
-      approve: function (email,id) {
+      approve: function (applicant) {
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.brokerApplications;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        var array = that.repoRef.$asArray().$add(user).then(function () {
+        var urlRegBrokers = urlCommon.registeredBrokers;
+        var refRegBrokers = $firebase(new Firebase(urlRegBrokers));
+        var id = applicant.$id;
+        applicant = CleanObjectService.clean(applicant);
+
+        applicant = _.extend(applicant, {
+            isAdmin: false
+          }
+        )
+
+        refRegBrokers.$asArray().$add(applicant).then(function () {
+          that.repoRef.$remove(id);
           deferred.resolve(true);
-        });
+        })
+
+        //var email = that.repoRef.$asObject()[id];
+
+        return deferred.promise;
+      },
+      reject: function (applicant) {
+        var that = this;
+        var deferred = $q.defer();
+
+        that.repoRef = $firebase(new Firebase(that.repoUrl));
+
+        that.repoRef.$remove(applicant.$id).then(function () {
+          deferred.resolve(true);
+        })
+
+
         return deferred.promise;
       }
 
-    };
+    }
+      ;
 
-  });
+  })
+;

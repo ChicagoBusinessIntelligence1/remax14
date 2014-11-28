@@ -1,2 +1,3 @@
-div
- canvas(id='canvas' width="200" height="200")
+fa-app
+  fa-cuboid(fa-dimensions='[100, 100, 100]')
+    fa-surface(ng-repeat='surface in surfaces', fa-properties='{backfaceVisibility: "visible"}', fa-background-color='surface.bgColor')

@@ -1,0 +1,13 @@
+div
+  h3 Broker Acc. Requests
+  ul.list-unstyled
+    li(ng-repeat = 'r in requests')
+      .row
+        .col-sm-6
+          div {{r.fname}} {{r.lname}}
+          div {{r.email}}
+        .col-sm-3
+          button.btn.btn-success(ng-click='approveBroker(r)') Approve Broker Acc.
+        .col-sm-3
+          button.btn.btn-warning(ng-click='rejectBroker(r)') Reject Broker Acc.
+

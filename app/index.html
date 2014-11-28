@@ -7,6 +7,21 @@
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
     }
+     .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+    .another-file-over-class { border: dotted 3px green; }
+
+    html, body { height: 100%; }
+
+    canvas {
+      background-color: #f3f3f3;
+      -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+      -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+      box-shadow: 3px 3px 3px 0 #e3e3e3;
+      border: 1px solid #c3c3c3;
+      height: 100px;
+      margin: 6px 0 0 6px;
+    }
   </style>
   <script>
     UPLOADCARE_PUBLIC_KEY = '238bd7bf0446738e2bbc';
@@ -106,7 +121,7 @@
 <script src="bower_components/famous/dist/famous-global.js"></script>
 <script src="bower_components/famous-angular/dist/famous-angular.js"></script>
 <script src="bower_components/sheets-master/dist/sheets.js"></script>
-<script charset="utf-8" src="https://ucarecdn.com/widget/1.3.1/uploadcare/uploadcare-1.3.1.min.js"></script>
+<script charset="utf-8" src="bower_components/angular-file-upload/angular-file-upload.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js({app,.tmp}) scripts/main.js -->
@@ -114,6 +129,7 @@
 <script type="text/javascript"> _.mixin(_.str.exports()) </script>
 <script src="scripts/app.js"></script>
 <script src="scripts/values.js"></script>
+<script src="scripts/famous-config.js"></script>
 <script src="scripts/animation.js"></script>
 <script src="bower_components/chance/chance.js"></script>
 <!-- inject:partials -->
@@ -247,6 +263,10 @@
 <script src="scripts/directives/sv-one-stop-list.js"></script>
 <script src="scripts/directives/sv-one-stop.js"></script>
 <script src="scripts/directives/sv-home-page-search.js"></script>
+<script src="scripts/controllers/BrokerApplicationsCtrl.js"></script>
+<script src="scripts/controllers/RegisteredBrokersCtrl.js"></script>
+<script src="scripts/services/RegisteredBrokersService.js"></script>
+<script src="scripts/directives/sv-image-upload.js"></script>
 <!-- links -->
 <script src="scripts/controllers/HomesSharedCtrl.js"></script>
 <script src="scripts/controllers/MainCtrl.js"></script>

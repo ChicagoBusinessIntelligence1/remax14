@@ -15,16 +15,7 @@ angular.module('app')
 
         $scope.uploader = new FileUploader();
 
-        $scope.uploader.uploadItem = function (item) {
-          var i = 9;
-        }
 
-        $scope.$watch(function () {
-          return $scope.uploader.file;
-        }, function (newValue, oldValue) {
-
-          var breakPoint = 1;
-        });
 
         var breakPoint = 1;
 

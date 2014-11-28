@@ -31,19 +31,24 @@
     .col-sm-7
       div(ng-if="!isRent")
         a.thumbnail(ui-sref='app.remax-home({mls:home.$id})')
-          sv-photo-thumb(img='../images/houses/1.jpg' height='270')
+          sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
+          img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
       div(ng-if="isRent")
         a.thumbnail(ui-sref='app.remax-home-rent({mls:home.$id})')
-          sv-photo-thumb(img='../images/houses/1.jpg' height='270')
+          sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
+          img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information
         hr
         p.basic-info-short
           | {{home|showSectionProp:'propertyDescription'}}
-          span
+          span(ng-if='!isRent')
             em
               a(ui-sref='app.remax-home({mls:home.$id})').read-more  Read more...
+          span(ng-if='isRent')
+            em
+              a(ui-sref='app.remax-home-rent({mls:home.$id})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

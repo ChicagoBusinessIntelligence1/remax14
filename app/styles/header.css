@@ -72,8 +72,9 @@ label {
   margin-left: 5px !important;
 }
 .one-stop-service {
-  height: 400px;
-  background-color: #27b8f8;
+  height: 420px;
+  background: url("../images/home/blue-blur.jpg") 0 0 no-repeat;
+/*background-color lighten(#0682B9, 30%)*/
 }
 /*Social Media*/
 @media screen and (max-width: 992px) {

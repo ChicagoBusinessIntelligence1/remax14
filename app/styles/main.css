@@ -203,8 +203,9 @@ label {
   margin-left: 5px !important;
 }
 .one-stop-service {
-  height: 400px;
-  background-color: #27b8f8;
+  height: 420px;
+  background: url("../images/home/blue-blur.jpg") 0 0 no-repeat;
+/*background-color lighten(#0682B9, 30%)*/
 }
 @media screen and (max-width: 992px) {
   .media-wrap-a {
@@ -4305,7 +4306,7 @@ h6 {
   color: #cdcdcd !important;
 }
 .bg-info {
-  background-color: #5a93c0;
+  background-color: #68a3d5;
   color: #fff;
 }
 .bg-red {
@@ -4465,8 +4466,11 @@ h5 {
   }
 }
 /**********************
-    Home Page
+    =Home Page
 ***********************/
+.pad-app {
+  margin-top: 20px;
+}
 .p-home {
   font-size: 20px;
   line-height: 36px;
@@ -4729,7 +4733,7 @@ Selected House
 .home-page-social {
   display: box;
   height: 45px;
-  margin-top: 230px;
+  margin-top: 250px;
 }
 .input-search {
   border-top-right-radius: 0px !important;

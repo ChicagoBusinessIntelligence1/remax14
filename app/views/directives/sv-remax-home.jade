@@ -3,10 +3,8 @@
 
   div(ng-hide='isDataLoading')
     //sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
-    .row
-      .col-sm-12
-        sv-image-upload
     hr
+    button.btn.btn-default(ng-click='showGalleryModal()') Edit Images
     .gallery-wrapper(ng-if='!isTemplate')
       .row
         .col-sm-12

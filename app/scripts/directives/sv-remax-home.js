@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svRemaxHome', function (FileUploader, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
+  .directive('svRemaxHome', function (FileUploader, $modal, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-remax-home.html',
@@ -14,9 +14,10 @@ angular.module('app')
         $scope.uploadedImages = [];
 
         $scope.uploader = new FileUploader();
-
-
-
+        var galleryModal = $modal({scope: $scope, template: '../../views/modals/gallery-modal.html', show: false});
+        $scope.showGalleryModal = function() {
+          galleryModal.$promise.then(galleryModal.show);
+        };
         var breakPoint = 1;
 
         this.required = ['mls', 'state', 'city', 'zip'];
@@ -62,7 +63,7 @@ angular.module('app')
           HomeService.updateHomeSection(section);
         };
 
-        $scope.onUCUploadComplete = function (info) {
+        $scope.addImage = function (img64) {
           var homeSection = HomeService.findSection($scope.home, 'images');
           if (_.isUndefined(homeSection)) {
             homeSection = {
@@ -77,15 +78,10 @@ angular.module('app')
             homeSection.content = [];
           }
 
-          var numberOfFiles = parseInt(info.name.split(' ')[0]);
-          for (var i = 0; i < numberOfFiles; i++) {
-            var fileUrl = info.cdnUrl + 'nth/' + i + '/';
-            homeSection.content.push(fileUrl);
-          }
+          homeSection.content.push(img64);
 
           HomeService.updateHomeSection(homeSection).then(function () {
             $scope.images = HomeService.findSection($scope.home, 'images').content;
-            var breakPoint = 1;
           })
         };
       }

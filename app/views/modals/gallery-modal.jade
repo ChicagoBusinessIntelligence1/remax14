@@ -6,4 +6,12 @@
         h3.modal-title(ng-bind='title')
       .modal-body.modal-wishlist
         sv-image-upload
+      ul
+        li(ng-repeat='image in images track by $index')
+          .row
+            .col-sm-6
+              img(ng-src="{{image}}" width='30%' height='30%')
+            .col-sm-6
+              button.btn.btn-warning(ng-click='removeImage(image,$index)') Remove
+
 

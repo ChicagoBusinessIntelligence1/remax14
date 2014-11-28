@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeBasicInfo', function (notifications, $location) {
+  .directive('svHomeBasicInfo', function (notifications, $location, HomeService) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-home-basic-info.html',
@@ -14,6 +14,13 @@ angular.module('app')
         $scope.addToWatch = notifications.addToWatch;
         $scope.removeFromWatch = notifications.removeFromWatch;
 
+        var imageSection = HomeService.findSection($scope.home, 'images');
+        if (!_.isUndefined(imageSection)) {
+          if (!_.isUndefined(imageSection.content)) {
+            $scope.coverImage = imageSection.content[0];
+
+          }
+        }
       }
     };
   });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svImageUpload', function (ImageService, FileUploader, imgWidth) {
+  .directive('svImageUpload', function (FileUploader, imgWidth) {
     return {
       restrict: 'E',
       replace: true,

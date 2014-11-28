@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svRemaxHome', function (AddSearchFeaturesService, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
+  .directive('svRemaxHome', function (FileUploader, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-remax-home.html',
@@ -12,6 +12,21 @@ angular.module('app')
 
       controller: function ($scope) {
         $scope.uploadedImages = [];
+
+        $scope.uploader = new FileUploader();
+
+        $scope.uploader.uploadItem = function (item) {
+          var i = 9;
+        }
+
+        $scope.$watch(function () {
+          return $scope.uploader.file;
+        }, function (newValue, oldValue) {
+
+          var breakPoint = 1;
+        });
+
+        var breakPoint = 1;
 
         this.required = ['mls', 'state', 'city', 'zip'];
         $scope.tooltip = {

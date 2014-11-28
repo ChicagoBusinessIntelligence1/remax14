@@ -15,10 +15,13 @@ angular.module('app')
 
         $scope.uploader = new FileUploader();
         var galleryModal = $modal({scope: $scope, template: '../../views/modals/gallery-modal.html', show: false});
+
         $scope.showGalleryModal = function () {
-          galleryModal.$promise.then(galleryModal.show);
+          galleryModal.show();
         };
-        var breakPoint = 1;
+        $scope.hideGalleryModal = function () {
+          galleryModal.hide();
+        };
 
         this.required = ['mls', 'state', 'city', 'zip'];
         $scope.tooltip = {

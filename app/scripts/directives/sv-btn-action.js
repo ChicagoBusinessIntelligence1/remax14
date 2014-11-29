@@ -14,7 +14,6 @@ angular.module('app')
         element.on('click', function (evt) {
           event.stopPropagation();
           $scope.$apply(function () {
-
             $scope.action();
           })
         })

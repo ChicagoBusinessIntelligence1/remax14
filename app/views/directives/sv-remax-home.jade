@@ -2,7 +2,7 @@
   sv-spinner(ng-show='isDataLoading')
 
   div(ng-hide='isDataLoading')
-    //sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
+    sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
     hr
     button.btn.btn-default(ng-click='showGalleryModal()') Add/Edit Images
     .gallery-wrapper(ng-if='!isTemplate')
@@ -10,7 +10,7 @@
         .col-sm-12
           sv-photo-gallery(images='images' ng-if='images')
 
-   form(name="homeform" id="form" novalidate='novalidate')
-      ul.list-unstyled
-        li(ng-repeat='section in home|homeFilter:"brokers,images" |orderBy:"order"')
-          sv-home-display-slider(section='section' is-template='istemplate' update-home-section='updatehomesection(section)')
+  form(name="homeform" id="form" novalidate='novalidate')
+    ul.list-unstyled
+      li(ng-repeat='section in home|homeFilter:"brokers,images" |orderBy:"order"')
+        sv-home-display-slider(section='section' is-template='istemplate' update-home-section='updatehomesection(section)')

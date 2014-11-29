@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svRemaxHome', function (FileUploader, $modal, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
+  .directive('svRemaxHome', function (AddSearchFeaturesService, FileUploader, $modal, $window, InitialValuesService, BrokerService, HomeService, $stateParams, $state, $rootScope, urlSale, urlRental) {
     return {
       restrict: 'E',
       templateUrl: '../../views/directives/sv-remax-home.html',

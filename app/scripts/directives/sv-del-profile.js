@@ -16,6 +16,7 @@ angular.module('app')
         };
         var deleteProfilePopover = $popover(element, {
           template: '../../views/popover/delete-account-popover.html',
+          trigger: 'focus',
           placement: 'bottom',
           scope: $scope
         });

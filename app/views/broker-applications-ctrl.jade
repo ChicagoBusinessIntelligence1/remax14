@@ -1,13 +1,25 @@
 div
-  h3 Broker Acc. Requests
+  h4.label.label-default(ng-if='!requests.length') You do not have any brokers requests.
+  h3(ng-if='requests.length') Broker Account Requests
   ul.list-unstyled
     li(ng-repeat = 'r in requests')
       .row
-        .col-sm-6
-          div {{r.fname}} {{r.lname}}
+        .col-sm-1
+          div {{$index+1}}
+        .col-sm-2
+          div {{r.fname}}
+        .col-sm-2
+          div {{r.lname}}
+        .col-sm-4
           div {{r.email}}
         .col-sm-3
-          button.btn.btn-success(ng-click='approveBroker(r)') Approve Broker Acc.
-        .col-sm-3
-          button.btn.btn-warning(ng-click='rejectBroker(r)') Reject Broker Acc.
+          ul.list-inline
+            li
+              .form-group
+                button.btn.btn-success.btn-sm(ng-click='approveBroker(r)' data-toggle="tooltip" data-placement="left" title="Approve Broker Account")
+                  i.fa.fa-check.fa-fw
+            li
+              .form-group
+                button.btn.btn-danger.btn-sm(ng-click='rejectBroker(r)' data-toggle="tooltip" data-placement="left" title="Reject Broker Account")
+                  i.fa.fa-ban.fa-fw
 

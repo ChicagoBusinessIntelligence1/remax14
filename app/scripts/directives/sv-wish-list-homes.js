@@ -27,7 +27,7 @@ angular.module('app')
         }
 
         $scope.editList = function (key, index) {
-          $scope.wishList =angular.copy($scope.wishHomes[index]);
+          $scope.wishList = angular.copy($scope.wishHomes[index]);
           $scope.editWishList = $modal(
             {
               scope: $scope,

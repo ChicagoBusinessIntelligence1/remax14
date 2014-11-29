@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomeSm', function (notifications) {
+  .directive('svHomeSm', function (notifications, HomeService) {
     return {
       restrict: 'E',
       replace: true,
@@ -13,8 +13,6 @@ angular.module('app')
       },
       require: '^sv-homes-user-list',
       link: function ($scope, element, attr, svListCtrl) {
-
-
         $scope.homeStatus = svListCtrl.homeStatus;
         $scope.isRent = svListCtrl.isRent;
 
@@ -24,6 +22,13 @@ angular.module('app')
         $scope.archiveHome = notifications.archiveHome;
         $scope.postDraftTitle = notifications.postDraftTitle;
         $scope.deleteDraft = notifications.deleteDraft;
+
+        var imageSection = HomeService.findSection($scope.draft, 'images');
+        if (!_.isUndefined(imageSection)) {
+          if (!_.isUndefined(imageSection.content)) {
+            $scope.coverImage = imageSection.content[0];
+          }
+        }
       }
     };
   });

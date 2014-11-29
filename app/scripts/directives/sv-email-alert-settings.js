@@ -19,7 +19,6 @@ angular.module('app')
           container: 'body',
           template: '../../views/popover/email-alert-popover.html',
           placement: 'bottom',
-          trigger: 'focus',
           scope: $scope
         });
       }

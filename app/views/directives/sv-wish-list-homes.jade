@@ -22,8 +22,7 @@
       td {{l.parkingType}}
       td {{l.addInfo}}
       td
-        button.btn.btn-danger.btn-sm(ng-click='removeWishList(l.$id)')
-          i.fa.fa-remove.fa-fw
+        sv-del-from-wish(remove-wish-list='removeWishList(l.$id)')
       td
         button.btn.btn-info.btn-sm(ng-click='editList(l.$id,$index)')
           i.fa.fa-edit.fa-fw

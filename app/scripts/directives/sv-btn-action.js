@@ -11,7 +11,7 @@ angular.module('app')
         action: '&'
       },
       link: function ($scope, element, attr) {
-        element.on('click', function (evt) {
+        element.on('click', function (event) {
           event.stopPropagation();
           $scope.$apply(function () {
             $scope.action();

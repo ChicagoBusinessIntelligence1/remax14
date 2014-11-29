@@ -33,7 +33,6 @@ angular.module('app')
           $scope.updateHomeSection({section: $scope.section})
           $scope.isEdit = false;
         };
-
         /*Show button for adding properties only on some sections*/
         var showAddProperty = ['appliances', 'other rooms', 'property features', 'exterior and lot features'];
         //converting our current title('@') to title name lower case

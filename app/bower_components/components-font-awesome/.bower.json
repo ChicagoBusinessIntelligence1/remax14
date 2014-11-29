@@ -15,7 +15,6 @@
     "commit": "86dd6f76a251d5a5e4987ab4071d5da40837bdd4"
   },
   "_source": "git://github.com/components/font-awesome.git",
-  "_target": "~4.2.0",
-  "_originalSource": "components-font-awesome",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "components-font-awesome"
 }

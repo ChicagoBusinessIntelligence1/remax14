@@ -11,7 +11,10 @@ div
         .col-sm-4
           div {{broker.email}}
         .col-sm-2
-            button.btn.btn-default.btn-sm(ng-click='deleteBroker(broker)') Delete Broker
+          .form-group
+            button.btn.btn-default.btn-sm(ng-click='deleteBroker(broker)')
+              i.fa.fa-trash.fa-fw
+              | Delete
 
 
 

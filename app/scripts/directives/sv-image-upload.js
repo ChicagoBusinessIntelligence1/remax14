@@ -29,7 +29,7 @@ angular.module('app')
               var indexOf = $scope.uploader.queue.indexOf(item);
 
               $scope.$apply(function () {
-                $scope.uploader.queue[indexOf]= _.extend($scope.uploader.queue[indexOf], {
+                $scope.uploader.queue[indexOf] = _.extend($scope.uploader.queue[indexOf], {
                   tooSmall: true
                 });
               })
@@ -45,7 +45,7 @@ angular.module('app')
             var dataURL = canvas.toDataURL('image/jpeg');
             $scope.addImage(dataURL);
             var indexOf = $scope.uploader.queue.indexOf(item);
-            $scope.uploader.queue.splice(indexOf,1);
+            $scope.uploader.queue.splice(indexOf, 1);
 
             toastr.success('Image has been successfully loaded!');
             canvas = null;
@@ -58,9 +58,6 @@ angular.module('app')
             $scope.uploader.uploadItem(image);
           }
         }
-
-
       }
-
     };
   });

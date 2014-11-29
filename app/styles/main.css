@@ -3780,6 +3780,9 @@ fa-app {
   width: 408px;
   height: 108px;
 }
+.my-drop-zone h3 {
+  color: #9e9e9e;
+}
 .ul-temp-uploaded li {
   position: relative;
 }

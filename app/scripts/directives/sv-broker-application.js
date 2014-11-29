@@ -24,7 +24,7 @@ angular.module('app')
 
           BrokerApplicationService.apply($scope.applicant).then(function () {
 
-          toastr.success(notifications.brokerAppSubmitted);
+            toastr.success(notifications.brokerAppSubmitted);
           });
 
         };

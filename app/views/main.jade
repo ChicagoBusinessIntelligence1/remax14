@@ -1,9 +1,9 @@
-sv-header
+sv-header(ng-if='!isFirstPage')
 .container
   .row
     .col-md-8.content-wrapper
       div(ui-view='')
-    aside.col-md-4.left-sidebar
+    aside.col-md-4.left-sidebar(ng-if='!isFirstPage')
       sv-tabs
       br
       .sidebar-content

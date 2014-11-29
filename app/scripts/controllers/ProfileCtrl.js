@@ -2,9 +2,10 @@
 
 angular.module('app')
   .controller('ProfileCtrl', function (ProfileTypeService, WatchListService, $scope, $state, user, $rootScope) {
+
     if (user !== null) {
       ProfileTypeService.determine(user).then(function (user) {
-        $rootScope.user = user.thirdPartyUserData;
+        $rootScope.user = user;
         WatchListService.getSaleRentLists().then(function (watchList) {
           $rootScope.user.watchList = watchList;
         })

@@ -13,20 +13,7 @@ angular.module('app')
 
         $scope.isInfoVisible = false;
 
-        element.hover(function () {
-            //  over
-            $scope.$apply(function () {
-              $scope.isInfoVisible = true;
-            });
 
-          },
-          function () {
-            //  out
-
-            $scope.$apply(function () {
-              $scope.isInfoVisible = false;
-            });
-          })
       }
     };
   });

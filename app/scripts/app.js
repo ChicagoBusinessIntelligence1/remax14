@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['angularFileUpload','ts.sheets', 'firebase', 'ng-uploadcare', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
+var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
     //$locationProvider.html5Mode(true);
@@ -9,30 +9,26 @@ var app = angular.module('app', ['angularFileUpload','ts.sheets', 'firebase', 'n
       .state('app', {
         abstract: true,
         resolve: {
-          user: function ($firebaseSimpleLogin, $q, $rootScope) {
+          user: function ($firebaseAuth, $q, $rootScope) {
             var def = $q.defer();
-            //if ($rootScope.user === null) {
-            //  def.resolve(null);
-            //}
 
             var url = 'https://remax14.firebaseio.com/';
-            var mainRef = new Firebase(url);
-            var auth = $firebaseSimpleLogin(mainRef);
-            auth.$getCurrentUser().then(function (user) {
-              if (user === null) {
-                def.resolve(null);
-              } else {
+            var ref = new Firebase(url);
+            $rootScope.authObj = $firebaseAuth(ref);
 
-                def.resolve(user);
-              }
-            });
+           var authData =  $rootScope.authObj.$getAuth();
+            if (authData) {
+              def.resolve(authData.facebook.cachedUserProfile);
+            } else {
+              def.resolve(null);
+            }
             return def.promise;
           }
         },
         controller: 'ProfileCtrl',
         templateUrl: '../views/main.html'
       })
-      .state('home', {
+      .state('app.home', {
         url: '/home',
         templateUrl: '../views/home.html'
       })
@@ -258,16 +254,16 @@ var app = angular.module('app', ['angularFileUpload','ts.sheets', 'firebase', 'n
         controller: "AdminPanelCtrl",
         templateUrl: "../views/admin-panel-ctrl.html"
       })
-			.state("app.admin.broker-applications", {
-				url: "/broker-applications",
-				controller:"BrokerApplicationsCtrl",
-				templateUrl: "../views/broker-applications-ctrl.html"
-			})
-			.state("app.admin.registered-brokers", {
-				url: "/registered-brokers",
-				controller:"RegisteredBrokersCtrl",
-				templateUrl: "../views/registered-brokers-ctrl.html"
-			})
+      .state("app.admin.broker-applications", {
+        url: "/broker-applications",
+        controller: "BrokerApplicationsCtrl",
+        templateUrl: "../views/broker-applications-ctrl.html"
+      })
+      .state("app.admin.registered-brokers", {
+        url: "/registered-brokers",
+        controller: "RegisteredBrokersCtrl",
+        templateUrl: "../views/registered-brokers-ctrl.html"
+      })
   }).directive('ngThumb', ['$window', function ($window) {
     var helper = {
       support: !!($window.FileReader && $window.CanvasRenderingContext2D),

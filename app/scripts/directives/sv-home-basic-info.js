@@ -18,7 +18,6 @@ angular.module('app')
         if (!_.isUndefined(imageSection)) {
           if (!_.isUndefined(imageSection.content)) {
             $scope.coverImage = imageSection.content[0];
-
           }
         }
       }

@@ -10,6 +10,9 @@ label {
 /**********************
      =top-nav
 ***********************/
+.wc {
+  color: #fff !important;
+}
 .h-logo {
   font-size: 17px !important;
   font-weight: 700;

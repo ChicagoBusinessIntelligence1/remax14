@@ -1,15 +1,1 @@
-div(ng-if='isFirstPage')
-  sv-home-panel
-  sv-home-info
-
-div(ng-if='!isFirstPage')
-  sv-header
-  .container
-    .row
-      .col-md-8.content-wrapper
-        div(ui-view='')
-      aside.col-md-4.left-sidebar
-        sv-tabs
-        br
-        .sidebar-content
-          sv-aside-panel
+div(ui-view='')

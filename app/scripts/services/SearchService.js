@@ -37,10 +37,15 @@ angular.module('app')
                 var sectionProps = section.content;
                 var isLocationPass = false;
                 var isPriceBedPass = false;
-
+                if (_.isUndefined(sectionProps)) {
+                  continue;
+                }
                 for (var k = 0; k < sectionProps.length; k++) {
                   var property = sectionProps[k];
 
+                  if (_.isUndefined(property)) {
+                    continue;
+                  }
                   switch (property.title) {
 
                     case 'city':

@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('app')
-  .controller('NavigationCtrl', function ($scope) {
+  .controller('NavigationCtrl', function ($scope, $rootScope) {
 
   });

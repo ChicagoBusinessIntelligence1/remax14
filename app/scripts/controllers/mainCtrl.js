@@ -1,18 +1,14 @@
 'use strict';
 
 angular.module('app')
-  .controller('MainCtrl', function (AuthService, ProfileTypeService, WatchListService, $scope, $firebaseAuth, mainUrl, $state, $rootScope, $location) {
+  .controller('MainCtrl', function (AuthService, $timeout, ProfileTypeService, WatchListService, $scope, $firebaseAuth, mainUrl, $state, $rootScope, $location) {
 
     $scope.isFirstPage = $location.path() === '/home';
     $rootScope.logoutFb = function () {
       var ref = new Firebase(mainUrl);
-      $rootScope.authObj = $firebaseAuth(ref);
       $rootScope.authObj.$unauth();
-      $scope.$apply(function () {
         $rootScope.user = null;
-      })
-
-      $state.go('app.home', null, {reload: true});
+        $state.go('app.home', null, {reload: true});
 
     }
 

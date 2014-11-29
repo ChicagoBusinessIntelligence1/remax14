@@ -1,8 +1,3 @@
-			.state("app.navigation", {
-				url: "/navigation", 
-				controller:"NavigationCtrl",
-				templateUrl: "../views/navigation-ctrl.html"
-			})
 'use strict';
 
 var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])

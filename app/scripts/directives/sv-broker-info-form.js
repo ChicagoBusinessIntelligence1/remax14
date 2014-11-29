@@ -33,7 +33,7 @@ angular.module('app')
         });
 
         $scope.saveBrokerProfileInfo = function (broker, form) {
-          if (form.$valid) {
+          if (form.$valid && form.$dirty) {
             broker = CleanObjectService.clean(broker);
             UserService.saveProfile(broker);
           } else {

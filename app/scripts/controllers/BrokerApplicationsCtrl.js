@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('app')
-  .controller('BrokerApplicationsCtrl', function ($scope,BrokerApplicationService) {
+  .controller('BrokerApplicationsCtrl', function ($scope, BrokerApplicationService) {
 
     BrokerApplicationService.all().then(function (brokerReqs) {
       $scope.requests = brokerReqs;
-
     });
 
     $scope.approveBroker = function (applicant) {
@@ -15,7 +14,7 @@ angular.module('app')
       })
 
     };
-    $scope.rejectBroker = function(applicant) {
+    $scope.rejectBroker = function (applicant) {
 
       BrokerApplicationService.reject(applicant).then(function () {
         toastr.warning('Broker request rejected');

@@ -7,11 +7,10 @@ angular.module('app')
       repoRef: null,
 
       determine: function (user) {
-        var user2 = $rootScope.user;
         var that = this;
         var defered = $q.defer();
 
-        var email = user.thirdPartyUserData.email;
+        var email = user.email;
 
         that.repoUrl = urlCommon.registeredBrokers;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
@@ -26,8 +25,8 @@ angular.module('app')
               isAdmin = broker.isAdmin;
             }
           }
-          user.thirdPartyUserData.profileType = profileType;
-          user.thirdPartyUserData.isAdmin = isAdmin;
+          user.profileType = profileType;
+          user.isAdmin = isAdmin;
           defered.resolve(user);
 
         })

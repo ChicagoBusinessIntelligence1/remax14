@@ -1,13 +1,19 @@
-/** mockfirebase - v0.3.2
+/** mockfirebase - v0.5.1
 https://github.com/katowulf/mockfirebase
 * Copyright (c) 2014 Kato
 * License: MIT */
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.mockfirebase=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.mockfirebase=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+exports.MockFirebase = require('./firebase');
+exports.MockFirebaseSimpleLogin = require('./login');
+
+},{"./firebase":16,"./login":17}],2:[function(require,module,exports){
 (function (Buffer){
 (function(){
-  var crypt = _dereq_('crypt'),
-      utf8 = _dereq_('charenc').utf8,
-      bin = _dereq_('charenc').bin,
+  var crypt = require('crypt'),
+      utf8 = require('charenc').utf8,
+      bin = require('charenc').bin,
 
   // The core
   md5 = function (message, options) {
@@ -165,8 +171,8 @@ https://github.com/katowulf/mockfirebase
 
 })();
 
-}).call(this,_dereq_("buffer").Buffer)
-},{"buffer":4,"charenc":2,"crypt":3}],2:[function(_dereq_,module,exports){
+}).call(this,require("buffer").Buffer)
+},{"buffer":6,"charenc":3,"crypt":4}],3:[function(require,module,exports){
 var charenc = {
   // UTF-8 encoding
   utf8: {
@@ -201,7 +207,7 @@ var charenc = {
 
 module.exports = charenc;
 
-},{}],3:[function(_dereq_,module,exports){
+},{}],4:[function(require,module,exports){
 (function() {
   var base64map
       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
@@ -299,7 +305,369 @@ module.exports = charenc;
   module.exports = crypt;
 })();
 
-},{}],4:[function(_dereq_,module,exports){
+},{}],5:[function(require,module,exports){
+// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+//
+// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
+//
+// Originally from narwhal.js (http://narwhaljs.org)
+// Copyright (c) 2009 Thomas Robinson <280north.com>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the 'Software'), to
+// deal in the Software without restriction, including without limitation the
+// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// when used in node, this will actually load the util module we depend on
+// versus loading the builtin util module as happens otherwise
+// this is a bug in node module loading as far as I am concerned
+var util = require('util/');
+
+var pSlice = Array.prototype.slice;
+var hasOwn = Object.prototype.hasOwnProperty;
+
+// 1. The assert module provides functions that throw
+// AssertionError's when particular conditions are not met. The
+// assert module must conform to the following interface.
+
+var assert = module.exports = ok;
+
+// 2. The AssertionError is defined in assert.
+// new assert.AssertionError({ message: message,
+//                             actual: actual,
+//                             expected: expected })
+
+assert.AssertionError = function AssertionError(options) {
+  this.name = 'AssertionError';
+  this.actual = options.actual;
+  this.expected = options.expected;
+  this.operator = options.operator;
+  if (options.message) {
+    this.message = options.message;
+    this.generatedMessage = false;
+  } else {
+    this.message = getMessage(this);
+    this.generatedMessage = true;
+  }
+  var stackStartFunction = options.stackStartFunction || fail;
+
+  if (Error.captureStackTrace) {
+    Error.captureStackTrace(this, stackStartFunction);
+  }
+  else {
+    // non v8 browsers so we can have a stacktrace
+    var err = new Error();
+    if (err.stack) {
+      var out = err.stack;
+
+      // try to strip useless frames
+      var fn_name = stackStartFunction.name;
+      var idx = out.indexOf('\n' + fn_name);
+      if (idx >= 0) {
+        // once we have located the function frame
+        // we need to strip out everything before it (and its line)
+        var next_line = out.indexOf('\n', idx + 1);
+        out = out.substring(next_line + 1);
+      }
+
+      this.stack = out;
+    }
+  }
+};
+
+// assert.AssertionError instanceof Error
+util.inherits(assert.AssertionError, Error);
+
+function replacer(key, value) {
+  if (util.isUndefined(value)) {
+    return '' + value;
+  }
+  if (util.isNumber(value) && (isNaN(value) || !isFinite(value))) {
+    return value.toString();
+  }
+  if (util.isFunction(value) || util.isRegExp(value)) {
+    return value.toString();
+  }
+  return value;
+}
+
+function truncate(s, n) {
+  if (util.isString(s)) {
+    return s.length < n ? s : s.slice(0, n);
+  } else {
+    return s;
+  }
+}
+
+function getMessage(self) {
+  return truncate(JSON.stringify(self.actual, replacer), 128) + ' ' +
+         self.operator + ' ' +
+         truncate(JSON.stringify(self.expected, replacer), 128);
+}
+
+// At present only the three keys mentioned above are used and
+// understood by the spec. Implementations or sub modules can pass
+// other keys to the AssertionError's constructor - they will be
+// ignored.
+
+// 3. All of the following functions must throw an AssertionError
+// when a corresponding condition is not met, with a message that
+// may be undefined if not provided.  All assertion methods provide
+// both the actual and expected values to the assertion error for
+// display purposes.
+
+function fail(actual, expected, message, operator, stackStartFunction) {
+  throw new assert.AssertionError({
+    message: message,
+    actual: actual,
+    expected: expected,
+    operator: operator,
+    stackStartFunction: stackStartFunction
+  });
+}
+
+// EXTENSION! allows for well behaved errors defined elsewhere.
+assert.fail = fail;
+
+// 4. Pure assertion tests whether a value is truthy, as determined
+// by !!guard.
+// assert.ok(guard, message_opt);
+// This statement is equivalent to assert.equal(true, !!guard,
+// message_opt);. To test strictly for the value true, use
+// assert.strictEqual(true, guard, message_opt);.
+
+function ok(value, message) {
+  if (!value) fail(value, true, message, '==', assert.ok);
+}
+assert.ok = ok;
+
+// 5. The equality assertion tests shallow, coercive equality with
+// ==.
+// assert.equal(actual, expected, message_opt);
+
+assert.equal = function equal(actual, expected, message) {
+  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
+};
+
+// 6. The non-equality assertion tests for whether two objects are not equal
+// with != assert.notEqual(actual, expected, message_opt);
+
+assert.notEqual = function notEqual(actual, expected, message) {
+  if (actual == expected) {
+    fail(actual, expected, message, '!=', assert.notEqual);
+  }
+};
+
+// 7. The equivalence assertion tests a deep equality relation.
+// assert.deepEqual(actual, expected, message_opt);
+
+assert.deepEqual = function deepEqual(actual, expected, message) {
+  if (!_deepEqual(actual, expected)) {
+    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
+  }
+};
+
+function _deepEqual(actual, expected) {
+  // 7.1. All identical values are equivalent, as determined by ===.
+  if (actual === expected) {
+    return true;
+
+  } else if (util.isBuffer(actual) && util.isBuffer(expected)) {
+    if (actual.length != expected.length) return false;
+
+    for (var i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) return false;
+    }
+
+    return true;
+
+  // 7.2. If the expected value is a Date object, the actual value is
+  // equivalent if it is also a Date object that refers to the same time.
+  } else if (util.isDate(actual) && util.isDate(expected)) {
+    return actual.getTime() === expected.getTime();
+
+  // 7.3 If the expected value is a RegExp object, the actual value is
+  // equivalent if it is also a RegExp object with the same source and
+  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
+  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
+    return actual.source === expected.source &&
+           actual.global === expected.global &&
+           actual.multiline === expected.multiline &&
+           actual.lastIndex === expected.lastIndex &&
+           actual.ignoreCase === expected.ignoreCase;
+
+  // 7.4. Other pairs that do not both pass typeof value == 'object',
+  // equivalence is determined by ==.
+  } else if (!util.isObject(actual) && !util.isObject(expected)) {
+    return actual == expected;
+
+  // 7.5 For all other Object pairs, including Array objects, equivalence is
+  // determined by having the same number of owned properties (as verified
+  // with Object.prototype.hasOwnProperty.call), the same set of keys
+  // (although not necessarily the same order), equivalent values for every
+  // corresponding key, and an identical 'prototype' property. Note: this
+  // accounts for both named and indexed properties on Arrays.
+  } else {
+    return objEquiv(actual, expected);
+  }
+}
+
+function isArguments(object) {
+  return Object.prototype.toString.call(object) == '[object Arguments]';
+}
+
+function objEquiv(a, b) {
+  if (util.isNullOrUndefined(a) || util.isNullOrUndefined(b))
+    return false;
+  // an identical 'prototype' property.
+  if (a.prototype !== b.prototype) return false;
+  //~~~I've managed to break Object.keys through screwy arguments passing.
+  //   Converting to array solves the problem.
+  if (isArguments(a)) {
+    if (!isArguments(b)) {
+      return false;
+    }
+    a = pSlice.call(a);
+    b = pSlice.call(b);
+    return _deepEqual(a, b);
+  }
+  try {
+    var ka = objectKeys(a),
+        kb = objectKeys(b),
+        key, i;
+  } catch (e) {//happens when one is a string literal and the other isn't
+    return false;
+  }
+  // having the same number of owned properties (keys incorporates
+  // hasOwnProperty)
+  if (ka.length != kb.length)
+    return false;
+  //the same set of keys (although not necessarily the same order),
+  ka.sort();
+  kb.sort();
+  //~~~cheap key test
+  for (i = ka.length - 1; i >= 0; i--) {
+    if (ka[i] != kb[i])
+      return false;
+  }
+  //equivalent values for every corresponding key, and
+  //~~~possibly expensive deep test
+  for (i = ka.length - 1; i >= 0; i--) {
+    key = ka[i];
+    if (!_deepEqual(a[key], b[key])) return false;
+  }
+  return true;
+}
+
+// 8. The non-equivalence assertion tests for any deep inequality.
+// assert.notDeepEqual(actual, expected, message_opt);
+
+assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
+  if (_deepEqual(actual, expected)) {
+    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
+  }
+};
+
+// 9. The strict equality assertion tests strict equality, as determined by ===.
+// assert.strictEqual(actual, expected, message_opt);
+
+assert.strictEqual = function strictEqual(actual, expected, message) {
+  if (actual !== expected) {
+    fail(actual, expected, message, '===', assert.strictEqual);
+  }
+};
+
+// 10. The strict non-equality assertion tests for strict inequality, as
+// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
+
+assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
+  if (actual === expected) {
+    fail(actual, expected, message, '!==', assert.notStrictEqual);
+  }
+};
+
+function expectedException(actual, expected) {
+  if (!actual || !expected) {
+    return false;
+  }
+
+  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
+    return expected.test(actual);
+  } else if (actual instanceof expected) {
+    return true;
+  } else if (expected.call({}, actual) === true) {
+    return true;
+  }
+
+  return false;
+}
+
+function _throws(shouldThrow, block, expected, message) {
+  var actual;
+
+  if (util.isString(expected)) {
+    message = expected;
+    expected = null;
+  }
+
+  try {
+    block();
+  } catch (e) {
+    actual = e;
+  }
+
+  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
+            (message ? ' ' + message : '.');
+
+  if (shouldThrow && !actual) {
+    fail(actual, expected, 'Missing expected exception' + message);
+  }
+
+  if (!shouldThrow && expectedException(actual, expected)) {
+    fail(actual, expected, 'Got unwanted exception' + message);
+  }
+
+  if ((shouldThrow && actual && expected &&
+      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
+    throw actual;
+  }
+}
+
+// 11. Expected to throw an error:
+// assert.throws(block, Error_opt, message_opt);
+
+assert.throws = function(block, /*optional*/error, /*optional*/message) {
+  _throws.apply(this, [true].concat(pSlice.call(arguments)));
+};
+
+// EXTENSION! This is annoying to write outside this module.
+assert.doesNotThrow = function(block, /*optional*/message) {
+  _throws.apply(this, [false].concat(pSlice.call(arguments)));
+};
+
+assert.ifError = function(err) { if (err) {throw err;}};
+
+var objectKeys = Object.keys || function (obj) {
+  var keys = [];
+  for (var key in obj) {
+    if (hasOwn.call(obj, key)) keys.push(key);
+  }
+  return keys;
+};
+
+},{"util/":13}],6:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -307,16 +675,19 @@ module.exports = charenc;
  * @license  MIT
  */
 
-var base64 = _dereq_('base64-js')
-var ieee754 = _dereq_('ieee754')
+var base64 = require('base64-js')
+var ieee754 = require('ieee754')
+var isArray = require('is-array')
 
 exports.Buffer = Buffer
 exports.SlowBuffer = Buffer
 exports.INSPECT_MAX_BYTES = 50
-Buffer.poolSize = 8192
+Buffer.poolSize = 8192 // not used by this implementation
+
+var kMaxLength = 0x3fffffff
 
 /**
- * If `TYPED_ARRAY_SUPPORT`:
+ * If `Buffer.TYPED_ARRAY_SUPPORT`:
  *   === true    Use Uint8Array implementation (fastest)
  *   === false   Use Object implementation (most compatible, even IE6)
  *
@@ -334,10 +705,10 @@ Buffer.poolSize = 8192
  *  - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
  *    incorrect length in some situations.
  *
- * We detect these buggy browsers and set `TYPED_ARRAY_SUPPORT` to `false` so they will
+ * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they will
  * get the Object implementation, which is slower but will work correctly.
  */
-var TYPED_ARRAY_SUPPORT = (function () {
+Buffer.TYPED_ARRAY_SUPPORT = (function () {
   try {
     var buf = new ArrayBuffer(0)
     var arr = new Uint8Array(buf)
@@ -381,10 +752,14 @@ function Buffer (subject, encoding, noZero) {
       subject = subject.data
     length = +subject.length > 0 ? Math.floor(+subject.length) : 0
   } else
-    throw new Error('First argument needs to be a number, array or string.')
+    throw new TypeError('must start with number, buffer, array or string')
+
+  if (this.length > kMaxLength)
+    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+      'size: 0x' + kMaxLength.toString(16) + ' bytes')
 
   var buf
-  if (TYPED_ARRAY_SUPPORT) {
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
     // Preferred: Return an augmented `Uint8Array` instance for best performance
     buf = Buffer._augment(new Uint8Array(length))
   } else {
@@ -395,7 +770,7 @@ function Buffer (subject, encoding, noZero) {
   }
 
   var i
-  if (TYPED_ARRAY_SUPPORT && typeof subject.byteLength === 'number') {
+  if (Buffer.TYPED_ARRAY_SUPPORT && typeof subject.byteLength === 'number') {
     // Speed optimization -- use set if we're copying from a typed array
     buf._set(subject)
   } else if (isArrayish(subject)) {
@@ -409,7 +784,7 @@ function Buffer (subject, encoding, noZero) {
     }
   } else if (type === 'string') {
     buf.write(subject, 0, encoding)
-  } else if (type === 'number' && !TYPED_ARRAY_SUPPORT && !noZero) {
+  } else if (type === 'number' && !Buffer.TYPED_ARRAY_SUPPORT && !noZero) {
     for (i = 0; i < length; i++) {
       buf[i] = 0
     }
@@ -418,8 +793,25 @@ function Buffer (subject, encoding, noZero) {
   return buf
 }
 
-// STATIC METHODS
-// ==============
+Buffer.isBuffer = function (b) {
+  return !!(b != null && b._isBuffer)
+}
+
+Buffer.compare = function (a, b) {
+  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b))
+    throw new TypeError('Arguments must be Buffers')
+
+  var x = a.length
+  var y = b.length
+  for (var i = 0, len = Math.min(x, y); i < len && a[i] === b[i]; i++) {}
+  if (i !== len) {
+    x = a[i]
+    y = b[i]
+  }
+  if (x < y) return -1
+  if (y < x) return 1
+  return 0
+}
 
 Buffer.isEncoding = function (encoding) {
   switch (String(encoding).toLowerCase()) {
@@ -440,43 +832,8 @@ Buffer.isEncoding = function (encoding) {
   }
 }
 
-Buffer.isBuffer = function (b) {
-  return !!(b != null && b._isBuffer)
-}
-
-Buffer.byteLength = function (str, encoding) {
-  var ret
-  str = str.toString()
-  switch (encoding || 'utf8') {
-    case 'hex':
-      ret = str.length / 2
-      break
-    case 'utf8':
-    case 'utf-8':
-      ret = utf8ToBytes(str).length
-      break
-    case 'ascii':
-    case 'binary':
-    case 'raw':
-      ret = str.length
-      break
-    case 'base64':
-      ret = base64ToBytes(str).length
-      break
-    case 'ucs2':
-    case 'ucs-2':
-    case 'utf16le':
-    case 'utf-16le':
-      ret = str.length * 2
-      break
-    default:
-      throw new Error('Unknown encoding')
-  }
-  return ret
-}
-
 Buffer.concat = function (list, totalLength) {
-  assert(isArray(list), 'Usage: Buffer.concat(list[, length])')
+  if (!isArray(list)) throw new TypeError('Usage: Buffer.concat(list[, length])')
 
   if (list.length === 0) {
     return new Buffer(0)
@@ -502,26 +859,118 @@ Buffer.concat = function (list, totalLength) {
   return buf
 }
 
-Buffer.compare = function (a, b) {
-  assert(Buffer.isBuffer(a) && Buffer.isBuffer(b), 'Arguments must be Buffers')
-  var x = a.length
-  var y = b.length
-  for (var i = 0, len = Math.min(x, y); i < len && a[i] === b[i]; i++) {}
-  if (i !== len) {
-    x = a[i]
-    y = b[i]
+Buffer.byteLength = function (str, encoding) {
+  var ret
+  str = str + ''
+  switch (encoding || 'utf8') {
+    case 'ascii':
+    case 'binary':
+    case 'raw':
+      ret = str.length
+      break
+    case 'ucs2':
+    case 'ucs-2':
+    case 'utf16le':
+    case 'utf-16le':
+      ret = str.length * 2
+      break
+    case 'hex':
+      ret = str.length >>> 1
+      break
+    case 'utf8':
+    case 'utf-8':
+      ret = utf8ToBytes(str).length
+      break
+    case 'base64':
+      ret = base64ToBytes(str).length
+      break
+    default:
+      ret = str.length
   }
-  if (x < y) {
-    return -1
-  }
-  if (y < x) {
-    return 1
-  }
-  return 0
+  return ret
 }
 
-// BUFFER INSTANCE METHODS
-// =======================
+// pre-set for values that may exist in the future
+Buffer.prototype.length = undefined
+Buffer.prototype.parent = undefined
+
+// toString(encoding, start=0, end=buffer.length)
+Buffer.prototype.toString = function (encoding, start, end) {
+  var loweredCase = false
+
+  start = start >>> 0
+  end = end === undefined || end === Infinity ? this.length : end >>> 0
+
+  if (!encoding) encoding = 'utf8'
+  if (start < 0) start = 0
+  if (end > this.length) end = this.length
+  if (end <= start) return ''
+
+  while (true) {
+    switch (encoding) {
+      case 'hex':
+        return hexSlice(this, start, end)
+
+      case 'utf8':
+      case 'utf-8':
+        return utf8Slice(this, start, end)
+
+      case 'ascii':
+        return asciiSlice(this, start, end)
+
+      case 'binary':
+        return binarySlice(this, start, end)
+
+      case 'base64':
+        return base64Slice(this, start, end)
+
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return utf16leSlice(this, start, end)
+
+      default:
+        if (loweredCase)
+          throw new TypeError('Unknown encoding: ' + encoding)
+        encoding = (encoding + '').toLowerCase()
+        loweredCase = true
+    }
+  }
+}
+
+Buffer.prototype.equals = function (b) {
+  if(!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+  return Buffer.compare(this, b) === 0
+}
+
+Buffer.prototype.inspect = function () {
+  var str = ''
+  var max = exports.INSPECT_MAX_BYTES
+  if (this.length > 0) {
+    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
+    if (this.length > max)
+      str += ' ... '
+  }
+  return '<Buffer ' + str + '>'
+}
+
+Buffer.prototype.compare = function (b) {
+  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+  return Buffer.compare(this, b)
+}
+
+// `get` will be removed in Node 0.13+
+Buffer.prototype.get = function (offset) {
+  console.log('.get() is deprecated. Access using array indexes instead.')
+  return this.readUInt8(offset)
+}
+
+// `set` will be removed in Node 0.13+
+Buffer.prototype.set = function (v, offset) {
+  console.log('.set() is deprecated. Access using array indexes instead.')
+  return this.writeUInt8(v, offset)
+}
 
 function hexWrite (buf, string, offset, length) {
   offset = Number(offset) || 0
@@ -537,14 +986,14 @@ function hexWrite (buf, string, offset, length) {
 
   // must be an even number of digits
   var strLen = string.length
-  assert(strLen % 2 === 0, 'Invalid hex string')
+  if (strLen % 2 !== 0) throw new Error('Invalid hex string')
 
   if (length > strLen / 2) {
     length = strLen / 2
   }
   for (var i = 0; i < length; i++) {
     var byte = parseInt(string.substr(i * 2, 2), 16)
-    assert(!isNaN(byte), 'Invalid hex string')
+    if (isNaN(byte)) throw new Error('Invalid hex string')
     buf[offset + i] = byte
   }
   return i
@@ -626,48 +1075,7 @@ Buffer.prototype.write = function (string, offset, length, encoding) {
       ret = utf16leWrite(this, string, offset, length)
       break
     default:
-      throw new Error('Unknown encoding')
-  }
-  return ret
-}
-
-Buffer.prototype.toString = function (encoding, start, end) {
-  var self = this
-
-  encoding = String(encoding || 'utf8').toLowerCase()
-  start = Number(start) || 0
-  end = (end === undefined) ? self.length : Number(end)
-
-  // Fastpath empty strings
-  if (end === start)
-    return ''
-
-  var ret
-  switch (encoding) {
-    case 'hex':
-      ret = hexSlice(self, start, end)
-      break
-    case 'utf8':
-    case 'utf-8':
-      ret = utf8Slice(self, start, end)
-      break
-    case 'ascii':
-      ret = asciiSlice(self, start, end)
-      break
-    case 'binary':
-      ret = binarySlice(self, start, end)
-      break
-    case 'base64':
-      ret = base64Slice(self, start, end)
-      break
-    case 'ucs2':
-    case 'ucs-2':
-    case 'utf16le':
-    case 'utf-16le':
-      ret = utf16leSlice(self, start, end)
-      break
-    default:
-      throw new Error('Unknown encoding')
+      throw new TypeError('Unknown encoding: ' + encoding)
   }
   return ret
 }
@@ -676,52 +1084,6 @@ Buffer.prototype.toJSON = function () {
   return {
     type: 'Buffer',
     data: Array.prototype.slice.call(this._arr || this, 0)
-  }
-}
-
-Buffer.prototype.equals = function (b) {
-  assert(Buffer.isBuffer(b), 'Argument must be a Buffer')
-  return Buffer.compare(this, b) === 0
-}
-
-Buffer.prototype.compare = function (b) {
-  assert(Buffer.isBuffer(b), 'Argument must be a Buffer')
-  return Buffer.compare(this, b)
-}
-
-// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-Buffer.prototype.copy = function (target, target_start, start, end) {
-  var source = this
-
-  if (!start) start = 0
-  if (!end && end !== 0) end = this.length
-  if (!target_start) target_start = 0
-
-  // Copy 0 bytes; we're done
-  if (end === start) return
-  if (target.length === 0 || source.length === 0) return
-
-  // Fatal error conditions
-  assert(end >= start, 'sourceEnd < sourceStart')
-  assert(target_start >= 0 && target_start < target.length,
-      'targetStart out of bounds')
-  assert(start >= 0 && start < source.length, 'sourceStart out of bounds')
-  assert(end >= 0 && end <= source.length, 'sourceEnd out of bounds')
-
-  // Are we oob?
-  if (end > this.length)
-    end = this.length
-  if (target.length - target_start < end - start)
-    end = target.length - target_start + start
-
-  var len = end - start
-
-  if (len < 100 || !TYPED_ARRAY_SUPPORT) {
-    for (var i = 0; i < len; i++) {
-      target[i + target_start] = this[i + start]
-    }
-  } else {
-    target._set(this.subarray(start, start + len), target_start)
   }
 }
 
@@ -810,7 +1172,7 @@ Buffer.prototype.slice = function (start, end) {
   if (end < start)
     end = start
 
-  if (TYPED_ARRAY_SUPPORT) {
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
     return Buffer._augment(this.subarray(start, end))
   } else {
     var sliceLen = end - start
@@ -822,365 +1184,275 @@ Buffer.prototype.slice = function (start, end) {
   }
 }
 
-// `get` will be removed in Node 0.13+
-Buffer.prototype.get = function (offset) {
-  console.log('.get() is deprecated. Access using array indexes instead.')
-  return this.readUInt8(offset)
-}
-
-// `set` will be removed in Node 0.13+
-Buffer.prototype.set = function (v, offset) {
-  console.log('.set() is deprecated. Access using array indexes instead.')
-  return this.writeUInt8(v, offset)
+/*
+ * Need to make sure that buffer isn't trying to write out of bounds.
+ */
+function checkOffset (offset, ext, length) {
+  if ((offset % 1) !== 0 || offset < 0)
+    throw new RangeError('offset is not uint')
+  if (offset + ext > length)
+    throw new RangeError('Trying to access beyond buffer length')
 }
 
 Buffer.prototype.readUInt8 = function (offset, noAssert) {
-  if (!noAssert) {
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset < this.length, 'Trying to read beyond buffer length')
-  }
-
-  if (offset >= this.length)
-    return
-
+  if (!noAssert)
+    checkOffset(offset, 1, this.length)
   return this[offset]
 }
 
-function readUInt16 (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 1 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  var val
-  if (littleEndian) {
-    val = buf[offset]
-    if (offset + 1 < len)
-      val |= buf[offset + 1] << 8
-  } else {
-    val = buf[offset] << 8
-    if (offset + 1 < len)
-      val |= buf[offset + 1]
-  }
-  return val
-}
-
 Buffer.prototype.readUInt16LE = function (offset, noAssert) {
-  return readUInt16(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 2, this.length)
+  return this[offset] | (this[offset + 1] << 8)
 }
 
 Buffer.prototype.readUInt16BE = function (offset, noAssert) {
-  return readUInt16(this, offset, false, noAssert)
-}
-
-function readUInt32 (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 3 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  var val
-  if (littleEndian) {
-    if (offset + 2 < len)
-      val = buf[offset + 2] << 16
-    if (offset + 1 < len)
-      val |= buf[offset + 1] << 8
-    val |= buf[offset]
-    if (offset + 3 < len)
-      val = val + (buf[offset + 3] << 24 >>> 0)
-  } else {
-    if (offset + 1 < len)
-      val = buf[offset + 1] << 16
-    if (offset + 2 < len)
-      val |= buf[offset + 2] << 8
-    if (offset + 3 < len)
-      val |= buf[offset + 3]
-    val = val + (buf[offset] << 24 >>> 0)
-  }
-  return val
+  if (!noAssert)
+    checkOffset(offset, 2, this.length)
+  return (this[offset] << 8) | this[offset + 1]
 }
 
 Buffer.prototype.readUInt32LE = function (offset, noAssert) {
-  return readUInt32(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
+
+  return ((this[offset]) |
+      (this[offset + 1] << 8) |
+      (this[offset + 2] << 16)) +
+      (this[offset + 3] * 0x1000000)
 }
 
 Buffer.prototype.readUInt32BE = function (offset, noAssert) {
-  return readUInt32(this, offset, false, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
+
+  return (this[offset] * 0x1000000) +
+      ((this[offset + 1] << 16) |
+      (this[offset + 2] << 8) |
+      this[offset + 3])
 }
 
 Buffer.prototype.readInt8 = function (offset, noAssert) {
-  if (!noAssert) {
-    assert(offset !== undefined && offset !== null,
-        'missing offset')
-    assert(offset < this.length, 'Trying to read beyond buffer length')
-  }
-
-  if (offset >= this.length)
-    return
-
-  var neg = this[offset] & 0x80
-  if (neg)
-    return (0xff - this[offset] + 1) * -1
-  else
-    return this[offset]
-}
-
-function readInt16 (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 1 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  var val = readUInt16(buf, offset, littleEndian, true)
-  var neg = val & 0x8000
-  if (neg)
-    return (0xffff - val + 1) * -1
-  else
-    return val
+  if (!noAssert)
+    checkOffset(offset, 1, this.length)
+  if (!(this[offset] & 0x80))
+    return (this[offset])
+  return ((0xff - this[offset] + 1) * -1)
 }
 
 Buffer.prototype.readInt16LE = function (offset, noAssert) {
-  return readInt16(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 2, this.length)
+  var val = this[offset] | (this[offset + 1] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
 }
 
 Buffer.prototype.readInt16BE = function (offset, noAssert) {
-  return readInt16(this, offset, false, noAssert)
-}
-
-function readInt32 (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 3 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  var val = readUInt32(buf, offset, littleEndian, true)
-  var neg = val & 0x80000000
-  if (neg)
-    return (0xffffffff - val + 1) * -1
-  else
-    return val
+  if (!noAssert)
+    checkOffset(offset, 2, this.length)
+  var val = this[offset + 1] | (this[offset] << 8)
+  return (val & 0x8000) ? val | 0xFFFF0000 : val
 }
 
 Buffer.prototype.readInt32LE = function (offset, noAssert) {
-  return readInt32(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
+
+  return (this[offset]) |
+      (this[offset + 1] << 8) |
+      (this[offset + 2] << 16) |
+      (this[offset + 3] << 24)
 }
 
 Buffer.prototype.readInt32BE = function (offset, noAssert) {
-  return readInt32(this, offset, false, noAssert)
-}
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
 
-function readFloat (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset + 3 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  return ieee754.read(buf, offset, littleEndian, 23, 4)
+  return (this[offset] << 24) |
+      (this[offset + 1] << 16) |
+      (this[offset + 2] << 8) |
+      (this[offset + 3])
 }
 
 Buffer.prototype.readFloatLE = function (offset, noAssert) {
-  return readFloat(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, true, 23, 4)
 }
 
 Buffer.prototype.readFloatBE = function (offset, noAssert) {
-  return readFloat(this, offset, false, noAssert)
-}
-
-function readDouble (buf, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset + 7 < buf.length, 'Trying to read beyond buffer length')
-  }
-
-  return ieee754.read(buf, offset, littleEndian, 52, 8)
+  if (!noAssert)
+    checkOffset(offset, 4, this.length)
+  return ieee754.read(this, offset, false, 23, 4)
 }
 
 Buffer.prototype.readDoubleLE = function (offset, noAssert) {
-  return readDouble(this, offset, true, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, true, 52, 8)
 }
 
 Buffer.prototype.readDoubleBE = function (offset, noAssert) {
-  return readDouble(this, offset, false, noAssert)
+  if (!noAssert)
+    checkOffset(offset, 8, this.length)
+  return ieee754.read(this, offset, false, 52, 8)
+}
+
+function checkInt (buf, value, offset, ext, max, min) {
+  if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
+  if (value > max || value < min) throw new TypeError('value is out of bounds')
+  if (offset + ext > buf.length) throw new TypeError('index out of range')
 }
 
 Buffer.prototype.writeUInt8 = function (value, offset, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset < this.length, 'trying to write beyond buffer length')
-    verifuint(value, 0xff)
-  }
-
-  if (offset >= this.length) return
-
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 1, 0xff, 0)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
   this[offset] = value
   return offset + 1
 }
 
-function writeUInt16 (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 1 < buf.length, 'trying to write beyond buffer length')
-    verifuint(value, 0xffff)
+function objectWriteUInt16 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; i++) {
+    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+      (littleEndian ? i : 1 - i) * 8
   }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  for (var i = 0, j = Math.min(len - offset, 2); i < j; i++) {
-    buf[offset + i] =
-        (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
-            (littleEndian ? i : 1 - i) * 8
-  }
-  return offset + 2
 }
 
 Buffer.prototype.writeUInt16LE = function (value, offset, noAssert) {
-  return writeUInt16(this, value, offset, true, noAssert)
-}
-
-Buffer.prototype.writeUInt16BE = function (value, offset, noAssert) {
-  return writeUInt16(this, value, offset, false, noAssert)
-}
-
-function writeUInt32 (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 3 < buf.length, 'trying to write beyond buffer length')
-    verifuint(value, 0xffffffff)
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  for (var i = 0, j = Math.min(len - offset, 4); i < j; i++) {
-    buf[offset + i] =
-        (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
-  }
-  return offset + 4
-}
-
-Buffer.prototype.writeUInt32LE = function (value, offset, noAssert) {
-  return writeUInt32(this, value, offset, true, noAssert)
-}
-
-Buffer.prototype.writeUInt32BE = function (value, offset, noAssert) {
-  return writeUInt32(this, value, offset, false, noAssert)
-}
-
-Buffer.prototype.writeInt8 = function (value, offset, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset < this.length, 'Trying to write beyond buffer length')
-    verifsint(value, 0x7f, -0x80)
-  }
-
-  if (offset >= this.length)
-    return
-
-  if (value >= 0)
-    this.writeUInt8(value, offset, noAssert)
-  else
-    this.writeUInt8(0xff + value + 1, offset, noAssert)
-  return offset + 1
-}
-
-function writeInt16 (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 1 < buf.length, 'Trying to write beyond buffer length')
-    verifsint(value, 0x7fff, -0x8000)
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  if (value >= 0)
-    writeUInt16(buf, value, offset, littleEndian, noAssert)
-  else
-    writeUInt16(buf, 0xffff + value + 1, offset, littleEndian, noAssert)
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = value
+    this[offset + 1] = (value >>> 8)
+  } else objectWriteUInt16(this, value, offset, true)
   return offset + 2
 }
 
-Buffer.prototype.writeInt16LE = function (value, offset, noAssert) {
-  return writeInt16(this, value, offset, true, noAssert)
+Buffer.prototype.writeUInt16BE = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 2, 0xffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = value
+  } else objectWriteUInt16(this, value, offset, false)
+  return offset + 2
 }
 
-Buffer.prototype.writeInt16BE = function (value, offset, noAssert) {
-  return writeInt16(this, value, offset, false, noAssert)
-}
-
-function writeInt32 (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 3 < buf.length, 'Trying to write beyond buffer length')
-    verifsint(value, 0x7fffffff, -0x80000000)
+function objectWriteUInt32 (buf, value, offset, littleEndian) {
+  if (value < 0) value = 0xffffffff + value + 1
+  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; i++) {
+    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
   }
+}
 
-  var len = buf.length
-  if (offset >= len)
-    return
-
-  if (value >= 0)
-    writeUInt32(buf, value, offset, littleEndian, noAssert)
-  else
-    writeUInt32(buf, 0xffffffff + value + 1, offset, littleEndian, noAssert)
+Buffer.prototype.writeUInt32LE = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset + 3] = (value >>> 24)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 1] = (value >>> 8)
+    this[offset] = value
+  } else objectWriteUInt32(this, value, offset, true)
   return offset + 4
 }
 
+Buffer.prototype.writeUInt32BE = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 4, 0xffffffff, 0)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = value
+  } else objectWriteUInt32(this, value, offset, false)
+  return offset + 4
+}
+
+Buffer.prototype.writeInt8 = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 1, 0x7f, -0x80)
+  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+  if (value < 0) value = 0xff + value + 1
+  this[offset] = value
+  return offset + 1
+}
+
+Buffer.prototype.writeInt16LE = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = value
+    this[offset + 1] = (value >>> 8)
+  } else objectWriteUInt16(this, value, offset, true)
+  return offset + 2
+}
+
+Buffer.prototype.writeInt16BE = function (value, offset, noAssert) {
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 8)
+    this[offset + 1] = value
+  } else objectWriteUInt16(this, value, offset, false)
+  return offset + 2
+}
+
 Buffer.prototype.writeInt32LE = function (value, offset, noAssert) {
-  return writeInt32(this, value, offset, true, noAssert)
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = value
+    this[offset + 1] = (value >>> 8)
+    this[offset + 2] = (value >>> 16)
+    this[offset + 3] = (value >>> 24)
+  } else objectWriteUInt32(this, value, offset, true)
+  return offset + 4
 }
 
 Buffer.prototype.writeInt32BE = function (value, offset, noAssert) {
-  return writeInt32(this, value, offset, false, noAssert)
+  value = +value
+  offset = offset >>> 0
+  if (!noAssert)
+    checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+  if (value < 0) value = 0xffffffff + value + 1
+  if (Buffer.TYPED_ARRAY_SUPPORT) {
+    this[offset] = (value >>> 24)
+    this[offset + 1] = (value >>> 16)
+    this[offset + 2] = (value >>> 8)
+    this[offset + 3] = value
+  } else objectWriteUInt32(this, value, offset, false)
+  return offset + 4
+}
+
+function checkIEEE754 (buf, value, offset, ext, max, min) {
+  if (value > max || value < min) throw new TypeError('value is out of bounds')
+  if (offset + ext > buf.length) throw new TypeError('index out of range')
 }
 
 function writeFloat (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 3 < buf.length, 'Trying to write beyond buffer length')
-    verifIEEE754(value, 3.4028234663852886e+38, -3.4028234663852886e+38)
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
+  if (!noAssert)
+    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
   ieee754.write(buf, value, offset, littleEndian, 23, 4)
   return offset + 4
 }
@@ -1194,19 +1466,8 @@ Buffer.prototype.writeFloatBE = function (value, offset, noAssert) {
 }
 
 function writeDouble (buf, value, offset, littleEndian, noAssert) {
-  if (!noAssert) {
-    assert(value !== undefined && value !== null, 'missing value')
-    assert(typeof littleEndian === 'boolean', 'missing or invalid endian')
-    assert(offset !== undefined && offset !== null, 'missing offset')
-    assert(offset + 7 < buf.length,
-        'Trying to write beyond buffer length')
-    verifIEEE754(value, 1.7976931348623157E+308, -1.7976931348623157E+308)
-  }
-
-  var len = buf.length
-  if (offset >= len)
-    return
-
+  if (!noAssert)
+    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
   ieee754.write(buf, value, offset, littleEndian, 52, 8)
   return offset + 8
 }
@@ -1219,20 +1480,56 @@ Buffer.prototype.writeDoubleBE = function (value, offset, noAssert) {
   return writeDouble(this, value, offset, false, noAssert)
 }
 
+// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+Buffer.prototype.copy = function (target, target_start, start, end) {
+  var source = this
+
+  if (!start) start = 0
+  if (!end && end !== 0) end = this.length
+  if (!target_start) target_start = 0
+
+  // Copy 0 bytes; we're done
+  if (end === start) return
+  if (target.length === 0 || source.length === 0) return
+
+  // Fatal error conditions
+  if (end < start) throw new TypeError('sourceEnd < sourceStart')
+  if (target_start < 0 || target_start >= target.length)
+    throw new TypeError('targetStart out of bounds')
+  if (start < 0 || start >= source.length) throw new TypeError('sourceStart out of bounds')
+  if (end < 0 || end > source.length) throw new TypeError('sourceEnd out of bounds')
+
+  // Are we oob?
+  if (end > this.length)
+    end = this.length
+  if (target.length - target_start < end - start)
+    end = target.length - target_start + start
+
+  var len = end - start
+
+  if (len < 100 || !Buffer.TYPED_ARRAY_SUPPORT) {
+    for (var i = 0; i < len; i++) {
+      target[i + target_start] = this[i + start]
+    }
+  } else {
+    target._set(this.subarray(start, start + len), target_start)
+  }
+}
+
 // fill(value, start=0, end=buffer.length)
 Buffer.prototype.fill = function (value, start, end) {
   if (!value) value = 0
   if (!start) start = 0
   if (!end) end = this.length
 
-  assert(end >= start, 'end < start')
+  if (end < start) throw new TypeError('end < start')
 
   // Fill 0 bytes; we're done
   if (end === start) return
   if (this.length === 0) return
 
-  assert(start >= 0 && start < this.length, 'start out of bounds')
-  assert(end >= 0 && end <= this.length, 'end out of bounds')
+  if (start < 0 || start >= this.length) throw new TypeError('start out of bounds')
+  if (end < 0 || end > this.length) throw new TypeError('end out of bounds')
 
   var i
   if (typeof value === 'number') {
@@ -1250,26 +1547,13 @@ Buffer.prototype.fill = function (value, start, end) {
   return this
 }
 
-Buffer.prototype.inspect = function () {
-  var out = []
-  var len = this.length
-  for (var i = 0; i < len; i++) {
-    out[i] = toHex(this[i])
-    if (i === exports.INSPECT_MAX_BYTES) {
-      out[i + 1] = '...'
-      break
-    }
-  }
-  return '<Buffer ' + out.join(' ') + '>'
-}
-
 /**
  * Creates a new `ArrayBuffer` with the *copied* memory of the buffer instance.
  * Added in Node 0.12. Only available in browsers that support ArrayBuffer.
  */
 Buffer.prototype.toArrayBuffer = function () {
   if (typeof Uint8Array !== 'undefined') {
-    if (TYPED_ARRAY_SUPPORT) {
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
       return (new Buffer(this)).buffer
     } else {
       var buf = new Uint8Array(this.length)
@@ -1279,7 +1563,7 @@ Buffer.prototype.toArrayBuffer = function () {
       return buf.buffer
     }
   } else {
-    throw new Error('Buffer.toArrayBuffer not supported in this browser')
+    throw new TypeError('Buffer.toArrayBuffer not supported in this browser')
   }
 }
 
@@ -1362,12 +1646,6 @@ function stringtrim (str) {
   return str.replace(/^\s+|\s+$/g, '')
 }
 
-function isArray (subject) {
-  return (Array.isArray || function (subject) {
-    return Object.prototype.toString.call(subject) === '[object Array]'
-  })(subject)
-}
-
 function isArrayish (subject) {
   return isArray(subject) || Buffer.isBuffer(subject) ||
       subject && typeof subject === 'object' &&
@@ -1441,36 +1719,7 @@ function decodeUtf8Char (str) {
   }
 }
 
-/*
- * We have to make sure that the value is a valid integer. This means that it
- * is non-negative. It has no fractional component and that it does not
- * exceed the maximum allowed value.
- */
-function verifuint (value, max) {
-  assert(typeof value === 'number', 'cannot write a non-number as a number')
-  assert(value >= 0, 'specified a negative value for writing an unsigned value')
-  assert(value <= max, 'value is larger than maximum value for type')
-  assert(Math.floor(value) === value, 'value has a fractional component')
-}
-
-function verifsint (value, max, min) {
-  assert(typeof value === 'number', 'cannot write a non-number as a number')
-  assert(value <= max, 'value larger than maximum allowed value')
-  assert(value >= min, 'value smaller than minimum allowed value')
-  assert(Math.floor(value) === value, 'value has a fractional component')
-}
-
-function verifIEEE754 (value, max, min) {
-  assert(typeof value === 'number', 'cannot write a non-number as a number')
-  assert(value <= max, 'value larger than maximum allowed value')
-  assert(value >= min, 'value smaller than minimum allowed value')
-}
-
-function assert (test, message) {
-  if (!test) throw new Error(message || 'Failed assertion')
-}
-
-},{"base64-js":5,"ieee754":6}],5:[function(_dereq_,module,exports){
+},{"base64-js":7,"ieee754":8,"is-array":9}],7:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -1592,7 +1841,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],6:[function(_dereq_,module,exports){
+},{}],8:[function(require,module,exports){
 exports.read = function(buffer, offset, isLE, mLen, nBytes) {
   var e, m,
       eLen = nBytes * 8 - mLen - 1,
@@ -1678,7 +1927,752 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128;
 };
 
-},{}],7:[function(_dereq_,module,exports){
+},{}],9:[function(require,module,exports){
+
+/**
+ * isArray
+ */
+
+var isArray = Array.isArray;
+
+/**
+ * toString
+ */
+
+var str = Object.prototype.toString;
+
+/**
+ * Whether or not the given `val`
+ * is an array.
+ *
+ * example:
+ *
+ *        isArray([]);
+ *        // > true
+ *        isArray(arguments);
+ *        // > false
+ *        isArray('');
+ *        // > false
+ *
+ * @param {mixed} val
+ * @return {bool}
+ */
+
+module.exports = isArray || function (val) {
+  return !! val && '[object Array]' == str.call(val);
+};
+
+},{}],10:[function(require,module,exports){
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
+
+},{}],11:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+
+process.nextTick = (function () {
+    var canSetImmediate = typeof window !== 'undefined'
+    && window.setImmediate;
+    var canMutationObserver = typeof window !== 'undefined'
+    && window.MutationObserver;
+    var canPost = typeof window !== 'undefined'
+    && window.postMessage && window.addEventListener
+    ;
+
+    if (canSetImmediate) {
+        return function (f) { return window.setImmediate(f) };
+    }
+
+    var queue = [];
+
+    if (canMutationObserver) {
+        var hiddenDiv = document.createElement("div");
+        var observer = new MutationObserver(function () {
+            var queueList = queue.slice();
+            queue.length = 0;
+            queueList.forEach(function (fn) {
+                fn();
+            });
+        });
+
+        observer.observe(hiddenDiv, { attributes: true });
+
+        return function nextTick(fn) {
+            if (!queue.length) {
+                hiddenDiv.setAttribute('yes', 'no');
+            }
+            queue.push(fn);
+        };
+    }
+
+    if (canPost) {
+        window.addEventListener('message', function (ev) {
+            var source = ev.source;
+            if ((source === window || source === null) && ev.data === 'process-tick') {
+                ev.stopPropagation();
+                if (queue.length > 0) {
+                    var fn = queue.shift();
+                    fn();
+                }
+            }
+        }, true);
+
+        return function nextTick(fn) {
+            queue.push(fn);
+            window.postMessage('process-tick', '*');
+        };
+    }
+
+    return function nextTick(fn) {
+        setTimeout(fn, 0);
+    };
+})();
+
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+// TODO(shtylman)
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+
+},{}],12:[function(require,module,exports){
+module.exports = function isBuffer(arg) {
+  return arg && typeof arg === 'object'
+    && typeof arg.copy === 'function'
+    && typeof arg.fill === 'function'
+    && typeof arg.readUInt8 === 'function';
+}
+},{}],13:[function(require,module,exports){
+(function (process,global){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var formatRegExp = /%[sdj%]/g;
+exports.format = function(f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i < arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(' ');
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === '%%') return '%';
+    if (i >= len) return x;
+    switch (x) {
+      case '%s': return String(args[i++]);
+      case '%d': return Number(args[i++]);
+      case '%j':
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return '[Circular]';
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i < len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+};
+
+
+// Mark that a method should not be used.
+// Returns a modified function which warns once by default.
+// If --no-deprecation is set, then it is a no-op.
+exports.deprecate = function(fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+};
+
+
+var debugs = {};
+var debugEnviron;
+exports.debuglog = function(set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+};
+
+
+/**
+ * Echos the value of a value. Trys to print the value out
+ * in the best way possible given the different types.
+ *
+ * @param {Object} obj The object to print out.
+ * @param {Object} opts Optional options object that alters the output.
+ */
+/* legacy: obj, showHidden, depth, colors*/
+function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length >= 3) ctx.depth = arguments[2];
+  if (arguments.length >= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an "options" object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}
+exports.inspect = inspect;
+
+
+// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+inspect.colors = {
+  'bold' : [1, 22],
+  'italic' : [3, 23],
+  'underline' : [4, 24],
+  'inverse' : [7, 27],
+  'white' : [37, 39],
+  'grey' : [90, 39],
+  'black' : [30, 39],
+  'blue' : [34, 39],
+  'cyan' : [36, 39],
+  'green' : [32, 39],
+  'magenta' : [35, 39],
+  'red' : [31, 39],
+  'yellow' : [33, 39]
+};
+
+// Don't use 'blue' not visible on cmd.exe
+inspect.styles = {
+  'special': 'cyan',
+  'number': 'yellow',
+  'boolean': 'yellow',
+  'undefined': 'grey',
+  'null': 'bold',
+  'string': 'green',
+  'date': 'magenta',
+  // "name": intentionally not styling
+  'regexp': 'red'
+};
+
+
+function stylizeWithColor(str, styleType) {
+  var style = inspect.styles[styleType];
+
+  if (style) {
+    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+           '\u001b[' + inspect.colors[style][1] + 'm';
+  } else {
+    return str;
+  }
+}
+
+
+function stylizeNoColor(str, styleType) {
+  return str;
+}
+
+
+function arrayToHash(array) {
+  var hash = {};
+
+  array.forEach(function(val, idx) {
+    hash[val] = true;
+  });
+
+  return hash;
+}
+
+
+function formatValue(ctx, value, recurseTimes) {
+  // Provide a hook for user-specified inspect functions.
+  // Check that value is an object with an inspect function on it
+  if (ctx.customInspect &&
+      value &&
+      isFunction(value.inspect) &&
+      // Filter out the util module, it's inspect function is special
+      value.inspect !== exports.inspect &&
+      // Also filter out any prototype objects using the circular check.
+      !(value.constructor && value.constructor.prototype === value)) {
+    var ret = value.inspect(recurseTimes, ctx);
+    if (!isString(ret)) {
+      ret = formatValue(ctx, ret, recurseTimes);
+    }
+    return ret;
+  }
+
+  // Primitive types cannot have properties
+  var primitive = formatPrimitive(ctx, value);
+  if (primitive) {
+    return primitive;
+  }
+
+  // Look up the keys of the object.
+  var keys = Object.keys(value);
+  var visibleKeys = arrayToHash(keys);
+
+  if (ctx.showHidden) {
+    keys = Object.getOwnPropertyNames(value);
+  }
+
+  // IE doesn't make error fields non-enumerable
+  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  if (isError(value)
+      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+    return formatError(value);
+  }
+
+  // Some type of object without properties can be shortcutted.
+  if (keys.length === 0) {
+    if (isFunction(value)) {
+      var name = value.name ? ': ' + value.name : '';
+      return ctx.stylize('[Function' + name + ']', 'special');
+    }
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    }
+    if (isDate(value)) {
+      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+    }
+    if (isError(value)) {
+      return formatError(value);
+    }
+  }
+
+  var base = '', array = false, braces = ['{', '}'];
+
+  // Make Array say that they are Array
+  if (isArray(value)) {
+    array = true;
+    braces = ['[', ']'];
+  }
+
+  // Make functions say that they are functions
+  if (isFunction(value)) {
+    var n = value.name ? ': ' + value.name : '';
+    base = ' [Function' + n + ']';
+  }
+
+  // Make RegExps say that they are RegExps
+  if (isRegExp(value)) {
+    base = ' ' + RegExp.prototype.toString.call(value);
+  }
+
+  // Make dates with properties first say the date
+  if (isDate(value)) {
+    base = ' ' + Date.prototype.toUTCString.call(value);
+  }
+
+  // Make error with message first say the error
+  if (isError(value)) {
+    base = ' ' + formatError(value);
+  }
+
+  if (keys.length === 0 && (!array || value.length == 0)) {
+    return braces[0] + base + braces[1];
+  }
+
+  if (recurseTimes < 0) {
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    } else {
+      return ctx.stylize('[Object]', 'special');
+    }
+  }
+
+  ctx.seen.push(value);
+
+  var output;
+  if (array) {
+    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+  } else {
+    output = keys.map(function(key) {
+      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+    });
+  }
+
+  ctx.seen.pop();
+
+  return reduceToSingleString(output, base, braces);
+}
+
+
+function formatPrimitive(ctx, value) {
+  if (isUndefined(value))
+    return ctx.stylize('undefined', 'undefined');
+  if (isString(value)) {
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+                                             .replace(/'/g, "\\'")
+                                             .replace(/\\"/g, '"') + '\'';
+    return ctx.stylize(simple, 'string');
+  }
+  if (isNumber(value))
+    return ctx.stylize('' + value, 'number');
+  if (isBoolean(value))
+    return ctx.stylize('' + value, 'boolean');
+  // For some reason typeof null is "object", so special case here.
+  if (isNull(value))
+    return ctx.stylize('null', 'null');
+}
+
+
+function formatError(value) {
+  return '[' + Error.prototype.toString.call(value) + ']';
+}
+
+
+function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+  var output = [];
+  for (var i = 0, l = value.length; i < l; ++i) {
+    if (hasOwnProperty(value, String(i))) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          String(i), true));
+    } else {
+      output.push('');
+    }
+  }
+  keys.forEach(function(key) {
+    if (!key.match(/^\d+$/)) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          key, true));
+    }
+  });
+  return output;
+}
+
+
+function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+  var name, str, desc;
+  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+  if (desc.get) {
+    if (desc.set) {
+      str = ctx.stylize('[Getter/Setter]', 'special');
+    } else {
+      str = ctx.stylize('[Getter]', 'special');
+    }
+  } else {
+    if (desc.set) {
+      str = ctx.stylize('[Setter]', 'special');
+    }
+  }
+  if (!hasOwnProperty(visibleKeys, key)) {
+    name = '[' + key + ']';
+  }
+  if (!str) {
+    if (ctx.seen.indexOf(desc.value) < 0) {
+      if (isNull(recurseTimes)) {
+        str = formatValue(ctx, desc.value, null);
+      } else {
+        str = formatValue(ctx, desc.value, recurseTimes - 1);
+      }
+      if (str.indexOf('\n') > -1) {
+        if (array) {
+          str = str.split('\n').map(function(line) {
+            return '  ' + line;
+          }).join('\n').substr(2);
+        } else {
+          str = '\n' + str.split('\n').map(function(line) {
+            return '   ' + line;
+          }).join('\n');
+        }
+      }
+    } else {
+      str = ctx.stylize('[Circular]', 'special');
+    }
+  }
+  if (isUndefined(name)) {
+    if (array && key.match(/^\d+$/)) {
+      return str;
+    }
+    name = JSON.stringify('' + key);
+    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+      name = name.substr(1, name.length - 2);
+      name = ctx.stylize(name, 'name');
+    } else {
+      name = name.replace(/'/g, "\\'")
+                 .replace(/\\"/g, '"')
+                 .replace(/(^"|"$)/g, "'");
+      name = ctx.stylize(name, 'string');
+    }
+  }
+
+  return name + ': ' + str;
+}
+
+
+function reduceToSingleString(output, base, braces) {
+  var numLinesEst = 0;
+  var length = output.reduce(function(prev, cur) {
+    numLinesEst++;
+    if (cur.indexOf('\n') >= 0) numLinesEst++;
+    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+  }, 0);
+
+  if (length > 60) {
+    return braces[0] +
+           (base === '' ? '' : base + '\n ') +
+           ' ' +
+           output.join(',\n  ') +
+           ' ' +
+           braces[1];
+  }
+
+  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+}
+
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+exports.isBuffer = require('./support/isBuffer');
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
+
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
+
+
+// log is just a thin wrapper to console.log that prepends a timestamp
+exports.log = function() {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+};
+
+
+/**
+ * Inherit the prototype methods from one constructor into another.
+ *
+ * The Function.prototype.inherits from lang.js rewritten as a standalone
+ * function (not on Function.prototype). NOTE: If this file is to be loaded
+ * during bootstrapping this function needs to be rewritten using some native
+ * functions as prototype setup using normal JavaScript does not work as
+ * expected during bootstrapping (see mirror.js in r114903).
+ *
+ * @param {function} ctor Constructor function which needs to inherit the
+ *     prototype.
+ * @param {function} superCtor Constructor function to inherit prototype from.
+ */
+exports.inherits = require('inherits');
+
+exports._extend = function(origin, add) {
+  // Don't do anything if add isn't an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+};
+
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./support/isBuffer":12,"_process":11,"inherits":10}],14:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -8466,15 +9460,98 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   }
 }.call(this));
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],8:[function(_dereq_,module,exports){
-(function (global){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],15:[function(require,module,exports){
+module.exports={
+  "data": {
+    "a": {
+      "aString": "alpha",
+      "aNumber": 1,
+      "aBoolean": false
+    },
+    "b": {
+      "aString": "bravo",
+      "aNumber": 2,
+      "aBoolean": true
+    },
+    "c": {
+      "aString": "charlie",
+      "aNumber": 3,
+      "aBoolean": true
+    },
+    "d": {
+      "aString": "delta",
+      "aNumber": 4,
+      "aBoolean": true
+    },
+    "e": {
+      "aString": "echo",
+      "aNumber": 5
+    }
+  },
+  "index": {
+    "b": true,
+    "c": 1,
+    "e": false,
+    "z": true
+  },
+  "ordered": {
+    "null_a": {
+      "aNumber": 0,
+      "aLetter": "a"
+    },
+    "null_b": {
+      "aNumber": 0,
+      "aLetter": "b"
+    },
+    "null_c": {
+      "aNumber": 0,
+      "aLetter": "c"
+    },
+    "num_1_a": {
+      ".priority": 1,
+      "aNumber": 1
+    },
+    "num_1_b": {
+      ".priority": 1,
+      "aNumber": 1
+    },
+    "num_2": {
+      ".priority": 2,
+      "aNumber": 2
+    },
+    "num_3": {
+      ".priority": 3,
+      "aNumber": 3
+    },
+    "char_a_1": {
+      ".priority": "a",
+      "aNumber": 1,
+      "aLetter": "a"
+    },
+    "char_a_2": {
+      ".priority": "a",
+      "aNumber": 2,
+      "aLetter": "a"
+    },
+    "char_b": {
+      ".priority": "b",
+      "aLetter": "b"
+    },
+    "char_c": {
+      ".priority": "c",
+      "aLetter": "c"
+    }
+  }
+}
+
+},{}],16:[function(require,module,exports){
 'use strict';
 
-var DEBUG = false; // enable lots of console logging (best used while isolating one test case)
-
-var _     = _dereq_('lodash');
-var md5   = _dereq_('MD5');
+var _      = require('lodash');
+var assert = require('assert');
+var Query  = require('./query');
+var utils  = require('./utils');
 
 /**
  * A mock that simulates Firebase operations for use in unit tests.
@@ -8505,9 +9582,6 @@ var md5   = _dereq_('MD5');
  *     // trigger callbacks and event listeners
  *     fb.flush();
  *
- *     // spy on methods
- *     expect(fb.on.called).toBe(true);
- *
  * ## Trigger events automagically instead of calling flush()
  *
  *     var fb = new MockFirebase('Mock://hello/world');
@@ -8529,14 +9603,14 @@ var md5   = _dereq_('MD5');
  *     MockFirebase.DEFAULT_DATA = {foo: { bar: 'baz'}};
  *     var fb = new MockFirebase('Mock://foo');
  *     fb.once('value', function(snap) {
- *        snap.name(); // foo
+ *        snap.key(); // foo
  *        snap.val(); //  {bar: 'baz'}
  *     });
  *
  *     // customize for a single instance
  *     var fb = new MockFirebase('Mock://foo', {foo: 'bar'});
  *     fb.once('value', function(snap) {
- *        snap.name(); // foo
+ *        snap.key(); // foo
  *        snap.val(); //  'bar'
  *     });
  *
@@ -8571,7 +9645,7 @@ function MockFirebase(currentPath, data, parent, name) {
   // allows changes to be propagated between child/parent instances
   this.parentRef = parent||null;
   this.children = {};
-  if (parent) parent.children[this.name()] = this;
+  if (parent) parent.children[this.key()] = this;
 
   // stores sorted keys in data for priority ordering
   this.sortedDataKeys = [];
@@ -8582,16 +9656,9 @@ function MockFirebase(currentPath, data, parent, name) {
 
   // stores the last auto id generated by push() for tests
   this._lastAutoId = null;
-
-  // turn all our public methods into spies so they can be monitored for calls and return values
-  // see jasmine spies: https://github.com/pivotal/jasmine/wiki/Spies
-  // the Firebase constructor can be spied on using spyOn(window, 'Firebase') from within the test unit
-  for(var key in this) {
-    if( !key.match(/^_/) && typeof(this[key]) === 'function' ) {
-      spyFactory(this, key);
-    }
-  }
 }
+
+MockFirebase.DEFAULT_DATA = require('./default-data.json');
 
 MockFirebase.prototype = {
   /*****************************************************
@@ -8729,14 +9796,6 @@ MockFirebase.prototype = {
   },
 
   /**
-   * Returns the last automatically generated ID
-   * @returns {string|string|*}
-   */
-  getLastAutoId: function() {
-    return this._lastAutoId;
-  },
-
-  /**
    * Generates a fake event that does not affect or derive from the actual data in this
    * mock. Great for quick event handling tests that won't rely on longer-term consistency
    * or for creating out-of-order networking conditions that are hard to produce
@@ -8750,13 +9809,12 @@ MockFirebase.prototype = {
    * @returns {MockFirebase}
    */
   fakeEvent: function(event, key, data, prevChild, pri) {
-    if (DEBUG) console.log('fakeEvent', event, this.toString(), key);
     if( arguments.length < 5 ) { pri = null; }
     if( arguments.length < 4 ) { prevChild = null; }
     if( arguments.length < 3 ) { data = null; }
     var self = this;
     var ref = event==='value'? self : self.child(key);
-    var snap = makeSnap(ref, data, pri);
+    var snap = utils.makeSnap(ref, data, pri);
     self._defer(function() {
       _.each(self._events[event], function (parts) {
         var fn = parts[0], context = parts[1];
@@ -8780,16 +9838,16 @@ MockFirebase.prototype = {
   },
 
   child: function(childPath) {
-    if( !childPath ) { throw new Error('bad child path '+this.toString()); }
-    var parts = _.isArray(childPath)? childPath : _.compact(childPath.split('/'));
+    assert(childPath, 'A child path is required');
+    var parts = _.compact(childPath.split('/'));
     var childKey = parts.shift();
     var child = this.children[childKey];
-    if( !child ) {
-      child = new MockFirebase(mergePaths(this.currentPath, childKey), this._childData(childKey), this, childKey);
-      this.children[child.name()] = child;
+    if (!child) {
+      child = new MockFirebase(utils.mergePaths(this.currentPath, childKey), this._childData(childKey), this, childKey);
+      this.children[child.key()] = child;
     }
-    if( parts.length ) {
-      child = child.child(parts);
+    if (parts.length) {
+      child = child.child(parts.join('/'));
     }
     return child;
   },
@@ -8798,9 +9856,7 @@ MockFirebase.prototype = {
     var self = this;
     var err = this._nextErr('set');
     data = _.cloneDeep(data);
-    if (DEBUG) console.log('set called',this.toString(), data);
     this._defer(function() {
-      if (DEBUG) console.log('set completed',self.toString(), data);
       if( err === null ) {
         self._dataChanged(data);
       }
@@ -8809,17 +9865,13 @@ MockFirebase.prototype = {
   },
 
   update: function(changes, callback) {
-    if( !_.isObject(changes) ) {
-      throw new Error('First argument must be an object when calling $update');
-    }
+    assert.equal(typeof changes, 'object', 'First argument must be an object when calling $update');
     var self = this;
     var err = this._nextErr('update');
     var base = this.getData();
-    var data = _.assign(_.isObject(base)? base : {}, changes);
-    if (DEBUG) console.log('update called', this.toString(), data);
+    var data = _.assign(_.isObject(base) ? base : {}, changes);
     this._defer(function() {
-      if (DEBUG) console.log('update flushed', self.toString(), data);
-      if( err === null ) {
+      if (!err) {
         self._dataChanged(data);
       }
       if (callback) callback(err);
@@ -8829,9 +9881,7 @@ MockFirebase.prototype = {
   setPriority: function(newPriority, callback) {
     var self = this;
     var err = this._nextErr('setPriority');
-    if (DEBUG) console.log('setPriority called', self.toString(), newPriority);
     self._defer(function() {
-      if (DEBUG) console.log('setPriority flushed', self.toString(), newPriority);
       self._priChanged(newPriority);
       if (callback) callback(err);
     });
@@ -8842,8 +9892,13 @@ MockFirebase.prototype = {
     this.set(data, callback);
   },
 
-  name: function() {
+  key: function() {
     return this.myName;
+  },
+
+  name: function() {
+    console.warn('ref.name() is deprecated. Use ref.key()');
+    return this.key.apply(this, arguments);
   },
 
   ref: function() {
@@ -8856,7 +9911,7 @@ MockFirebase.prototype = {
 
   root: function() {
     var next = this;
-    while(next.parentRef) {
+    while (next.parentRef) {
       next = next.parentRef;
     }
     return next;
@@ -8865,8 +9920,8 @@ MockFirebase.prototype = {
   push: function(data, callback) {
     var child = this.child(this._newAutoId());
     var err = this._nextErr('push');
-    if( err ) { child.failNext('set', err); }
-    if( arguments.length && data !== null ) {
+    if (err) child.failNext('set', err);
+    if (arguments.length && data !== null) {
       // currently, callback only invoked if child exists
       child.set(data, callback);
     }
@@ -8902,9 +9957,7 @@ MockFirebase.prototype = {
   remove: function(callback) {
     var self = this;
     var err = this._nextErr('remove');
-    if (DEBUG) console.log('remove called', this.toString());
     this._defer(function() {
-      if (DEBUG) console.log('remove completed',self.toString());
       if( err === null ) {
         self._dataChanged(null);
       }
@@ -8914,39 +9967,39 @@ MockFirebase.prototype = {
   },
 
   on: function(event, callback, cancel, context) {
-    if( arguments.length === 3 && !_.isFunction(cancel) ) {
+    if (arguments.length === 3 && typeof cancel !== 'function') {
       context = cancel;
-      cancel = function() {};
+      cancel = noop;
     }
-    else if( arguments.length < 3 ) {
-      cancel = function() {};
+    else if (arguments.length < 3) {
+      cancel = noop;
     }
 
     var err = this._nextErr('on');
-    if( err ) {
+    if (err) {
       this._defer(function() {
         cancel.call(context, err);
       });
     }
     else {
-      var eventArr = [callback, context, cancel];
-      this._events[event].push(eventArr);
+      var handlers = [callback, context, cancel];
+      this._events[event].push(handlers);
       var self = this;
-      if( event === 'value' ) {
+      if (event === 'value') {
         self._defer(function() {
           // make sure off() wasn't called in the interim
-          if( self._events[event].indexOf(eventArr) > -1) {
-            callback.call(context, makeSnap(self, self.getData(), self.priority));
+          if (self._events[event].indexOf(handlers) > -1) {
+            callback.call(context, utils.makeSnap(self, self.getData(), self.priority));
           }
         });
       }
-      else if( event === 'child_added' ) {
+      else if (event === 'child_added') {
         self._defer(function() {
-          if( self._events[event].indexOf(eventArr) > -1) {
+          if (self._events[event].indexOf(handlers) > -1) {
             var prev = null;
             _.each(self.sortedDataKeys, function (k) {
               var child = self.child(k);
-              callback.call(context, makeSnap(child, child.getData(), child.priority), prev);
+              callback.call(context, utils.makeSnap(child, child.getData(), child.priority), prev);
               prev = k;
             });
           }
@@ -8977,19 +10030,19 @@ MockFirebase.prototype = {
 
   transaction: function(valueFn, finishedFn, applyLocally) {
     var self = this;
-    var valueSpy = spyFactory(valueFn, 'trxn:valueFn');
-    var finishedSpy = spyFactory(finishedFn, 'trxn:finishedFn');
     this._defer(function() {
       var err = self._nextErr('transaction');
       // unlike most defer methods, self will use the value as it exists at the time
       // the transaction is actually invoked, which is the eventual consistent value
       // it would have in reality
-      var res = valueSpy(self.getData());
+      var res = valueFn(self.getData());
       var newData = _.isUndefined(res) || err? self.getData() : res;
       self._dataChanged(newData);
-      finishedSpy(err, err === null && !_.isUndefined(res), makeSnap(self, newData, self.priority));
+      if (typeof finishedFn === 'function') {
+        finishedFn(err, err === null && !_.isUndefined(res), utils.makeSnap(self, newData, self.priority));
+      }
     });
-    return [valueSpy, finishedSpy, applyLocally];
+    return [valueFn, finishedFn, applyLocally];
   },
 
   /**
@@ -9019,15 +10072,15 @@ MockFirebase.prototype = {
    * @param {int} limit
    */
   limit: function(limit) {
-    return new MockQuery(this).limit(limit);
+    return new Query(this).limit(limit);
   },
 
   startAt: function(priority, key) {
-    return new MockQuery(this).startAt(priority, key);
+    return new Query(this).startAt(priority, key);
   },
 
   endAt: function(priority, key) {
-    return new MockQuery(this).endAt(priority, key);
+    return new Query(this).endAt(priority, key);
   },
 
   /*****************************************************
@@ -9036,9 +10089,8 @@ MockFirebase.prototype = {
 
   _childChanged: function(ref) {
     var events = [];
-    var childKey = ref.name();
+    var childKey = ref.key();
     var data = ref.getData();
-    if (DEBUG) console.log('_childChanged', this.toString() + ' -> ' + childKey, data);
     if( data === null ) {
       this._removeChild(childKey, events);
     }
@@ -9050,13 +10102,12 @@ MockFirebase.prototype = {
 
   _dataChanged: function(unparsedData) {
     var self = this;
-    var pri = getMeta(unparsedData, 'priority', self.priority);
-    var data = cleanData(unparsedData);
+    var pri = utils.getMeta(unparsedData, 'priority', self.priority);
+    var data = utils.cleanData(unparsedData);
     if( pri !== self.priority ) {
       self._priChanged(pri);
     }
     if( !_.isEqual(data, self.data) ) {
-      if (DEBUG) console.log('_dataChanged', self.toString(), data);
       var oldKeys = _.keys(self.data).sort();
       var newKeys = _.keys(data).sort();
       var keysToRemove = _.difference(oldKeys, newKeys);
@@ -9087,10 +10138,9 @@ MockFirebase.prototype = {
   },
 
   _priChanged: function(newPriority) {
-    if (DEBUG) console.log('_priChanged', this.toString(), newPriority);
     this.priority = newPriority;
     if( this.parentRef ) {
-      this.parentRef._resort(this.name());
+      this.parentRef._resort(this.key());
     }
   },
 
@@ -9134,9 +10184,8 @@ MockFirebase.prototype = {
   },
 
   _trigger: function(event, data, pri, key) {
-    if (DEBUG) console.log('_trigger', event, this.toString(), key);
     var self = this, ref = event==='value'? self : self.child(key);
-    var snap = makeSnap(ref, data, pri);
+    var snap = utils.makeSnap(ref, data, pri);
     _.each(self._events[event], function(parts) {
       var fn = parts[0], context = parts[1];
       if(_.contains(['child_added', 'child_moved'], event)) {
@@ -9178,7 +10227,7 @@ MockFirebase.prototype = {
       this.data = {};
     }
     this._addKey(key);
-    this.data[key] = cleanData(data);
+    this.data[key] = utils.cleanData(data);
     var c = this.child(key);
     c._dataChanged(data);
     if (events) events.push(['child_added', c.getData(), c.priority, key]);
@@ -9200,7 +10249,7 @@ MockFirebase.prototype = {
   },
 
   _updateChild: function(key, data, events) {
-    var cdata = cleanData(data);
+    var cdata = utils.cleanData(data);
     if(_.isObject(this.data) && _.has(this.data,key) && !_.isEqual(this.data[key], cdata)) {
       this.data[key] = cdata;
       var c = this.child(key);
@@ -9244,7 +10293,7 @@ MockFirebase.prototype = {
   childComparator: function(a, b) {
     var aPri = this._getPri(a);
     var bPri = this._getPri(b);
-    var x = priorityComparator(aPri, bPri);
+    var x = utils.priorityComparator(aPri, bPri);
     if( x === 0 ) {
       if( a !== b ) {
         x = a < b? -1 : 1;
@@ -9254,181 +10303,107 @@ MockFirebase.prototype = {
   }
 };
 
-
-/*******************************************************************************
- * MOCK QUERY
- ******************************************************************************/
-function MockQuery(ref) {
-  this._ref = ref;
-  this._subs = [];
-  // startPri, endPri, startKey, endKey, and limit
-  this._q = {};
+/***
+ * FLUSH QUEUE
+ * A utility to make sure events are flushed in the order
+ * they are invoked.
+ ***/
+function FlushQueue() {
+  this.queuedEvents = [];
 }
 
-MockQuery.prototype = {
-  /*******************
-   * UTILITY FUNCTIONS
-   *******************/
-  flush: function() {
-    this.ref().flush.apply(this.ref(), arguments);
-    return this;
-  },
+FlushQueue.prototype.add = function(args) {
+  this.queuedEvents.push(args);
+};
 
-  autoFlush: function() {
-    this.ref().autoFlush.apply(this.ref(), arguments);
-    return this;
-  },
+FlushQueue.prototype.flush = function(delay) {
+  if( !this.queuedEvents.length ) { return; }
 
-  slice: function() {
-    return new Slice(this);
-  },
+  // make a copy of event list and reset, this allows
+  // multiple calls to flush to queue various events out
+  // of order, and ensures that events that are added
+  // while flushing go into the next flush and not this one
+  var list = this.queuedEvents;
 
-  getData: function() {
-    return this.slice().data;
-  },
+  // events could get added as we invoke
+  // the list, so make a copy and reset first
+  this.queuedEvents = [];
 
-  fakeEvent: function(event, snap) {
-    _.each(this._subs, function(parts) {
-      if( parts[0] === 'event' ) {
-        parts[1].call(parts[2], snap);
-      }
+  function process() {
+    // invoke each event
+    list.forEach(function(parts) {
+      parts[0].apply(null, parts.slice(1));
     });
-  },
+  }
 
-  /*******************
-   *   API FUNCTIONS
-   *******************/
-  on: function(event, callback, cancelCallback, context) {
-    var self = this, isFirst = true, lastSlice = this.slice(), map;
-    var fn = function(snap, prevChild) {
-      var slice = new Slice(self, event==='value'? snap : makeRefSnap(snap.ref().parent()));
-      switch(event) {
-        case 'value':
-          if( isFirst || !lastSlice.equals(slice) ) {
-            callback.call(context, slice.snap());
-          }
-          break;
-        case 'child_moved':
-          var x = slice.pos(snap.name());
-          var y = slice.insertPos(snap.name());
-          if( x > -1 && y > -1 ) {
-            callback.call(context, snap, prevChild);
-          }
-          else if( x > -1 || y > -1 ) {
-            map = lastSlice.changeMap(slice);
-          }
-          break;
-        case 'child_added':
-          if( slice.has(snap.name()) && lastSlice.has(snap.name()) ) {
-            // is a child_added for existing event so allow it
-            callback.call(context, snap, prevChild);
-          }
-          map = lastSlice.changeMap(slice);
-          break;
-        case 'child_removed':
-          map = lastSlice.changeMap(slice);
-          break;
-        case 'child_changed':
-          callback.call(context, snap);
-          break;
-        default:
-          throw new Error('Invalid event: '+event);
-      }
-
-      if( map ) {
-        var newSnap = slice.snap();
-        var oldSnap = lastSlice.snap();
-        _.each(map.added, function(addKey) {
-          self.fakeEvent('child_added', newSnap.child(addKey));
-        });
-        _.each(map.removed, function(remKey) {
-          self.fakeEvent('child_removed', oldSnap.child(remKey));
-        });
-      }
-
-      isFirst = false;
-      lastSlice = slice;
-    };
-    var cancelFn = function(err) {
-      cancelCallback.call(context, err);
-    };
-    self._subs.push([event, callback, context, fn]);
-    this.ref().on(event, fn, cancelFn);
-  },
-
-  off: function(event, callback, context) {
-    var ref = this.ref();
-    _.each(this._subs, function(parts) {
-      if( parts[0] === event && parts[1] === callback && parts[2] === context ) {
-        ref.off(event, parts[3]);
-      }
-    });
-  },
-
-  once: function(event, callback, context) {
-    var self = this;
-    // once is tricky because we want the first match within our range
-    // so we use the on() method above which already does the needed legwork
-    function fn() {
-      self.off(event, fn);
-      // the snap is already sliced in on() so we can just pass it on here
-      callback.apply(context, arguments);
-    }
-    self.on(event, fn);
-  },
-
-  limit: function(intVal) {
-    if( typeof intVal !== 'number' ) {
-      throw new Error('Query.limit: First argument must be a positive integer.');
-    }
-    var q = new MockQuery(this.ref());
-    _.extend(q._q, this._q, {limit: intVal});
-    return q;
-  },
-
-  startAt: function(priority, key) {
-    assertQuery('Query.startAt', priority, key);
-    var q = new MockQuery(this.ref());
-    _.extend(q._q, this._q, {startKey: key, startPri: priority});
-    return q;
-  },
-
-  endAt: function(priority, key) {
-    assertQuery('Query.endAt', priority, key);
-    var q = new MockQuery(this.ref());
-    _.extend(q._q, this._q, {endKey: key, endPri: priority});
-    return q;
-  },
-
-  ref: function() {
-    return this._ref;
+  if( _.isNumber(delay) ) {
+    setTimeout(process, delay);
+  }
+  else {
+    process();
   }
 };
 
+function extractName(path) {
+  return ((path || '').match(/\/([^.$\[\]#\/]+)$/)||[null, null])[1];
+}
+
+function noop () {}
+
+module.exports = MockFirebase;
+
+},{"./default-data.json":15,"./query":18,"./utils":19,"assert":5,"lodash":14}],17:[function(require,module,exports){
+'use strict';
+
+var _   = require('lodash');
+var md5 = require('MD5');
 
 /*******************************************************************************
  * SIMPLE LOGIN
  ******************************************************************************/
-function MockFirebaseSimpleLogin(ref, callback, userData) {
+function MockFirebaseSimpleLogin (ref, callback, userData) {
   // allows test units to monitor the callback function to make sure
   // it is invoked (even if one is not declared)
-  this.callback = function() { callback.apply(null, Array.prototype.slice.call(arguments, 0)); };
+  this.callback = function () { callback.apply(null, Array.prototype.slice.call(arguments, 0)); };
   this.attempts = [];
   this.failMethod = MockFirebaseSimpleLogin.DEFAULT_FAIL_WHEN;
   this.ref = ref; // we don't use ref for anything
   this.autoFlushTime = MockFirebaseSimpleLogin.DEFAULT_AUTO_FLUSH;
   this.userData = _.cloneDeep(MockFirebaseSimpleLogin.DEFAULT_USER_DATA);
   if (userData) _.assign(this.userData, userData);
-
-  // turn all our public methods into spies so they can be monitored for calls and return values
-  // see jasmine spies: https://github.com/pivotal/jasmine/wiki/Spies
-  // the constructor can be spied on using spyOn(window, 'FirebaseSimpleLogin') from within the test unit
-  for(var key in this) {
-    if( !key.match(/^_/) && typeof(this[key]) === 'function' ) {
-      spyFactory(this, key);
-    }
-  }
 }
+
+/*** PUBLIC METHODS AND FIXTURES ***/
+
+MockFirebaseSimpleLogin.DEFAULT_FAIL_WHEN = function(provider, options, user) {
+  var res = null;
+  if( ['password', 'anonymous', 'twitter', 'facebook', 'google', 'github'].indexOf(provider) === -1 ) {
+    console.error('MockFirebaseSimpleLogin:login() failed: unrecognized authentication provider '+provider);
+//      res = createError();
+  }
+  else if( !user ) {
+    res = createError('INVALID_USER', 'The specified user does not exist');
+  }
+  else if( provider === 'password' && user.password !== options.password ) {
+    res = createError('INVALID_PASSWORD', 'The specified password is incorrect');
+  }
+  return res;
+};
+
+var USER_COUNT = 100;
+MockFirebaseSimpleLogin.DEFAULT_USER_DATA = {};
+_.each(['password', 'anonymous', 'facebook', 'twitter', 'google', 'github'], function(provider) {
+  var user = createDefaultUser(provider);
+  if( provider !== 'password' ) {
+    MockFirebaseSimpleLogin.DEFAULT_USER_DATA[provider] = user;
+  }
+  else {
+    var set = MockFirebaseSimpleLogin.DEFAULT_USER_DATA[provider] = {};
+    set[user.email] = user;
+  }
+});
+
+MockFirebaseSimpleLogin.DEFAULT_AUTO_FLUSH = false;
 
 MockFirebaseSimpleLogin.prototype = {
 
@@ -9617,6 +10592,229 @@ MockFirebaseSimpleLogin.prototype = {
   }
 };
 
+function createError(code, message) {
+  return { code: code||'UNKNOWN_ERROR', message: 'FirebaseSimpleLogin: '+(message||code||'unspecific error') };
+}
+
+function createEmailUser (email, password) {
+  var id = USER_COUNT++;
+  return {
+    uid: 'password:'+id,
+    id: id,
+    email: email,
+    password: password,
+    provider: 'password',
+    md5_hash: md5(email),
+    firebaseAuthToken: 'FIREBASE_AUTH_TOKEN' //todo
+  };
+}
+
+function createDefaultUser (provider) {
+  var id = USER_COUNT++;
+
+  var out = {
+    uid: provider+':'+id,
+    id: id,
+    password: id,
+    provider: provider,
+    firebaseAuthToken: 'FIREBASE_AUTH_TOKEN' //todo
+  };
+  switch(provider) {
+    case 'password':
+      out.email = 'email@firebase.com';
+      out.md5_hash = md5(out.email);
+      break;
+    case 'twitter':
+      out.accessToken = 'ACCESS_TOKEN'; //todo
+      out.accessTokenSecret = 'ACCESS_TOKEN_SECRET'; //todo
+      out.displayName = 'DISPLAY_NAME';
+      out.thirdPartyUserData = {}; //todo
+      out.username = 'USERNAME';
+      break;
+    case 'google':
+      out.accessToken = 'ACCESS_TOKEN'; //todo
+      out.displayName = 'DISPLAY_NAME';
+      out.email = 'email@firebase.com';
+      out.thirdPartyUserData = {}; //todo
+      break;
+    case 'github':
+      out.accessToken = 'ACCESS_TOKEN'; //todo
+      out.displayName = 'DISPLAY_NAME';
+      out.thirdPartyUserData = {}; //todo
+      out.username = 'USERNAME';
+      break;
+    case 'facebook':
+      out.accessToken = 'ACCESS_TOKEN'; //todo
+      out.displayName = 'DISPLAY_NAME';
+      out.thirdPartyUserData = {}; //todo
+      break;
+    case 'anonymous':
+      break;
+    default:
+      throw new Error('Invalid auth provider', provider);
+  }
+
+  return out;
+}
+
+module.exports = MockFirebaseSimpleLogin;
+
+},{"MD5":2,"lodash":14}],18:[function(require,module,exports){
+'use strict';
+
+var _     = require('lodash');
+var utils = require('./utils');
+
+/*******************************************************************************
+ * MOCK QUERY
+ ******************************************************************************/
+function MockQuery(ref) {
+  this._ref = ref;
+  this._subs = [];
+  // startPri, endPri, startKey, endKey, and limit
+  this._q = {};
+}
+
+MockQuery.prototype = {
+  /*******************
+   * UTILITY FUNCTIONS
+   *******************/
+  flush: function() {
+    this.ref().flush.apply(this.ref(), arguments);
+    return this;
+  },
+
+  autoFlush: function() {
+    this.ref().autoFlush.apply(this.ref(), arguments);
+    return this;
+  },
+
+  slice: function() {
+    return new Slice(this);
+  },
+
+  getData: function() {
+    return this.slice().data;
+  },
+
+  fakeEvent: function(event, snap) {
+    _.each(this._subs, function(parts) {
+      if( parts[0] === 'event' ) {
+        parts[1].call(parts[2], snap);
+      }
+    });
+  },
+
+  /*******************
+   *   API FUNCTIONS
+   *******************/
+  on: function(event, callback, cancelCallback, context) {
+    var self = this, isFirst = true, lastSlice = this.slice(), map;
+    var fn = function(snap, prevChild) {
+      var slice = new Slice(self, event==='value'? snap : utils.makeRefSnap(snap.ref().parent()));
+      switch(event) {
+        case 'value':
+          if( isFirst || !lastSlice.equals(slice) ) {
+            callback.call(context, slice.snap());
+          }
+          break;
+        case 'child_moved':
+          var x = slice.pos(snap.key());
+          var y = slice.insertPos(snap.key());
+          if( x > -1 && y > -1 ) {
+            callback.call(context, snap, prevChild);
+          }
+          else if( x > -1 || y > -1 ) {
+            map = lastSlice.changeMap(slice);
+          }
+          break;
+        case 'child_added':
+          if( slice.has(snap.key()) && lastSlice.has(snap.key()) ) {
+            // is a child_added for existing event so allow it
+            callback.call(context, snap, prevChild);
+          }
+          map = lastSlice.changeMap(slice);
+          break;
+        case 'child_removed':
+          map = lastSlice.changeMap(slice);
+          break;
+        case 'child_changed':
+          callback.call(context, snap);
+          break;
+        default:
+          throw new Error('Invalid event: '+event);
+      }
+
+      if( map ) {
+        var newSnap = slice.snap();
+        var oldSnap = lastSlice.snap();
+        _.each(map.added, function(addKey) {
+          self.fakeEvent('child_added', newSnap.child(addKey));
+        });
+        _.each(map.removed, function(remKey) {
+          self.fakeEvent('child_removed', oldSnap.child(remKey));
+        });
+      }
+
+      isFirst = false;
+      lastSlice = slice;
+    };
+    var cancelFn = function(err) {
+      cancelCallback.call(context, err);
+    };
+    self._subs.push([event, callback, context, fn]);
+    this.ref().on(event, fn, cancelFn);
+  },
+
+  off: function(event, callback, context) {
+    var ref = this.ref();
+    _.each(this._subs, function(parts) {
+      if( parts[0] === event && parts[1] === callback && parts[2] === context ) {
+        ref.off(event, parts[3]);
+      }
+    });
+  },
+
+  once: function(event, callback, context) {
+    var self = this;
+    // once is tricky because we want the first match within our range
+    // so we use the on() method above which already does the needed legwork
+    function fn() {
+      self.off(event, fn);
+      // the snap is already sliced in on() so we can just pass it on here
+      callback.apply(context, arguments);
+    }
+    self.on(event, fn);
+  },
+
+  limit: function(intVal) {
+    if( typeof intVal !== 'number' ) {
+      throw new Error('Query.limit: First argument must be a positive integer.');
+    }
+    var q = new MockQuery(this.ref());
+    _.extend(q._q, this._q, {limit: intVal});
+    return q;
+  },
+
+  startAt: function(priority, key) {
+    assertQuery('Query.startAt', priority, key);
+    var q = new MockQuery(this.ref());
+    _.extend(q._q, this._q, {startKey: key, startPri: priority});
+    return q;
+  },
+
+  endAt: function(priority, key) {
+    assertQuery('Query.endAt', priority, key);
+    var q = new MockQuery(this.ref());
+    _.extend(q._q, this._q, {endKey: key, endPri: priority});
+    return q;
+  },
+
+  ref: function() {
+    return this._ref;
+  }
+};
+
 /***
  * DATA SLICE
  * A utility to handle limits, startAts, and endAts
@@ -9673,7 +10871,7 @@ Slice.prototype = {
       ref = ref.child(key);
       pri = this.pri(key);
     }
-    return makeSnap(ref, data, pri);
+    return utils.makeSnap(ref, data, pri);
   },
 
   get: function(key) {
@@ -9702,16 +10900,16 @@ Slice.prototype = {
 
   _inRange: function(props, key, pri, pos) {
     if( pos === -1 ) { return false; }
-    if( !_.isUndefined(props.startPri) && priorityComparator(pri, props.startPri) < 0 ) {
+    if( !_.isUndefined(props.startPri) && utils.priorityComparator(pri, props.startPri) < 0 ) {
       return false;
     }
-    if( !_.isUndefined(props.startKey) && priorityComparator(key, props.startKey) < 0 ) {
+    if( !_.isUndefined(props.startKey) && utils.priorityComparator(key, props.startKey) < 0 ) {
       return false;
     }
-    if( !_.isUndefined(props.endPri) && priorityComparator(pri, props.endPri) > 0 ) {
+    if( !_.isUndefined(props.endPri) && utils.priorityComparator(pri, props.endPri) > 0 ) {
       return false;
     }
-    if( !_.isUndefined(props.endKey) && priorityComparator(key, props.endKey) > 0 ) {
+    if( !_.isUndefined(props.endKey) && utils.priorityComparator(key, props.endKey) > 0 ) {
       return false;
     }
     if( props.max > -1 && pos > props.max ) {
@@ -9728,7 +10926,7 @@ Slice.prototype = {
     }
     for(i = 0; i < len; i++) {
       k = keys[i];
-      x = priAndKeyComparator(pri, key, ref.child(k).priority, k);
+      x = utils.priAndKeyComparator(pri, key, ref.child(k).priority, k);
       if( x === 0 ) {
         // if the key is undefined, we may have several matching comparisons
         // so we will record both the first and last successful match
@@ -9802,237 +11000,56 @@ Slice.prototype = {
   }
 };
 
-/***
- * FLUSH QUEUE
- * A utility to make sure events are flushed in the order
- * they are invoked.
- ***/
-function FlushQueue() {
-  this.queuedEvents = [];
+function assertQuery(method, pri, key) {
+  if (pri !== null && typeof(pri) !== 'string' && typeof(pri) !== 'number') {
+    throw new Error(method + ' failed: first argument must be a valid firebase priority (a string, number, or null).');
+  }
+  if (!_.isUndefined(key)) {
+    utils.assertKey(method, key, 'second');
+  }
 }
 
-FlushQueue.prototype.add = function(args) {
-  this.queuedEvents.push(args);
-};
+module.exports = MockQuery;
 
-FlushQueue.prototype.flush = function(delay) {
-  if( !this.queuedEvents.length ) { return; }
+},{"./utils":19,"lodash":14}],19:[function(require,module,exports){
+'use strict';
 
-  // make a copy of event list and reset, this allows
-  // multiple calls to flush to queue various events out
-  // of order, and ensures that events that are added
-  // while flushing go into the next flush and not this one
-  var list = this.queuedEvents;
+var _ = require('lodash');
 
-  // events could get added as we invoke
-  // the list, so make a copy and reset first
-  this.queuedEvents = [];
-
-  function process() {
-    // invoke each event
-    list.forEach(function(parts) {
-      parts[0].apply(null, parts.slice(1));
-    });
-  }
-
-  if( _.isNumber(delay) ) {
-    setTimeout(process, delay);
-  }
-  else {
-    process();
-  }
-};
-
-
-function priAndKeyComparator(testPri, testKey, valPri, valKey) {
-  var x = 0;
-  if( !_.isUndefined(testPri) ) {
-    x = priorityComparator(testPri, valPri);
-  }
-  if( x === 0 && !_.isUndefined(testKey) && testKey !== valKey ) {
-    x = testKey < valKey? -1 : 1;
-  }
-  return x;
-}
-
-function priorityComparator(a,b) {
-  if (a !== b) {
-    if( a === null || b === null ) {
-      return a === null? -1 : 1;
-    }
-    if (typeof a !== typeof b) {
-      return typeof a === 'number' ? -1 : 1;
-    } else {
-      return a > b ? 1 : -1;
-    }
-  }
-  return 0;
-}
-
-var spyFactory = (function() {
-  var spyFunction;
-  if( typeof(global.jasmine) !== 'undefined' ) {
-    spyFunction = function(obj, method) {
-      var fn, spy;
-      if( typeof(obj) === 'object' ) {
-        spy = global.spyOn(obj, method);
-        if( typeof(spy.andCallThrough) === 'function' ) {
-          // karma < 0.12.x
-          fn = spy.andCallThrough();
-        }
-        else {
-          fn = spy.and.callThrough();
-        }
-      }
-      else {
-        spy = global.jasmine.createSpy(method);
-        if( typeof(arguments[0]) === 'function' ) {
-          if( typeof(spy.andCallFake) === 'function' ) {
-            // karma < 0.12.x
-            fn = spy.andCallFake(obj);
-          }
-          else {
-            fn = spy.and.callFake(obj);
-          }
-        }
-        else {
-          fn = spy;
-        }
-      }
-      return fn;
-    };
-  }
-  else {
-    spyFunction = function(obj, method) {
-      var sinon = (typeof window !== "undefined" ? window.sinon : typeof global !== "undefined" ? global.sinon : null);
-      if ( typeof (obj) === 'object') {
-        return sinon.spy(obj, method);
-      }
-      else {
-        return sinon.spy(obj);
-      }
-    };
-  }
-  return spyFunction;
-})();
-
-var USER_COUNT = 100;
-function createEmailUser(email, password) {
-  var id = USER_COUNT++;
-  return {
-    uid: 'password:'+id,
-    id: id,
-    email: email,
-    password: password,
-    provider: 'password',
-    md5_hash: md5(email),
-    firebaseAuthToken: 'FIREBASE_AUTH_TOKEN' //todo
-  };
-}
-
-function createDefaultUser(provider) {
-  var id = USER_COUNT++;
-
-  var out = {
-    uid: provider+':'+id,
-    id: id,
-    password: id,
-    provider: provider,
-    firebaseAuthToken: 'FIREBASE_AUTH_TOKEN' //todo
-  };
-  switch(provider) {
-    case 'password':
-      out.email = 'email@firebase.com';
-      out.md5_hash = md5(out.email);
-      break;
-    case 'twitter':
-      out.accessToken = 'ACCESS_TOKEN'; //todo
-      out.accessTokenSecret = 'ACCESS_TOKEN_SECRET'; //todo
-      out.displayName = 'DISPLAY_NAME';
-      out.thirdPartyUserData = {}; //todo
-      out.username = 'USERNAME';
-      break;
-    case 'google':
-      out.accessToken = 'ACCESS_TOKEN'; //todo
-      out.displayName = 'DISPLAY_NAME';
-      out.email = 'email@firebase.com';
-      out.thirdPartyUserData = {}; //todo
-      break;
-    case 'github':
-      out.accessToken = 'ACCESS_TOKEN'; //todo
-      out.displayName = 'DISPLAY_NAME';
-      out.thirdPartyUserData = {}; //todo
-      out.username = 'USERNAME';
-      break;
-    case 'facebook':
-      out.accessToken = 'ACCESS_TOKEN'; //todo
-      out.displayName = 'DISPLAY_NAME';
-      out.thirdPartyUserData = {}; //todo
-      break;
-    case 'anonymous':
-      break;
-    default:
-      throw new Error('Invalid auth provider', provider);
-  }
-
-  return out;
-}
-
-function ref(path, autoSyncDelay) {
-  var reference = new MockFirebase();
-  reference.flushDelay = _.isUndefined(autoSyncDelay)? true : autoSyncDelay;
-  if( path ) { reference = reference.child(path); }
-  return reference;
-}
-
-function mergePaths(base, add) {
-  return base.replace(/\/$/, '')+'/'+add.replace(/^\//, '');
-}
-
-function makeRefSnap(ref) {
-  return makeSnap(ref, ref.getData(), ref.priority);
-}
-
-function makeSnap(ref, data, pri) {
+exports.makeSnap = function makeSnap (ref, data, pri) {
   data = _.cloneDeep(data);
-  if(_.isObject(data) && _.isEmpty(data)) { data = null; }
+  if (_.isObject(data) && _.isEmpty(data)) { data = null; }
   return {
-    val: function() { return data; },
-    ref: function() { return ref; },
-    name: function() { return ref.name(); },
-    getPriority: function() { return pri; },
+    val: function () { return data; },
+    ref: function () { return ref; },
+    name: function () {
+      console.warn('DataSnapshot.name() is deprecated. Use DataSnapshot.key()');
+      return this.key.apply(this, arguments);
+    },
+    key: function () { return ref.key(); },
+    getPriority: function () { return pri; },
     forEach: function(cb, scope) {
       var self = this;
-      _.each(data, function(v, k) {
+      _.each(data, function (v, k) {
         var res = cb.call(scope, self.child(k));
         return res !== true;
       });
     },
-    child: function(key) {
+    child: function (key) {
       return makeSnap(ref.child(key), _.isObject(data) && _.has(data, key)? data[key] : null, ref.child(key).priority);
     }
   };
-}
+};
 
-function extractName(path) {
-  return ((path || '').match(/\/([^.$\[\]#\/]+)$/)||[null, null])[1];
-}
+exports.makeRefSnap = function makeRefSnap(ref) {
+  return exports.makeSnap(ref, ref.getData(), ref.priority);
+};
 
-function createError(code, message) {
-  return { code: code||'UNKNOWN_ERROR', message: 'FirebaseSimpleLogin: '+(message||code||'unspecific error') };
-}
+exports.mergePaths = function mergePaths (base, add) {
+  return base.replace(/\/$/, '')+'/'+add.replace(/^\//, '');
+};
 
-function getMeta(data, key, defaultVal) {
-  var val = defaultVal;
-  var metaKey = '.' + key;
-  if( _.isObject(data) && _.has(data, metaKey) ) {
-    val = data[metaKey];
-    delete data[metaKey];
-  }
-  return val;
-}
-
-function cleanData(data) {
+exports.cleanData = function cleanData(data) {
   var newData = _.clone(data);
   if(_.isObject(newData)) {
     if(_.has(newData, '.value')) {
@@ -10047,167 +11064,70 @@ function cleanData(data) {
     if(_.isEmpty(newData)) { newData = null; }
   }
   return newData;
-}
+};
 
-function assertKey(method, key, argNum) {
+exports.getMeta = function getMeta (data, key, defaultVal) {
+  var val = defaultVal;
+  var metaKey = '.' + key;
+  if (_.isObject(data) && _.has(data, metaKey)) {
+    val = data[metaKey];
+    delete data[metaKey];
+  }
+  return val;
+};
+
+exports.assertKey = function assertKey (method, key, argNum) {
   if (!argNum) argNum = 'first';
-  if( typeof(key) !== 'string' || key.match(/[.#$\/\[\]]/) ) {
-    throw new Error(method + ' failed: '+argNum+' was an invalid key "'+(key+'')+'. Firebase keys must be non-empty strings and can\'t contain ".", "#", "$", "/", "[", or "]"');
-  }
-}
-
-function assertQuery(method, pri, key) {
-  if( pri !== null && typeof(pri) !== 'string' && typeof(pri) !== 'number' ) {
-    throw new Error(method + ' failed: first argument must be a valid firebase priority (a string, number, or null).');
-  }
-  if(!_.isUndefined(key)) {
-    assertKey(method, key, 'second');
-  }
-}
-
-/*** PUBLIC METHODS AND FIXTURES ***/
-
-MockFirebaseSimpleLogin.DEFAULT_FAIL_WHEN = function(provider, options, user) {
-  var res = null;
-  if( ['password', 'anonymous', 'twitter', 'facebook', 'google', 'github'].indexOf(provider) === -1 ) {
-    console.error('MockFirebaseSimpleLogin:login() failed: unrecognized authentication provider '+provider);
-//      res = createError();
-  }
-  else if( !user ) {
-    res = createError('INVALID_USER', 'The specified user does not exist');
-  }
-  else if( provider === 'password' && user.password !== options.password ) {
-    res = createError('INVALID_PASSWORD', 'The specified password is incorrect');
-  }
-  return res;
-};
-
-MockFirebaseSimpleLogin.DEFAULT_USER_DATA = {};
-_.each(['password', 'anonymous', 'facebook', 'twitter', 'google', 'github'], function(provider) {
-  var user = createDefaultUser(provider);
-  if( provider !== 'password' ) {
-    MockFirebaseSimpleLogin.DEFAULT_USER_DATA[provider] = user;
-  }
-  else {
-    var set = MockFirebaseSimpleLogin.DEFAULT_USER_DATA[provider] = {};
-    set[user.email] = user;
-  }
-});
-
-
-MockFirebase.md5 = md5;
-MockFirebaseSimpleLogin.DEFAULT_AUTO_FLUSH = false;
-
-MockFirebase._ = _; // expose for tests
-MockFirebase.Query = MockQuery; // expose for tests
-
-MockFirebase.override = function () {
-  /* global window */
-  if (typeof window !== 'undefined') {
-    MockFirebase._origFirebase = window.Firebase;
-    MockFirebase._origFirebaseSimpleLogin = window.FirebaseSimpleLogin;
-    window.Firebase = MockFirebase;
-    window.FirebaseSimpleLogin = MockFirebaseSimpleLogin;
-  }
-  else {
-    console.warn('MockFirebase.override is only useful in a browser environment.');
+  if (typeof(key) !== 'string' || key.match(/[.#$\/\[\]]/)) {
+    throw new Error(method + ' failed: '+ argNum+' was an invalid key "'+(key+'')+'. Firebase keys must be non-empty strings and can\'t contain ".", "#", "$", "/", "[", or "]"');
   }
 };
 
-MockFirebase.ref = ref;
-MockFirebase.DEFAULT_DATA  = {
-  'data': {
-    'a': {
-      aString: 'alpha',
-      aNumber: 1,
-      aBoolean: false
-    },
-    'b': {
-      aString: 'bravo',
-      aNumber: 2,
-      aBoolean: true
-    },
-    'c': {
-      aString: 'charlie',
-      aNumber: 3,
-      aBoolean: true
-    },
-    'd': {
-      aString: 'delta',
-      aNumber: 4,
-      aBoolean: true
-    },
-    'e': {
-      aString: 'echo',
-      aNumber: 5
+exports.priAndKeyComparator = function priAndKeyComparator (testPri, testKey, valPri, valKey) {
+  var x = 0;
+  if (!_.isUndefined(testPri)) {
+    x = exports.priorityComparator(testPri, valPri);
+  }
+  if (x === 0 && !_.isUndefined(testKey) && testKey !== valKey) {
+    x = testKey < valKey? -1 : 1;
+  }
+  return x;
+};
+
+exports.priorityComparator = function priorityComparator (a, b) {
+  if (a !== b) {
+    if (a === null || b === null) {
+      return a === null? -1 : 1;
     }
-  },
-  'index': {
-    'b': true,
-    'c': 1,
-    'e': false,
-    'z': true // must not exist in `data`
-  },
-  'ordered': {
-    'null_a': {
-      aNumber: 0,
-      aLetter: 'a'
-    },
-    'null_b': {
-      aNumber: 0,
-      aLetter: 'b'
-    },
-    'null_c': {
-      aNumber: 0,
-      aLetter: 'c'
-    },
-    'num_1_a': {
-      '.priority': 1,
-      aNumber: 1
-    },
-    'num_1_b': {
-      '.priority': 1,
-      aNumber: 1
-    },
-    'num_2': {
-      '.priority': 2,
-      aNumber: 2
-    },
-    'num_3': {
-      '.priority': 3,
-      aNumber: 3
-    },
-    'char_a_1': {
-      '.priority': 'a',
-      aNumber: 1,
-      aLetter: 'a'
-    },
-    'char_a_2': {
-      '.priority': 'a',
-      aNumber: 2,
-      aLetter: 'a'
-    },
-    'char_b': {
-      '.priority': 'b',
-      aLetter: 'b'
-    },
-    'char_c': {
-      '.priority': 'c',
-      aLetter: 'c'
+    if (typeof a !== typeof b) {
+      return typeof a === 'number' ? -1 : 1;
+    } else {
+      return a > b ? 1 : -1;
     }
   }
+  return 0;
 };
 
-exports.MockFirebase = MockFirebase;
-exports.MockFirebaseSimpleLogin = MockFirebaseSimpleLogin;
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"MD5":1,"lodash":7}]},{},[8])
-(8)
+},{"lodash":14}]},{},[1])(1)
 });;(function (window) {
   'use strict';
-  if (typeof window === 'object') {
+  if (typeof window !== 'undefined' && window.mockfirebase) {
     window.MockFirebase = window.mockfirebase.MockFirebase;
     window.MockFirebaseSimpleLogin = window.mockfirebase.MockFirebaseSimpleLogin;
+
+    var originals = false;
+    window.MockFirebase.override = function () {
+      originals = {
+        firebase: window.Firebase,
+        login: window.FirebaseSimpleLogin
+      };
+      window.Firebase = window.mockfirebase.MockFirebase;
+      window.FirebaseSimpleLogin = window.mockfirebase.MockFirebaseSimpleLogin;
+    };
+    window.MockFirebase.restore = function () {
+      if (!originals) return;
+      window.Firebase = originals.firebase;
+      window.FirebaseSimpleLogin = originals.login;
+    };
   }
 })(window);

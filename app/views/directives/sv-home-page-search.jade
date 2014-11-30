@@ -1,13 +1,12 @@
 form.form-inline.search-home-page(id="form", name="form", ng-submit="mainSearch()")
   .form-group
-    button.btn.btn-default.text-right.select-home-search(placeholder='For Sale &nbsp'
-    ng-model='chooseType' data-html='1' ng-options='estateType.value as estateType.label for estateType in estateTypes',
-    bs-select='types') For Sale
+    select.btn.btn-default.text-right.select-home-search(ng-model='property.value'
+      ng-options='estateType.value as estateType.label for estateType in estateTypes') For Sale
       span.caret
   .form-group
     input.form-control.input-search(type="location", name="location" id="location", placeholder="City, State, Zip Code or #MLS", ng-model="query.location")
   .form-group
-    button.btn.btn-primary.btn-search-home-page.btn-mob-dev
+    button.btn.btn-primary.btn-search-home-page.btn-mob-dev(ng-click='mainSearch()')
       i.fa.fa-search.fa-fw
       |Search
 

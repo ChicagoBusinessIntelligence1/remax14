@@ -4,7 +4,6 @@ var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', '
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
     //$locationProvider.html5Mode(true);
-
     $stateProvider
       .state('app', {
         abstract: true,

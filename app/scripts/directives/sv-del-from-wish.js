@@ -10,9 +10,6 @@ angular.module('app')
         removeWishList: '&'
       },
       link: function ($scope, element, attr) {
-        $scope.removeFromWish = function () {
-          toastr.success('notifications.wishListUpdated');
-        };
         var removeFromWish = $popover(element, {
           container: 'body',
           template: '../../views/popover/remove-from-wish-popover.html',

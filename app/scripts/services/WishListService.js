@@ -45,11 +45,9 @@ angular.module('app')
 
         that.repoRef.$remove(key).then(function () {
           deferred.resolve(true);
-          toastr.warning(notifications.wishListUpdated);
+          toastr.success(notifications.wishListUpdated);
         });
         return deferred.promise;
       }
-
     };
-
   });

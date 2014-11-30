@@ -25,7 +25,6 @@ angular.module('app')
             }
           }
           deferred.resolve(homesInWatchList);
-
         })
 
         return deferred.promise;
@@ -49,11 +48,8 @@ angular.module('app')
             }
           }
           deferred.resolve(homesInWatchList);
-
         })
-
         return deferred.promise;
       }
     };
-
   });

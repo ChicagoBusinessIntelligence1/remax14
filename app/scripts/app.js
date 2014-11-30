@@ -1,3 +1,8 @@
+			.state("app.become-our-agent", {
+				url: "/become-our-agent", 
+				controller:"BecomeOurAgentCtrl",
+				templateUrl: "../views/become-our-agent-ctrl.html"
+			})
 'use strict';
 
 var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])

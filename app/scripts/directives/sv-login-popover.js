@@ -9,8 +9,8 @@ angular.module('app')
                     scope: scope,
                     title: 'Login',
                     template: '../../views/popover/login-fb.html',
-                    placement: 'bottom'
-
+                    placement: 'bottom',
+                    autoClose:1
                 });
             }
         };

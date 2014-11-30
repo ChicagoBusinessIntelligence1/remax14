@@ -84,12 +84,12 @@ app.value('sortTypes',
 app.value('estateTypes',
   [
     {
-      "value": "date",
-      "label": "For Sale &nbsp"
+      "value": "sale",
+      "label": "For Sale"
     },
     {
-      "value": "priceLow",
-      "label": "For Rent &nbsp"
+      "value": "rent",
+      "label": "For Rent"
     }
   ]);
 

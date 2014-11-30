@@ -46,9 +46,7 @@ angular.module('app')
               AuthService.logOut();
               $state.go('app.home', null, {reload: true});
             });
-
           });
-
         };
       }
     };

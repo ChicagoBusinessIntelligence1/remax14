@@ -57,7 +57,7 @@ angular.module('app')
           $scope.home = BrokerService.addBroker($scope.home, $rootScope.user);
           $scope.home = AddSearchFeaturesService.decorate($scope.home);
           HomeService.saveToDrafts($scope.home).then(function (result) {
-            $state.go("app.profile.drafts");
+            $state.go("app.structure.profile.drafts");
           });
         };
 

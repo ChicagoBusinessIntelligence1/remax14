@@ -14,7 +14,7 @@ angular.module('app')
           QueryService.run($scope.search.$id).then(function (query) {
             query.isRunFromSaved = true;
             $rootScope.query = query;
-            $state.go('app.search-sale-results', query, {reload: true});
+            $state.go('app.structure.search-sale-results', query, {reload: true});
           });
         };
       }

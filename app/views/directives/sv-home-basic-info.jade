@@ -9,13 +9,13 @@
       .col-sm-12
         ul.list-inline
           li
-            a.text-app.address-basic(ui-sref='app.remax-home({mls:home.$id})')
+            a.text-app.address-basic(ui-sref='app.structure.remax-home({mls:home.$id})')
               | {{home|showSectionProp:'street'}},
               | {{home|showSectionProp:'city'}},
               | {{home|showSectionProp:'state'}}
               | {{home|showSectionProp:'zip'}}
           li.pull-right
-            a.price-style(ui-sref='app.remax-home')
+            a.price-style(ui-sref='app.structure.remax-home')
               | {{home|showSectionProp:'price'|currency:"$":0}}
   .app-content-five
     .row
@@ -30,11 +30,11 @@
   .row
     .col-sm-7
       div(ng-if="!isRent")
-        a.thumbnail(ui-sref='app.remax-home({mls:home.$id})')
+        a.thumbnail(ui-sref='app.structure.remax-home({mls:home.$id})')
           sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
           img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
       div(ng-if="isRent")
-        a.thumbnail(ui-sref='app.remax-home-rent({mls:home.$id})')
+        a.thumbnail(ui-sref='app.structure.remax-home-rent({mls:home.$id})')
           sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
           img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
     .col-sm-5
@@ -45,10 +45,10 @@
           | {{home|showSectionProp:'propertyDescription'}}
           span(ng-if='!isRent')
             em
-              a(ui-sref='app.remax-home({mls:home.$id})').read-more  Read more...
+              a(ui-sref='app.structure.remax-home({mls:home.$id})').read-more  Read more...
           span(ng-if='isRent')
             em
-              a(ui-sref='app.remax-home-rent({mls:home.$id})').read-more  Read more...
+              a(ui-sref='app.structure.remax-home-rent({mls:home.$id})').read-more  Read more...
   .row
     .col-sm-7
       p.alert.alert-info.text-center

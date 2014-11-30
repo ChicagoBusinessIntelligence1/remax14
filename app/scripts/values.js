@@ -108,7 +108,7 @@ app.value('notifications', {
   savedToWatchlist: 'Listing has been successfully saved to watchlist',
   searchSaved: 'This Search is Saved to Your Profile',
   brokerAppSubmitted: 'You Broker Application has been successfully submitted',
-  brokerInfoDeleted: 'Broker account was successfully removed',
+  brokerInfoDeleted: 'Broker account was successfully deleted',
   profileDeleted: 'You profile has been successfully deleted',
   settingsSaved: 'You settings have been successfully saved',
   profileSaved: 'You profile has been successfully saved',

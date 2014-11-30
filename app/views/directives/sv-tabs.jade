@@ -5,5 +5,5 @@ div
   .tab-content
     .tab-pane.active
       ul.list-unstyled
-        li.tabs(ng-repeat="tab in tabs" ng-if='$index  === tabActive')
+        li.tabs(ng-repeat="tab in tabs" ng-show='$index  === tabActive')
           div(ng-include='tab.view')

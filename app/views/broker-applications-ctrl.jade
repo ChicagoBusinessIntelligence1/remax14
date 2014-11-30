@@ -1,5 +1,5 @@
 div
-  h4.label.label-default(ng-if='!requests.length') You do not have any brokers requests.
+  h4.label.label-default(ng-show='!requests.length') You do not have any brokers requests.
   h3(ng-if='requests.length') Broker Account Requests
   ul.list-unstyled
     li(ng-repeat = 'r in requests')

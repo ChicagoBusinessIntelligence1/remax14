@@ -1,10 +1,42 @@
 'use strict';
 
 angular.module('app')
-  .factory('SearchService', function ($firebase, $q, $rootScope) {
+  .factory('SearchService', function ($firebase, $q, $rootScope, urlSale) {
     return {
       repoUrl: null,
       repoRef: null,
+
+      findByCity: function (city) {
+        var defered = $q.defer();
+        var arrHomes = [];
+        var urlResSale = urlSale.residential;
+
+        var ref = new Firebase(urlResSale);
+        var repo = $firebase(ref);
+        repo.$asArray().$loaded(function (homes) {
+          for (var i = 0; i < homes.length; i++) {
+            var home = homes[i];
+            for (var j = 0; j < home.length; j++) {
+              var section = home[j].content;
+              if (_.isUndefined(section)) {
+                continue;
+              }
+              for (var k = 0; k < section.length; k++) {
+                var property = section[k];
+                if (property.title === 'city') {
+                  if (property.value === city) {
+                    arrHomes.push(home);
+                    continue;
+                  }
+                }
+              }
+            }
+          }
+          defered.resolve(arrHomes);
+        })
+
+        return defered.promise;
+      },
 
       find: function (url) {
         var that = this;
@@ -56,10 +88,9 @@ angular.module('app')
                         break;
                       }
 
-                        var propValueArr = _.map(property.value.toString().split(' '), function (el) {
-                          return el.trim().toLowerCase()
-                        });
-
+                      var propValueArr = _.map(property.value.toString().split(' '), function (el) {
+                        return el.trim().toLowerCase()
+                      });
 
                       var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
                       queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);

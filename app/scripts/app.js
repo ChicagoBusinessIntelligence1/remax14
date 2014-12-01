@@ -1,8 +1,3 @@
-			.state("app.city-homes", {
-				url: "/city-homes", 
-				controller:"CityHomesCtrl",
-				templateUrl: "../views/city-homes-ctrl.html"
-			})
 'use strict';
 
 var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', 'ngMessages', 'ngAnimate', 'famous.angular', 'ngSanitize', 'mgcrea.ngStrap.dropdown', 'mgcrea.ngStrap.modal', 'ui.bootstrap', 'ui.router', 'mgcrea.ngStrap.tooltip', 'mgcrea.ngStrap.helpers.dimensions', 'mgcrea.ngStrap.typeahead', 'mgcrea.ngStrap.popover', 'mgcrea.ngStrap.select', 'mgcrea.ngStrap.datepicker', 'xeditable', 'mgcrea.ngStrap.tab'])
@@ -272,6 +267,12 @@ var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', '
         url: "/registered-brokers",
         controller: "RegisteredBrokersCtrl",
         templateUrl: "../views/registered-brokers-ctrl.html"
+      })
+
+      .state("app.structure.city-homes", {
+        url: "/homes-in/:city",
+        controller:"CityHomesCtrl",
+        templateUrl: "../views/city-homes-ctrl.html"
       })
   }).directive('ngThumb', ['$window', function ($window) {
     var helper = {

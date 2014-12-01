@@ -41,7 +41,7 @@ angular.module('app')
             })
             break;
         }
-        $scope.$on('remove-from-watch', function (event,mls ) {
+        $scope.$on('remove-from-watch', function (event, mls) {
           if ($scope.homeStatus !== 'watchList') {
             return;
           }

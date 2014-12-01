@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('app')
-  .factory('SearchService', function ($firebase, $q, $rootScope, urlSale) {
+  .factory('SearchService', function ($firebase, $q, $rootScope) {
     return {
       repoUrl: null,
       repoRef: null,
 
-      findByCity: function (city) {
+      findByCity: function (city, url) {
         var defered = $q.defer();
         var arrHomes = [];
-        var urlResSale = urlSale.residential;
+        var urlRes = url.residential;
 
-        var ref = new Firebase(urlResSale);
+        var ref = new Firebase(urlRes);
         var repo = $firebase(ref);
         repo.$asArray().$loaded(function (homes) {
           for (var i = 0; i < homes.length; i++) {

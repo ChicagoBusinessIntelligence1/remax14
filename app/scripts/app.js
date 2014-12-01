@@ -274,6 +274,11 @@ var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', '
         controller:"CityHomesCtrl",
         templateUrl: "../views/city-homes-ctrl.html"
       })
+      .state("app.structure.city-homes-rental", {
+        url: "/rental-homes-in/:city",
+        controller:"CityHomesRentalCtrl",
+        templateUrl: "../views/city-homes-rental-ctrl.html"
+      })
   }).directive('ngThumb', ['$window', function ($window) {
     var helper = {
       support: !!($window.FileReader && $window.CanvasRenderingContext2D),

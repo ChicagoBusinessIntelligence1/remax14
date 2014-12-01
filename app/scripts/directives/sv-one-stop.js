@@ -59,7 +59,7 @@ angular.module('app')
             size: [100, 50],
             content: "<div >" + adv + "</div>"
           });
-          mainContext.add(indAdvMod).add(surface);
+          //mainContext.add(indAdvMod).add(surface);
         }
         mainContext.add(signModifier).add(sign);
         sign.on('click', function () {

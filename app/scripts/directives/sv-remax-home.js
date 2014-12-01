@@ -38,6 +38,16 @@ angular.module('app')
         $scope.home = HomeService.getArrayFire(url, mls, $scope.isDraft);
         $scope.isDataLoading = true;
 
+        $scope.clearGallery = function () {
+
+          var homeSection = HomeService.findSection($scope.home, 'images');
+          homeSection.content=[];
+
+          HomeService.updateHomeSection(homeSection).then(function () {
+            $scope.images = [];
+          })
+        }
+
         $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;

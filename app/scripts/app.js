@@ -274,7 +274,7 @@ var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', '
         controller:"CityHomesCtrl",
         templateUrl: "../views/city-homes-ctrl.html"
       })
-      .state("app.city-homes-rental", {
+      .state("app.structure.city-homes-rental", {
         url: "/rental-homes-in/:city",
         controller:"CityHomesRentalCtrl",
         templateUrl: "../views/city-homes-rental-ctrl.html"

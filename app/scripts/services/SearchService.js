@@ -16,20 +16,8 @@ angular.module('app')
         repo.$asArray().$loaded(function (homes) {
           for (var i = 0; i < homes.length; i++) {
             var home = homes[i];
-            for (var j = 0; j < home.length; j++) {
-              var section = home[j].content;
-              if (_.isUndefined(section)) {
-                continue;
-              }
-              for (var k = 0; k < section.length; k++) {
-                var property = section[k];
-                if (property.title === 'city') {
-                  if (property.value === city) {
-                    arrHomes.push(home);
-                    continue;
-                  }
-                }
-              }
+            if (home[0].city === city) {
+             arrHomes.push(home);
             }
           }
           defered.resolve(arrHomes);
@@ -94,7 +82,6 @@ angular.module('app')
 
                       var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
                       queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);
-
                       break;
 
                     case'price':

@@ -49,6 +49,7 @@ angular.module('app')
                   switch (property.title) {
 
                     case 'city':
+                    case 'mls':
                     case 'state':
                     case 'zip':
                       if (_.isUndefined(query.location)) {

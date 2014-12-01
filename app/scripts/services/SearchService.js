@@ -60,6 +60,7 @@ angular.module('app')
                           return el.trim().toLowerCase()
                         });
 
+
                       var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
                       queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);
 

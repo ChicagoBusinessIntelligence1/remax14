@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePageSearch', function ($rootScope, estateTypes,$state) {
+  .directive('svHomePageSearch', function ($rootScope, estateTypes, $state) {
     return {
       restrict: 'E',
       replace: true,

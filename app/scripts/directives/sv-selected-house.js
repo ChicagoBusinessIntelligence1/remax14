@@ -10,10 +10,7 @@ angular.module('app')
         houses: '='
       },
       link: function ($scope, element, attr) {
-
         $scope.isInfoVisible = false;
-
-
       }
     };
   });

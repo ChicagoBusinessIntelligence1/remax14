@@ -67,6 +67,7 @@
     "protractor": "^1.0.0",
     "random-word-generator": "^0.9.9",
     "require-dir": "^0.1",
+    "sendgrid-web": "0.0.5",
     "stylus": "0.48.1",
     "uglify-save-license": "^0.4.1",
     "underscore.string": "^2.3.3",

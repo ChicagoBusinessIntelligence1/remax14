@@ -15,7 +15,7 @@
           td.col-xs-3.saved-search-date
             span {{search.date|date:'short'}}
           td.col-xs-4
-            a(href='#' editable-text='search.name' buttons="no" e-required e-placeholder="Enter name") {{search.name|keyConversion}} &nbsp
+            a(editable-text='search.name' buttons="no" e-required e-placeholder="Enter name") {{search.name|keyConversion}} &nbsp
               i.fa.fa-edit.fa-fw
           td.col-xs-4
             ul.list-unstyled

@@ -10,7 +10,7 @@ angular.module('app')
 
         $scope.uploader.uploadItem = function (item) {
           var reader = new FileReader();
-          var breakPoint = 1;
+
           reader.onload = onLoadFile;
           var file = item._file;
 
@@ -41,7 +41,8 @@ angular.module('app')
 
             canvas.width = scaledWidth;
             canvas.height = scaledHeight;
-            ctx.drawImage(img, 0, 0);
+            var scaledImage = new Image();
+            ctx.drawImage(img, 0, 0,canvas.width,canvas.height);
             var dataURL = canvas.toDataURL('image/jpeg');
             $scope.addImage(dataURL);
             var indexOf = $scope.uploader.queue.indexOf(item);

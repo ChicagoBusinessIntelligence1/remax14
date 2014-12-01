@@ -103,7 +103,12 @@ angular.module('app')
           if (_.isUndefined(newValue)) {
             return;
           }
-          /*Take array of images from Firebase, add to each image url and opacity*/
+          if (newValue.length === 0) {
+            $scope.faImages = [];
+            $scope.selectedImage = null;
+            return;
+          }
+
           $scope.faImages =
             _.map(_.compact($scope.images), function (image) {
               var opacity = new Transitionable(0);

@@ -6,7 +6,11 @@
         h3.modal-title Upload your images
       .modal-body.modal-wishlist
         sv-image-upload
-        h4 My Gallery Images
+        .row
+          .col-sm-6
+            h4 My Gallery Images
+          .col-sm-6(ng-show='images.length')
+            button.btn.btn-danger(ng-click='clearGallery()') Remove All Images
         hr
         ul.row.list-unstyled.ul-temp-uploaded
           li.col-sm-4.col-xs-12(ng-repeat='image in images track by $index')

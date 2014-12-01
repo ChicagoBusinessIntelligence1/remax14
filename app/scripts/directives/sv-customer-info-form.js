@@ -12,14 +12,17 @@ angular.module('app')
       link: function ($scope, element, attr) {
         $scope.isDataLoading = true;
         $scope.myBroker = 'Hello';
+
         UserService.getProfile($rootScope.user.id).$loaded(function (savedUser) {
           var user;
+
           if (savedUser.$value === null) {
             user = $rootScope.user;
             $scope.customer = {
               firstName: user.first_name,
               lastName: user.last_name,
               email: user.email,
+              alerts:false,
               phone: ''
             }
             $scope.isLocal = false;

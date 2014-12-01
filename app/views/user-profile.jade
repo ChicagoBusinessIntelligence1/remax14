@@ -5,12 +5,10 @@ div(ng-switch="user.profileType")
     .row
       .col-sm-7
         sv-broker-info-form(user='broker')
-      .col-sm-5
-        sv-email-alert-settings(f-name='fName' l-name='lName' email='email')
   div(ng-switch-when="customer")
     .row
       .col-sm-7
         sv-customer-info-form
       .col-sm-5
         sv-broker-application(f-name='fName' l-name='lName' email='email')
-        sv-email-alert-settings(f-name='fName' l-name='lName' email='email')
+

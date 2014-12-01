@@ -55,9 +55,10 @@ angular.module('app')
                       if (_.isUndefined(query.location)) {
                         break;
                       }
-                      var propValueArr = _.map(property.value.split(' '), function (el) {
-                        return el.trim().toLowerCase()
-                      });
+
+                        var propValueArr = _.map(property.value.toString().split(' '), function (el) {
+                          return el.trim().toLowerCase()
+                        });
 
                       var foundQueryTerm = _.intersection(queryLocationArr, propValueArr);
                       queryLocationArr = _.without(queryLocationArr, foundQueryTerm[0]);

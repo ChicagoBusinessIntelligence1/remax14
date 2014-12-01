@@ -18,10 +18,11 @@ angular.module('app')
         var Transitionable = famous.transitions.Transitionable;
         var TRANSITION = {duration: 900, curve: Easing.outBounce};
         var ourAdvantages = [
-          'Rude Tel. response',
-          'Hard To understand English',
-          'Late for appointments',
-          'We force our customers to accept offers'
+          'Buy or Sell Home',
+          'Find the Right Mortgage Expert',
+          'Settle all Closing Papers',
+          'Short Sale',
+          'Real Estate Investment Opportunities'
         ];
         var ang_element = angular.element(element);
         var orbitDom = ang_element[0];
@@ -41,8 +42,6 @@ angular.module('app')
           content: 'images/home/one-stop-sign.png',
           classes: ['trans-origin']
         });
-
-
         var shift = 40;
         for (var i = 0; i < ourAdvantages.length; i++) {
           var adv = ourAdvantages[i];
@@ -62,9 +61,7 @@ angular.module('app')
           });
           mainContext.add(indAdvMod).add(surface);
         }
-
         mainContext.add(signModifier).add(sign);
-
         sign.on('click', function () {
           signModifier.setTransform(
             Transform.translate(-200, 0, 0),

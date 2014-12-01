@@ -8,81 +8,69 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-one-stop.html',
       scope: {},
       link: function ($scope, element, attr) {
-        /*global famous*/
-// import dependencies
         var Engine = famous.core.Engine;
-        var Modifier = famous.core.Modifier;
+        var StateModifier = famous.modifiers.StateModifier;
         var Transform = famous.core.Transform;
+        var Modifier = famous.core.Modifier;
         var ImageSurface = famous.surfaces.ImageSurface;
         var Surface = famous.core.Surface;
-        var isOrbit = false;
-
-// create the main context
+        var Easing = famous.transitions.Easing;
+        var Transitionable = famous.transitions.Transitionable;
+        var TRANSITION = {duration: 900, curve: Easing.outBounce};
+        var ourAdvantages = [
+          'Rude Tel. response',
+          'Hard To understand English',
+          'Late for appointments',
+          'We force our customers to accept offers'
+        ];
         var ang_element = angular.element(element);
         var orbitDom = ang_element[0];
         var mainContext = Engine.createContext(orbitDom);
 
-        var featureModifier = new Modifier({
+        var signModifier = new StateModifier({
           origin: [0.5, 0.5],
-          align: [0.5, 0.5],
-          opacity: 0
+          align: [0.5, 0.5]
         });
 
-        var firstSurface = new Surface({
-          content: "<div class='octagon'>Buy or Sell Home</div>",
-          properties: {
-            marginTop: '30px',
-            marginLeft: '30px'
-          }
-        });
-
-        mainContext.add(featureModifier).add(firstSurface);
-
-// your app here
-        var logo = new ImageSurface({
+        var sign = new ImageSurface({
           size: [280, 280],
           properties: {
-            marginTop: '120px'
+            marginTop: '120px',
+            cursor: 'pointer'
           },
           content: 'images/home/one-stop-sign.png',
           classes: ['trans-origin']
         });
 
-        var initialTime = Date.now();
-        var centerSpinModifierOrbit = new Modifier({
-          origin: [0.5, 0.5],
-          align: [0.5, 0.5],
-          transform: function () {
-            return Transform.rotateY(.002 * (Date.now() - initialTime));
-          }
-        });
-        var centerSpinModifierStatic = new Modifier({
-          origin: [0.5, 0.5],
-          align: [0.5, 0.5]
-        });
 
-        mainContext.add(centerSpinModifierStatic).add(logo);
-        var isObrbiting = false;
-        var orbit = $('#rotation-sign');
+        var shift = 40;
+        for (var i = 0; i < ourAdvantages.length; i++) {
+          var adv = ourAdvantages[i];
 
-        orbit.on('click', function () {
-          if (isObrbiting) {
-            isObrbiting = false;
-            mainContext.add(centerSpinModifierStatic).add(logo);
-            featureModifier.setOpacity(0, {duration: 1000});
-            featureModifier.setTransform(Transform.translate([100, 0, 0]), {duration: 1000});
-          } else {
-            isObrbiting = true;
-            mainContext.add(centerSpinModifierOrbit).add(logo);
-            featureModifier.setOpacity(1, {duration: 1000});
-            featureModifier.setTransform(Transform.translate([-100, 0, 0]), {duration: 1000});
+          var indAdvMod = new Modifier(
+            {
+              size: [100, 50],
+              transform: function () {
+                var xShift = i*shift;
+                var yShift = i * 2;
+                return Transform.translate(xShift, yShift, 0);
+              }
+            });
+          var surface = new Surface({
+            size: [100, 50],
+            content: "<div >" + adv + "</div>"
+          });
+          mainContext.add(indAdvMod).add(surface);
+        }
 
-          }
-          //centerSpinModifier.setTransform(Transform.rotateY(.002 * (Date.now() - initialTime)));
+        mainContext.add(signModifier).add(sign);
+
+        sign.on('click', function () {
+          signModifier.setTransform(
+            Transform.translate(-200, 0, 0),
+            TRANSITION
+          );
         })
-        //orbit.on('mouseout', function () {
-        //  //centerSpinModifier.setTransform(Transform.rotateY(.002 * (Date.now() - initialTime)));
-        //})
       }
     };
   });

@@ -1,5 +1,5 @@
 div
-  .head-panel.cursor-p(ng-click='toggleShow()')
+  .head-panel.cursor-p
     .row
       .col-xs-11
         ul.list-inline(ng-switch="user.profileType")
@@ -9,7 +9,7 @@ div
             sv-btn-action(icon='fa-edit' action='editListing()' ng-hide='isEdit || isTemplate')
             sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit || isTemplate')
             sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit || isTemplate')
-      .col-xs-1
+      .col-xs-1(ng-click='toggleShow()')
         .text-right(href="")
           i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
           i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')
@@ -40,7 +40,8 @@ div
         ul.ul-data-just.list-unstyled
           li.row(ng-repeat='property in section.content| orderBy:"order"' ng-show='$odd')
             div.listing-label.col-sm-5.col-xs-6 {{property.title | keyConversion}}:
-            div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{property.value | boolToBinery}} div.content-info.col-sm-7.col-xs-6(ng-switch='property.type' ng-if='isEdit || isTemplate')
+            div.content-info.col-sm-7.col-xs-6(ng-if='!isEdit && !isTemplate') {{property.value | boolToBinery}}
+            div.content-info.col-sm-7.col-xs-6(ng-switch='property.type' ng-if='isEdit || isTemplate')
               sv-txt(max-len='maxLen' ng-switch-when='txt' section-property='property'  r='required.indexOf(property.title)>-1')
               sv-area(max-len='maxLen' ng-switch-when='area' section-property='property'  r='required.indexOf(property.title)>-1')
               sv-chbx(ng-switch-when='chbx' section-property='property'  r='required.indexOf(property.title)>-1')

@@ -23,17 +23,17 @@ div
         .form-group
           .input-group
             .input-group-addon @
-            input.form-control(type="text" name="email" id="email" ng-model='email.to')
+            input.form-control(type="text" name="email" id="email" ng-model='email.from')
     .row
       .col-md-8.col-sm-8.col-xs-12
         .form-group
           label Subject:
-          input.form-control(type="text" name="subject" id="subject" placeholder="Your subject"  required)
+          input.form-control(type="text" name="subject" id="subject" placeholder="Your subject" ng-model='email.subject' required)
     .row
       .col-md-8.col-sm-8.col-xs-12
         .form-group
           label Your Message:
-          textarea.form-control(type="text" name="message" id="message" rows='10' placeholder="Your message" ng-model='user.message'  required)
+          textarea.form-control(type="text" name="message" id="message" rows='10' placeholder="Your message" ng-model='email.body'  required)
     button.btn.bnt-radius.submit-search.btn-mob-dev(ng-click='sendMessage()')
       i.fa.fa-send.fa-fw
       | &nbspSend

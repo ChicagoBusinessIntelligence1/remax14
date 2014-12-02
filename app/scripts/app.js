@@ -279,7 +279,14 @@ var app = angular.module('app', ['angularFileUpload', 'ts.sheets', 'firebase', '
         controller:"CityHomesRentalCtrl",
         templateUrl: "../views/city-homes-rental-ctrl.html"
       })
-  }).directive('ngThumb', ['$window', function ($window) {
+  })
+  .config(function ( $httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  })
+
+
+  .directive('ngThumb', ['$window', function ($window) {
     var helper = {
       support: !!($window.FileReader && $window.CanvasRenderingContext2D),
       isFile: function (item) {

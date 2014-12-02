@@ -1,8 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
-var filter      = require('gulp-filter');
+var filter = require('gulp-filter');
 var browserSync = require('browser-sync');
+var browserify = require('gulp-browserify');
 var reload = browserSync.reload;
 
 var plumber = require('gulp-plumber');
@@ -12,14 +13,21 @@ var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
   browserSync({
     server: {
       baseDir: "./app/"
     },
     notify: false,
     logLevel: "silent"
-  });});
+  });
+});
+
+gulp.task('scripts', function () {
+  gulp.src('app/scripts/directives/sv-contact-us-form.js')
+    .pipe(browserify())
+    .pipe(gulp.dest('app/scripts/directives'))
+})
 
 gulp.task('nib', function () {
   gulp.src('app/styles/nib.styl')
@@ -39,7 +47,7 @@ gulp.task('stylus', function () {
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
-    .pipe(reload({stream:true}));
+    .pipe(reload({stream: true}));
 });
 
 //register task jade
@@ -63,9 +71,8 @@ gulp.task('jade', function () {
     }))
     .pipe(gulp.dest('app/views/'))
     .pipe(filter('**/*.html'))
-    .pipe(reload({stream:true}));
+    .pipe(reload({stream: true}));
 });
-
 
 gulp.task('html', function () {
 
@@ -78,7 +85,7 @@ gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 
-gulp.task('default', ['jade','stylus', 'browser-sync'], function () {
+gulp.task('default', ['jade', 'stylus', 'browser-sync'], function () {
   gulp.watch('app/styles/**/*.styl', ['stylus']);
   gulp.watch('app/views/**/*.jade', ['jade']);
   gulp.watch('app/scripts/**/*.js', ['bs-reload']);

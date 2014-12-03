@@ -4,20 +4,20 @@ div
       .col-md-6.col-sm-6.col-xs-12
         .form-group
           label First Name:
-          input.form-control(type="text" name="firstName" id="firstName" ng-model='email.user.first_name')
+          input.form-control(type="text" name="firstName" id="firstName" ng-model='email.fname')
       .col-md-6.col-sm-6.col-xs-12
         .form-group
           label Last Name:
-          input.form-control(type="text" name="lastName" id="lastName" ng-model='email.user.last_name')
+          input.form-control(type="text" name="lastName" id="lastName" ng-model='email.lname')
     .row
       .col-md-4.col-sm-4.col-xs-12
         .form-group
           label Home Phone:
-          input.form-control(type="text" name="homePhone" id="homePhone" placeholder="(***)***-****")
+          input.form-control(type="text" name="homePhone" id="homePhone" placeholder="(***)***-****" ng-model='email.phone')
       .col-md-4.col-sm-4.col-xs-12
         .form-grou
-          label Mobile Phone:
-          input.form-control(type="text" name="mobilePhone" id="mobilePhone" placeholder="(***)***-****")
+          label Mobile Phones:
+          input.form-control(type="text" name="mobilePhone" id="mobilePhone" placeholder="(***)***-****" ng-mode='email.mobile' )
       .col-md-4.col-sm-4.col-xs-12
         label Email:
         .form-group

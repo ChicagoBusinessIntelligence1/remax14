@@ -10,7 +10,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.registeredBrokers;
+        that.repoUrl = urlCommon.brokers;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
         that.repoRef.$asArray().$loaded(function (all) {

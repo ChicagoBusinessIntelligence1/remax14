@@ -188,7 +188,7 @@ gulp.task('default', ['jade', 'stylus'], function () {
     .pipe(watch('app/index.html'))
     .pipe(livereload({silent:true}))
 
-  gulp.run('url');
+  gulp.start('url');
 
 });
 

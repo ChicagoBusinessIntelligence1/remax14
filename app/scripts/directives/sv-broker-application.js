@@ -15,13 +15,15 @@ angular.module('app')
         var user = $rootScope.user;
 
         $scope.applicant = {
-          fname: user.first_name,
-          lname: user.last_name,
+          firstName: user.first_name,
+          lastName: user.last_name,
           email: user.email
         }
 
         $scope.submitBrokerApp = function () {
-
+          $scope.applicant = _.extend($scope.applicant,{
+            id:$rootScope.user.id
+          });
           BrokerApplicationService.apply($scope.applicant).then(function () {
 
             toastr.success(notifications.brokerAppSubmitted);

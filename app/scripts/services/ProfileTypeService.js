@@ -10,9 +10,9 @@ angular.module('app')
         var that = this;
         var defered = $q.defer();
 
-        var email = user.email;
+        var id = user.id;
 
-        that.repoUrl = urlCommon.registeredBrokers;
+        that.repoUrl = urlCommon.brokers;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         var regBrokers = that.repoRef.$asArray();
         regBrokers.$loaded(function () {
@@ -20,7 +20,8 @@ angular.module('app')
               isAdmin = false;
           for (var i = 0; i < regBrokers.length; i++) {
             var broker = regBrokers[i];
-            if (broker.email === email) {
+
+            if (broker.$id === id) {
               profileType = 'broker';
               isAdmin = broker.isAdmin;
             }

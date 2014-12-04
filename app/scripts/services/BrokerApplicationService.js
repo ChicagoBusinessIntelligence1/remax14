@@ -23,6 +23,7 @@ angular.module('app')
         that.repoUrl = urlCommon.brokerApplications;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
+
         var array = that.repoRef.$asArray().$add(user).then(function () {
           deferred.resolve(true);
         });
@@ -34,18 +35,21 @@ angular.module('app')
 
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        var urlRegBrokers = urlCommon.registeredBrokers;
+        var urlRegBrokers = urlCommon.brokers;
         var refRegBrokers = $firebase(new Firebase(urlRegBrokers));
-        var id = applicant.$id;
+        var dbId = applicant.$id;
         applicant = CleanObjectService.clean(applicant);
 
         applicant = _.extend(applicant, {
             isAdmin: false
           }
         )
-
-        refRegBrokers.$asArray().$add(applicant).then(function () {
-          that.repoRef.$remove(id);
+        var fbId = applicant.id;
+        var brokerProfile = {
+          profile:applicant
+        };
+        refRegBrokers.$set(fbId, brokerProfile).then(function () {
+          that.repoRef.$remove(dbId);
           deferred.resolve(true);
         })
 
@@ -62,7 +66,6 @@ angular.module('app')
         that.repoRef.$remove(applicant.$id).then(function () {
           deferred.resolve(true);
         })
-
 
         return deferred.promise;
       }

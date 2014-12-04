@@ -60,6 +60,7 @@ angular.module('app')
             return section;
           }
         }
+
       },
       isEditable: function (home, brokerId) {
         var that = this;

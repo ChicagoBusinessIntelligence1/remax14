@@ -177,8 +177,6 @@ gulp.task('default', ['jade', 'stylus'], function () {
     .pipe(livereload({silent: true}));
 
   watch('app/scripts/**/*.js', {watch: false})
-    .pipe(plumber())
-    .pipe(gulp.dest('app/scripts'))
     .pipe(livereload({silent: true}));
 
   gulp.src('app/index.html')

@@ -24,6 +24,7 @@ angular.module('app')
           $http.post(url, $scope.email).success(function () {
           toastr.success(notifications.contactMessageSent);
 
+
           })
 
         };

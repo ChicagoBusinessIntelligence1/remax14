@@ -1,7 +1,29 @@
 'use strict';
 
 angular.module('app')
-  .directive('svImageUpload', function (FileUploader, imgWidth) {
+  .directive('svImageUpload', function (FileUploader, imgSize) {
+
+    function scale(initHeight, initWidth) {
+      var finalWidth,finalHeight;
+
+      var heightCoef;
+      if (initHeight > imgSize.h) {
+        heightCoef = Math.round(imgSize.h / initHeight);
+        var scaledWidth = Math.round(heightCoef * initWidth);
+        if (scaledWidth > imgSize.w) {
+          var widthCoef = Math.round(imgSize.h / initWidth);
+         finalWidth = imgSize.w ;
+         finalHeight = Math.round(widthCoef*initHeight);
+
+        } else {
+         finalHeight = imgSize.h ;
+         finalWidth = Math.round(heightCoef*initWidth);
+
+        }
+      }
+      return {scaledWidth: finalWidth, scaledHeight: finalHeight};
+    }
+
     return {
       restrict: 'E',
       replace: true,
@@ -22,10 +44,11 @@ angular.module('app')
 
             var img = new Image();
             img.src = event.target.result;
+
             var initWidth = parseInt(img.naturalWidth);
             var initHeight = parseInt(img.naturalHeight);
 
-            if (initWidth < imgWidth) {
+            if (initWidth < imgSize.w || initHeight < imgSize.h) {
               var indexOf = $scope.uploader.queue.indexOf(item);
 
               $scope.$apply(function () {
@@ -36,13 +59,13 @@ angular.module('app')
               toastr.warning('Image is too small to be shown');
               return;
             }
-            var scaledWidth = imgWidth;
-            var scaledHeight = Math.round((initHeight * imgWidth) / initWidth);
-
+            var __ret = scale(initHeight, initWidth);
+            var scaledWidth = __ret.scaledWidth;
+            var scaledHeight = __ret.scaledHeight;
             canvas.width = scaledWidth;
             canvas.height = scaledHeight;
             var scaledImage = new Image();
-            ctx.drawImage(img, 0, 0,canvas.width,canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             var dataURL = canvas.toDataURL('image/jpeg');
             $scope.addImage(dataURL);
             var indexOf = $scope.uploader.queue.indexOf(item);

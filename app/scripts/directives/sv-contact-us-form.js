@@ -21,6 +21,7 @@ angular.module('app')
         $scope.sendMessage = function () {
           var url = 'http://localhost:3000/sendmail';
           var url = 'http://localhost:3000/sendmail';
+          var url = 'http://localhost:3000/sendmail';
 
           var data = {"to":"test"};
           $http.post(url, $scope.email).success(function () {

@@ -1,0 +1,280 @@
+@import 'nib'
+@import 'functions'
+
+/**********************
+    =manage-listing
+***********************/
+
+
+.btn-select-prop
+  position relative
+  text-align left
+  height 30px
+  span .caret
+    display inline-block
+    margin-top 7px
+    float right
+
+.listing-label
+  font-size 13px !important
+  font-weight 700
+
+.content-info
+  font-size 13px !important
+
+
+.listing-basic-info-wrap
+  padding-top 10px
+
+.ul-basic-info
+  margin-bottom 0px
+  margin-top 5px
+  li
+    color color-link-hover
+    font-size 13px
+    font-style italic
+
+  @media screen and (max-width: 992px)
+    font-size 12px
+    text-align center
+
+.price-style
+  app-link-info()
+  font-weight 700
+  font-size 20px
+  letter-spacing 1px
+  text-align right
+
+  @media screen and (max-width: 992px)
+    text-align center
+
+.listing-header-container
+  .inline-info-container
+    padding-top 5px
+    padding-bottom 5px
+  .alert-address
+    margin-top 5px
+    padding 15px
+    h4
+      margin-bottom 0px
+      font-weight 700
+      color lighten(color-app, 10)
+
+.address-style
+  color lighten(color-app, 20)
+  margin-top 5px
+  margin-bottom 5px
+  font-size 20px
+
+.address-container
+  margin-top 10px
+  margin-bottom 10px
+
+.btn-back
+  app-link()
+
+.address-basic
+  app-link()
+  display block
+  height 100%
+  font-size 18px
+  margin-top 0px
+  margin-bottom 0px !display
+
+  @media screen and (max-width: 992px)
+    text-align center
+
+.listing-navigation-container
+  background-color #F5F5F5
+  padding-top 5px
+  padding-bottom 5px
+  margin-bottom 15px
+  ul
+    padding-top 3px
+    margin-bottom 0px
+
+.breadcrumb-app
+  background none
+  margin-bottom 0px
+  li.active
+    color color-link
+    font-size 12px
+  li
+    a
+      color color-info
+      font-size 12px
+      &:hover
+      &:active
+      &:focus
+        color color-link-hover
+        text-decoration none
+
+.ul-basic-social
+  margin-bottom 0px
+  margin-top 5px
+  li
+    a
+      color color-link
+      font-size 12px
+      &:hover
+      &:active
+      &:focus
+        color color-link-hover
+        text-decoration none
+
+  @media screen and (max-width: 992px)
+    text-align center
+
+.prop-type
+  font-size 14px
+  font-style italic
+  margin-bottom 15px
+  font-weight 400
+
+  @media screen and (max-width: 992px)
+    text-align center
+
+.sale-type
+  margin-top 10px
+  margin-bottom 15px
+  text-align right
+  li
+    margin-top 5px
+    margin-bottom 5px
+  h5
+    font-size 14px
+
+  @media screen and (max-width: 992px)
+    text-align center
+
+.head-panel
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+  padding 10px
+  background-color lighten(color-skin, 95)
+  border border-boot
+  h4
+    margin-top 0px
+    margin-bottom 0px
+  ul
+    margin-bottom 0px
+
+.panel-listing
+  padding 10px
+  border-top-left-radius 0px
+  border-top-right-radius 0px
+  border-top 0px !important
+  margin-bottom 10px
+
+.panel-basic-info
+  padding 10px
+  hr
+    margin-top 0px
+    margin-bottom 10px
+
+.add-property
+  button
+  .btn-sm
+  input
+    width 100%
+
+.txt-group
+  label
+    color lighten(color-skin, 30)
+    font-size 12px
+  .form-control
+    height 30px
+    padding 5px
+    font-size 12px
+
+.listing-form
+  h5
+    font-size 13px
+    font-weight 700
+  h4
+    font-weight 700
+    font-size 16px
+    margin 0px
+  .form-group
+    label
+      color lighten(color-skin, 30)
+      font-size 12px
+    input
+      height 30px
+      padding 5px
+      font-size 12px
+
+.basic-info-short
+  font-size 12px
+
+
+.ul-data-just
+  li
+    span
+      font-size 13px
+      &:first-child
+        font-weight 700
+
+      @media screen and (max-width: 992px)
+        font-size 12px
+
+.gallery-wrapper
+  margin-bottom 10px
+
+.stripe-dark
+  background-color lighten(color-skin, 94)
+
+.cursor-p
+  cursor pointer
+
+.error
+  border 1px solid red !important
+
+.error-note
+  color red
+
+/**********************
+    Drafts
+ ***********************/
+.drafts-container
+  padding 10px
+
+.draft-info-container
+  margin-top 5px
+  margin-bottom 5px
+
+.btn-draft
+  padding-left 5px
+  padding-right 5px
+  font-size 12px
+  min-width 32px
+  color color-link
+  &:hover
+  &:active
+  &:focus
+    color color-link-hover
+
+.draft-sm-container
+  hr
+    margin-bottom 10px
+    margin-top 5px
+  h4
+    color lighten(color-app, 30)
+  h3, h4, h5
+    font-size 14px
+    font-weight 700
+    line-height 1.5
+    margin-bottom 0px
+    margin-top 0px
+  ul
+    li
+      line-height 1.5
+      p
+        line-height 1.5
+        margin-bottom 0px
+
+.ul-listing-buttons
+  margin-top 15px
+
+.listing-type
+  color color-li

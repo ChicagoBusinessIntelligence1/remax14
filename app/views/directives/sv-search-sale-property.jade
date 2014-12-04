@@ -1,0 +1,26 @@
+.app-container-10
+  form.search-form(id="form", name="form", ng-submit="mainSearch()")
+    //.alert-box.warning.round(data-alert, ng-show="loginError")
+    //  | Incorrect login or password
+    //  | a.close(href="#") &times;
+    .form-group
+      label(ng-class="{'error':login.location.$invalid && login.$dirty}") Location:
+      input.form-control(type="location", name="location" id="location", placeholder="City and State, or Zip Code", ng-model="query.location")
+    .form-group
+      label(ng-class="{'error':login.password.$invalid && login.$dirty}") Price Range:
+      .row
+        .col-md-6.col-sm-6.col-xs-6
+          input.form-control(name="priceMin" id="priceMin", ng-model='query.priceMin' placeholder="$ From")
+        .col-md-6.col-sm-6.col-xs-6
+          input.form-control(name="priceMax" id="priceMax", ng-model='query.priceMax' placeholder="$ To")
+    .form-group
+      .row
+        .col-md-6.col-sm-6.col-xs-6
+          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bedrooms:
+          input.form-control(name="bedrooms" id="bedrooms", ng-model='query.bedrooms' placeholder="#")
+        .col-md-6.col-sm-6.col-xs-6
+          label(ng-class="{'error':login.password.$invalid && login.$dirty}") Bathrooms:
+          input.form-control(name="bathrooms" ng-model='query.bathrooms' id="bathrooms", placeholder="#")
+    button.btn.btn-primary.submit-query.btn-mob-dev
+      i.fa.fa-search.fa-fw
+      | Search

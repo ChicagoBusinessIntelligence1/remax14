@@ -1,0 +1,20 @@
+.modal
+  .modal-dialog
+    .modal-content.modal-dialog-wishlist
+      .modal-header
+        button.close(ng-click='hideGalleryModal();hide()') &times
+        h3.modal-title Upload your images
+      .modal-body.modal-wishlist
+        sv-image-upload
+        .row
+          .col-sm-6
+            h4 My Gallery Images
+          .col-sm-6(ng-show='images.length')
+            button.btn.btn-danger(ng-click='clearGallery()') Remove All Images
+        hr
+        ul.row.list-unstyled.ul-temp-uploaded
+          li.col-sm-4.col-xs-12(ng-repeat='image in images track by $index')
+            img.thumbnail.col-xs-12(ng-src="{{image}}")
+            button.btn.btn-default.btn-sm.btn-remove-uploaded(ng-click='removeImage(image,$index)')
+              i.fa.fa-remove.fa-fw(data-toggle="tooltip" data-placement="left" title="Remove image")
+

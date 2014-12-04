@@ -1,0 +1,29 @@
+div
+  ol.breadcrumb.breadcrumb-search
+    li
+      a.b-link(ui-sref='app.structure.profile.saved-searches')
+        | My Saved Searches
+    li
+      span
+
+  ul.list-inline
+    li
+      h5 Found {{homes.length}} homes
+        span.text-info &nbsp  for {{isRent?'Rent':'Sale'}}
+    li
+      sv-save-search
+  hr
+  .row
+    .col-sm-12
+      .pagination-container
+        ul.list-inline.row
+          li.col-sm-9
+            sv-pagination(total-pages='totalPages' current-page='currentPage')
+          li.col-sm-3
+            sv-sort-homes(sort-by='sortBy')
+  .drafts-container
+    ul.row.list-inline
+      li.col-sm-12(ng-repeat='home in homes|startFrom:currentPage|limitTo:pageHomesNumber').repeat-animation
+        sv-home-basic-info(home='home')
+
+  sv-pagination(ng-hide="totalPages==1" total-pages='totalPages' current-page='currentPage')

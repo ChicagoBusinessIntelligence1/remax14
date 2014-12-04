@@ -1,0 +1,23 @@
+.well
+  sv-spinner(ng-show='isDataLoading')
+  form.form-horizontal(name="form" type='text' id="form" novalidate ng-if='broker')
+
+    sv-input-txt(input-name='firstName' input-model='broker' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='lastName' input-model='broker' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='mls' input-model='broker' input-type='number' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='website' input-model='broker' input-type='url' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='email' input-model='broker' input-type='email' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+
+    sv-input-txt(input-name='phone' input-model='broker' input-type='tel' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    .save-profile-changes
+      button.btn.btn-default.btn-sm(ng-click='saveBrokerProfileInfo(broker,form)')
+        i.fa.fa-save.fa-fw
+        | Save Changes
+    hr
+    .text-right
+      sv-del-profile(remove-profile='removeBrokerAccount()')
+

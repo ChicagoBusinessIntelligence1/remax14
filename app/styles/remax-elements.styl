@@ -1,0 +1,209 @@
+@import 'nib'
+@import 'functions'
+
+/*Remax*/
+.elements-wrapper
+  padding 15px
+
+/*Template Styles*/
+width = 128px
+height = 80px
+
+.article-wrapper
+  border-radius(10px)
+
+.element-1
+  post-style(fire)
+
+.element-2
+  post-style(water)
+
+.element-3
+  post-style(soft-wood)
+
+.element-4
+  post-style(hard-wood)
+
+.element-5
+  post-style(soft-metal)
+
+.element-6
+  post-style(hard-metal)
+
+.element-7
+  post-style(mountain-earth)
+
+.element-8
+  post-style(mother-earth)
+
+.element-post-1
+  post-comment-style(fire)
+
+.element-post-2
+  post-comment-style(water)
+
+.element-post-3
+  post-comment-style(soft-wood)
+
+.element-post-4
+  post-comment-style(hard-wood)
+
+.element-post-5
+  post-comment-style(soft-metal)
+
+.element-post-6
+  post-comment-style(hard-metal)
+
+.element-post-7
+  post-comment-style(mountain-earth)
+
+.element-post-8
+  post-comment-style(mother-earth)
+
+.info
+  color color-skin !important
+  font-weight 700
+  font-size 12px
+  line-height 15px
+  position relative
+  top -7px
+
+/*.elements-nav-wrapper*/
+  /*padding-right 10px*/
+  /*padding-left 10px*/
+  /*margin-left 15px*/
+
+.elements-nav
+  padding 5px 0px
+
+.fen-element-wrapper
+  size(width, height)
+  border-radius 10px
+  cursor pointer
+  overflow hidden
+
+.fen-element
+  size(width, height)
+  text-align center
+  position relative
+  span
+    color color-light
+    text-shadow 1px 0px lighten(color-app, 10)
+    font-size 12px
+
+.fen-element-cover
+  padding-top 0px
+  height 32px !important
+  border-radius 3px
+  width width
+  relative 0px
+  background-color #FBFBFB
+  opacity .8
+
+.vertical-alignment
+  font-family font-family 'Karma', serif !important
+  top 10%
+  position absolute
+  width 100%
+  text-align center
+  span
+    text-transform uppercase
+    color #ffffff
+
+.vertical-alignment-cover
+  @extend .vertical-alignment
+  top 40%
+
+ul.fen-elements
+  margin 0 auto
+  ul(style = disc)
+  li
+    position relative
+    display inline-block !important
+    list-style none
+    margin-left auto
+    margin-right auto
+    width 150px !important
+    height 150px !important
+
+.slide-up
+  position relative
+  transition(1s)
+
+.slide-up
+  top - (height/ 2.9)
+
+.slide-up.ng-hide
+  top 0px
+
+.fire
+  transition(1s)
+  background-image url("../images/elements/fire-bw.png")
+
+.fire-hover
+  transition(1s)
+  background-image url("../images/elements/fire.png") !important
+
+.water
+  transition(1s)
+  background-image url("../images/elements/water-bw.png") !important
+
+.water-hover
+  transition(1s)
+  background-image url("../images/elements/water.png") !important
+
+.soft-wood
+  transition(1s)
+  background-image url("../images/elements/soft-wood-bw.png")
+
+.soft-wood-hover
+  transition(1s)
+  background-image url("../images/elements/soft-wood.png") !important
+
+.hard-wood
+  transition(1s)
+  background-image url("../images/elements/hard-wood-bw.png") !important
+
+.hard-wood-hover
+  transition(1s)
+  background-image url("../images/elements/hard-wood.png") !important
+
+.soft-metal
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/soft-metal-bw.png") !important
+
+.soft-metal-hover
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/soft-metal.png") !important
+
+.hard-metal
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/hard-metal-bw.png") !important
+
+.hard-metal-hover
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/hard-metal.png") !important
+
+.mountain-earth
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/mountain-earth-bw.png") !important
+
+.mountain-earth-hover
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/mountain-earth.png") !important
+
+.mother-earth
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/mother-earth-bw.png") !important
+
+.mother-earth-hover
+  transition(1s)
+  background-color label-default-background
+  background-image url("../images/elements/mother-earth.png") !important

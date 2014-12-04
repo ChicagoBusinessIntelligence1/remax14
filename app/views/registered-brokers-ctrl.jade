@@ -1,0 +1,15 @@
+div
+  ul.list-unstyled
+    li(ng-repeat="broker in brokers")
+      .row
+        .col-sm-1
+          div {{$index+1}}
+        .col-sm-2
+          div {{broker.fname}}
+        .col-sm-2
+          div {{broker.lname}}
+        .col-sm-4
+          div {{broker.email}}
+        .col-sm-2
+          .form-group
+            sv-delete-broker-info(delete-broker='deleteBroker(broker)')

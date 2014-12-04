@@ -1,0 +1,84 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+.element5 {
+  background-color: #090;
+}
+.fire-bg {
+#f1c2b5
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.water-bg {
+#b9cff7
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.hard-wood-bg {
+#a3c8c8
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.soft-wood-bg {
+#c0d6c2
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.soft-metal-bg {
+#fcefdf
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.hard-metal-bg {
+#c9d7e0
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.mountain-earth-bg {
+#ede2c9
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}
+.mother-earth-bg {
+#cebdb6
+  -webkit-transition: all 5s ease;
+  -moz-transition: all 5s ease;
+  -ms-transition: all 5s ease;
+  -o-transition: all 5s ease;
+  transition: all 5s ease;
+  background-color: #fff;
+}

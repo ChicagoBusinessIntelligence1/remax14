@@ -1,0 +1,18 @@
+.well
+  sv-spinner(ng-show='isDataLoading')
+  form.form-horizontal(name="form" id="form" novalidate ng-hide='isDataLoading')
+    sv-input-txt(input-name='firstName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='lastName' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='email' input-model='customer' input-type='text' is-required='true'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    sv-input-txt(input-name='phone' input-model='customer' input-type='text' is-required='false'  input-class="col-sm-7"  label-class="col-sm-5" field-class="input-sm" )
+    .row
+      label.col-sm-5 Receive alerts
+      input.col-sm-7(type='checkbox' name='alerts' id='alerts' ng-model='customer.alerts')
+
+    .save-profile-changes
+      button.btn.btn-default.btn-sm(ng-click='saveCustomerProfileInfo(customer,form)')
+        i.fa.fa-save.fa-fw
+        | Save Changes
+    hr
+    .text-right
+      sv-del-profile(remove-profile='removeBrokerAccount()')

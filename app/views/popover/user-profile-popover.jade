@@ -1,0 +1,31 @@
+.popover
+  .arrow
+  .popover-content.user-profile-popover
+    ul.list-unstyled
+      li
+        a(ui-sref='app.structure.profile.watch-property')
+          i.fa.fa-eye.fa-fw
+          | &nbsp Watch List
+      li
+        a(ui-sref='app.structure.profile.wish-list')
+          i.fa.fa-star.fa-fw
+          | &nbsp Wish List
+      li
+        a(ui-sref='app.structure.profile.saved-searches')
+          i.fa.fa-bookmark.fa-fw
+          | &nbsp Saved Searches
+      hr
+      li
+        a(ui-sref='app.structure.profile.user-profile')
+          i.fa.fa-gear.fa-fw
+          | &nbsp Profile Settings
+      li
+        a(ng-click='logoutFb()')
+          i.fa.fa-sign-out.fa-fw
+          | &nbsp Sign Out
+      hr
+      li
+        a(href='{{user.link}}')
+          i.fa.fa-facebook.fa-fw
+          img.img-fb(ng-src="{{user.picture.data.url}}")
+          span.fb-name  {{user.first_name}}

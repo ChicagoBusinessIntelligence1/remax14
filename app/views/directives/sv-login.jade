@@ -1,0 +1,14 @@
+
+form(id="login", name="login", ng-submit="fenLogin(email.data,pass.data)", novalidate)
+	.alert-box.warning.round(data-alert, ng-show="loginError")
+		| Incorrect login or password
+		| a.close(href="#") &times;
+	fieldset
+		legend Login
+		.form-group
+			label(ng-class="{'error':login.email.$invalid && login.$dirty}") Email:
+			input.form-control(type="email", name="email" id="email", placeholder="email", ng-model="email.data",  required)
+		.form-group
+			label(ng-class="{'error':login.password.$invalid && login.$dirty}") Password:
+			input.form-control(type="password", name="password", id="password", placeholder="password", ng-model="pass.data", required)
+	input.btn.btn-sm.btn-default(type="submit" value="Submit" ng-disabled="login.$invalid")

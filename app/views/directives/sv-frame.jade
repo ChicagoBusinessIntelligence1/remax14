@@ -1,0 +1,8 @@
+
+.fen-element-wrapper(class='{{elementClass}}' ng-class='{"{{elementClass}}-hover":isInfoShown}')
+  .fen-element
+    .vertical-alignment
+  .fen-element-cover(ng-show='isInfoShown').slide-up.ng-hide
+    .vertical-alignment-cover
+      a(ui-sref='app.{{elementClass}}-personality')
+        span.info {{name }}

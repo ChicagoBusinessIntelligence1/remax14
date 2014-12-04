@@ -1,0 +1,52 @@
+@import 'nib'
+@import 'functions'
+
+.app-background
+  background-color red
+
+fa-app
+  overflow hidden
+  position: relative
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+
+.slider-button
+  background-color white
+
+.btn-slide
+  vertical-align middle
+  display block
+  line-height .8em
+  position: relative !important
+  -webkit-transform: translateY(35%) !important
+  -ms-transform: translateY(35%);
+  transform: translateY(35%);
+  cursor pointer
+
+.trans-origin
+  -webkit-backface-visibility: visible !important
+  backface-visibility: visible !important
+
+#rotation-sign
+  width: 408px
+  height: 108px
+
+/**********************
+    =Upload Images Modal
+***********************/
+
+.my-drop-zone
+  h3
+    color lighten(color-app, 50%)
+
+.ul-temp-uploaded
+  li
+    position relative
+
+.btn-remove-uploaded
+  position absolute
+  top 5px
+  right 20px

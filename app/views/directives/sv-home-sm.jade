@@ -1,0 +1,146 @@
+.well.draft-sm-container
+  .row
+    .col-sm-12
+      ul.list-inline
+        li
+          h5.prop-type.text-info {{draft|showSectionProp:'propertyType'}}
+        li.pull-right
+          h5 {{draft|showSectionDraft:'price'|currency:'$':0}}
+  hr
+  .row
+    .col-sm-6(ng-switch="homeStatus")
+      div(ng-switch-when="draft")
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.structure.profile.home-rent-draft({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.structure.profile.home-sale-draft({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+      div(ng-switch-when="active")
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.structure.remax-home({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+      div(ng-switch-when="watchList")
+        div(ng-if='isRent')
+          a.thumbnail(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+        div(ng-if='!isRent')
+          a.thumbnail(ui-sref='app.structure.remax-home({mls:draft.$id})')
+            sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="100")
+            img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+
+    .col-sm-6(ng-switch="homeStatus")
+      .draft-info-container(ng-switch-when="draft")
+        ul.list-unstyled(ng-if='isRent')
+          li
+            a(ui-sref='app.structure.profile.home-rent-draft({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.profile.home-rent-draft({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+        ul.list-unstyled(ng-if='!isRent')
+          li
+            a(ui-sref='app.structure.profile.home-rent-draft({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.profile.home-rent-draft({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+      .draft-info-container(ng-switch-when="active")
+        ul.list-unstyled(ng-if='isRent')
+          li
+            a(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+        ul.list-unstyled(ng-if='!isRent')
+          li
+            a(ui-sref='app.structure.remax-home({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.remax-home({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+      .draft-info-container(ng-switch-when="watchList")
+        ul.list-unstyled(ng-if='isRent')
+          li
+            a(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.remax-home-rent({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+        ul.list-unstyled(ng-if='!isRent')
+          li
+            a(ui-sref='app.structure.remax-home({mls:draft.$id})')
+              h3 MLS#: {{draft|showSectionDraft:'mls'}}
+          li
+            a(ui-sref='app.structure.remax-home({mls:draft.$id})')
+              h4
+                | {{draft|showSectionDraft:'street'}}
+              h4
+                | {{draft|showSectionDraft:'city'}}
+                | {{draft|showSectionDraft:'state'}}
+              h4
+                | {{draft|showSectionDraft:'zip'}}
+
+
+
+      .draft-info-container(ng-switch="homeStatus")
+        ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="draft")
+          li
+            button.btn.btn-default.btn-sm.btn-draft(ng-click='postDraft({mls:draft.$id})' data-toggle="tooltip" data-placement="left" title="{{postDraftTitle}}")
+              i.fa.fa-globe.fa-fw
+          li
+            sv-del-draft(remove-draft='removeDraft({mls:mls})' mls='{{draft.$id}}' draft='draft')
+
+        ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="active")
+          li
+            sv-share-property(is-rent='isRent' home = 'draft' )
+          li
+            button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{archiveHome}}")
+              i.fa.fa-archive.fa-fw
+
+        ul.list-inline.ul-listing-buttons.text-right(ng-switch-when="watchList")
+          li
+            sv-watch-list-buttons(mls='{{draft.$id}}' )
+          li
+            button.btn.btn-default.btn-sm.btn-draft(data-toggle="tooltip" data-placement="left" title="{{shareHome}}")
+              i.fa.fa-share-alt.fa-fw
+

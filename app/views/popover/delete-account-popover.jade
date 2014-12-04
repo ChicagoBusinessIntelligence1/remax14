@@ -1,0 +1,10 @@
+.popover.broker-app-popover
+  .arrow
+  h3.popover-title Are you sure you want delete your profile?
+  .popover-content
+    button.btn.btn-danger.btn-sm.btn-save(ng-click='removeProfile();$hide()')
+      i.fa.fa-check.fa-fw
+      | Delete
+    button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
+      i.fa.fa-times.fa-fw
+      | Cancel

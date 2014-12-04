@@ -1,0 +1,289 @@
+<!doctype html>
+<html class="no-js" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+     .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+    .another-file-over-class { border: dotted 3px green; }
+
+    html, body { height: 100%; }
+
+    canvas {
+      background-color: #f3f3f3;
+      -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+      -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+      box-shadow: 3px 3px 3px 0 #e3e3e3;
+      border: 1px solid #c3c3c3;
+      height: 100px;
+      margin: 6px 0 0 6px;
+    }
+  </style>
+  <title>Remax Skokie, Homes Sale, Houses Rent Remax Skokie, Real Estate Niles</title>
+  <meta name="description" content="Comprehensive Real Estate Services, Buy House, Get approved for Home Loan,
+    Rent, Sell, Invest in Real Estate. ONE STOP SERVICE!"/>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link href="bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrap-additions.min.css">
+  <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
+  <link rel="stylesheet" href="bower_components/famous-angular/dist/famous-angular.css">
+  <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  <link href="styles/widgets/bootstrap-select.min.css" rel="stylesheet">
+  <!--Fonts-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Numans' rel='stylesheet' type='text/css'>-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>-->
+  <!--<link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>-->
+  <!--<link rel="stylesheet" href="styles/kingmain.css">-->
+  <!-- endbuild -->
+  <!-- build:js scripts/modernizr.js -->
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <!--<script src="bower_components/greensock/src/minified/TweenMax.min.js"></script>-->
+  <!-- endbuild -->
+</head>
+<body ng-controller="MainCtrl">
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '1552476308299249', status: true, cookie: true,
+      xfbml: true
+    });
+  };
+  (function () {
+    var e = document.createElement('script');
+    e.async = true;
+    e.src = document.location.protocol +
+    'bower_components/fb/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+<sv-top-nav></sv-top-nav>
+<div class="main-wrapper" ui-view></div>
+<sv-footer-nav></sv-footer-nav>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--<script>-->
+<!--(function (b, o, i, l, e, r) {-->
+<!--b.GoogleAnalyticsObject = l;-->
+<!--b[l] || (b[l] =-->
+<!--function () {-->
+<!--(b[l].q = b[l].q || []).push(arguments)-->
+<!--});-->
+<!--b[l].l = +new Date;-->
+<!--e = o.createElement(i);-->
+<!--r = o.getElementsByTagName(i)[0];-->
+<!--e.src = '//www.google-analytics.com/analytics.js';-->
+<!--r.parentNode.insertBefore(e, r)-->
+<!--}(window, document, 'script', 'ga'));-->
+<!--ga('create', 'UA-XXXXX-X');-->
+<!--ga('send', 'pageview');-->
+<!--</script>-->
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/firebase/firebase-debug.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-custom-0.10.0.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+<script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+<script src="bower_components/angular-strap/src/helpers/parse-options.js"></script>
+<script src="bower_components/angular-strap/src/helpers/dimensions.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="bower_components/famous/dist/famous-global.js"></script>
+<script src="bower_components/famous-angular/dist/famous-angular.js"></script>
+<script src="bower_components/sheets-master/dist/sheets.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="bower_components/underscore.string/dist/underscore.string.min.js" type="text/javascript"></script>
+<script type="text/javascript"> _.mixin(_.str.exports()) </script>
+<script src="scripts/app.js"></script>
+<script src="scripts/values.js"></script>
+<script src="scripts/famous-config.js"></script>
+<script src="scripts/animation.js"></script>
+<script src="bower_components/chance/chance.js"></script>
+<!-- inject:partials -->
+<!-- endinject -->
+<script src="scripts/directives/sv-nav-toggle.js"></script>
+<script src="scripts/directives/sv-nav-classic.js"></script>
+<script src="scripts/directives/sv-top-nav.js"></script>
+<script src="scripts/directives/sv-header.js"></script>
+<script src="scripts/directives/sv-login-popover.js"></script>
+<script src="scripts/directives/sv-login.js"></script>
+<script src="scripts/directives/sv-aside-panel.js"></script>
+<script src="scripts/directives/sv-footer-nav.js"></script>
+<script src="scripts/directives/sv-comment-popover.js"></script>
+<script src="scripts/directives/sv-del-conform.js"></script>
+<script src="scripts/directives/sv-post-edit.js"></script>
+<script src="scripts/directives/sv-frame.js"></script>
+<script src="scripts/directives/sv-search-sale-property.js"></script>
+<script src="scripts/directives/sv-selected-house.js"></script>
+<script src="scripts/directives/sv-selected-property.js"></script>
+<script src="scripts/directives/sv-more-info-animated.js"></script>
+<script src="scripts/directives/sv-image-resize.js"></script>
+<script src="scripts/directives/sv-broker-application.js"></script>
+<script src="scripts/directives/sv-txt.js"></script>
+<script src="scripts/directives/sv-create-account.js"></script>
+<script src="scripts/directives/sv-area.js"></script>
+<script src="scripts/directives/sv-checkbox.js"></script>
+<script src="scripts/directives/sv-btn-add-feature.js"></script>
+<script src="scripts/directives/sv-photo-thumb.js"></script>
+<script src="scripts/directives/sv-chbx.js"></script>
+<script src="scripts/directives/sv-add-feature.js"></script>
+<script src="scripts/directives/sv-add-room.js"></script>
+<script src="scripts/directives/sv-btn-action.js"></script>
+<script src="scripts/directives/sv-sale-type.js"></script>
+<script src="scripts/directives/sv-home-header.js"></script>
+<script src="scripts/directives/sv-sign-in-alert.js"></script>
+<script src="scripts/directives/sv-photo-gallery.js"></script>
+<script src="scripts/directives/sv-cancel-view.js"></script>
+<script src="scripts/directives/sv-home-basic-info.js"></script>
+<script src="scripts/directives/sv-remax-home.js"></script>
+<script src="scripts/directives/sv-home-display-slider.js"></script>
+<script src="scripts/directives/sv-home-inline-info.js"></script>
+<script src="scripts/directives/sv-home-sm.js"></script>
+<script src="scripts/directives/sv-back.js"></script>
+<!-- filters -->
+<script src="scripts/filters/KeyConversion.js"></script>
+<script src="scripts/filters/BoolToBinery.js"></script>
+<script src="scripts/filters/KeyUnconversion.js"></script>
+<script src="scripts/filters/AreaRemove.js"></script>
+<script src="scripts/filters/RemoveOrder.js"></script>
+<script src="scripts/filters/HomeFilter.js"></script>
+<script src="scripts/filters/ShowSectionProp.js"></script>
+<script src="scripts/filters/ShowSectionDraft.js"></script>
+<!-- services -->
+<script src="scripts/services/HomeService.js"></script>
+<script src="scripts/services/BrokerService.js"></script>
+<script src="scripts/services/HomePropertyService.js"></script>
+<script src="scripts/services/DraftsService.js"></script>
+<script src="scripts/services/BrokerHomesService.js"></script>
+<script src="scripts/services/InitialValuesService.js"></script>
+<script src="scripts/controllers/SearchSaleResultsCtrl.js"></script>
+<script src="scripts/services/SearchService.js"></script>
+<script src="scripts/services/CleanObjectService.js"></script>
+<script src="scripts/directives/sv-only-numbers.js"></script>
+<script src="scripts/services/HideAreaService.js"></script>
+<script src="scripts/services/AddNewFieldService.js"></script>
+<script src="scripts/services/ProfileTypeService.js"></script>
+<script src="scripts/controllers/LoginCtrl.js"></script>
+<script src="scripts/controllers/SavedSearchesCtrl.js"></script>
+<script src="scripts/controllers/WishListCtrl.js"></script>
+<script src="scripts/directives/sv-customer-info-form.js"></script>
+<script src="scripts/directives/sv-del-profile.js"></script>
+<script src="scripts/directives/sv-drop-down.js"></script>
+<script src="scripts/directives/sv-broker-info-form.js"></script>
+<script src="scripts/directives/sv-spinner.js"></script>
+<script src="scripts/directives/sv-pagination.js"></script>
+<script src="scripts/filters/StartFrom.js"></script>
+<script src="scripts/directives/sv-link-user-profile.js"></script>
+<script src="scripts/directives/sv-btn-notifications.js"></script>
+<script src="scripts/services/UserService.js"></script>
+<script src="scripts/directives/sv-saved-search.js"></script>
+<script src="scripts/directives/sv-btn-remove-search.js"></script>
+<script src="scripts/services/AddSearchFeaturesService.js"></script>
+<script src="scripts/directives/sv-sort-homes.js"></script>
+<script src="scripts/controllers/AllSaleHomesCtrl.js"></script>
+<script src="scripts/controllers/CondosSaleHomesCtrl.js"></script>
+<script src="scripts/services/TypeHomesService.js"></script>
+<script src="scripts/directives/sv-homes-list.js"></script>
+<script src="scripts/directives/sv-shared-listings-tabs.js"></script>
+<script src="scripts/directives/sv-tabs.js"></script>
+<script src="scripts/directives/sv-broker-dashboard.js"></script>
+<script src="scripts/controllers/WatchPropertyCtrl.js"></script>
+<script src="scripts/controllers/BrokerSoldHomesCtrl.js"></script>
+<script src="scripts/controllers/SingleFamilyHomesCtrl.js"></script>
+<script src="scripts/controllers/AddHomeRentalCtrl.js"></script>
+<script src="scripts/directives/sv-homes-user-list.js"></script>
+<script src="scripts/controllers/HomeRentDraftCtrl.js"></script>
+<script src="scripts/controllers/HomeRentPostedCtrl.js"></script>
+<script src="scripts/directives/sv-search-property-rent.js"></script>
+<script src="scripts/controllers/SettingStatesFillCtrl.js"></script>
+<script src="scripts/services/StatesService.js"></script>
+<script src="scripts/controllers/SearchRentResultsCtrl.js"></script>
+<script src="scripts/controllers/AllRentalHomesCtrl.js"></script>
+<script src="scripts/controllers/AllRentalHousesCtrl.js"></script>
+<script src="scripts/controllers/AllRentalApartmentsCtrl.js"></script>
+<script src="scripts/services/WatchListService.js"></script>
+<script src="scripts/directives/sv-watch-list-buttons.js"></script>
+<script src="scripts/services/HomeWatchListService.js"></script>
+<script src="scripts/directives/sv-share-property.js"></script>
+<script src="scripts/directives/sv-save-search.js"></script>
+<script src="scripts/services/QueryService.js"></script>
+<script src="scripts/filters/Property.js"></script>
+<script src="scripts/directives/sv-btn-add-wish-home.js"></script>
+<script src="scripts/directives/sv-del-draft.js"></script>
+<script src="scripts/services/WishListService.js"></script>
+<script src="scripts/directives/sv-wish-list-homes.js"></script>
+<script src="scripts/directives/sv-contact-us-form.js"></script>
+<script src="scripts/directives/sv-famo-us-training.js"></script>
+<script src="scripts/directives/sv-http-prefix.js"></script>
+<script src="scripts/directives/sv-input-txt.js"></script>
+<script src="scripts/directives/sv-input-numbers.js"></script>
+<script src="scripts/services/BrokerProfileService.js"></script>
+<script src="scripts/services/AuthService.js"></script>
+<script src="scripts/controllers/HomepageExamplesCtrl.js"></script>
+<script src="scripts/directives/sv-new-listings.js"></script>
+<script src="scripts/controllers/SveticCtrl.js"></script>
+<script src="scripts/directives/sv-main-image.js"></script>
+<script src="scripts/controllers/AdminPanelCtrl.js"></script>
+<script src="scripts/services/BrokerApplicationService.js"></script>
+<script src="scripts/directives/sv-one-stop-list.js"></script>
+<script src="scripts/directives/sv-one-stop.js"></script>
+<script src="scripts/directives/sv-home-page-search.js"></script>
+<script src="scripts/controllers/BrokerApplicationsCtrl.js"></script>
+<script src="scripts/controllers/RegisteredBrokersCtrl.js"></script>
+<script src="scripts/services/RegisteredBrokersService.js"></script>
+<script src="scripts/directives/sv-image-upload.js"></script>
+<script src="scripts/directives/sv-del-from-wish.js"></script>
+<script src="scripts/directives/sv-delete-broker-info.js"></script>
+<script src="scripts/directives/sv-home-panel.js"></script>
+<script src="scripts/directives/sv-home-info.js"></script>
+<script src="scripts/controllers/NavigationCtrl.js"></script>
+<script src="scripts/controllers/CityHomesCtrl.js"></script>
+<script src="scripts/controllers/CityHomesRentalCtrl.js"></script>
+<!-- links -->
+<script src="scripts/controllers/HomesSharedCtrl.js"></script>
+<script src="scripts/controllers/MainCtrl.js"></script>
+<script src="scripts/controllers/AddHomeSaleCtrl.js"></script>
+<script src="scripts/controllers/RemaxAuthCtrl.js"></script>
+<script src="scripts/controllers/HomeDraftsCtrl.js"></script>
+<script src="scripts/controllers/HomeSaleDraftCtrl.js"></script>
+<script src="scripts/controllers/AgentsCtrl.js"></script>
+<script src="scripts/controllers/BecomeRemaxAgentCtrl.js"></script>
+<script src="scripts/controllers/UserProfileCtrl.js"></script>
+<script src="scripts/controllers/ContactUsCtrl.js"></script>
+<script src="scripts/controllers/Generate.js"></script>
+<script src="scripts/controllers/IndexCtrl.js"></script>
+<script src="scripts/controllers/LoginCtrl.js"></script>
+<script src="scripts/controllers/HomeSalePostedCtrl.js"></script>
+<script src="scripts/controllers/ProfileCtrl.js"></script>
+<script src="scripts/controllers/RemaxArticlesCtrl.js"></script>
+<script src="scripts/controllers/WhyRemaxCtrl.js"></script>
+</body>
+</html>

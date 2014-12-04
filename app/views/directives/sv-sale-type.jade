@@ -1,0 +1,10 @@
+.sale-type
+  ul.list-inline
+    li
+      h5.label.label-primary {{home|showSectionProp:'propertyStatus'}}
+    li(ng-show="home|showSectionProp:'shortSale'")
+      h5.label.label-danger Short Sale
+    li(ng-show="home|showSectionProp:'bankOwned'")
+      h5.label.label-info Bank Owned
+    li(ng-show="home|showSectionProp:'foreclosure'")
+      h5.label.label-default Foreclosure

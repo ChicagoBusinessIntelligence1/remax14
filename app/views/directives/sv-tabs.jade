@@ -1,0 +1,9 @@
+div
+  ul.nav.nav-tabs(role="tablist")
+    li(ng-class='{active:$index===tabActive}' ng-repeat="tab in tabs")
+      a.cursor-p(role="tab" ng-click='setActiveTab($index)') {{tab.title}}
+  .tab-content
+    .tab-pane.active
+      ul.list-unstyled
+        li(ng-repeat="tab in tabs" ng-if='$index  === tabActive')
+          div(ng-include='tab.view' ng-show='tabActive===$index')

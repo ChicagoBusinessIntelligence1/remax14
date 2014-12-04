@@ -1,0 +1,11 @@
+.form-group
+  button.btn.btn-default.btn-sm.btn-select-prop.form-control(
+  placeholder='Any'
+  trigger='click'
+  ng-model='sectionProperty.value'
+  data-html='1'
+  ng-options='type.$value as type.$value for type in types',
+  bs-select='types')
+    | Action
+    span.caret.app-caret.text-right
+

@@ -1,0 +1,149 @@
+@import 'nib'
+@import 'functions'
+
+/**********************
+     =sv-aside-nav
+**********************/
+
+/*remax*/
+
+
+search-tabs-wrapper
+  input
+    margin-top 5px
+    font-size 1em
+  li
+    a
+      font-size 1em !important
+      padding 10px
+
+  @media screen and (max-width: 992px)
+    font-size .8em
+    input
+      font-size 1em !important
+
+
+.search-tabs-content
+  padding-top 5px
+  padding-left 10px
+  padding-right 10px
+
+/*template*/
+.left-sidebar {
+  background-color color-content
+  padding-right 10px
+  padding-left 10px
+  padding-top 10px
+}
+
+.submit-search
+  btn-primary()
+
+/*------------------------------------------------*/
+/*	aside navigation
+/*------------------------------------------------*/
+
+/* aside menu */
+.aside-menu
+  padding-left 0
+  border-bottom border-app-light
+  list-style-type none
+  line-height 30px;
+
+.aside-menu
+  li
+    a
+      display block
+      position relative
+      padding 10px 0 10px 15px
+      color color-app
+      background-color color-darken
+      border-top border-app-light
+      &:hover
+      &:active
+      &:focus
+        border-top border-app-light
+        background-color color-content
+        text-decoration none
+
+.aside-menu > li:first-child > a
+  border-top none
+
+.aside-menu
+  li
+    a
+      .text
+        padding-left 8px !important
+  .fa
+    width 14px
+    text-align center
+  .toggle-icon
+    font-size 14px
+    width 10px
+    position absolute
+    right 10px
+    top 13px
+    text-shadow none
+
+.sub-menu
+  li
+    a
+      .text
+        padding-left 20px !important
+
+/**********************
+     =sv-aside-panel
+**********************/
+
+.sidebar-content
+  .text-panel
+    padding-left 5px
+
+/* tips panel */
+
+.app-tips
+  border-radius 0px
+  .panel-heading
+    border-radius 0px
+    background-color lighten(color-skin, 94) !important
+  .panel-body
+    background-color color-app-light !important
+    p
+      font-size 12px
+  .panel-heading
+    h5
+      margin 0
+
+/* info panel */
+
+h5.label-default-head
+  label-default-head()
+
+.list-info-sidebar
+  padding 5px 10px
+  border lighten(color-skin, 75)
+  li
+    font-size 10px
+    margin-bottom 0
+  span
+    display block
+    vertical-align middle
+    vertical-align auto
+    padding 5px
+    line-height 15px
+  .info-name
+    width 100%
+    background-color transparent
+    color lighten(color-app, 57) !important
+    font-size 11px
+    vertical-align top
+  .info-value
+    padding-left 10px
+
+.your-element-form-wrapper
+  padding 10px
+  display block
+
+.label-text
+  padding-left 5px
+  display inline-block

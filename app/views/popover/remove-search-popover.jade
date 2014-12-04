@@ -1,0 +1,10 @@
+.popover.broker-app-popover
+  .arrow
+  h3.popover-title Are you sure you want remove this search?
+  .popover-content
+    button.btn.btn-danger.btn-sm.btn-save(ng-click='removeSearch();$hide()' ng-disabled='form.$invalid' )
+      i.fa.fa-check
+      | &nbsp Remove
+    button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
+      i.fa.fa-times
+      | &nbsp Cancel

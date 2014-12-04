@@ -1,0 +1,10 @@
+.popover.broker-app-popover
+  .arrow
+  h3.popover-title Remove from your wish list?
+  .popover-content
+    button.btn.btn-danger.btn-sm.btn-save(ng-click='removeWishList(l.$id);$hide()')
+      i.fa.fa-trash
+      | &nbsp Delete
+    button.btn.btn-default.btn-sm.btn-cancel(ng-click='$hide()')
+      i.fa.fa-times
+      | &nbsp Cancel

@@ -1,0 +1,5 @@
+div
+  button.btn.btn-default.btn-sm.btn-draft(ng-click='addToWatchList(mls)' ng-show='!isWatched' data-toggle="tooltip" data-placement="left" title="{{addToWatch}}")
+    i.fa.fa-eye.fa-fw
+  button.btn.btn-default.btn-sm.btn-draft(ng-click='removeFromWatchList(mls)' ng-show='isWatched' data-toggle="tooltip" data-placement="left" title="{{removeFromWatch}}")
+    i.fa.fa-eye-slash.fa-fw

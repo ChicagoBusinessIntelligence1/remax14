@@ -1,0 +1,502 @@
+@import 'functions'
+@import 'post'
+@import 'header'
+@import 'top-nav'
+@import 'animation/test'
+@import 'animation/css-animations'
+@import 'animation/css-transitions'
+@import 'animation/ng-animation'
+@import 'manage-home'
+@import 'social-media-share'
+@import 'aside'
+@import 'profile'
+@import 'photos'
+@import 'photo-gallery'
+@import 'footer'
+@import 'remax-elements'
+@import 'new-listing'
+@import 'shapes'
+
+
+
+/**********************
+      =Variables
+***********************/
+.home
+  .examples
+    .square
+      background-color #da262e
+
+.square
+  background-color #da262e
+/**********************
+
+     Variables
+***********************/
+base()
+
+*
+  margin 0
+
+html
+  -webkit-font-smoothing antialized
+  font-size 0.8em
+
+
+body
+  color color-app
+  background-color color-darken
+
+html, body
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+.modal-backdrop.am-fade
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter
+    opacity: 0;
+    &.ng-enter-active
+      opacity: .5;
+
+  &.ng-leave
+    opacity: .5;
+    &.ng-leave-active
+      opacity: 0;
+
+
+
+h1, h2, h3, h4, h5, h6, legend
+  color color-app
+
+h6
+  font-size 18px
+  font-weight 700
+  margin-bottom 5px !requireant
+  margin-top 5px
+
+.test-gulp
+  background-color #ffff00
+
+.menu-link
+
+    font-family 'Hind', sans-serif
+
+.btn-link-dark
+  link-custom()
+
+.btn-link-light
+  link-light()
+
+.bg-info
+  background-color lighten( #337ab7, 30%)
+  color white
+
+.bg-red
+  background-color red
+
+.btn-default-app
+  background-color lighten(color-skin, 46)
+  border-color lighten(color-skin, 42)
+  color #f5f5f5
+  &:hover
+  &:focus
+  &:active
+    background-color lighten(color-skin, 40)
+    border-color lighten(color-skin, 36)
+    color #f5f5f5
+
+/*Bootstrap custom styles*/
+
+/**********************
+      =buttons
+***********************/
+.cursor-p
+  cursor pointer
+
+.app-content-five
+  padding-top 5px
+  padding-bottom 5px
+
+.btn-mob-dev
+  vertical-align center
+
+  @media screen and (max-width: 992px)
+    width 100%
+
+
+.alert-info
+  margin-top 0px
+  padding 7px
+  font-size 14px
+  font-weight 700
+  background-color lighten(color-blue, 90)
+
+.alert-address
+  background-color lighten(color-skin, 98)
+  border border-boot
+  margin-top 0px
+  margin-bottom 5px
+  padding 7px
+  font-size 14px
+  font-weight 700
+
+
+.app-input
+  &::-webkit-input-placeholder
+    color lighten(color-app, 60%)
+  &::-moz-placeholder
+    color lighten(color-app, 60%)
+
+.field3
+  &::-webkit-input-placeholder
+    color #090
+    background lightgreen
+    text-transform uppercase
+  &::-moz-placeholder
+    color #090
+    background lightgreen
+    text-transform uppercase
+
+.field4
+  &::-webkit-input-placeholder
+    font-style italic
+    text-decoration overline
+    letter-spacing 3px
+    color #999
+  &::-moz-placeholder
+    font-style italic
+    text-decoration overline
+    letter-spacing 3px
+    color #999
+
+
+
+
+/**********************
+      =Typography
+  ***********************/
+
+h5
+  font-size 14
+  font-weight 700
+
+.text-info
+  color lighten(color-blue, 15)
+
+.text-warning
+  color color-red
+
+.text-app
+  color color-app
+
+.read-more
+  font-size 11px
+
+.thumbnail
+  margin-bottom 5px
+
+.span-required
+  font-size 11px
+  color lighten(color-red, 30%)
+  display block
+  text-align right
+
+/**********************
+     =main content
+**********************/
+
+.app-container-10
+  padding 10px
+
+.app-container-15
+  padding 15px
+
+.pagination-container
+  padding-left 10px
+
+.remax-phone-sm
+  font-size 18px
+  font-weight 700
+  color color-red
+
+.call-remax-sm
+  font-size 14px
+  font-weight 700
+  color lighten(color-blue, 15)
+  margin-bottom 5px
+
+.main-wrapper
+  background-color lighten(color-skin, 98)
+
+.main-content
+  background-color color-content
+
+.error input, .error textarea, .error select
+  margin-bottom 16px
+
+.btn-wrapper
+  margin-bottom 25px
+
+.home-ad-wrapper
+  padding 10px
+
+.content-wrapper
+  background-color lighten(color-skin, 98)
+  padding 10px
+
+  @media screen and (min-width: 992px)
+    min-height 1200px
+    padding 15px 30px
+
+/**********************
+    =Home Page
+***********************/
+.pad-app
+  margin-top 20px
+
+
+.p-home
+  font-size 20px
+  line-height 36px
+
+.remax-logo-container
+  padding 20px
+
+.remax-first-class
+  width 300px
+  height 300px
+
+.ul-first-line
+  font-size 16px
+  li
+    a
+      color color-blue
+      font-size 18px
+      line-height 36px
+      &:hover
+      &:active
+      &:focus
+        text-decoration none
+
+.bg-custom
+  padding 10px
+
+.li-first-line
+  display: inline-block !requireant;
+  width: 170px !requireant;
+
+/**********************
+      =Post
+***********************/
+
+.article-img
+  float right
+
+/**********************
+      =about
+***********************/
+.custom-list
+  comma-list()
+
+table
+  stripe()
+  td
+  torm
+
+table#users
+  stripe lighten(color-app, 25) lighten(color-app, 10)
+  td, th
+    color color-app-lighten
+
+/**********************
+    =contact us
+***********************/
+
+.contact-address
+  custom-radius 15px
+  border border-app-light
+  width 300px
+  padding 15px
+
+.slide-view
+  z-index 999
+
+/*GreenSock practicing*/
+#demo
+  width 792px
+  height 150px
+  background-color #333
+  padding 8px
+
+#bar
+  background-color #91e500
+  color black
+  position relative
+  width 5px
+  height 90px
+
+#logo
+  position relative
+  top -38px !requireant
+  left -10px
+  width 60px !requireant
+  height 60px !requireant
+
+.datepicker.dropdown-menu
+  width 250px
+  height 290px
+  button
+    outline none
+    border 0px
+  tbody
+    height 180px
+  tbody
+    button
+      padding 0px
+      width 20px
+  &.datepicker-mode-1, &.datepicker-mode-2
+    tbody
+      button
+        height 65px
+
+.img-bagua
+  display block
+  margin 0 auto !requireant
+
+/**********************
+Selected House
+ ***********************/
+.selected-house-wrapper
+  position relative
+  cursor pointer
+
+.selected-house-info
+  background-color color-off-white
+  opacity .90
+  padding-left 0px
+  padding-right 0px
+  position relative
+  border-radius 5px
+  color color-skin
+  z-index 99
+
+.selected-house
+  cursor pointer !requireant
+
+.selected-prop-info-container
+  padding 5px
+  table
+    margin-bottom 0px
+  tbody
+    tr
+      th
+        color color-skin
+        font-size 10px !requireant
+      td
+        font-size 10px !requireant
+        padding-top 3px
+        padding-bottom 3px
+  h5
+    color color-skin
+    margin-top 7px
+    margin-bottom 3px
+    font-size 11px !requireant
+    font-weight 700
+  a
+
+    font-size 11px
+    color color-skin
+    &:hover
+    &:active
+    &:focus
+      text-decoration none
+
+/**********************
+ Accordian Styles
+***********************/
+
+.acc-wrapper
+  width 200px
+  cursor: pointer
+  overflow hidden
+  height 100%
+
+.acc-title
+  text-align center
+  border-radius 9px
+
+.acc-add-info
+  position relative
+  border-radius 9px
+
+.btn-padding
+  padding 20
+
+.bold
+  font-weight bold
+
+.tab-pane.am-fade
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  opacity: 1;
+
+  &.active-remove
+    display: none !important;
+
+  &.active-add
+    animation-name: fadeIn;
+
+.remove-width
+  width: 100% !important
+
+/**********************
+    =Search
+ ***********************/
+.search-home-container
+  padding-left 15px
+
+.input-search
+.btn-search-home-page
+  font-size 18px !important
+  line-height 22px
+  height 36px
+  font-weight 400 !important
+
+.btn-search-home-page
+  border-top-left-radius 0px !important
+  border-bottom-left-radius 0px !important
+
+.select-home-search
+  font-size 16px
+  color color-app !important
+  border-top-right-radius 0px !important
+  border-bottom-right-radius 0px !important
+  padding-top 7px
+  padding-bottom 7px
+
+.home-page-social
+  display box
+  height 45px
+  margin-top 250px
+
+.input-search
+  border-top-right-radius 0px !important
+  border-bottom-right-radius 0px !important
+  border-top-left-radius 0px !important
+  border-bottom-left-radius 0px !important
+  width 300px !important
+
+.search-form
+  .form-group
+    label
+      margin-bottom: 5px
+
+      /*Plesase do not DELETE it. ANDRONE WILL BE ANGREEE */
+.nav, .pagination, .carousel, .panel-title a
+  cursor: pointer;
+
+.ng-table
+  border 1px solid #000
+

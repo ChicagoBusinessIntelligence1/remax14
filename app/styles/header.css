@@ -1,0 +1,135 @@
+.form-group {
+  margin-bottom: 10px;
+}
+label {
+  margin-bottom: 0px;
+}
+.table-elements {
+  margin: 0 auto;
+}
+/**********************
+     =header
+***********************/
+.text-center {
+  text-align: center;
+}
+.header-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #f3f3f3;
+}
+.header-wrapper {
+  padding: 10px;
+}
+.logo-content {
+  position: relative;
+  padding: 0px;
+}
+.logo-content img {
+  display: inline-block;
+  position: relative;
+  left: -10px;
+}
+@media screen and (max-width: 992px) {
+  .logo-content img {
+    position: relative;
+    display: block !important;
+    width: 120px;
+    margin: 0 auto;
+  }
+}
+.slogan-text {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.slogan-text p {
+  color: #396c95;
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-bottom: 0px;
+  text-shadow: #fff 1px 1px 0px;
+}
+.ul-call-us {
+  margin: 0px 0px 10px 0px;
+}
+@media screen and (min-width: 992px) {
+  .ul-call-us {
+    margin-top: 0px;
+    padding-top: 10px !important;
+  }
+}
+.callUsContent {
+  width: 28px;
+}
+.call-us {
+  color: #db3136;
+  text-shadow: #f7f7f4 1px 1px 0px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 5px !important;
+}
+.one-stop-service {
+  height: 420px;
+  background: url("../images/home/blue-blur.jpg") 0 0 no-repeat;
+/*background-color lighten(#0682B9, 30%)*/
+}
+/*Social Media*/
+@media screen and (max-width: 992px) {
+  .media-wrap-a {
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .media-wrap-b {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+.social-div {
+  position: relative;
+  padding-left: 5px;
+}
+.social-div ul {
+  position: relative;
+  margin-bottom: 0px;
+}
+.social-div ul li {
+  padding: 2px;
+  display: inline-block;
+}
+@media screen and (min-width: 992px) {
+  .social-div ul {
+    text-align: right;
+  }
+}
+.social-media {
+  position: relative;
+  height: auto;
+  padding: 0px;
+}
+.social-img {
+  display: inline-block;
+}
+.custom-aligns {
+  position: relative;
+  text-align: right !important;
+}
+.icons-wrapper {
+  padding-right: 0px;
+}
+.ul-icons {
+  position: relative;
+  margin-bottom: 0px;
+}
+.ul-icons li {
+  padding-right: 0px;
+}
+@media screen and (min-width: 992px) {
+  .ul-icons {
+    bottom: -35px;
+    padding-right: 15px;
+  }
+}

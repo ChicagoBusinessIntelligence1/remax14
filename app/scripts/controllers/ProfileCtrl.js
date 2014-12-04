@@ -4,6 +4,7 @@ angular.module('app')
   .controller('ProfileCtrl', function (ProfileTypeService, WatchListService, $scope, $state, user, $rootScope) {
 
     if (user !== null) {
+      var breakPoint=1;
       ProfileTypeService.determine(user).then(function (user) {
         $rootScope.user = user;
         WatchListService.getSaleRentLists().then(function (watchList) {

@@ -68,6 +68,9 @@ angular.module('app')
           return false;
         }
         var brokers = this.findSection(home, 'brokers');
+        if (!brokers) {
+          return false;
+        }
         if (_.isUndefined(brokers.content) || !_.isArray(brokers.content)) {
           return false;
         }

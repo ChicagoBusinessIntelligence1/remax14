@@ -23,8 +23,9 @@ angular.module('app')
 
             if (broker.$id === id) {
               profileType = 'broker';
-              isAdmin = broker.isAdmin;
+              isAdmin = broker.profile.isAdmin;
             }
+
           }
           user.profileType = profileType;
           user.isAdmin = isAdmin;

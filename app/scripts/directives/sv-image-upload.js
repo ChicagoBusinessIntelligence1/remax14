@@ -4,21 +4,25 @@ angular.module('app')
   .directive('svImageUpload', function (FileUploader, imgSize) {
 
     function scale(initHeight, initWidth) {
-      var finalWidth,finalHeight;
+      initHeight = parseInt(initHeight);
+      initWidth = parseInt(initWidth);
+
+      imgSize.w = parseInt(imgSize.w);
+      imgSize.h = parseInt(imgSize.h);
+
+      var finalWidth, finalHeight;
 
       var heightCoef;
       if (initHeight > imgSize.h) {
-        heightCoef = Math.round(imgSize.h / initHeight);
+        heightCoef = imgSize.h / initHeight;
         var scaledWidth = Math.round(heightCoef * initWidth);
         if (scaledWidth > imgSize.w) {
-          var widthCoef = Math.round(imgSize.h / initWidth);
-         finalWidth = imgSize.w ;
-         finalHeight = Math.round(widthCoef*initHeight);
-
+          var widthCoef = imgSize.w / initWidth;
+          finalWidth = imgSize.w;
+          finalHeight = Math.round(widthCoef * initHeight);
         } else {
-         finalHeight = imgSize.h ;
-         finalWidth = Math.round(heightCoef*initWidth);
-
+          finalHeight = imgSize.h;
+          finalWidth = Math.round(heightCoef * initWidth);
         }
       }
       return {scaledWidth: finalWidth, scaledHeight: finalHeight};

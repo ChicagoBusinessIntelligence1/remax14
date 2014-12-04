@@ -5,7 +5,7 @@
       fa-app(ng-style='galleryStyle' )
         fa-modifier(fa-opacity='selectedImage.opacity.get()' )
           fa-surface
-            img.thumbnail(ng-src="{{selectedImage.url}}" style="width:{{imageWidth}}px")
+            img.thumbnail(ng-src="{{selectedImage.url}}")
         fa-modifier(fa-translate='[{{thumbWidth/2.3}},{{verticalShift}},0]')
           fa-scroll-view(id='imageScroll' fa-options='options.imageScroll' fa-pipe-from='scrollHandler')
             fa-view(ng-repeat='image in faImages track by $index')

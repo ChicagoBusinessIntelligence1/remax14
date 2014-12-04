@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media, $timeline) {
+  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media, $timeline, imgSize) {
     return {
       restrict: 'E',
       replace: true,
@@ -19,6 +19,8 @@ angular.module('app')
         var verticalShiftRatio = 0.84;
         var thumbRatio = 0.17;
         var heightRatio = 0.66;
+
+        $scope.imgSize = imgSize;
 
         /*Our initial width for all calculations*/
         $scope.sectionWidth = listing.width();

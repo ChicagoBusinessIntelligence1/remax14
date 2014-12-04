@@ -119,5 +119,5 @@ app.value('notifications', {
 
 });
 app.value('query', {});
-app.value('imgSize', {w:720,h:482})
+app.value('imgSize', {w:710,h:482})
 app.value('pageHomesNumber', '3');

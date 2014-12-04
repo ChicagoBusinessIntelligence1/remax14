@@ -3141,10 +3141,11 @@ label {
   margin: 0 auto;
 }
 .btn-select-prop {
+  position: relative;
   text-align: left;
   height: 30px;
 }
-.btn-select-prop span {
+.btn-select-prop span .caret {
   display: inline-block;
   margin-top: 7px;
   float: right;
@@ -4776,13 +4777,6 @@ Selected House
   border-bottom-right-radius: 0px !important;
   padding-top: 7px;
   padding-bottom: 7px;
-}
-select .select-home-search option {
-  padding-top: 7px !important;
-  padding-bottom: 7px !important;
-  margin-top: 7px !important;
-  margin-bottom: 7px !important;
-  line-height: 24px !important;
 }
 .home-page-social {
   display: box;

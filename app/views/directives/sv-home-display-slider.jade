@@ -5,7 +5,7 @@ div
         ul.list-inline(ng-switch="user.profileType")
           li
             h4.text-info {{section.title | keyConversion}}
-          li(ng-show='isVisible' ng-switch-when="broker")
+          li(ng-show='isVisible' ng-switch-when="broker" ng-if='isEditable')
             sv-btn-action(icon='fa-edit' action='editListing()' ng-hide='isEdit || isTemplate')
             sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit || isTemplate')
             sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit || isTemplate')

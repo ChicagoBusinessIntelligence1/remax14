@@ -11,6 +11,7 @@ angular.module('app')
       },
 
       controller: function ($scope) {
+        var that = this;
         $scope.uploadedImages = [];
 
         $scope.uploader = new FileUploader();
@@ -28,36 +29,40 @@ angular.module('app')
           "title": "Please save listing first",
           "checked": false
         };
-      },
-
-      link: function ($scope, element, attr) {
-
         var url = $scope.isRent ? urlRental : urlSale;
         var mls = $stateParams.mls;
         $scope.isTemplate = mls ? false : true;
-        $scope.home = HomeService.getArrayFire(url, mls, $scope.isDraft);
-        $scope.isDataLoading = true;
+        var home = HomeService.getArrayFire(url, mls, $scope.isDraft);
+        home.$loaded(function (home) {
+          if ($rootScope.user.isAdmin) {
+            $scope.isEditable = true;
+          } else {
+            $scope.isEditable = HomeService.isEditable(home, $rootScope.user.id);
+          }
+          that.isEditable = $scope.isEditable;
+          $scope.home = home;
 
-        $scope.clearGallery = function () {
-
-          var homeSection = HomeService.findSection($scope.home, 'images');
-          homeSection.content=[];
-
-          HomeService.updateHomeSection(homeSection).then(function () {
-            $scope.images = [];
-          })
-        }
-
-        $scope.home.$loaded(function () {
           $scope.home = InitialValuesService.seed($scope.home, $scope.isTemplate);
           $scope.isDataLoading = false;
 
           var images = HomeService.findSection($scope.home, 'images');
           if (!_.isUndefined(images)) {
             $scope.images = images.content;
-
           }
         })
+      },
+
+      link: function ($scope, element, attr) {
+
+        $scope.clearGallery = function () {
+
+          var homeSection = HomeService.findSection($scope.home, 'images');
+          homeSection.content = [];
+
+          HomeService.updateHomeSection(homeSection).then(function () {
+            $scope.images = [];
+          })
+        }
 
         $scope.moveToTrash = function () {
           HomeService.moveToTrash();
@@ -96,11 +101,9 @@ angular.module('app')
               content: []
             }
           }
-
           if (_.isUndefined(homeSection.content)) {
             homeSection.content = [];
           }
-
           homeSection.content.push(img64);
 
           HomeService.updateHomeSection(homeSection).then(function () {

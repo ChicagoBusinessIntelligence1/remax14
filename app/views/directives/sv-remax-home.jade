@@ -1,10 +1,9 @@
-.listing(id='home-listing')
+.listing(id='home-listing' ng-if='home')
   sv-spinner(ng-show='isDataLoading')
 
   div(ng-hide='isDataLoading')
     sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
-    hr
-    .form-group
+    .form-group(ng-if='isEditable')
       button.btn.btn-default(ng-click='showGalleryModal()') Add/Edit Images
     .gallery-wrapper(ng-if='!isTemplate')
       .row

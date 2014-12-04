@@ -31,7 +31,6 @@ function startExpress() {
   var express = require('express');
   var app = express();
 
-
   var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
@@ -43,8 +42,6 @@ function startExpress() {
   app.use(express.static(path.join(__dirname, '/app')));
 
   app.use(express.static(EXPRESS_ROOT));
-
-
 
   app.get('*', function (req, res) {
     res.render('index');
@@ -62,8 +59,8 @@ function startExpress() {
     if (!_.isUndefined(sendEmail.mobile)) {
       messageBody += 'Cell phone:' + sendEmail.mobile + '\r\n';
     }
-    messageBody+='\r\n';
-    messageBody+=sendEmail.body;
+    messageBody += '\r\n';
+    messageBody += sendEmail.body;
     sendgrid.send({
       to: 'chicagobusinessintelligence1@gmail.com',
       fromname: fromName,
@@ -84,8 +81,6 @@ function startExpress() {
 
   app.listen(EXPRESS_PORT);
 }
-
-
 
 gulp.task('scripts', function () {
   gulp.src('app/scripts/directives/sv-contact-us-form.js')
@@ -134,7 +129,7 @@ gulp.task('jade', function () {
       compileDebug: false
     }))
     .pipe(gulp.dest('app/views/'))
-    .pipe(livereload({silent:true}));
+    .pipe(livereload({silent: true}));
 });
 
 gulp.task('html', function () {
@@ -144,8 +139,7 @@ gulp.task('html', function () {
     .pipe(gulp.dest('app/'))
 });
 
-
-gulp.task("url", function(){
+gulp.task("url", function () {
   var options = {
     url: "http://localhost:3000",
     app: "chrome"
@@ -172,21 +166,24 @@ gulp.task('default', ['jade', 'stylus'], function () {
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
-    .pipe(livereload({silent:true}))
+    .pipe(livereload({silent: true}))
 
-
-  watch('app/views/**/*.jade', {watch:false})
+  watch('app/views/**/*.jade', {watch: false})
     .pipe(plumber())
     .pipe(jade({
-      debug:false
+      debug: false
     }))
     .pipe(gulp.dest('app/views'))
-    .pipe(livereload({silent:true}));
+    .pipe(livereload({silent: true}));
 
+  watch('app/scripts/**/*.js', {watch: false})
+    .pipe(plumber())
+    .pipe(gulp.dest('app/scripts'))
+    .pipe(livereload({silent: true}));
 
   gulp.src('app/index.html')
     .pipe(watch('app/index.html'))
-    .pipe(livereload({silent:true}))
+    .pipe(livereload({silent: true}))
 
   gulp.start('url');
 

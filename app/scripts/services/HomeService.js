@@ -28,7 +28,7 @@ angular.module('app')
         section = CleanObjectService.clean(section);
         section.content = images;
         this.homeRef.$update(id, section).then(function () {
-         defered.resolve(true) ;
+          defered.resolve(true);
         });
         return defered.promise;
       },
@@ -60,6 +60,24 @@ angular.module('app')
             return section;
           }
         }
+      },
+      isEditable: function (home, brokerId) {
+        var that = this;
+
+        if (_.isUndefined(brokerId)) {
+          return false;
+        }
+        var brokers = this.findSection(home, 'brokers');
+        if (_.isUndefined(brokers.content) || !_.isArray(brokers.content)) {
+          return false;
+        }
+        for (var i = 0; i < brokers.content.length; i++) {
+          var broker = brokers.content[i];
+          if (broker.id === brokerId) {
+            return true;
+          }
+        }
+        return false;
       }
 
     };

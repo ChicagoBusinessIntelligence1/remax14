@@ -22,7 +22,7 @@ angular.module('app')
       },
       link: function ($scope, element, attr, svCtrl) {
         $scope.required = svCtrl.required;
-
+        $scope.isEditable = svCtrl.isEditable;
         $scope.isEdit = false;
         $scope.isSingleProp = $scope.section.content ? $scope.section.content.length : 0;
         $scope.saveTest = function (mls) {

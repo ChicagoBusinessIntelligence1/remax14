@@ -62,6 +62,28 @@ angular.module('app')
         }
 
       },
+      subVal: function (section, title) {
+        for (var i = 0; i < section.length; i++) {
+          var prop = section[i];
+          if (prop.title === title) {
+            return prop.value;
+          }
+        }
+      },
+      getSectionContent: function (home, sectionTitle) {
+        for (var i = 0; i < home.length; i++) {
+          var section = home[i];
+          if (section.title === sectionTitle) {
+            if (section.content && _.isArray(section.content)) {
+              return section.content;
+            } else {
+              return null;
+            }
+          }
+        }
+        return null;
+
+      },
       isEditable: function (home, brokerId) {
         var that = this;
 

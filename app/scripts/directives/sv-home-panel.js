@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function () {
+  .directive('svHomePanel', function (HousesFrontImagesService, ) {
     return {
       restrict: 'E',
       replace: true,

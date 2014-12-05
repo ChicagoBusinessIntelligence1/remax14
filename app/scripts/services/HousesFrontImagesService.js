@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($firebase, $q, $rootScope, urlCommon {
+  .factory('HousesFrontImagesService', function ($firebase, $q, $rootScope, urlCommon) {
     return {
       repoUrl: null,
       repoRef: null,

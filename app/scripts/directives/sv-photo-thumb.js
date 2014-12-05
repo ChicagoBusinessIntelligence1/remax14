@@ -22,6 +22,7 @@ angular.module('app')
           'background-size': '125% auto',
           'background-position': $scope.backgroundPosition,
           'position': 'relative',
+          'background-repeat': 'no-repeat',
           'height': $scope.height + 'px',
           'width': $scope.width + 'px'
         });

@@ -4,12 +4,13 @@
   div(ng-hide='isDataLoading')
     sv-home-header(home='home' is-rent='isRent' is-template='isTemplate' save-template='saveTemplate()' is-draft='isDraft' del-draft='delDraft')
     .form-group(ng-if='isEditable')
-      button.btn.btn-default(ng-click='showGalleryModal()') Add/Edit Images
+      button.btn.btn-default-app(ng-click='showGalleryModal()' ng-if='!isTemplate')
+        i.fa.fa-picture-o.fa-fw &nbsp
+        | Add/Edit Images
     .gallery-wrapper(ng-if='!isTemplate')
       .row
         .col-sm-12
           sv-photo-gallery(images='images' ng-if='images')
-
   form(name="homeform" id="form" novalidate='novalidate')
     ul.list-unstyled
       li(ng-repeat='section in home|homeFilter:"brokers,images" |orderBy:"order"')

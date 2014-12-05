@@ -15,7 +15,6 @@ angular.module('app')
         var that = this;
         $scope.uploadedImages = [];
 
-
         $scope.uploader = new FileUploader();
         var galleryModal = $modal({scope: $scope, template: '../../views/modals/gallery-modal.html', show: false});
 

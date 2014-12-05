@@ -3,8 +3,9 @@
     fa-app(style='height:420px;width:720px')
       fa-view
         fa-scroll-view
-          fa-modifier
+          fa-modifier(ng-repeat='image in images track by $index')
             fa-surface
-              img(ng-src="../images/houses/1.jpg")
+              img(ng-src="{{image}}")
+
 
 

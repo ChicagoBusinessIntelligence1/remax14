@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($firebase, $q, $rootScope, urlCommon) {
+  .factory('HousesFrontImagesService', function ($firebase, $q, $rootScope, urlSale, HomeService) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -9,12 +9,22 @@ angular.module('app')
       all: function () {
         var that = this;
         var deferred = $q.defer();
+        var images = [];
 
-        that.repoUrl = urlCommon;
+        that.repoUrl = urlSale.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        that.repoRef.$asArray().$loaded(function (all) {
-        deferred.resolve(all);
+        that.repoRef.$asArray().$loaded(function (homes) {
+          for (var i = 0; i < homes.length; i++) {
+            var home = homes[i];
+            var images = HomeService.getSectionContent(home,'images');
+            var frontImage = _.first(images);
+            if (frontImage) {
+              images.push(frontImage);
+            }
+
+          }
+          deferred.resolve(images);
         })
         return deferred.promise;
       },
@@ -23,7 +33,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon;
+        that.repoUrl = urlSale.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
         deferred.resolve(that.repoRef.$asObject()[id]);
@@ -34,7 +44,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon;
+        that.repoUrl = urlSale.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         that.repoRef.$add(element).then(function () {
           deferred.resolve(true);

@@ -9,7 +9,7 @@ angular.module('app')
       all: function () {
         var that = this;
         var deferred = $q.defer();
-        var images = [];
+        var homesShort = [];
 
         that.repoUrl = urlSale.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
@@ -17,14 +17,22 @@ angular.module('app')
         that.repoRef.$asArray().$loaded(function (homes) {
           for (var i = 0; i < homes.length; i++) {
             var home = homes[i];
-            var images = HomeService.getSectionContent(home,'images');
+            var generalInfo = HomeService.getSectionContent(home, 'generalInformation');
+            var city = HomeService.subVal(generalInfo, 'city');
+            var price = HomeService.subVal(generalInfo, 'price');
+            var images = HomeService.getSectionContent(home, 'images');
             var frontImage = _.first(images);
             if (frontImage) {
-              images.push(frontImage);
+              var homeInfo = {
+                city: city,
+                price: price,
+                image: frontImage
+              };
+              homesShort.push(homeInfo);
             }
 
           }
-          deferred.resolve(images);
+          deferred.resolve(homesShort);
         })
         return deferred.promise;
       },

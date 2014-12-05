@@ -62,6 +62,14 @@ angular.module('app')
         }
 
       },
+      subVal: function (section, title) {
+        for (var i = 0; i < section.length; i++) {
+          var prop = section[i];
+          if (prop.title === title) {
+            return prop.value;
+          }
+        }
+      },
       getSectionContent: function (home, sectionTitle) {
         for (var i = 0; i < home.length; i++) {
           var section = home[i];

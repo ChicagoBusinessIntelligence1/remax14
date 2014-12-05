@@ -11,6 +11,7 @@ angular.module('app')
       },
 
       controller: function ($scope) {
+
         var that = this;
         $scope.uploadedImages = [];
 

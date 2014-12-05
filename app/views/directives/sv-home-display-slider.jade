@@ -1,15 +1,15 @@
 div
-  .head-panel.cursor-p
+  .head-panel.cursor-p(ng-click='toggleShow()')
     .row
       .col-xs-11
         ul.list-inline(ng-switch="user.profileType")
           li
             h4.text-info {{section.title | keyConversion}}
           li(ng-show='isVisible' ng-switch-when="broker" ng-if='isEditable')
-            sv-btn-action(icon='fa-edit' action='editListing()' ng-hide='isEdit || isTemplate')
-            sv-btn-action(icon='fa-save' action='saveSection()' ng-show='isEdit || isTemplate')
-            sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-show='isEdit || isTemplate')
-      .col-xs-1(ng-click='toggleShow()')
+            sv-btn-action(icon='fa-edit' action='editListing()' ng-if='!isEdit || isTemplate')
+            sv-btn-action(icon='fa-save' action='saveSection()' ng-if='isEdit || isTemplate')
+            sv-btn-action(icon='fa-remove' action='cancelEditListing()' ng-if='isEdit || isTemplate')
+      .col-xs-1
         .text-right(href="")
           i.fa.fa-angle-double-up.fa-fw(ng-show='isVisible')
           i.fa.fa-angle-double-down.fa-fw(ng-hide='isVisible')

@@ -14,4 +14,4 @@
   form(name="homeform" id="form" novalidate='novalidate')
     ul.list-unstyled
       li(ng-repeat='section in home|homeFilter:"brokers,images" |orderBy:"order"')
-        sv-home-display-slider(section='section' is-template='istemplate' update-home-section='updateHomeSection(section)')
+        sv-home-display-slider(section='section' is-template='isTemplate' save-template='saveTemplate()' update-home-section='updateHomeSection(section)')

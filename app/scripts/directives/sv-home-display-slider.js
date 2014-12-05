@@ -9,7 +9,8 @@ angular.module('app')
       scope: {
         section: '=',
         isTemplate: '=',
-        updateHomeSection: '&'
+        updateHomeSection: '&',
+        saveTemplate: '&'
       },
       require: '^sv-remax-home',
 
@@ -22,7 +23,8 @@ angular.module('app')
       },
       link: function ($scope, element, attr, svCtrl) {
         $scope.required = svCtrl.required;
-        $scope.isEditable = svCtrl.isEditable;
+        //$scope.isEditable = true;
+        $scope.isEditable = $scope.isTemplate ? true : svCtrl.isEditable;
         $scope.isEdit = false;
         $scope.isSingleProp = $scope.section.content ? $scope.section.content.length : 0;
         $scope.saveTest = function (mls) {
@@ -30,8 +32,13 @@ angular.module('app')
 
         };
         $scope.saveSection = function () {
+          if ($scope.isTemplate) {
+            $scope.saveTemplate();
+
+          }else{
           $scope.updateHomeSection({section: $scope.section})
           $scope.isEdit = false;
+          }
         };
         /*Show button for adding properties only on some sections*/
         var showAddProperty = ['appliances', 'other rooms', 'property features', 'exterior and lot features'];

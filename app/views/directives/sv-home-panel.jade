@@ -1,12 +1,26 @@
 .one-stop-service
   .container
-    fa-app(style='height:420px;width:720px')
-      fa-view
-        fa-grid-layout(fa-options='{dimensions:[2,1]}')
-          fa-scroll-view(fa-pipe-from='handler')
-            fa-modifier(ng-repeat='home in homes' size='[700,400]')
-              fa-surface(fa-pipe-to='handler')
-                img(ng-src="{{home.image}}" style='width:700;height:400')
+    fa-app(style='height:420px;width:{{viewSize.width}}px')
+      fa-scroll-view(fa-pipe-from='handler')
+        fa-view(ng-repeat='home in homes')
+          fa-modifier(fa-size='[{{0.7*viewSize.width}},{{0.7*0.66*viewSize.width}}]')
+            fa-surface(fa-pipe-to='handler')
+              img.thumbnail(ng-src="{{home.image}}" style='width:{{0.7*viewSize.width}}px')
+          fa-modifier(fa-translate='[.7*width,0,0]' fa-size='[.3*width,0.7*0.66*viewSize.width]')
+            fa-surface(fa-pipe-to='handler' fa-background-color="'green'")
+              ul.list-unstyled
+               li
+                .row
+                  .col-sm-6
+                    span City:
+                  .col-sm-6
+                    span {{home.city}}
+               li
+                .row
+                  .col-sm-6
+                    span Price:
+                  .col-sm-6
+                    span {{home.price}}
 
 
 

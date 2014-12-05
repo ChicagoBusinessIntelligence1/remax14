@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('#name#Service', function ($firebase, $q, $rootScope, urlCommon) {
+  .factory('#name#Service', function ($firebase, $q, $rootScope, urlCommon {
     return {
       repoUrl: null,
       repoRef: null,
@@ -10,7 +10,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.;
+        that.repoUrl = urlCommon;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
         that.repoRef.$asArray().$loaded(function (all) {
@@ -23,7 +23,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.;
+        that.repoUrl = urlCommon;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 
         deferred.resolve(that.repoRef.$asObject()[id]);
@@ -34,7 +34,7 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
 
-        that.repoUrl = urlCommon.;
+        that.repoUrl = urlCommon;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
         that.repoRef.$add(element).then(function () {
           deferred.resolve(true);

@@ -2,10 +2,11 @@
   .container
     fa-app(style='height:420px;width:720px')
       fa-view
-        fa-scroll-view(fa-pipe-from='handler')
-          fa-modifier(ng-repeat='home in homes' size='[700,400]')
-            fa-surface(fa-pipe-to='handler')
-              img(ng-src="{{home.image}}" style='width:700;height:400')
+        fa-grid-layout(fa-options='{dimensions:[2,1]}')
+          fa-scroll-view(fa-pipe-from='handler')
+            fa-modifier(ng-repeat='home in homes' size='[700,400]')
+              fa-surface(fa-pipe-to='handler')
+                img(ng-src="{{home.image}}" style='width:700;height:400')
 
 
 

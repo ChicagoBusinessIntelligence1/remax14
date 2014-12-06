@@ -18,6 +18,7 @@ var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var livereload = require('gulp-livereload');
+var livereload2 = require('express-livereload')
 
 var sendgrid = require('sendgrid')('remax14', 'R1eKefo9ApTh');
 var open = require("gulp-open");
@@ -27,7 +28,6 @@ var EXPRESS_ROOT = __dirname;
 var LIVERELOAD_PORT = 35729;
 
 function startExpress() {
-
   var express = require('express');
   var app = express();
 
@@ -183,6 +183,7 @@ gulp.task('default', ['jade', 'stylus'], function () {
     .pipe(watch('app/index.html'))
     .pipe(livereload({silent: true}))
 
+  livereload.listen(LIVERELOAD_PORT);
   gulp.start('url');
 
 });

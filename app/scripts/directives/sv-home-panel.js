@@ -16,7 +16,10 @@ angular.module('app')
         var defaultAngle = -Math.PI / 8;
 
         $scope.w = $window.innerWidth;
-        $scope.h = $window.innerHeight/2;
+        $scope.h = $window.innerHeight/3;
+
+        $scope.hsm = 0.9* $scope.h;
+        $scope.wsm = 1.5* $scope.hsm;
 
         $scope.myStyle = {
           "width" : $scope.w+"px",

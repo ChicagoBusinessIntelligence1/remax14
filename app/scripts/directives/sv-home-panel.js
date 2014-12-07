@@ -8,22 +8,21 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
         $scope.showInfo = function (home, $done) {
-          home.opacity.set(1,{duration:1000});
+          home.opacity.set(1, {duration: 1000});
         };
-
 
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var defaultAngle = -Math.PI / 8;
 
         $scope.w = $window.innerWidth;
-        $scope.h = $window.innerHeight/3;
+        $scope.h = $window.innerHeight / 3;
 
-        $scope.hsm = 0.9* $scope.h;
-        $scope.wsm = 1.5* $scope.hsm;
+        $scope.hsm = 0.9 * $scope.h;
+        $scope.wsm = 1.5 * $scope.hsm;
 
         $scope.myStyle = {
-          "width" : $scope.w+"px",
-          "height" : $scope.h+"px"
+          "width": $scope.w + "px",
+          "height": $scope.h + "px"
         };
 
         HousesFrontImagesService.all().then(function (homes) {
@@ -33,7 +32,7 @@ angular.module('app')
 
             return _.extend(home, {
               angle: angle,
-              opacity:opacity
+              opacity: opacity
             })
 
           });

@@ -11,10 +11,11 @@ angular.module('app')
           home.opacity.set(1,{duration:1000});
         };
 
-
+        var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
-        var defaultAngle = -Math.PI / 8;
 
+        var defaultAngle = -Math.PI / 5;
+        $scope.myTransform = Transform.multiply(Transform.scale(1,1,1),  Transform.perspective(1000));
         $scope.w = $window.innerWidth;
         $scope.h = $window.innerHeight/3;
 

@@ -1,9 +1,18 @@
 .one-stop-service
   .container
-    fa-app( ng-style='myStyle')
+    fa-app(style='height:420px;width:{{w}}px' fa-perspective='3000')
       fa-scroll-view(fa-pipe-from='handler')
-        fa-view(ng-repeat='home in homes'  fa-background-color="'red'"  fa-size='[{{wsm}},{{hsm}}]')
-          fa-modifier( fa-perspective='1000')
-            fa-modifier(fa-size='[{{wsm}},{{hsm}}]' fa-rotate-x='home.angle.get()' fa-align="[0, 0]" fa-origin="[0, 0]")
-              fa-surface(fa-pipe-to='handler' fa-background-color="'blue'" fa-size="[300, {{hsm}}]")
+        fa-view(ng-repeat='home in homes' )
+          fa-modifier(fa-transform='myTransform')
+            fa-modifier(fa-size='[{{0.7*w}},{{0.7*0.66*w}}]' fa-rotate-x='home.angle.get()' fa-align="[0, 0]" fa-origin="[0, 0]")
+              fa-surface(fa-pipe-to='handler' ng-mouseover='showInfo(home)')
+                sv-photo-thumb(img='{{home.image}}' width='{{0.7*w}}' height='{{.3*w}}')
+          fa-modifier(fa-translate='[.7*w,0,0]' fa-size='[.1*w,0.7*0.66*w]' fa-opacity='home.opacity.get()')
+            fa-surface(fa-pipe-to='handler' )
+              .table-responsive
+                table.table.table-bordered
+                  tr
+                    td Price
+                    td {{home.price | currency}}
+
 

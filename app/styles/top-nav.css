@@ -147,3 +147,6 @@ label {
   text-decoration: none;
   color: #3c3c3c;
 }
+.large-font {
+  font-size: 3em !important;
+}

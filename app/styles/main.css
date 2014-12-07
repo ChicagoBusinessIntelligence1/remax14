@@ -203,7 +203,7 @@ label {
   margin-left: 5px !important;
 }
 .one-stop-service {
-  height: 420px;
+  height: 30%;
   background: url("../images/home/blue-blur.jpg") 0 0 no-repeat;
 /*background-color lighten(#0682B9, 30%)*/
 }
@@ -409,6 +409,9 @@ label {
 .user-profile-popover ul li a:focus {
   text-decoration: none;
   color: #3c3c3c;
+}
+.large-font {
+  font-size: 3em !important;
 }
 .animation-test {
   width: 200px;

@@ -22,15 +22,15 @@ angular.module('app')
         var Transitionable = $famous['famous/transitions/Transitionable'];
 
         var defaultAngle = -Math.PI / 5;
-        $scope.myTransform = Transform.multiply(Transform.scale(1, 1, 1), Transform.perspective(1000));
+        $scope.angle = new Transitionable(defaultAngle);
         $scope.w = $window.innerWidth;
-        $scope.h = $window.innerHeight / 3;
+        $scope.h = $window.innerHeight / 2;
 
         $scope.hsm = 0.9 * $scope.h;
         $scope.wsm = 1.5 * $scope.hsm;
 
         $scope.myStyle = {
-          "width": $scope.w + "px",
+          "width": 1.2*$scope.wsm + "px",
           "height": $scope.h + "px"
         };
         $scope.listingStyle = {

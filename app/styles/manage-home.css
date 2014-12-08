@@ -10,6 +10,18 @@ label {
 /**********************
     =manage-listing
 ***********************/
+.home-page-listing-info {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.home-page-listing-info ul li h5 {
+  color: #fff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.home-page-listing-info ul li span {
+  font-size: 1em !important;
+}
 .btn-select-prop {
   position: relative;
   text-align: left;

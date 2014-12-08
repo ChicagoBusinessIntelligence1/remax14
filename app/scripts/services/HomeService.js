@@ -60,8 +60,8 @@ angular.module('app')
             return section;
           }
         }
-
       },
+
       subVal: function (section, title) {
         for (var i = 0; i < section.length; i++) {
           var prop = section[i];

@@ -18,14 +18,28 @@ angular.module('app')
           for (var i = 0; i < homes.length; i++) {
             var home = homes[i];
             var generalInfo = HomeService.getSectionContent(home, 'generalInformation');
+            var bedrooms = HomeService.getSectionContent(home, 'bedrooms');
+            var fullBathrooms = HomeService.getSectionContent(home, 'bathrooms');
             var city = HomeService.subVal(generalInfo, 'city');
+            var state = HomeService.subVal(generalInfo, 'state');
+            var zip = HomeService.subVal(generalInfo, 'zip');
             var price = HomeService.subVal(generalInfo, 'price');
+            var status = HomeService.subVal(generalInfo, 'propertyStatus');
+            var propertySize = HomeService.subVal(generalInfo, 'propertySize');
+            var bedrooms = HomeService.subVal(bedrooms, 'bedrooms');
+            var fullBathrooms = HomeService.subVal(fullBathrooms, 'fullBathrooms');
             var images = HomeService.getSectionContent(home, 'images');
             var frontImage = _.first(images);
             if (frontImage) {
               var homeInfo = {
+                status: status,
+                propertySize: propertySize,
                 city: city,
+                state: state,
+                zip: zip,
                 price: price,
+                bedrooms: bedrooms,
+                fullBathrooms: fullBathrooms,
                 image: frontImage
               };
               homesShort.push(homeInfo);

@@ -14,7 +14,7 @@ var app = express()
 var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3001);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
@@ -58,7 +58,7 @@ app.post('/sendmail', jsonParser, function (req, res) {
   res.end();
 })
 
-var server = app.listen(3000, function () {
+var server = app.listen(3001, function () {
 
   var host = server.address().address
   var port = server.address().port

@@ -7,9 +7,12 @@ var express = require('express'),
   path = require('path');
 var _ = require('underscore');
 var gulp = require('gulp');
+var nodemon = require('gulp-nodemon');
+
 var filter = require('gulp-filter');
-var browserify = require('gulp-browserify');
 var watch = require('gulp-watch');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 var plumber = require('gulp-plumber');
 var Notification = require('node-notifier');
@@ -17,15 +20,12 @@ var notify = require("gulp-notify");
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
-var livereload = require('gulp-livereload');
-var livereload2 = require('express-livereload')
 
 var sendgrid = require('sendgrid')('remax14', 'R1eKefo9ApTh');
 var open = require("gulp-open");
 
-var EXPRESS_PORT = 3000;
+var EXPRESS_PORT = 3001;
 var EXPRESS_ROOT = __dirname;
-var LIVERELOAD_PORT = 35729;
 
 function startExpress() {
   var express = require('express');
@@ -34,14 +34,18 @@ function startExpress() {
   var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
+  app.set('port', process.env.PORT || 3001);
+  app.set('views', path.join(__dirname, '/app'));
+  var engines = require('consolidate');
+  app.set('view engine', jade);
+  app.engine('haml', engines.haml);
+  app.engine('html', engines.hogan);
+
   app.use(bodyParser.urlencoded({extended: false}))
   app.use(methodOverride());
   app.use(express.static(path.join(__dirname, '/app')));
-
-  app.use(express.static(EXPRESS_ROOT));
+  var bs = browserSync.init([], {logLevel:'silent',notify:false});
+  app.use(require('connect-browser-sync')(bs));
 
   app.get('*', function (req, res) {
     res.render('index');
@@ -106,7 +110,6 @@ gulp.task('stylus', function () {
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
-    .pipe(livereload())
 });
 
 //register task jade
@@ -129,7 +132,7 @@ gulp.task('jade', function () {
       compileDebug: false
     }))
     .pipe(gulp.dest('app/views/'))
-    .pipe(livereload({silent: true}));
+    .pipe(reload({stream: true}))
 });
 
 gulp.task('html', function () {
@@ -141,15 +144,22 @@ gulp.task('html', function () {
 
 gulp.task("url", function () {
   var options = {
-    url: "http://localhost:3000",
+    url: "http://localhost:3001",
     app: "chrome"
   };
   gulp.src("app/index.html")
     .pipe(open("", options));
 });
 
-gulp.task('default', ['jade', 'stylus'], function () {
+gulp.task('nodemon', function () {
   startExpress();
+});
+
+gulp.task('browser-sync', ['nodemon'], function () {
+
+});
+
+gulp.task('default', function () {
   var onError = function (err) {
     notify.onError({
       title: "Gulp",
@@ -166,7 +176,7 @@ gulp.task('default', ['jade', 'stylus'], function () {
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
-    .pipe(livereload({silent: true}))
+    .pipe(reload({stream: true}))
 
   watch('app/views/**/*.jade', {watch: false})
     .pipe(plumber())
@@ -174,17 +184,17 @@ gulp.task('default', ['jade', 'stylus'], function () {
       debug: false
     }))
     .pipe(gulp.dest('app/views'))
-    .pipe(livereload({silent: true}));
+    .pipe(reload({stream: true}))
 
   watch('app/scripts/**/*.js', {watch: false})
-    .pipe(livereload({silent: true}));
+    .pipe(reload({stream: true}))
 
   gulp.src('app/index.html')
     .pipe(watch('app/index.html'))
-    .pipe(livereload({silent: true}))
+    .pipe(reload({stream: true}))
 
-  livereload.listen(LIVERELOAD_PORT);
-  gulp.start('url');
+  gulp.run('browser-sync');
+  gulp.run('url');
 
 });
 

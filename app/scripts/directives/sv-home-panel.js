@@ -20,8 +20,20 @@ angular.module('app')
         var Transitionable = $famous['famous/transitions/Transitionable'];
 
 
-        var defaultAngle = -Math.PI / 5;
-        $scope.myTransform = Transform.multiply(Transform.scale(1,1,1),  Transform.perspective(1000));
+        var defaultAngle = -Math.PI /5 ;
+        $scope.angle = new Transitionable(defaultAngle);
+
+        var rotationAngle = -Math.PI /350 ;
+        var _modPerspective = new Transitionable(10);
+        _modPerspective.set(10000, {duration: 10, curve: 'linear'});
+
+        $scope.modPerspective = function(){
+          return _modPerspective.get();
+        }
+
+
+        $scope.rotateShift = new Transitionable(rotationAngle);
+        //$scope.myTransform = Transform.multiply(Transform.rotateX($scope.angle), Transform.translate(20,20,0), Transform.perspective(1000));
         $scope.w = $window.innerWidth;
         $scope.h = $window.innerHeight/3;
 
@@ -30,15 +42,17 @@ angular.module('app')
 
         $scope.myStyle = {
           "width" : $scope.w+"px",
-          "height" : $scope.h+"px"
+          "height" : $scope.h+"px",
+          "overflow":"visible"
         };
 
-        $scope.opacityFooter = new Transitionable(.9);
+        $scope.opacityFooter = new Transitionable(.8);
         HousesFrontImagesService.all().then(function (homes) {
 
           $scope.homes = _.map(homes, function (home) {
             var angle = new Transitionable(defaultAngle);
             var infoShift = new Transitionable([0, $scope.hsm/5,0]);
+
 
             return _.extend(home, {
               angle: angle,

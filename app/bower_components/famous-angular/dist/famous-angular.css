@@ -22,7 +22,7 @@ fa-app, .fa-app {
 }
 
 .famous-angular-clipping-container {
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     height: 100%;
 }

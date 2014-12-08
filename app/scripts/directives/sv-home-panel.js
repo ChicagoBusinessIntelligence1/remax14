@@ -1,18 +1,24 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
-        $scope.showInfo = function (home, $done) {
-          home.opacity.set(1,{duration:1000});
+        $scope.showInfo = function (home) {
+          home.infoShift.set([0,0,0],{duration:500, curve:'easeInOut'});
+        };
+        $scope.hideInfo = function (home) {
+          $timeout(function () {
+          home.infoShift.set([0, $scope.hsm/5,0],{duration:250,curve:'easeInOut'});
+          },200);
         };
 
         var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
+
 
         var defaultAngle = -Math.PI / 5;
         $scope.myTransform = Transform.multiply(Transform.scale(1,1,1),  Transform.perspective(1000));
@@ -27,14 +33,16 @@ angular.module('app')
           "height" : $scope.h+"px"
         };
 
+        $scope.opacityFooter = new Transitionable(.9);
         HousesFrontImagesService.all().then(function (homes) {
+
           $scope.homes = _.map(homes, function (home) {
             var angle = new Transitionable(defaultAngle);
-            var opacity = new Transitionable(0);
+            var infoShift = new Transitionable([0, $scope.hsm/5,0]);
 
             return _.extend(home, {
               angle: angle,
-              opacity:opacity
+              infoShift:infoShift
             })
 
           });

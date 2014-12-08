@@ -33,6 +33,9 @@ angular.module('app')
           "width": $scope.w + "px",
           "height": $scope.h + "px"
         };
+        $scope.listingStyle = {
+          "z-index": "99"
+        };
 
         $scope.opacityFooter = new Transitionable(.8);
         HousesFrontImagesService.all().then(function (homes) {

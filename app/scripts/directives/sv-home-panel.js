@@ -10,7 +10,7 @@ angular.module('app')
         var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
-
+        var Timer = $famous['famous/utilities/Timer'];
         $scope.colorSkin = '#272727';
 
         $scope.w = $window.innerWidth;
@@ -37,25 +37,20 @@ angular.module('app')
           }
         };
 
+        var scrollView = ($famous.find('#scrollView')[0]).renderNode;
+
+
         HousesFrontImagesService.all().then(function (homes) {
-          //$scope.homes = _.map(homes, function (home) {
-          //  var angle = new Transitionable(defaultAngle);
-          //  var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
-          //
-          //  /* extend object home with two properties
-          //   */
-          //  return _.extend(home, {
-          //    angle: angle,
-          //    infoShift: infoShift
-          //  })
-          //});
           $scope.homes = homes;
-
-          var scrollView = ($famous.find('#scrollView')[0]).renderNode;
-          $timeout(function () {
-            scrollView.setPosition(100);
-          }, 3009);
-
+	        var velocity = 0.5;
+          scrollView.setVelocity(velocity);
+          Timer.every(function () {
+            var index = scrollView.getCurrentIndex();
+            scrollView.setVelocity(velocity/index);
+            if (scrollView.getCurrentIndex()>6) {
+              scrollView.setVelocity(0);
+            }
+          }, 20);
         });
       }
     }

@@ -16,20 +16,7 @@ It includes the basic building blocks for all these items and is built on top
 of a Mersenne Twister so it can generate these things with repeatability, if
 desired.
 
-## Usage
-
-### Browser
-
-Chance instantiates itself onto the window. This means that in the simplest case you can just include the script tag then use an instance of Chance immediately.
-
-```html
-<script src="chance.js"></script>
-<script>
-    console.log(chance.string());
-</script>
-```
-
-[More info](http://chancejs.com#browser)
+## Packages
 
 ### Bower
 
@@ -67,6 +54,52 @@ then in the HTML of your app:
     // Use Chance immediately!
     alert(chance.string());
 </script>
+
+### npm
+
+```shell
+npm install chance
+```
+
+### spm [![](http://spmjs.io/badge/chance)](http://spmjs.io/package/chance)
+
+It can also be used with [spm](http://spmjs.io/package/chance).
+
+```
+spm install chance
+```
+
+## Usage
+
+### Browser
+
+Chance instantiates itself onto the window. This means that in the simplest case you can just include the script tag then use an instance of Chance immediately.
+
+```html
+<script src="chance.js"></script>
+<script>
+    console.log(chance.string());
+</script>
+```
+
+[More info](http://chancejs.com#browser)
+
+### CLI
+
+To use Chance from the command line, install it globally with:
+
+```shell
+npm install -g chance
+```
+
+Then invoke any generator by name, like so:
+
+```shell
+$ chance name --prefix
+Dr. Georgia Sanchez
+
+$ chance latitude --min 12.34 --max 56.78
+22.01836
 ```
 
 ### Node.js
@@ -93,6 +126,7 @@ require(['Chance'], function(Chance) {
     // Then just use it:
     var my_random_integer = chance.integer();
 });
+```
 
 ## Author
 ### Victor Quinn
@@ -106,43 +140,51 @@ THANK YOU!
 
 ```
 project  : chancejs
- repo age : 1 year, 2 months
- active   : 89 days
- commits  : 346
- files    : 21
+ repo age : 1 year, 6 months
+ active   : 106 days
+ commits  : 419
+ files    : 24
  authors  :
-   257	Victor Quinn            74.3%
-    13	Tim Petricola           3.8%
-    11	davmillar               3.2%
-     5	Alex DiLiberto          1.4%
-     5	Matt Klaber             1.4%
-     5	Michael Cordingley      1.4%
-     4	Kevin Garnett           1.2%
-     4	Avishaan                1.2%
-     4	Abhijeet Pawar          1.2%
-     3	qjcg                    0.9%
-     3	Alexandr Lozovyuk       0.9%
-     3	Nicholas Johnson        0.9%
-     2	xshyamx                 0.6%
-     2	Adam Krebs              0.6%
-     2	Andreas Koeberle        0.6%
-     2	Chris Villarreal        0.6%
-     2	Iskren Chernev          0.6%
-     2	Pascal Borreli          0.6%
-     2	dhilipsiva              0.6%
-     2	path411                 0.6%
-     2	shyam                   0.6%
-     1	Richard Anaya           0.3%
-     1	Johannes Stein          0.3%
-     1	ddunning                0.3%
-     1	Doug Lawrence           0.3%
-     1	flrent                  0.3%
-     1	leesei                  0.3%
-     1	lkptrzk                 0.3%
-     1	Dominic Barnes          0.3%
-     1	Ryan Tenney             0.3%
-     1	Samuel Greene           0.3%
-     1	Ng, Patrick             0.3%
+   290	Victor Quinn        69.2%
+    22	Oliver Salzburg     5.3%
+    13	Tim Petricola       3.1%
+    11	davmillar           2.6%
+     7	Jan Tojnar          1.7%
+     5	Michael Cordingley  1.2%
+     5	Alex DiLiberto      1.2%
+     5	Matt Klaber         1.2%
+     4	Avishaan            1.0%
+     4	Abhijeet Pawar      1.0%
+     4	Kevin Garnett       1.0%
+     4	Chris Villarreal    1.0%
+     3	Nicholas Johnson    0.7%
+     3	Alexandr Lozovyuk   0.7%
+     3	qjcg                0.7%
+     2	xshyamx             0.5%
+     2	Adam Krebs          0.5%
+     2	Andreas Koeberle    0.5%
+     2	Iskren Chernev      0.5%
+     2	Nathan MacInnes     0.5%
+     2	Pascal Borreli      0.5%
+     2	SeeSchloss          0.5%
+     2	Stefan Penner       0.5%
+     2	dhilipsiva          0.5%
+     2	path411             0.5%
+     2	shyam               0.5%
+     1	Brian.Barnett       0.2%
+     1	Johannes Stein      0.2%
+     1	afc163              0.2%
+     1	Doug Lawrence       0.2%
+     1	ddunning            0.2%
+     1	Dominic Barnes      0.2%
+     1	flrent              0.2%
+     1	kkroner             0.2%
+     1	leesei              0.2%
+     1	Richard Anaya       0.2%
+     1	Ryan Tenney         0.2%
+     1	Samuel Greene       0.2%
+     1	lkptrzk             0.2%
+     1	Ng Patrick          0.2%
 ```
 
 ### Contribute! 

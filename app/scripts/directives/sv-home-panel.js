@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
+  .directive('svHomePanel', function (GetNodeService HousesFrontImagesService, $famous, $window, $timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -39,6 +39,7 @@ angular.module('app')
           //  })
           //});
           $scope.homes = homes;
+
         });
 
         $scope.colors = ['red', 'green', 'blue', 'orange', 'yellow'];

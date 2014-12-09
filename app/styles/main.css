@@ -3148,7 +3148,8 @@ label {
   padding-left: 15px;
 }
 .home-page-listing-info ul li h5 {
-  color: #fff;
+  color: #00bfff;
+  font-size: 1.1em;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -3764,6 +3765,7 @@ label {
   background-color: #f00;
 }
 fa-app {
+  overflow: hidden;
   position: relative;
   top: 0;
   right: 0;

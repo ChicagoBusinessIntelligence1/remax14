@@ -9,6 +9,7 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
+        var EventHandler = $famous['famous/core/EventHandler'];
 
         $scope.colorSkin = '#272727';
         $scope.w = $window.innerWidth;
@@ -18,30 +19,27 @@ angular.module('app')
 
         var defaultAngle = -Math.PI / 21;
         $scope.angle = new Transitionable(defaultAngle);
+        $scope.opacityFooter = new Transitionable(.8);
 
         $scope.myStyle = {
           "width": 1.4 * $scope.wsm + "px",
           "height": $scope.h + "px"
         };
-        $scope.listingStyle = {
-          "z-index": "99"
-        };
 
-        $scope.opacityFooter = new Transitionable(.8);
         HousesFrontImagesService.all().then(function (homes) {
-
-          $scope.homes = _.map(homes, function (home) {
-            var angle = new Transitionable(defaultAngle);
-            var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
-
-            return _.extend(home, {
-              angle: angle,
-              infoShift: infoShift
-            })
-
-          });
+          //$scope.homes = _.map(homes, function (home) {
+          //  var angle = new Transitionable(defaultAngle);
+          //  var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
+          //
+          //  /* extend object home with two properties
+          //   */
+          //  return _.extend(home, {
+          //    angle: angle,
+          //    infoShift: infoShift
+          //  })
+          //});
+          $scope.homes = homes;
         });
-        var EventHandler = $famous['famous/core/EventHandler'];
 
         $scope.colors = ['red', 'green', 'blue', 'orange', 'yellow'];
         $scope.getColor = function () {

@@ -29,6 +29,14 @@ angular.module('app')
           "height": $scope.h + "px"
         };
 
+        $scope.options = {
+          homePageScroll: {
+            paginated: true,
+            clipSize: $scope.h,
+            direction: 1
+          }
+        };
+
         HousesFrontImagesService.all().then(function (homes) {
           //$scope.homes = _.map(homes, function (home) {
           //  var angle = new Transitionable(defaultAngle);
@@ -42,10 +50,11 @@ angular.module('app')
           //  })
           //});
           $scope.homes = homes;
+
           var scrollView = ($famous.find('#scrollView')[0]).renderNode;
           $timeout(function () {
-          scrollView.setPosition(100);
-          },3009);
+            scrollView.setPosition(100);
+          }, 3009);
 
         });
       }

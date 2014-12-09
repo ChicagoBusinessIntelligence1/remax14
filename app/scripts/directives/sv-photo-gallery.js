@@ -85,6 +85,7 @@ angular.module('app')
         $scope.options = {
           imageScroll: {
             paginated: true,
+            clipSize: 100,
             direction: 0
           }
         };

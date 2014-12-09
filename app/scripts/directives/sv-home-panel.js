@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (GetNodeService, HousesFrontImagesService, $famous, $window, $timeout) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -39,7 +39,11 @@ angular.module('app')
           //  })
           //});
           $scope.homes = homes;
-          var scrollView = $famous.find('#scrollView');
+          var scrollView = ($famous.find('#scrollView')[0]).renderNode;
+          $timeout(function () {
+          scrollView.setPosition(100);
+          },3009);
+
         });
 
         $scope.colors = ['red', 'green', 'blue', 'orange', 'yellow'];

@@ -44,7 +44,6 @@ angular.module('app')
               };
               homesShort.push(homeInfo);
             }
-
           }
           deferred.resolve(homesShort);
         })

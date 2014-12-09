@@ -7,30 +7,20 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
-        $scope.colorSkin = '#272727';
-
-        $scope.showInfo = function (home) {
-          home.infoShift.set([0, 0, 0], {duration: 500, curve: 'easeInOut'});
-        };
-        $scope.hideInfo = function (home) {
-          $timeout(function () {
-            home.infoShift.set([0, $scope.hsm / 5, 0], {duration: 250, curve: 'easeInOut'});
-          }, 200);
-        };
-
         var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
 
-        var defaultAngle = -Math.PI / 5;
-        $scope.angle = new Transitionable(defaultAngle);
+        $scope.colorSkin = '#272727';
         $scope.w = $window.innerWidth;
         $scope.h = $window.innerHeight / 2;
-
         $scope.hsm = 0.9 * $scope.h;
         $scope.wsm = 1.5 * $scope.hsm;
 
+        var defaultAngle = -Math.PI / 21;
+        $scope.angle = new Transitionable(defaultAngle);
+
         $scope.myStyle = {
-          "width": 1.2*$scope.wsm + "px",
+          "width": 1.4 * $scope.wsm + "px",
           "height": $scope.h + "px"
         };
         $scope.listingStyle = {

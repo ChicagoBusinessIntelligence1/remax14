@@ -36,10 +36,16 @@ angular.module('app')
         $scope.isTemplate = mls ? false : true;
         var home = HomeService.getArrayFire(url, mls, $scope.isDraft);
         home.$loaded(function (home) {
+          if (_.isNull($rootScope.user) || _.isUndefined($rootScope.user)) {
+            $scope.isEditable = false;
+
+          } else{
+
           if ($rootScope.user.isAdmin) {
             $scope.isEditable = true;
           } else {
             $scope.isEditable = HomeService.isEditable(home, $rootScope.user.id);
+          }
           }
           that.isEditable = $scope.isEditable;
           $scope.home = home;

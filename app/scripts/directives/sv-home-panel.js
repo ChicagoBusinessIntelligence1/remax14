@@ -42,6 +42,11 @@ angular.module('app')
           //  })
           //});
           $scope.homes = homes;
+          var scrollView = ($famous.find('#scrollView')[0]).renderNode;
+          $timeout(function () {
+          scrollView.setPosition(100);
+          },3009);
+
         });
       }
     }

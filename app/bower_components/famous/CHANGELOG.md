@@ -1,3 +1,27 @@
+## 0.3.1
+
+### General
+
+- Added fix for ios8 Safari compositing by setting the famous-root to have an opacity of .999999
+
+### Bug Fixes
+
+- Famous/core
+    - Fixed sizing checks that prevented things from being resized
+
+- Famous/physics
+    - Added direction to setOptions for VectorFields
+
+### Features
+
+- Famous/views
+    - Added getSize to GridLayout
+
+### Performance Increases
+
+- Famous/core
+    - Removed unneeded removeChild call from ElementAllocator's migrate
+
 ## 0.3.0
 
 ### General
@@ -18,14 +42,14 @@
     - Fixed opacity issues on setup and cleanup
     - Now resets origin on setup
     - Added guard for precommited size to allow Surface's getSize call to be non nullification
-    - Fixed issue taht when the size of a Surface changes, the transform matrix is recalculated to account for non [0, 0] origins
+    - Fixed issue that when the size of a Surface changes, the transform matrix is recalculated to account for non [0, 0] origins
     - "true" sized Surfaces now use the offsetWidth and offsetHeight property find their size in order to account for padding and border
     
 - Famous/inputs
     - Added guard to TouchTracker to avoid collisions with two finger sync    
     
 - Famous/physics
-    - PhysicsEngine detatchBody now works as intended
+    - PhysicsEngine removeBody now works as intended
     
 - Famous/surfaces
     - Fixed VideoSurface setOptions
@@ -93,7 +117,7 @@
     - Scrollview now uses enum for spring states
     - Added a getSize function to ScrollContainer
     - Scroller has a function getCumulativeSize that returns the size of the collection of renderables
-    - Scrollview emits "settled", "onEdge" and "offEdge" events
+    - Scrollview emits "settle", "onEdge" and "offEdge" events
     - Scrollview can now handle "true" sized elements
     - Scrollview has a getCurrentIndex that returns the index of the renderable of it's collection that it is on
     - Scrollview now has a goToPage method

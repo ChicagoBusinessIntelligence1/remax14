@@ -39,7 +39,7 @@ angular.module('app')
           //  })
           //});
           $scope.homes = homes;
-
+          var scrollView = $famous.find('#scrollView');
         });
 
         $scope.colors = ['red', 'green', 'blue', 'orange', 'yellow'];

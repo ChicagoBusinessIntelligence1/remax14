@@ -1,7 +1,7 @@
 div
   fa-app( ng-style='myStyle' fa-perspective="1000")
-      fa-modifier(fa-size='[undefined, undefined]' )
-        fa-modifier( fa-rotate-x='angle.get()' fa-align="[.5, 0.5]" fa-origin="[0.5, 0.5]" fa-translate='[0,20,0]')
+    fa-modifier(fa-size='[undefined, undefined]' )
+      fa-modifier( fa-rotate-x='angle.get()' fa-align="[.5, 0.5]" fa-origin="[0.5, 0.5]" fa-translate='[0,20,0]')
           fa-scroll-view(fa-pipe-from='handler' id='scrollView')
             fa-view(ng-repeat='home in homes')
               fa-modifier(fa-size='[{{wsm}},{{hsm}}]' fa-align="[0, 0]" fa-origin="[0, 0]")

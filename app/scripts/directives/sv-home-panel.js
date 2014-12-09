@@ -12,10 +12,13 @@ angular.module('app')
         var EventHandler = $famous['famous/core/EventHandler'];
 
         $scope.colorSkin = '#272727';
+
         $scope.w = $window.innerWidth;
         $scope.h = $window.innerHeight / 2;
         $scope.hsm = 0.9 * $scope.h;
         $scope.wsm = 1.5 * $scope.hsm;
+
+        $scope.handler = new EventHandler();
 
         var defaultAngle = -Math.PI / 21;
         $scope.angle = new Transitionable(defaultAngle);
@@ -45,13 +48,6 @@ angular.module('app')
           },3009);
 
         });
-
-        $scope.colors = ['red', 'green', 'blue', 'orange', 'yellow'];
-        $scope.getColor = function () {
-          var index = Math.floor(Math.random() * 5);
-          return $scope.colors[index];
-        };
-        $scope.handler = new EventHandler();
       }
     }
   });

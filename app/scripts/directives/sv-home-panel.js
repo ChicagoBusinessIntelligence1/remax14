@@ -39,18 +39,22 @@ angular.module('app')
 
         var scrollView = ($famous.find('#scrollView')[0]).renderNode;
 
-
         HousesFrontImagesService.all().then(function (homes) {
           $scope.homes = homes;
-	        var velocity = 0.5;
+          var velocity = 0.2;
+          var decreaser = 0.98;
+          var stopValue = 0.03;
+          var tick = 3;
           scrollView.setVelocity(velocity);
           Timer.every(function () {
-            var index = scrollView.getCurrentIndex();
-            scrollView.setVelocity(velocity/index);
-            if (scrollView.getCurrentIndex()>6) {
+            velocity *= decreaser;
+            if (velocity >= stopValue) {
+              scrollView.setVelocity(velocity);
+            } else {
               scrollView.setVelocity(0);
+              Timer.clear(this);
             }
-          }, 20);
+          }, tick);
         });
       }
     }

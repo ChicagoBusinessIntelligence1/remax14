@@ -81,11 +81,12 @@ angular.module('app')
 
         /*instance of EventHandler to pipe events from fa-scroll-handler*/
         $scope.scrollHandler = new EventHandler();
+        $scope.thumbClip = $scope.thumbWidth*3;
         /*options for displaying images on slider*/
         $scope.options = {
           imageScroll: {
             paginated: true,
-            clipSize: 100,
+            clipSize: $scope.thumbClip,
             direction: 0
           }
         };

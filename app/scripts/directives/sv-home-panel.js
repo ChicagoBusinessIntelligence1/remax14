@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (GetNodeService HousesFrontImagesService, $famous, $window, $timeout) {
+  .directive('svHomePanel', function (GetNodeService, HousesFrontImagesService, $famous, $window, $timeout) {
     return {
       restrict: 'E',
       replace: true,

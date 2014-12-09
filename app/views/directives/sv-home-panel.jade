@@ -1,6 +1,6 @@
 div
   fa-app( ng-style='myStyle' fa-perspective="500")
-    fa-scroll-view(fa-pipe-from='handler' fa-start-index='1' )
+    fa-scroll-view(fa-pipe-from='handler' fa-start-index='1' id='scrollView')
       fa-modifier( ng-repeat='home in homes' fa-size='[{{wsm}},{{hsm}}]'  fa-rotate-x='angle.get()' fa-align="[.5, 0.5]" fa-origin="[0.5, 0.5]" fa-translate='[0,150,0]')
         fa-surface(fa-pipe-to='handler' fa-size='[{{wsm}},{{hsm}}]' ng-mouseout='hideInfo(home)' ng-mouseover='showInfo(home)')
           img.thumbnail(ng-src="{{home.image}}" style='width:{.5*wsm}}px;height:{{hsm}}px')

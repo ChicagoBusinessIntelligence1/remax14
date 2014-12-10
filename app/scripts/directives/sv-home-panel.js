@@ -13,23 +13,21 @@ angular.module('app')
         var Timer = $famous['famous/utilities/Timer'];
         var LightBox = $famous['famous/views/LightBox'];
 
-
-
         $scope.colorSkin = '#272727';
 
         $scope.w = $window.innerWidth;
         $scope.h = $window.innerHeight / 2;
-        $scope.hsm = 0.9 * $scope.h;
+        $scope.hsm = 0.5 * $scope.h;
         $scope.wsm = 1.5 * $scope.hsm;
 
         $scope.handler = new EventHandler();
 
-        var defaultAngle = -Math.PI / 32;
+        var defaultAngle = -Math.PI / 22;
         $scope.angle = new Transitionable(defaultAngle);
         $scope.opacityFooter = new Transitionable(.8);
 
         $scope.myStyle = {
-          "width": 1.2*$scope.wsm + "px",
+          "width": $scope.wsm + "px",
           "height": $scope.h + "px"
         };
 

@@ -62,7 +62,7 @@ fa-app, .fa-app {
 }
 
 .famous-surface {
-  position: absolute;
+  position: relative;
   -webkit-transform-origin: center center;
   transform-origin: center center;
   -webkit-backface-visibility: hidden;

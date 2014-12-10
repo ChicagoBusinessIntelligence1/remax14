@@ -1,81 +1,84 @@
-footer.footer-container
-  .container
-    .footer-wrapper
-      .row
-        .col-md-4
-          .row
-            .col-md-12
-              ul.list-inline
-                li
-                  a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
-                    img(ng-src="../images/footer/mls.png" alt='Multiple Listing Service')
-                li
-                  a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
-                    img(ng-src="../images/footer/remax-commercial-logo.png" alt='RE/MAX 1ST CLASS COMMERCIAL')
-          .row
-            .col-md-12
-              a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
-                img(ng-src="../images/footer/logo-footer.png" alt='Multiple Listing Service')
-        .col-md-4
-          .properties-footer
+footer
+  .footer-container
+    .container
+      .footer-wrapper
+        .row
+          .col-md-4
+            .row
+              .col-md-12
+                ul.list-inline
+                  li
+                    a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
+                      img(ng-src="../images/footer/mls.png" alt='Multiple Listing Service')
+                  li
+                    a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
+                      img(ng-src="../images/footer/remax-commercial-logo.png" alt='RE/MAX 1ST CLASS COMMERCIAL')
+            .row
+              .col-md-12
+                a( target="_blank" data-toggle="tooltip" data-placement="left" title="Title")
+                  img(ng-src="../images/footer/logo-footer.png" alt='Multiple Listing Service')
+          .col-md-4
+            .properties-footer
+              .row
+                .col-md-6
+                  h5
+                    a(ui-sref='app.structure.all-sale-homes' target="_blank")
+                      | PROPERTIES FOR SALE
+                  p
+                    a(ui-sref='app.structure.single-family-homes' target="_blank")
+                      | Single family homes for sale
+                  p
+                    a(ui-sref='app.structure.condos-sale-homes' target="_blank")
+                      | Condos for sale
+                .col-md-6
+                  h5
+                    a(ui-sref='app.structure.all-rental-homes' target="_blank")
+                      | PROPERTIES FOR RENT
+                  p
+                    a(ui-sref='app.structure.all-rental-apartments' target="_blank")
+                      | Apartments for rent
+                  p
+                    a(ui-sref='app.structure.all-rental-houses' target="_blank")
+                      | Houses for rent
+          .col-md-4
             .row
               .col-md-6
                 h5
-                  a(ui-sref='app.structure.all-sale-homes' target="_blank")
-                    | PROPERTIES FOR SALE
-                p
-                  a(ui-sref='app.structure.single-family-homes' target="_blank")
-                    | Single family homes for sale
-                p
-                  a(ui-sref='app.structure.condos-sale-homes' target="_blank")
-                    | Condos for sale
+                  | CONTACT INFORMATION
+                hr
+                ul.list-unstyled
+                  li.locality PHONE: (847) 674-9797
+                  li.locality FAX: (847) 674-0411
+                  li.street-address 4023 W. Church St.
+                  li.locality Skokie, IL 60076
+                  li.email remax1stclass@gmail.com
               .col-md-6
                 h5
-                  a(ui-sref='app.structure.all-rental-homes' target="_blank")
-                    | PROPERTIES FOR RENT
-                p
-                  a(ui-sref='app.structure.all-rental-apartments' target="_blank")
-                    | Apartments for rent
-                p
-                  a(ui-sref='app.structure.all-rental-houses' target="_blank")
-                    | Houses for rent
-        .col-md-4
-          .row
-            .col-md-6
-              h5
-                | CONTACT INFORMATION
-              hr
-              ul.list-unstyled
-                li.locality PHONE: (847) 674-9797
-                li.locality FAX: (847) 674-0411
-                li.street-address 4023 W. Church St.
-                li.locality Skokie, IL 60076
-                li.email remax1stclass@gmail.com
-            .col-md-6
-              h5
-                | CONNECT WITH US
-              hr
-              ul.list-inline
-                li
-                  a(class="social-img" href="https://www.facebook.com/pages/Remax-1st-CLASS/177448822432081" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Facebook Page")
-                    img.img-responsive(ng-src="../images/footer/social/facebook.png" alt="Skokie Remax First Class Facebook Profile")
-                li
-                  a(class="social-img" href="https://twitter.com/RemaxFirstClass" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Twitter Page")
-                    img.img-responsive(ng-src="../images/footer/social/twitter.png" alt="Skokie Remax First Class Twitter Profile")
-                li
-                  a(class="social-img" href="http://www.linkedin.com/profile/view?id=271875691&trk=nav_responsive_tab_profile" target="_blank" data-toggle="tooltip" data-placement="left" title="Our LinkedIn Page")
-                    img.img-responsive(ng-src="../images/footer/social/linkedin.png" alt="Skokie Remax First Class LinkedIn Profile")
-              ul.list-inline
-                li
-                  a(class="social-img" href="https://plus.google.com" target="_blank" data-toggle="tooltip" data-placement="left" title="Our GooglePlus Page")
-                    img.img-responsive(ng-src="../images/footer/social/google.png" alt="Skokie Remax First Class GooglePlus Profile")
-                li
-                  a(class="social-img" href="http://www.yelp.com/biz/remax-first-class-skokie" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Yelp Page")
-                    img.img-responsive(ng-src="../images/footer/social/yelp.png" alt="Skokie Remax First Class Yelp Profile")
-                li
-                  a(class="social-img" href="https://www.youtube.com/" target="_blank" data-toggle="tooltip" data-placement="left" title="Our YouTube Page")
-                    img.img-responsive(ng-src="../images/footer/social/youtube.png" alt="Skokie Remax First Class YouTube Profile")
-.footer
-  .container
-    .footer-content.text-center
-      p © 2013 RE/MAX FIRST CLASS
+                  | CONNECT WITH US
+                hr
+                ul.list-inline
+                  li
+                    a(class="social-img" href="https://www.facebook.com/pages/Remax-1st-CLASS/177448822432081" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Facebook Page")
+                      img.img-responsive(ng-src="../images/footer/social/facebook.png" alt="Skokie Remax First Class Facebook Profile")
+                  li
+                    a(class="social-img" href="https://twitter.com/RemaxFirstClass" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Twitter Page")
+                      img.img-responsive(ng-src="../images/footer/social/twitter.png" alt="Skokie Remax First Class Twitter Profile")
+                  li
+                    a(class="social-img" href="http://www.linkedin.com/profile/view?id=271875691&trk=nav_responsive_tab_profile" target="_blank" data-toggle="tooltip" data-placement="left" title="Our LinkedIn Page")
+                      img.img-responsive(ng-src="../images/footer/social/linkedin.png" alt="Skokie Remax First Class LinkedIn Profile")
+                ul.list-inline
+                  li
+                    a(class="social-img" href="https://plus.google.com" target="_blank" data-toggle="tooltip" data-placement="left" title="Our GooglePlus Page")
+                      img.img-responsive(ng-src="../images/footer/social/google.png" alt="Skokie Remax First Class GooglePlus Profile")
+                  li
+                    a(class="social-img" href="http://www.yelp.com/biz/remax-first-class-skokie" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Yelp Page")
+                      img.img-responsive(ng-src="../images/footer/social/yelp.png" alt="Skokie Remax First Class Yelp Profile")
+                  li
+                    a(class="social-img" href="https://www.youtube.com/" target="_blank" data-toggle="tooltip" data-placement="left" title="Our YouTube Page")
+                      img.img-responsive(ng-src="../images/footer/social/youtube.png" alt="Skokie Remax First Class YouTube Profile")
+  .footer
+    .container
+      .row
+        .col-xs-12
+          .footer-content.text-center
+            p © 2013 RE/MAX FIRST CLASS

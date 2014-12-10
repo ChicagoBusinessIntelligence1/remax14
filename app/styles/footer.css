@@ -10,22 +10,24 @@ label {
 /**********************
     =footer
 ***********************/
-.footer-container {
+footer {
   position: fixed;
   bottom: 0px;
+  left: 0px;
+  right: 0px;
   background-color: #dfdfdf;
 }
-.footer-container hr {
+footer hr {
   margin-top: 0px;
   margin-bottom: 5px;
 }
-.footer-container ul li {
+footer ul li {
   font-size: 11px;
 }
-.footer-container h5 {
+footer h5 {
   font-size: 11px;
 }
-.footer-container p {
+footer p {
   font-size: 11px;
 }
 .footer-wrapper {

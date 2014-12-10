@@ -29,8 +29,8 @@ angular.module('app')
         $scope.opacityFooter = new Transitionable(.8);
 
         $scope.myStyle = {
-          "width": 1.3*$scope.wsm + "px",
-          "height":.5*$scope.h + "px"
+          "width": 1.3 * $scope.wsm + "px",
+          "height": .5 * $scope.h + "px"
         };
 
         $scope.options = {
@@ -46,15 +46,15 @@ angular.module('app')
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = _.map(homes, function (home) {
             //var angle = new Transitionable(defaultAngle);
-            //var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
+            var shift = new Transitionable([0, 0, 0]);
 
             var size = new Transitionable([$scope.wsm, $scope.hsm]);
 
             /* extend object home with two properties
              */
             return _.extend(home, {
-              size: size
-              //infoShift: infoShift
+              size: size,
+              shift: shift
             })
           });
           $scope.homes = homes;
@@ -65,15 +65,13 @@ angular.module('app')
           scrollView.setVelocity(velocity);
 
           Timer.every(function () {
-          var activeIndex = scrollView.getCurrentIndex();
-          var position = scrollView.getPosition();
-            console.log(position);
+            var activeIndex = scrollView.getCurrentIndex();
+            var position = scrollView.getPosition();
+            var scale = 1 - position / $scope.hsm;
 
-            //$scope.homes[activeIndex].size.set([.8* $scope.wsm,.8* $scope.hsm], {duration: 5000});
+            $scope.homes[activeIndex].size.set([scale * $scope.wsm, scale * $scope.hsm]);
+            $scope.homes[activeIndex].shift.set([((1-scale) * $scope.wsm)/2, ((1-scale) * $scope.hsm)/2, 0]);
             //$scope.homes[activeIndex].size.set([$scope.wsm,$scope.hsm], {duration: 5000});
-
-
-
 
             velocity *= decreaser;
             if (velocity >= stopValue) {

@@ -26,6 +26,7 @@
     "routes": "^2.0.0",
     "through2": "^0.6.3",
     "toastr": "^2.0.4",
+    "typescript-closure-tools": "0.0.3",
     "underscore": "^1.7.0"
   },
   "devDependencies": {

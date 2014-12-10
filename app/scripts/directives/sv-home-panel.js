@@ -30,7 +30,7 @@ angular.module('app')
 
         $scope.myStyle = {
           "width": 1.3*$scope.wsm + "px",
-          "height":.5*$scope.h + "px"
+          "height":.9*$scope.h + "px"
         };
 
         $scope.options = {

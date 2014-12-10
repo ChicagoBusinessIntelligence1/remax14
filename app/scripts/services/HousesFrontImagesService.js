@@ -49,6 +49,21 @@ angular.module('app')
         })
         return deferred.promise;
       },
+      mock: function () {
+        var that = this;
+        var deferred = $q.defer();
+        var homes = [];
+
+        for (var i = 1; i < 10; i++) {
+          var home = {
+           image:'images/houses/0'+i+'.jpg'
+          };
+          homes.push(home);
+        }
+        deferred.resolve(homes);
+
+        return deferred.promise;
+      },
 
       get: function (id) {
         var that = this;

@@ -42,7 +42,7 @@ angular.module('app')
 
         var scrollView = ($famous.find('#scrollView')[0]).renderNode;
 
-        HousesFrontImagesService.all().then(function (homes) {
+        HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = homes;
           var velocity = 0.2;
           var decreaser = 0.99;

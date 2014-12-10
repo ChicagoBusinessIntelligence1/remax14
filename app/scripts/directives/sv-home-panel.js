@@ -13,6 +13,7 @@ angular.module('app')
         var Timer = $famous['famous/utilities/Timer'];
         var LightBox = $famous['famous/views/LightBox'];
 
+        var Easing = $famous['famous/transitions/Easing'];
         $scope.colorSkin = '#272727';
 
         $scope.w = $window.innerWidth;
@@ -28,7 +29,7 @@ angular.module('app')
         $scope.opacityFooter = new Transitionable(.8);
 
         $scope.myStyle = {
-          "width": $scope.wsm + "px",
+          "width": 1.3*$scope.wsm + "px",
           "height":.5*$scope.h + "px"
         };
 
@@ -44,13 +45,15 @@ angular.module('app')
 
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = _.map(homes, function (home) {
-            var angle = new Transitionable(defaultAngle);
+            //var angle = new Transitionable(defaultAngle);
             //var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
+
+            var size = new Transitionable([$scope.wsm, $scope.hsm]);
 
             /* extend object home with two properties
              */
             return _.extend(home, {
-              angle: angle
+              size: size
               //infoShift: infoShift
             })
           });
@@ -60,8 +63,15 @@ angular.module('app')
           var stopValue = 0.05;
           var tick = 2;
           scrollView.setVelocity(velocity);
+
           Timer.every(function () {
-          var elem = scrollView.getActive();
+          var activeIndex = scrollView.getCurrentIndex();
+          var position = scrollView.getPosition();
+            console.log(position);
+
+            //$scope.homes[activeIndex].size.set([.8* $scope.wsm,.8* $scope.hsm], {duration: 5000});
+            //$scope.homes[activeIndex].size.set([$scope.wsm,$scope.hsm], {duration: 5000});
+
 
 
 

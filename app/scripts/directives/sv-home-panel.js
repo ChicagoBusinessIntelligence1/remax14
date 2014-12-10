@@ -16,8 +16,9 @@ angular.module('app')
         $scope.colorSkin = '#272727';
 
         $scope.w = $window.innerWidth;
-        $scope.h = $window.innerHeight / 2;
-        $scope.hsm = 0.5 * $scope.h;
+        $scope.h = $window.innerHeight;
+        $scope.hlg = $window.innerHeight / 2;
+        $scope.hsm = 0.5 * $scope.hlg;
         $scope.wsm = 1.5 * $scope.hsm;
 
         $scope.handler = new EventHandler();
@@ -28,13 +29,13 @@ angular.module('app')
 
         $scope.myStyle = {
           "width": $scope.wsm + "px",
-          "height": $scope.h + "px"
+          "height": $scope.hlg + "px"
         };
 
         $scope.options = {
           homePageScroll: {
             paginated: true,
-            clipSize: $scope.h,
+            clipSize: $scope.hlg,
             direction: 1
           }
         };

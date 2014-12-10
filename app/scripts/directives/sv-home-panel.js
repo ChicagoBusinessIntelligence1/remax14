@@ -11,6 +11,10 @@ angular.module('app')
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
         var Timer = $famous['famous/utilities/Timer'];
+        var LightBox = $famous['famous/views/LightBox'];
+
+
+
         $scope.colorSkin = '#272727';
 
         $scope.w = $window.innerWidth;

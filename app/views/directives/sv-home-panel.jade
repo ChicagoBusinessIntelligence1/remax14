@@ -1,6 +1,7 @@
 div
   fa-app(ng-style='myStyle' fa-perspective="500")
-    fa-scroll-view(fa-pipe-from='handler' fa-start-index='1' id='scrollView' fa-options="options.homePageScroll")
-      fa-modifier(ng-repeat='home in homes' fa-size='[{{wsm}},{{hsm}}]'  fa-rotate-x='angle.get()' fa-align="[0, 0]" fa-origin="[0, 0]" fa-translate='[0,20,0]')
-        fa-surface(fa-pipe-to='handler')
-          img.thumbnail(ng-src="{{home.image}}" style='width:{{wsm}}px;height:{{hsm}}px')
+    fa-modifier(fa-rotate-x='angle.get()')
+      fa-scroll-view(fa-pipe-from='handler' fa-start-index='1' id='scrollView' fa-options="options.homePageScroll" )
+        fa-modifier(ng-repeat='home in homes' fa-size='[{{wsm}},{{hsm}}]'   fa-align="[0, 0]" fa-origin="[0, 0]" fa-translate='[0,20,0]')
+          fa-surface(fa-pipe-to='handler')
+            img.thumbnail(ng-src="{{home.image}}" style='width:{{wsm}}px;height:{{hsm}}px')

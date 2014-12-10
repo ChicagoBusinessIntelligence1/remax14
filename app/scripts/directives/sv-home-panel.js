@@ -29,7 +29,7 @@ angular.module('app')
 
         $scope.myStyle = {
           "width": $scope.wsm + "px",
-          "height":.8*$scope.h + "px"
+          "height":.5*$scope.h + "px"
         };
 
         $scope.options = {
@@ -43,6 +43,17 @@ angular.module('app')
         var scrollView = ($famous.find('#scrollView')[0]).renderNode;
 
         HousesFrontImagesService.mock().then(function (homes) {
+          $scope.homes = _.map(homes, function (home) {
+            var angle = new Transitionable(defaultAngle);
+            //var infoShift = new Transitionable([0, $scope.hsm / 5, 0]);
+
+            /* extend object home with two properties
+             */
+            return _.extend(home, {
+              angle: angle
+              //infoShift: infoShift
+            })
+          });
           $scope.homes = homes;
           var velocity = 0.2;
           var decreaser = 0.99;
@@ -50,12 +61,15 @@ angular.module('app')
           var tick = 2;
           scrollView.setVelocity(velocity);
           Timer.every(function () {
+          var elem = scrollView.getActive();
+
+
+
             velocity *= decreaser;
             if (velocity >= stopValue) {
               scrollView.setVelocity(velocity);
             } else {
               scrollView.setVelocity(0);
-              Timer.clear(this);
             }
           }, tick);
         });

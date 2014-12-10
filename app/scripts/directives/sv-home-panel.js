@@ -24,12 +24,12 @@ angular.module('app')
 
         $scope.handler = new EventHandler();
 
-        var defaultAngle = -Math.PI / 21;
+        var defaultAngle = -Math.PI / 32;
         $scope.angle = new Transitionable(defaultAngle);
         $scope.opacityFooter = new Transitionable(.8);
 
         $scope.myStyle = {
-          "width": 1.4 * $scope.wsm + "px",
+          "width": 1.2*$scope.wsm + "px",
           "height": $scope.h + "px"
         };
 
@@ -46,9 +46,9 @@ angular.module('app')
         HousesFrontImagesService.all().then(function (homes) {
           $scope.homes = homes;
           var velocity = 0.2;
-          var decreaser = 0.98;
-          var stopValue = 0.03;
-          var tick = 3;
+          var decreaser = 0.99;
+          var stopValue = 0.05;
+          var tick = 2;
           scrollView.setVelocity(velocity);
           Timer.every(function () {
             velocity *= decreaser;

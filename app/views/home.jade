@@ -2,12 +2,6 @@
   .container
     .row
       .col-sm-6
-        sv-home-panel
+        sv-spinner(ng-show='isDataLoading')
+        sv-home-panel(ng-hide='isDataLoading')
       .col-sm-6
-//.container.content-wrapper
-//  .row
-//    .col-sm-12
-//      sv-home-info
-//  .row
-//    .col-sm-12
-//      sv-selected-property

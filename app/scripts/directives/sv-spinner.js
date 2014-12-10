@@ -6,14 +6,12 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-spinner.html',
-      scope: {
-
-      },
+      scope: {},
       link: function ($scope, element, attr) {
 
       },
       controller: function ($scope) {
-      //this.var=something;
-      },
+        //this.var=something;
+      }
     };
   });

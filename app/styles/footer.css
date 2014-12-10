@@ -11,6 +11,8 @@ label {
     =footer
 ***********************/
 .footer-container {
+  position: fixed;
+  bottom: 0px;
   background-color: #dfdfdf;
 }
 .footer-container hr {

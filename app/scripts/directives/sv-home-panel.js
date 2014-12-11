@@ -16,15 +16,8 @@ angular.module('app')
         var percentWidth = 0.5;
         var percentHeight = 0.3;
 
-
-
         $scope.w = percentWidth * $window.innerWidth;
         $scope.h = percentHeight * $window.innerHeight;
-
-        $scope.myStyle = {
-          'width': $scope.w+'px',
-          'height': $scope.h+'px'
-        }
 
         $($window).resize(function () {
           $scope.$apply(function () {
@@ -32,24 +25,24 @@ angular.module('app')
             $scope.w = percentWidth * $window.innerWidth;
             $scope.h = percentHeight * $window.innerHeight;
 
-            $scope.myStyle = {
-              'width': $scope.w+'px',
-              'height': $scope.h+'px'
-            }
           })
         })
 
+        var angle = -Math.PI / 2;
+
+        $scope.nextPage = function (home) {
+          var transitionPage = new Transitionable(angle) ;
+          home.flip.set(transitionPage,{duration:1000});
+
+        };
 
 
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = _.map(homes, function (home) {
-            var shift = new Transitionable([0, 0, 0]);
-
-            var size = new Transitionable([$scope.wsm, $scope.hsm]);
+            var flip = new Transitionable(0.5);
 
             return _.extend(home, {
-              size: size,
-              shift: shift
+              flip: flip
             })
           });
           $scope.homes = homes;

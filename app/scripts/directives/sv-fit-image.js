@@ -19,19 +19,23 @@ angular.module('app')
             return;
           }
 
-          var height,width;
-          if ($scope.w/2> $scope.h) {
-            width = $scope.h*2;
+          var height,width, bgSize;
+	        var proportion = 1.5;
+          if ($scope.w/ proportion> $scope.h) {
+            width = $scope.h*proportion;
             height= $scope.h;
+            bgSize = 'auto 100%';
           } else{
             width= $scope.w;
-            height = $scope.w/2;
+            height = $scope.w/proportion;
+            bgSize = '100% auto';
           }
 
           element.css({
             'background-image': 'url(' + $scope.url + ')',
-            'background-size': '125% auto',
-            'background-position': '50% 25%',
+            'background-size': bgSize,
+            'background-position': '0% 0%',
+            'background-repeat': 'no-repeat',
             'position': 'relative',
             'margin':'0 auto',
             'width': width + 'px',

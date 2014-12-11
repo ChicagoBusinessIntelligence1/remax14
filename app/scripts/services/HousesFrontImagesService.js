@@ -54,7 +54,7 @@ angular.module('app')
         var deferred = $q.defer();
         var homes = [];
 
-        for (var i = 1; i < 10; i++) {
+        for (var i = 1; i < 4; i++) {
           var home = {
            image:'images/houses/0'+i+'.jpg'
           };

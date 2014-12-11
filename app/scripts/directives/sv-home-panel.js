@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window,$timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -32,10 +32,23 @@ angular.module('app')
         var angle0 = -2 * Math.PI;
 
         $scope.nextPage = function (home) {
+          $scope.activeIndex++;
 
           home.flip.set(angle, {duration: 1000, curve: 'linear'});
+          if ($scope.activeIndex== $scope.homes.length) {
+            console.log('last');
+            $timeout(function () {
+              console.log('run');
+              $scope.homes =_.map($scope.allHomes, function (home) {
+                var flip = new Transitionable(0);
+                return _.extend(home, {
+                  flip: flip
+                })
+              });
+              $scope.activeIndex=0;
+            },850);
 
-
+          }
         };
 
         HousesFrontImagesService.mock().then(function (homes) {
@@ -46,7 +59,7 @@ angular.module('app')
               flip: flip
             })
           });
-          $scope.homes = (_.first($scope.allHomes, 2)).reverse();
+          $scope.homes = ($scope.allHomes).reverse();
         })
       }
     }

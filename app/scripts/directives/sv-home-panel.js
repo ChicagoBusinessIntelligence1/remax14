@@ -29,22 +29,24 @@ angular.module('app')
         })
 
         var angle = -Math.PI / 2;
+        var angle0 = -2 * Math.PI;
 
         $scope.nextPage = function (home) {
-          home.flip.set(angle,{duration:1000,curve:'linear'});
+
+          home.flip.set(angle, {duration: 1000, curve: 'linear'});
+
 
         };
 
-
         HousesFrontImagesService.mock().then(function (homes) {
-          $scope.homes = _.map(homes, function (home) {
+          $scope.activeIndex = 0;
+          $scope.allHomes = _.map(homes, function (home) {
             var flip = new Transitionable(0);
-
             return _.extend(home, {
               flip: flip
             })
           });
-          $scope.homes = homes;
+          $scope.homes = (_.first($scope.allHomes, 2)).reverse();
         })
       }
     }

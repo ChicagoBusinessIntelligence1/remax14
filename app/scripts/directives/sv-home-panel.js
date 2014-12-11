@@ -31,7 +31,7 @@ angular.module('app')
         var angle = -Math.PI / 2;
 
         $scope.nextPage = function (home) {
-          home.flip.set(angle,{duration:1500,curve:'linear'});
+          home.flip.set(angle,{duration:1000,curve:'linear'});
 
         };
 

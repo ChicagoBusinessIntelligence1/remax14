@@ -37,7 +37,7 @@ angular.module('app')
             'background-position': '0% 0%',
             'background-repeat': 'no-repeat',
             'position': 'relative',
-            'margin':'0 auto',
+            //'margin':'0 auto',
             'width': width + 'px',
             'height': height + 'px'
           });

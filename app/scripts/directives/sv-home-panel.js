@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window) {
     return {
       restrict: 'E',
       replace: true,
@@ -10,77 +10,50 @@ angular.module('app')
         var Transform = $famous['famous/core/Transform'];
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
-        var Timer = $famous['famous/utilities/Timer'];
-        var LightBox = $famous['famous/views/LightBox'];
-
         var Easing = $famous['famous/transitions/Easing'];
+
         $scope.colorSkin = '#272727';
+        var percentWidth = 0.5;
+        var percentHeight = 0.3;
 
-        $scope.w = $window.innerWidth;
-        $scope.h = $window.innerHeight;
-        $scope.hlg = $window.innerHeight / 2;
-        $scope.hsm = 0.5 * $scope.hlg;
-        $scope.wsm = 1.5 * $scope.hsm;
 
-        $scope.handler = new EventHandler();
 
-        var defaultAngle = -Math.PI / 22;
-        $scope.angle = new Transitionable(defaultAngle);
-        $scope.opacityFooter = new Transitionable(.8);
+        $scope.w = percentWidth * $window.innerWidth;
+        $scope.h = percentHeight * $window.innerHeight;
 
         $scope.myStyle = {
-          "width": 1.3 * $scope.wsm + "px",
-          "height": .5 * $scope.h + "px"
-        };
+          'width': $scope.w+'px',
+          'height': $scope.h+'px'
+        }
 
-        $scope.options = {
-          homePageScroll: {
-            paginated: true,
-            clipSize: $scope.hlg,
-            direction: 1
-          }
-        };
+        $($window).resize(function () {
+          $scope.$apply(function () {
 
-        var scrollView = ($famous.find('#scrollView')[0]).renderNode;
+            $scope.w = percentWidth * $window.innerWidth;
+            $scope.h = percentHeight * $window.innerHeight;
+
+            $scope.myStyle = {
+              'width': $scope.w+'px',
+              'height': $scope.h+'px'
+            }
+          })
+        })
+
+
 
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = _.map(homes, function (home) {
-            //var angle = new Transitionable(defaultAngle);
             var shift = new Transitionable([0, 0, 0]);
 
             var size = new Transitionable([$scope.wsm, $scope.hsm]);
 
-            /* extend object home with two properties
-             */
             return _.extend(home, {
               size: size,
               shift: shift
             })
           });
           $scope.homes = homes;
-          var velocity = 0.2;
-          var decreaser = 0.99;
-          var stopValue = 0.05;
-          var tick = 2;
-          scrollView.setVelocity(velocity);
-
-          Timer.every(function () {
-            var activeIndex = scrollView.getCurrentIndex();
-            var position = scrollView.getPosition();
-            var scale = 1 - position / $scope.hsm;
-
-            $scope.homes[activeIndex].size.set([scale * $scope.wsm, scale * $scope.hsm]);
-            $scope.homes[activeIndex].shift.set([((1-scale) * $scope.wsm)/2, ((1-scale) * $scope.hsm)/2, 0]);
-            //$scope.homes[activeIndex].size.set([$scope.wsm,$scope.hsm], {duration: 5000});
-
-            velocity *= decreaser;
-            if (velocity >= stopValue) {
-              scrollView.setVelocity(velocity);
-            } else {
-              scrollView.setVelocity(0);
-            }
-          }, tick);
-        });
+        })
       }
     }
   });

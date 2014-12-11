@@ -32,7 +32,7 @@ angular.module('app')
 
         $scope.nextPage = function (home) {
           var transitionPage = new Transitionable(angle) ;
-          home.flip.set(transitionPage,{duration:1000});
+          home.flip.set(angle,{duration:1000});
 
         };
 

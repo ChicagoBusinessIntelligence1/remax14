@@ -31,15 +31,14 @@ angular.module('app')
         var angle = -Math.PI / 2;
 
         $scope.nextPage = function (home) {
-          var transitionPage = new Transitionable(angle) ;
-          home.flip.set(transitionPage,{duration:1000});
+          home.flip.set(angle,{duration:1500,curve:'linear'});
 
         };
 
 
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.homes = _.map(homes, function (home) {
-            var flip = new Transitionable(0.5);
+            var flip = new Transitionable(0);
 
             return _.extend(home, {
               flip: flip

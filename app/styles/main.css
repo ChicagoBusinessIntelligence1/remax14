@@ -4266,6 +4266,25 @@ label {
   border-left: 175px solid #66c;
   border-right: 175px solid #cc6;
 }
+#home-page-app {
+  -webkit-perspective: 1000 !important;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  -ms-perspective: none;
+  perspective: none;
+  position: relative;
+}
 /**********************
       =Variables
 ***********************/

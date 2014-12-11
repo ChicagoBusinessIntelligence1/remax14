@@ -9,25 +9,38 @@ angular.module('app')
 
       scope: {
         url:'=',
-        w:'@',
-        h:'@'
+        w:'=',
+        h:'='
 
       },
       link: function ($scope, element, attr) {
-        if ($scope.w/2> $scope.h) {
-          $scope.w= $scope.h*2;
-        } else{
-          $scope.h= $scope.w/2;
-        }
+        $scope.$watchGroup(['w','h'], function (newValues, oldValues) {
+          if (_.isUndefined(newValues[0] || _.isUndefined(newValues[1]))) {
+            return;
+          }
 
-        element.css({
-          'background-image': 'url(' + $scope.url + ')',
-          'background-size': '125% auto',
-          'background-position': '50% 25%',
-          'position': 'relative',
-          'height': $scope.h + 'px',
-          'width': $scope.w + 'px'
+          var height,width;
+          if ($scope.w/2> $scope.h) {
+            width = $scope.h*2;
+            height= $scope.h;
+          } else{
+            width= $scope.w;
+            height = $scope.w/2;
+          }
+
+          element.css({
+            'background-image': 'url(' + $scope.url + ')',
+            'background-size': '125% auto',
+            'background-position': '50% 25%',
+            'position': 'relative',
+            'margin':'0 auto',
+            'width': width + 'px',
+            'height': height + 'px'
+          });
+
         });
+
+
 
 
 

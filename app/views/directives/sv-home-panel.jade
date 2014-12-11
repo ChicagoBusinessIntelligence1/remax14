@@ -1,5 +1,5 @@
 div(ng-if='true')
   fa-app(style='width:{{w}}px;height:{{h}}px')
-    fa-modifier(ng-repeat='home in homes')
-      fa-surface(fa-background-color="'green'" fa-size='[{{w}},{{h}}]')
-        sv-fit-image(url='home.image' w='{{w}}' h='{{h}}')
+    fa-modifier(ng-repeat='home in homes' fa-size='[{{w}},{{h}}]')
+      fa-surface(fa-background-color="'green'" )
+        sv-fit-image(url='home.image' w='w' h='h')

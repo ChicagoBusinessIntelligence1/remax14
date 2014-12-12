@@ -20,7 +20,8 @@ angular.module('app')
 
         $scope.initw = $window.innerWidth;
         $scope.inith = $window.innerHeight;
-
+        console.log($scope.initw);
+        console.log($scope.inith);
         $scope.h = percentHeight * $window.innerHeight;
         var width = percentWidth * $window.innerWidth;
         if (width > $scope.h * 1.5) {
@@ -29,10 +30,11 @@ angular.module('app')
           $scope.w = width;
         }
 
+        console.log($scope.w);
+        console.log($scope.h);
         $scope.bookStyle = {
           boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
-          marginRight: '15px',
-          padding: '15px'
+          padding: $scope.w *0.03+'px'
         };
 
         $scope.homeAppStyle = {
@@ -52,6 +54,12 @@ angular.module('app')
             } else {
               $scope.w = width;
             }
+
+            $scope.bookStyle = {
+              boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
+              padding: $scope.w *0.03+'px'
+            };
+
           })
         })
 

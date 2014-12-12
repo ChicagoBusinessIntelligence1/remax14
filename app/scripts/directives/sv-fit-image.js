@@ -37,8 +37,6 @@ angular.module('app')
           element.css({
             'background-image': 'url(' + $scope.url + ')',
             'box-shadow': '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
-            'margin-right': '15px',
-            'padding': '15px',
             'background-size': bgSize,
             'background-position': '0% 0%',
             'background-repeat': 'no-repeat',
@@ -49,7 +47,7 @@ angular.module('app')
             'border-bottom':'2px #bbb solid',
             'border-top':'1px #ddd solid',
             'border-radius':'10px',
-            'webkit-border-radius':'10px'
+            '-webkit-border-radius':'10px'
 
           });
 

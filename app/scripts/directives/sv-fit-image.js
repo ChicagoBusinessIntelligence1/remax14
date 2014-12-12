@@ -13,7 +13,6 @@ angular.module('app')
 
       },
       link: function ($scope, element, attr) {
-
         $scope.$watchGroup(['w', 'h'], function (newValues, oldValues) {
           if (_.isUndefined(newValues[0] || _.isUndefined(newValues[1]))) {
             return;
@@ -39,8 +38,6 @@ angular.module('app')
             'position': 'relative',
             'width': width + 'px',
             'height': height + 'px',
-            'borderRadius': '2px',
-            'boxShadow': '0 10px 20px -5px rgba(0, 0, 0, 0.5)'
           });
         });
       }

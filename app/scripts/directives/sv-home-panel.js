@@ -13,7 +13,9 @@ angular.module('app')
         var Easing = $famous['famous/transitions/Easing'];
 
         $scope.bookStyle = {
-          boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)'
+          boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
+          marginRight: '15px',
+          padding: '15px'
         };
 
         $scope.colorSkin = '#272727';

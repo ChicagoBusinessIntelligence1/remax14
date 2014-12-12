@@ -4291,13 +4291,6 @@ label {
   bottom: 0;
   left: 0;
 }
-.book-cover {
-  background: -webkit-linear-gradient(top, #eee, #fff 99%, #000 1%) !important;
-  background: -moz-linear-gradient(top, #eee, #fff 99%, #000 1%) !important;
-  background: -o-linear-gradient(top, #eee, #fff 99%, #000 1%) !important;
-  background: -ms-linear-gradient(top, #eee, #fff 99%, #000 1%) !important;
-  background: linear-gradient(to bottom, #eee, #fff 99%, #000 1%) !important;
-}
 /**********************
       =Variables
 ***********************/

@@ -25,9 +25,21 @@ angular.module('app')
         var width = percentWidth * $window.innerWidth;
         if (width > $scope.h * 1.5) {
           $scope.w = 1.5 * $scope.h;
-        } else{
+        } else {
           $scope.w = width;
         }
+
+        $scope.bookStyle = {
+          boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
+          marginRight: '15px',
+          padding: '15px'
+        };
+
+        $scope.homeAppStyle = {
+          backgroundColor: 'lighten($scope.colorSkin, 96%)',
+          width: $scope.w + 'px',
+          height: $scope.inith + 'px'
+        };
 
         $($window).resize(function () {
           $scope.$apply(function () {
@@ -37,10 +49,9 @@ angular.module('app')
             var width = percentWidth * $window.innerWidth;
             if (width > $scope.h * 1.5) {
               $scope.w = 1.5 * $scope.h;
-            } else{
+            } else {
               $scope.w = width;
             }
-
           })
         })
 

@@ -12,7 +12,6 @@ angular.module('app')
         var EventHandler = $famous['famous/core/EventHandler'];
         var Easing = $famous['famous/transitions/Easing'];
 
-        $scope.colorSkin = '#272727';
         var screenSizeLimit = 960;
 
         var percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;

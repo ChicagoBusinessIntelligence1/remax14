@@ -22,15 +22,12 @@ angular.module('app')
         var percentHeight = 0.5;
 	      var proportions = 1.5;
 
-        $scope.initw = $window.innerWidth;
-        $scope.inith = $window.innerHeight;
-        console.log($scope.initw);
-        console.log($scope.inith);
-        var h = percentHeight * $window.innerHeight;
+
+        var height = percentHeight * $window.innerHeight;
         var width = percentWidth * $window.innerWidth;
-        if (width > $scope.h * proportions) {
-          $scope.w = proportions * $scope.h;
-          $scope.h = h;
+        if (width > height * proportions) {
+          $scope.w = proportions * height;
+          $scope.h = height;
         } else {
           if (width<smallDeviceLimit) {
             width*=smallDeviceWidthNormalizer;
@@ -41,8 +38,6 @@ angular.module('app')
 
         }
 
-        console.log($scope.w);
-        console.log($scope.h);
         $scope.bookStyle = {
           boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
           padding: $scope.w *0.03+'px'
@@ -57,13 +52,20 @@ angular.module('app')
         $($window).resize(function () {
           $scope.$apply(function () {
 
-            percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
-            $scope.h = percentHeight * $window.innerHeight;
-            var width = percentWidth * $window.innerWidth;
-            if (width > $scope.h * 1.5) {
-              $scope.w = 1.5 * $scope.h;
+            var percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
+            height = percentHeight * $window.innerHeight;
+            width = percentWidth * $window.innerWidth;
+            if (width > height * proportions) {
+              $scope.w = proportions * height;
+              $scope.h = height;
             } else {
+              if (width<smallDeviceLimit) {
+                width*=smallDeviceWidthNormalizer;
+              }
+
               $scope.w = width;
+              $scope.h = $scope.w/proportions;
+
             }
 
             $scope.bookStyle = {
@@ -71,6 +73,11 @@ angular.module('app')
               padding: $scope.w *0.03+'px'
             };
 
+            $scope.homeAppStyle = {
+              backgroundColor: 'lighten($scope.colorSkin, 96%)',
+              width: $scope.w + 'px',
+              height: $scope.inith + 'px'
+            };
           })
         })
 

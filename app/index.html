@@ -304,5 +304,30 @@
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
 document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.7.2.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
 //]]></script>
+<script type='text/javascript'>
+  function Person(firstName, lastName,age) {
+
+    this.age = age;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  Person.prototype.firstName = '';
+  Person.prototype.lastName = '';
+  Person.prototype.sayName = function () {
+    console.log('My name is:' + this.firstName + ' ' + this.lastName);
+  }
+  var person = new Person('John', 'Doe');
+
+  var Employee=Object.create(Person);
+
+  var employee = new Employee('Jane','Doe');
+  employee.sayName();
+  //  function Person(){
+  //    this.firstName='Boris';
+  //    this.lastName='Doe';
+  //
+  //  }
+</script>
 </body>
 </html>

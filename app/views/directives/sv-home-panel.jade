@@ -1,13 +1,16 @@
 div
-  fa-app(style='width:{{w}}px;height:{{1.7*h}}px;background-color:red' fa-perpective='1000' id='home-page-app')
+  fa-app(style='width:{{w}}px;height:{{inith}}px;background-color:red' fa-perpective='1000' id='home-page-app')
     fa-modifier(
-    fa-size='[{{w}},{{1.7*h}}]' )
+    fa-translate='[0,100,0]'
+    fa-size='[{{w}},{{2*h}}]' )
       fa-modifier(fa-properties='{zIndex:1}'
       fa-translate='[0,0,0]'
-      fa-align="[0, 0.5]"
+      fa-align="[0,.5]"
       ng-repeat='home in homes'
       fa-opacity='1' fa-rotate-y='home.flip.get()'
-      fa-origin="[0, 0.5]"
-      fa-size='[{{w}},{{h}}]' )
-        fa-surface(fa-click='nextPage(home,$index)' )
-          sv-fit-image(url='home.image' w='w' h='h')
+      fa-origin="[0,0.5]"
+      fa-size='[{{w}},{{h}}]')
+        fa-surface(fa-click='nextPage(home,$index)' fa-background-color="'white'" fa-size="[{{.98*w}}, {{h}}]" fa-properties='bookStyle')
+          .row
+            .col-sm-10.book-cover
+              sv-fit-image(url='home.image' w='w' h='h')

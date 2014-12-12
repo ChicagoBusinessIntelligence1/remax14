@@ -6,28 +6,28 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       template: '<div></div>',
-
       scope: {
-        url:'=',
-        w:'=',
-        h:'='
+        url: '=',
+        w: '=',
+        h: '='
 
       },
       link: function ($scope, element, attr) {
-        $scope.$watchGroup(['w','h'], function (newValues, oldValues) {
+
+        $scope.$watchGroup(['w', 'h'], function (newValues, oldValues) {
           if (_.isUndefined(newValues[0] || _.isUndefined(newValues[1]))) {
             return;
           }
 
-          var height,width, bgSize;
-	        var proportion = 1.5;
-          if ($scope.w/ proportion> $scope.h) {
-            width = $scope.h*proportion;
-            height= $scope.h;
+          var height, width, bgSize;
+          var proportion = 1.5;
+          if ($scope.w / proportion > $scope.h) {
+            width = $scope.h * proportion;
+            height = $scope.h;
             bgSize = 'auto 100%';
-          } else{
-            width= $scope.w;
-            height = $scope.w/proportion;
+          } else {
+            width = $scope.w;
+            height = $scope.w / proportion;
             bgSize = '100% auto';
           }
 
@@ -37,17 +37,12 @@ angular.module('app')
             'background-position': '0% 0%',
             'background-repeat': 'no-repeat',
             'position': 'relative',
-            //'margin':'0 auto',
             'width': width + 'px',
-            'height': height + 'px'
+            'height': height + 'px',
+            'borderRadius': '2px',
+            'boxShadow': '0 10px 20px -5px rgba(0, 0, 0, 0.5)'
           });
-
         });
-
-
-
-
-
       }
     };
   });

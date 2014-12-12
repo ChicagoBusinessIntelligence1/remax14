@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window,$timeout) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -12,12 +12,6 @@ angular.module('app')
         var EventHandler = $famous['famous/core/EventHandler'];
         var Easing = $famous['famous/transitions/Easing'];
 
-        $scope.bookStyle = {
-          boxShadow: '0 10px 20px -5px rgba(0, 0, 0, 0.5)',
-          marginRight: '15px',
-          padding: '15px'
-        };
-
         $scope.colorSkin = '#272727';
         var screenSizeLimit = 960;
 
@@ -27,15 +21,25 @@ angular.module('app')
         $scope.initw = $window.innerWidth;
         $scope.inith = $window.innerHeight;
 
-        $scope.w = percentWidth * $window.innerWidth;
         $scope.h = percentHeight * $window.innerHeight;
+        var width = percentWidth * $window.innerWidth;
+        if (width > $scope.h * 1.5) {
+          $scope.w = 1.5 * $scope.h;
+        } else{
+          $scope.w = width;
+        }
 
         $($window).resize(function () {
           $scope.$apply(function () {
 
             percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
-            $scope.w = percentWidth * $window.innerWidth;
             $scope.h = percentHeight * $window.innerHeight;
+            var width = percentWidth * $window.innerWidth;
+            if (width > $scope.h * 1.5) {
+              $scope.w = 1.5 * $scope.h;
+            } else{
+              $scope.w = width;
+            }
 
           })
         })
@@ -47,18 +51,18 @@ angular.module('app')
           $scope.activeIndex++;
 
           home.flip.set(angle, {duration: 1000, curve: 'linear'});
-          if ($scope.activeIndex== $scope.homes.length) {
+          if ($scope.activeIndex == $scope.homes.length) {
             console.log('last');
             $timeout(function () {
               console.log('run');
-              $scope.homes =_.map($scope.allHomes, function (home) {
+              $scope.homes = _.map($scope.allHomes, function (home) {
                 var flip = new Transitionable(0);
                 return _.extend(home, {
                   flip: flip
                 })
               });
-              $scope.activeIndex=0;
-            },850);
+              $scope.activeIndex = 0;
+            }, 850);
 
           }
         };

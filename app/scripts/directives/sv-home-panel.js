@@ -22,7 +22,7 @@ angular.module('app')
         var screenSizeLimit = 960;
 
         var percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
-        var percentHeight = 0.3;
+        var percentHeight = 0.5;
 
         $scope.initw = $window.innerWidth;
         $scope.inith = $window.innerHeight;

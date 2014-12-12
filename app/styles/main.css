@@ -4285,7 +4285,7 @@ label {
 }
 #home-page-app {
   -webkit-perspective: 1000 !important;
-  position: fixed;
+  position: relative;
   top: 0;
   right: 0;
   bottom: 0;

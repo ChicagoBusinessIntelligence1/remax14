@@ -14,20 +14,31 @@ angular.module('app')
 
         $scope.colorSkin = '#272727';
         var screenSizeLimit = 960;
+        var smallDeviceLimit = 700;
+
+        var smallDeviceWidthNormalizer = 0.83;
 
         var percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
         var percentHeight = 0.5;
+	      var proportions = 1.5;
 
         $scope.initw = $window.innerWidth;
         $scope.inith = $window.innerHeight;
         console.log($scope.initw);
         console.log($scope.inith);
-        $scope.h = percentHeight * $window.innerHeight;
+        var h = percentHeight * $window.innerHeight;
         var width = percentWidth * $window.innerWidth;
-        if (width > $scope.h * 1.5) {
-          $scope.w = 1.5 * $scope.h;
+        if (width > $scope.h * proportions) {
+          $scope.w = proportions * $scope.h;
+          $scope.h = h;
         } else {
+          if (width<smallDeviceLimit) {
+            width*=smallDeviceWidthNormalizer;
+          }
+
           $scope.w = width;
+          $scope.h = $scope.w/proportions;
+
         }
 
         console.log($scope.w);

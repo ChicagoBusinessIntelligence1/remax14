@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window, $timeout) {
+  .directive('svHomePanel', function (HousesFrontImagesService, $famous, $window,$timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -19,7 +19,9 @@ angular.module('app')
         };
 
         $scope.colorSkin = '#272727';
-        var percentWidth = 0.5;
+        var screenSizeLimit = 960;
+
+        var percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
         var percentHeight = 0.3;
 
         $scope.initw = $window.innerWidth;
@@ -30,8 +32,11 @@ angular.module('app')
 
         $($window).resize(function () {
           $scope.$apply(function () {
+
+            percentWidth = $window.innerWidth > screenSizeLimit ? 0.5 : 1;
             $scope.w = percentWidth * $window.innerWidth;
             $scope.h = percentHeight * $window.innerHeight;
+
           })
         })
 
@@ -42,19 +47,18 @@ angular.module('app')
           $scope.activeIndex++;
 
           home.flip.set(angle, {duration: 1000, curve: 'linear'});
-          if ($scope.activeIndex == $scope.homes.length) {
+          if ($scope.activeIndex== $scope.homes.length) {
             console.log('last');
             $timeout(function () {
               console.log('run');
-              $scope.homes = _.map($scope.allHomes, function (home) {
-                var flip = new Transitionable(0);
+              $scope.homes =_.map($scope.allHomes, function (home) {
                 var flip = new Transitionable(0);
                 return _.extend(home, {
                   flip: flip
                 })
               });
-              $scope.activeIndex = 0;
-            }, 850);
+              $scope.activeIndex=0;
+            },850);
 
           }
         };

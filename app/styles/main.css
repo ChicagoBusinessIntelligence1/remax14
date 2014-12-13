@@ -4291,6 +4291,14 @@ label {
   bottom: 0;
   left: 0;
 }
+.text-flex {
+  font-size: 1em;
+}
+@media screen and (min-width: 992px) {
+  .text-flex {
+    font-size: 1.1em;
+  }
+}
 /**********************
       =Variables
 ***********************/

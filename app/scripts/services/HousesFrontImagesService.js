@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($firebase, $q, $rootScope, urlSale, HomeService) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -54,15 +54,28 @@ angular.module('app')
         var deferred = $q.defer();
         var homes = [];
 
-        for (var i = 1; i < 4; i++) {
+        for (var i = 1; i < 8; i++) {
           var home = {
-           image:'images/houses/0'+i+'.jpg'
+            image: 'images/houses/0' + i + '.jpg'
           };
           homes.push(home);
         }
-        deferred.resolve(homes);
+        deferred.resolve(that.initialState(homes));
 
         return deferred.promise;
+      },
+      initialState: function (homes) {
+        var Transitionable = $famous['famous/transitions/Transitionable'];
+        var that = this;
+        var allHomes = _.map(homes, function (home) {
+          var flip = new Transitionable(0);
+          var opacity = new Transitionable(1);
+          return _.extend(home, {
+            flip: flip,
+            opacity: opacity
+          })
+        });
+        return allHomes.reverse();
       },
 
       get: function (id) {

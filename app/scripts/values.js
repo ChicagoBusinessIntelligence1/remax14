@@ -118,6 +118,20 @@ app.value('notifications', {
   contactMessageSent: 'Your message has been successfully sent'
 
 });
-app.value('query', {});
+
+app.factory('flipSettings', function () {
+    var screenSizeLimit = 960;
+    var smallDeviceLimit = 700;
+    var smallDeviceWidthNormalizer = 0.83;
+    var percentHeight = 0.5;
+    var proportions = 1.5;
+    return {
+      screenSizeLimit: screenSizeLimit,
+      smallDeviceLimit: smallDeviceLimit,
+      smallDeviceWidthNormalizer: smallDeviceWidthNormalizer,
+      percentHeight: percentHeight,
+      proportions: proportions
+    };
+})
 app.value('imgSize', {w:710,h:482})
 app.value('pageHomesNumber', '3');

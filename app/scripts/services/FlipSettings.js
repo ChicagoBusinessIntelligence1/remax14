@@ -7,8 +7,8 @@ angular.module('app')
     var smallScreenPart = 1;
     var percentHeight = 0.5;
 
-    var smallDeviceLimit = 700;
-    var smallDeviceWidthNormalizer = 0.83;
+    var smallDeviceLimit = 768;
+    var smallDeviceWidthNormalizer = 0.92;
     var proportions = 1.5;
 
     var angle = -Math.PI / 2;

@@ -66,7 +66,6 @@ angular.module('app')
       },
       initialState: function (homes) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
-        var that = this;
         var allHomes = _.map(homes, function (home) {
           var flip = new Transitionable(0);
           var opacity = new Transitionable(1);

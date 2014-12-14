@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svFitImage', function () {
+  .directive('svFitImage', function (flipSettings) {
     return {
       restrict: 'E',
       replace: true,
@@ -19,7 +19,7 @@ angular.module('app')
             return;
           }
           var height, width, bgSize;
-          var proportion = 1.5;
+          var proportion = flipSettings.proportions;
 
           if (($scope.h * proportion) < $scope.w) {
             width = $scope.h * proportion;

@@ -22,7 +22,6 @@ angular.module('app')
             height = width/config.proportions;
           }
 
-
         } else {
           if (width < config.smallDeviceLimit) {
             width *= config.smallDeviceWidthNormalizer;

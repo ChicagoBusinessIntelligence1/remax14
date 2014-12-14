@@ -14,12 +14,14 @@ angular.module('app')
           $scope.homes = homes;
         })
 
-        ResponsiveSizeService.compute({window: $window, scope: $scope});
+        var directiveWidth = element.parent().parent().parent()[0].clientWidth;
+        ResponsiveSizeService.compute({window: $window, scope: $scope, parentWidth: directiveWidth});
         $scope.bookStyle = config.bookStyle($scope.w);
 
         $($window).resize(function () {
           $scope.$apply(function () {
-            ResponsiveSizeService.compute({window: $window, scope: $scope,parentWidth:angular.element(element)[0].clinetWidth});
+            directiveWidth = element.parent().parent().parent()[0].clientWidth;
+            ResponsiveSizeService.compute({window: $window, scope: $scope, parentWidth: directiveWidth});
           })
         })
 
@@ -27,7 +29,6 @@ angular.module('app')
           HousesFrontImagesService.applyAnimation(home);
           HousesFrontImagesService.resetFlip({homes: $scope.homes, index: $scope.activeIndex});
         };
-
 
       }
     }

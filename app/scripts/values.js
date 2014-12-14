@@ -148,12 +148,11 @@ app.factory('flipSettings', function () {
     bookStyle: function (width) {
       return {
         boxShadow: '0 3px 12px -5px rgba(139, 139, 139, 139)',
-        padding:paddingPercent*width+'px'
+        padding: paddingPercent * width + 'px'
       }
-
     },
     finalOpacity: finalOpacity,
-    resetDelay: resetDelay*duration
+    resetDelay: resetDelay * duration
   };
 })
 app.value('imgSize', {w: 710, h: 482})

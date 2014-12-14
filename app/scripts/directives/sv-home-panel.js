@@ -19,7 +19,11 @@ angular.module('app')
 
         $($window).resize(function () {
           $scope.$apply(function () {
-            ResponsiveSizeService.compute({window: $window, scope: $scope,parentWidth:angular.element(element)[0].clinetWidth});
+            ResponsiveSizeService.compute({
+              window: $window,
+              scope: $scope,
+              parentWidth: angular.element(element)[0].clientWidth
+            });
           })
         })
 
@@ -27,8 +31,6 @@ angular.module('app')
           HousesFrontImagesService.applyAnimation(home);
           HousesFrontImagesService.resetFlip({homes: $scope.homes, index: $scope.activeIndex});
         };
-
-
       }
     }
   });

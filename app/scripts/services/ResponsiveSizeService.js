@@ -1,59 +1,38 @@
 'use strict';
 
 angular.module('app')
-  .factory('ResponsiveSizeService', function ($firebase, $q, $rootScope, urlCommon) {
+  .factory('ResponsiveSizeService', function (flipSettings, $rootScope) {
     return {
-      repoUrl: null,
-      repoRef: null,
+      compute: function (data) {
+        var window = data.window;
 
-      all: function () {
-        var that = this;
-        var deferred = $q.defer();
+        var config = flipSettings;
+        var percentWidth;
+        if (window.innerWidth > config.screenSizeLimit) {
+          percentWidth = config.largeScreenPart;
+        } else {
+          percentWidth = config.smallScreenPart;
+        }
+        var height = config.percentHeight * window.innerHeight;
+        var width = percentWidth * window.innerWidth;
+        if (width > height * config.proportions) {
+          width = config.proportions * height;
+          if (width > config.largeScreenPart * data.parentWidth ) {
+            width = config.largeScreenPart*data.parentWidth;
+            height = width/config.proportions;
+          }
 
-        that.repoUrl = urlCommon;
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
 
-        that.repoRef.$asArray().$loaded(function (all) {
-        deferred.resolve(all);
-        })
-        return deferred.promise;
-      },
+        } else {
+          if (width < config.smallDeviceLimit) {
+            width *= config.smallDeviceWidthNormalizer;
+          }
+          height = width / config.proportions;
+        }
+        data.scope.h = height;
+        data.scope.w = width;
 
-      get: function (id) {
-        var that = this;
-        var deferred = $q.defer();
-
-        that.repoUrl = urlCommon;
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
-
-        deferred.resolve(that.repoRef.$asObject()[id]);
-        return deferred.promise;
-      },
-
-      add: function (element) {
-        var that = this;
-        var deferred = $q.defer();
-
-        that.repoUrl = urlCommon;
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
-        that.repoRef.$add(element).then(function () {
-          deferred.resolve(true);
-        })
-        deferred.resolve(that.repoRef.$asArray());
-        return deferred.promise;
-      },
-
-      remove: function (id) {
-        var that = this;
-        var deferred = $q.defer();
-
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
-
-        that.repoRef.$remove(id).then(function () {
-          deferred.resolve(true);
-
-        })
-        return deferred.promise;
       }
+
     };
   });

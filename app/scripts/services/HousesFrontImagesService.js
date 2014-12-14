@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,flipSettings) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -54,7 +54,7 @@ angular.module('app')
         var deferred = $q.defer();
         var homes = [];
 
-        for (var i = 1; i < 8; i++) {
+        for (var i = 1; i < 3; i++) {
           var home = {
             image: 'images/houses/0' + i + '.jpg'
           };
@@ -76,6 +76,21 @@ angular.module('app')
           })
         });
         return allHomes.reverse();
+      },
+      resetFlip: function (resetObj) {
+        var that = this;
+        resetObj.index.val++;
+        if (resetObj.index.val == resetObj.homes.length) {
+          $timeout(function () {
+            resetObj.index.val = 0;
+            resetObj.homes = that.initialState(resetObj.homes);
+          }, flipSettings.resetDelay);
+        }
+      },
+      applyAnimation: function (home) {
+        var config = flipSettings;
+        home.flip.set(config.angle, {duration: config.duration, curve: config.curve});
+        home.opacity.set(config.finalOpacity, {duration: config.duration, curve: config.curve});
       },
 
       get: function (id) {

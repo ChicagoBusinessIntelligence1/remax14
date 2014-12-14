@@ -11,9 +11,9 @@ angular.module('app')
     var smallDeviceWidthNormalizer = 0.92;
     var proportions = 1.5;
 
-    var angle = -Math.PI / 1.3;
-    var duration = 1200;
-    var curve = 'linear';
+    var angle = -Math.PI / 1;
+    var duration = 1500;
+    var curve = 'easeInOut';
     var finalOpacity = 0.9;
     var resetDelayTime = 0.95;
     var paddingPercent = 0.03;

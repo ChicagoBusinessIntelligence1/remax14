@@ -16,7 +16,7 @@ angular.module('app')
         })
 
         $scope.nextPage = function (home) {
-          console.log(home.image);
+
           HousesFrontImagesService.applyAnimation(home);
           HousesFrontImagesService.resetFlip({homes: $scope.homes, index: $scope.activeIndex});
         };

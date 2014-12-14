@@ -9,7 +9,6 @@ div(id='book')
         ng-repeat='home in homes'
         fa-opacity='home.opacity.get()'
         fa-rotate-y='home.flip.get()'
-        fa-click='nextPage(home)'
         fa-size='[{{w}}, {{1.2*h}}]')
           fa-surface( fa-background-color="'white'" fa-click='nextPage(home)' fa-properties="bookStyle")
             sv-fit-image(url='home.image' w='w' h='h' )

@@ -19,7 +19,7 @@ angular.module('app')
 
         $($window).resize(function () {
           $scope.$apply(function () {
-            ResponsiveSizeService.compute({window: $window, scope: $scope,parentWidth:angular.element(element).width()});
+            ResponsiveSizeService.compute({window: $window, scope: $scope,parentWidth:angular.element(element)[0].clinetWidth});
           })
         })
 

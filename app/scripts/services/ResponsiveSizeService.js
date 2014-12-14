@@ -30,18 +30,18 @@ angular.module('app')
           height = width / config.proportions;
         }
 
-        //Decrease width on Extra-small screens to be have some margings
+        //Decrease width on Extra-small screens to have some margins
         if (width < config.smallDeviceLimit) {
           width *= config.smallDeviceWidthNormalizer;
           height = width / config.proportions;
         }
         //Decrease width on Extra-large screen to be 50% of content
-        if (width > config.screenSizeLimit && width> config.largeScreenPart * data.viewContentWidth) {
+        if (width > config.screenSizeLimit && width > config.largeScreenPart * data.viewContentWidth) {
           width = config.largeScreenPart * data.viewContentWidth;
           height = width / config.proportions;
         }
 
-        //Decrease width on Extra-small screens to be have some margings
+        //Decrease width on Extra-small screens to be have some margins
         //we set w and h on our scope to operate with
         // this parameters on directive view
         data.scope.h = height;

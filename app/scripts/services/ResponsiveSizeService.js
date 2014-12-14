@@ -10,40 +10,34 @@ angular.module('app')
         var config = responsiveGallerySettings;
 
         var percentWidth;
-        // define whether it is large or small device
+        // define width coefficients for large and small devices
         if (window.innerWidth > config.screenSizeLimit) {
-          // full window size coefficient for large devise
           percentWidth = config.largeScreenPart;
         } else {
-          // half window size coefficient for small devise
           percentWidth = config.smallScreenPart;
         }
-        // calculate preliminary parameters width and height to display
-        // gallery background container correctly on any window h and w size
+
+        //preliminary params for correct proportions on any window size
         var width = percentWidth * window.innerWidth;
         var height = config.percentHeight * window.innerHeight;
-
         if (width > height * config.proportions) {
+          /*if width is our limiting factor, we multiply width by 1.5 to keep proportions 6x4*/
           width = config.proportions * height;
-
         } else {
+          /*if height is our limiting factor, we multiply height by 1.5 to keep proportions 6x4*/
           height = width / config.proportions;
         }
 
-        //Decrease width on Extra-small screens to be have some margings
+        //Normalize width on Extra-small screens to have some margins
         if (width < config.smallDeviceLimit) {
           width *= config.smallDeviceWidthNormalizer;
           height = width / config.proportions;
         }
         //Decrease width on Extra-large screen to be 50% of content
-        if (width > config.screenSizeLimit && width> config.largeScreenPart * data.viewContentWidth) {
+        if (width > config.screenSizeLimit && width > config.largeScreenPart * data.viewContentWidth) {
           width = config.largeScreenPart * data.viewContentWidth;
           height = width / config.proportions;
         }
-
-        //Decrease width on Extra-small screens to be have some margings
-        //we set w and h on our scope to operate with
-        // this parameters on directive view
         data.scope.h = height;
         data.scope.w = width;
       }

@@ -2,7 +2,7 @@ div(id='book')
   .row
     .col-xs-6
       div {{showBoth || 'false2'}}
-        fa-app(style='width:{{w}}px;height:{{2.2*h}}px;-webkit-perspective:1000' fa-perpective='1000' id='home-page-app')
+        fa-app(style='width:{{0.95*w}}px;height:{{2.2*h}}px;-webkit-perspective:1000' fa-perpective='1000' id='home-page-app')
           fa-modifier(
           fa-size='[{{0.99*w}},{{1.2*h}}]' )
             fa-modifier(
@@ -16,19 +16,19 @@ div(id='book')
                 sv-fit-image(url='home.image' w='0.94*w' h='h')
                 div.text-center
                   h4.text-flex 4023 W Church str. Chicago, IL, 60630
-    //.col-sm-6
-    //    div {{showBoth || 'false'}}
-    //      fa-app(style='width:{{w}}px;height:{{2.2*h}}px;-webkit-perspective:1000' fa-perpective='1000' id='home-page-app')
-    //        fa-modifier(
-    //        fa-size='[{{0.9*w}},{{1.2*h}}]' )
-    //          fa-modifier(
-    //          fa-origin="[0,0.25]"
-    //          fa-align="[0,0.70]"
-    //          ng-repeat='home in homes'
-    //          fa-opacity='home.opacity.get()'
-    //          fa-rotate-y='home.flip.get()'
-    //          fa-size='[{{0.9*w}}, {{1.2*h}}]')
-    //            fa-surface(fa-click='nextPage(home)' fa-background-color="'white'" fa-properties="bookStyle")
-    //              sv-fit-image(url='home.image' w='0.85*w' h='h')
-    //              div.text-center
-    //                h4.text-flex 4023 W Church str. Chicago, IL, 60630
+    .col-sm-6
+        div {{showBoth || 'false'}}
+          fa-app(style='width:{{0.95*w}}px;height:{{2.2*h}}px;-webkit-perspective:1000' fa-perpective='1000' id='home-page-app')
+            fa-modifier(
+            fa-size='[{{0.9*w}},{{1.2*h}}]' )
+              fa-modifier(
+              fa-origin="[0,0.25]"
+              fa-align="[0,0.70]"
+              ng-repeat='home in homes'
+              fa-opacity='home.opacity.get()'
+              fa-rotate-y='home.flip.get()'
+              fa-size='[{{0.9*w}}, {{1.2*h}}]')
+                fa-surface(fa-click='nextPage(home)' fa-background-color="'white'" fa-properties="bookStyle")
+                  sv-fit-image(url='home.image' w='0.90*w' h='h')
+                  div.text-center
+                    h4.text-flex 4023 W Church str. Chicago, IL, 60630

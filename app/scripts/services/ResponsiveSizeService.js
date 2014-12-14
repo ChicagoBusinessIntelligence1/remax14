@@ -1,21 +1,25 @@
 'use strict';
 
 angular.module('app')
-  .factory('ResponsiveSizeService', function (flipSettings, $rootScope) {
+  .factory('ResponsiveSizeService', function (responsiveGallerySettings, $rootScope) {
     return {
       compute: function (data) {
         //data consists of 3 params: window, scope and viewContentWidth
         //we pass them like objects when using this method
         var window = data.window;
+        var config = responsiveGallerySettings;
 
-        var config = flipSettings;
         var percentWidth;
+        // define whether it is large or small device
         if (window.innerWidth > config.screenSizeLimit) {
+          // full window size coefficient for large devise
           percentWidth = config.largeScreenPart;
         } else {
+          // half window size coefficient for small devise
           percentWidth = config.smallScreenPart;
         }
-
+        // calculate preliminary parameters width and height to display
+        // gallery background container correctly on any window h and w size
         var width = percentWidth * window.innerWidth;
         var height = config.percentHeight * window.innerHeight;
 

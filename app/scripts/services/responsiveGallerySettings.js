@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('flipSettings', function () {
+  .factory('responsiveGallerySettings', function () {
     var screenSizeLimit = 960;
     var largeScreenPart = 0.5;
     var smallScreenPart = 1;

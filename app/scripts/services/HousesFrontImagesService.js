@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,flipSettings) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,responsiveGallerySettings) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -83,11 +83,11 @@ angular.module('app')
           $timeout(function () {
             resetObj.index.val = 0;
             resetObj.homes = that.initialState(resetObj.homes);
-          }, flipSettings.resetDelay);
+          }, responsiveGallerySettings.resetDelay);
         }
       },
       applyAnimation: function (home) {
-        var config = flipSettings;
+        var config = responsiveGallerySettings;
         home.flip.set(config.angle, {duration: config.duration, curve: config.curve});
         home.opacity.set(config.finalOpacity, {duration: config.duration, curve: config.curve});
       },

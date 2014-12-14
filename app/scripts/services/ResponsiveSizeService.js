@@ -34,7 +34,7 @@ angular.module('app')
           height = width / config.proportions;
         }
         //Decrease width on Extra-large screen to be 50% of content
-        if (width > config.screenSizeLimit && width > config.largeScreenPart * data.viewContentWidth) {
+        if (data.viewContentWidth > config.screenSizeLimit && width > config.largeScreenPart * data.viewContentWidth) {
           width = config.largeScreenPart * data.viewContentWidth;
           height = width / config.proportions;
         }

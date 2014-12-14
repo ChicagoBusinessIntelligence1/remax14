@@ -54,7 +54,7 @@ angular.module('app')
         var deferred = $q.defer();
         var homes = [];
 
-        for (var i = 1; i < 3; i++) {
+        for (var i = 1; i < 5; i++) {
           var home = {
             image: 'images/houses/0' + i + '.jpg'
           };
@@ -82,7 +82,11 @@ angular.module('app')
         if (resetObj.index.val == resetObj.homes.length) {
           $timeout(function () {
             resetObj.index.val = 0;
-            resetObj.homes = that.initialState(resetObj.homes);
+            for (var i = 0; i < resetObj.homes.length; i++) {
+              resetObj.homes[i].flip.set(0,{duration:100});
+              resetObj.homes[i].opacity.set(1);
+
+            }
           }, responsiveGallerySettings.resetDelay);
         }
       },

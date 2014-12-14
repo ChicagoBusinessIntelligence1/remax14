@@ -5,6 +5,7 @@ angular.module('app')
     return {
       restrict: 'E',
       replace: true,
+      scope:{},
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
         var config = responsiveGallerySettings;
@@ -15,6 +16,7 @@ angular.module('app')
         })
 
         $scope.nextPage = function (home) {
+          console.log(home.image);
           HousesFrontImagesService.applyAnimation(home);
           HousesFrontImagesService.resetFlip({homes: $scope.homes, index: $scope.activeIndex});
         };

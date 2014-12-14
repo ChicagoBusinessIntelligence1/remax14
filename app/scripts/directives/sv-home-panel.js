@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, ResponsiveSizeService, $famous, $window, $timeout, flipSettings) {
+  .directive('svHomePanel', function (HousesFrontImagesService, ResponsiveSizeService, $famous, $window, $timeout, responsiveGallerySettings) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
-        var config = flipSettings;
+        var config = responsiveGallerySettings;
 
         HousesFrontImagesService.mock().then(function (homes) {
           $scope.activeIndex = {val: 0};

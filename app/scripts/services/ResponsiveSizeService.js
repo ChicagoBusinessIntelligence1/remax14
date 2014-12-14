@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('app')
-  .factory('ResponsiveSizeService', function (flipSettings, $rootScope) {
+  .factory('ResponsiveSizeService', function (responsiveGallerySettings, $rootScope) {
     return {
       compute: function (data) {
         //data consists of 3 params: window, scope and viewContentWidth
         //we pass them like objects when using this method
         var window = data.window;
 
-        var config = flipSettings;
+        var config = responsiveGallerySettings;
         var percentWidth;
         if (window.innerWidth > config.screenSizeLimit) {
           percentWidth = config.largeScreenPart;

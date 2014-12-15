@@ -16,6 +16,12 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
 
+        $scope.isRent = false;
+        $scope.$watch('isRent', function (newValue, oldValue) {
+          console.log($scope.isRent);
+        });
+
+
       }
     };
   });

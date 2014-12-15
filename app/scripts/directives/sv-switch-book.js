@@ -6,13 +6,14 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-switch-book.html',
-      scope: {},
+      scope: {
+        isRent:'='
+      },
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
 
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
 
-        $scope.isRent = false;
         var slidePoint = 400;
 
         $scope.switchButtonStyle = {

@@ -1,6 +1,5 @@
 div
   div(ng-show='bothShown')
-    sv-switch-book
     .row
       .col-xs-6
         sv-home-panel()
@@ -8,5 +7,8 @@ div
         sv-home-panel(is-rent='true')
   .row(ng-hide='bothShown')
     .col-xs-12
-      sv-switch-book
-      sv-home-panel(is-rent='isRent')
+      sv-switch-book(is-rent='isRent')
+      div(ng-show="!isRent")
+        sv-home-panel(is-rent='false')
+      div(ng-show="isRent")
+        sv-home-panel(is-rent='true')

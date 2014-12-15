@@ -12,16 +12,12 @@ angular.module('app')
         this.changeSplitDisplay = function (bothShown) {
           $scope.bothShown = bothShown;
         };
-
       },
       link: function ($scope, element, attr) {
-
         $scope.isRent = false;
         $scope.$watch('isRent', function (newValue, oldValue) {
           console.log($scope.isRent);
         });
-
-
       }
     };
   });

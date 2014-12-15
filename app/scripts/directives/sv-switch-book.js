@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSwitchBook', function ($famous) {
+  .directive('svSwitchBook', function ($famous, ResponsiveSizeService, responsiveGallerySettings) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-switch-book.html',
       scope: {
-        isRent:'='
+        isRent: '='
       },
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];

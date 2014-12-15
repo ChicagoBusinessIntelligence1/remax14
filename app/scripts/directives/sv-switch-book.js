@@ -15,13 +15,17 @@ angular.module('app')
         $scope.isRent = false;
         var slidePoint = 400;
 
+        $scope.switchButtonStyle = {
+          backgroundColor: 'red'
+        };
+
         $scope.switchSaleRent = function () {
           if ($scope.isRent) {
-           slidePoint=0;
-          }else{
-           slidePoint=400;
+            slidePoint = 0;
+          } else {
+            slidePoint = 400;
           }
-          $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'easeInOut'})
+          $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'easeInOut'});
           $scope.isRent = !$scope.isRent;
         };
 

@@ -43,11 +43,6 @@ angular.module('app')
           boxShadow: '0 3px 12px -5px rgba(139, 139, 139, 139)',
           padding: paddingPercent * width + 'px'
         }
-      },
-      switchButtonStyle: function (width) {
-        return {
-          padding: '20px'
-        }
       }
     };
   });

@@ -29,13 +29,13 @@ angular.module('app')
         $scope.bookStyle = config.bookStyle($scope.w);
 
         var bothShown = viewContentWidth / $scope.w >= 2;
-        ctrl.changeSplitDisplay(bothShown);
+        ctrl.changeSplitDisplay(bothShown, $scope.w, $scope.h);
         $($window).resize(function () {
           $scope.$apply(function () {
             viewContentWidth = element.parent().parent().parent()[0].clientWidth;
             ResponsiveSizeService.compute({window: $window, scope: $scope, viewContentWidth: viewContentWidth});
             var bothShown = viewContentWidth / $scope.w >= 2;
-            ctrl.changeSplitDisplay(bothShown);
+            ctrl.changeSplitDisplay(bothShown, $scope.w, $scope.h);
             $scope.bookStyle = config.bookStyle($scope.w);
           })
         })

@@ -7,20 +7,22 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-switch-book.html',
       scope: {
-        isRent:'='
+        isRent: '=',
+        w: '=',
+        h: '='
       },
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
 
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
 
-        var slidePoint = 400;
+        var slidePoint = $scope.w- $scope.h;
 
         $scope.switchSaleRent = function () {
           if ($scope.isRent) {
             slidePoint = 0;
           } else {
-            slidePoint = 400;
+            var slidePoint = $scope.w- $scope.h;
           }
           $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'easeInOut'});
           $scope.isRent = !$scope.isRent;

@@ -1,6 +1,6 @@
 .align-center
-  fa-app(style='width:500px;height:100px;background-color:green')
-    fa-modifier(fa-size='[100, 100]', fa-translate='myTransitionable.get()')
+  fa-app(style='width:{{w}};height:{{h}}px;background-color:green')
+    fa-modifier(fa-size='[{{h}}, {{h}}]', fa-translate='myTransitionable.get()')
       fa-surface(fa-background-color='"red"', fa-click='switchSaleRent()').cursor-p
         div Sale/Rent
 

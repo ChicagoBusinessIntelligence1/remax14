@@ -30,4 +30,4 @@ div(id='book')
                       i.fa.fa-check-circle-o.fa-fw
                       | {{home.propertySize}} Sq Ft
             .col-xs-4.text-right
-              button.btn.btn-link() More info
+              a.btn.btn-link(ui-sref='app.structure.remax-home({mls:home.mls})') More info

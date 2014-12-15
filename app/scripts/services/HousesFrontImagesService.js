@@ -10,7 +10,6 @@ angular.module('app')
         var that = this;
         var deferred = $q.defer();
         var homesShort = [];
-
         that.repoUrl = urlSale.residential;
         that.repoRef = $firebase(new Firebase(that.repoUrl));
 

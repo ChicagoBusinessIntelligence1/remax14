@@ -12,11 +12,10 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr, ctrl) {
         var config = responsiveGallerySettings;
-
         HousesFrontImagesService.mock($scope.isRent).then(function (homes) {
           $scope.activeIndex = {val: 0};
           $scope.homes = homes;
-        })
+        });
 
         $scope.nextPage = function (home) {
 

@@ -17,6 +17,11 @@ angular.module('app')
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
 
         var slidePoint = $scope.w - $scope.h;
+        $scope.switcherStyle = {
+          backgroundColor: 'red',
+          borderRadius: '15px',
+          marginTop: '5px'
+        };
 
         $scope.switchSaleRent = function () {
           if ($scope.isRent) {

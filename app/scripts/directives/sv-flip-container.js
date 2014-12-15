@@ -9,15 +9,21 @@ angular.module('app')
       scope: {},
 
       controller: function ($scope) {
-        this.changeSplitDisplay = function (bothShown) {
+        this.changeSplitDisplay = function (bothShown,width, height) {
           $scope.bothShown = bothShown;
+          $scope.w = width;
+          $scope.h = height/5;
         };
+
       },
       link: function ($scope, element, attr) {
+
         $scope.isRent = false;
         $scope.$watch('isRent', function (newValue, oldValue) {
           console.log($scope.isRent);
         });
+
+
       }
     };
   });

@@ -1,17 +1,16 @@
 div(id='book')
-  h2 {{title}}
   fa-app(style='width:{{w}}px;height:{{2*h}}px;-webkit-perspective:2000' fa-perpective='2000' id='home-page-app')
     fa-modifier(
     fa-size='[{{w}},{{2*h}}]' )
       fa-modifier(
-      fa-origin="[0,0.5]"
-      fa-align="[0,0.5]"
+      fa-translate='[0,150,0]'
       ng-repeat='home in homes'
       fa-opacity='home.opacity.get()'
       fa-rotate-y='home.flip.get()'
       fa-size='[{{0.98*w}}, {{1.22*h}}]')
         fa-surface( fa-background-color="'white'" fa-click='nextPage(home)' fa-properties="bookStyle")
           sv-fit-image(url='home.image' w='0.92*w' h='h' )
+          h4 {{title}}
           .row
             .col-xs-8
               ul.list-unstyled

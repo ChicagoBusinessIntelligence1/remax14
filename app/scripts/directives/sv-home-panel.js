@@ -6,13 +6,11 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       require: '^sv-flip-container',
-      //scope:{
-      //  bothShown:'=',
-      //  rentShown:'=',
-      //  isRent:'='
-      //},
+      scope: {
+        isRent: '='
+      },
       templateUrl: '../../views/directives/sv-home-panel.html',
-      link: function ($scope, element, attr,ctrl) {
+      link: function ($scope, element, attr, ctrl) {
         var config = responsiveGallerySettings;
 
         HousesFrontImagesService.mock($scope.isRent).then(function (homes) {
@@ -30,12 +28,14 @@ angular.module('app')
         ResponsiveSizeService.compute({window: $window, scope: $scope, viewContentWidth: viewContentWidth});
         $scope.bookStyle = config.bookStyle($scope.w);
 
-        $scope.bothShown = viewContentWidth / $scope.w >= 2;
+        var bothShown = viewContentWidth / $scope.w >= 2;
+        ctrl.changeSplitDisplay(bothShown);
         $($window).resize(function () {
           $scope.$apply(function () {
             viewContentWidth = element.parent().parent().parent()[0].clientWidth;
             ResponsiveSizeService.compute({window: $window, scope: $scope, viewContentWidth: viewContentWidth});
-            $scope.bothShown = viewContentWidth / $scope.w >= 2;
+            var bothShown = viewContentWidth / $scope.w >= 2;
+            ctrl.changeSplitDisplay(bothShown);
             $scope.bookStyle = config.bookStyle($scope.w);
           })
         })

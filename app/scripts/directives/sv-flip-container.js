@@ -6,16 +6,18 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       templateUrl: '../../views/directives/sv-flip-container.html',
-      scope: {
-      },
+      scope: {},
 
       controller: function ($scope) {
+        this.changeSplitDisplay = function (bothShown) {
+          $scope.bothShown = bothShown;
+        };
 
       },
       link: function ($scope, element, attr) {
-        $scope.$watch('bothShown', function (newValue, oldValue) {
-          console.log(newValue);
-        });
+
+
+
       }
     };
   });

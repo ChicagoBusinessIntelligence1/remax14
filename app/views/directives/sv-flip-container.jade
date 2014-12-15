@@ -1,9 +1,9 @@
 div
-  .row(ng-if='true')
+  .row(ng-show='bothShown')
     .col-xs-6
-      sv-home-panel(both-shown='bothShown')
+      sv-home-panel()
     .col-xs-6
-      sv-home-panel(both-shown='bothShown' is-rent='true')
-  //.row(ng-if='!')
-  //  .col-xs-12
-  //    sv-home-panel(both-shown='bothShown' is-rent='isRent')
+      sv-home-panel(is-rent='true')
+  .row(ng-hide='bothShown')
+    .col-xs-12
+      sv-home-panel(is-rent='isRent')

@@ -1,15 +1,33 @@
 div(id='book')
-  fa-app(style='width:{{w}}px;height:{{2.2*h}}px;-webkit-perspective:1000' fa-perpective='1000' id='home-page-app')
+  fa-app(style='width:{{w}}px;height:{{2*h}}px;-webkit-perspective:2000' fa-perpective='2000' id='home-page-app')
     fa-modifier(
-    fa-size='[{{w}},{{1.2*h}}]' )
+    fa-size='[{{w}},{{2*h}}]' )
       fa-modifier(
-      fa-origin="[0,0.25]"
-      fa-align="[0,0.70]"
+      fa-origin="[0,0.5]"
+      fa-align="[0,0.5]"
       ng-repeat='home in homes'
       fa-opacity='home.opacity.get()'
       fa-rotate-y='home.flip.get()'
-      fa-size='[{{w}}, {{1.2*h}}]')
+      fa-size='[{{0.98*w}}, {{1.22*h}}]')
         fa-surface( fa-background-color="'white'" fa-click='nextPage(home)' fa-properties="bookStyle")
-          sv-fit-image(url='home.image' w='w' h='h' )
-          div.text-center
-            h4.text-flex 4023 W Church str. Chicago, IL, 60630
+          sv-fit-image(url='home.image' w='0.92*w' h='h' )
+          .row
+            .col-xs-8
+              ul.list-unstyled
+                li
+                  h4.text-info {{home.price|currency:"$":0}}
+                li
+                  h4 {{home.city}} {{home.state}}, {{home.zip}}
+                li
+                  ul.list-inline.text-sm
+                    li
+                      i.fa.fa-check-circle-o.fa-fw
+                      | {{home.bedrooms}} Bd
+                    li
+                      i.fa.fa-circle-o.fa-fw
+                      | {{home.fullBathrooms}} Full Ba
+                    li
+                      i.fa.fa-check-circle-o.fa-fw
+                      | {{home.propertySize}} Sq Ft
+            .col-xs-4.text-right
+              a.btn.btn-link(ui-sref='app.structure.remax-home({mls:home.mls})') More info

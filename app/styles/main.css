@@ -4497,6 +4497,9 @@ h5 {
 .text-app {
   color: #3c3c3c;
 }
+.text-sm {
+  font-size: 12px;
+}
 .read-more {
   font-size: 11px;
 }

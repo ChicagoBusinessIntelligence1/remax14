@@ -16,7 +16,6 @@ angular.module('app')
         } else {
           percentWidth = config.smallScreenPart;
         }
-
         //preliminary params for correct proportions on any window size
         var width = percentWidth * window.innerWidth;
         var height = config.percentHeight * window.innerHeight;

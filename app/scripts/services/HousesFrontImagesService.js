@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout, responsiveGallerySettings) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,responsiveGallerySettings) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -20,6 +20,7 @@ angular.module('app')
             var generalInfo = HomeService.getSectionContent(home, 'generalInformation');
             var bedrooms = HomeService.getSectionContent(home, 'bedrooms');
             var fullBathrooms = HomeService.getSectionContent(home, 'bathrooms');
+            var mls = HomeService.subVal(generalInfo, 'mls');
             var city = HomeService.subVal(generalInfo, 'city');
             var state = HomeService.subVal(generalInfo, 'state');
             var zip = HomeService.subVal(generalInfo, 'zip');
@@ -34,6 +35,7 @@ angular.module('app')
               var homeInfo = {
                 status: status,
                 propertySize: propertySize,
+                mls: mls,
                 city: city,
                 state: state,
                 zip: zip,
@@ -84,8 +86,8 @@ angular.module('app')
           $timeout(function () {
             resetObj.index.val = 0;
             for (var i = 0; i < resetObj.homes.length; i++) {
-              resetObj.homes[i].flip.set(0, {duration: 500});
-              resetObj.homes[i].opacity.set(1, {duration: 500});
+              resetObj.homes[i].flip.set(0,{duration:500});
+              resetObj.homes[i].opacity.set(1,{duration:500});
 
             }
           }, responsiveGallerySettings.resetDelay);

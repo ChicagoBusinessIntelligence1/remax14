@@ -6,11 +6,11 @@ angular.module('app')
       restrict: 'E',
       replace: true,
       require: '^sv-flip-container',
-      //scope:{
-      //  bothShown:'=',
-      //  rentShown:'=',
-      //  isRent:'='
-      //},
+      scope:{
+        bothShown:'=',
+        rentShown:'=',
+        isRent:'='
+      },
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr,ctrl) {
         var config = responsiveGallerySettings;

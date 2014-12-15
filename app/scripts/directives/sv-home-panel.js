@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('app')
-  .directive('svHomePanel', function (HousesFrontImagesService, ResponsiveSizeService, $famous, $window, $timeout, responsiveGallerySettings) {
+  .directive('svHomePanel', function ($famous, $window, responsiveGallerySettings, HousesFrontImagesService, $timeout, ResponsiveSizeService) {
     return {
       restrict: 'E',
       replace: true,
-      scope:{},
+      scope: {},
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr) {
         var config = responsiveGallerySettings;
@@ -16,7 +16,6 @@ angular.module('app')
         })
 
         $scope.nextPage = function (home) {
-
           HousesFrontImagesService.applyAnimation(home);
           HousesFrontImagesService.resetFlip({homes: $scope.homes, index: $scope.activeIndex});
         };

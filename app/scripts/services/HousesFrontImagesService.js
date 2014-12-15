@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,responsiveGallerySettings) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout, responsiveGallerySettings) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -49,21 +49,21 @@ angular.module('app')
         })
         return deferred.promise;
       },
+      /*mock array of homes with single property img*/
       mock: function () {
         var that = this;
         var deferred = $q.defer();
         var homes = [];
-
-        for (var i = 1; i < 9; i++) {
+        for (var i = 1; i < 4; i++) {
           var home = {
             image: 'images/houses/0' + i + '.jpg'
           };
           homes.push(home);
         }
         deferred.resolve(that.initialState(homes));
-
         return deferred.promise;
       },
+      /*initial animation parameters*/
       initialState: function (homes) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var allHomes = _.map(homes, function (home) {
@@ -76,24 +76,23 @@ angular.module('app')
         });
         return allHomes.reverse();
       },
+      applyAnimation: function (home) {
+        var config = responsiveGallerySettings;
+        home.flip.set(config.angle, {duration: config.duration, curve: config.curve});
+        home.opacity.set(config.finalOpacity, {duration: config.duration, curve: config.curve});
+      },
+      /*set initial animation parameters after last array element is shown*/
       resetFlip: function (resetObj) {
-        var that = this;
         resetObj.index.val++;
         if (resetObj.index.val == resetObj.homes.length) {
           $timeout(function () {
             resetObj.index.val = 0;
             for (var i = 0; i < resetObj.homes.length; i++) {
-              resetObj.homes[i].flip.set(0,{duration:500});
-              resetObj.homes[i].opacity.set(1,{duration:500});
-
+              resetObj.homes[i].flip.set(0, {duration: responsiveGallerySettings.flipBackDuration});
+              resetObj.homes[i].opacity.set(1, {duration: responsiveGallerySettings.flipBackDuration});
             }
           }, responsiveGallerySettings.resetDelay);
         }
-      },
-      applyAnimation: function (home) {
-        var config = responsiveGallerySettings;
-        home.flip.set(config.angle, {duration: config.duration, curve: config.curve});
-        home.opacity.set(config.finalOpacity, {duration: config.duration, curve: config.curve});
       },
 
       get: function (id) {

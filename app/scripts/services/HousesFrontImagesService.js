@@ -20,6 +20,7 @@ angular.module('app')
             var generalInfo = HomeService.getSectionContent(home, 'generalInformation');
             var bedrooms = HomeService.getSectionContent(home, 'bedrooms');
             var fullBathrooms = HomeService.getSectionContent(home, 'bathrooms');
+            var mls = HomeService.subVal(generalInfo, 'mls');
             var city = HomeService.subVal(generalInfo, 'city');
             var state = HomeService.subVal(generalInfo, 'state');
             var zip = HomeService.subVal(generalInfo, 'zip');
@@ -34,6 +35,7 @@ angular.module('app')
               var homeInfo = {
                 status: status,
                 propertySize: propertySize,
+                mls: mls,
                 city: city,
                 state: state,
                 zip: zip,
@@ -45,7 +47,7 @@ angular.module('app')
               homesShort.push(homeInfo);
             }
           }
-          deferred.resolve(homesShort);
+          deferred.resolve(that.initialState(homesShort));
         })
         return deferred.promise;
       },

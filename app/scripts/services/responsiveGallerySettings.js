@@ -11,14 +11,15 @@ angular.module('app')
     var smallDeviceLimit = 700;
     var smallDeviceWidthNormalizer = 0.92;
     var proportions = 1.5;
+    var paddingPercent = 0.03;
+
     /*animation*/
     var angle = -Math.PI / 1;
     var duration = 1500;
     var flipBackDuration = 500;
     var curve = 'easeInOut';
-    var finalOpacity = 0.9;
+    var finalOpacity = 0.3;
     var resetDelayTime = 0.95;
-    var paddingPercent = 0.03;
 
     return {
       screenSizeLimit: screenSizeLimit,

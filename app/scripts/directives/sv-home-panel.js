@@ -10,7 +10,7 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var config = responsiveGallerySettings;
 
-        HousesFrontImagesService.mock().then(function (homes) {
+        HousesFrontImagesService.all().then(function (homes) {
           $scope.activeIndex = {val: 0};
           $scope.homes = homes;
         })
@@ -23,8 +23,8 @@ angular.module('app')
         var viewContentWidth = element.parent().parent().parent()[0].clientWidth;
         ResponsiveSizeService.compute({window: $window, scope: $scope, viewContentWidth: viewContentWidth});
         $scope.bookStyle = config.bookStyle($scope.w);
-
         $scope.showBoth = viewContentWidth / $scope.w >= 2;
+
         $($window).resize(function () {
           $scope.$apply(function () {
             viewContentWidth = element.parent().parent().parent()[0].clientWidth;

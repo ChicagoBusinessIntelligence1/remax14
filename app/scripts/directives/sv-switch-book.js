@@ -12,9 +12,17 @@ angular.module('app')
 
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
 
-        $scope.animate = function() {
-          console.log('Hello');
-          $scope.myTransitionable.set([100, 0, 0], {duration: 1000, curve: 'easeInOut'})
+        $scope.isRent = false;
+        var slidePoint = 400;
+
+        $scope.switchSaleRent = function () {
+          if ($scope.isRent) {
+           slidePoint=0;
+          }else{
+           slidePoint=400;
+          }
+          $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'easeInOut'})
+          $scope.isRent = !$scope.isRent;
         };
 
       }

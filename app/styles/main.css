@@ -475,24 +475,6 @@ label {
   -ms-animation: 1s svv_animation_come;
   animation: 1s svv_animation_come;
 }
-.svv.ng-hide-add,
-.svv.ng-leave {
-  position: relative;
-  -webkit-animation: 1s svv_animation_go;
-  -moz-animation: 1s svv_animation_go;
-  -o-animation: 1s svv_animation_go;
-  -ms-animation: 1s svv_animation_go;
-  animation: 1s svv_animation_go;
-}
-.svv.ng-hide-remove,
-.svv.ng-enter {
-  position: relative;
-  -webkit-animation: 1s svv_animation_come;
-  -moz-animation: 1s svv_animation_come;
-  -o-animation: 1s svv_animation_come;
-  -ms-animation: 1s svv_animation_come;
-  animation: 1s svv_animation_come;
-}
 @-moz-keyframes notice_animation_go {
   0% {
     opacity: 1;
@@ -706,13 +688,11 @@ label {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
 }
 @-webkit-keyframes svv_animation_go {
@@ -720,13 +700,11 @@ label {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
 }
 @-o-keyframes svv_animation_go {
@@ -734,13 +712,11 @@ label {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
 }
 @keyframes svv_animation_go {
@@ -748,13 +724,11 @@ label {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
   100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
 }
 @-moz-keyframes svv_animation_come {
@@ -762,13 +736,11 @@ label {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
   100% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
 }
 @-webkit-keyframes svv_animation_come {
@@ -776,13 +748,11 @@ label {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
   100% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
 }
 @-o-keyframes svv_animation_come {
@@ -790,13 +760,11 @@ label {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
   100% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
   }
 }
 @keyframes svv_animation_come {
@@ -804,125 +772,11 @@ label {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    top: 200px;
   }
   100% {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    top: 0px;
-  }
-}
-@-moz-keyframes svv_animation_go {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-}
-@-webkit-keyframes svv_animation_go {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-}
-@-o-keyframes svv_animation_go {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-}
-@keyframes svv_animation_go {
-  0% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-  100% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-}
-@-moz-keyframes svv_animation_come {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-  100% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-}
-@-webkit-keyframes svv_animation_come {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-  100% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-}
-@-o-keyframes svv_animation_come {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-  100% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
-  }
-}
-@keyframes svv_animation_come {
-  0% {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    top: 200px;
-  }
-  100% {
-    opacity: 1;
-    -ms-filter: none;
-    filter: none;
-    top: 0px;
   }
 }
 .selected-house-wrapper {

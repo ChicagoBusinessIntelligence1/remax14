@@ -12,8 +12,8 @@ angular.module('app')
         h: '='
       },
       link: function ($scope, element, attr) {
+        $scope.title = $scope.isRent ? 'Sale' : 'Rent';
         var Transitionable = $famous['famous/transitions/Transitionable'];
-
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
 
         var slidePoint = $scope.w - $scope.h;
@@ -22,12 +22,12 @@ angular.module('app')
           if ($scope.isRent) {
             slidePoint = 0;
           } else {
-            var slidePoint = $scope.w - $scope.h;
+            slidePoint = $scope.w - $scope.h;
           }
           $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'easeInOut'});
           $scope.isRent = !$scope.isRent;
+          $scope.title = $scope.isRent ? 'Sale' : 'Rent';
         };
-
       }
     };
   });

@@ -10,7 +10,6 @@ div(id='book')
       fa-size='[{{0.98*w}}, {{1.22*h}}]')
         fa-surface( fa-background-color="'white'" fa-click='nextPage(home)' fa-properties="bookStyle")
           sv-fit-image(url='home.image' w='0.92*w' h='h' )
-          h4 {{title}}
           .row
             .col-xs-8
               ul.list-unstyled
@@ -30,4 +29,5 @@ div(id='book')
                       i.fa.fa-check-circle-o.fa-fw
                       | {{home.propertySize}} Sq Ft
             .col-xs-4.text-right
+              h5 {{title}}
               a.btn.btn-link(ui-sref='app.structure.remax-home({mls:home.mls})') More info

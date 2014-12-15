@@ -7,23 +7,18 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-flip-container.html',
       scope: {},
-
       controller: function ($scope) {
-        this.changeSplitDisplay = function (bothShown,width, height) {
+        /*method that accepts computed params width and height from sv-home-panel and
+         * depending on bool var bothShown, defines whether to show switcher for sale/rent */
+        this.changeSplitDisplay = function (bothShown, width, height) {
           $scope.bothShown = bothShown;
           $scope.w = width;
-          $scope.h = height/5;
+          $scope.h = height / 5;
         };
-
       },
       link: function ($scope, element, attr) {
-
+        /*initial value for loading directive*/
         $scope.isRent = false;
-        $scope.$watch('isRent', function (newValue, oldValue) {
-          console.log($scope.isRent);
-        });
-
-
       }
     };
   });

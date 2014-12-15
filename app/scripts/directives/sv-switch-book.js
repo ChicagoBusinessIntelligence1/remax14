@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svSwitchBook', function () {
+  .directive('svSwitchBook', function ($famous) {
     return {
       restrict: 'E',
       replace: true,

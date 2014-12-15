@@ -1,1 +1,9 @@
-div sv-flip-container Template
+div
+  .row(ng-if='true')
+    .col-xs-6
+      sv-home-panel(both-shown='bothShown')
+    .col-xs-6
+      sv-home-panel(both-shown='bothShown' is-rent='true')
+  //.row(ng-if='!')
+  //  .col-xs-12
+  //    sv-home-panel(both-shown='bothShown' is-rent='isRent')

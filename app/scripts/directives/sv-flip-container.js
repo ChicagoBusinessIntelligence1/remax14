@@ -7,10 +7,15 @@ angular.module('app')
       replace: true,
       templateUrl: '../../views/directives/sv-flip-container.html',
       scope: {
+      },
+
+      controller: function ($scope) {
 
       },
       link: function ($scope, element, attr) {
-
+        $scope.$watch('bothShown', function (newValue, oldValue) {
+          console.log(newValue);
+        });
       }
     };
   });

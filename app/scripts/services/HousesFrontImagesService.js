@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout,responsiveGallerySettings) {
+  .factory('HousesFrontImagesService', function ($famous, $firebase, $q, $rootScope, urlSale, HomeService, $timeout, responsiveGallerySettings) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -49,14 +49,15 @@ angular.module('app')
         })
         return deferred.promise;
       },
-      mock: function () {
+      mock: function (isRent) {
         var that = this;
+        var saleRent = isRent ? 'rent' : 'sale';
         var deferred = $q.defer();
         var homes = [];
 
         for (var i = 1; i < 9; i++) {
           var home = {
-            image: 'images/houses/0' + i + '.jpg'
+            image: 'images/houses/'+saleRent+'/0' + i + '.jpg'
           };
           homes.push(home);
         }
@@ -83,8 +84,8 @@ angular.module('app')
           $timeout(function () {
             resetObj.index.val = 0;
             for (var i = 0; i < resetObj.homes.length; i++) {
-              resetObj.homes[i].flip.set(0,{duration:500});
-              resetObj.homes[i].opacity.set(1,{duration:500});
+              resetObj.homes[i].flip.set(0, {duration: 500});
+              resetObj.homes[i].opacity.set(1, {duration: 500});
 
             }
           }, responsiveGallerySettings.resetDelay);

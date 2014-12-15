@@ -15,6 +15,7 @@ angular.module('app')
         $scope.title = $scope.isRent ? 'Sale' : 'Rent';
         var Transitionable = $famous['famous/transitions/Transitionable'];
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
+        $scope.scale = new Transitionable(1);
 
         var slidePoint = $scope.w - $scope.h;
         $scope.switcherStyle = {
@@ -33,6 +34,13 @@ angular.module('app')
           $scope.isRent = !$scope.isRent;
           $scope.title = $scope.isRent ? 'Sale' : 'Rent';
         };
+
+        $scope.scaleUp = function () {
+          $scope.scale.set(1.1,{duration:400,curve:'easeOut'});
+        };
+        $scope.scaleBack = function () {
+          $scope.scale.set(1,{duration:200, curve:'easeOut'});
+        }
       }
     };
   });

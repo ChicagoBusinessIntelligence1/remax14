@@ -1,5 +1,6 @@
 .align-center
-  fa-app(style='width:500px;height:100px')
-    fa-modifier(fa-size='[50,50]')
-      fa-surface(fa-background-color="'green'")
+  fa-app(style='width:500px;height:100px;background-color:green')
+    fa-modifier(fa-size='[100, 100]', fa-translate='myTransitionable.get()')
+      fa-surface(fa-background-color='"red"', fa-click='animate()')
+        | Click me to animate!
 

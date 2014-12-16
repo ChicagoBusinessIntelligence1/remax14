@@ -14,13 +14,14 @@ var app = express()
 var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
+var port = process.env.PORT || 3001;
 app.set('port', process.env.PORT || 3001);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride());
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, './app')));
 
 app.get('*', function (req, res) {
   res.render('index');
@@ -38,8 +39,8 @@ app.post('/sendmail', jsonParser, function (req, res) {
   if (!_.isUndefined(sendEmail.mobile)) {
     messageBody += 'Cell phone:' + sendEmail.mobile + '\r\n';
   }
-  messageBody+='\r\n';
-  messageBody+=sendEmail.body;
+  messageBody += '\r\n';
+  messageBody += sendEmail.body;
   sendgrid.send({
     to: 'chicagobusinessintelligence1@gmail.com',
     fromname: fromName,
@@ -58,10 +59,8 @@ app.post('/sendmail', jsonParser, function (req, res) {
   res.end();
 })
 
-var server = app.listen(3001, function () {
+var server = app.listen(port, function () {
 
-  var host = server.address().address
-  var port = server.address().port
-
-
+  var host = server.address().address;
+  var port = server.address().port;
 })

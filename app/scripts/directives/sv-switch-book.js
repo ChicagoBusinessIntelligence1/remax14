@@ -12,27 +12,12 @@ angular.module('app')
         h: '='
       },
       link: function ($scope, element, attr) {
-        /*initial value */
-        $scope.title = $scope.isRent ? 'sale' : 'rent';
         var Transitionable = $famous['famous/transitions/Transitionable'];
+        //initial values
+        $scope.title = $scope.isRent ? 'sale' : 'rent';
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
-        //initial value
         $scope.scale = new Transitionable(1);
-
-        var slidePoint = $scope.w - $scope.h;
-        $scope.switcherStyle = {
-          //backgroundImage: 'url("../images/home/Sell_Home-64.png") 0 0 no-repeat',
-          backgroundColor: '#EA6A67',
-          color: 'white',
-          borderTopLeftRadius: '1em 3em',
-          borderBottomLeftRadius: '1em 3em',
-          borderTopRightRadius: '1em 3em',
-          borderBottomRightRadius: '1em 3em',
-          textShadow: '1px 1px 2px black',
-          boxShadow: '1px 1px 2px grey',
-          border: '1px 1px 1px 1px red inset',
-          marginTop: '5px'
-        };
+        var slidePoint;
 
         $scope.switchSaleRent = function () {
           if ($scope.isRent) {
@@ -51,6 +36,20 @@ angular.module('app')
         };
         $scope.scaleBck = function () {
           $scope.scale.set(1, {duration: 200, curve: 'easeOut'});
+        };
+
+        $scope.switcherStyle = {
+          //backgroundImage: 'url("../images/home/Sell_Home-64.png") 0 0 no-repeat',
+          backgroundColor: '#EA6A67',
+          color: 'white',
+          borderTopLeftRadius: '1em 3em',
+          borderBottomLeftRadius: '1em 3em',
+          borderTopRightRadius: '1em 3em',
+          borderBottomRightRadius: '1em 3em',
+          textShadow: '1px 1px 2px black',
+          boxShadow: '1px 1px 2px grey',
+          border: '1px 1px 1px 1px red inset',
+          marginTop: '5px'
         }
       }
     };

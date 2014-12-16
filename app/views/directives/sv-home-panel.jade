@@ -3,7 +3,7 @@ div(id='book')
     fa-modifier(
     fa-size='[{{w}},{{2*h}}]' )
       fa-modifier(
-      fa-translate='[0,150,0]'
+      fa-translate='bookTranslate.get()'
       ng-repeat='home in homes'
       fa-opacity='home.opacity.get()'
       fa-rotate-y='home.flip.get()'

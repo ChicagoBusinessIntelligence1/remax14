@@ -421,23 +421,33 @@ label {
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
 .notice.ng-hide-add,
 .notice.ng-leave {
   position: relative;
-  -webkit-animation: 0.5s notice_animation_go;
-  -moz-animation: 0.5s notice_animation_go;
-  -o-animation: 0.5s notice_animation_go;
-  -ms-animation: 0.5s notice_animation_go;
-  animation: 0.5s notice_animation_go;
+  -webkit-animation: myfirst 5s;
+  -moz-animation: myfirst 5s;
+  -o-animation: myfirst 5s;
+  -ms-animation: myfirst 5s;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
 }
 .notice.ng-hide-remove,
 .notice.ng-enter {
   position: relative;
-  -webkit-animation: 1s notice_animation_come;
-  -moz-animation: 1s notice_animation_come;
-  -o-animation: 1s notice_animation_come;
-  -ms-animation: 1s notice_animation_come;
-  animation: 1s notice_animation_come;
+  -webkit-animation: myfirst 5s;
+  -moz-animation: myfirst 5s;
+  -o-animation: myfirst 5s;
+  -ms-animation: myfirst 5s;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
 }
 .svv.ng-hide-add,
 .svv.ng-leave {
@@ -474,6 +484,38 @@ label {
   -o-animation: 1s svv_animation_come;
   -ms-animation: 1s svv_animation_come;
   animation: 1s svv_animation_come;
+}
+@-moz-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-o-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
 }
 @-moz-keyframes notice_animation_go {
   0% {
@@ -2147,12 +2189,12 @@ label {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  -ms-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  -ms-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-duration: 1000ms;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -2177,12 +2219,12 @@ label {
   transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  -ms-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  -ms-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-duration: 1000ms;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -2207,12 +2249,12 @@ label {
   transform: scale(1);
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  -ms-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  -ms-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-duration: 1000ms;
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -2237,12 +2279,12 @@ label {
   transform: scale(0.7);
   -ms-transform: scale(0.7);
   -webkit-transform: scale(0.7);
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  -ms-transition-duration: 250ms;
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  -ms-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  -webkit-transition-duration: 1000ms;
   display: block !important;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -2290,11 +2332,11 @@ label {
   transform: rotate(225deg);
   -ms-transform: rotate(225deg);
   -webkit-transform: rotate(225deg);
-  -webkit-transition-duration: 250ms;
-  -moz-transition-duration: 250ms;
-  -o-transition-duration: 250ms;
-  -ms-transition-duration: 250ms;
-  transition-duration: 250ms;
+  -webkit-transition-duration: 1000ms;
+  -moz-transition-duration: 1000ms;
+  -o-transition-duration: 1000ms;
+  -ms-transition-duration: 1000ms;
+  transition-duration: 1000ms;
   -webkit-transition-duration: 250ms;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

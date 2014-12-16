@@ -31,6 +31,7 @@ angular.module('app')
         // on parent directive we apply it on ng-show/ng-hide for small and large devices design
         var bothShown = viewContentWidth / $scope.w >= 2;
         ctrl.changeSplitDisplay(bothShown, $scope.w, $scope.h);
+        $scope.myTransitionable.set([0, 0, 0], {duration: 1000, curve: 'linear'});
 
         $($window).resize(function () {
           $scope.$apply(function () {

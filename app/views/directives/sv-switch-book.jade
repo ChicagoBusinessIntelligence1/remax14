@@ -1,7 +1,7 @@
 .align-center
-  fa-app(style='width:{{w}};height:{{h*1.2}}px')
-    fa-modifier(fa-size='[{{w}}, {{h}}]')
-      fa-modifier(fa-size='[{{w*.3}}, {{h}}]'
+  fa-app(style='width:{{w}};height:{{1.4*h}}px;background-color:inherit')
+    fa-modifier(fa-size='[{{w}}, {{1.2*h}}]')
+      fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
       fa-scale='scale.get()'
       fa-translate='myTransitionable.get()')
         fa-surface(

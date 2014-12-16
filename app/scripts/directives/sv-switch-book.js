@@ -29,6 +29,8 @@ angular.module('app')
           borderTopRightRadius: '1em 3em',
           borderBottomRightRadius: '1em 3em',
           textShadow: '1px 1px 2px black',
+          boxShadow: '1px 1px 2px grey',
+          border: '1px 1px 1px 1px red inset',
           marginTop: '5px'
         };
 

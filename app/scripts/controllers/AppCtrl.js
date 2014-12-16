@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('MainCtrl', function (AuthService, $timeout, ProfileTypeService, WatchListService, $scope, $firebaseAuth, mainUrl, $state, $rootScope, $location) {
+  .controller('AppCtrl', function (AuthService, $timeout, ProfileTypeService, WatchListService, $scope, $firebaseAuth, mainUrl, $state, $rootScope, $location) {
 
     $scope.isFirstPage = $location.path() === '/home';
     $rootScope.logoutFb = function () {
@@ -10,7 +10,7 @@ angular.module('app')
       $rootScope.user = null;
       $state.go('app.home', null, {reload: true});
 
-    }
+    };
 
     $rootScope.loginFb = function () {
 

@@ -2,12 +2,9 @@
   fa-app(style='width:{{w}};height:{{1.4*h}}px;background-color:inherit')
     fa-modifier(fa-size='[{{w}}, {{1.2*h}}]')
       fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
-      fa-scale='scale.get()'
       fa-translate='myTransitionable.get()')
         fa-surface(
         fa-properties="switcherStyle",
-        ng-mouseover='scaleUp()'
-        ng-mouseout='scaleBck()'
         fa-click='switchSaleRent()').cursor-p
           div
             p.for.text-center for

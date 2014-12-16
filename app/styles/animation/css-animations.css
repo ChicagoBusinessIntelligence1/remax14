@@ -1,15 +1,25 @@
 /*******************************
      notice animation
 ********************************/
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
 .notice.ng-hide-add,
 .notice.ng-leave {
   position: relative;
-  animation: 2s notice_animation_go;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
 }
 .notice.ng-hide-remove,
 .notice.ng-enter {
   position: relative;
-  animation: 2s notice_animation_come;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
 }
 /*******************************
      svv animation
@@ -36,6 +46,38 @@
 .svv.ng-enter {
   position: relative;
   animation: 1s svv_animation_come;
+}
+@-moz-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-o-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
 }
 @-moz-keyframes notice_animation_go {
   0% {

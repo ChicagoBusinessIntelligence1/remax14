@@ -14,6 +14,7 @@ app.animation('.prop-info', function () {
     }
   }
 });
+
 app.animation('.accord-house', function () {
   var height,
     duration = 0.5;
@@ -35,6 +36,28 @@ app.animation('.accord-house', function () {
           top: 0,
           onComplete: done
         });
+      }
+
+    }
+  }
+});
+app.animation('.book-fade', function () {
+  return {
+
+    addClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.staggerTo(element, 1, {
+          opacity: 0,
+          onComplete: done
+        },10);
+      }
+    },
+    removeClass: function (element, className, done) {
+      if (className == 'ng-hide') {
+        TweenMax.staggerTo(element, 2, {
+          opacity: 1,
+          onComplete: done
+        },1);
       }
 
     }

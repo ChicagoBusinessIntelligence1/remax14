@@ -11,6 +11,10 @@ angular.module('app')
       },
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr, ctrl) {
+        var Transitionable = $famous['famous/transitions/Transitionable'];
+        $scope.bookOpacity = new Transitionable(0);
+        $scope.bookOpacity.set(1, {duration: 2000});
+
         $scope.title = $scope.isRent ? 'Rent' : 'Sale';
 
         var config = responsiveGallerySettings;
@@ -33,11 +37,10 @@ angular.module('app')
         ctrl.changeSplitDisplay(bothShown, $scope.w, $scope.h);
 
         /*Responsive Translate */
-        var Transitionable = $famous['famous/transitions/Transitionable'];
         if (bothShown) {
-          $scope.bookTranslate = new Transitionable([0, 250, 0]);
+          $scope.bookTranslate = 300;
         } else {
-          $scope.bookTranslate = new Transitionable([0, 100, 0]);
+          $scope.bookTranslate = 70;
         }
         /*Responsive design on window resize*/
         $($window).resize(function () {

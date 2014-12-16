@@ -25,7 +25,7 @@ angular.module('app')
           } else {
             slidePoint = .7 * ($scope.w - $scope.h);
           }
-          $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 1000, curve: 'linear'});
+          $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 2000, curve: 'linear'});
           //switch parameters from sale to rent on click
           $scope.isRent = !$scope.isRent;
           $scope.title = $scope.isRent ? 'sale' : 'rent';
@@ -35,7 +35,7 @@ angular.module('app')
           $scope.scale.set(1.1, {duration: 400, curve: 'easeOut'});
         };
         $scope.scaleBck = function () {
-          $scope.scale.set(1, {duration: 200, curve: 'easeOut'});
+          $scope.scale.set(1, {duration: 400, curve: 'easeOut'});
         };
 
         $scope.switcherStyle = {

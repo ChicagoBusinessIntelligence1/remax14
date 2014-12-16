@@ -30,8 +30,6 @@ angular.module('app')
           $scope.myTransitionable.set([slidePoint, 0, 0], {duration: 2000, curve: 'linear'});
           //switch parameters from sale to rent on click
           $scope.isRent = !$scope.isRent;
-          $scope.title = $scope.isRent ? 'sale' : 'rent';
-          $scope.bookOpacity.set(1, {duration: 2000});
         };
 
         $scope.scaleUp = function () {
@@ -41,19 +39,6 @@ angular.module('app')
           $scope.scale.set(1, {duration: 400, curve: 'easeOut'});
         };
 
-        $scope.switcherStyle = {
-          //backgroundImage: 'url("../images/home/Sell_Home-64.png") 0 0 no-repeat',
-          backgroundColor: '#EA6A67',
-          color: 'white',
-          borderTopLeftRadius: '1em 3em',
-          borderBottomLeftRadius: '1em 3em',
-          borderTopRightRadius: '1em 3em',
-          borderBottomRightRadius: '1em 3em',
-          textShadow: '1px 1px 2px black',
-          boxShadow: '1px 1px 2px grey',
-          border: '1px 1px 1px 1px red inset',
-          marginTop: '5px'
-        }
       }
     };
   });

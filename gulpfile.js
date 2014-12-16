@@ -8,6 +8,7 @@ var express = require('express'),
 var _ = require('underscore');
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
+var rename = require("gulp-rename");
 
 var filter = require('gulp-filter');
 var watch = require('gulp-watch');
@@ -23,6 +24,8 @@ var nib = require('nib');
 
 var sendgrid = require('sendgrid')('remax14', 'R1eKefo9ApTh');
 var open = require("gulp-open");
+var cssmin = require('gulp-cssmin');
+
 
 var EXPRESS_PORT = 3001;
 var EXPRESS_ROOT = __dirname;
@@ -31,7 +34,7 @@ function startExpress() {
   var express = require('express');
   var app = express();
 
-  var jsonParser = bodyParser.json()
+  var jsonParser = bodyParser.json();
 
 // create application/x-www-form-urlencoded parser
   app.set('port', process.env.PORT || 3001);
@@ -41,7 +44,7 @@ function startExpress() {
   app.engine('haml', engines.haml);
   app.engine('html', engines.hogan);
 
-  app.use(bodyParser.urlencoded({extended: false}))
+  app.use(bodyParser.urlencoded({extended: false}));
   app.use(methodOverride());
   app.use(express.static(path.join(__dirname, '/app')));
   var bs = browserSync.init([], {logLevel:'silent',notify:false});
@@ -49,7 +52,7 @@ function startExpress() {
 
   app.get('*', function (req, res) {
     res.render('index');
-  })
+  });
 
 // POST /api/users gets JSON bodies
   app.post('/sendmail', jsonParser, function (req, res) {
@@ -81,7 +84,7 @@ function startExpress() {
 
     res.send(200);
     res.end();
-  })
+  });
 
   app.listen(EXPRESS_PORT);
 }
@@ -90,7 +93,14 @@ gulp.task('scripts', function () {
   gulp.src('app/scripts/directives/sv-contact-us-form.js')
 
     .pipe(gulp.dest('app/scripts/directives'))
-})
+});
+
+gulp.task('css', function () {
+  gulp.src('app/styles/main.css')
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('app/styles'));
+});
 
 gulp.task('nib', function () {
   gulp.src('app/styles/nib.styl')
@@ -107,7 +117,8 @@ gulp.task('stylus', function () {
 
   gulp.src('app/styles/**/*.styl')
     .pipe(plumber({errorHandler: onError}))
-    .pipe(stylus({use: [nib()]}))
+    .pipe(stylus({use: [nib()],
+    compress:true}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
 });
@@ -176,7 +187,7 @@ gulp.task('default', function () {
     .pipe(stylus({use: [nib()]}))
     .pipe(gulp.dest('app/styles/'))
     .pipe(filter('**/*.css'))
-    .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}));
 
   watch('app/views/**/*.jade', {watch: false})
     .pipe(plumber())
@@ -184,14 +195,14 @@ gulp.task('default', function () {
       debug: false
     }))
     .pipe(gulp.dest('app/views'))
-    .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}));
 
   watch('app/scripts/**/*.js', {watch: false})
-    .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}));
 
   gulp.src('app/index.html')
     .pipe(watch('app/index.html'))
-    .pipe(reload({stream: true}))
+    .pipe(reload({stream: true}));
 
   gulp.run('browser-sync');
   gulp.run('url');

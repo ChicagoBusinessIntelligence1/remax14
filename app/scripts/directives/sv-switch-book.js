@@ -14,6 +14,8 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
         //initial values
+        $scope.bookOpacity = new Transitionable(0);
+
         $scope.title = $scope.isRent ? 'sale' : 'rent';
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
         $scope.scale = new Transitionable(1);
@@ -29,6 +31,7 @@ angular.module('app')
           //switch parameters from sale to rent on click
           $scope.isRent = !$scope.isRent;
           $scope.title = $scope.isRent ? 'sale' : 'rent';
+          $scope.bookOpacity.set(1, {duration: 2000});
         };
 
         $scope.scaleUp = function () {

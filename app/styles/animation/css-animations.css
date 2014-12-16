@@ -4,12 +4,12 @@
 .notice.ng-hide-add,
 .notice.ng-leave {
   position: relative;
-  animation: 0.5s notice_animation_go;
+  animation: 2s notice_animation_go;
 }
 .notice.ng-hide-remove,
 .notice.ng-enter {
   position: relative;
-  animation: 1s notice_animation_come;
+  animation: 2s notice_animation_come;
 }
 /*******************************
      svv animation

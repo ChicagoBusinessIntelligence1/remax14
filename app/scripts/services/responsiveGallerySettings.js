@@ -41,7 +41,8 @@ angular.module('app')
       bookStyle: function (width) {
         return {
           boxShadow: '0 3px 12px -5px rgba(139, 139, 139, 139)',
-          padding: paddingPercent * width + 'px'
+          padding: paddingPercent * width + 'px',
+          backgroundColor: 'white'
         }
       }
     };

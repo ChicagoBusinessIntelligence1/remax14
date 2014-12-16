@@ -7,27 +7,12 @@ div(id='book')
       ng-repeat='home in homes'
       fa-opacity='home.opacity.get()'
       fa-rotate-y='home.flip.get()'
-      fa-size='[{{0.98*w}}, {{1.22*h}}]')
+      fa-size='[{{0.98*w}}, {{1.17*h}}]')
         fa-surface( fa-background-color="'white'" fa-click='nextPage(home)' fa-properties="bookStyle")
           sv-fit-image(url='home.image' w='0.92*w' h='h' )
           .row
             .col-xs-8
-              ul.list-unstyled
-                li
-                  h4.text-info {{home.price|currency:"$":0}}
-                li
-                  h4 {{home.city}} {{home.state}}, {{home.zip}}
-                li
-                  ul.list-inline.text-sm
-                    li
-                      i.fa.fa-check-circle-o.fa-fw
-                      | {{home.bedrooms}} Bd
-                    li
-                      i.fa.fa-circle-o.fa-fw
-                      | {{home.fullBathrooms}} Full Ba
-                    li
-                      i.fa.fa-check-circle-o.fa-fw
-                      | {{home.propertySize}} Sq Ft
-            .col-xs-4.text-right
               h4.no-m-btm {{title}}
-              a(ui-sref='app.structure.remax-home({mls:home.mls})') More info
+            .col-xs-4
+              h5.text-right
+                a(ui-sref='app.structure.remax-home({mls:home.mls})') More info

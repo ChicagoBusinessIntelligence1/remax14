@@ -12,8 +12,8 @@ angular.module('app')
       templateUrl: '../../views/directives/sv-home-panel.html',
       link: function ($scope, element, attr, ctrl) {
         $scope.title = $scope.isRent ? 'Rent' : 'Sale';
-        var config = responsiveGallerySettings;
 
+        var config = responsiveGallerySettings;
         HousesFrontImagesService.mock($scope.isRent).then(function (homes) {
           $scope.activeIndex = {val: 0};
           $scope.homes = homes;
@@ -32,6 +32,14 @@ angular.module('app')
         var bothShown = viewContentWidth / $scope.w >= 2;
         ctrl.changeSplitDisplay(bothShown, $scope.w, $scope.h);
 
+        /*Responsive Translate */
+        var Transitionable = $famous['famous/transitions/Transitionable'];
+        if (bothShown) {
+          $scope.bookTranslate = new Transitionable([0, 250, 0]);
+        } else {
+          $scope.bookTranslate = new Transitionable([0, 100, 0]);
+        }
+        /*Responsive design on window resize*/
         $($window).resize(function () {
           $scope.$apply(function () {
             viewContentWidth = element.parent().parent().parent()[0].clientWidth;

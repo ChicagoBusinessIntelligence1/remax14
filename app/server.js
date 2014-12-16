@@ -58,7 +58,7 @@ app.post('/sendmail', jsonParser, function (req, res) {
   res.end();
 })
 
-var server = app.listen(3001, function () {
+var server = app.listen(port, function () {
 
   var host = server.address().address
   var port = server.address().port

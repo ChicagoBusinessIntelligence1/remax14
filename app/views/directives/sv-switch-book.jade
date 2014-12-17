@@ -1,9 +1,10 @@
 .align-center
-  fa-app(style='width:{{w}};height:{{1.4*h}}px;background-color:inherit')
-    fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
-    fa-translate='myTransitionable.get()')
-      fa-surface(
-      fa-properties="switcherStyle",
-      fa-click='switchSaleRent()' fa-background-color="'red'").cursor-p
+  fa-app(style='width:{{0.5*w}};height:{{1.4*h}}px;background-color:inherit')
+    fa-draggable
+      fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
+      fa-translate='myTransitionable.get()')
+        fa-surface(
+        fa-properties="switcherStyle",
+        fa-background-color="'red'").cursor-p
 
 

@@ -1,10 +1,10 @@
 div
-  div(ng-show='bothShown')
-    .row
-      .col-xs-6
-        sv-home-panel()
-      .col-xs-6
-        sv-home-panel(is-rent='true')
-  .row(ng-hide='bothShown')
-    .col-xs-12
-      sv-switch-book(is-rent='isRent' w='w' h='h')
+  fa-app(style='width: 320px; height: 568px; overflow: hidden;')
+    fa-modifier(ng-repeat='node in nodes', fa-translate='[10,500]', fa-size='[80, 40]')
+      fa-surface
+        button(ng-click='remove()') Remove one
+    fa-modifier(ng-repeat='node in nodes', fa-translate='node.position', fa-size='[80, 40]')
+      fa-draggable(fa-pipe-from='node.handler')
+        fa-surface(fa-background-color="'red'", fa-size='[undefined, undefined]', fa-pipe-to='node.handler')
+          | {{node.id}}: {{node.name}}
+

@@ -3,32 +3,8 @@
   "version": "0.0.0",
   "apppath": "app",
   "dependencies": {
-    "modernizr": "2.8.x",
-    "jquery": "latest",
-    "angular": "latest",
-    "angular-animate": "latest",
-    "angular-messages": "latest",
-    "angular-sanitize": "latest",
-    "angular-touch": "latest",
-    "underscore": "latest",
-    "bootstrap": "latest",
-    "angular-strap": "latest",
-    "angular-motion": "latest",
-    "toastr": "latest",
-    "angular-busy": "latest",
-    "greensock": "latest",
-    "firebase": "latest",
-    "angularfire": "latest",
-    "angular-ui-router": "latest",
-    "components-font-awesome": "latest",
-    "angular-bootstrap": "latest",
-    "underscore.string": "latest",
-    "angular-xeditable": "latest",
-    "famous-angular": "latest",
-    "angular-file-upload": "~1.1.5"
-  },
-  "dependencies": {
-    "famous": "0.3.1"
+    "famous": "0.3.1",
+    "greensock": "~1.15.0"
   },
   "devDependencies": {
     "mockfirebase": "latest",

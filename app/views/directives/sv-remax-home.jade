@@ -9,7 +9,6 @@
       .row
         .col-sm-12
           sv-photo-gallery(images='images' ng-if='images')
-
   form(name="homeform" id="form" novalidate='novalidate')
     ul.list-unstyled
       li(ng-repeat='section in home|homeFilter:"brokers,images" |orderBy:"order"')

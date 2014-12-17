@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .directive('svPhotoGallery', function (HomeService, $famous, $window, $media, $timeline, imgSize) {
+  .directive('svPhotoGallery', function ($famous, $window, $timeline, imgSize) {
     return {
       restrict: 'E',
       replace: true,
@@ -65,7 +65,7 @@ angular.module('app')
             $scope.th = $scope.thumbHeight;
 
             $scope.galleryHeight = $scope.imageHeight + $scope.thumbWidth;
-            $scope.horizontalShift = $scope.imageWidth * horizontalShiftRatio
+            $scope.horizontalShift = $scope.imageWidth * horizontalShiftRatio;
             $scope.verticalShift = $scope.galleryHeight * verticalShiftRatio;
             $scope.arrowClass = $scope.imageWidth > 500 ? 'fa-3x' : 'fa-2x';
             $scope.galleryStyle = {

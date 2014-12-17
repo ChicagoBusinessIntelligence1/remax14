@@ -1,14 +1,17 @@
 .align-center
   fa-app(style='width:{{w}};height:{{1.4*h}}px;background-color:inherit')
-    fa-modifier(fa-size='[{{w}}, {{1.2*h}}]')
-      fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
-      fa-translate='myTransitionable.get()')
-        fa-surface(
-        fa-properties="switcherStyle",
-        fa-click='switchSaleRent()').cursor-p
-          div
-            p.for.text-center for
-            h6.sale-rent.text-center {{title}}
+    fa-draggable(
+    fa-pipe-from='handler')
+      fa-modifier(fa-size='[{{w}}, {{1.2*h}}]')
+        fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
+        fa-translate='myTransitionable.get()')
+          fa-surface(
+          fa-pipe-to='handler'
+          fa-properties="switcherStyle",
+          ).cursor-p
+            div
+              p.for.text-center for
+              h6.sale-rent.text-center {{title}}
 
 
 

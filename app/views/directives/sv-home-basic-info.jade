@@ -29,14 +29,14 @@
             sv-share-property(is-rent='isRent' home = 'home')
   .row
     .col-sm-7
-      div(ng-if="!isRent")
-        a.thumbnail(ui-sref='app.structure.remax-home({mls:home.$id})')
-          sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
-          img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
-      div(ng-if="isRent")
-        a.thumbnail(ui-sref='app.structure.remax-home-rent({mls:home.$id})')
-          sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
-          img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+      //div(ng-if="!isRent")
+      //  a.thumbnail(ui-sref='app.structure.remax-home({mls:home.$id})')
+      //    sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
+      //    img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
+      //div(ng-if="isRent")
+      //  a.thumbnail(ui-sref='app.structure.remax-home-rent({mls:home.$id})')
+      //    sv-photo-thumb(ng-if='coverImage' img="{{coverImage}}" height="270")
+      //    img(ng-if='!coverImage' ng-src="../images/houses/photo-icon-lg.png")
     .col-sm-5
       .panel.panel-default.panel-basic-info
         h4 Basic Information

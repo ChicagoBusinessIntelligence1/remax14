@@ -13,6 +13,8 @@ angular.module('app')
       },
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
+        var EventHandler = $famous['famous/core/EventHandler'];
+        $scope.handler = new EventHandler();
         //initial values
         $scope.bookOpacity = new Transitionable(0);
 

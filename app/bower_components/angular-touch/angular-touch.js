@@ -1,5 +1,5 @@
 /**
- * @license AngularJS v1.3.6
+ * @license AngularJS v1.3.7
  * (c) 2010-2014 Google, Inc. http://angularjs.org
  * License: MIT
  */
@@ -176,7 +176,7 @@ ngTouch.factory('$swipe', [function() {
           // Allow native scrolling to take over.
           active = false;
           eventHandlers['cancel'] && eventHandlers['cancel'](event);
-          return;
+
         } else {
           // Prevent the browser from scrolling.
           event.preventDefault();

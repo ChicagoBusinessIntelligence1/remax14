@@ -18,7 +18,7 @@ angular.module('app')
         element.addClass($scope.style);
         $scope.backgroundPosition = $scope.backgroundPosition || '50% 25%';
         element.css({
-          'background-image': 'url(' + $scope.img + ')',
+          'background-image': 'url(' + $scope.img + ') no-repeat',
           'background-size': '125% auto',
           'background-position': $scope.backgroundPosition,
           'position': 'relative',

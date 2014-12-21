@@ -25,7 +25,6 @@ angular.module('app')
         data.push( {id: 2, name: 'two',  position: [10, 300], handler: new EventHandler() } );
 
         $scope.nodes = data;
-        console.log($scope.nodes);
 
         $scope.remove = function() {
           $scope.nodes.splice(0, 1);

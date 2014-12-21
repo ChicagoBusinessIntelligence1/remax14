@@ -1,11 +1,13 @@
 .align-center
   fa-app(style='width:{{w}};height:{{1.4*h}}px;background-color:inherit')
     fa-draggable(
+    fa-options='{projection:"_direction.x",xRange:[0,0.7*w]}'
     fa-pipe-from='handler')
       fa-modifier(fa-size='[{{w}}, {{1.2*h}}]')
         fa-modifier(fa-size='[{{.3*w}}, {{h}}]'
         fa-translate='myTransitionable.get()')
-          fa-surface(
+          fa-surface(id='surf'
+          fa-background-color="'green'"
           fa-pipe-to='handler'
           fa-properties="switcherStyle",
           ).cursor-p

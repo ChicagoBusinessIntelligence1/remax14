@@ -4222,6 +4222,11 @@ body {
   color: #3c3c3c;
   background-color: #f7f7f7;
 }
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 11px;
+  }
+}
 html,
 body {
   overflow-x: hidden !important;

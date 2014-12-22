@@ -21,17 +21,17 @@ angular.module('app')
 
         var node = $famous.find('fa-draggable')[0].modifier;
         node.on('end', function (data) {
-	        var position = data.position[0];
+          var position = data.position[0];
           console.log(position);
-          if (position>(0.3* $scope.w)) {
-            $scope.myTransitionable.set([0.7* $scope.w-position,0,0],{duration:500})
-          } else{
+          if (position > (0.3 * $scope.w)) {
+            $scope.myTransitionable.set([$scope.w-$scope.h - position, 0, 0], {duration: 500})
+          } else {
 
-            $scope.myTransitionable.set([-position,0,0],{duration:500})
+            $scope.myTransitionable.set([-position, 0, 0], {duration: 500})
           }
         });
 
-        $scope.title = $scope.isRent ? 'sale' : 'rent2';
+        $scope.title = $scope.isRent ? 'sale' : 'rent';
         $scope.myTransitionable = new Transitionable([0, 0, 0]);
         $scope.scale = new Transitionable(1);
         var slidePoint;
@@ -93,6 +93,13 @@ angular.module('app')
         };
         $scope.scaleBck = function () {
           $scope.scale.set(1, {duration: 400, curve: 'easeOut'});
+        };
+        $scope.sliderStyle = {
+          borderRadius: '75px'
+        };
+
+        $scope.switcherStyle = {
+          borderRadius: '75px'
         };
 
       }

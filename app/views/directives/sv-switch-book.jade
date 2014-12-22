@@ -1,19 +1,21 @@
 .align-center
   fa-app(style='width:{{w}};height:{{2.5*h}}px;background-color:inherit')
-    fa-modifier(fa-size='[{{w}}, {{h}}]')
+    fa-modifier(fa-size='[{{w}}, {{.71*h}}]'
+    fa-translate='[0,15,0]'
+    )
       fa-surface(
-      fa-background-color="'green'"
+      fa-background-color="'#ECECEC'"
       fa-properties="sliderStyle"
       fa-size='[undefined, undefined]'
       )
       fa-modifier(
-      fa-size='[{{h}}, {{h}}]'
+      fa-size='[{{1.5*h}}, {{.7*h}}]'
       fa-translate='myTransitionable.get()')
         fa-draggable(
         fa-options='{projection:"_direction.x",xRange:[0,w-h]}'
         fa-pipe-from='handler')
           fa-surface(id='surf'
-          fa-background-color="'grey'"
+          fa-background-color="'#EA6A67'"
           fa-size='[undefined, undefined]'
           fa-pipe-to='handler'
           fa-properties="switcherStyle"

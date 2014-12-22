@@ -14,9 +14,8 @@ angular.module('app')
       link: function ($scope, element, attr) {
         var Transitionable = $famous['famous/transitions/Transitionable'];
         var EventHandler = $famous['famous/core/EventHandler'];
-
-        $scope.handler = new EventHandler();
         //initial values
+        $scope.handler = new EventHandler();
         $scope.bookOpacity = new Transitionable(0);
 
         var node = $famous.find('fa-draggable')[0].modifier;
@@ -24,7 +23,7 @@ angular.module('app')
           var position = data.position[0];
           console.log(position);
           if (position > (0.3 * $scope.w)) {
-            $scope.myTransitionable.set([$scope.w-$scope.h - position, 0, 0], {duration: 500})
+            $scope.myTransitionable.set([$scope.w - $scope.h - position, 0, 0], {duration: 500})
           } else {
 
             $scope.myTransitionable.set([-position, 0, 0], {duration: 500})
@@ -95,11 +94,23 @@ angular.module('app')
           $scope.scale.set(1, {duration: 400, curve: 'easeOut'});
         };
         $scope.sliderStyle = {
-          borderRadius: '75px'
+          borderTopLeftRadius: '1em 3em',
+          borderBottomLeftRadius: '1em 3em',
+          borderTopRightRadius: '1em 3em',
+          borderBottomRightRadius: '1em 3em',
+          boxShadow: '1px 1px 1px 2px #EBEBEB inset',
+          border: '1px 1px 1px 1px #D6D6D6 inset'
         };
 
         $scope.switcherStyle = {
-          borderRadius: '75px'
+          color: 'white',
+          borderTopLeftRadius: '1em 3em',
+          borderBottomLeftRadius: '1em 3em',
+          borderTopRightRadius: '1em 3em',
+          borderBottomRightRadius: '1em 3em',
+          textShadow: '1px 1px 2px black',
+          boxShadow: '1px 1px 2px grey',
+          border: '1px 1px 1px 1px red inset'
         };
 
       }

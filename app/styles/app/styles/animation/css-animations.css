@@ -1,0 +1,289 @@
+/*******************************
+     notice animation
+********************************/
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+.notice.ng-hide-add,
+.notice.ng-leave {
+  position: relative;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+}
+.notice.ng-hide-remove,
+.notice.ng-enter {
+  position: relative;
+  animation: myfirst 5s;
+  -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+}
+/*******************************
+     svv animation
+********************************/
+.svv.ng-hide-add,
+.svv.ng-leave {
+  position: relative;
+  animation: 1s svv_animation_go;
+}
+.svv.ng-hide-remove,
+.svv.ng-enter {
+  position: relative;
+  animation: 1s svv_animation_come;
+}
+/*******************************
+     svv animation
+********************************/
+.svv.ng-hide-add,
+.svv.ng-leave {
+  position: relative;
+  animation: 1s svv_animation_go;
+}
+.svv.ng-hide-remove,
+.svv.ng-enter {
+  position: relative;
+  animation: 1s svv_animation_come;
+}
+@-moz-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-webkit-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-o-keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@keyframes myfirst {
+  from {
+    background: #f00;
+  }
+  to {
+    background: #ff0;
+  }
+}
+@-moz-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes notice_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes notice_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+    top: 0px;
+  }
+  100% {
+    opacity: 0;
+    top: 200px;
+  }
+}
+@-webkit-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+    top: 0px;
+  }
+  100% {
+    opacity: 0;
+    top: 200px;
+  }
+}
+@-o-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+    top: 0px;
+  }
+  100% {
+    opacity: 0;
+    top: 200px;
+  }
+}
+@keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+    top: 0px;
+  }
+  100% {
+    opacity: 0;
+    top: 200px;
+  }
+}
+@-moz-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+    top: 200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-webkit-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+    top: 200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-o-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+    top: 200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+    top: 200px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-moz-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes svv_animation_go {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes svv_animation_come {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

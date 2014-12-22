@@ -8,38 +8,12 @@
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
     }
-
-    .my-drop-zone {
-      border: dotted 3px lightgray;
-    }
-
-    .nv-file-over {
-      border: dotted 3px red;
-    }
-
-    /* Default class applied to drop zones on over */
-    .another-file-over-class {
-      border: dotted 3px green;
-    }
-
-    /*html, body {*/
-      /*height: 100%;*/
-    /*}*/
-
-    /*canvas {*/
-      /*background-color: #f3f3f3;*/
-      /*-webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;*/
-      /*-moz-box-shadow: 3px 3px 3px 0 #e3e3e3;*/
-      /*box-shadow: 3px 3px 3px 0 #e3e3e3;*/
-      /*border: 1px solid #c3c3c3;*/
-      /*height: 100px;*/
-      /*margin: 6px 0 0 6px;*/
-    /*}*/
   </style>
   <title>Remax Skokie, Homes Sale, Houses Rent Remax Skokie, Real Estate Niles</title>
   <meta name="description" content="Comprehensive Real Estate Services, Buy House, Get approved for Home Loan,
     Rent, Sell, Invest in Real Estate. ONE STOP SERVICE!"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css({.tmp,app}) styles/main.css -->
@@ -61,7 +35,6 @@
   <!--<link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>-->
   <!-- endbuild -->
   <!-- build:js scripts/modernizr.js -->
-
   <script src="bower_components/modernizr/modernizr.js"></script>
   <!--<script src="bower_components/greensock/src/minified/TweenMax.min.js"></script>-->
   <!-- endbuild -->
@@ -87,7 +60,7 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
-<!--<sv-top-nav></sv-top-nav>-->
+<sv-top-nav></sv-top-nav>
 <div ui-view=''></div>
 <!--<sv-footer-nav></sv-footer-nav>-->
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -110,7 +83,6 @@
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-
 <script src="bower_components/scroll/jquery.onepage-scroll.min.js">
   $("body").onepage_scroll({
     sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -119,8 +91,10 @@
     animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
     pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
     updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-    beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
-    afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+    beforeMove: function (index) {
+    },  // This option accepts a callback function. The function will be called before the page moves.
+    afterMove: function (index) {
+    },   // This option accepts a callback function. The function will be called after the page moves.
     loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
     keyboard: true,                  // You can activate the keyboard controls
     responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
@@ -128,10 +102,7 @@
     // the browser's width is less than 600, the fallback will kick in.
     direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
   });
-
-
 </script>
-
 <script src="bower_components/firebase/firebase-debug.js"></script>
 <script src="bower_components/underscore/underscore-min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -328,8 +299,8 @@
 <script src="scripts/controllers/WhyRemaxCtrl.js"></script>
 <!--Comment me befor deploy-->
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
-if (location.host.toString().indexOf('localhost')>-1) {
-document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.8.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+if (location.host.toString().indexOf('localhost') > -1) {
+  document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.8.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
 }
 //]]></script>
 </body>

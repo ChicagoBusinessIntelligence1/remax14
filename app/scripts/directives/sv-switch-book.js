@@ -23,7 +23,7 @@ angular.module('app')
           var position = data.position[0];
           console.log(position);
           if (position > (0.3 * $scope.w)) {
-            $scope.myTransitionable.set([$scope.w - $scope.h - position, 0, 0], {duration: 500})
+            $scope.myTransitionable.set([$scope.w - 1.5*$scope.h - position, 0, 0], {duration: 500})
           } else {
 
             $scope.myTransitionable.set([-position, 0, 0], {duration: 500})

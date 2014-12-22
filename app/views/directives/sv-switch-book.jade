@@ -1,13 +1,10 @@
 .align-center
   fa-app(style='width:{{w}};height:{{2.5*h}}px;background-color:inherit')
-    fa-modifier(fa-size='[{{w}}, {{.71*h}}]'
-    fa-translate='[0,15,0]'
-    )
+    fa-modifier(fa-size='[{{w}}, {{.71*h}}]' fa-translate='[0,15,0]')
       fa-surface(
       fa-background-color="'#ECECEC'"
       fa-properties="sliderStyle"
-      fa-size='[undefined, undefined]'
-      )
+      fa-size='[undefined, undefined]')
       fa-modifier(
       fa-size='[{{1.5*h}}, {{.7*h}}]'
       fa-translate='myTransitionable.get()')
@@ -18,9 +15,8 @@
           fa-background-color="'#EA6A67'"
           fa-size='[undefined, undefined]'
           fa-pipe-to='handler'
-          fa-properties="switcherStyle"
-          ).cursor-p
-            div
+          fa-properties="switcherStyle")
+            div.cursor-p
               p.for.text-center for
               h6.sale-rent.text-center {{title}}
 

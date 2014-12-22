@@ -39,6 +39,7 @@ angular.module('app')
         //  console.log(event);
         //  console.log(ev);
         //});
+
         var Timer = $famous['famous/utilities/Timer'];
         //$scope.handler.on('mouseup', function (event2, data2) {
         //  var pos = this.getPosition();

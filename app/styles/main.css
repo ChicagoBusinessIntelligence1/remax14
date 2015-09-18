@@ -273,9 +273,13 @@ label {
 .h-logo {
   font-size: 17px !important;
   font-weight: 700;
-  font-size: 17px !important;
   color: #f7f7f4 !important;
   margin: 0px !important;
+}
+@media screen and (max-width: 992px) {
+  .h-logo {
+    font-size: 10px !important;
+  }
 }
 .navbar-auth {
   background-color: #272727;
@@ -407,6 +411,11 @@ label {
 }
 .large-font {
   font-size: 3em !important;
+}
+.mobile-logo {
+  font-size: 10px !important;
+  color: #f7f7f4 !important;
+  margin: 0px !important;
 }
 .animation-test {
   width: 200px;

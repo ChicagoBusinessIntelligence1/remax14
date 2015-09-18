@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "apppath": "app",
   "dependencies": {
+    "angular": "1.5.0-build.4246+sha.1c97a60",
+    "angular-animate": "1.5.0-build.4246+sha.1c97a60",
+    "angular-bootstrap": "~0.13.4",
+    "angular-material": "master",
     "famous": "0.3.1",
     "greensock": "~1.15.0"
   },

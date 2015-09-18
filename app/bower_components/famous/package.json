@@ -1,6 +1,6 @@
 {
   "name": "famous",
-  "version": "0.3.1",
+  "version": "0.3.4",
   "description": "Famo.us is a JavaScript framework for everyone who wants to build beautiful experiences on any device.",
   "repository": {
     "type": "git",
@@ -57,6 +57,7 @@
     "John Hurliman <jhurliman@jhurliman.org>",
     "Jonathan Reem <jonathan.reem@gmail.com>",
     "Josef Reinhard Brandl <mail@josefbrandl.de>",
+    "Joseph Carroll <jdsalingerjr@gmail.com>",
     "Joseph Orbegoso Pea <trusktr@gmail.com>",
     "Joseph Sample <joseph.michael.sample@gmail.com>",
     "Kevin McGee <kevin.mcgee@cssian.com>",
@@ -79,8 +80,9 @@
     "rsperberg <rsperberg@gmail.com>",
     "Sabith Pocker <sabithpocker@gmail.com>",
     "Sing Li <sli@makawave.com>",
-    "Skoczen <skoczen@gmail.com>",
+    "skoczen <skoczen@gmail.com>",
     "Stephan Bijzitter <stephanbijzitter@gmail.com>",
+    "Steve Mao <maochenyan@msn.com>",
     "Thomas L. <thomas.laurent.gm@gmail.com>",
     "Tim Chin <timjchin@gmail.com> <tim@famo.us>",
     "Tom Hornos <tom.hornos@gmail.com>",
@@ -97,9 +99,9 @@
   },
   "homepage": "https://famo.us",
   "devDependencies": {
-    "eslint": "^0.9.2",
-    "famous-dist-generator": "^0.2.2",
-    "famous-doc-generator": "^0.6.0",
+    "eslint": "^0.10.0",
+    "famous-dist-generator": "^0.3.0",
+    "famous-doc-generator": "^0.7.0",
     "famous-examples-generator": "^0.2.1",
     "jscs": "^1.5.9"
   },

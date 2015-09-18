@@ -170,7 +170,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
 
 });
 
-gulp.task('default', function () {
+gulp.task('serve-dev', function () {
   var onError = function (err) {
     notify.onError({
       title: "Gulp",

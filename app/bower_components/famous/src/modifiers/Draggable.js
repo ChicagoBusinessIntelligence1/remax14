@@ -19,7 +19,7 @@ define(function(require, exports, module) {
     GenericSync.register({'mouse': MouseSync, 'touch': TouchSync});
 
     /**
-     * Makes added render nodes responsive to drag behavior.
+     * Makes added render nodes responsive to drag beahvior.
      *   Emits events 'start', 'update', 'end'.
      * @class Draggable
      * @constructor

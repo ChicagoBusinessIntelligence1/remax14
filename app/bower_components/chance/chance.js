@@ -1,4 +1,4 @@
-//  Chance.js 0.7.0
+//  Chance.js 0.8.0
 //  http://chancejs.com
 //  (c) 2013 Victor Quinn
 //  Chance may be freely distributed or modified under the MIT license.
@@ -19,7 +19,7 @@
     // Constructor
     function Chance (seed) {
         if (!(this instanceof Chance)) {
-            return new Chance(seed);
+            return seed == null ? new Chance() : new Chance(seed);
         }
 
         // if user has provided a function, use that as the generator
@@ -28,19 +28,23 @@
             return this;
         }
 
-        var seedling;
-        
         if (arguments.length) {
             // set a starting value of zero so we can add to it
             this.seed = 0;
         }
-        // otherwise, leave this.seed blank so that MT will recieve a blank
+
+        // otherwise, leave this.seed blank so that MT will receive a blank
 
         for (var i = 0; i < arguments.length; i++) {
-            seedling = 0;
-            if (typeof arguments[i] === 'string') {
+            var seedling = 0;
+            if (Object.prototype.toString.call(arguments[i]) === '[object String]') {
                 for (var j = 0; j < arguments[i].length; j++) {
-                    seedling += (arguments[i].length - j) * arguments[i].charCodeAt(j);
+                    // create a numeric hash for each argument, add to seedling
+                    var hash = 0;
+                    for (var k = 0; k < arguments[i].length; k++) {
+                        hash = arguments[i].charCodeAt(k) + (hash << 6) + (hash << 16) - hash;
+                    }
+                    seedling += hash;
                 }
             } else {
                 seedling = arguments[i];
@@ -50,6 +54,7 @@
 
         // If no generator function was provided, use our MT
         this.mt = this.mersenne_twister(this.seed);
+        this.bimd5 = this.blueimp_md5();
         this.random = function () {
             return this.mt.random(this.seed);
         };
@@ -57,7 +62,7 @@
         return this;
     }
 
-    Chance.prototype.VERSION = "0.7.0";
+    Chance.prototype.VERSION = "0.8.0";
 
     // Random helper functions
     function initOptions(options, defaults) {
@@ -82,9 +87,8 @@
 
     /**
      * Encode the input string with Base64.
-     * @param input
      */
-    var base64 = function(input) {
+    var base64 = function() {
         throw new Error('No Base64 encoder available.');
     };
 
@@ -101,11 +105,25 @@
 
     // -- Basics --
 
+    /**
+     *  Return a random bool, either true or false
+     *
+     *  @param {Object} [options={ likelihood: 50 }] alter the likelihood of
+     *    receiving a true or false value back.
+     *  @throws {RangeError} if the likelihood is out of bounds
+     *  @returns {Bool} either true or false
+     */
     Chance.prototype.bool = function (options) {
-
         // likelihood of success (true)
         options = initOptions(options, {likelihood : 50});
 
+        // Note, we could get some minor perf optimizations by checking range
+        // prior to initializing defaults, but that makes code a bit messier
+        // and the check more complicated as we have to check existence of
+        // the object then existence of the key before checking constraints.
+        // Since the options initialization should be minor computationally,
+        // decision made for code cleanliness intentionally. This is mentioned
+        // here as it's the first occurrence, will not be mentioned again.
         testRange(
             options.likelihood < 0 || options.likelihood > 100,
             "Chance: Likelihood accepts values from 0 to 100."
@@ -114,17 +132,23 @@
         return this.random() * 100 < options.likelihood;
     };
 
+    /**
+     *  Return a random character.
+     *
+     *  @param {Object} [options={}] can specify a character pool, only alpha,
+     *    only symbols, and casing (lower or upper)
+     *  @returns {String} a single random character
+     *  @throws {RangeError} Can only specify alpha or symbols, not both
+     */
     Chance.prototype.character = function (options) {
         options = initOptions(options);
-
-        var symbols = "!@#$%^&*()[]",
-            letters, pool;
-
         testRange(
             options.alpha && options.symbols,
             "Chance: Cannot specify both alpha and symbols."
         );
 
+        var symbols = "!@#$%^&*()[]",
+            letters, pool;
 
         if (options.casing === 'lower') {
             letters = CHARS_LOWER;
@@ -153,16 +177,23 @@
     // It could be 14.9000 but in JavaScript, when this is cast as a number,
     // the trailing zeroes are dropped. Left to the consumer if trailing zeroes are
     // needed
+    /**
+     *  Return a random floating point number
+     *
+     *  @param {Object} [options={}] can specify a fixed precision, min, max
+     *  @returns {Number} a single floating point number
+     *  @throws {RangeError} Can only specify fixed or precision, not both. Also
+     *    min cannot be greater than max
+     */
     Chance.prototype.floating = function (options) {
-        var num;
-
         options = initOptions(options, {fixed : 4});
-        var fixed = Math.pow(10, options.fixed);
-
         testRange(
             options.fixed && options.precision,
             "Chance: Cannot specify both fixed and precision."
         );
+
+        var num;
+        var fixed = Math.pow(10, options.fixed);
 
         var max = MAX_INT / fixed;
         var min = -max;
@@ -176,7 +207,7 @@
             "Chance: Max specified is out of range with fixed. Max should be, at most, " + max
         );
 
-        options = initOptions(options, {min : min, max : max});
+        options = initOptions(options, { min : min, max : max });
 
         // Todo - Make this work!
         // options.precision = (typeof options.precision !== "undefined") ? options.precision : false;
@@ -187,34 +218,55 @@
         return parseFloat(num_fixed);
     };
 
-    // NOTE the max and min are INCLUDED in the range. So:
-    //
-    // chance.natural({min: 1, max: 3});
-    //
-    // would return either 1, 2, or 3.
-
+    /**
+     *  Return a random integer
+     *
+     *  NOTE the max and min are INCLUDED in the range. So:
+     *  chance.integer({min: 1, max: 3});
+     *  would return either 1, 2, or 3.
+     *
+     *  @param {Object} [options={}] can specify a min and/or max
+     *  @returns {Number} a single random integer number
+     *  @throws {RangeError} min cannot be greater than max
+     */
     Chance.prototype.integer = function (options) {
-
         // 9007199254740992 (2^53) is the max integer number in JavaScript
         // See: http://vq.io/132sa2j
         options = initOptions(options, {min: MIN_INT, max: MAX_INT});
-
         testRange(options.min > options.max, "Chance: Min cannot be greater than Max.");
 
         return Math.floor(this.random() * (options.max - options.min + 1) + options.min);
     };
 
+    /**
+     *  Return a random natural
+     *
+     *  NOTE the max and min are INCLUDED in the range. So:
+     *  chance.natural({min: 1, max: 3});
+     *  would return either 1, 2, or 3.
+     *
+     *  @param {Object} [options={}] can specify a min and/or max
+     *  @returns {Number} a single random integer number
+     *  @throws {RangeError} min cannot be greater than max
+     */
     Chance.prototype.natural = function (options) {
         options = initOptions(options, {min: 0, max: MAX_INT});
+        testRange(options.min < 0, "Chance: Min cannot be less than zero.");
         return this.integer(options);
     };
 
+    /**
+     *  Return a random string
+     *
+     *  @param {Object} [options={}] can specify a length
+     *  @returns {String} a string of random length
+     *  @throws {RangeError} length cannot be less than zero
+     */
     Chance.prototype.string = function (options) {
-        options = initOptions(options);
-
-        var length = options.length || this.natural({min: 5, max: 20}),
-            pool = options.pool,
-            text = this.n(this.character, length, {pool: pool});
+        options = initOptions(options, { length: this.natural({min: 5, max: 20}) });
+        testRange(options.length < 0, "Chance: Length cannot be less than zero.");
+        var length = options.length,
+            text = this.n(this.character, length, options);
 
         return text.join("");
     };
@@ -234,9 +286,23 @@
         return this;
     };
 
-    // Given a function that generates something random and a number of items to generate,
-    // return an array of items where none repeat.
+    /**
+     *  Given a function that generates something random and a number of items to generate,
+     *    return an array of items where none repeat.
+     *
+     *  @param {Function} fn the function that generates something random
+     *  @param {Number} num number of terms to generate
+     *  @param {Object} options any options to pass on to the generator function
+     *  @returns {Array} an array of length `num` with every item generated by `fn` and unique
+     *
+     *  There can be more parameters after these. All additional parameters are provided to the given function
+     */
     Chance.prototype.unique = function(fn, num, options) {
+        testRange(
+            typeof fn !== "function",
+            "Chance: The first argument must be a function."
+        );
+
         options = initOptions(options, {
             // Default comparator to check that val is not already in arr.
             // Should return `false` if item not in array, `true` otherwise
@@ -264,13 +330,26 @@
 
     /**
      *  Gives an array of n random terms
-     *  @param fn the function that generates something random
-     *  @param n number of terms to generate
-     *  @param options options for the function fn. 
+     *
+     *  @param {Function} fn the function that generates something random
+     *  @param {Number} n number of terms to generate
+     *  @returns {Array} an array of length `n` with items generated by `fn`
+     *
      *  There can be more parameters after these. All additional parameters are provided to the given function
      */
-    Chance.prototype.n = function(fn, n, options) {
-        var i = n || 1, arr = [], params = slice.call(arguments, 2);
+    Chance.prototype.n = function(fn, n) {
+        testRange(
+            typeof fn !== "function",
+            "Chance: The first argument must be a function."
+        );
+
+        if (typeof n === 'undefined') {
+            n = 1;
+        }
+        var i = n, arr = [], params = slice.call(arguments, 2);
+
+        // Providing a negative count should result in a noop.
+        i = Math.max( 0, i );
 
         for (null; i--; null) {
             arr.push(fn.apply(this, params));
@@ -321,6 +400,15 @@
     Chance.prototype.weighted = function(arr, weights) {
         if (arr.length !== weights.length) {
             throw new RangeError("Chance: length of array and weights must match");
+        }
+
+        // Handle weights that are less or equal to zero.
+        for (var weightIndex = weights.length - 1; weightIndex >= 0; --weightIndex) {
+            // If the weight is less or equal to zero, remove it and the value.
+            if (weights[weightIndex] <= 0) {
+                arr.splice(weightIndex,1);
+                weights.splice(weightIndex,1);
+            }
         }
 
         // If any of the weights are less than 1, we want to scale them up to whole
@@ -378,12 +466,23 @@
         options = initOptions(options);
 
         var words = options.words || this.natural({min: 12, max: 18}),
+            punctuation = options.punctuation,
             text, word_array = this.n(this.word, words);
 
         text = word_array.join(' ');
-
-        // Capitalize first letter of sentence, add period at end
-        text = this.capitalize(text) + '.';
+        
+        // Capitalize first letter of sentence
+        text = this.capitalize(text);
+        
+        // Make sure punctuation has a usable value
+        if (punctuation !== false && !/^[\.\?;!:]$/.test(punctuation)) {
+            punctuation = '.';
+        }
+        
+        // Add punctuation mark
+        if (punctuation) {
+            text += punctuation;
+        }
 
         return text;
     };
@@ -512,6 +611,94 @@
     Chance.prototype.last = function () {
         return this.pick(this.get("lastNames"));
     };
+    
+    Chance.prototype.israelId=function(){
+        var x=this.string({pool: '0123456789',length:8});
+        var y=0;
+        for (var i=0;i<x.length;i++){
+            var thisDigit=  x[i] *  (i/2===parseInt(i/2) ? 1 : 2);
+            thisDigit=this.pad(thisDigit,2).toString();
+            thisDigit=parseInt(thisDigit[0]) + parseInt(thisDigit[1]);
+            y=y+thisDigit;
+        }
+        x=x+(10-parseInt(y.toString().slice(-1))).toString().slice(-1);
+        return x;
+    };
+
+    Chance.prototype.mrz = function (options) {
+        var checkDigit = function (input) {
+            var alpha = "<ABCDEFGHIJKLMNOPQRSTUVWXYXZ".split(''),
+                multipliers = [ 7, 3, 1 ],
+                runningTotal = 0;
+
+            if (typeof input !== 'string') {
+                input = input.toString();
+            }
+
+            input.split('').forEach(function(character, idx) {
+                var pos = alpha.indexOf(character);
+
+                if(pos !== -1) {
+                    character = pos === 0 ? 0 : pos + 9;
+                } else {
+                    character = parseInt(character, 10);
+                }
+                character *= multipliers[idx % multipliers.length];
+                runningTotal += character;
+            });
+            return runningTotal % 10;
+        };
+        var generate = function (opts) {
+            var pad = function (length) {
+                return new Array(length + 1).join('<');
+            };
+            var number = [ 'P<',
+                           opts.issuer,
+                           opts.last.toUpperCase(),
+                           '<<',
+                           opts.first.toUpperCase(),
+                           pad(39 - (opts.last.length + opts.first.length + 2)),
+                           opts.passportNumber,
+                           checkDigit(opts.passportNumber),
+                           opts.nationality,
+                           opts.dob,
+                           checkDigit(opts.dob),
+                           opts.gender,
+                           opts.expiry,
+                           checkDigit(opts.expiry),
+                           pad(14),
+                           checkDigit(pad(14)) ].join('');
+
+            return number +
+                (checkDigit(number.substr(44, 10) +
+                            number.substr(57, 7) +
+                            number.substr(65, 7)));
+        };
+
+        var that = this;
+
+        options = initOptions(options, {
+            first: this.first(),
+            last: this.last(),
+            passportNumber: this.integer({min: 100000000, max: 999999999}),
+            dob: (function () {
+                var date = that.birthday({type: 'adult'});
+                return [date.getFullYear().toString().substr(2),
+                        that.pad(date.getMonth() + 1, 2),
+                        that.pad(date.getDate(), 2)].join('');
+            }()),
+            expiry: (function () {
+                var date = new Date();
+                return [(date.getFullYear() + 5).toString().substr(2),
+                        that.pad(date.getMonth() + 1, 2),
+                        that.pad(date.getDate(), 2)].join('');
+            }()),
+            gender: this.gender() === 'Female' ? 'F': 'M',
+            issuer: 'GBR',
+            nationality: 'GBR'
+        });
+        return generate (options);
+    };
 
     Chance.prototype.name = function (options) {
         options = initOptions(options);
@@ -602,7 +789,9 @@
             { name: 'Medical Doctor', abbreviation: 'M.D.' },
             { name: 'Senior', abbreviation: 'Sr.' },
             { name: 'The Third', abbreviation: 'III' },
-            { name: 'The Fourth', abbreviation: 'IV' }
+            { name: 'The Fourth', abbreviation: 'IV' },
+            { name: 'Bachelor of Engineering', abbreviation: 'B.E' },
+            { name: 'Bachelor of Technology', abbreviation: 'B.TECH' }
         ];
         return suffixes;
     };
@@ -623,39 +812,125 @@
 
     // -- Mobile --
     // Android GCM Registration ID
-    Chance.prototype.android_id = function (options) {
+    Chance.prototype.android_id = function () {
         return "APA91" + this.string({ pool: "0123456789abcefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_", length: 178 });
     };
 
     // Apple Push Token
-    Chance.prototype.apple_token = function (options) {
+    Chance.prototype.apple_token = function () {
         return this.string({ pool: "abcdef1234567890", length: 64 });
     };
 
     // Windows Phone 8 ANID2
-    Chance.prototype.wp8_anid2 = function (options) {
+    Chance.prototype.wp8_anid2 = function () {
         return base64( this.hash( { length : 32 } ) );
     };
 
     // Windows Phone 7 ANID
-    Chance.prototype.wp7_anid = function (options) {
+    Chance.prototype.wp7_anid = function () {
         return 'A=' + this.guid().replace(/-/g, '').toUpperCase() + '&E=' + this.hash({ length:3 }) + '&W=' + this.integer({ min:0, max:9 });
     };
 
     // BlackBerry Device PIN
-    Chance.prototype.bb_pin = function (options) {
+    Chance.prototype.bb_pin = function () {
         return this.hash({ length: 8 });
     };
 
     // -- End Mobile --
 
     // -- Web --
+    Chance.prototype.avatar = function (options) {
+        var url = null;
+        var URL_BASE = '//www.gravatar.com/avatar/';
+        var PROTOCOLS = {
+            http: 'http',
+            https: 'https'
+        };
+        var FILE_TYPES = {
+            bmp: 'bmp',
+            gif: 'gif',
+            jpg: 'jpg',
+            png: 'png'
+        };
+        var FALLBACKS = {
+            '404': '404', // Return 404 if not found
+            mm: 'mm', // Mystery man
+            identicon: 'identicon', // Geometric pattern based on hash
+            monsterid: 'monsterid', // A generated monster icon
+            wavatar: 'wavatar', // A generated face
+            retro: 'retro', // 8-bit icon
+            blank: 'blank' // A transparent png
+        };
+        var RATINGS = {
+            g: 'g',
+            pg: 'pg',
+            r: 'r',
+            x: 'x'
+        };
+        var opts = {
+            protocol: null,
+            email: null,
+            fileExtension: null,
+            size: null,
+            fallback: null,
+            rating: null
+        };
+
+        if (!options) {
+            // Set to a random email
+            opts.email = this.email();
+            options = {};
+        }
+        else if (typeof options === 'string') {
+            opts.email = options;
+            options = {};
+        }
+        else if (typeof options !== 'object') {
+            return null;
+        }
+        else if (options.constructor === 'Array') {
+            return null;
+        }
+
+        opts = initOptions(options, opts);
+
+        if (!opts.email) {
+            // Set to a random email
+            opts.email = this.email();
+        }
+
+        // Safe checking for params
+        opts.protocol = PROTOCOLS[opts.protocol] ? opts.protocol + ':' : '';
+        opts.size = parseInt(opts.size, 0) ? opts.size : '';
+        opts.rating = RATINGS[opts.rating] ? opts.rating : '';
+        opts.fallback = FALLBACKS[opts.fallback] ? opts.fallback : '';
+        opts.fileExtension = FILE_TYPES[opts.fileExtension] ? opts.fileExtension : '';
+
+        url =
+            opts.protocol +
+            URL_BASE +
+            this.bimd5.md5(opts.email) +
+            (opts.fileExtension ? '.' + opts.fileExtension : '') +
+            (opts.size || opts.rating || opts.fallback ? '?' : '') +
+            (opts.size ? '&s=' + opts.size.toString() : '') +
+            (opts.rating ? '&r=' + opts.rating : '') +
+            (opts.fallback ? '&d=' + opts.fallback : '')
+            ;
+
+        return url;
+    };
+
     Chance.prototype.color = function (options) {
         function gray(value, delimiter) {
             return [value, value, value].join(delimiter || '');
         }
 
-        options = initOptions(options, {format: this.pick(['hex', 'shorthex', 'rgb', '0x']), grayscale: false, casing: 'lower'});
+        options = initOptions(options, {
+            format: this.pick(['hex', 'shorthex', 'rgb', 'rgba', '0x']),
+            grayscale: false,
+            casing: 'lower'
+        });
+
         var isGrayscale = options.grayscale;
         var colorValue;
 
@@ -671,10 +946,16 @@
             } else {
                 colorValue = 'rgb(' + this.natural({max: 255}) + ',' + this.natural({max: 255}) + ',' + this.natural({max: 255}) + ')';
             }
+        } else if (options.format === 'rgba') {
+            if (isGrayscale) {
+                colorValue = 'rgba(' + gray(this.natural({max: 255}), ',') + ',' + this.floating({min:0, max:1}) + ')';
+            } else {
+                colorValue = 'rgba(' + this.natural({max: 255}) + ',' + this.natural({max: 255}) + ',' + this.natural({max: 255}) + ',' + this.floating({min:0, max:1}) + ')';
+            }
         } else if (options.format === '0x') {
             colorValue = '0x' + (isGrayscale ? gray(this.hash({length: 2})) : this.hash({length: 6}));
         } else {
-            throw new Error('Invalid format provided. Please provide one of "hex", "shorthex", "rgb" or "0x".');
+            throw new RangeError('Invalid format provided. Please provide one of "hex", "shorthex", "rgb", "rgba", or "0x".');
         }
 
         if (options.casing === 'upper' ) {
@@ -759,8 +1040,12 @@
     };
 
     Chance.prototype.altitude = function (options) {
-        options = initOptions(options, {fixed : 5, max: 8848});
-        return this.floating({min: 0, max: options.max, fixed: options.fixed});
+        options = initOptions(options, {fixed: 5, min: 0, max: 8848});
+        return this.floating({
+            min: options.min,
+            max: options.max,
+            fixed: options.fixed
+        });
     };
 
     Chance.prototype.areacode = function (options) {
@@ -778,13 +1063,26 @@
     };
 
     Chance.prototype.coordinates = function (options) {
-        options = initOptions(options);
         return this.latitude(options) + ', ' + this.longitude(options);
     };
 
+    Chance.prototype.countries = function () {
+        return this.get("countries");
+    };
+
+    Chance.prototype.country = function (options) {
+        options = initOptions(options);
+        var country = this.pick(this.countries());
+        return options.full ? country.name : country.abbreviation;
+    };
+
     Chance.prototype.depth = function (options) {
-        options = initOptions(options, {fixed: 5, min: -2550});
-        return this.floating({min: options.min, max: 0, fixed: options.fixed});
+        options = initOptions(options, {fixed: 5, min: -10994, max: 0});
+        return this.floating({
+            min: options.min,
+            max: options.max,
+            fixed: options.fixed
+        });
     };
 
     Chance.prototype.geohash = function (options) {
@@ -793,7 +1091,6 @@
     };
 
     Chance.prototype.geojson = function (options) {
-        options = initOptions(options);
         return this.latitude(options) + ', ' + this.longitude(options) + ', ' + this.altitude(options);
     };
 
@@ -911,15 +1208,18 @@
     };
 
     Chance.prototype.states = function (options) {
-        options = initOptions(options);
+        options = initOptions(options, { us_states_and_dc: true });
 
         var states,
             us_states_and_dc = this.get("us_states_and_dc"),
             territories = this.get("territories"),
             armed_forces = this.get("armed_forces");
 
-        states = us_states_and_dc;
+        states = [];
 
+        if (options.us_states_and_dc) {
+            states = states.concat(us_states_and_dc);
+        }
         if (options.territories) {
             states = states.concat(territories);
         }
@@ -988,13 +1288,19 @@
             date = new Date(this.natural({min: min, max: max}));
         } else {
             var m = this.month({raw: true});
+            var daysInMonth = m.days;
+
+            if(options && options.month) {
+                // Mod 12 to allow months outside range of 0-11 (not encouraged, but also not prevented).
+                daysInMonth = this.get('months')[((options.month % 12) + 12) % 12].days;
+            }
 
             options = initOptions(options, {
                 year: parseInt(this.year(), 10),
                 // Necessary to subtract 1 because Date() 0-indexes month but not day or year
                 // for some reason.
                 month: m.numeric - 1,
-                day: this.natural({min: 1, max: m.days}),
+                day: this.natural({min: 1, max: daysInMonth}),
                 hour: this.hour(),
                 minute: this.minute(),
                 second: this.second(),
@@ -1123,7 +1429,7 @@
                 }
             }
             if (type === null) {
-                throw new Error("Credit card type '" + options.name + "'' is not supported");
+                throw new RangeError("Credit card type '" + options.name + "'' is not supported");
             }
         } else {
             type = this.pick(types);
@@ -1155,7 +1461,7 @@
         });
 
         if (returnAsString) {
-            return  currencies[0] + '/' + currencies[1];
+            return currencies[0].code + '/' + currencies[1].code;
         } else {
             return currencies;
         }
@@ -1189,7 +1495,7 @@
 
         // If the year is this year, need to ensure month is greater than the
         // current month or this expiration will not be valid
-        if (exp.year === (new Date().getFullYear())) {
+        if (exp.year === (new Date().getFullYear()).toString()) {
             exp.month = this.exp_month({future: true});
         } else {
             exp.month = this.exp_month();
@@ -1201,13 +1507,14 @@
     Chance.prototype.exp_month = function (options) {
         options = initOptions(options);
         var month, month_int,
-            curMonth = new Date().getMonth();
+            // Date object months are 0 indexed
+            curMonth = new Date().getMonth() + 1;
 
         if (options.future) {
             do {
                 month = this.month({raw: true}).numeric;
                 month_int = parseInt(month, 10);
-            } while (month_int < curMonth);
+            } while (month_int <= curMonth);
         } else {
             month = this.month({raw: true}).numeric;
         }
@@ -1220,6 +1527,55 @@
     };
 
     // -- End Finance
+
+    // -- Regional
+
+    Chance.prototype.pl_pesel = function () {
+        var number = this.natural({min: 1, max: 9999999999});
+        var arr = this.pad(number, 10).split('');
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = parseInt(arr[i]);
+        }
+
+        var controlNumber = (1 * arr[0] + 3 * arr[1] + 7 * arr[2] + 9 * arr[3] + 1 * arr[4] + 3 * arr[5] + 7 * arr[6] + 9 * arr[7] + 1 * arr[8] + 3 * arr[9]) % 10;
+        if(controlNumber !== 0) {
+            controlNumber = 10 - controlNumber;
+        }
+
+        return arr.join('') + controlNumber;
+    };
+
+    Chance.prototype.pl_nip = function () {
+        var number = this.natural({min: 1, max: 999999999});
+        var arr = this.pad(number, 9).split('');
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = parseInt(arr[i]);
+        }
+
+        var controlNumber = (6 * arr[0] + 5 * arr[1] + 7 * arr[2] + 2 * arr[3] + 3 * arr[4] + 4 * arr[5] + 5 * arr[6] + 6 * arr[7] + 7 * arr[8]) % 11;
+        if(controlNumber === 10) {
+            return this.pl_nip();
+        }
+
+        return arr.join('') + controlNumber;
+    };
+
+    Chance.prototype.pl_regon = function () {
+        var number = this.natural({min: 1, max: 99999999});
+        var arr = this.pad(number, 8).split('');
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = parseInt(arr[i]);
+        }
+
+        var controlNumber = (8 * arr[0] + 9 * arr[1] + 2 * arr[2] + 3 * arr[3] + 4 * arr[4] + 5 * arr[5] + 6 * arr[6] + 7 * arr[7]) % 11;
+        if(controlNumber === 10) {
+            controlNumber = 0;
+        }
+
+        return arr.join('') + controlNumber;
+    };
+
+    // -- End Regional
 
     // -- Miscellaneous --
 
@@ -1240,8 +1596,8 @@
 
     Chance.prototype.rpg = function (thrown, options) {
         options = initOptions(options);
-        if (thrown === null) {
-            throw new Error("A type of die roll must be included");
+        if (!thrown) {
+            throw new RangeError("A type of die roll must be included");
         } else {
             var bits = thrown.toLowerCase().split("d"),
                 rolls = [];
@@ -1273,7 +1629,7 @@
                    this.string({ pool: guid_pool, length: 12 });
         return guid;
     };
-    
+
     // Hash
     Chance.prototype.hash = function (options) {
         options = initOptions(options, {length : 40, casing: 'lower'});
@@ -1305,6 +1661,33 @@
         return (sum * 9) % 10;
     };
 
+    // MD5 Hash
+    Chance.prototype.md5 = function(options) {
+        var opts = { str: '', key: null, raw: false };
+
+        if (!options) {
+            opts.str = this.string();
+            options = {};
+        }
+        else if (typeof options === 'string') {
+            opts.str = options;
+            options = {};
+        }
+        else if (typeof options !== 'object') {
+            return null;
+        }
+        else if(options.constructor === 'Array') {
+            return null;
+        }
+
+        opts = initOptions(options, opts);
+
+        if(!opts.str){
+            throw new Error('A parameter is required to return an md5 hash.');
+        }
+
+        return this.bimd5.md5(opts.str, opts.key, opts.raw);
+    };
 
     var data = {
 
@@ -1314,6 +1697,9 @@
         },
 
         lastNames: ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Thompson', 'Garcia', 'Martinez', 'Robinson', 'Clark', 'Rodriguez', 'Lewis', 'Lee', 'Walker', 'Hall', 'Allen', 'Young', 'Hernandez', 'King', 'Wright', 'Lopez', 'Hill', 'Scott', 'Green', 'Adams', 'Baker', 'Gonzalez', 'Nelson', 'Carter', 'Mitchell', 'Perez', 'Roberts', 'Turner', 'Phillips', 'Campbell', 'Parker', 'Evans', 'Edwards', 'Collins', 'Stewart', 'Sanchez', 'Morris', 'Rogers', 'Reed', 'Cook', 'Morgan', 'Bell', 'Murphy', 'Bailey', 'Rivera', 'Cooper', 'Richardson', 'Cox', 'Howard', 'Ward', 'Torres', 'Peterson', 'Gray', 'Ramirez', 'James', 'Watson', 'Brooks', 'Kelly', 'Sanders', 'Price', 'Bennett', 'Wood', 'Barnes', 'Ross', 'Henderson', 'Coleman', 'Jenkins', 'Perry', 'Powell', 'Long', 'Patterson', 'Hughes', 'Flores', 'Washington', 'Butler', 'Simmons', 'Foster', 'Gonzales', 'Bryant', 'Alexander', 'Russell', 'Griffin', 'Diaz', 'Hayes', 'Myers', 'Ford', 'Hamilton', 'Graham', 'Sullivan', 'Wallace', 'Woods', 'Cole', 'West', 'Jordan', 'Owens', 'Reynolds', 'Fisher', 'Ellis', 'Harrison', 'Gibson', 'McDonald', 'Cruz', 'Marshall', 'Ortiz', 'Gomez', 'Murray', 'Freeman', 'Wells', 'Webb', 'Simpson', 'Stevens', 'Tucker', 'Porter', 'Hunter', 'Hicks', 'Crawford', 'Henry', 'Boyd', 'Mason', 'Morales', 'Kennedy', 'Warren', 'Dixon', 'Ramos', 'Reyes', 'Burns', 'Gordon', 'Shaw', 'Holmes', 'Rice', 'Robertson', 'Hunt', 'Black', 'Daniels', 'Palmer', 'Mills', 'Nichols', 'Grant', 'Knight', 'Ferguson', 'Rose', 'Stone', 'Hawkins', 'Dunn', 'Perkins', 'Hudson', 'Spencer', 'Gardner', 'Stephens', 'Payne', 'Pierce', 'Berry', 'Matthews', 'Arnold', 'Wagner', 'Willis', 'Ray', 'Watkins', 'Olson', 'Carroll', 'Duncan', 'Snyder', 'Hart', 'Cunningham', 'Bradley', 'Lane', 'Andrews', 'Ruiz', 'Harper', 'Fox', 'Riley', 'Armstrong', 'Carpenter', 'Weaver', 'Greene', 'Lawrence', 'Elliott', 'Chavez', 'Sims', 'Austin', 'Peters', 'Kelley', 'Franklin', 'Lawson', 'Fields', 'Gutierrez', 'Ryan', 'Schmidt', 'Carr', 'Vasquez', 'Castillo', 'Wheeler', 'Chapman', 'Oliver', 'Montgomery', 'Richards', 'Williamson', 'Johnston', 'Banks', 'Meyer', 'Bishop', 'McCoy', 'Howell', 'Alvarez', 'Morrison', 'Hansen', 'Fernandez', 'Garza', 'Harvey', 'Little', 'Burton', 'Stanley', 'Nguyen', 'George', 'Jacobs', 'Reid', 'Kim', 'Fuller', 'Lynch', 'Dean', 'Gilbert', 'Garrett', 'Romero', 'Welch', 'Larson', 'Frazier', 'Burke', 'Hanson', 'Day', 'Mendoza', 'Moreno', 'Bowman', 'Medina', 'Fowler', 'Brewer', 'Hoffman', 'Carlson', 'Silva', 'Pearson', 'Holland', 'Douglas', 'Fleming', 'Jensen', 'Vargas', 'Byrd', 'Davidson', 'Hopkins', 'May', 'Terry', 'Herrera', 'Wade', 'Soto', 'Walters', 'Curtis', 'Neal', 'Caldwell', 'Lowe', 'Jennings', 'Barnett', 'Graves', 'Jimenez', 'Horton', 'Shelton', 'Barrett', 'Obrien', 'Castro', 'Sutton', 'Gregory', 'McKinney', 'Lucas', 'Miles', 'Craig', 'Rodriquez', 'Chambers', 'Holt', 'Lambert', 'Fletcher', 'Watts', 'Bates', 'Hale', 'Rhodes', 'Pena', 'Beck', 'Newman', 'Haynes', 'McDaniel', 'Mendez', 'Bush', 'Vaughn', 'Parks', 'Dawson', 'Santiago', 'Norris', 'Hardy', 'Love', 'Steele', 'Curry', 'Powers', 'Schultz', 'Barker', 'Guzman', 'Page', 'Munoz', 'Ball', 'Keller', 'Chandler', 'Weber', 'Leonard', 'Walsh', 'Lyons', 'Ramsey', 'Wolfe', 'Schneider', 'Mullins', 'Benson', 'Sharp', 'Bowen', 'Daniel', 'Barber', 'Cummings', 'Hines', 'Baldwin', 'Griffith', 'Valdez', 'Hubbard', 'Salazar', 'Reeves', 'Warner', 'Stevenson', 'Burgess', 'Santos', 'Tate', 'Cross', 'Garner', 'Mann', 'Mack', 'Moss', 'Thornton', 'Dennis', 'McGee', 'Farmer', 'Delgado', 'Aguilar', 'Vega', 'Glover', 'Manning', 'Cohen', 'Harmon', 'Rodgers', 'Robbins', 'Newton', 'Todd', 'Blair', 'Higgins', 'Ingram', 'Reese', 'Cannon', 'Strickland', 'Townsend', 'Potter', 'Goodwin', 'Walton', 'Rowe', 'Hampton', 'Ortega', 'Patton', 'Swanson', 'Joseph', 'Francis', 'Goodman', 'Maldonado', 'Yates', 'Becker', 'Erickson', 'Hodges', 'Rios', 'Conner', 'Adkins', 'Webster', 'Norman', 'Malone', 'Hammond', 'Flowers', 'Cobb', 'Moody', 'Quinn', 'Blake', 'Maxwell', 'Pope', 'Floyd', 'Osborne', 'Paul', 'McCarthy', 'Guerrero', 'Lindsey', 'Estrada', 'Sandoval', 'Gibbs', 'Tyler', 'Gross', 'Fitzgerald', 'Stokes', 'Doyle', 'Sherman', 'Saunders', 'Wise', 'Colon', 'Gill', 'Alvarado', 'Greer', 'Padilla', 'Simon', 'Waters', 'Nunez', 'Ballard', 'Schwartz', 'McBride', 'Houston', 'Christensen', 'Klein', 'Pratt', 'Briggs', 'Parsons', 'McLaughlin', 'Zimmerman', 'French', 'Buchanan', 'Moran', 'Copeland', 'Roy', 'Pittman', 'Brady', 'McCormick', 'Holloway', 'Brock', 'Poole', 'Frank', 'Logan', 'Owen', 'Bass', 'Marsh', 'Drake', 'Wong', 'Jefferson', 'Park', 'Morton', 'Abbott', 'Sparks', 'Patrick', 'Norton', 'Huff', 'Clayton', 'Massey', 'Lloyd', 'Figueroa', 'Carson', 'Bowers', 'Roberson', 'Barton', 'Tran', 'Lamb', 'Harrington', 'Casey', 'Boone', 'Cortez', 'Clarke', 'Mathis', 'Singleton', 'Wilkins', 'Cain', 'Bryan', 'Underwood', 'Hogan', 'McKenzie', 'Collier', 'Luna', 'Phelps', 'McGuire', 'Allison', 'Bridges', 'Wilkerson', 'Nash', 'Summers', 'Atkins'],
+
+        // Data taken from https://github.com/umpirsky/country-list/blob/master/country/cldr/en_US/country.json
+        countries: [{"name":"Afghanistan","abbreviation":"AF"},{"name":"Albania","abbreviation":"AL"},{"name":"Algeria","abbreviation":"DZ"},{"name":"American Samoa","abbreviation":"AS"},{"name":"Andorra","abbreviation":"AD"},{"name":"Angola","abbreviation":"AO"},{"name":"Anguilla","abbreviation":"AI"},{"name":"Antarctica","abbreviation":"AQ"},{"name":"Antigua and Barbuda","abbreviation":"AG"},{"name":"Argentina","abbreviation":"AR"},{"name":"Armenia","abbreviation":"AM"},{"name":"Aruba","abbreviation":"AW"},{"name":"Australia","abbreviation":"AU"},{"name":"Austria","abbreviation":"AT"},{"name":"Azerbaijan","abbreviation":"AZ"},{"name":"Bahamas","abbreviation":"BS"},{"name":"Bahrain","abbreviation":"BH"},{"name":"Bangladesh","abbreviation":"BD"},{"name":"Barbados","abbreviation":"BB"},{"name":"Belarus","abbreviation":"BY"},{"name":"Belgium","abbreviation":"BE"},{"name":"Belize","abbreviation":"BZ"},{"name":"Benin","abbreviation":"BJ"},{"name":"Bermuda","abbreviation":"BM"},{"name":"Bhutan","abbreviation":"BT"},{"name":"Bolivia","abbreviation":"BO"},{"name":"Bosnia and Herzegovina","abbreviation":"BA"},{"name":"Botswana","abbreviation":"BW"},{"name":"Bouvet Island","abbreviation":"BV"},{"name":"Brazil","abbreviation":"BR"},{"name":"British Antarctic Territory","abbreviation":"BQ"},{"name":"British Indian Ocean Territory","abbreviation":"IO"},{"name":"British Virgin Islands","abbreviation":"VG"},{"name":"Brunei","abbreviation":"BN"},{"name":"Bulgaria","abbreviation":"BG"},{"name":"Burkina Faso","abbreviation":"BF"},{"name":"Burundi","abbreviation":"BI"},{"name":"Cambodia","abbreviation":"KH"},{"name":"Cameroon","abbreviation":"CM"},{"name":"Canada","abbreviation":"CA"},{"name":"Canton and Enderbury Islands","abbreviation":"CT"},{"name":"Cape Verde","abbreviation":"CV"},{"name":"Cayman Islands","abbreviation":"KY"},{"name":"Central African Republic","abbreviation":"CF"},{"name":"Chad","abbreviation":"TD"},{"name":"Chile","abbreviation":"CL"},{"name":"China","abbreviation":"CN"},{"name":"Christmas Island","abbreviation":"CX"},{"name":"Cocos [Keeling] Islands","abbreviation":"CC"},{"name":"Colombia","abbreviation":"CO"},{"name":"Comoros","abbreviation":"KM"},{"name":"Congo - Brazzaville","abbreviation":"CG"},{"name":"Congo - Kinshasa","abbreviation":"CD"},{"name":"Cook Islands","abbreviation":"CK"},{"name":"Costa Rica","abbreviation":"CR"},{"name":"Croatia","abbreviation":"HR"},{"name":"Cuba","abbreviation":"CU"},{"name":"Cyprus","abbreviation":"CY"},{"name":"Czech Republic","abbreviation":"CZ"},{"name":"Côte d’Ivoire","abbreviation":"CI"},{"name":"Denmark","abbreviation":"DK"},{"name":"Djibouti","abbreviation":"DJ"},{"name":"Dominica","abbreviation":"DM"},{"name":"Dominican Republic","abbreviation":"DO"},{"name":"Dronning Maud Land","abbreviation":"NQ"},{"name":"East Germany","abbreviation":"DD"},{"name":"Ecuador","abbreviation":"EC"},{"name":"Egypt","abbreviation":"EG"},{"name":"El Salvador","abbreviation":"SV"},{"name":"Equatorial Guinea","abbreviation":"GQ"},{"name":"Eritrea","abbreviation":"ER"},{"name":"Estonia","abbreviation":"EE"},{"name":"Ethiopia","abbreviation":"ET"},{"name":"Falkland Islands","abbreviation":"FK"},{"name":"Faroe Islands","abbreviation":"FO"},{"name":"Fiji","abbreviation":"FJ"},{"name":"Finland","abbreviation":"FI"},{"name":"France","abbreviation":"FR"},{"name":"French Guiana","abbreviation":"GF"},{"name":"French Polynesia","abbreviation":"PF"},{"name":"French Southern Territories","abbreviation":"TF"},{"name":"French Southern and Antarctic Territories","abbreviation":"FQ"},{"name":"Gabon","abbreviation":"GA"},{"name":"Gambia","abbreviation":"GM"},{"name":"Georgia","abbreviation":"GE"},{"name":"Germany","abbreviation":"DE"},{"name":"Ghana","abbreviation":"GH"},{"name":"Gibraltar","abbreviation":"GI"},{"name":"Greece","abbreviation":"GR"},{"name":"Greenland","abbreviation":"GL"},{"name":"Grenada","abbreviation":"GD"},{"name":"Guadeloupe","abbreviation":"GP"},{"name":"Guam","abbreviation":"GU"},{"name":"Guatemala","abbreviation":"GT"},{"name":"Guernsey","abbreviation":"GG"},{"name":"Guinea","abbreviation":"GN"},{"name":"Guinea-Bissau","abbreviation":"GW"},{"name":"Guyana","abbreviation":"GY"},{"name":"Haiti","abbreviation":"HT"},{"name":"Heard Island and McDonald Islands","abbreviation":"HM"},{"name":"Honduras","abbreviation":"HN"},{"name":"Hong Kong SAR China","abbreviation":"HK"},{"name":"Hungary","abbreviation":"HU"},{"name":"Iceland","abbreviation":"IS"},{"name":"India","abbreviation":"IN"},{"name":"Indonesia","abbreviation":"ID"},{"name":"Iran","abbreviation":"IR"},{"name":"Iraq","abbreviation":"IQ"},{"name":"Ireland","abbreviation":"IE"},{"name":"Isle of Man","abbreviation":"IM"},{"name":"Israel","abbreviation":"IL"},{"name":"Italy","abbreviation":"IT"},{"name":"Jamaica","abbreviation":"JM"},{"name":"Japan","abbreviation":"JP"},{"name":"Jersey","abbreviation":"JE"},{"name":"Johnston Island","abbreviation":"JT"},{"name":"Jordan","abbreviation":"JO"},{"name":"Kazakhstan","abbreviation":"KZ"},{"name":"Kenya","abbreviation":"KE"},{"name":"Kiribati","abbreviation":"KI"},{"name":"Kuwait","abbreviation":"KW"},{"name":"Kyrgyzstan","abbreviation":"KG"},{"name":"Laos","abbreviation":"LA"},{"name":"Latvia","abbreviation":"LV"},{"name":"Lebanon","abbreviation":"LB"},{"name":"Lesotho","abbreviation":"LS"},{"name":"Liberia","abbreviation":"LR"},{"name":"Libya","abbreviation":"LY"},{"name":"Liechtenstein","abbreviation":"LI"},{"name":"Lithuania","abbreviation":"LT"},{"name":"Luxembourg","abbreviation":"LU"},{"name":"Macau SAR China","abbreviation":"MO"},{"name":"Macedonia","abbreviation":"MK"},{"name":"Madagascar","abbreviation":"MG"},{"name":"Malawi","abbreviation":"MW"},{"name":"Malaysia","abbreviation":"MY"},{"name":"Maldives","abbreviation":"MV"},{"name":"Mali","abbreviation":"ML"},{"name":"Malta","abbreviation":"MT"},{"name":"Marshall Islands","abbreviation":"MH"},{"name":"Martinique","abbreviation":"MQ"},{"name":"Mauritania","abbreviation":"MR"},{"name":"Mauritius","abbreviation":"MU"},{"name":"Mayotte","abbreviation":"YT"},{"name":"Metropolitan France","abbreviation":"FX"},{"name":"Mexico","abbreviation":"MX"},{"name":"Micronesia","abbreviation":"FM"},{"name":"Midway Islands","abbreviation":"MI"},{"name":"Moldova","abbreviation":"MD"},{"name":"Monaco","abbreviation":"MC"},{"name":"Mongolia","abbreviation":"MN"},{"name":"Montenegro","abbreviation":"ME"},{"name":"Montserrat","abbreviation":"MS"},{"name":"Morocco","abbreviation":"MA"},{"name":"Mozambique","abbreviation":"MZ"},{"name":"Myanmar [Burma]","abbreviation":"MM"},{"name":"Namibia","abbreviation":"NA"},{"name":"Nauru","abbreviation":"NR"},{"name":"Nepal","abbreviation":"NP"},{"name":"Netherlands","abbreviation":"NL"},{"name":"Netherlands Antilles","abbreviation":"AN"},{"name":"Neutral Zone","abbreviation":"NT"},{"name":"New Caledonia","abbreviation":"NC"},{"name":"New Zealand","abbreviation":"NZ"},{"name":"Nicaragua","abbreviation":"NI"},{"name":"Niger","abbreviation":"NE"},{"name":"Nigeria","abbreviation":"NG"},{"name":"Niue","abbreviation":"NU"},{"name":"Norfolk Island","abbreviation":"NF"},{"name":"North Korea","abbreviation":"KP"},{"name":"North Vietnam","abbreviation":"VD"},{"name":"Northern Mariana Islands","abbreviation":"MP"},{"name":"Norway","abbreviation":"NO"},{"name":"Oman","abbreviation":"OM"},{"name":"Pacific Islands Trust Territory","abbreviation":"PC"},{"name":"Pakistan","abbreviation":"PK"},{"name":"Palau","abbreviation":"PW"},{"name":"Palestinian Territories","abbreviation":"PS"},{"name":"Panama","abbreviation":"PA"},{"name":"Panama Canal Zone","abbreviation":"PZ"},{"name":"Papua New Guinea","abbreviation":"PG"},{"name":"Paraguay","abbreviation":"PY"},{"name":"People's Democratic Republic of Yemen","abbreviation":"YD"},{"name":"Peru","abbreviation":"PE"},{"name":"Philippines","abbreviation":"PH"},{"name":"Pitcairn Islands","abbreviation":"PN"},{"name":"Poland","abbreviation":"PL"},{"name":"Portugal","abbreviation":"PT"},{"name":"Puerto Rico","abbreviation":"PR"},{"name":"Qatar","abbreviation":"QA"},{"name":"Romania","abbreviation":"RO"},{"name":"Russia","abbreviation":"RU"},{"name":"Rwanda","abbreviation":"RW"},{"name":"Réunion","abbreviation":"RE"},{"name":"Saint Barthélemy","abbreviation":"BL"},{"name":"Saint Helena","abbreviation":"SH"},{"name":"Saint Kitts and Nevis","abbreviation":"KN"},{"name":"Saint Lucia","abbreviation":"LC"},{"name":"Saint Martin","abbreviation":"MF"},{"name":"Saint Pierre and Miquelon","abbreviation":"PM"},{"name":"Saint Vincent and the Grenadines","abbreviation":"VC"},{"name":"Samoa","abbreviation":"WS"},{"name":"San Marino","abbreviation":"SM"},{"name":"Saudi Arabia","abbreviation":"SA"},{"name":"Senegal","abbreviation":"SN"},{"name":"Serbia","abbreviation":"RS"},{"name":"Serbia and Montenegro","abbreviation":"CS"},{"name":"Seychelles","abbreviation":"SC"},{"name":"Sierra Leone","abbreviation":"SL"},{"name":"Singapore","abbreviation":"SG"},{"name":"Slovakia","abbreviation":"SK"},{"name":"Slovenia","abbreviation":"SI"},{"name":"Solomon Islands","abbreviation":"SB"},{"name":"Somalia","abbreviation":"SO"},{"name":"South Africa","abbreviation":"ZA"},{"name":"South Georgia and the South Sandwich Islands","abbreviation":"GS"},{"name":"South Korea","abbreviation":"KR"},{"name":"Spain","abbreviation":"ES"},{"name":"Sri Lanka","abbreviation":"LK"},{"name":"Sudan","abbreviation":"SD"},{"name":"Suriname","abbreviation":"SR"},{"name":"Svalbard and Jan Mayen","abbreviation":"SJ"},{"name":"Swaziland","abbreviation":"SZ"},{"name":"Sweden","abbreviation":"SE"},{"name":"Switzerland","abbreviation":"CH"},{"name":"Syria","abbreviation":"SY"},{"name":"São Tomé and Príncipe","abbreviation":"ST"},{"name":"Taiwan","abbreviation":"TW"},{"name":"Tajikistan","abbreviation":"TJ"},{"name":"Tanzania","abbreviation":"TZ"},{"name":"Thailand","abbreviation":"TH"},{"name":"Timor-Leste","abbreviation":"TL"},{"name":"Togo","abbreviation":"TG"},{"name":"Tokelau","abbreviation":"TK"},{"name":"Tonga","abbreviation":"TO"},{"name":"Trinidad and Tobago","abbreviation":"TT"},{"name":"Tunisia","abbreviation":"TN"},{"name":"Turkey","abbreviation":"TR"},{"name":"Turkmenistan","abbreviation":"TM"},{"name":"Turks and Caicos Islands","abbreviation":"TC"},{"name":"Tuvalu","abbreviation":"TV"},{"name":"U.S. Minor Outlying Islands","abbreviation":"UM"},{"name":"U.S. Miscellaneous Pacific Islands","abbreviation":"PU"},{"name":"U.S. Virgin Islands","abbreviation":"VI"},{"name":"Uganda","abbreviation":"UG"},{"name":"Ukraine","abbreviation":"UA"},{"name":"Union of Soviet Socialist Republics","abbreviation":"SU"},{"name":"United Arab Emirates","abbreviation":"AE"},{"name":"United Kingdom","abbreviation":"GB"},{"name":"United States","abbreviation":"US"},{"name":"Unknown or Invalid Region","abbreviation":"ZZ"},{"name":"Uruguay","abbreviation":"UY"},{"name":"Uzbekistan","abbreviation":"UZ"},{"name":"Vanuatu","abbreviation":"VU"},{"name":"Vatican City","abbreviation":"VA"},{"name":"Venezuela","abbreviation":"VE"},{"name":"Vietnam","abbreviation":"VN"},{"name":"Wake Island","abbreviation":"WK"},{"name":"Wallis and Futuna","abbreviation":"WF"},{"name":"Western Sahara","abbreviation":"EH"},{"name":"Yemen","abbreviation":"YE"},{"name":"Zambia","abbreviation":"ZM"},{"name":"Zimbabwe","abbreviation":"ZW"},{"name":"Åland Islands","abbreviation":"AX"}],
 
         provinces: [
             {name: 'Alberta', abbreviation: 'AB'},
@@ -1662,6 +2048,7 @@
 
     function _copyObject(source, target) {
       var keys = o_keys(source);
+      var key;
 
       for (var i = 0, l = keys.length; i < l; i++) {
         key = keys[i];
@@ -1796,10 +2183,15 @@
         return new MersenneTwister(seed);
     };
 
+    Chance.prototype.blueimp_md5 = function () {
+        return new BlueImpMD5();
+    };
+
     // Mersenne Twister from https://gist.github.com/banksean/300494
     var MersenneTwister = function (seed) {
         if (seed === undefined) {
-            seed = new Date().getTime();
+            // kept random number same size as time used previously to ensure no unexpected results downstream
+            seed = Math.floor(Math.random()*Math.pow(10,13));
         }
         /* Period parameters */
         this.N = 624;
@@ -1923,6 +2315,254 @@
         return (a * 67108864.0 + b) * (1.0 / 9007199254740992.0);
     };
 
+    // BlueImp MD5 hashing algorithm from https://github.com/blueimp/JavaScript-MD5
+    var BlueImpMD5 = function () {};
+
+    BlueImpMD5.prototype.VERSION = '1.0.1';
+
+    /*
+    * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+    * to work around bugs in some JS interpreters.
+    */
+    BlueImpMD5.prototype.safe_add = function safe_add(x, y) {
+        var lsw = (x & 0xFFFF) + (y & 0xFFFF),
+            msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+        return (msw << 16) | (lsw & 0xFFFF);
+    };
+
+    /*
+    * Bitwise rotate a 32-bit number to the left.
+    */
+    BlueImpMD5.prototype.bit_roll = function (num, cnt) {
+        return (num << cnt) | (num >>> (32 - cnt));
+    };
+
+    /*
+    * These functions implement the five basic operations the algorithm uses.
+    */
+    BlueImpMD5.prototype.md5_cmn = function (q, a, b, x, s, t) {
+        return this.safe_add(this.bit_roll(this.safe_add(this.safe_add(a, q), this.safe_add(x, t)), s), b);
+    };
+    BlueImpMD5.prototype.md5_ff = function (a, b, c, d, x, s, t) {
+        return this.md5_cmn((b & c) | ((~b) & d), a, b, x, s, t);
+    };
+    BlueImpMD5.prototype.md5_gg = function (a, b, c, d, x, s, t) {
+        return this.md5_cmn((b & d) | (c & (~d)), a, b, x, s, t);
+    };
+    BlueImpMD5.prototype.md5_hh = function (a, b, c, d, x, s, t) {
+        return this.md5_cmn(b ^ c ^ d, a, b, x, s, t);
+    };
+    BlueImpMD5.prototype.md5_ii = function (a, b, c, d, x, s, t) {
+        return this.md5_cmn(c ^ (b | (~d)), a, b, x, s, t);
+    };
+
+    /*
+    * Calculate the MD5 of an array of little-endian words, and a bit length.
+    */
+    BlueImpMD5.prototype.binl_md5 = function (x, len) {
+        /* append padding */
+        x[len >> 5] |= 0x80 << (len % 32);
+        x[(((len + 64) >>> 9) << 4) + 14] = len;
+
+        var i, olda, oldb, oldc, oldd,
+            a =  1732584193,
+            b = -271733879,
+            c = -1732584194,
+            d =  271733878;
+
+        for (i = 0; i < x.length; i += 16) {
+            olda = a;
+            oldb = b;
+            oldc = c;
+            oldd = d;
+
+            a = this.md5_ff(a, b, c, d, x[i],       7, -680876936);
+            d = this.md5_ff(d, a, b, c, x[i +  1], 12, -389564586);
+            c = this.md5_ff(c, d, a, b, x[i +  2], 17,  606105819);
+            b = this.md5_ff(b, c, d, a, x[i +  3], 22, -1044525330);
+            a = this.md5_ff(a, b, c, d, x[i +  4],  7, -176418897);
+            d = this.md5_ff(d, a, b, c, x[i +  5], 12,  1200080426);
+            c = this.md5_ff(c, d, a, b, x[i +  6], 17, -1473231341);
+            b = this.md5_ff(b, c, d, a, x[i +  7], 22, -45705983);
+            a = this.md5_ff(a, b, c, d, x[i +  8],  7,  1770035416);
+            d = this.md5_ff(d, a, b, c, x[i +  9], 12, -1958414417);
+            c = this.md5_ff(c, d, a, b, x[i + 10], 17, -42063);
+            b = this.md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
+            a = this.md5_ff(a, b, c, d, x[i + 12],  7,  1804603682);
+            d = this.md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
+            c = this.md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
+            b = this.md5_ff(b, c, d, a, x[i + 15], 22,  1236535329);
+
+            a = this.md5_gg(a, b, c, d, x[i +  1],  5, -165796510);
+            d = this.md5_gg(d, a, b, c, x[i +  6],  9, -1069501632);
+            c = this.md5_gg(c, d, a, b, x[i + 11], 14,  643717713);
+            b = this.md5_gg(b, c, d, a, x[i],      20, -373897302);
+            a = this.md5_gg(a, b, c, d, x[i +  5],  5, -701558691);
+            d = this.md5_gg(d, a, b, c, x[i + 10],  9,  38016083);
+            c = this.md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
+            b = this.md5_gg(b, c, d, a, x[i +  4], 20, -405537848);
+            a = this.md5_gg(a, b, c, d, x[i +  9],  5,  568446438);
+            d = this.md5_gg(d, a, b, c, x[i + 14],  9, -1019803690);
+            c = this.md5_gg(c, d, a, b, x[i +  3], 14, -187363961);
+            b = this.md5_gg(b, c, d, a, x[i +  8], 20,  1163531501);
+            a = this.md5_gg(a, b, c, d, x[i + 13],  5, -1444681467);
+            d = this.md5_gg(d, a, b, c, x[i +  2],  9, -51403784);
+            c = this.md5_gg(c, d, a, b, x[i +  7], 14,  1735328473);
+            b = this.md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
+
+            a = this.md5_hh(a, b, c, d, x[i +  5],  4, -378558);
+            d = this.md5_hh(d, a, b, c, x[i +  8], 11, -2022574463);
+            c = this.md5_hh(c, d, a, b, x[i + 11], 16,  1839030562);
+            b = this.md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
+            a = this.md5_hh(a, b, c, d, x[i +  1],  4, -1530992060);
+            d = this.md5_hh(d, a, b, c, x[i +  4], 11,  1272893353);
+            c = this.md5_hh(c, d, a, b, x[i +  7], 16, -155497632);
+            b = this.md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
+            a = this.md5_hh(a, b, c, d, x[i + 13],  4,  681279174);
+            d = this.md5_hh(d, a, b, c, x[i],      11, -358537222);
+            c = this.md5_hh(c, d, a, b, x[i +  3], 16, -722521979);
+            b = this.md5_hh(b, c, d, a, x[i +  6], 23,  76029189);
+            a = this.md5_hh(a, b, c, d, x[i +  9],  4, -640364487);
+            d = this.md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
+            c = this.md5_hh(c, d, a, b, x[i + 15], 16,  530742520);
+            b = this.md5_hh(b, c, d, a, x[i +  2], 23, -995338651);
+
+            a = this.md5_ii(a, b, c, d, x[i],       6, -198630844);
+            d = this.md5_ii(d, a, b, c, x[i +  7], 10,  1126891415);
+            c = this.md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
+            b = this.md5_ii(b, c, d, a, x[i +  5], 21, -57434055);
+            a = this.md5_ii(a, b, c, d, x[i + 12],  6,  1700485571);
+            d = this.md5_ii(d, a, b, c, x[i +  3], 10, -1894986606);
+            c = this.md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
+            b = this.md5_ii(b, c, d, a, x[i +  1], 21, -2054922799);
+            a = this.md5_ii(a, b, c, d, x[i +  8],  6,  1873313359);
+            d = this.md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
+            c = this.md5_ii(c, d, a, b, x[i +  6], 15, -1560198380);
+            b = this.md5_ii(b, c, d, a, x[i + 13], 21,  1309151649);
+            a = this.md5_ii(a, b, c, d, x[i +  4],  6, -145523070);
+            d = this.md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
+            c = this.md5_ii(c, d, a, b, x[i +  2], 15,  718787259);
+            b = this.md5_ii(b, c, d, a, x[i +  9], 21, -343485551);
+
+            a = this.safe_add(a, olda);
+            b = this.safe_add(b, oldb);
+            c = this.safe_add(c, oldc);
+            d = this.safe_add(d, oldd);
+        }
+        return [a, b, c, d];
+    };
+
+    /*
+    * Convert an array of little-endian words to a string
+    */
+    BlueImpMD5.prototype.binl2rstr = function (input) {
+        var i,
+            output = '';
+        for (i = 0; i < input.length * 32; i += 8) {
+            output += String.fromCharCode((input[i >> 5] >>> (i % 32)) & 0xFF);
+        }
+        return output;
+    };
+
+    /*
+    * Convert a raw string to an array of little-endian words
+    * Characters >255 have their high-byte silently ignored.
+    */
+    BlueImpMD5.prototype.rstr2binl = function (input) {
+        var i,
+            output = [];
+        output[(input.length >> 2) - 1] = undefined;
+        for (i = 0; i < output.length; i += 1) {
+            output[i] = 0;
+        }
+        for (i = 0; i < input.length * 8; i += 8) {
+            output[i >> 5] |= (input.charCodeAt(i / 8) & 0xFF) << (i % 32);
+        }
+        return output;
+    };
+
+    /*
+    * Calculate the MD5 of a raw string
+    */
+    BlueImpMD5.prototype.rstr_md5 = function (s) {
+        return this.binl2rstr(this.binl_md5(this.rstr2binl(s), s.length * 8));
+    };
+
+    /*
+    * Calculate the HMAC-MD5, of a key and some data (raw strings)
+    */
+    BlueImpMD5.prototype.rstr_hmac_md5 = function (key, data) {
+        var i,
+            bkey = this.rstr2binl(key),
+            ipad = [],
+            opad = [],
+            hash;
+        ipad[15] = opad[15] = undefined;
+        if (bkey.length > 16) {
+            bkey = this.binl_md5(bkey, key.length * 8);
+        }
+        for (i = 0; i < 16; i += 1) {
+            ipad[i] = bkey[i] ^ 0x36363636;
+            opad[i] = bkey[i] ^ 0x5C5C5C5C;
+        }
+        hash = this.binl_md5(ipad.concat(this.rstr2binl(data)), 512 + data.length * 8);
+        return this.binl2rstr(this.binl_md5(opad.concat(hash), 512 + 128));
+    };
+
+    /*
+    * Convert a raw string to a hex string
+    */
+    BlueImpMD5.prototype.rstr2hex = function (input) {
+        var hex_tab = '0123456789abcdef',
+            output = '',
+            x,
+            i;
+        for (i = 0; i < input.length; i += 1) {
+            x = input.charCodeAt(i);
+            output += hex_tab.charAt((x >>> 4) & 0x0F) +
+                hex_tab.charAt(x & 0x0F);
+        }
+        return output;
+    };
+
+    /*
+    * Encode a string as utf-8
+    */
+    BlueImpMD5.prototype.str2rstr_utf8 = function (input) {
+        return unescape(encodeURIComponent(input));
+    };
+
+    /*
+    * Take string arguments and return either raw or hex encoded strings
+    */
+    BlueImpMD5.prototype.raw_md5 = function (s) {
+        return this.rstr_md5(this.str2rstr_utf8(s));
+    };
+    BlueImpMD5.prototype.hex_md5 = function (s) {
+        return this.rstr2hex(this.raw_md5(s));
+    };
+    BlueImpMD5.prototype.raw_hmac_md5 = function (k, d) {
+        return this.rstr_hmac_md5(this.str2rstr_utf8(k), this.str2rstr_utf8(d));
+    };
+    BlueImpMD5.prototype.hex_hmac_md5 = function (k, d) {
+        return this.rstr2hex(this.raw_hmac_md5(k, d));
+    };
+
+    BlueImpMD5.prototype.md5 = function (string, key, raw) {
+        if (!key) {
+            if (!raw) {
+                return this.hex_md5(string);
+            }
+
+            return this.raw_md5(string);
+        }
+
+        if (!raw) {
+            return this.hex_hmac_md5(key, string);
+        }
+
+        return this.raw_hmac_md5(key, string);
+    };
 
     // CommonJS module
     if (typeof exports !== 'undefined') {

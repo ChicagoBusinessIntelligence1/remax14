@@ -3164,6 +3164,7 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
     var contexts = [];
 
     var nextTickQueue = [];
+
     var currentFrame = 0;
     var nextTickFrame = 0;
 
@@ -3217,10 +3218,8 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
         eventHandler.emit('prerender');
 
         // empty the queue
-        if (nextTickQueue.length) {
-            for (i = 0; i < nextTickQueue[0].length; i++) nextTickQueue[0][i].call(this, currentFrame);
-            nextTickQueue.splice(0, 1);
-        }
+        var numFunctions = nextTickQueue.length;
+        while (numFunctions--) (nextTickQueue.shift())(currentFrame);
 
         // limit total execution time for deferrable functions
         while (deferQueue.length && (Date.now() - currentTime) < MAX_DEFER_FRAME_TIME) {
@@ -3269,10 +3268,20 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
         window.addEventListener('touchmove', function(event) {
             event.preventDefault();
         }, true);
+
+        addRootClasses();
+    }
+    var initialized = false;
+
+    function addRootClasses() {
+        if (!document.body) {
+            Engine.nextTick(addRootClasses);
+            return;
+        }
+
         document.body.classList.add('famous-root');
         document.documentElement.classList.add('famous-root');
     }
-    var initialized = false;
 
     /**
      * Add event handler object to set of downstream handlers.
@@ -3314,17 +3323,20 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
     Engine.on = function on(type, handler) {
         if (!(type in eventForwarders)) {
             eventForwarders[type] = eventHandler.emit.bind(eventHandler, type);
-            if (document.body) {
-                document.body.addEventListener(type, eventForwarders[type]);
-            }
-            else {
-                Engine.nextTick(function(type, forwarder) {
-                    document.body.addEventListener(type, forwarder);
-                }.bind(this, type, eventForwarders[type]));
-            }
+
+            addEngineListener(type, eventForwarders[type]);
         }
         return eventHandler.on(type, handler);
     };
+
+    function addEngineListener(type, forwarder) {
+        if (!document.body) {
+            Engine.nextTick(addEventListener.bind(this, type, forwarder));
+            return;
+        }
+
+        document.body.addEventListener(type, forwarder);
+    }
 
     /**
      * Trigger an event, sending to all downstream handlers
@@ -3429,16 +3441,24 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
             el.classList.add(options.containerClass);
             needMountContainer = true;
         }
+
         var context = new Context(el);
         Engine.registerContext(context);
-        if (needMountContainer) {
-            Engine.nextTick(function(context, el) {
-                document.body.appendChild(el);
-                context.emit('resize');
-            }.bind(this, context, el));
-        }
+
+        if (needMountContainer) mount(context, el);
+
         return context;
     };
+
+    function mount(context, el) {
+        if (!document.body) {
+            Engine.nextTick(mount.bind(this, context, el));
+            return;
+        }
+
+        document.body.appendChild(el);
+        context.emit('resize');
+    }
 
     /**
      * Registers an existing context to be updated within the run loop.
@@ -3489,17 +3509,7 @@ define('famous/core/Engine',['require','exports','module','./Context','./EventHa
      * @param {function(Object)} fn function accepting window object
      */
     Engine.nextTick = function nextTick(fn) {
-        var frameIndex = nextTickFrame - currentFrame;
-        if (!nextTickQueue[frameIndex]) nextTickQueue[frameIndex] = [];
-
-        function frameChecker(frame) {
-            var nextFrame = frame + 1;
-            if (nextTickFrame !== nextFrame) nextTickFrame = nextFrame;
-            fn();
-        }
-
-        nextTickQueue[frameIndex].push(frameChecker);
-
+        nextTickQueue.push(fn);
     };
 
     /**
@@ -5852,9 +5862,9 @@ define('famous/inputs/GenericSync',['require','exports','module','../core/EventH
      */
     GenericSync.register = function register(syncObject) {
         for (var key in syncObject){
-            if (registry[key]){
-                if (registry[key] === syncObject[key]) return; // redundant registration
-                else throw new Error('this key is registered to a different sync class');
+            if (registry[key]){ // skip redundant registration
+                if (registry[key] !== syncObject[key]) // only if same registered class
+                    throw new Error('Conflicting sync classes for key: ' + key);
             }
             else registry[key] = syncObject[key];
         }
@@ -15260,8 +15270,9 @@ define('famous/views/ContextualView',['require','exports','module','../core/Enti
  * @copyright Famous Industries, Inc. 2014
  */
 
-define('famous/views/SequentialLayout',['require','exports','module','../core/OptionsManager','../core/Transform','../core/ViewSequence','../utilities/Utility'],function(require, exports, module) {
+define('famous/views/SequentialLayout',['require','exports','module','../core/OptionsManager','../core/Entity','../core/Transform','../core/ViewSequence','../utilities/Utility'],function(require, exports, module) {
     var OptionsManager = require('../core/OptionsManager');
+    var Entity = require('../core/Entity');
     var Transform = require('../core/Transform');
     var ViewSequence = require('../core/ViewSequence');
     var Utility = require('../utilities/Utility');
@@ -15284,6 +15295,9 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
         this.options = Utility.clone(this.constructor.DEFAULT_OPTIONS || SequentialLayout.DEFAULT_OPTIONS);
         this.optionsManager = new OptionsManager(this.options);
 
+        this.id = Entity.register(this);
+        this.cachedSize = [undefined, undefined];
+
         if (options) this.setOptions(options);
     }
 
@@ -15295,6 +15309,7 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
     SequentialLayout.DEFAULT_OUTPUT_FUNCTION = function DEFAULT_OUTPUT_FUNCTION(input, offset, index) {
         var transform = (this.options.direction === Utility.Direction.X) ? Transform.translate(offset, 0) : Transform.translate(0, offset);
         return {
+            size: this.cachedSize,
             transform: transform,
             target: input.render()
         };
@@ -15351,13 +15366,25 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
     };
 
     /**
-     * Generate a render spec from the contents of this component.
+     * Return the id of the component
      *
      * @private
      * @method render
-     * @return {number} Render spec for this component
+     * @return {number} id of the SequentialLayout
      */
     SequentialLayout.prototype.render = function render() {
+        return this.id;
+    };
+
+    /**
+     * Generate a render spec from the contents of this component.
+     *
+     * @private
+     * @method commit
+     * @param {Object} parentSpec parent render spec
+     * @return {Object} Render spec for this component
+     */
+    SequentialLayout.prototype.commit = function commit(parentSpec) {
         var length             = 0;
         var secondaryDirection = this.options.direction ^ 1;
         var currentNode        = this._items;
@@ -15368,6 +15395,7 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
         var i                  = 0;
 
         this._size = [0, 0];
+        this.cachedSize = parentSpec.size;
 
         while (currentNode) {
             item = currentNode.get();
@@ -15392,6 +15420,8 @@ define('famous/views/SequentialLayout',['require','exports','module','../core/Op
         this._size[this.options.direction] = length;
 
         return {
+            transform: parentSpec.transform,
+            origin: parentSpec.origin,
             size: this.getSize(),
             target: result
         };

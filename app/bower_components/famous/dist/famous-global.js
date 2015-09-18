@@ -698,6 +698,7 @@ var Engine = {};
 var contexts = [];
 
 var nextTickQueue = [];
+
 var currentFrame = 0;
 var nextTickFrame = 0;
 
@@ -751,10 +752,8 @@ Engine.step = function step() {
     eventHandler.emit('prerender');
 
     // empty the queue
-    if (nextTickQueue.length) {
-        for (i = 0; i < nextTickQueue[0].length; i++) nextTickQueue[0][i].call(this, currentFrame);
-        nextTickQueue.splice(0, 1);
-    }
+    var numFunctions = nextTickQueue.length;
+    while (numFunctions--) (nextTickQueue.shift())(currentFrame);
 
     // limit total execution time for deferrable functions
     while (deferQueue.length && (Date.now() - currentTime) < MAX_DEFER_FRAME_TIME) {
@@ -803,10 +802,20 @@ function initialize() {
     window.addEventListener('touchmove', function(event) {
         event.preventDefault();
     }, true);
+
+    addRootClasses();
+}
+var initialized = false;
+
+function addRootClasses() {
+    if (!document.body) {
+        Engine.nextTick(addRootClasses);
+        return;
+    }
+
     document.body.classList.add('famous-root');
     document.documentElement.classList.add('famous-root');
 }
-var initialized = false;
 
 /**
  * Add event handler object to set of downstream handlers.
@@ -848,17 +857,20 @@ Engine.unpipe = function unpipe(target) {
 Engine.on = function on(type, handler) {
     if (!(type in eventForwarders)) {
         eventForwarders[type] = eventHandler.emit.bind(eventHandler, type);
-        if (document.body) {
-            document.body.addEventListener(type, eventForwarders[type]);
-        }
-        else {
-            Engine.nextTick(function(type, forwarder) {
-                document.body.addEventListener(type, forwarder);
-            }.bind(this, type, eventForwarders[type]));
-        }
+
+        addEngineListener(type, eventForwarders[type]);
     }
     return eventHandler.on(type, handler);
 };
+
+function addEngineListener(type, forwarder) {
+    if (!document.body) {
+        Engine.nextTick(addEventListener.bind(this, type, forwarder));
+        return;
+    }
+
+    document.body.addEventListener(type, forwarder);
+}
 
 /**
  * Trigger an event, sending to all downstream handlers
@@ -963,16 +975,24 @@ Engine.createContext = function createContext(el) {
         el.classList.add(options.containerClass);
         needMountContainer = true;
     }
+
     var context = new Context(el);
     Engine.registerContext(context);
-    if (needMountContainer) {
-        Engine.nextTick(function(context, el) {
-            document.body.appendChild(el);
-            context.emit('resize');
-        }.bind(this, context, el));
-    }
+
+    if (needMountContainer) mount(context, el);
+
     return context;
 };
+
+function mount(context, el) {
+    if (!document.body) {
+        Engine.nextTick(mount.bind(this, context, el));
+        return;
+    }
+
+    document.body.appendChild(el);
+    context.emit('resize');
+}
 
 /**
  * Registers an existing context to be updated within the run loop.
@@ -1023,17 +1043,7 @@ Engine.deregisterContext = function deregisterContext(context) {
  * @param {function(Object)} fn function accepting window object
  */
 Engine.nextTick = function nextTick(fn) {
-    var frameIndex = nextTickFrame - currentFrame;
-    if (!nextTickQueue[frameIndex]) nextTickQueue[frameIndex] = [];
-
-    function frameChecker(frame) {
-        var nextFrame = frame + 1;
-        if (nextTickFrame !== nextFrame) nextTickFrame = nextFrame;
-        fn();
-    }
-
-    nextTickQueue[frameIndex].push(frameChecker);
-
+    nextTickQueue.push(fn);
 };
 
 /**
@@ -4352,9 +4362,9 @@ module.exports = {
   Modifier: _dereq_('./Modifier'),
   OptionsManager: _dereq_('./OptionsManager'),
   RenderNode: _dereq_('./RenderNode'),
+  Scene: _dereq_('./Scene'),
   SpecParser: _dereq_('./SpecParser'),
   Surface: _dereq_('./Surface'),
-  Scene: _dereq_('./Scene'),
   Transform: _dereq_('./Transform'),
   View: _dereq_('./View'),
   ViewSequence: _dereq_('./ViewSequence')
@@ -4563,14 +4573,14 @@ module.exports = {
 },{"./EventArbiter":19,"./EventFilter":20,"./EventMapper":21}],23:[function(_dereq_,module,exports){
 module.exports = {
   core: _dereq_('./core'),
-  events: _dereq_('./events'),
   inputs: _dereq_('./inputs'),
+  events: _dereq_('./events'),
   modifiers: _dereq_('./modifiers'),
-  math: _dereq_('./math'),
   physics: _dereq_('./physics'),
-  surfaces: _dereq_('./surfaces'),
-  utilities: _dereq_('./utilities'),
+  math: _dereq_('./math'),
   transitions: _dereq_('./transitions'),
+  utilities: _dereq_('./utilities'),
+  surfaces: _dereq_('./surfaces'),
   views: _dereq_('./views'),
   widgets: _dereq_('./widgets')
 };
@@ -4776,9 +4786,9 @@ var registry = {};
  */
 GenericSync.register = function register(syncObject) {
     for (var key in syncObject){
-        if (registry[key]){
-            if (registry[key] === syncObject[key]) return; // redundant registration
-            else throw new Error('this key is registered to a different sync class');
+        if (registry[key]){ // skip redundant registration
+            if (registry[key] !== syncObject[key]) // only if same registered class
+                throw new Error('Conflicting sync classes for key: ' + key);
         }
         else registry[key] = syncObject[key];
     }
@@ -8013,8 +8023,8 @@ module.exports = StateModifier;
 module.exports = {
   Draggable: _dereq_('./Draggable'),
   Fader: _dereq_('./Fader'),
-  StateModifier: _dereq_('./StateModifier'),
-  ModifierChain: _dereq_('./ModifierChain')
+  ModifierChain: _dereq_('./ModifierChain'),
+  StateModifier: _dereq_('./StateModifier')
 };
 
 },{"./Draggable":43,"./Fader":44,"./ModifierChain":45,"./StateModifier":46}],48:[function(_dereq_,module,exports){
@@ -11615,8 +11625,8 @@ module.exports = {
   Force: _dereq_('./Force'),
   Repulsion: _dereq_('./Repulsion'),
   RotationalDrag: _dereq_('./RotationalDrag'),
-  Spring: _dereq_('./Spring'),
   RotationalSpring: _dereq_('./RotationalSpring'),
+  Spring: _dereq_('./Spring'),
   VectorField: _dereq_('./VectorField')
 };
 
@@ -11624,9 +11634,9 @@ module.exports = {
 module.exports = {
   PhysicsEngine: _dereq_('./PhysicsEngine'),
   bodies: _dereq_('./bodies'),
+  forces: _dereq_('./forces'),
   constraints: _dereq_('./constraints'),
-  integrators: _dereq_('./integrators'),
-  forces: _dereq_('./forces')
+  integrators: _dereq_('./integrators')
 };
 
 },{"./PhysicsEngine":48,"./bodies":53,"./constraints":62,"./forces":70,"./integrators":73}],72:[function(_dereq_,module,exports){
@@ -15171,8 +15181,8 @@ module.exports = Utility;
 },{}],96:[function(_dereq_,module,exports){
 module.exports = {
   KeyCodes: _dereq_('./KeyCodes'),
-  Utility: _dereq_('./Utility'),
-  Timer: _dereq_('./Timer')
+  Timer: _dereq_('./Timer'),
+  Utility: _dereq_('./Utility')
 };
 
 },{"./KeyCodes":93,"./Timer":94,"./Utility":95}],97:[function(_dereq_,module,exports){
@@ -18173,6 +18183,7 @@ module.exports = Scrollview;
  */
 
 var OptionsManager = _dereq_('../core/OptionsManager');
+var Entity = _dereq_('../core/Entity');
 var Transform = _dereq_('../core/Transform');
 var ViewSequence = _dereq_('../core/ViewSequence');
 var Utility = _dereq_('../utilities/Utility');
@@ -18195,6 +18206,9 @@ function SequentialLayout(options) {
     this.options = Utility.clone(this.constructor.DEFAULT_OPTIONS || SequentialLayout.DEFAULT_OPTIONS);
     this.optionsManager = new OptionsManager(this.options);
 
+    this.id = Entity.register(this);
+    this.cachedSize = [undefined, undefined];
+
     if (options) this.setOptions(options);
 }
 
@@ -18206,6 +18220,7 @@ SequentialLayout.DEFAULT_OPTIONS = {
 SequentialLayout.DEFAULT_OUTPUT_FUNCTION = function DEFAULT_OUTPUT_FUNCTION(input, offset, index) {
     var transform = (this.options.direction === Utility.Direction.X) ? Transform.translate(offset, 0) : Transform.translate(0, offset);
     return {
+        size: this.cachedSize,
         transform: transform,
         target: input.render()
     };
@@ -18262,13 +18277,25 @@ SequentialLayout.prototype.setOutputFunction = function setOutputFunction(output
 };
 
 /**
- * Generate a render spec from the contents of this component.
+ * Return the id of the component
  *
  * @private
  * @method render
- * @return {number} Render spec for this component
+ * @return {number} id of the SequentialLayout
  */
 SequentialLayout.prototype.render = function render() {
+    return this.id;
+};
+
+/**
+ * Generate a render spec from the contents of this component.
+ *
+ * @private
+ * @method commit
+ * @param {Object} parentSpec parent render spec
+ * @return {Object} Render spec for this component
+ */
+SequentialLayout.prototype.commit = function commit(parentSpec) {
     var length             = 0;
     var secondaryDirection = this.options.direction ^ 1;
     var currentNode        = this._items;
@@ -18279,6 +18306,7 @@ SequentialLayout.prototype.render = function render() {
     var i                  = 0;
 
     this._size = [0, 0];
+    this.cachedSize = parentSpec.size;
 
     while (currentNode) {
         item = currentNode.get();
@@ -18303,13 +18331,15 @@ SequentialLayout.prototype.render = function render() {
     this._size[this.options.direction] = length;
 
     return {
+        transform: parentSpec.transform,
+        origin: parentSpec.origin,
         size: this.getSize(),
         target: result
     };
 };
 
 module.exports = SequentialLayout;
-},{"../core/OptionsManager":10,"../core/Transform":15,"../core/ViewSequence":17,"../utilities/Utility":95}],111:[function(_dereq_,module,exports){
+},{"../core/Entity":5,"../core/OptionsManager":10,"../core/Transform":15,"../core/ViewSequence":17,"../utilities/Utility":95}],111:[function(_dereq_,module,exports){
 module.exports = {
   ContextualView: _dereq_('./ContextualView'),
   Deck: _dereq_('./Deck'),

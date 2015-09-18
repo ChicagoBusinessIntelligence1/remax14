@@ -10,6 +10,7 @@ angular.module('app')
          return ;
         }
 
+
         function ensureHttpPrefix(value) {
           if(value && !/^(http):\/\//i.test(value)
             && 'http://'.indexOf(value) === -1) {

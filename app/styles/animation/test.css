@@ -1,8 +1,1 @@
-.animation-test {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  position: relative;
-  background: linear-gradient(top, 90% #8fbc8f, 10% #000);
-  border-radius: 10px;
-}
+.animation-test{width:200px;height:200px;margin:20px;position:relative;background:linear-gradient(top,90% #8fbc8f,10% #000);border-radius:10px}

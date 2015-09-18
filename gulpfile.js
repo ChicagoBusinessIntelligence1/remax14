@@ -47,8 +47,6 @@ function startExpress() {
   app.use(bodyParser.urlencoded({extended: false}));
   app.use(methodOverride());
   app.use(express.static(path.join(__dirname, '/app')));
-  var bs = browserSync.init([], {logLevel:'silent',notify:false});
-  app.use(require('connect-browser-sync')(bs));
 
   app.get('*', function (req, res) {
     res.render('index');

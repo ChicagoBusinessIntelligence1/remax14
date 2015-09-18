@@ -4,10 +4,12 @@
   "apppath": "app",
   "dependencies": {
     "angular": "1.5.0-build.4246+sha.1c97a60",
-    "angular-animate": "1.5.0-build.4246+sha.1c97a60",
-    "angular-bootstrap": "~0.13.4",
+    "angular-animate": "~1.4.6",
+    "angular-bootstrap": "0.12.0",
     "angular-material": "master",
+    "angularfire": "~1.1.2",
     "famous": "0.3.1",
+    "firebase": "~2.2.9",
     "greensock": "~1.15.0"
   },
   "devDependencies": {

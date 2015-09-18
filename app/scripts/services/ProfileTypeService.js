@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .factory('ProfileTypeService', function ($firebase, $q, urlCommon, $rootScope) {
+  .factory('ProfileTypeService', function ($firebaseObject, $q, urlCommon, $rootScope) {
     return {
       repoUrl: null,
       repoRef: null,
@@ -13,7 +13,7 @@ angular.module('app')
         var id = user.id;
 
         that.repoUrl = urlCommon.brokers;
-        that.repoRef = $firebase(new Firebase(that.repoUrl));
+        that.repoRef = $firebaseObject(new Firebase(that.repoUrl));
         var regBrokers = that.repoRef.$asArray();
         regBrokers.$loaded(function () {
           var profileType = 'customer',
